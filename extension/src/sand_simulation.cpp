@@ -23,7 +23,13 @@ SandSimulation::SandSimulation() {
     elements.at(3) = water;
     
     modified_cells = Dictionary();
+    draw_data = PackedByteArray();
+
+
+    draw_data.resize(width * height);
+    draw_data.fill(0);
     cells.resize(width * height);
+    chunks.resize(chunk_width * chunk_height);
 }
 
 SandSimulation::~SandSimulation() {}
@@ -33,20 +39,28 @@ void SandSimulation::step(int iterations) {
 
     std::random_device dev;
     std::mt19937 rng(dev());
-    std::uniform_int_distribution<std::mt19937::result_type> distWidth(0, width - 1);
-    std::uniform_int_distribution<std::mt19937::result_type> distHeight(0, height - 1);
-    for (int i = 0; i < iterations; i++) {
-        int row = distHeight(rng);
-        int col = distWidth(rng);
+    std::uniform_int_distribution<std::mt19937::result_type> randCell(0, chunk_size - 1);
+
+
+    std::vector<int> active_chunks;
+    for (int chunk = 0; chunk < chunks.size(); chunk++) {
+        if (chunks.at(chunk) != 0) {
+            active_chunks.resize(active_chunks.size() + 1);
+            active_chunks.at(active_chunks.size() - 1) = chunk;
+        }
+    }
+    std::uniform_int_distribution<std::mt19937::result_type> randChunk(0, active_chunks.size() - 1);
+
+    for (int i = 0; i < iterations * active_chunks.size(); i++) {
+        int chunk = active_chunks.at(randChunk(rng));
+        int row = std::min((unsigned int) get_height() - 1, (chunk / chunk_width) * chunk_size + randCell(rng));
+        int col = std::min((unsigned int) get_width() - 1, (chunk % chunk_width) * chunk_size + randCell(rng));
         if (get_cell(row, col) == 0) {
             continue;
         }
         elements.at(get_cell(row, col))->process(this, row, col);
     }
-}
-
-void SandSimulation::randomize() {
-
+    
 }
 
 void SandSimulation::move_and_swap(int row, int col, int row2, int col2) {
@@ -76,24 +90,46 @@ int SandSimulation::get_cell(int row, int col) {
 }
 
 void SandSimulation::set_cell(int row, int col, int type) {
+    if (cells.at(row * width + col) == 0 && type != 0) {
+        chunks.at((row / chunk_size) * chunk_width + (col / chunk_size))++;
+    } else if (cells.at(row * width + col) != 0 && type == 0) {
+        chunks.at((row / chunk_size) * chunk_width + (col / chunk_size))--;
+    }
     cells.at(row * width + col) = type;
+    draw_data.set(row * width + col, type);
     get_modified_cells()[row * get_width() + col] = true;
 }
 
 void SandSimulation::resize(int new_width, int new_height) {
     std::vector<int> temp(cells);
-   
+    
     cells.clear();
     cells.resize(new_width * new_height);
+    
+    chunk_width = (int) std::ceil(new_width / (float) chunk_size);
+    chunk_height = (int) std::ceil(new_height / (float) chunk_size);
+    
+    chunks.clear();
+    chunks.resize(chunk_width * chunk_height);
+
+    draw_data.resize(new_width * new_height);
+    draw_data.fill(0);
 
     for (int row = 0; row < std::min(new_height, height); row++) {
-        for (int col = 0; col < std::min(new_width, width); col++){
+        for (int col = 0; col < std::min(new_width, width); col++) {
             cells.at(row * new_width + col) = temp.at(row * width + col);
+            if (temp.at(row * width + col) != 0) {
+                chunks.at((row / chunk_size) * chunk_width + (col / chunk_size))++;
+            }
         }
     }
 
     width = new_width;
     height = new_height;   
+}
+
+int SandSimulation::get_chunk(int c) {
+    return chunks.at(c);
 }
 
 int SandSimulation::get_width() {
@@ -104,10 +140,13 @@ int SandSimulation::get_height() {
     return height;
 }
 
+PackedByteArray SandSimulation::get_draw_data() {
+    return draw_data;
+}
+
 void SandSimulation::_bind_methods() {
     ClassDB::bind_method(D_METHOD("in_bounds"), &SandSimulation::in_bounds);
     ClassDB::bind_method(D_METHOD("move_and_swap"), &SandSimulation::move_and_swap);
-    ClassDB::bind_method(D_METHOD("randomize"), &SandSimulation::randomize);
     ClassDB::bind_method(D_METHOD("step"), &SandSimulation::step);
     ClassDB::bind_method(D_METHOD("get_modified_cells"), &SandSimulation::get_modified_cells);
     ClassDB::bind_method(D_METHOD("get_cell"), &SandSimulation::get_cell);
@@ -115,4 +154,6 @@ void SandSimulation::_bind_methods() {
     ClassDB::bind_method(D_METHOD("get_width"), &SandSimulation::get_width);
     ClassDB::bind_method(D_METHOD("get_height"), &SandSimulation::get_height);
     ClassDB::bind_method(D_METHOD("resize"), &SandSimulation::resize);
+    ClassDB::bind_method(D_METHOD("get_chunk"), &SandSimulation::get_chunk);
+    ClassDB::bind_method(D_METHOD("get_draw_data"), &SandSimulation::get_draw_data);
 }

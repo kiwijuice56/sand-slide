@@ -45,4 +45,5 @@ settings/stdout/print_fps=true
 
 window/size/viewport_width=750
 window/size/viewport_height=634
+window/vsync/vsync_mode=0
 window/stretch/aspect="ignore"

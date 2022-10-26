@@ -18,6 +18,7 @@ shader_parameter/water_color_2 = Color(0.227451, 0.635294, 0.94902, 1)
 script = ExtResource("1_ptcg0")
 canvas = NodePath("VBoxContainer/Canvas")
 element_selector = NodePath("VBoxContainer/MarginContainer/VBoxContainer/ElementSelector")
+simulation_speed = 1024
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 anchors_preset = 15
