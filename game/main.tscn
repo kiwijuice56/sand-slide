@@ -1,0 +1,110 @@
+[gd_scene load_steps=8 format=3 uid="uid://84wqk6hvpftr"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_ptcg0"]
+[ext_resource type="Shader" path="res://element_painter.gdshader" id="2_6v123"]
+[ext_resource type="Script" path="res://canvas/canvas.gd" id="2_rxwda"]
+[ext_resource type="Script" path="res://element_selector/element_selector.gd" id="3_eag5m"]
+[ext_resource type="Texture2D" uid="uid://brh8lbhfnfftd" path="res://noiseTexture.png" id="3_sygeb"]
+[ext_resource type="Texture2D" uid="uid://d324qshd2k87u" path="res://element_selector/icons/element_icon.png" id="4_7c8xp"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tvt6x"]
+shader = ExtResource("2_6v123")
+shader_parameter/perlin = ExtResource("3_sygeb")
+shader_parameter/sand_color = Color(1, 0.803922, 0.270588, 1)
+shader_parameter/water_color_1 = Color(0.0588235, 0.203922, 0.803922, 1)
+shader_parameter/water_color_2 = Color(0.227451, 0.635294, 0.94902, 1)
+
+[node name="Main" type="Node" node_paths=PackedStringArray("canvas", "element_selector")]
+script = ExtResource("1_ptcg0")
+canvas = NodePath("VBoxContainer/Canvas")
+element_selector = NodePath("VBoxContainer/MarginContainer/VBoxContainer/ElementSelector")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Canvas" type="TextureRect" parent="VBoxContainer"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_tvt6x")
+layout_mode = 2
+offset_right = 750.0
+offset_bottom = 450.0
+size_flags_vertical = 3
+script = ExtResource("2_rxwda")
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2i(0, 180)
+layout_mode = 2
+offset_top = 454.0
+offset_right = 750.0
+offset_bottom = 634.0
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer"]
+layout_mode = 2
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 746.0
+offset_bottom = 176.0
+
+[node name="ElementSelector" type="TabContainer" parent="VBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+offset_right = 742.0
+offset_bottom = 172.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+script = ExtResource("3_eag5m")
+
+[node name="Primary" type="ScrollContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/ElementSelector"]
+layout_mode = 2
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 31.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/ElementSelector/Primary"]
+layout_mode = 2
+offset_right = 742.0
+offset_bottom = 141.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Sand" type="Button" parent="VBoxContainer/MarginContainer/VBoxContainer/ElementSelector/Primary/HBoxContainer"]
+layout_mode = 2
+offset_right = 72.0
+offset_bottom = 72.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 0
+icon = ExtResource("4_7c8xp")
+
+[node name="Rock" type="Button" parent="VBoxContainer/MarginContainer/VBoxContainer/ElementSelector/Primary/HBoxContainer"]
+layout_mode = 2
+offset_left = 76.0
+offset_right = 148.0
+offset_bottom = 72.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 0
+icon = ExtResource("4_7c8xp")
+
+[node name="Water" type="Button" parent="VBoxContainer/MarginContainer/VBoxContainer/ElementSelector/Primary/HBoxContainer"]
+layout_mode = 2
+offset_left = 152.0
+offset_right = 224.0
+offset_bottom = 72.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 0
+icon = ExtResource("4_7c8xp")

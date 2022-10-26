@@ -1,0 +1,14 @@
+[configuration]
+
+entry_symbol = "summator_library_init"
+
+[libraries]
+
+linux.64.debug = "fallingsand/libgdfallingsand.linux.template_debug.64.so"
+linux.64.release = "fallingsand/libgdfallingsand.linux.template_release.64.so"
+linux.debug.rv64 = "fallingsand/libgdfallingsand.linux.template_debug.rv64.so"
+linux.release.rv64 = "fallingsand/libgdfallingsand.linux.template_release.rv64.so"
+windows.x86_64.debug = "fallingsand/libgdfallingsand.windows.template_debug.x86_64.dll"
+windows.x86_64.release = "fallingsand/libgdfallingsand.windows.template_release.x86_64.dll"
+macos.debug = "fallingsand/libgdfallingsand.macos.template_debug.framework"
+macos.release = "fallingsand/libgdfallingsand.macos.template_release.framework"
