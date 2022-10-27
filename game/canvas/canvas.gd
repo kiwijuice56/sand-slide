@@ -1,7 +1,7 @@
 extends TextureRect
 class_name SandCanvas
 
-@export var px_scale: int = 3 
+@export var px_scale: int = 3
 
 signal mouse_pressed(row, col, is_left)
 
@@ -20,9 +20,4 @@ func _process(_delta: float) -> void:
 func repaint(sim: SandSimulation) -> void:
 	var image: Image = texture.get_image()
 	image.create_from_data(sim.get_width(), sim.get_height(), false, Image.FORMAT_L8, sim.get_draw_data())
-#	image.create_from_data()
-#	for cell in sim.get_modified_cells():
-#		var row: int = floor(cell / sim.get_width())
-#		var col: int = cell % sim.get_width()
-#		image.set_pixel(col, row, Color("%02d0000" % (sim.get_cell(row, col))))
 	texture.set_image(image)

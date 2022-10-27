@@ -22,9 +22,7 @@ SandSimulation::SandSimulation() {
     elements.at(2) = rock;
     elements.at(3) = water;
     
-    modified_cells = Dictionary();
     draw_data = PackedByteArray();
-
 
     draw_data.resize(width * height);
     draw_data.fill(0);
@@ -35,8 +33,6 @@ SandSimulation::SandSimulation() {
 SandSimulation::~SandSimulation() {}
 
 void SandSimulation::step(int iterations) {
-    modified_cells.clear();
-
     std::random_device dev;
     std::mt19937 rng(dev());
     std::uniform_int_distribution<std::mt19937::result_type> randCell(0, chunk_size - 1);
@@ -81,10 +77,6 @@ bool SandSimulation::in_bounds(int row, int col) {
     return row >= 0 && col >= 0 && row < height && col < width;
 }
 
-Dictionary SandSimulation::get_modified_cells() {
-    return modified_cells;
-}
-
 int SandSimulation::get_cell(int row, int col) {
     return cells.at(row * width + col);
 }
@@ -97,7 +89,6 @@ void SandSimulation::set_cell(int row, int col, int type) {
     }
     cells.at(row * width + col) = type;
     draw_data.set(row * width + col, type);
-    get_modified_cells()[row * get_width() + col] = true;
 }
 
 void SandSimulation::resize(int new_width, int new_height) {
@@ -118,6 +109,7 @@ void SandSimulation::resize(int new_width, int new_height) {
     for (int row = 0; row < std::min(new_height, height); row++) {
         for (int col = 0; col < std::min(new_width, width); col++) {
             cells.at(row * new_width + col) = temp.at(row * width + col);
+            draw_data.set(row * new_width + col, temp.at(row * width + col));
             if (temp.at(row * width + col) != 0) {
                 chunks.at((row / chunk_size) * chunk_width + (col / chunk_size))++;
             }
@@ -148,7 +140,6 @@ void SandSimulation::_bind_methods() {
     ClassDB::bind_method(D_METHOD("in_bounds"), &SandSimulation::in_bounds);
     ClassDB::bind_method(D_METHOD("move_and_swap"), &SandSimulation::move_and_swap);
     ClassDB::bind_method(D_METHOD("step"), &SandSimulation::step);
-    ClassDB::bind_method(D_METHOD("get_modified_cells"), &SandSimulation::get_modified_cells);
     ClassDB::bind_method(D_METHOD("get_cell"), &SandSimulation::get_cell);
     ClassDB::bind_method(D_METHOD("set_cell"), &SandSimulation::set_cell);
     ClassDB::bind_method(D_METHOD("get_width"), &SandSimulation::get_width);

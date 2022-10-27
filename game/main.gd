@@ -29,7 +29,7 @@ func _on_element_selected(element_name: String) -> void:
 	element = elements.find(element_name)
 
 func _process(delta) -> void:
-	sim.step(simulation_speed)
+	sim.step(int(simulation_speed * min(0.005, delta)))
 	canvas.repaint(sim)
 
 func draw(center_row: int, center_col: int, draw_element: int,radius: int) -> void:

@@ -14,6 +14,11 @@ _global_script_classes=[{
 "language": &"GDScript",
 "path": "res://element_selector/element_selector.gd"
 }, {
+"base": "Label",
+"class": &"FpsLabel",
+"language": &"GDScript",
+"path": "res://ui/fps_label.gd"
+}, {
 "base": "Node",
 "class": &"Main",
 "language": &"GDScript",
@@ -26,6 +31,7 @@ _global_script_classes=[{
 }]
 _global_script_class_icons={
 "ElementSelector": "",
+"FpsLabel": "",
 "Main": "",
 "SandCanvas": ""
 }
@@ -33,13 +39,9 @@ _global_script_class_icons={
 [application]
 
 config/name="FallingSand2"
-run/main_scene="res://main.tscn"
+run/main_scene="res://Main.tscn"
 config/features=PackedStringArray("4.0")
 config/icon="res://icon.png"
-
-[debug]
-
-settings/stdout/print_fps=true
 
 [display]
 

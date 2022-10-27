@@ -23,7 +23,7 @@ class SandSimulation : public RefCounted {
 
     std::vector<int> cells;
     std::vector<int> chunks;
-    Dictionary modified_cells;
+
     PackedByteArray draw_data;
 
 protected:
@@ -38,7 +38,6 @@ public:
     void move_and_swap(int row, int col, int row2, int col2);
     bool in_bounds(int row, int col);
 
-    Dictionary get_modified_cells();
 
     // Modifiers
     void set_cell(int row, int col, int type);

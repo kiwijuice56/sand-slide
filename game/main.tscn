@@ -1,24 +1,33 @@
-[gd_scene load_steps=8 format=3 uid="uid://84wqk6hvpftr"]
+[gd_scene load_steps=11 format=3 uid="uid://d4k23rltkwrjs"]
 
-[ext_resource type="Script" path="res://main.gd" id="1_ptcg0"]
-[ext_resource type="Shader" path="res://element_painter.gdshader" id="2_6v123"]
-[ext_resource type="Script" path="res://canvas/canvas.gd" id="2_rxwda"]
-[ext_resource type="Script" path="res://element_selector/element_selector.gd" id="3_eag5m"]
-[ext_resource type="Texture2D" uid="uid://brh8lbhfnfftd" path="res://noiseTexture.png" id="3_sygeb"]
-[ext_resource type="Texture2D" uid="uid://d324qshd2k87u" path="res://element_selector/icons/element_icon.png" id="4_7c8xp"]
+[ext_resource type="Script" path="res://main.gd" id="1_dk3di"]
+[ext_resource type="Shader" path="res://canvas/element_painter.gdshader" id="2_wmnte"]
+[ext_resource type="Texture2D" uid="uid://dopvef1myjkr" path="res://canvas/noise_textures/rock_noise.jpg" id="3_on2m0"]
+[ext_resource type="Texture2D" uid="uid://bcjg5rer7omyd" path="res://canvas/noise_textures/sand_noise.png" id="4_qoyr6"]
+[ext_resource type="Texture2D" uid="uid://cfx44bcne3145" path="res://canvas/noise_textures/water_noise.jpg" id="5_10to3"]
+[ext_resource type="Script" path="res://canvas/canvas.gd" id="6_6p2y7"]
+[ext_resource type="Script" path="res://element_selector/element_selector.gd" id="7_g8bms"]
+[ext_resource type="Texture2D" uid="uid://d324qshd2k87u" path="res://element_selector/icons/element_icon.png" id="8_2cuke"]
+[ext_resource type="Script" path="res://ui/fps_label.gd" id="9_ep7hk"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_tvt6x"]
-shader = ExtResource("2_6v123")
-shader_parameter/perlin = ExtResource("3_sygeb")
-shader_parameter/sand_color = Color(1, 0.803922, 0.270588, 1)
-shader_parameter/water_color_1 = Color(0.0588235, 0.203922, 0.803922, 1)
-shader_parameter/water_color_2 = Color(0.227451, 0.635294, 0.94902, 1)
+shader = ExtResource("2_wmnte")
+shader_parameter/rock_color_1 = Color(0.278431, 0.109804, 0.109804, 1)
+shader_parameter/rock_color_2 = Color(0.439216, 0.290196, 0.278431, 1)
+shader_parameter/rock_noise = ExtResource("3_on2m0")
+shader_parameter/sand_color_1 = Color(0.980392, 0.47451, 0.137255, 1)
+shader_parameter/sand_color_2 = Color(1, 0.760784, 0.34902, 1)
+shader_parameter/sand_noise = ExtResource("4_qoyr6")
+shader_parameter/water_color_1 = Color(0.196078, 0.458824, 0.980392, 1)
+shader_parameter/water_color_2 = Color(0.2178, 0.57816, 0.99, 1)
+shader_parameter/water_color_3 = Color(0.117647, 0.235294, 0.831373, 1)
+shader_parameter/water_noise = ExtResource("5_10to3")
 
 [node name="Main" type="Node" node_paths=PackedStringArray("canvas", "element_selector")]
-script = ExtResource("1_ptcg0")
+script = ExtResource("1_dk3di")
 canvas = NodePath("VBoxContainer/Canvas")
 element_selector = NodePath("VBoxContainer/MarginContainer/VBoxContainer/ElementSelector")
-simulation_speed = 1024
+simulation_speed = 102400
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 anchors_preset = 15
@@ -36,7 +45,7 @@ layout_mode = 2
 offset_right = 750.0
 offset_bottom = 450.0
 size_flags_vertical = 3
-script = ExtResource("2_rxwda")
+script = ExtResource("6_6p2y7")
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
 custom_minimum_size = Vector2i(0, 180)
@@ -63,7 +72,7 @@ offset_bottom = 172.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 3
-script = ExtResource("3_eag5m")
+script = ExtResource("7_g8bms")
 
 [node name="Primary" type="ScrollContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/ElementSelector"]
 layout_mode = 2
@@ -88,7 +97,7 @@ offset_bottom = 72.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 0
-icon = ExtResource("4_7c8xp")
+icon = ExtResource("8_2cuke")
 
 [node name="Rock" type="Button" parent="VBoxContainer/MarginContainer/VBoxContainer/ElementSelector/Primary/HBoxContainer"]
 layout_mode = 2
@@ -98,7 +107,7 @@ offset_bottom = 72.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 0
-icon = ExtResource("4_7c8xp")
+icon = ExtResource("8_2cuke")
 
 [node name="Water" type="Button" parent="VBoxContainer/MarginContainer/VBoxContainer/ElementSelector/Primary/HBoxContainer"]
 layout_mode = 2
@@ -108,4 +117,13 @@ offset_bottom = 72.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 0
-icon = ExtResource("4_7c8xp")
+icon = ExtResource("8_2cuke")
+
+[node name="Label" type="Label" parent="."]
+offset_right = 750.0
+offset_bottom = 26.0
+text = "fps: ..."
+script = ExtResource("9_ep7hk")
+
+[node name="Timer" type="Timer" parent="Label"]
+autostart = true
