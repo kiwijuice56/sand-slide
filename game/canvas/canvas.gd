@@ -1,7 +1,7 @@
 extends TextureRect
 class_name SandCanvas
 
-@export var px_scale: int = 3
+@export var px_scale: int = 4
 
 signal mouse_pressed(row, col, is_left)
 

@@ -12,18 +12,27 @@ using namespace godot;
 class SandSimulation : public RefCounted {
     GDCLASS(SandSimulation, RefCounted);
 
+    // Screen dimensions
     int width = 256;
     int height = 256;
+
+    // Dimension of each chunk
     int chunk_size = 16;
 
+    // Screen dimensions in chunks (autmatically set when resized)
     int chunk_width = 4;
     int chunk_height = 4;
 
+    // Pointers to an instance of each element to access class properties and methods
     std::vector<Element*> elements;
 
+    // Contains the actual particles 
     std::vector<int> cells;
+
+    // Contains the count of active particles in each chunk
     std::vector<int> chunks;
 
+    // Godot structure that is synced to `cells` for rendering
     PackedByteArray draw_data;
 
 protected:
@@ -35,11 +44,13 @@ public:
 
     void step(int iterations);
 
+    // Element methods
     void move_and_swap(int row, int col, int row2, int col2);
+    void grow(int row, int col, int food, int replacer);
+    int touch_count(int row, int col, int type);
     bool in_bounds(int row, int col);
 
-
-    // Modifiers
+    // Setters and getters
     void set_cell(int row, int col, int type);
     int get_cell(int row, int col);
 

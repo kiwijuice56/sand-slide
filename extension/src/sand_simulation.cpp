@@ -4,6 +4,13 @@
 #include "elements/rock.h"
 #include "elements/void.h"
 #include "elements/water.h"
+#include "elements/polliwog.h"
+#include "elements/fire.h"
+#include "elements/smoke.h"
+#include "elements/algae.h"
+#include "elements/sandduck.h"
+#include "elements/explosion.h"
+#include "elements/leadazide.h"
 
 #include <godot_cpp/core/class_db.hpp>
 #include <random>
@@ -11,16 +18,30 @@
 using namespace godot;
 
 SandSimulation::SandSimulation() {
-    elements.resize(4);
+    elements.resize(32);
     Void* voidP = new Void();
     Sand* sand = new Sand();
     Rock* rock = new Rock();
     Water* water = new Water();
-    
+    Polliwog* polliwog = new Polliwog();
+    Fire* fire = new Fire();
+    Smoke* smoke = new Smoke();
+    Algae* algae = new Algae();
+    SandDuck* sand_duck = new SandDuck();
+    Explosion* explosion = new Explosion();
+    LeadAzide* lead_azide = new LeadAzide();
+
     elements.at(0) = voidP;
     elements.at(1) = sand;
     elements.at(2) = rock;
     elements.at(3) = water;
+    elements.at(4) = polliwog;
+    elements.at(5) = fire;
+    elements.at(6) = smoke;
+    elements.at(7) = algae;
+    elements.at(8) = sand_duck;
+    elements.at(9) = explosion;
+    elements.at(10) = lead_azide;
     
     draw_data = PackedByteArray();
 
@@ -37,7 +58,6 @@ void SandSimulation::step(int iterations) {
     std::mt19937 rng(dev());
     std::uniform_int_distribution<std::mt19937::result_type> randCell(0, chunk_size - 1);
 
-
     std::vector<int> active_chunks;
     for (int chunk = 0; chunk < chunks.size(); chunk++) {
         if (chunks.at(chunk) != 0) {
@@ -45,6 +65,7 @@ void SandSimulation::step(int iterations) {
             active_chunks.at(active_chunks.size() - 1) = chunk;
         }
     }
+    
     std::uniform_int_distribution<std::mt19937::result_type> randChunk(0, active_chunks.size() - 1);
 
     for (int i = 0; i < iterations * active_chunks.size(); i++) {
@@ -71,6 +92,36 @@ void SandSimulation::move_and_swap(int row, int col, int row2, int col2) {
     int old = get_cell(row, col);
     set_cell(row, col, get_cell(row2, col2));
     set_cell(row2, col2, old);
+}
+
+void SandSimulation::grow(int row, int col, int food, int replacer) {
+    if (!in_bounds(row, col)) {
+        return;
+    }
+    if (food == -1) {
+        // add exceptions to explosions here
+    } else {
+        if (get_cell(row, col) != food) {
+            return;
+        }
+    }
+
+    set_cell(row, col, replacer);
+}
+
+int SandSimulation::touch_count(int row, int col, int type) {
+    int touches = 0;
+    for (int y = -1; y <= 1; y++) {
+        for (int x = -1; x <= 1; x++) {
+            if (x == 0 && y == 0 || !in_bounds(row + y, col + x)) {
+                continue;
+            }
+            if (get_cell(row + y, col + x) == type) {
+                touches++;
+            }
+        }
+    }
+    return touches;
 }
 
 bool SandSimulation::in_bounds(int row, int col) {
@@ -139,6 +190,7 @@ PackedByteArray SandSimulation::get_draw_data() {
 void SandSimulation::_bind_methods() {
     ClassDB::bind_method(D_METHOD("in_bounds"), &SandSimulation::in_bounds);
     ClassDB::bind_method(D_METHOD("move_and_swap"), &SandSimulation::move_and_swap);
+    ClassDB::bind_method(D_METHOD("grow"), &SandSimulation::grow);
     ClassDB::bind_method(D_METHOD("step"), &SandSimulation::step);
     ClassDB::bind_method(D_METHOD("get_cell"), &SandSimulation::get_cell);
     ClassDB::bind_method(D_METHOD("set_cell"), &SandSimulation::set_cell);

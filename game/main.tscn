@@ -1,27 +1,148 @@
-[gd_scene load_steps=11 format=3 uid="uid://d4k23rltkwrjs"]
+[gd_scene load_steps=27 format=3 uid="uid://d4k23rltkwrjs"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_dk3di"]
-[ext_resource type="Shader" path="res://canvas/element_painter.gdshader" id="2_wmnte"]
-[ext_resource type="Texture2D" uid="uid://dopvef1myjkr" path="res://canvas/noise_textures/rock_noise.jpg" id="3_on2m0"]
-[ext_resource type="Texture2D" uid="uid://bcjg5rer7omyd" path="res://canvas/noise_textures/sand_noise.png" id="4_qoyr6"]
-[ext_resource type="Texture2D" uid="uid://cfx44bcne3145" path="res://canvas/noise_textures/water_noise.jpg" id="5_10to3"]
+[ext_resource type="FontFile" uid="uid://b8lxwo5dkwrs4" path="res://ui/Poppins-Regular.ttf" id="2_0htxb"]
+[ext_resource type="Material" uid="uid://d1lyjokwnk0pj" path="res://canvas/element_painter.tres" id="2_58n8t"]
 [ext_resource type="Script" path="res://canvas/canvas.gd" id="6_6p2y7"]
 [ext_resource type="Script" path="res://element_selector/element_selector.gd" id="7_g8bms"]
-[ext_resource type="Texture2D" uid="uid://d324qshd2k87u" path="res://element_selector/icons/element_icon.png" id="8_2cuke"]
 [ext_resource type="Script" path="res://ui/fps_label.gd" id="9_ep7hk"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_tvt6x"]
-shader = ExtResource("2_wmnte")
-shader_parameter/rock_color_1 = Color(0.278431, 0.109804, 0.109804, 1)
-shader_parameter/rock_color_2 = Color(0.439216, 0.290196, 0.278431, 1)
-shader_parameter/rock_noise = ExtResource("3_on2m0")
-shader_parameter/sand_color_1 = Color(0.980392, 0.47451, 0.137255, 1)
-shader_parameter/sand_color_2 = Color(1, 0.760784, 0.34902, 1)
-shader_parameter/sand_noise = ExtResource("4_qoyr6")
-shader_parameter/water_color_1 = Color(0.196078, 0.458824, 0.980392, 1)
-shader_parameter/water_color_2 = Color(0.2178, 0.57816, 0.99, 1)
-shader_parameter/water_color_3 = Color(0.117647, 0.235294, 0.831373, 1)
-shader_parameter/water_noise = ExtResource("5_10to3")
+[sub_resource type="Theme" id="Theme_n7xkt"]
+default_font = ExtResource("2_0htxb")
+default_font_size = 24
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cm7pv"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(0.14902, 0.14902, 0.14902, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_520gh"]
+bg_color = Color(0.980392, 0.47451, 0.137255, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7xfm4"]
+bg_color = Color(1, 0.615686, 0.180392, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_457eu"]
+bg_color = Color(0.941176, 0.305882, 0.054902, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aei81"]
+bg_color = Color(0.278431, 0.109804, 0.109804, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eypt1"]
+bg_color = Color(0.329412, 0.188235, 0.137255, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s867d"]
+bg_color = Color(0.211765, 0.0705882, 0.0745098, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x28qr"]
+bg_color = Color(0.14902, 0.396078, 0.929412, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nnycb"]
+bg_color = Color(0.211765, 0.560784, 0.960784, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_msh0k"]
+bg_color = Color(0.101961, 0.180392, 0.858824, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8ntsk"]
+bg_color = Color(1, 0.294118, 0.168627, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cdwbg"]
+bg_color = Color(1, 0.447059, 0.231373, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bs4ox"]
+bg_color = Color(0.960784, 0.133333, 0.133333, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tc47p"]
+bg_color = Color(0.419608, 0.941176, 1, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d7bg4"]
+bg_color = Color(0.470588, 1, 0.945098, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5dx7s"]
+bg_color = Color(0.333333, 0.807843, 0.94902, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6cxqo"]
+bg_color = Color(0.0235294, 0.45098, 0.101961, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_00oaa"]
+bg_color = Color(0.0509804, 0.501961, 0.0352941, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fvw5r"]
+bg_color = Color(0, 0.388235, 0.117647, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
 
 [node name="Main" type="Node" node_paths=PackedStringArray("canvas", "element_selector")]
 script = ExtResource("1_dk3di")
@@ -37,22 +158,23 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = SubResource("Theme_n7xkt")
 
 [node name="Canvas" type="TextureRect" parent="VBoxContainer"]
 texture_filter = 1
-material = SubResource("ShaderMaterial_tvt6x")
+material = ExtResource("2_58n8t")
 layout_mode = 2
-offset_right = 750.0
-offset_bottom = 450.0
+offset_right = 900.0
+offset_bottom = 596.0
 size_flags_vertical = 3
 script = ExtResource("6_6p2y7")
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
-custom_minimum_size = Vector2i(0, 180)
+custom_minimum_size = Vector2i(0, 200)
 layout_mode = 2
-offset_top = 454.0
-offset_right = 750.0
-offset_bottom = 634.0
+offset_top = 600.0
+offset_right = 900.0
+offset_bottom = 800.0
 theme_override_constants/margin_left = 4
 theme_override_constants/margin_top = 4
 theme_override_constants/margin_right = 4
@@ -62,16 +184,18 @@ theme_override_constants/margin_bottom = 4
 layout_mode = 2
 offset_left = 4.0
 offset_top = 4.0
-offset_right = 746.0
-offset_bottom = 176.0
+offset_right = 896.0
+offset_bottom = 196.0
 
 [node name="ElementSelector" type="TabContainer" parent="VBoxContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
-offset_right = 742.0
-offset_bottom = 172.0
+offset_right = 892.0
+offset_bottom = 192.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 3
+theme_override_constants/side_margin = 8
+theme_override_constants/icon_separation = 12
 script = ExtResource("7_g8bms")
 
 [node name="Primary" type="ScrollContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/ElementSelector"]
@@ -79,45 +203,196 @@ layout_mode = 2
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 31.0
+offset_top = 43.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_cm7pv")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/ElementSelector/Primary"]
 layout_mode = 2
-offset_right = 742.0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 884.0
 offset_bottom = 141.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme_override_constants/separation = 8
 
 [node name="Sand" type="Button" parent="VBoxContainer/MarginContainer/VBoxContainer/ElementSelector/Primary/HBoxContainer"]
+custom_minimum_size = Vector2i(128, 128)
 layout_mode = 2
-offset_right = 72.0
-offset_bottom = 72.0
+offset_right = 128.0
+offset_bottom = 128.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 0
-icon = ExtResource("8_2cuke")
+focus_mode = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_520gh")
+theme_override_styles/hover = SubResource("StyleBoxFlat_7xfm4")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_457eu")
+text = "sand"
 
 [node name="Rock" type="Button" parent="VBoxContainer/MarginContainer/VBoxContainer/ElementSelector/Primary/HBoxContainer"]
+custom_minimum_size = Vector2i(128, 128)
 layout_mode = 2
-offset_left = 76.0
-offset_right = 148.0
-offset_bottom = 72.0
+offset_left = 136.0
+offset_right = 264.0
+offset_bottom = 128.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 0
-icon = ExtResource("8_2cuke")
+focus_mode = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_aei81")
+theme_override_styles/hover = SubResource("StyleBoxFlat_eypt1")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_s867d")
+text = "rock
+"
 
 [node name="Water" type="Button" parent="VBoxContainer/MarginContainer/VBoxContainer/ElementSelector/Primary/HBoxContainer"]
+custom_minimum_size = Vector2i(128, 128)
 layout_mode = 2
-offset_left = 152.0
-offset_right = 224.0
-offset_bottom = 72.0
+offset_left = 272.0
+offset_right = 400.0
+offset_bottom = 128.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 0
-icon = ExtResource("8_2cuke")
+focus_mode = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_x28qr")
+theme_override_styles/hover = SubResource("StyleBoxFlat_nnycb")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_msh0k")
+text = "water"
+
+[node name="Fire" type="Button" parent="VBoxContainer/MarginContainer/VBoxContainer/ElementSelector/Primary/HBoxContainer"]
+custom_minimum_size = Vector2i(128, 128)
+layout_mode = 2
+offset_left = 408.0
+offset_right = 536.0
+offset_bottom = 128.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 0
+focus_mode = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_8ntsk")
+theme_override_styles/hover = SubResource("StyleBoxFlat_cdwbg")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_bs4ox")
+text = "fire"
+
+[node name="Life" type="ScrollContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/ElementSelector"]
+visible = false
+layout_mode = 2
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 31.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_cm7pv")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/ElementSelector/Life"]
+layout_mode = 2
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 884.0
+offset_bottom = 153.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Polliwog" type="Button" parent="VBoxContainer/MarginContainer/VBoxContainer/ElementSelector/Life/HBoxContainer"]
+custom_minimum_size = Vector2i(128, 128)
+layout_mode = 2
+offset_left = 552.0
+offset_top = 20.0
+offset_right = 680.0
+offset_bottom = 148.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 0
+focus_mode = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_tc47p")
+theme_override_styles/hover = SubResource("StyleBoxFlat_d7bg4")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_5dx7s")
+text = "polliwog"
+
+[node name="Algae" type="Button" parent="VBoxContainer/MarginContainer/VBoxContainer/ElementSelector/Life/HBoxContainer"]
+custom_minimum_size = Vector2i(128, 128)
+layout_mode = 2
+offset_left = 552.0
+offset_top = 20.0
+offset_right = 680.0
+offset_bottom = 148.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 0
+focus_mode = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_6cxqo")
+theme_override_styles/hover = SubResource("StyleBoxFlat_00oaa")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_fvw5r")
+text = "algae"
+
+[node name="Sand Duck" type="Button" parent="VBoxContainer/MarginContainer/VBoxContainer/ElementSelector/Life/HBoxContainer"]
+custom_minimum_size = Vector2i(128, 128)
+layout_mode = 2
+offset_left = 552.0
+offset_top = 20.0
+offset_right = 680.0
+offset_bottom = 148.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 0
+focus_mode = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_6cxqo")
+theme_override_styles/hover = SubResource("StyleBoxFlat_00oaa")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_fvw5r")
+text = "sand duck"
+
+[node name="Chemical" type="ScrollContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/ElementSelector"]
+visible = false
+layout_mode = 2
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 31.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_cm7pv")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/ElementSelector/Chemical"]
+layout_mode = 2
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 884.0
+offset_bottom = 153.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Lead Azide" type="Button" parent="VBoxContainer/MarginContainer/VBoxContainer/ElementSelector/Chemical/HBoxContainer"]
+custom_minimum_size = Vector2i(128, 128)
+layout_mode = 2
+offset_left = 552.0
+offset_top = 20.0
+offset_right = 680.0
+offset_bottom = 148.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 0
+focus_mode = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_tc47p")
+theme_override_styles/hover = SubResource("StyleBoxFlat_d7bg4")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_5dx7s")
+text = "lead azide"
 
 [node name="Label" type="Label" parent="."]
 offset_right = 750.0

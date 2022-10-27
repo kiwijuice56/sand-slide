@@ -9,7 +9,8 @@ class_name Main
 var sim: SandSimulation
 
 var element: int = 1
-var elements = ["Void", "Sand", "Rock", "Water"]
+var elements = ["Void", "Sand", "Rock", "Water", "Polliwog", "Fire", "Smoke", "Algae", "Sand Duck", 
+"Explosion", "Lead Azide"]
 
 func _ready() -> void:
 	canvas.resized.connect(_on_window_resized)
@@ -23,7 +24,7 @@ func _on_window_resized() -> void:
 	sim.resize(int(canvas.size.x / canvas.px_scale), int(canvas.size.y / canvas.px_scale))
 
 func _on_mouse_pressed(row: int, col: int, is_left: bool) -> void:
-	draw(row, col, element if is_left else 0, 9)
+	draw(row, col, element if is_left else 0, 6)
 
 func _on_element_selected(element_name: String) -> void:
 	element = elements.find(element_name)
@@ -33,7 +34,7 @@ func _process(delta) -> void:
 	canvas.repaint(sim)
 
 func draw(center_row: int, center_col: int, draw_element: int,radius: int) -> void:
-	for row in range(center_row - radius, center_row + radius):
-		for col in range(center_col - radius, center_col + radius):
-			if sim.in_bounds(row, col):
-				sim.set_cell(row, col, draw_element)
+	for row in range(-radius, radius + 1):
+		for col in range(-radius, radius + 1):
+			if row*row + col*col < radius*radius and sim.in_bounds(row + center_row, col + center_col):
+				sim.set_cell(row + center_row, col + center_col, draw_element)
