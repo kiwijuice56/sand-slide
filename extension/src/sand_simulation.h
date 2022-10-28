@@ -48,7 +48,10 @@ public:
     void move_and_swap(int row, int col, int row2, int col2);
     void grow(int row, int col, int food, int replacer);
     int touch_count(int row, int col, int type);
+    int cardinal_touch_count(int row, int col, int type);
     bool in_bounds(int row, int col);
+    bool is_poisoned(int row, int col);
+    bool is_on_fire(int row, int col);
 
     int get_cell(int row, int col);
     void set_cell(int row, int col, int type);

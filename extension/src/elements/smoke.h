@@ -23,6 +23,14 @@ public:
     double get_density() override {
         return 0.35;
     }
+
+    double get_explode_resistance() override {
+        return 0.1;
+    }
+
+    double get_acid_resistance() override {
+        return 0.1;
+    }
 };
 
 #endif // SMOKE_H

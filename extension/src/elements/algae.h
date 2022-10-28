@@ -11,14 +11,13 @@ public:
 
     void process(SandSimulation *sim, int row, int col) override {  
         // Catch on fire
-        if (sim->touch_count(row, col, 5) > 0 && randf() < FLAME) {
+        if (randf() < FLAME && sim->is_on_fire(row, col)) {
             sim->set_cell(row, col, 5);
             return;
         }
 
         // Grow into water
-        int water_cells = sim->touch_count(row, col, 3);
-        if (water_cells > 0 && randf() < GROWTH) {
+        if (randf() < GROWTH && sim->touch_count(row, col, 3) > 0) {
             sim->grow(row + (std::rand() % 2) - 1, col + std::rand() % 2 - 1, 3, 7);
         }
         else if (randf() < DEATH) {
@@ -30,6 +29,14 @@ public:
 
     double get_density() override {
         return 1.25;
+    }
+
+    double get_explode_resistance() override {
+        return 0.05;
+    }
+
+    double get_acid_resistance() override {
+        return 0.05;
     }
 };
 

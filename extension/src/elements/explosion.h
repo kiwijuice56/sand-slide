@@ -27,6 +27,14 @@ public:
     double get_density() override {
         return 32.0;
     }
+
+    double get_explode_resistance() override {
+        return 0.0;
+    }
+
+    double get_acid_resistance() override {
+        return 0.0;
+    }
 };
 
 #endif // EXPLOSION_H

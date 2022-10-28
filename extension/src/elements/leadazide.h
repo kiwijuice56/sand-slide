@@ -11,13 +11,21 @@ public:
 
     void process(SandSimulation *sim, int row, int col) override {
         // Explode
-        if (randf() < FLAME && (sim->touch_count(row, col, 5) > 0 || sim->touch_count(row, col, 9) > 0)) {
+        if (randf() < FLAME && sim->is_on_fire(row, col)) {
             sim->set_cell(row, col, 9);
         }
     }
 
     double get_density() override {
         return 16.0;
+    }
+
+    double get_explode_resistance() override {
+        return 0.0;
+    }
+
+    double get_acid_resistance() override {
+        return 0.65;
     }
 };
 

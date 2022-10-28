@@ -25,6 +25,18 @@ uniform vec4 seed_color_1: source_color = vec4(1.0);
 uniform vec4 seed_color_2: source_color = vec4(1.0);
 uniform vec4 dust_color_1: source_color = vec4(1.0);
 uniform vec4 dust_color_2: source_color = vec4(1.0);
+uniform vec4 steel_color_1: source_color = vec4(1.0);
+uniform vec4 steel_color_2: source_color = vec4(1.0);
+uniform vec4 wood_color_1: source_color = vec4(1.0);
+uniform vec4 acid_color_1: source_color = vec4(1.0);
+uniform vec4 acid_color_2: source_color = vec4(1.0);
+uniform vec4 acid_color_3: source_color = vec4(1.0);
+uniform vec4 acid_gas_color_1: source_color = vec4(1.0);
+uniform vec4 acid_gas_color_2: source_color = vec4(1.0);
+uniform vec4 fairy_color_1: source_color = vec4(1.0);
+uniform vec4 b_fire_color_1: source_color = vec4(1.0);
+uniform vec4 b_fire_color_2: source_color = vec4(1.0);
+uniform vec4 b_fire_color_3: source_color = vec4(1.0);
 
 float remainder(float x) {
 	if (abs(x) > 1.0) 
@@ -142,5 +154,90 @@ void fragment() {
 			float x = match_amount(TEXTURE, UV, 16);
 			COLOR = dust_color_1 * x + dust_color_2 * (1.0 - x);
 			break;
+		case 17:
+			COLOR = UV.y * steel_color_2 + (1.0 - UV.y) * steel_color_1;
+			break;
+		case 18:
+			COLOR = wood_color_1;
+			break;
+		case 19:
+			vec2 ps = SCREEN_PIXEL_SIZE;
+			vec2 ratio = (ps.x > ps.y) ? vec2(ps.y / ps.x, 1) : vec2(1, ps.x / ps.y);
+			vec2 texCoord = vec2(2.0*UV.x + sin(TIME / 128.0), 2.0*UV.y + sin(TIME / 128.0));
+			
+			float x = texture(water_noise, ratio * texCoord).r * (UV.x + UV.y + sin(UV.x / 4.0) * 2.0 + sin(TIME / 2.0));
+			
+			float y = shift(cos(sin(3.0 * UV.x + TIME / 64.0) * 16.0 * UV.x + PI * x + UV.y * 8.0));
+			y = abs(y - 0.5);
+			
+			COLOR = water_color_1 * y + 1.35 * water_color_2 * (1.0 - y);
+			
+			float z = match_amount(TEXTURE, UV, id);
+			
+			vec2 texCoord2 = vec2(1.5 * UV.x + sin(TIME / 60.0), 1.5 * UV.y + sin(TIME / 60.0));
+			
+			COLOR = 1.8 * shift(cos(TIME / 32.0)) / 2.0 * texture(water_noise, ratio * texCoord2) + COLOR * z + water_color_3 * (1.0 - z);
+			break;
+		case 20:
+			vec2 ps = SCREEN_PIXEL_SIZE;
+			vec2 ratio = (ps.x > ps.y) ? vec2(ps.y / ps.x, 1) : vec2(1, ps.x / ps.y);
+			vec2 texCoord = vec2(2.0*UV.x + sin(TIME / 32.0), 2.0*UV.y + sin(TIME / 32.0));
+			
+			float x = texture(fire_noise, ratio * texCoord).r * (UV.x + UV.y + sin(UV.x / 4.0) * 2.0 + sin(TIME / 2.0));
+			float y = shift(cos(sin(3.0 * UV.x + TIME / 16.0) * 16.0 * UV.x + PI * x * 2.0 + UV.y * 8.0));
+			y = abs(y - 0.5);
+			
+			COLOR = fire_color_1 * y + fire_color_2 * (1.0 - y);
+			
+			float z = match_amount(TEXTURE, UV, id);
+			
+			vec2 texCoord2 = vec2(2.0 * UV.x + sin(TIME / 24.0), 2.0 * UV.y + sin(TIME / 24.0));
+			
+			COLOR = shift(cos(TIME / 4.0)) * texture(fire_noise, ratio * texCoord2) + COLOR * z + fire_color_3 * (1.0 - z);
+			break;
+		case 21:
+			vec2 ps = SCREEN_PIXEL_SIZE;
+			vec2 ratio = (ps.x > ps.y) ? vec2(ps.y / ps.x, 1) : vec2(1, ps.x / ps.y);
+			vec2 texCoord = vec2(2.0*UV.x + sin(TIME / 32.0), 2.0*UV.y + sin(TIME / 32.0));
+			
+			float x = texture(water_noise, ratio * texCoord).r * (UV.x + UV.y + sin(UV.x / 4.0) * 2.0 + sin(TIME / 2.0));
+			
+			float y = shift(cos(sin(3.0 * UV.x + TIME / 16.0) * 16.0 * UV.x + PI * x + UV.y * 8.0));
+			y = abs(y - 0.5);
+			
+			COLOR = acid_color_1 * y + acid_color_2 * (1.0 - y);
+			
+			float z = match_amount(TEXTURE, UV, id);
+			
+			vec2 texCoord2 = vec2(1.5 * UV.x + sin(TIME / 24.0), 1.5 * UV.y + sin(TIME / 24.0));
+			
+			COLOR = shift(cos(TIME / 4.0)) / 2.0 * texture(water_noise, ratio * texCoord2) + COLOR * z + acid_color_3 * (1.0 - z);
+			break;
+		case 22:
+			float y = match_amount(TEXTURE, UV, 6);
+			
+			COLOR = acid_gas_color_2 * y + acid_gas_color_1 * (1.0 - y);
+			break;
+		case 23:
+			COLOR = fairy_color_1;
+			break;
+		case 24:
+			vec2 ps = SCREEN_PIXEL_SIZE;
+			vec2 ratio = (ps.x > ps.y) ? vec2(ps.y / ps.x, 1) : vec2(1, ps.x / ps.y);
+			vec2 texCoord = vec2(2.0*UV.x + sin(TIME / 32.0), 2.0*UV.y + sin(TIME / 32.0));
+			
+			float x = texture(fire_noise, ratio * texCoord).r * (UV.x + UV.y + sin(UV.x / 4.0) * 2.0 + sin(TIME / 2.0));
+			float y = shift(cos(sin(3.0 * UV.x + TIME / 16.0) * 16.0 * UV.x + PI * x * 2.0 + UV.y * 8.0));
+			y = abs(y - 0.5);
+			
+			COLOR = b_fire_color_1 * y + b_fire_color_2 * (1.0 - y);
+			
+			float z = match_amount(TEXTURE, UV, id);
+			
+			vec2 texCoord2 = vec2(2.0 * UV.x + sin(TIME / 24.0), 2.0 * UV.y + sin(TIME / 24.0));
+			
+			COLOR = shift(cos(TIME / 4.0)) * texture(fire_noise, ratio * texCoord2) + COLOR * z + b_fire_color_3 * (1.0 - z);
+			break;
+		
 	}
 }

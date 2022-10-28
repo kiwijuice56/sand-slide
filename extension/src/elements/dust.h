@@ -9,7 +9,7 @@ public:
     const double FLAME = 1.0 / 64;
     const double PROCESS = 1.0 / 3;
     void process(SandSimulation *sim, int row, int col) override {
-        if (randf() < FLAME && sim->touch_count(row, col, 5) > 0) {
+        if (randf() < FLAME && sim->is_on_fire(row, col)) {
             sim->set_cell(row, col, 5);
             return;
         }
@@ -27,6 +27,14 @@ public:
 
     double get_density() override {
         return 0.5;
+    }
+
+    double get_explode_resistance() override {
+        return 0.05;
+    }
+
+    double get_acid_resistance() override {
+        return 0.05;
     }
 };
 

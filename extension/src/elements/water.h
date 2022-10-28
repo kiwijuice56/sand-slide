@@ -6,17 +6,18 @@
 
 class Water: public Element {
 public:
-    const double ABSORB = 1.0/ 4098;
+    const double ABSORB = 1.0 / 4098;
+    const double EVAPORATION = 1.0 / 32;
 
     void process(SandSimulation *sim, int row, int col) override {
         // Evaporation
-        if (sim->touch_count(row, col, 5)) {
+        if (randf() < EVAPORATION && sim->is_on_fire(row, col)) {
             sim->set_cell(row, col, 6);
             return;
         }
 
         // Absorption
-        if (sim->touch_count(row, col, 14) > 0 && randf() < ABSORB) {
+        if (randf() < ABSORB && sim->touch_count(row, col, 14) > 0) {
             sim->set_cell(row, col, 0);
             return;
         }
@@ -31,6 +32,14 @@ public:
 
     double get_density() override {
         return 1.0;
+    }
+
+    double get_explode_resistance() override {
+        return 0.8;
+    }
+
+    double get_acid_resistance() override {
+        return 0.9;
     }
 };
 

@@ -8,11 +8,9 @@ public:
     const double GROWTH = 0.008625;
 
     void process(SandSimulation *sim, int row, int col) override {
-        int sand_cells = sim->touch_count(row, col, 1);
-        if (sand_cells == 0) {
+        if (sim->touch_count(row, col, 1) == 0) {
             sim->set_cell(row, col, 0);
-        }
-        else if (sim->touch_count(row, col, 8) > 0) {
+        } else if (sim->touch_count(row, col, 8) > 0) {
             sim->set_cell(row, col, 1);
         } else if (randf() < GROWTH) {
             sim->grow(row + 1, col, 1, 8);
@@ -26,6 +24,14 @@ public:
 
     double get_density() override {
         return 2.25;
+    }
+
+    double get_explode_resistance() override {
+        return 0.05;
+    }
+
+    double get_acid_resistance() override {
+        return 0.05;
     }
 };
 

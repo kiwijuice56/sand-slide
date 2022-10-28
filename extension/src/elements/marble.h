@@ -12,7 +12,15 @@ public:
     }
 
     double get_density() override {
-        return 24.0;
+        return 20.0;
+    }
+
+    double get_explode_resistance() override {
+        return 0.55;
+    }
+
+    double get_acid_resistance() override {
+        return 0.95;
     }
 };
 

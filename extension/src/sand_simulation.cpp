@@ -17,6 +17,14 @@
 #include "elements/grass.h"
 #include "elements/marble.h"
 #include "elements/dust.h"
+#include "elements/steel.h"
+#include "elements/wood.h"
+#include "elements/ice.h"
+#include "elements/lava.h"
+#include "elements/acid.h"
+#include "elements/acidgas.h"
+#include "elements/fairy.h"
+#include "elements/bluefire.h"
 
 #include <godot_cpp/core/class_db.hpp>
 #include <random>
@@ -46,6 +54,14 @@ SandSimulation::SandSimulation() {
     Grass* grass = new Grass();
     Marble* marble = new Marble();
     Dust* dust = new Dust();
+    Steel* steel = new Steel();
+    Wood* wood = new Wood();
+    Ice* ice = new Ice();
+    Lava* lava = new Lava();
+    Acid* acid = new Acid();
+    AcidGas* acid_gas = new AcidGas();
+    Fairy* fairy = new Fairy();
+    BlueFire* blue_fire = new BlueFire();
 
     elements.at(0) = voidP;
     elements.at(1) = sand;
@@ -64,6 +80,14 @@ SandSimulation::SandSimulation() {
     elements.at(14) = grass;
     elements.at(15) = marble;
     elements.at(16) = dust;
+    elements.at(17) = steel;
+    elements.at(18) = wood;
+    elements.at(19) = ice;
+    elements.at(20) = lava;
+    elements.at(21) = acid;
+    elements.at(22) = acid_gas;
+    elements.at(23) = fairy;
+    elements.at(24) = blue_fire;
     
     draw_data = PackedByteArray();
 
@@ -126,8 +150,9 @@ void SandSimulation::grow(int row, int col, int food, int replacer) {
         return;
     }
     if (food == -1) {
-        float prob = elements.at(get_cell(row, col))->get_density() / 32.0;
-        if (prob > Element::randf()) {
+        // Since only explosions grow into all cells, we run a check for explosion resistance
+        // This should probably be inside the explosion element code, but this is more convenient
+        if (Element::randf() >= (1.0 - elements.at(get_cell(row, col))->get_explode_resistance())) {
             return;
         }
     } else {
@@ -155,8 +180,29 @@ int SandSimulation::touch_count(int row, int col, int type) {
     return touches;
 }
 
+int SandSimulation::cardinal_touch_count(int row, int col, int type) {
+    int touches = 0;
+    if (in_bounds(row - 1, col) && get_cell(row - 1, col) == type)
+        touches++;
+    if (in_bounds(row + 1, col) && get_cell(row + 1, col) == type)
+        touches++;
+    if (in_bounds(row, col - 1) && get_cell(row, col - 1) == type)
+        touches++;
+    if (in_bounds(row, col + 1) && get_cell(row, col + 1) == type)
+        touches++;
+    return touches;
+}
+
 bool SandSimulation::in_bounds(int row, int col) {
     return row >= 0 && col >= 0 && row < height && col < width;
+}
+
+bool SandSimulation::is_poisoned(int row, int col) {
+    return touch_count(row, col, 10) + touch_count(row, col, 21) + touch_count(row, col, 22) > 0;
+}
+
+bool SandSimulation::is_on_fire(int row, int col) {
+    return touch_count(row, col, 24) + touch_count(row, col, 5) > 0;
 }
 
 int SandSimulation::get_cell(int row, int col) {
@@ -234,6 +280,7 @@ void SandSimulation::_bind_methods() {
     ClassDB::bind_method(D_METHOD("move_and_swap"), &SandSimulation::move_and_swap);
     ClassDB::bind_method(D_METHOD("grow"), &SandSimulation::grow);
     ClassDB::bind_method(D_METHOD("touch_count"), &SandSimulation::touch_count);
+    ClassDB::bind_method(D_METHOD("cardinal_touch_count"), &SandSimulation::cardinal_touch_count);
     ClassDB::bind_method(D_METHOD("in_bounds"), &SandSimulation::in_bounds);
 
     ClassDB::bind_method(D_METHOD("get_cell"), &SandSimulation::get_cell);

@@ -8,8 +8,7 @@ public:
     const double GROWTH = 0.015625;
 
     void process(SandSimulation *sim, int row, int col) override {
-        int water_cells = sim->touch_count(row, col, 3);
-        if (water_cells == 0) {
+        if (sim->touch_count(row, col, 3) == 0) {
             sim->set_cell(row, col, 0);
         } else if (sim->touch_count(row, col, 4) > 0) {
             sim->set_cell(row, col, 3);
@@ -25,6 +24,14 @@ public:
 
     double get_density() override {
         return 1.25;
+    }
+
+    double get_explode_resistance() override {
+        return 0.05;
+    }
+
+    double get_acid_resistance() override {
+        return 0.05;
     }
 };
 

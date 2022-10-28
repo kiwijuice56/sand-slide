@@ -1,8 +1,9 @@
-[gd_scene load_steps=45 format=3 uid="uid://d4k23rltkwrjs"]
+[gd_scene load_steps=67 format=3 uid="uid://d4k23rltkwrjs"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_dk3di"]
 [ext_resource type="FontFile" uid="uid://b8lxwo5dkwrs4" path="res://ui/Poppins-Regular.ttf" id="2_0htxb"]
 [ext_resource type="Material" uid="uid://caqdur56ngyh5" path="res://canvas/element_painter.tres" id="2_58n8t"]
+[ext_resource type="Script" path="res://ui/help_label.gd" id="5_btrf5"]
 [ext_resource type="Script" path="res://canvas/canvas.gd" id="6_6p2y7"]
 [ext_resource type="Script" path="res://element_selector/element_selector.gd" id="7_g8bms"]
 [ext_resource type="Script" path="res://ui/fps_label.gd" id="9_ep7hk"]
@@ -10,6 +11,42 @@
 [sub_resource type="Theme" id="Theme_n7xkt"]
 default_font = ExtResource("2_0htxb")
 default_font_size = 24
+
+[sub_resource type="Animation" id="Animation_rtx4o"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HelpLabel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_vhiqr"]
+resource_name = "hide"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HelpLabel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8aucn"]
+_data = {
+"RESET": SubResource("Animation_rtx4o"),
+"hide": SubResource("Animation_vhiqr")
+}
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cm7pv"]
 content_margin_left = 8.0
@@ -123,8 +160,50 @@ corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g0e01"]
+bg_color = Color(0.631373, 0.368627, 0.12549, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ctj8m"]
+bg_color = Color(0.701961, 0.505882, 0.188235, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hgsbg"]
+bg_color = Color(0.588235, 0.266667, 0.0941176, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eqnvp"]
+bg_color = Color(0.796078, 0.796078, 0.796078, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5dmnr"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rvw6y"]
+bg_color = Color(0.682353, 0.682353, 0.729412, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cww4f"]
-bg_color = Color(0.792157, 0.792157, 0.792157, 1)
+bg_color = Color(0.643137, 0.643137, 0.643137, 1)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
@@ -249,6 +328,69 @@ corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_61msw"]
+bg_color = Color(1, 0.721569, 0.905882, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pxyux"]
+bg_color = Color(1, 0.85098, 0.921569, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q4tn0"]
+bg_color = Color(0.74902, 0.47451, 0.788235, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5vg7v"]
+bg_color = Color(0.14902, 0.556863, 0.929412, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j3hob"]
+bg_color = Color(0.2, 0.745098, 0.960784, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2xunh"]
+bg_color = Color(0.113725, 0.305882, 0.878431, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ml551"]
+bg_color = Color(0.647059, 0.94902, 0.92549, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7f7pq"]
+bg_color = Color(0.811765, 1, 0.941176, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rurje"]
+bg_color = Color(0.494118, 0.74902, 0.85098, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cmgkr"]
 bg_color = Color(0.607843, 0.607843, 0.607843, 1)
 corner_radius_top_left = 4
@@ -264,6 +406,27 @@ corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_78bka"]
+bg_color = Color(0.521569, 0.521569, 0.521569, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e8k14"]
+bg_color = Color(0.74902, 0.74902, 0.74902, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8kwuy"]
+bg_color = Color(0.690196, 0.690196, 0.690196, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2omdr"]
 bg_color = Color(0.521569, 0.521569, 0.521569, 1)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
@@ -297,6 +460,32 @@ offset_right = 900.0
 offset_bottom = 416.0
 size_flags_vertical = 3
 script = ExtResource("6_6p2y7")
+
+[node name="HelpLabel" type="Label" parent="VBoxContainer/Canvas" node_paths=PackedStringArray("canvas")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -450.0
+offset_top = -19.0
+offset_right = 450.0
+offset_bottom = 19.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.537255, 0.537255, 0.537255, 1)
+text = "Select an element and press to draw on the screen"
+horizontal_alignment = 1
+script = ExtResource("5_btrf5")
+canvas = NodePath("..")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="VBoxContainer/Canvas/HelpLabel"]
+root_node = NodePath("../..")
+playback_speed = 2.0
+libraries = {
+"": SubResource("AnimationLibrary_8aucn")
+}
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
 custom_minimum_size = Vector2i(0, 280)
@@ -362,7 +551,7 @@ offset_bottom = 64.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 min_value = 5000.0
-max_value = 200000.0
+max_value = 250000.0
 value = 150000.0
 
 [node name="Eraser" type="Button" parent="VBoxContainer/MarginContainer/VBoxContainer/HBoxContainer"]
@@ -500,6 +689,40 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_tcxuo")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_2sydf")
 text = "soil"
 
+[node name="Wood" type="Button" parent="VBoxContainer/MarginContainer/VBoxContainer/ElementSelector/Build/HBoxContainer"]
+custom_minimum_size = Vector2i(128, 128)
+layout_mode = 2
+offset_right = 128.0
+offset_bottom = 128.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 0
+focus_mode = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_g0e01")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ctj8m")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hgsbg")
+text = "wood"
+
+[node name="Steel" type="Button" parent="VBoxContainer/MarginContainer/VBoxContainer/ElementSelector/Build/HBoxContainer"]
+custom_minimum_size = Vector2i(128, 128)
+layout_mode = 2
+offset_right = 128.0
+offset_bottom = 128.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 0
+focus_mode = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_eqnvp")
+theme_override_styles/hover = SubResource("StyleBoxFlat_5dmnr")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_rvw6y")
+text = "steel"
+
 [node name="Marble" type="Button" parent="VBoxContainer/MarginContainer/VBoxContainer/ElementSelector/Build/HBoxContainer"]
 custom_minimum_size = Vector2i(128, 128)
 layout_mode = 2
@@ -615,7 +838,8 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_u5maq")
 theme_override_styles/hover = SubResource("StyleBoxFlat_666fg")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_qcn7j")
-text = "sand duck"
+text = "sand 
+duck"
 
 [node name="Seed" type="Button" parent="VBoxContainer/MarginContainer/VBoxContainer/ElementSelector/Life/HBoxContainer"]
 custom_minimum_size = Vector2i(128, 128)
@@ -639,6 +863,28 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_3k3lf")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_c0d0v")
 text = "seed"
 
+[node name="Fairy" type="Button" parent="VBoxContainer/MarginContainer/VBoxContainer/ElementSelector/Life/HBoxContainer"]
+custom_minimum_size = Vector2i(128, 128)
+layout_mode = 2
+offset_left = 552.0
+offset_top = 20.0
+offset_right = 680.0
+offset_bottom = 148.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 0
+focus_mode = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_61msw")
+theme_override_styles/hover = SubResource("StyleBoxFlat_pxyux")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_q4tn0")
+text = "fairy"
+
 [node name="Chemical" type="ScrollContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/ElementSelector"]
 visible = false
 layout_mode = 2
@@ -658,14 +904,66 @@ offset_right = 876.0
 offset_bottom = 141.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme_override_constants/separation = 8
+
+[node name="Ice" type="Button" parent="VBoxContainer/MarginContainer/VBoxContainer/ElementSelector/Chemical/HBoxContainer"]
+custom_minimum_size = Vector2i(128, 128)
+layout_mode = 2
+offset_left = 272.0
+offset_right = 400.0
+offset_bottom = 128.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 0
+focus_mode = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_5vg7v")
+theme_override_styles/hover = SubResource("StyleBoxFlat_j3hob")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2xunh")
+text = "ice"
+
+[node name="Blue Fire" type="Button" parent="VBoxContainer/MarginContainer/VBoxContainer/ElementSelector/Chemical/HBoxContainer"]
+custom_minimum_size = Vector2i(128, 128)
+layout_mode = 2
+offset_left = 272.0
+offset_right = 400.0
+offset_bottom = 128.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 0
+focus_mode = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_ml551")
+theme_override_styles/hover = SubResource("StyleBoxFlat_7f7pq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_rurje")
+text = "blue 
+fire"
+
+[node name="Lava" type="Button" parent="VBoxContainer/MarginContainer/VBoxContainer/ElementSelector/Chemical/HBoxContainer"]
+custom_minimum_size = Vector2i(128, 128)
+layout_mode = 2
+offset_left = 408.0
+offset_right = 536.0
+offset_bottom = 128.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 0
+focus_mode = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_8ntsk")
+theme_override_styles/hover = SubResource("StyleBoxFlat_cdwbg")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_bs4ox")
+text = "magma"
 
 [node name="Lead Azide" type="Button" parent="VBoxContainer/MarginContainer/VBoxContainer/ElementSelector/Chemical/HBoxContainer"]
 custom_minimum_size = Vector2i(128, 128)
 layout_mode = 2
-offset_left = 552.0
-offset_top = 20.0
-offset_right = 680.0
-offset_bottom = 148.0
+offset_right = 128.0
+offset_bottom = 128.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 0
@@ -679,7 +977,30 @@ theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_cmgkr")
 theme_override_styles/hover = SubResource("StyleBoxFlat_3xqsb")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_78bka")
-text = "lead azide"
+text = "lead 
+azide"
+
+[node name="Acid" type="Button" parent="VBoxContainer/MarginContainer/VBoxContainer/ElementSelector/Chemical/HBoxContainer"]
+custom_minimum_size = Vector2i(128, 128)
+layout_mode = 2
+offset_left = 136.0
+offset_right = 264.0
+offset_bottom = 128.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 0
+focus_mode = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_e8k14")
+theme_override_styles/hover = SubResource("StyleBoxFlat_8kwuy")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2omdr")
+text = "chloric 
+acid"
 
 [node name="Label" type="Label" parent="."]
 offset_right = 750.0

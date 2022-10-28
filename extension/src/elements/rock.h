@@ -18,6 +18,14 @@ public:
     double get_density() override {
         return 5.0;
     }
+
+    double get_explode_resistance() override {
+        return 0.8;
+    }
+
+    double get_acid_resistance() override {
+        return 0.45;
+    }
 };
 
 #endif // ROCK_H
