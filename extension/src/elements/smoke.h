@@ -5,8 +5,10 @@
 
 class Smoke: public Element {
 public:
+    const double DECAY = 1.0 / 160;
+
     void process(SandSimulation *sim, int row, int col) override {
-        if (std::rand() % 128 == 0) {
+        if (randf() < DECAY) {
             sim->set_cell(row, col, 0);
         }
 

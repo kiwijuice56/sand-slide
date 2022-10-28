@@ -5,17 +5,18 @@
 
 class Explosion: public Element {
 public:
-    const double PROCESS = 1.0 / 24;
-    const double GROW = 1.0 / 8;
-    const double DECAY = 1.0 / 16;
+    const double PROCESS = 1.0 / 8;
+    const double DECAY = 1.0 / 4.5;
 
     void process(SandSimulation *sim, int row, int col) override {
+        // Adding a limit slows the explosion down
         if (randf() > PROCESS) {
             return;
-        }
-        if (randf() < DECAY || sim->touch_count(row, col, 6) > 0) {
+        // We eliminate explosions that reach the end, as they tend to linger for a long time if not checked
+        } else if (randf() < DECAY || sim->touch_count(row, col, 6) > 1 ||
+            row == sim->get_height() - 1 || col == sim->get_width() - 1 || col == 0 || row == 0) {
             sim->set_cell(row, col, 6);
-        } else if (randf() < GROW) {
+        } else {
             sim->grow(row + 1, col, -1, 9);
             sim->grow(row - 1, col, -1, 9);
             sim->grow(row, col + 1, -1, 9);

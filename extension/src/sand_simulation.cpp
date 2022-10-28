@@ -11,6 +11,10 @@
 #include "elements/sandduck.h"
 #include "elements/explosion.h"
 #include "elements/leadazide.h"
+#include "elements/soil.h"
+#include "elements/seed.h"
+#include "elements/germinatedseed.h"
+#include "elements/grass.h"
 
 #include <godot_cpp/core/class_db.hpp>
 #include <random>
@@ -18,6 +22,10 @@
 using namespace godot;
 
 SandSimulation::SandSimulation() {
+    // Each element has a single object instance so that the program
+    // can use polymorphism rather than explicity stating which method
+    // is called for each element type
+
     elements.resize(32);
     Void* voidP = new Void();
     Sand* sand = new Sand();
@@ -30,6 +38,10 @@ SandSimulation::SandSimulation() {
     SandDuck* sand_duck = new SandDuck();
     Explosion* explosion = new Explosion();
     LeadAzide* lead_azide = new LeadAzide();
+    Soil* soil = new Soil();
+    Seed* seed = new Seed();
+    GerminatedSeed* germinated_seed = new GerminatedSeed();
+    Grass* grass = new Grass();
 
     elements.at(0) = voidP;
     elements.at(1) = sand;
@@ -42,6 +54,10 @@ SandSimulation::SandSimulation() {
     elements.at(8) = sand_duck;
     elements.at(9) = explosion;
     elements.at(10) = lead_azide;
+    elements.at(11) = soil;
+    elements.at(12) = seed;
+    elements.at(13) = germinated_seed;
+    elements.at(14) = grass;
     
     draw_data = PackedByteArray();
 
@@ -53,11 +69,13 @@ SandSimulation::SandSimulation() {
 
 SandSimulation::~SandSimulation() {}
 
+// Run the simulation `iterations` times
 void SandSimulation::step(int iterations) {
     std::random_device dev;
     std::mt19937 rng(dev());
     std::uniform_int_distribution<std::mt19937::result_type> randCell(0, chunk_size - 1);
 
+    // Keep track of which chunks are active to iterate over
     std::vector<int> active_chunks;
     for (int chunk = 0; chunk < chunks.size(); chunk++) {
         if (chunks.at(chunk) != 0) {
@@ -80,6 +98,7 @@ void SandSimulation::step(int iterations) {
     
 }
 
+// Swap the elements at the two cells if the first cell has a higher density
 void SandSimulation::move_and_swap(int row, int col, int row2, int col2) {
     if (!in_bounds(row, col) || !in_bounds(row2, col2)) {
         return;
@@ -94,12 +113,14 @@ void SandSimulation::move_and_swap(int row, int col, int row2, int col2) {
     set_cell(row2, col2, old);
 }
 
+// Move the `replacer` element into the given cell if it is of type `food`
+// A `food` value of -1 is equivalent to all elements
 void SandSimulation::grow(int row, int col, int food, int replacer) {
     if (!in_bounds(row, col)) {
         return;
     }
     if (food == -1) {
-        // add exceptions to explosions here
+        // Add exceptions for unexplodable elements here
     } else {
         if (get_cell(row, col) != food) {
             return;
@@ -109,6 +130,7 @@ void SandSimulation::grow(int row, int col, int food, int replacer) {
     set_cell(row, col, replacer);
 }
 
+// Returns the amount of cells of `type` surrounding the given cell
 int SandSimulation::touch_count(int row, int col, int type) {
     int touches = 0;
     for (int y = -1; y <= 1; y++) {
@@ -142,6 +164,24 @@ void SandSimulation::set_cell(int row, int col, int type) {
     draw_data.set(row * width + col, type);
 }
 
+
+int SandSimulation::get_chunk(int c) {
+    return chunks.at(c);
+}
+
+
+PackedByteArray SandSimulation::get_draw_data() {
+    return draw_data;
+}
+
+int SandSimulation::get_width() {
+    return width;
+}
+
+int SandSimulation::get_height() {
+    return height;
+}
+
 void SandSimulation::resize(int new_width, int new_height) {
     std::vector<int> temp(cells);
     
@@ -157,6 +197,7 @@ void SandSimulation::resize(int new_width, int new_height) {
     draw_data.resize(new_width * new_height);
     draw_data.fill(0);
 
+    // Data has to be copied cell-by-cell since the dimensions of the vectors changed
     for (int row = 0; row < std::min(new_height, height); row++) {
         for (int col = 0; col < std::min(new_width, width); col++) {
             cells.at(row * new_width + col) = temp.at(row * width + col);
@@ -171,32 +212,30 @@ void SandSimulation::resize(int new_width, int new_height) {
     height = new_height;   
 }
 
-int SandSimulation::get_chunk(int c) {
-    return chunks.at(c);
-}
-
-int SandSimulation::get_width() {
-    return width;
-}
-
-int SandSimulation::get_height() {
-    return height;
-}
-
-PackedByteArray SandSimulation::get_draw_data() {
-    return draw_data;
+// Handle created instances on program close
+void SandSimulation::clean_up() {
+    for (auto e : elements) {
+        delete e;
+    }
 }
 
 void SandSimulation::_bind_methods() {
-    ClassDB::bind_method(D_METHOD("in_bounds"), &SandSimulation::in_bounds);
+    ClassDB::bind_method(D_METHOD("step"), &SandSimulation::step);
+
     ClassDB::bind_method(D_METHOD("move_and_swap"), &SandSimulation::move_and_swap);
     ClassDB::bind_method(D_METHOD("grow"), &SandSimulation::grow);
-    ClassDB::bind_method(D_METHOD("step"), &SandSimulation::step);
+    ClassDB::bind_method(D_METHOD("touch_count"), &SandSimulation::touch_count);
+    ClassDB::bind_method(D_METHOD("in_bounds"), &SandSimulation::in_bounds);
+
     ClassDB::bind_method(D_METHOD("get_cell"), &SandSimulation::get_cell);
     ClassDB::bind_method(D_METHOD("set_cell"), &SandSimulation::set_cell);
+    ClassDB::bind_method(D_METHOD("get_chunk"), &SandSimulation::get_chunk);
+
+    ClassDB::bind_method(D_METHOD("get_draw_data"), &SandSimulation::get_draw_data);
+
     ClassDB::bind_method(D_METHOD("get_width"), &SandSimulation::get_width);
     ClassDB::bind_method(D_METHOD("get_height"), &SandSimulation::get_height);
     ClassDB::bind_method(D_METHOD("resize"), &SandSimulation::resize);
-    ClassDB::bind_method(D_METHOD("get_chunk"), &SandSimulation::get_chunk);
-    ClassDB::bind_method(D_METHOD("get_draw_data"), &SandSimulation::get_draw_data);
+    
+    ClassDB::bind_method(D_METHOD("clean_up"), &SandSimulation::clean_up);
 }

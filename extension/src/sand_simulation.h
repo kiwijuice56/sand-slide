@@ -19,7 +19,7 @@ class SandSimulation : public RefCounted {
     // Dimension of each chunk
     int chunk_size = 16;
 
-    // Screen dimensions in chunks (autmatically set when resized)
+    // Screen dimensions in chunks (automatically set when resized)
     int chunk_width = 4;
     int chunk_height = 4;
 
@@ -44,22 +44,23 @@ public:
 
     void step(int iterations);
 
-    // Element methods
+    // Helper methods for elements
     void move_and_swap(int row, int col, int row2, int col2);
     void grow(int row, int col, int food, int replacer);
     int touch_count(int row, int col, int type);
     bool in_bounds(int row, int col);
 
-    // Setters and getters
-    void set_cell(int row, int col, int type);
     int get_cell(int row, int col);
-
+    void set_cell(int row, int col, int type);
     int get_chunk(int c);
+
     PackedByteArray get_draw_data();
 
     int get_width();
     int get_height();
     void resize(int new_width, int new_height);
+
+    void clean_up();
 };
 
 #endif // SAND_SIMULATION_CLASS_H

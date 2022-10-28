@@ -46,6 +46,6 @@ config/icon="res://icon.png"
 [display]
 
 window/size/viewport_width=900
-window/size/viewport_height=800
+window/size/viewport_height=700
 window/vsync/vsync_mode=0
 window/stretch/aspect="ignore"

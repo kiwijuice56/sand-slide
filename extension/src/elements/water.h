@@ -6,10 +6,18 @@
 
 class Water: public Element {
 public:
+    const double ABSORB = 1.0/ 4098;
+
     void process(SandSimulation *sim, int row, int col) override {
         // Evaporation
         if (sim->touch_count(row, col, 5)) {
             sim->set_cell(row, col, 6);
+            return;
+        }
+
+        // Absorption
+        if (sim->touch_count(row, col, 14) > 0 && randf() < ABSORB) {
+            sim->set_cell(row, col, 0);
             return;
         }
 

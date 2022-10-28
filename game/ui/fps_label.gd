@@ -1,5 +1,6 @@
 extends Label
 class_name FpsLabel
+# Keeps track of FPS
 
 func _ready() -> void:
 	$Timer.timeout.connect(_on_update_timeout)

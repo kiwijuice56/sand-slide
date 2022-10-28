@@ -1,6 +1,6 @@
 shader_type canvas_item;
 
-uniform sampler2D water_noise: source_color, filter_nearest;
+uniform sampler2D water_noise: repeat_enable, source_color, filter_nearest;
 uniform sampler2D fire_noise: source_color, filter_nearest;
 uniform vec4 rock_color_1: source_color = vec4(1.0);
 uniform vec4 sand_color_1: source_color = vec4(1.0);
@@ -18,10 +18,13 @@ uniform vec4 sand_duck_color_1: source_color = vec4(1.0);
 uniform vec4 lead_azide_color_1: source_color = vec4(1.0);
 uniform vec4 explosion_color_1: source_color = vec4(1.0);
 uniform vec4 explosion_color_2: source_color = vec4(1.0);
+uniform vec4 soil_color: source_color = vec4(1.0);
+uniform vec4 grass_color_1: source_color = vec4(1.0);
+uniform vec4 seed_color_1: source_color = vec4(1.0);
+uniform vec4 seed_color_2: source_color = vec4(1.0);
 
 float remainder(float x) {
-	x = abs(x);
-	if (x > 1.0) 
+	if (abs(x) > 1.0) 
 		return x - floor(x);
 	return x;
 }
@@ -62,20 +65,20 @@ void fragment() {
 		case 3:
 			vec2 ps = SCREEN_PIXEL_SIZE;
 			vec2 ratio = (ps.x > ps.y) ? vec2(ps.y / ps.x, 1) : vec2(1, ps.x / ps.y);
-			vec2 texCoord = vec2(remainder(2.0*UV.x + sin(TIME / 32.0)), remainder(2.0*UV.y + sin(TIME / 32.0)));
+			vec2 texCoord = vec2(2.0*UV.x + sin(TIME / 32.0), 2.0*UV.y + sin(TIME / 32.0));
 			
 			float x = texture(water_noise, ratio * texCoord).r * (UV.x + UV.y + sin(UV.x / 4.0) * 2.0 + sin(TIME / 2.0));
 			
-			float y = shift(cos(sin(3.0 * UV.x + TIME / 16.0) * 16.0 * UV.x + PI * x * 2.0 + UV.y * 8.0));
+			float y = shift(cos(sin(3.0 * UV.x + TIME / 16.0) * 16.0 * UV.x + PI * x + UV.y * 8.0));
 			y = abs(y - 0.5);
 			
 			COLOR = water_color_1 * y + water_color_2 * (1.0 - y);
 			
 			float z = match_amount(TEXTURE, UV, id);
 			
-			vec2 texCoord2 = vec2(remainder(2.0 * UV.x + sin(TIME / 24.0)), remainder(2.0 * UV.y + sin(TIME / 24.0)));
+			vec2 texCoord2 = vec2(1.5 * UV.x + sin(TIME / 24.0), 1.5 * UV.y + sin(TIME / 24.0));
 			
-			COLOR = shift(cos(TIME / 4.0)) * texture(water_noise, ratio * texCoord2) + COLOR * z + water_color_3 * (1.0 - z);
+			COLOR = shift(cos(TIME / 4.0)) / 2.0 * texture(water_noise, ratio * texCoord2) + COLOR * z + water_color_3 * (1.0 - z);
 			break;
 		case 4:
 			COLOR = polliwog_color_1;
@@ -93,7 +96,7 @@ void fragment() {
 			
 			float z = match_amount(TEXTURE, UV, id);
 			
-			vec2 texCoord2 = vec2(remainder(2.0 * UV.x + sin(TIME / 24.0)), remainder(2.0 * UV.y + sin(TIME / 24.0)));
+			vec2 texCoord2 = vec2(2.0 * UV.x + sin(TIME / 24.0), 2.0 * UV.y + sin(TIME / 24.0));
 			
 			COLOR = shift(cos(TIME / 4.0)) * texture(fire_noise, ratio * texCoord2) + COLOR * z + fire_color_3 * (1.0 - z);
 			break;
@@ -114,6 +117,18 @@ void fragment() {
 			break;
 		case 10:
 			COLOR = lead_azide_color_1;
+			break;
+		case 11:
+			COLOR = soil_color;
+			break;
+		case 12:
+			COLOR = seed_color_1;
+			break;
+		case 13:
+			COLOR = seed_color_2;
+			break;
+		case 14:
+			COLOR = grass_color_1;
 			break;
 	}
 }

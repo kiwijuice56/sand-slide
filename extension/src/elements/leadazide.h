@@ -7,8 +7,11 @@ class SandSimulation;
 
 class LeadAzide: public Element {
 public:
+    const double FLAME = 0.15;
+
     void process(SandSimulation *sim, int row, int col) override {
-        if (sim->touch_count(row, col, 5) > 0 || sim->touch_count(row, col, 9) > 0) {
+        // Explode
+        if (randf() < FLAME && (sim->touch_count(row, col, 5) > 0 || sim->touch_count(row, col, 9) > 0)) {
             sim->set_cell(row, col, 9);
         }
     }
