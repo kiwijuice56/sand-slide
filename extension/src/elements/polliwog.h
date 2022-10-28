@@ -11,14 +11,15 @@ public:
         int water_cells = sim->touch_count(row, col, 3);
         if (water_cells == 0) {
             sim->set_cell(row, col, 0);
-        }
-        else if (sim->touch_count(row, col, 4) > 0) {
+        } else if (sim->touch_count(row, col, 4) > 0) {
             sim->set_cell(row, col, 3);
         } else if (randf() < GROWTH) {
             sim->grow(row + 1, col, 3, 4);
             sim->grow(row - 1, col, 3, 4);
             sim->grow(row, col - 1, 3, 4);
             sim->grow(row, col + 1, 3, 4);
+        } else if (sim->touch_count(row, col, 10)) {
+            sim->set_cell(row, col, 16);
         }
     }
 

@@ -16,6 +16,7 @@
 #include "elements/germinatedseed.h"
 #include "elements/grass.h"
 #include "elements/marble.h"
+#include "elements/dust.h"
 
 #include <godot_cpp/core/class_db.hpp>
 #include <random>
@@ -44,6 +45,7 @@ SandSimulation::SandSimulation() {
     GerminatedSeed* germinated_seed = new GerminatedSeed();
     Grass* grass = new Grass();
     Marble* marble = new Marble();
+    Dust* dust = new Dust();
 
     elements.at(0) = voidP;
     elements.at(1) = sand;
@@ -61,6 +63,7 @@ SandSimulation::SandSimulation() {
     elements.at(13) = germinated_seed;
     elements.at(14) = grass;
     elements.at(15) = marble;
+    elements.at(16) = dust;
     
     draw_data = PackedByteArray();
 

@@ -19,6 +19,8 @@ public:
             sim->grow(row - 1, col, 1, 8);
             sim->grow(row, col - 1, 1, 8);
             sim->grow(row, col + 1, 1, 8);
+        } else if (sim->touch_count(row, col, 10)) {
+            sim->set_cell(row, col, 16);
         }
     }
 

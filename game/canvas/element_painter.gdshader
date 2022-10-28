@@ -1,7 +1,7 @@
 shader_type canvas_item;
 
 uniform sampler2D water_noise: repeat_enable, source_color, filter_nearest;
-uniform sampler2D fire_noise: source_color, filter_nearest;
+uniform sampler2D fire_noise: repeat_enable, source_color, filter_nearest;
 uniform sampler2D marble_texture: repeat_enable, source_color, filter_nearest;
 uniform vec4 rock_color_1: source_color = vec4(1.0);
 uniform vec4 sand_color_1: source_color = vec4(1.0);
@@ -23,6 +23,8 @@ uniform vec4 soil_color: source_color = vec4(1.0);
 uniform vec4 grass_color_1: source_color = vec4(1.0);
 uniform vec4 seed_color_1: source_color = vec4(1.0);
 uniform vec4 seed_color_2: source_color = vec4(1.0);
+uniform vec4 dust_color_1: source_color = vec4(1.0);
+uniform vec4 dust_color_2: source_color = vec4(1.0);
 
 float remainder(float x) {
 	if (abs(x) > 1.0) 
@@ -87,7 +89,7 @@ void fragment() {
 		case 5:
 			vec2 ps = SCREEN_PIXEL_SIZE;
 			vec2 ratio = (ps.x > ps.y) ? vec2(ps.y / ps.x, 1) : vec2(1, ps.x / ps.y);
-			vec2 texCoord = vec2(remainder(2.0*UV.x + sin(TIME / 32.0)), remainder(2.0*UV.y + sin(TIME / 32.0)));
+			vec2 texCoord = vec2(2.0*UV.x + sin(TIME / 32.0), 2.0*UV.y + sin(TIME / 32.0));
 			
 			float x = texture(fire_noise, ratio * texCoord).r * (UV.x + UV.y + sin(UV.x / 4.0) * 2.0 + sin(TIME / 2.0));
 			float y = shift(cos(sin(3.0 * UV.x + TIME / 16.0) * 16.0 * UV.x + PI * x * 2.0 + UV.y * 8.0));
@@ -135,6 +137,10 @@ void fragment() {
 			vec2 ps = SCREEN_PIXEL_SIZE;
 			vec2 ratio = (ps.x > ps.y) ? vec2(ps.y / ps.x, 1) : vec2(1, ps.x / ps.y);
 			COLOR = texture(marble_texture, UV * ratio);
+			break;
+		case 16:
+			float x = match_amount(TEXTURE, UV, 16);
+			COLOR = dust_color_1 * x + dust_color_2 * (1.0 - x);
 			break;
 	}
 }

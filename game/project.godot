@@ -41,6 +41,7 @@ _global_script_class_icons={
 config/name="FallingSand2"
 run/main_scene="res://Main.tscn"
 config/features=PackedStringArray("4.0")
+run/max_fps=60
 config/icon="res://icon.png"
 
 [display]

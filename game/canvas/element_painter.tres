@@ -1,4 +1,4 @@
-[gd_resource type="ShaderMaterial" load_steps=5 format=3]
+[gd_resource type="ShaderMaterial" load_steps=5 format=3 uid="uid://caqdur56ngyh5"]
 
 [ext_resource type="Shader" path="res://canvas/element_painter.gdshader" id="1_2v6tn"]
 [ext_resource type="Texture2D" uid="uid://cfx44bcne3145" path="res://canvas/textures/fire_noise.jpg" id="2_nfg6x"]
@@ -8,6 +8,8 @@
 [resource]
 shader = ExtResource("1_2v6tn")
 shader_parameter/algae_color_1 = Color(0.0235294, 0.45098, 0.101961, 1)
+shader_parameter/dust_color_1 = Color(0.309804, 0.25098, 0.290196, 1)
+shader_parameter/dust_color_2 = Color(0.435294, 0.435294, 0.435294, 1)
 shader_parameter/explosion_color_1 = Color(1, 0.917647, 0.819608, 1)
 shader_parameter/explosion_color_2 = Color(1, 0.415686, 0, 1)
 shader_parameter/fire_color_1 = Color(1, 0.294118, 0.168627, 1)

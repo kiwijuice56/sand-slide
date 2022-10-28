@@ -6,12 +6,13 @@ class_name Main
 const ELEMENT_INDEX = [
 	"Void", "Sand", "Rock", "Water", "Polliwog", "Fire", 
 	"Smoke", "Algae", "Sand Duck", "Explosion", "Lead Azide",
-	"Soil", "Seed", "Germinated Seed", "Grass", "Marble"]
+	"Soil", "Seed", "Germinated Seed", "Grass", "Marble", "Dust"]
 
 @export var canvas: TextureRect
 @export var element_selector: TabContainer
 @export var eraser_button: Button
 @export var size_slider: HSlider
+@export var speed_slider: HSlider
 @export var simulation_speed: int = 100000
 
 var sim: SandSimulation
@@ -23,6 +24,7 @@ func _ready() -> void:
 	canvas.mouse_pressed.connect(_on_mouse_pressed)
 	element_selector.element_selected.connect(_on_element_selected)
 	size_slider.value_changed.connect(_on_size_changed)
+	speed_slider.value_changed.connect(_on_speed_changed)
 	eraser_button.pressed.connect(_on_eraser_selected)
 	
 	sim = SandSimulation.new()
@@ -39,6 +41,9 @@ func _on_element_selected(element_name: String) -> void:
 
 func _on_size_changed(new_brush_size: int) -> void:
 	brush_size = new_brush_size
+
+func _on_speed_changed(new_speed: int) -> void:
+	simulation_speed = new_speed
 
 func _on_eraser_selected() -> void:
 	selected_element = 0
@@ -63,4 +68,8 @@ func draw(center_row: int, center_col: int, draw_element: int, radius: int) -> v
 	for row in range(-radius, radius + 1):
 		for col in range(-radius, radius + 1):
 			if row*row + col*col < radius*radius and sim.in_bounds(row + center_row, col + center_col):
+				# Check if cell is empty when drawing water or fire
+				var at_cell: int = sim.get_cell(row + center_row, col + center_col)
+				if (draw_element == 3 or draw_element == 5) and at_cell != 0:
+					continue
 				sim.set_cell(row + center_row, col + center_col, draw_element)
