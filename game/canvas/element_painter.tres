@@ -1,8 +1,9 @@
-[gd_resource type="ShaderMaterial" load_steps=4 format=3 uid="uid://d1lyjokwnk0pj"]
+[gd_resource type="ShaderMaterial" load_steps=5 format=3]
 
 [ext_resource type="Shader" path="res://canvas/element_painter.gdshader" id="1_2v6tn"]
-[ext_resource type="Texture2D" uid="uid://cfx44bcne3145" path="res://canvas/noise_textures/fire_noise.jpg" id="2_rsnf6"]
-[ext_resource type="Texture2D" uid="uid://dv72a2xnad210" path="res://canvas/noise_textures/water_noise5.jpg" id="3_6gbl5"]
+[ext_resource type="Texture2D" uid="uid://cfx44bcne3145" path="res://canvas/textures/fire_noise.jpg" id="2_nfg6x"]
+[ext_resource type="Texture2D" uid="uid://411hddjsr572" path="res://canvas/textures/marble.jpg" id="3_7fen1"]
+[ext_resource type="Texture2D" uid="uid://dv72a2xnad210" path="res://canvas/textures/water_noise.jpg" id="4_st85m"]
 
 [resource]
 shader = ExtResource("1_2v6tn")
@@ -12,9 +13,10 @@ shader_parameter/explosion_color_2 = Color(1, 0.415686, 0, 1)
 shader_parameter/fire_color_1 = Color(1, 0.294118, 0.168627, 1)
 shader_parameter/fire_color_2 = Color(1, 0.835294, 0, 1)
 shader_parameter/fire_color_3 = Color(0.615686, 0, 0.294118, 1)
-shader_parameter/fire_noise = ExtResource("2_rsnf6")
+shader_parameter/fire_noise = ExtResource("2_nfg6x")
 shader_parameter/grass_color_1 = Color(0.152941, 0.529412, 0.00784314, 1)
 shader_parameter/lead_azide_color_1 = Color(0.607843, 0.607843, 0.607843, 1)
+shader_parameter/marble_texture = ExtResource("3_7fen1")
 shader_parameter/polliwog_color_1 = Color(0.419608, 0.941176, 1, 1)
 shader_parameter/rock_color_1 = Color(0.278431, 0.109804, 0.109804, 1)
 shader_parameter/sand_color_1 = Color(0.980392, 0.47451, 0.137255, 1)
@@ -27,4 +29,4 @@ shader_parameter/soil_color = Color(0.501961, 0.156863, 0.121569, 1)
 shader_parameter/water_color_1 = Color(0.145098, 0.231373, 0.980392, 1)
 shader_parameter/water_color_2 = Color(0.14902, 0.447059, 0.929412, 1)
 shader_parameter/water_color_3 = Color(0.105882, 0.00784314, 0.537255, 1)
-shader_parameter/water_noise = ExtResource("3_6gbl5")
+shader_parameter/water_noise = ExtResource("4_st85m")

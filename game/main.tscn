@@ -1,8 +1,8 @@
-[gd_scene load_steps=39 format=3 uid="uid://d4k23rltkwrjs"]
+[gd_scene load_steps=42 format=3 uid="uid://d4k23rltkwrjs"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_dk3di"]
 [ext_resource type="FontFile" uid="uid://b8lxwo5dkwrs4" path="res://ui/Poppins-Regular.ttf" id="2_0htxb"]
-[ext_resource type="Material" uid="uid://d1lyjokwnk0pj" path="res://canvas/element_painter.tres" id="2_58n8t"]
+[ext_resource type="Material" uid="uid://o82dgukcw0ky" path="res://canvas/element_painter.tres" id="2_58n8t"]
 [ext_resource type="Script" path="res://canvas/canvas.gd" id="6_6p2y7"]
 [ext_resource type="Script" path="res://element_selector/element_selector.gd" id="7_g8bms"]
 [ext_resource type="Script" path="res://ui/fps_label.gd" id="9_ep7hk"]
@@ -118,6 +118,27 @@ corner_radius_bottom_left = 4
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2sydf"]
 bg_color = Color(0.470588, 0.0941176, 0.0941176, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cww4f"]
+bg_color = Color(0.792157, 0.792157, 0.792157, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fjx04"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vv1to"]
+bg_color = Color(0.588235, 0.588235, 0.588235, 1)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
@@ -442,6 +463,27 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_8bfmg")
 theme_override_styles/hover = SubResource("StyleBoxFlat_tcxuo")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_2sydf")
 text = "soil"
+
+[node name="Marble" type="Button" parent="VBoxContainer/MarginContainer/VBoxContainer/ElementSelector/Build/HBoxContainer"]
+custom_minimum_size = Vector2i(128, 128)
+layout_mode = 2
+offset_right = 128.0
+offset_bottom = 128.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 0
+focus_mode = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_cww4f")
+theme_override_styles/hover = SubResource("StyleBoxFlat_fjx04")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_vv1to")
+text = "marble"
 
 [node name="Life" type="ScrollContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/ElementSelector"]
 visible = false

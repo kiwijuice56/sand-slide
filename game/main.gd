@@ -6,7 +6,7 @@ class_name Main
 const ELEMENT_INDEX = [
 	"Void", "Sand", "Rock", "Water", "Polliwog", "Fire", 
 	"Smoke", "Algae", "Sand Duck", "Explosion", "Lead Azide",
-	"Soil", "Seed", "Germinated Seed", "Grass"]
+	"Soil", "Seed", "Germinated Seed", "Grass", "Marble"]
 
 @export var canvas: TextureRect
 @export var element_selector: TabContainer
@@ -44,7 +44,8 @@ func _on_eraser_selected() -> void:
 	selected_element = 0
 
 func _notification(what):
-	if what == MainLoop.NOTIFICATION_WM_QUIT_REQUEST or what == MainLoop.NOTIFICATION_WM_GO_BACK_REQUEST:
+	if what == Window.NOTIFICATION_WM_CLOSE_REQUEST or what == Window.NOTIFICATION_WM_GO_BACK_REQUEST:
+		set_process(false)
 		sim.clean_up()
 		get_tree().quit()
 

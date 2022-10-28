@@ -15,6 +15,7 @@
 #include "elements/seed.h"
 #include "elements/germinatedseed.h"
 #include "elements/grass.h"
+#include "elements/marble.h"
 
 #include <godot_cpp/core/class_db.hpp>
 #include <random>
@@ -42,6 +43,7 @@ SandSimulation::SandSimulation() {
     Seed* seed = new Seed();
     GerminatedSeed* germinated_seed = new GerminatedSeed();
     Grass* grass = new Grass();
+    Marble* marble = new Marble();
 
     elements.at(0) = voidP;
     elements.at(1) = sand;
@@ -58,6 +60,7 @@ SandSimulation::SandSimulation() {
     elements.at(12) = seed;
     elements.at(13) = germinated_seed;
     elements.at(14) = grass;
+    elements.at(15) = marble;
     
     draw_data = PackedByteArray();
 
@@ -120,7 +123,10 @@ void SandSimulation::grow(int row, int col, int food, int replacer) {
         return;
     }
     if (food == -1) {
-        // Add exceptions for unexplodable elements here
+        float prob = elements.at(get_cell(row, col))->get_density() / 32.0;
+        if (prob > Element::randf()) {
+            return;
+        }
     } else {
         if (get_cell(row, col) != food) {
             return;

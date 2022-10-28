@@ -2,6 +2,7 @@ shader_type canvas_item;
 
 uniform sampler2D water_noise: repeat_enable, source_color, filter_nearest;
 uniform sampler2D fire_noise: source_color, filter_nearest;
+uniform sampler2D marble_texture: repeat_enable, source_color, filter_nearest;
 uniform vec4 rock_color_1: source_color = vec4(1.0);
 uniform vec4 sand_color_1: source_color = vec4(1.0);
 uniform vec4 water_color_1: source_color = vec4(1.0);
@@ -129,6 +130,11 @@ void fragment() {
 			break;
 		case 14:
 			COLOR = grass_color_1;
+			break;
+		case 15:
+			vec2 ps = SCREEN_PIXEL_SIZE;
+			vec2 ratio = (ps.x > ps.y) ? vec2(ps.y / ps.x, 1) : vec2(1, ps.x / ps.y);
+			COLOR = texture(marble_texture, UV * ratio);
 			break;
 	}
 }
