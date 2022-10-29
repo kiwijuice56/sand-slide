@@ -25,6 +25,14 @@
 #include "elements/acidgas.h"
 #include "elements/fairy.h"
 #include "elements/bluefire.h"
+#include "elements/glass.h"
+#include "elements/laser.h"
+#include "elements/crystal.h"
+#include "elements/air.h"
+#include "elements/blackhole.h"
+#include "elements/oil.h"
+#include "elements/urchin.h"
+#include "elements/dragon.h"
 
 #include <godot_cpp/core/class_db.hpp>
 #include <random>
@@ -36,7 +44,7 @@ SandSimulation::SandSimulation() {
     // can use polymorphism rather than explicity stating which method
     // is called for each element type
 
-    elements.resize(32);
+    elements.resize(64);
     Void* voidP = new Void();
     Sand* sand = new Sand();
     Rock* rock = new Rock();
@@ -62,6 +70,14 @@ SandSimulation::SandSimulation() {
     AcidGas* acid_gas = new AcidGas();
     Fairy* fairy = new Fairy();
     BlueFire* blue_fire = new BlueFire();
+    Glass* glass = new Glass();
+    Laser* laser = new Laser();
+    Crystal* crystal = new Crystal();
+    Air* air = new Air();
+    BlackHole* black_hole = new BlackHole();
+    Oil* oil = new Oil();
+    Urchin* urchin = new Urchin();
+    Dragon* dragon = new Dragon();
 
     elements.at(0) = voidP;
     elements.at(1) = sand;
@@ -88,6 +104,14 @@ SandSimulation::SandSimulation() {
     elements.at(22) = acid_gas;
     elements.at(23) = fairy;
     elements.at(24) = blue_fire;
+    elements.at(25) = glass;
+    elements.at(26) = laser;
+    elements.at(27) = crystal;
+    elements.at(28) = air;
+    elements.at(29) = black_hole;
+    elements.at(30) = oil;
+    elements.at(31) = urchin;
+    elements.at(32) = dragon;
     
     draw_data = PackedByteArray();
 
@@ -202,7 +226,7 @@ bool SandSimulation::is_poisoned(int row, int col) {
 }
 
 bool SandSimulation::is_on_fire(int row, int col) {
-    return touch_count(row, col, 24) + touch_count(row, col, 5) > 0;
+    return touch_count(row, col, 24) + touch_count(row, col, 5)  + touch_count(row, col, 26) > 0;
 }
 
 int SandSimulation::get_cell(int row, int col) {

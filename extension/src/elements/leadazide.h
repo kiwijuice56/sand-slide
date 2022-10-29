@@ -7,7 +7,7 @@ class SandSimulation;
 
 class LeadAzide: public Element {
 public:
-    const double FLAME = 0.15;
+    const double FLAME = 0.05;
 
     void process(SandSimulation *sim, int row, int col) override {
         // Explode

@@ -1,4 +1,4 @@
-[gd_scene load_steps=67 format=3 uid="uid://d4k23rltkwrjs"]
+[gd_scene load_steps=91 format=3 uid="uid://d4k23rltkwrjs"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_dk3di"]
 [ext_resource type="FontFile" uid="uid://b8lxwo5dkwrs4" path="res://ui/Poppins-Regular.ttf" id="2_0htxb"]
@@ -139,6 +139,27 @@ corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qss3a"]
+bg_color = Color(0.376471, 0.682353, 0.65098, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6hhhi"]
+bg_color = Color(0.494118, 0.760784, 0.662745, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dcp2l"]
+bg_color = Color(0.298039, 0.556863, 0.619608, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8bfmg"]
 bg_color = Color(0.501961, 0.156863, 0.121569, 1)
 corner_radius_top_left = 4
@@ -160,6 +181,27 @@ corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6q3l8"]
+bg_color = Color(0.321569, 0.321569, 0.321569, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_klcww"]
+bg_color = Color(0.494118, 0.494118, 0.494118, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fwrmq"]
+bg_color = Color(0.247059, 0.247059, 0.247059, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g0e01"]
 bg_color = Color(0.631373, 0.368627, 0.12549, 1)
 corner_radius_top_left = 4
@@ -176,6 +218,27 @@ corner_radius_bottom_left = 4
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hgsbg"]
 bg_color = Color(0.588235, 0.266667, 0.0941176, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s5fxl"]
+bg_color = Color(0.686275, 0.556863, 0.772549, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rg3j8"]
+bg_color = Color(0.807843, 0.639216, 0.831373, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2po0a"]
+bg_color = Color(0.537255, 0.454902, 0.701961, 1)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
@@ -286,6 +349,27 @@ corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oitsm"]
+bg_color = Color(0.301961, 0.101961, 0.309804, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kn2ji"]
+bg_color = Color(0.360784, 0.137255, 0.337255, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cgna5"]
+bg_color = Color(0.231373, 0.0745098, 0.290196, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u5maq"]
 bg_color = Color(0.988235, 0.737255, 0.384314, 1)
 corner_radius_top_left = 4
@@ -349,6 +433,27 @@ corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aux0l"]
+bg_color = Color(0.811765, 0.890196, 0.4, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xaxu6"]
+bg_color = Color(0.921569, 0.882353, 0.486275, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sxore"]
+bg_color = Color(0.666667, 0.858824, 0.352941, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5vg7v"]
 bg_color = Color(0.14902, 0.556863, 0.929412, 1)
 corner_radius_top_left = 4
@@ -365,6 +470,27 @@ corner_radius_bottom_left = 4
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2xunh"]
 bg_color = Color(0.113725, 0.305882, 0.878431, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q8fr1"]
+bg_color = Color(0.117647, 0.105882, 0.133333, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yes4h"]
+bg_color = Color(0.180392, 0.180392, 0.180392, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gxiyd"]
+bg_color = Color(0.0431373, 0.0431373, 0.0431373, 1)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
@@ -433,6 +559,48 @@ corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5u0yn"]
+bg_color = Color(1, 0.309804, 0.52549, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tim5j"]
+bg_color = Color(1, 0.521569, 0.568627, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4pg2j"]
+bg_color = Color(0.85098, 0.211765, 0.670588, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dn34k"]
+bg_color = Color(0.0784314, 0.0784314, 0.0784314, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3h784"]
+bg_color = Color(0.180392, 0.180392, 0.180392, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jbbp0"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
 [node name="Main" type="Node" node_paths=PackedStringArray("canvas", "element_selector", "eraser_button", "size_slider", "speed_slider")]
 script = ExtResource("1_dk3di")
 canvas = NodePath("VBoxContainer/Canvas")
@@ -461,7 +629,7 @@ offset_bottom = 416.0
 size_flags_vertical = 3
 script = ExtResource("6_6p2y7")
 
-[node name="HelpLabel" type="Label" parent="VBoxContainer/Canvas" node_paths=PackedStringArray("canvas")]
+[node name="HelpLabel" type="Label" parent="VBoxContainer/Canvas" node_paths=PackedStringArray("sim_holder", "canvas")]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -474,10 +642,11 @@ offset_right = 450.0
 offset_bottom = 19.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_color = Color(0.537255, 0.537255, 0.537255, 1)
-text = "Select an element and press to draw on the screen"
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "Select an element and press the screen to draw"
 horizontal_alignment = 1
 script = ExtResource("5_btrf5")
+sim_holder = NodePath("../../..")
 canvas = NodePath("..")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="VBoxContainer/Canvas/HelpLabel"]
@@ -603,6 +772,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 0
 focus_mode = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_520gh")
 theme_override_styles/hover = SubResource("StyleBoxFlat_7xfm4")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_457eu")
@@ -618,6 +788,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 0
 focus_mode = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_aei81")
 theme_override_styles/hover = SubResource("StyleBoxFlat_eypt1")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_s867d")
@@ -634,6 +805,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 0
 focus_mode = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_x28qr")
 theme_override_styles/hover = SubResource("StyleBoxFlat_nnycb")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_msh0k")
@@ -649,10 +821,27 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 0
 focus_mode = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_8ntsk")
 theme_override_styles/hover = SubResource("StyleBoxFlat_cdwbg")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_bs4ox")
 text = "fire"
+
+[node name="Air" type="Button" parent="VBoxContainer/MarginContainer/VBoxContainer/ElementSelector/Primary/HBoxContainer"]
+custom_minimum_size = Vector2i(128, 128)
+layout_mode = 2
+offset_left = 544.0
+offset_right = 672.0
+offset_bottom = 128.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 0
+focus_mode = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_qss3a")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6hhhi")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_dcp2l")
+text = "air"
 
 [node name="Build" type="ScrollContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/ElementSelector"]
 visible = false
@@ -669,7 +858,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_cm7pv")
 layout_mode = 2
 offset_left = 8.0
 offset_top = 8.0
-offset_right = 876.0
+offset_right = 952.0
 offset_bottom = 141.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -684,29 +873,65 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 0
 focus_mode = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_8bfmg")
 theme_override_styles/hover = SubResource("StyleBoxFlat_tcxuo")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_2sydf")
 text = "soil"
 
-[node name="Wood" type="Button" parent="VBoxContainer/MarginContainer/VBoxContainer/ElementSelector/Build/HBoxContainer"]
+[node name="Glass" type="Button" parent="VBoxContainer/MarginContainer/VBoxContainer/ElementSelector/Build/HBoxContainer"]
 custom_minimum_size = Vector2i(128, 128)
 layout_mode = 2
-offset_right = 128.0
+offset_left = 136.0
+offset_right = 264.0
 offset_bottom = 128.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 0
 focus_mode = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_6q3l8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_klcww")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_fwrmq")
+text = "glass"
+
+[node name="Wood" type="Button" parent="VBoxContainer/MarginContainer/VBoxContainer/ElementSelector/Build/HBoxContainer"]
+custom_minimum_size = Vector2i(128, 128)
+layout_mode = 2
+offset_left = 272.0
+offset_right = 400.0
+offset_bottom = 128.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 0
+focus_mode = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_g0e01")
 theme_override_styles/hover = SubResource("StyleBoxFlat_ctj8m")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_hgsbg")
 text = "wood"
 
+[node name="Crystal" type="Button" parent="VBoxContainer/MarginContainer/VBoxContainer/ElementSelector/Build/HBoxContainer"]
+custom_minimum_size = Vector2i(128, 128)
+layout_mode = 2
+offset_left = 272.0
+offset_right = 400.0
+offset_bottom = 128.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 0
+focus_mode = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_s5fxl")
+theme_override_styles/hover = SubResource("StyleBoxFlat_rg3j8")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2po0a")
+text = "crystal"
+
 [node name="Steel" type="Button" parent="VBoxContainer/MarginContainer/VBoxContainer/ElementSelector/Build/HBoxContainer"]
 custom_minimum_size = Vector2i(128, 128)
 layout_mode = 2
-offset_right = 128.0
+offset_left = 408.0
+offset_right = 536.0
 offset_bottom = 128.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -726,7 +951,8 @@ text = "steel"
 [node name="Marble" type="Button" parent="VBoxContainer/MarginContainer/VBoxContainer/ElementSelector/Build/HBoxContainer"]
 custom_minimum_size = Vector2i(128, 128)
 layout_mode = 2
-offset_right = 128.0
+offset_left = 544.0
+offset_right = 672.0
 offset_bottom = 128.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -747,12 +973,14 @@ text = "marble"
 [node name="Dust" type="Button" parent="VBoxContainer/MarginContainer/VBoxContainer/ElementSelector/Build/HBoxContainer"]
 custom_minimum_size = Vector2i(128, 128)
 layout_mode = 2
-offset_right = 128.0
+offset_left = 680.0
+offset_right = 808.0
 offset_bottom = 128.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 0
 focus_mode = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_pt5xu")
 theme_override_styles/hover = SubResource("StyleBoxFlat_m0trg")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_b4sp5")
@@ -773,7 +1001,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_cm7pv")
 layout_mode = 2
 offset_left = 8.0
 offset_top = 8.0
-offset_right = 876.0
+offset_right = 952.0
 offset_bottom = 141.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -782,10 +1010,8 @@ theme_override_constants/separation = 8
 [node name="Polliwog" type="Button" parent="VBoxContainer/MarginContainer/VBoxContainer/ElementSelector/Life/HBoxContainer"]
 custom_minimum_size = Vector2i(128, 128)
 layout_mode = 2
-offset_left = 552.0
-offset_top = 20.0
-offset_right = 680.0
-offset_bottom = 148.0
+offset_right = 128.0
+offset_bottom = 128.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 0
@@ -804,26 +1030,46 @@ text = "polliwog"
 [node name="Algae" type="Button" parent="VBoxContainer/MarginContainer/VBoxContainer/ElementSelector/Life/HBoxContainer"]
 custom_minimum_size = Vector2i(128, 128)
 layout_mode = 2
-offset_left = 552.0
-offset_top = 20.0
-offset_right = 680.0
-offset_bottom = 148.0
+offset_left = 136.0
+offset_right = 264.0
+offset_bottom = 128.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 0
 focus_mode = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_6cxqo")
 theme_override_styles/hover = SubResource("StyleBoxFlat_00oaa")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_fvw5r")
 text = "algae"
 
+[node name="Urchin" type="Button" parent="VBoxContainer/MarginContainer/VBoxContainer/ElementSelector/Life/HBoxContainer"]
+custom_minimum_size = Vector2i(128, 128)
+layout_mode = 2
+offset_left = 544.0
+offset_right = 672.0
+offset_bottom = 128.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 0
+focus_mode = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_oitsm")
+theme_override_styles/hover = SubResource("StyleBoxFlat_kn2ji")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_cgna5")
+text = "urchin"
+
 [node name="Sand Duck" type="Button" parent="VBoxContainer/MarginContainer/VBoxContainer/ElementSelector/Life/HBoxContainer"]
 custom_minimum_size = Vector2i(128, 128)
 layout_mode = 2
-offset_left = 552.0
-offset_top = 20.0
-offset_right = 680.0
-offset_bottom = 148.0
+offset_left = 272.0
+offset_right = 400.0
+offset_bottom = 128.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 0
@@ -844,10 +1090,9 @@ duck"
 [node name="Seed" type="Button" parent="VBoxContainer/MarginContainer/VBoxContainer/ElementSelector/Life/HBoxContainer"]
 custom_minimum_size = Vector2i(128, 128)
 layout_mode = 2
-offset_left = 552.0
-offset_top = 20.0
-offset_right = 680.0
-offset_bottom = 148.0
+offset_left = 408.0
+offset_right = 536.0
+offset_bottom = 128.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 0
@@ -866,10 +1111,9 @@ text = "seed"
 [node name="Fairy" type="Button" parent="VBoxContainer/MarginContainer/VBoxContainer/ElementSelector/Life/HBoxContainer"]
 custom_minimum_size = Vector2i(128, 128)
 layout_mode = 2
-offset_left = 552.0
-offset_top = 20.0
-offset_right = 680.0
-offset_bottom = 148.0
+offset_left = 544.0
+offset_right = 672.0
+offset_bottom = 128.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 0
@@ -884,6 +1128,27 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_61msw")
 theme_override_styles/hover = SubResource("StyleBoxFlat_pxyux")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_q4tn0")
 text = "fairy"
+
+[node name="Dragon" type="Button" parent="VBoxContainer/MarginContainer/VBoxContainer/ElementSelector/Life/HBoxContainer"]
+custom_minimum_size = Vector2i(128, 128)
+layout_mode = 2
+offset_left = 544.0
+offset_right = 672.0
+offset_bottom = 128.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 0
+focus_mode = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_aux0l")
+theme_override_styles/hover = SubResource("StyleBoxFlat_xaxu6")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_sxore")
+text = "dragon"
 
 [node name="Chemical" type="ScrollContainer" parent="VBoxContainer/MarginContainer/VBoxContainer/ElementSelector"]
 visible = false
@@ -900,13 +1165,44 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_cm7pv")
 layout_mode = 2
 offset_left = 8.0
 offset_top = 8.0
-offset_right = 876.0
+offset_right = 1088.0
 offset_bottom = 141.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/separation = 8
 
 [node name="Ice" type="Button" parent="VBoxContainer/MarginContainer/VBoxContainer/ElementSelector/Chemical/HBoxContainer"]
+custom_minimum_size = Vector2i(128, 128)
+layout_mode = 2
+offset_right = 128.0
+offset_bottom = 128.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 0
+focus_mode = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_5vg7v")
+theme_override_styles/hover = SubResource("StyleBoxFlat_j3hob")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2xunh")
+text = "ice"
+
+[node name="Oil" type="Button" parent="VBoxContainer/MarginContainer/VBoxContainer/ElementSelector/Chemical/HBoxContainer"]
+custom_minimum_size = Vector2i(128, 128)
+layout_mode = 2
+offset_left = 680.0
+offset_right = 808.0
+offset_bottom = 128.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 0
+focus_mode = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_q8fr1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_yes4h")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_gxiyd")
+text = "oil"
+
+[node name="Lava" type="Button" parent="VBoxContainer/MarginContainer/VBoxContainer/ElementSelector/Chemical/HBoxContainer"]
 custom_minimum_size = Vector2i(128, 128)
 layout_mode = 2
 offset_left = 272.0
@@ -916,16 +1212,17 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 0
 focus_mode = 0
-theme_override_styles/normal = SubResource("StyleBoxFlat_5vg7v")
-theme_override_styles/hover = SubResource("StyleBoxFlat_j3hob")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_2xunh")
-text = "ice"
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_8ntsk")
+theme_override_styles/hover = SubResource("StyleBoxFlat_cdwbg")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_bs4ox")
+text = "lava"
 
 [node name="Blue Fire" type="Button" parent="VBoxContainer/MarginContainer/VBoxContainer/ElementSelector/Chemical/HBoxContainer"]
 custom_minimum_size = Vector2i(128, 128)
 layout_mode = 2
-offset_left = 272.0
-offset_right = 400.0
+offset_left = 136.0
+offset_right = 264.0
 offset_bottom = 128.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -944,25 +1241,11 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_rurje")
 text = "blue 
 fire"
 
-[node name="Lava" type="Button" parent="VBoxContainer/MarginContainer/VBoxContainer/ElementSelector/Chemical/HBoxContainer"]
+[node name="Lead Azide" type="Button" parent="VBoxContainer/MarginContainer/VBoxContainer/ElementSelector/Chemical/HBoxContainer"]
 custom_minimum_size = Vector2i(128, 128)
 layout_mode = 2
 offset_left = 408.0
 offset_right = 536.0
-offset_bottom = 128.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_vertical = 0
-focus_mode = 0
-theme_override_styles/normal = SubResource("StyleBoxFlat_8ntsk")
-theme_override_styles/hover = SubResource("StyleBoxFlat_cdwbg")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_bs4ox")
-text = "magma"
-
-[node name="Lead Azide" type="Button" parent="VBoxContainer/MarginContainer/VBoxContainer/ElementSelector/Chemical/HBoxContainer"]
-custom_minimum_size = Vector2i(128, 128)
-layout_mode = 2
-offset_right = 128.0
 offset_bottom = 128.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -983,8 +1266,8 @@ azide"
 [node name="Acid" type="Button" parent="VBoxContainer/MarginContainer/VBoxContainer/ElementSelector/Chemical/HBoxContainer"]
 custom_minimum_size = Vector2i(128, 128)
 layout_mode = 2
-offset_left = 136.0
-offset_right = 264.0
+offset_left = 544.0
+offset_right = 672.0
 offset_bottom = 128.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -1001,6 +1284,39 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_8kwuy")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_2omdr")
 text = "chloric 
 acid"
+
+[node name="Laser" type="Button" parent="VBoxContainer/MarginContainer/VBoxContainer/ElementSelector/Chemical/HBoxContainer"]
+custom_minimum_size = Vector2i(128, 128)
+layout_mode = 2
+offset_left = 680.0
+offset_right = 808.0
+offset_bottom = 128.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 0
+focus_mode = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_5u0yn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_tim5j")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_4pg2j")
+text = "laser"
+
+[node name="Black Hole" type="Button" parent="VBoxContainer/MarginContainer/VBoxContainer/ElementSelector/Chemical/HBoxContainer"]
+custom_minimum_size = Vector2i(128, 128)
+layout_mode = 2
+offset_left = 680.0
+offset_right = 808.0
+offset_bottom = 128.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 0
+focus_mode = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_dn34k")
+theme_override_styles/hover = SubResource("StyleBoxFlat_3h784")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_jbbp0")
+text = "black 
+hole"
 
 [node name="Label" type="Label" parent="."]
 offset_right = 750.0

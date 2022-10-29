@@ -10,14 +10,14 @@ public:
     void process(SandSimulation *sim, int row, int col) override {
         if (sim->touch_count(row, col, 3) == 0) {
             sim->set_cell(row, col, 0);
-        } else if (sim->touch_count(row, col, 4) > 0) {
+        } else if (sim->touch_count(row, col, 4) > 0 || sim->touch_count(row, col, 31) > 0) {
             sim->set_cell(row, col, 3);
         } else if (randf() < GROWTH) {
             sim->grow(row + 1, col, 3, 4);
             sim->grow(row - 1, col, 3, 4);
             sim->grow(row, col - 1, 3, 4);
             sim->grow(row, col + 1, 3, 4);
-        } else if (sim->touch_count(row, col, 10)) {
+        } else if (sim->is_poisoned(row, col)) {
             sim->set_cell(row, col, 16);
         }
     }
