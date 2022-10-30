@@ -12,7 +12,7 @@ _global_script_classes=[{
 "base": "TabContainer",
 "class": &"ElementSelector",
 "language": &"GDScript",
-"path": "res://element_selector/element_selector.gd"
+"path": "res://ui/element_selector.gd"
 }, {
 "base": "Label",
 "class": &"FpsLabel",
@@ -33,22 +33,31 @@ _global_script_classes=[{
 "class": &"SandCanvas",
 "language": &"GDScript",
 "path": "res://canvas/canvas.gd"
+}, {
+"base": "ColorRect",
+"class": &"SplashScreen",
+"language": &"GDScript",
+"path": "res://ui/splash_screen.gd"
 }]
 _global_script_class_icons={
 "ElementSelector": "",
 "FpsLabel": "",
 "HelpLabel": "",
 "Main": "",
-"SandCanvas": ""
+"SandCanvas": "",
+"SplashScreen": ""
 }
 
 [application]
 
-config/name="FallingSand2"
+config/name="Sand Slide"
 run/main_scene="res://Main.tscn"
 config/features=PackedStringArray("4.0")
 run/max_fps=60
+boot_splash/show_image=false
+boot_splash/bg_color=Color(0, 0, 0, 1)
 config/icon="res://icon.png"
+config/windows_native_icon="res://favicon.ico"
 
 [display]
 
@@ -56,3 +65,11 @@ window/size/viewport_width=900
 window/size/viewport_height=700
 window/vsync/vsync_mode=0
 window/stretch/aspect="ignore"
+
+[input]
+
+toggle_fps={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194306,"unicode":0,"echo":false,"script":null)
+]
+}

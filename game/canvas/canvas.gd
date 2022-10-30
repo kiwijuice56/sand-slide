@@ -7,7 +7,8 @@ class_name SandCanvas
 signal mouse_pressed(row, col, is_left)
 
 func _ready() -> void:
-	var image = Image.load_from_file("res://icon.png")
+	var image = Image.new()
+	image.create(256, 256, false, Image.FORMAT_BPTC_RGBA)
 	texture = ImageTexture.create_from_image(image)
 
 func _process(_delta: float) -> void:

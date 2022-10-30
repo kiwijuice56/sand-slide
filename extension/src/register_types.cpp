@@ -1,6 +1,6 @@
 #include "register_types.h"
 #include "sand_simulation.h"
-#include <godot/gdnative_interface.h>
+
 #include <godot_cpp/core/class_db.hpp>
 #include <godot_cpp/core/defs.hpp>
 #include <godot_cpp/godot.hpp>
@@ -21,8 +21,7 @@ void uninitialize_sand_types(ModuleInitializationLevel p_level) {
 }
 
 extern "C" {
-	GDNativeBool GDN_EXPORT summator_library_init(const GDNativeInterface *p_interface, const GDNativeExtensionClassLibraryPtr p_library, GDNativeInitialization *r_initialization)
-	{
+	GDNativeBool GDN_EXPORT summator_library_init(const GDNativeInterface *p_interface, const GDNativeExtensionClassLibraryPtr p_library, GDNativeInitialization *r_initialization) {
 		GDExtensionBinding::InitObject init_obj(p_interface, p_library, r_initialization);
 
 		init_obj.register_initializer(initialize_sand_types);

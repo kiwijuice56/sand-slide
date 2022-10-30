@@ -1,3 +1,5 @@
 .godot/
 .vscode/*
 godot-cpp/*
+game/android/*
+game/out/*

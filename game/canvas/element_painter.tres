@@ -1,10 +1,10 @@
-[gd_resource type="ShaderMaterial" load_steps=7 format=3 uid="uid://caqdur56ngyh5"]
+[gd_resource type="ShaderMaterial" load_steps=7 format=3 uid="uid://cumbpag0yra8d"]
 
 [ext_resource type="Shader" path="res://canvas/element_painter.gdshader" id="1_2v6tn"]
 [ext_resource type="Texture2D" uid="uid://b2er78i2yjm8w" path="res://canvas/textures/crystal.jpg" id="2_g0d6y"]
 [ext_resource type="Texture2D" uid="uid://cfx44bcne3145" path="res://canvas/textures/fire_noise.jpg" id="2_nfg6x"]
 [ext_resource type="Texture2D" uid="uid://411hddjsr572" path="res://canvas/textures/marble.jpg" id="3_7fen1"]
-[ext_resource type="Texture2D" uid="uid://7ulbs6l163vf" path="res://canvas/textures/BackgroundPattern155Diagonal.png" id="3_iws4e"]
+[ext_resource type="Texture2D" uid="uid://7ulbs6l163vf" path="res://canvas/textures/glass.png" id="4_bgplp"]
 [ext_resource type="Texture2D" uid="uid://dv72a2xnad210" path="res://canvas/textures/water_noise.jpg" id="4_st85m"]
 
 [resource]
@@ -36,7 +36,7 @@ shader_parameter/fire_color_1 = Color(1, 0.294118, 0.168627, 1)
 shader_parameter/fire_color_2 = Color(1, 0.835294, 0, 1)
 shader_parameter/fire_color_3 = Color(0.615686, 0, 0.294118, 1)
 shader_parameter/fire_noise = ExtResource("2_nfg6x")
-shader_parameter/glass_texture = ExtResource("3_iws4e")
+shader_parameter/glass_texture = ExtResource("4_bgplp")
 shader_parameter/grass_color_1 = Color(0.152941, 0.529412, 0.00784314, 1)
 shader_parameter/laser_color_1 = Color(1, 0.309804, 0.52549, 1)
 shader_parameter/laser_color_2 = Color(1, 1, 1, 1)

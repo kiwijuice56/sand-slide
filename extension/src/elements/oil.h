@@ -6,7 +6,7 @@
 
 class Oil: public Element {
 public:
-    const double FLAME = 1.0 / 28;
+    const double FLAME = 1.0 / 18;
 
     void process(SandSimulation *sim, int row, int col) override {
         // Burning

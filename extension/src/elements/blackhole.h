@@ -7,10 +7,11 @@ class SandSimulation;
 
 class BlackHole: public Element {
 public:
-    const double GRAB = 1.0 / 256;
+    const double GRAB = 1.0 / 32;
+    const double PROCESS = 1.0 / 64;
 
     void process(SandSimulation *sim, int row, int col) override {
-        if (sim->touch_count(row, col, 0) == 0) {
+        if (randf() < PROCESS) {
             return;
         }
         for (int y = row - 1; y <= row + 1; y++) {
@@ -20,8 +21,11 @@ public:
                 }
             }
         }
-        for (int y = row - 8; y <= row + 8; y++) {
-            for (int x = col - 8; x <= col + 8; x++) {
+        if (sim->cardinal_touch_count(row, col, 0) == 0) {
+            return;
+        }
+        for (int y = row - 5; y <= row + 5; y++) {
+            for (int x = col - 5; x <= col + 5; x++) {
                 if (randf() >= GRAB) {
                     continue;
                 }
@@ -43,11 +47,11 @@ public:
     }
 
     double get_explode_resistance() override {
-        return 1.0;
+        return 10.0;
     }
 
     double get_acid_resistance() override {
-        return 1.0;
+        return 10.0;
     }
 };
 

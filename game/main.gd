@@ -16,6 +16,8 @@ const ELEMENT_INDEX = [
 @export var eraser_button: Button
 @export var size_slider: HSlider
 @export var speed_slider: HSlider
+@export var splash_screen: ColorRect
+
 @export var simulation_speed: int = 100000
 
 var sim: SandSimulation
@@ -24,7 +26,6 @@ var selected_element: int = 1
 
 func _ready() -> void:
 	canvas.resized.connect(_on_window_resized)
-	canvas.mouse_pressed.connect(_on_mouse_pressed)
 	element_selector.element_selected.connect(_on_element_selected)
 	size_slider.value_changed.connect(_on_size_changed)
 	speed_slider.value_changed.connect(_on_speed_changed)
@@ -32,6 +33,9 @@ func _ready() -> void:
 	
 	sim = SandSimulation.new()
 	_on_window_resized()
+	
+	await splash_screen.intro_complete
+	canvas.mouse_pressed.connect(_on_mouse_pressed)
 
 func _on_window_resized() -> void:
 	sim.resize(int(canvas.size.x / canvas.px_scale), int(canvas.size.y / canvas.px_scale))
