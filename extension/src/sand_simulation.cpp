@@ -44,75 +44,42 @@ SandSimulation::SandSimulation() {
     // can use polymorphism rather than explicity stating which method
     // is called for each element type
 
+    // The order in the vector is arbitrary, but it must match the list order in main.gd
     elements.resize(64);
-    Void* voidP = new Void();
-    Sand* sand = new Sand();
-    Rock* rock = new Rock();
-    Water* water = new Water();
-    Polliwog* polliwog = new Polliwog();
-    Fire* fire = new Fire();
-    Smoke* smoke = new Smoke();
-    Algae* algae = new Algae();
-    SandDuck* sand_duck = new SandDuck();
-    Explosion* explosion = new Explosion();
-    LeadAzide* lead_azide = new LeadAzide();
-    Soil* soil = new Soil();
-    Seed* seed = new Seed();
-    GerminatedSeed* germinated_seed = new GerminatedSeed();
-    Grass* grass = new Grass();
-    Marble* marble = new Marble();
-    Dust* dust = new Dust();
-    Steel* steel = new Steel();
-    Wood* wood = new Wood();
-    Ice* ice = new Ice();
-    Lava* lava = new Lava();
-    Acid* acid = new Acid();
-    AcidGas* acid_gas = new AcidGas();
-    Fairy* fairy = new Fairy();
-    BlueFire* blue_fire = new BlueFire();
-    Glass* glass = new Glass();
-    Laser* laser = new Laser();
-    Crystal* crystal = new Crystal();
-    Air* air = new Air();
-    BlackHole* black_hole = new BlackHole();
-    Oil* oil = new Oil();
-    Urchin* urchin = new Urchin();
-    Dragon* dragon = new Dragon();
+    elements.at(0) = new Void();
+    elements.at(1) = new Sand();
+    elements.at(2) = new Rock();
+    elements.at(3) = new Water();
+    elements.at(4) = new Polliwog();
+    elements.at(5) = new Fire();
+    elements.at(6) = new Smoke();
+    elements.at(7) = new Algae();
+    elements.at(8) = new SandDuck();
+    elements.at(9) = new Explosion();
+    elements.at(10) = new LeadAzide();
+    elements.at(11) = new Soil();
+    elements.at(12) = new Seed();
+    elements.at(13) = new GerminatedSeed();
+    elements.at(14) = new Grass();
+    elements.at(15) = new Marble();
+    elements.at(16) = new Dust();
+    elements.at(17) = new Steel();
+    elements.at(18) = new Wood();
+    elements.at(19) = new Ice();
+    elements.at(20) = new Lava();
+    elements.at(21) = new Acid();
+    elements.at(22) = new AcidGas();
+    elements.at(23) = new Fairy();
+    elements.at(24) = new BlueFire();
+    elements.at(25) = new Glass();
+    elements.at(26) = new Laser();
+    elements.at(27) = new Crystal();
+    elements.at(28) = new Air();
+    elements.at(29) = new BlackHole();
+    elements.at(30) = new Oil();
+    elements.at(31) = new Urchin();
+    elements.at(32) = new Dragon();
 
-    elements.at(0) = voidP;
-    elements.at(1) = sand;
-    elements.at(2) = rock;
-    elements.at(3) = water;
-    elements.at(4) = polliwog;
-    elements.at(5) = fire;
-    elements.at(6) = smoke;
-    elements.at(7) = algae;
-    elements.at(8) = sand_duck;
-    elements.at(9) = explosion;
-    elements.at(10) = lead_azide;
-    elements.at(11) = soil;
-    elements.at(12) = seed;
-    elements.at(13) = germinated_seed;
-    elements.at(14) = grass;
-    elements.at(15) = marble;
-    elements.at(16) = dust;
-    elements.at(17) = steel;
-    elements.at(18) = wood;
-    elements.at(19) = ice;
-    elements.at(20) = lava;
-    elements.at(21) = acid;
-    elements.at(22) = acid_gas;
-    elements.at(23) = fairy;
-    elements.at(24) = blue_fire;
-    elements.at(25) = glass;
-    elements.at(26) = laser;
-    elements.at(27) = crystal;
-    elements.at(28) = air;
-    elements.at(29) = black_hole;
-    elements.at(30) = oil;
-    elements.at(31) = urchin;
-    elements.at(32) = dragon;
-    
     draw_data = PackedByteArray();
 
     draw_data.resize(width * height);
@@ -129,7 +96,7 @@ void SandSimulation::step(int iterations) {
     std::mt19937 rng(dev());
     std::uniform_int_distribution<std::mt19937::result_type> randCell(0, chunk_size - 1);
 
-    // Keep track of which chunks are active to iterate over
+    // Keep a vector of active chunk indices
     std::vector<int> active_chunks;
     for (int chunk = 0; chunk < chunks.size(); chunk++) {
         if (chunks.at(chunk) != 0) {
@@ -140,6 +107,8 @@ void SandSimulation::step(int iterations) {
     
     std::uniform_int_distribution<std::mt19937::result_type> randChunk(0, active_chunks.size() - 1);
 
+    // Randomly select a cell to process within an active chunk
+    // Do more iterations when more chunks are active to prevent speed inconsistencies
     for (int i = 0; i < iterations * active_chunks.size(); i++) {
         int chunk = active_chunks.at(randChunk(rng));
         int row = std::min((unsigned int) get_height() - 1, (chunk / chunk_width) * chunk_size + randCell(rng));
@@ -174,7 +143,7 @@ void SandSimulation::grow(int row, int col, int food, int replacer) {
         return;
     }
     if (food == -1) {
-        // Since only explosions grow into all cells, we run a check for explosion resistance
+        // Since only explosions/lasers grow into all cells, we run a check for explosion resistance
         // This should probably be inside the explosion element code, but this is more convenient
         if (Element::randf() >= (1.0 - elements.at(get_cell(row, col))->get_explode_resistance())) {
             return;
@@ -204,6 +173,8 @@ int SandSimulation::touch_count(int row, int col, int type) {
     return touches;
 }
 
+// Returns the amount of cells of `type` surrounding the given cell, but only checking
+// immediate four closest cells
 int SandSimulation::cardinal_touch_count(int row, int col, int type) {
     int touches = 0;
     if (in_bounds(row - 1, col) && get_cell(row - 1, col) == type)
@@ -221,10 +192,12 @@ bool SandSimulation::in_bounds(int row, int col) {
     return row >= 0 && col >= 0 && row < height && col < width;
 }
 
+// Check if the cell is touching an element intended to destroy life, such as acid
 bool SandSimulation::is_poisoned(int row, int col) {
     return touch_count(row, col, 10) + touch_count(row, col, 21) + touch_count(row, col, 22) > 0;
 }
 
+// Check if a cell is touching any flame producing elements
 bool SandSimulation::is_on_fire(int row, int col) {
     return touch_count(row, col, 24) + touch_count(row, col, 5)  + touch_count(row, col, 26) > 0;
 }
@@ -247,7 +220,6 @@ void SandSimulation::set_cell(int row, int col, int type) {
 int SandSimulation::get_chunk(int c) {
     return chunks.at(c);
 }
-
 
 PackedByteArray SandSimulation::get_draw_data() {
     return draw_data;

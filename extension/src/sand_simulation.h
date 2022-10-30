@@ -9,6 +9,8 @@
 
 using namespace godot;
 
+// Contains grid cells and methods to process them
+
 class SandSimulation : public RefCounted {
     GDCLASS(SandSimulation, RefCounted);
 

@@ -1,6 +1,8 @@
 #ifndef ELEMENT_H
 #define ELEMENT_H
 
+// Base class for all elements
+
 class SandSimulation;
 
 #include "../sand_simulation.h"
