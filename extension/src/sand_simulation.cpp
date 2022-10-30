@@ -33,6 +33,9 @@
 #include "elements/oil.h"
 #include "elements/urchin.h"
 #include "elements/dragon.h"
+#include "elements/critter.h"
+#include "elements/nuclearexplosion.h"
+#include "elements/uranium.h"
 
 #include <godot_cpp/core/class_db.hpp>
 #include <random>
@@ -79,6 +82,9 @@ SandSimulation::SandSimulation() {
     elements.at(30) = new Oil();
     elements.at(31) = new Urchin();
     elements.at(32) = new Dragon();
+    elements.at(33) = new Critter();
+    elements.at(34) = new NuclearExplosion();
+    elements.at(35) = new Uranium();
 
     draw_data = PackedByteArray();
 
@@ -194,7 +200,7 @@ bool SandSimulation::in_bounds(int row, int col) {
 
 // Check if the cell is touching an element intended to destroy life, such as acid
 bool SandSimulation::is_poisoned(int row, int col) {
-    return touch_count(row, col, 10) + touch_count(row, col, 21) + touch_count(row, col, 22) > 0;
+    return touch_count(row, col, 10) + touch_count(row, col, 21) + touch_count(row, col, 22) + touch_count(row, col, 35) > 0;
 }
 
 // Check if a cell is touching any flame producing elements

@@ -5,7 +5,7 @@
 
 class Fairy: public Element {
 public:
-    const double GROWTH = 0.015625;
+    const double GROWTH = 0.019625;
     const double DISSOLVE = 1.0 / 256;
 
     void process(SandSimulation *sim, int row, int col) override {

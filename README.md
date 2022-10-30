@@ -54,4 +54,5 @@ The index that you add the element to is its `ID`. Other elements reference this
 is replaced with glass. Glass is placed at the 25th spot of the `elements` vector, hence its `ID` being 25.
 
 In the godot project, add your element name to the `ELEMENT_INDEX` list within `game\main.gd` at the same index you placed it within `elements`. 
+The visuals of your element can be modified through the `game\canvas\element_shader.gd` file.
 Finally, create a button with the matching name that you put within the list.

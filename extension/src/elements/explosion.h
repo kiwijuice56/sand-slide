@@ -5,8 +5,8 @@
 
 class Explosion: public Element {
 public:
-    const double PROCESS = 1.0 / 8;
-    const double DECAY = 1.0 / 8.0;
+    const double PROCESS = 1.0 / 7;
+    const double DECAY = 1.0 / 9.0;
 
     void process(SandSimulation *sim, int row, int col) override {
         // Adding a limit slows the explosion down

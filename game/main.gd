@@ -9,7 +9,8 @@ const ELEMENT_INDEX = [
 	"Soil", "Seed", "Germinated Seed", "Grass", "Marble", "Dust",
 	"Steel", "Wood", "Ice", "Lava", "Acid", "Acid Gas", "Fairy", 
 	"Blue Fire", "Glass", "Laser", "Crystal", "Air", "Black Hole",
-	"Oil", "Urchin", "Dragon"]
+	"Oil", "Urchin", "Dragon", "Critter", "Nuclear Explosoin", 
+	"Uranium"]
 
 @export var canvas: TextureRect
 @export var element_selector: TabContainer

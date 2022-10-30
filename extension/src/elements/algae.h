@@ -22,7 +22,7 @@ public:
         }
         else if (randf() < DEATH) {
             sim->set_cell(row, col, 3);
-        } else if (sim->touch_count(row, col, 10)) {
+        } else if (sim->is_poisoned(row, col)) {
             sim->set_cell(row, col, 16);
         }
     }

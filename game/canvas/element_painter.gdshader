@@ -53,6 +53,10 @@ uniform vec4 oil_color_2: source_color = vec4(1.0);
 uniform vec4 oil_color_3: source_color = vec4(1.0);
 uniform vec4 urchin_color_1: source_color = vec4(1.0);
 uniform vec4 dragon_color_1: source_color = vec4(1.0);
+uniform vec4 critter_color_1: source_color = vec4(1.0);
+uniform vec4 uranium_color_1: source_color = vec4(1.0);
+uniform vec4 nuclear_explosion_color_1: source_color = vec4(1.0);
+uniform vec4 nuclear_explosion_color_2: source_color = vec4(1.0);
 
 float shift(float x) {
 	return (x + 1.0) / 2.0;
@@ -309,6 +313,16 @@ void fragment() {
 			break;
 		case 32:
 			COLOR = dragon_color_1;
+			break;
+		case 33:
+			COLOR = critter_color_1;
+			break;
+		case 34:
+			float x = match_amount(TEXTURE, UV, 34);
+			COLOR = nuclear_explosion_color_1 * x + nuclear_explosion_color_2 * (1.0 - x);
+			break;
+		case 35:
+			COLOR = uranium_color_1;
 			break;
 	}
 }
