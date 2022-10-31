@@ -1,4 +1,4 @@
-[gd_scene load_steps=107 format=3 uid="uid://bf65cg8vucnow"]
+[gd_scene load_steps=110 format=3 uid="uid://bf65cg8vucnow"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_b657u"]
 [ext_resource type="FontFile" uid="uid://b8lxwo5dkwrs4" path="res://ui/Poppins-Regular.ttf" id="2_iejaa"]
@@ -660,6 +660,27 @@ corner_radius_bottom_left = 4
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gxlw2"]
 bg_color = Color(0.545098, 0.909804, 0.988235, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hunuh"]
+bg_color = Color(0.0980392, 0.180392, 0.65098, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j4426"]
+bg_color = Color(0.227451, 0.423529, 0.741176, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nhb3t"]
+bg_color = Color(0.105882, 0.0784314, 0.639216, 1)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
@@ -1554,16 +1575,16 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 0
 focus_mode = 0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_rwxnb")
-theme_override_styles/hover = SubResource("StyleBoxFlat_qae3l")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_gxlw2")
-text = "electron"
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_hunuh")
+theme_override_styles/hover = SubResource("StyleBoxFlat_j4426")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_nhb3t")
+text = "plasma"
 
 [node name="Black Hole" type="Button" parent="MainUIContainer/MarginContainer/VBoxContainer/ElementSelector/Chemical/HBoxContainer"]
 custom_minimum_size = Vector2i(128, 128)
