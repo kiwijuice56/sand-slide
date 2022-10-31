@@ -10,10 +10,10 @@
 #include "elements/algae.h"
 #include "elements/sandduck.h"
 #include "elements/explosion.h"
-#include "elements/leadazide.h"
+#include "elements/lead_azide.h"
 #include "elements/soil.h"
 #include "elements/seed.h"
-#include "elements/germinatedseed.h"
+#include "elements/germ_seed.h"
 #include "elements/grass.h"
 #include "elements/marble.h"
 #include "elements/dust.h"
@@ -22,20 +22,25 @@
 #include "elements/ice.h"
 #include "elements/lava.h"
 #include "elements/acid.h"
-#include "elements/acidgas.h"
+#include "elements/acid_gas.h"
 #include "elements/fairy.h"
-#include "elements/bluefire.h"
+#include "elements/blue_fire.h"
 #include "elements/glass.h"
 #include "elements/laser.h"
 #include "elements/crystal.h"
 #include "elements/air.h"
-#include "elements/blackhole.h"
+#include "elements/black_hole.h"
 #include "elements/oil.h"
 #include "elements/urchin.h"
 #include "elements/dragon.h"
 #include "elements/critter.h"
-#include "elements/nuclearexplosion.h"
+#include "elements/nuclear_explosion.h"
 #include "elements/uranium.h"
+#include "elements/neutron_beam.h"
+#include "elements/electricity.h"
+#include "elements/plasma.h"
+#include "elements/electricity_storm.h"
+#include "elements/storm_plasma.h"
 
 #include <godot_cpp/core/class_db.hpp>
 #include <random>
@@ -85,6 +90,11 @@ SandSimulation::SandSimulation() {
     elements.at(33) = new Critter();
     elements.at(34) = new NuclearExplosion();
     elements.at(35) = new Uranium();
+    elements.at(36) = new NeutronBeam();
+    elements.at(37) = new Electricity();
+    elements.at(38) = new Plasma();
+    elements.at(39) = new ElectricityStorm();
+    elements.at(40) = new StormPlasma();
 
     draw_data = PackedByteArray();
 
@@ -200,12 +210,18 @@ bool SandSimulation::in_bounds(int row, int col) {
 
 // Check if the cell is touching an element intended to destroy life, such as acid
 bool SandSimulation::is_poisoned(int row, int col) {
-    return touch_count(row, col, 10) + touch_count(row, col, 21) + touch_count(row, col, 22) + touch_count(row, col, 35) > 0;
+    return 
+    touch_count(row, col, 10) + touch_count(row, col, 21) + 
+    touch_count(row, col, 22) + touch_count(row, col, 35) > 0;
 }
 
 // Check if a cell is touching any flame producing elements
 bool SandSimulation::is_on_fire(int row, int col) {
-    return touch_count(row, col, 24) + touch_count(row, col, 5)  + touch_count(row, col, 26) > 0;
+    return 
+    touch_count(row, col, 24) + touch_count(row, col, 5) + 
+    touch_count(row, col, 26) + touch_count(row, col, 34) +
+    touch_count(row, col, 37) + touch_count(row, col, 38) +
+    touch_count(row, col, 40) > 0;
 }
 
 int SandSimulation::get_cell(int row, int col) {

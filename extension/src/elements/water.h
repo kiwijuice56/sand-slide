@@ -8,11 +8,23 @@ class Water: public Element {
 public:
     const double ABSORB = 1.0 / 4098;
     const double EVAPORATION = 1.0 / 32;
+    const double MELT = 1.0 / 48;
 
     void process(SandSimulation *sim, int row, int col) override {
         // Evaporation
         if (randf() < EVAPORATION && sim->is_on_fire(row, col)) {
             sim->set_cell(row, col, 6);
+            return;
+        }
+
+        // Plasma melting
+        if (randf() < MELT && sim->touch_count(row, col, 38)) {
+            sim->set_cell(row, col, 38);
+        }
+
+        // Lightning
+        if (sim->touch_count(row, col, 37) + sim->touch_count(row, col, 39)) {
+            sim->set_cell(row, col, 9);
             return;
         }
 

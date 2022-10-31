@@ -21,7 +21,7 @@ public:
     }
 
     double get_explode_resistance() override {
-        return 0.0;
+        return 0.08;
     }
 
     double get_acid_resistance() override {

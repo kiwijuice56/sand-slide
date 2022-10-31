@@ -1,4 +1,4 @@
-[gd_scene load_steps=101 format=3 uid="uid://bf65cg8vucnow"]
+[gd_scene load_steps=107 format=3 uid="uid://bf65cg8vucnow"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_b657u"]
 [ext_resource type="FontFile" uid="uid://b8lxwo5dkwrs4" path="res://ui/Poppins-Regular.ttf" id="2_iejaa"]
@@ -156,6 +156,27 @@ corner_radius_bottom_left = 4
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dcp2l"]
 bg_color = Color(0.298039, 0.556863, 0.619608, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t7g8i"]
+bg_color = Color(0.866667, 0.933333, 0.92549, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p37fq"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qegqj"]
+bg_color = Color(0.6, 0.811765, 0.756863, 1)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
@@ -539,6 +560,27 @@ corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e8k14"]
+bg_color = Color(0.74902, 0.74902, 0.74902, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8kwuy"]
+bg_color = Color(0.690196, 0.690196, 0.690196, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2omdr"]
+bg_color = Color(0.521569, 0.521569, 0.521569, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cmgkr"]
 bg_color = Color(0.607843, 0.607843, 0.607843, 1)
 corner_radius_top_left = 4
@@ -581,27 +623,6 @@ corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e8k14"]
-bg_color = Color(0.74902, 0.74902, 0.74902, 1)
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8kwuy"]
-bg_color = Color(0.690196, 0.690196, 0.690196, 1)
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2omdr"]
-bg_color = Color(0.521569, 0.521569, 0.521569, 1)
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5u0yn"]
 bg_color = Color(1, 0.309804, 0.52549, 1)
 corner_radius_top_left = 4
@@ -618,6 +639,27 @@ corner_radius_bottom_left = 4
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4pg2j"]
 bg_color = Color(0.85098, 0.211765, 0.670588, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rwxnb"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qae3l"]
+bg_color = Color(0.796078, 0.937255, 0.968627, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gxlw2"]
+bg_color = Color(0.545098, 0.909804, 0.988235, 1)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
@@ -705,11 +747,12 @@ _data = {
 "intro": SubResource("Animation_mci7d")
 }
 
-[node name="Main" type="Node" node_paths=PackedStringArray("canvas", "element_selector", "eraser_button", "size_slider", "speed_slider", "splash_screen")]
+[node name="Main" type="Node" node_paths=PackedStringArray("canvas", "element_selector", "eraser_button", "clear_button", "size_slider", "speed_slider", "splash_screen")]
 script = ExtResource("1_b657u")
 canvas = NodePath("MainUIContainer/Canvas")
 element_selector = NodePath("MainUIContainer/MarginContainer/VBoxContainer/ElementSelector")
 eraser_button = NodePath("MainUIContainer/MarginContainer/VBoxContainer/OptionContainer/Eraser")
+clear_button = NodePath("MainUIContainer/MarginContainer/VBoxContainer/OptionContainer/Clear")
 size_slider = NodePath("MainUIContainer/MarginContainer/VBoxContainer/OptionContainer/BrushSlider")
 speed_slider = NodePath("MainUIContainer/MarginContainer/VBoxContainer/OptionContainer/SpeedSlider")
 splash_screen = NodePath("Splash")
@@ -802,18 +845,18 @@ vertical_alignment = 1
 custom_minimum_size = Vector2i(0, 32)
 layout_mode = 2
 offset_left = 58.0
-offset_right = 294.0
+offset_right = 265.0
 offset_bottom = 64.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
 min_value = 1.0
-max_value = 48.0
+max_value = 32.0
 value = 6.0
 
 [node name="Speed" type="Label" parent="MainUIContainer/MarginContainer/VBoxContainer/OptionContainer"]
 layout_mode = 2
-offset_left = 306.0
-offset_right = 388.0
+offset_left = 277.0
+offset_right = 359.0
 offset_bottom = 64.0
 size_flags_vertical = 1
 text = " Speed"
@@ -822,8 +865,8 @@ vertical_alignment = 1
 [node name="SpeedSlider" type="HSlider" parent="MainUIContainer/MarginContainer/VBoxContainer/OptionContainer"]
 custom_minimum_size = Vector2i(0, 32)
 layout_mode = 2
-offset_left = 400.0
-offset_right = 636.0
+offset_left = 371.0
+offset_right = 579.0
 offset_bottom = 64.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -833,12 +876,20 @@ value = 150000.0
 
 [node name="Eraser" type="Button" parent="MainUIContainer/MarginContainer/VBoxContainer/OptionContainer"]
 layout_mode = 2
-offset_left = 802.0
-offset_right = 884.0
+offset_left = 717.0
+offset_right = 799.0
 offset_bottom = 64.0
 size_flags_horizontal = 10
 focus_mode = 0
 text = "Eraser"
+
+[node name="Clear" type="Button" parent="MainUIContainer/MarginContainer/VBoxContainer/OptionContainer"]
+layout_mode = 2
+offset_left = 811.0
+offset_right = 884.0
+offset_bottom = 64.0
+focus_mode = 0
+text = "Clear"
 
 [node name="ElementSelector" type="TabContainer" parent="MainUIContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -949,6 +1000,27 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_qss3a")
 theme_override_styles/hover = SubResource("StyleBoxFlat_6hhhi")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_dcp2l")
 text = "air"
+
+[node name="Lightning" type="Button" parent="MainUIContainer/MarginContainer/VBoxContainer/ElementSelector/Primary/HBoxContainer"]
+custom_minimum_size = Vector2i(128, 128)
+layout_mode = 2
+offset_left = 680.0
+offset_right = 808.0
+offset_bottom = 128.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 0
+focus_mode = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_t7g8i")
+theme_override_styles/hover = SubResource("StyleBoxFlat_p37fq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_qegqj")
+text = "lightning"
 
 [node name="Build" type="ScrollContainer" parent="MainUIContainer/MarginContainer/VBoxContainer/ElementSelector"]
 visible = false
@@ -1292,7 +1364,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_cm7pv")
 layout_mode = 2
 offset_left = 8.0
 offset_top = 8.0
-offset_right = 1224.0
+offset_right = 1496.0
 offset_bottom = 141.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -1367,6 +1439,27 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_7f7pq")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_rurje")
 text = "blue fire"
 
+[node name="Acid" type="Button" parent="MainUIContainer/MarginContainer/VBoxContainer/ElementSelector/Chemical/HBoxContainer"]
+custom_minimum_size = Vector2i(128, 128)
+layout_mode = 2
+offset_left = 680.0
+offset_right = 808.0
+offset_bottom = 128.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 0
+focus_mode = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_e8k14")
+theme_override_styles/hover = SubResource("StyleBoxFlat_8kwuy")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2omdr")
+text = "acid"
+
 [node name="Lead Azide" type="Button" parent="MainUIContainer/MarginContainer/VBoxContainer/ElementSelector/Chemical/HBoxContainer"]
 custom_minimum_size = Vector2i(128, 128)
 layout_mode = 2
@@ -1409,27 +1502,6 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_eho5g")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_j4bb3")
 text = "uranium"
 
-[node name="Acid" type="Button" parent="MainUIContainer/MarginContainer/VBoxContainer/ElementSelector/Chemical/HBoxContainer"]
-custom_minimum_size = Vector2i(128, 128)
-layout_mode = 2
-offset_left = 680.0
-offset_right = 808.0
-offset_bottom = 128.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_vertical = 0
-focus_mode = 0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_e8k14")
-theme_override_styles/hover = SubResource("StyleBoxFlat_8kwuy")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_2omdr")
-text = "acid"
-
 [node name="Laser" type="Button" parent="MainUIContainer/MarginContainer/VBoxContainer/ElementSelector/Chemical/HBoxContainer"]
 custom_minimum_size = Vector2i(128, 128)
 layout_mode = 2
@@ -1441,10 +1513,57 @@ grow_vertical = 2
 size_flags_vertical = 0
 focus_mode = 0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_5u0yn")
 theme_override_styles/hover = SubResource("StyleBoxFlat_tim5j")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_4pg2j")
 text = "laser"
+
+[node name="Neutron" type="Button" parent="MainUIContainer/MarginContainer/VBoxContainer/ElementSelector/Chemical/HBoxContainer"]
+custom_minimum_size = Vector2i(128, 128)
+layout_mode = 2
+offset_left = 816.0
+offset_right = 944.0
+offset_bottom = 128.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 0
+focus_mode = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_rwxnb")
+theme_override_styles/hover = SubResource("StyleBoxFlat_qae3l")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_gxlw2")
+text = "quasar"
+
+[node name="Electron" type="Button" parent="MainUIContainer/MarginContainer/VBoxContainer/ElementSelector/Chemical/HBoxContainer"]
+custom_minimum_size = Vector2i(128, 128)
+layout_mode = 2
+offset_left = 816.0
+offset_right = 944.0
+offset_bottom = 128.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 0
+focus_mode = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_rwxnb")
+theme_override_styles/hover = SubResource("StyleBoxFlat_qae3l")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_gxlw2")
+text = "electron"
 
 [node name="Black Hole" type="Button" parent="MainUIContainer/MarginContainer/VBoxContainer/ElementSelector/Chemical/HBoxContainer"]
 custom_minimum_size = Vector2i(128, 128)
@@ -1506,10 +1625,10 @@ offset_right = 82.0
 offset_bottom = 13.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "A game by Eric Alfaro"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Splash"]
 autoplay = "intro"
+playback_speed = 6.0
 libraries = {
 "": SubResource("AnimationLibrary_4jxq8")
 }

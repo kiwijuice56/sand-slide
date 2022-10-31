@@ -57,6 +57,14 @@ uniform vec4 critter_color_1: source_color = vec4(1.0);
 uniform vec4 uranium_color_1: source_color = vec4(1.0);
 uniform vec4 nuclear_explosion_color_1: source_color = vec4(1.0);
 uniform vec4 nuclear_explosion_color_2: source_color = vec4(1.0);
+uniform vec4 neutron_color_1: source_color = vec4(1.0);
+uniform vec4 neutron_color_2: source_color = vec4(1.0);
+uniform vec4 lightning_color_1: source_color = vec4(1.0);
+uniform vec4 plasma_color_1: source_color = vec4(1.0);
+uniform vec4 plasma_color_2: source_color = vec4(1.0);
+uniform vec4 electron_color_1: source_color = vec4(1.0);
+uniform vec4 storm_plasma_color_1: source_color = vec4(1.0);
+uniform vec4 storm_plasma_color_2: source_color = vec4(1.0);
 
 float shift(float x) {
 	return (x + 1.0) / 2.0;
@@ -228,9 +236,9 @@ void fragment() {
 			COLOR = shift(cos(TIME / 4.0)) / 2.0 * texture(water_noise, ratio * texCoord2) + COLOR * z + acid_color_3 * (1.0 - z);
 			break;
 		case 22:
-			float y = match_amount(TEXTURE, UV, 6);
+			float y = match_amount(TEXTURE, UV, 22);
 			
-			COLOR = acid_gas_color_2 * y + acid_gas_color_1 * (1.0 - y);
+			COLOR = acid_gas_color_1 * y + acid_gas_color_2 * (1.0 - y);
 			break;
 		case 23:
 			COLOR = fairy_color_1;
@@ -323,6 +331,27 @@ void fragment() {
 			break;
 		case 35:
 			COLOR = uranium_color_1;
+			break;
+		case 36:
+			float y = match_amount(TEXTURE, UV, 36);
+			
+			COLOR = neutron_color_2 * y + neutron_color_1 * (1.0 - y);
+			break;
+		case 37:
+			COLOR = lightning_color_1;
+			break;
+		case 38:
+			float y = match_amount(TEXTURE, UV, 38);
+			
+			COLOR = plasma_color_2 * y + plasma_color_1 * (1.0 - y);
+			break;
+		case 39:
+			COLOR = electron_color_1;
+			break;
+		case 40:
+			float y = match_amount(TEXTURE, UV, 40);
+			
+			COLOR = storm_plasma_color_2 * y + storm_plasma_color_1 * (1.0 - y);
 			break;
 	}
 }

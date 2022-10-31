@@ -10,11 +10,12 @@ const ELEMENT_INDEX = [
 	"Steel", "Wood", "Ice", "Lava", "Acid", "Acid Gas", "Fairy", 
 	"Blue Fire", "Glass", "Laser", "Crystal", "Air", "Black Hole",
 	"Oil", "Urchin", "Dragon", "Critter", "Nuclear Explosoin", 
-	"Uranium"]
+	"Uranium", "Neutron", "Lightning", "Plasma", "Electron", "StormPlasma"]
 
 @export var canvas: TextureRect
 @export var element_selector: TabContainer
 @export var eraser_button: Button
+@export var clear_button: Button
 @export var size_slider: HSlider
 @export var speed_slider: HSlider
 @export var splash_screen: ColorRect
@@ -31,6 +32,7 @@ func _ready() -> void:
 	size_slider.value_changed.connect(_on_size_changed)
 	speed_slider.value_changed.connect(_on_speed_changed)
 	eraser_button.pressed.connect(_on_eraser_selected)
+	clear_button.pressed.connect(_on_clear_selected)
 	
 	sim = SandSimulation.new()
 	_on_window_resized()
@@ -56,6 +58,11 @@ func _on_speed_changed(new_speed: int) -> void:
 func _on_eraser_selected() -> void:
 	selected_element = 0
 
+func _on_clear_selected() -> void:
+	for i in range(sim.get_height()):
+		for j in range(sim.get_width()):
+			sim.set_cell(i, j, 0)
+
 func _notification(what):
 	if what == Window.NOTIFICATION_WM_CLOSE_REQUEST or what == Window.NOTIFICATION_WM_GO_BACK_REQUEST:
 		set_process(false)
@@ -78,6 +85,6 @@ func draw(center_row: int, center_col: int, draw_element: int, radius: int) -> v
 			if row*row + col*col < radius*radius and sim.in_bounds(row + center_row, col + center_col):
 				# Check if cell is empty when drawing a fluid
 				var at_cell: int = sim.get_cell(row + center_row, col + center_col)
-				if (draw_element in [3, 5, 20, 21, 24, 28, 30]) and at_cell != 0:
+				if (draw_element in [3, 5, 20, 21, 24, 28, 30, 37]) and at_cell != 0:
 					continue
 				sim.set_cell(row + center_row, col + center_col, draw_element)
