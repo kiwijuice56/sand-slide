@@ -34,10 +34,30 @@ _global_script_classes=[{
 "language": &"GDScript",
 "path": "res://canvas/canvas.gd"
 }, {
+"base": "Control",
+"class": &"SaveControl",
+"language": &"GDScript",
+"path": "res://ui/save_control/save_control.gd"
+}, {
+"base": "Resource",
+"class": &"SaveFile",
+"language": &"GDScript",
+"path": "res://save_file/save_file.gd"
+}, {
+"base": "Node",
+"class": &"SaveFileManager",
+"language": &"GDScript",
+"path": "res://save_file/save_file_manager.gd"
+}, {
 "base": "ColorRect",
 "class": &"SplashScreen",
 "language": &"GDScript",
 "path": "res://ui/splash_screen.gd"
+}, {
+"base": "Control",
+"class": &"UI",
+"language": &"GDScript",
+"path": "res://ui/ui.gd"
 }]
 _global_script_class_icons={
 "ElementSelector": "",
@@ -45,7 +65,11 @@ _global_script_class_icons={
 "HelpLabel": "",
 "Main": "",
 "SandCanvas": "",
-"SplashScreen": ""
+"SaveControl": "",
+"SaveFile": "",
+"SaveFileManager": "",
+"SplashScreen": "",
+"UI": ""
 }
 
 [application]
@@ -58,11 +82,12 @@ boot_splash/show_image=false
 boot_splash/bg_color=Color(0, 0, 0, 1)
 config/icon="res://icon.png"
 config/windows_native_icon="res://favicon.ico"
+config/version="1.0"
 
 [display]
 
-window/size/viewport_width=900
-window/size/viewport_height=700
+window/size/viewport_width=1000
+window/size/viewport_height=800
 window/vsync/vsync_mode=0
 window/stretch/aspect="ignore"
 

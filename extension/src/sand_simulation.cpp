@@ -285,6 +285,11 @@ void SandSimulation::resize(int new_width, int new_height) {
     height = new_height;   
 }
 
+void SandSimulation::set_chunk_size(int new_size) {
+    chunk_size = new_size;
+    resize(width, height);
+}
+
 // Handle created instances on program close
 void SandSimulation::clean_up() {
     for (auto e : elements) {
@@ -310,6 +315,7 @@ void SandSimulation::_bind_methods() {
     ClassDB::bind_method(D_METHOD("get_width"), &SandSimulation::get_width);
     ClassDB::bind_method(D_METHOD("get_height"), &SandSimulation::get_height);
     ClassDB::bind_method(D_METHOD("resize"), &SandSimulation::resize);
+    ClassDB::bind_method(D_METHOD("set_chunk_size"), &SandSimulation::set_chunk_size);
     
     ClassDB::bind_method(D_METHOD("clean_up"), &SandSimulation::clean_up);
 }

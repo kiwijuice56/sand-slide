@@ -64,6 +64,7 @@ public:
     int get_width();
     int get_height();
     void resize(int new_width, int new_height);
+    void set_chunk_size(int new_size);
 
     void clean_up();
 };
