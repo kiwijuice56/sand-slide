@@ -45,6 +45,7 @@ func _ready() -> void:
 
 func _on_window_resized() -> void:
 	sim.resize(int(canvas.size.x / canvas.px_scale), int(canvas.size.y / canvas.px_scale))
+	canvas.repaint(sim)
 
 func _on_mouse_pressed(row: int, col: int, is_left: bool) -> void:
 	draw(row, col, selected_element if is_left else 0, brush_size)
@@ -84,3 +85,13 @@ func clear() -> void:
 
 func save_image(path: String) -> void:
 	canvas.texture.get_image().save_png(path)
+
+func load_image(path: String) -> void:
+	clear()
+	var img: Image = canvas.texture.get_image().load_from_file(path)
+	for i in range(sim.get_height()):
+		for j in range(sim.get_width()):
+			if j >= img.get_width() or i >= img.get_height():
+				continue
+			sim.set_cell(i, j, int(255 * img.get_pixel(j, i).r))
+	canvas.repaint(sim)

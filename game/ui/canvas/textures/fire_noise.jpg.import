@@ -2,9 +2,9 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dv72a2xnad210"
-path.s3tc="res://.godot/imported/water_noise.jpg-67e9c1fd15b2a43e3010b53694952f9b.s3tc.ctex"
-path.etc2="res://.godot/imported/water_noise.jpg-67e9c1fd15b2a43e3010b53694952f9b.etc2.ctex"
+uid="uid://cfx44bcne3145"
+path.s3tc="res://.godot/imported/fire_noise.jpg-c9e2cfd90cd8f63044e60c3de8621467.s3tc.ctex"
+path.etc2="res://.godot/imported/fire_noise.jpg-c9e2cfd90cd8f63044e60c3de8621467.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc", "etc2"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://canvas/textures/water_noise.jpg"
-dest_files=["res://.godot/imported/water_noise.jpg-67e9c1fd15b2a43e3010b53694952f9b.s3tc.ctex", "res://.godot/imported/water_noise.jpg-67e9c1fd15b2a43e3010b53694952f9b.etc2.ctex"]
+source_file="res://ui/canvas/textures/fire_noise.jpg"
+dest_files=["res://.godot/imported/fire_noise.jpg-c9e2cfd90cd8f63044e60c3de8621467.s3tc.ctex", "res://.godot/imported/fire_noise.jpg-c9e2cfd90cd8f63044e60c3de8621467.etc2.ctex"]
 
 [params]
 

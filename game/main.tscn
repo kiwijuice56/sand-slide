@@ -1,14 +1,15 @@
-[gd_scene load_steps=122 format=3 uid="uid://cnh0tcx6chkap"]
+[gd_scene load_steps=122 format=3 uid="uid://dare8w77k701"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_b657u"]
 [ext_resource type="Script" path="res://ui/ui.gd" id="2_27ols"]
 [ext_resource type="FontFile" uid="uid://b8lxwo5dkwrs4" path="res://ui/font/Poppins-Regular.ttf" id="2_iejaa"]
-[ext_resource type="Material" uid="uid://cumbpag0yra8d" path="res://canvas/element_painter.tres" id="3_4kcdt"]
-[ext_resource type="Script" path="res://canvas/canvas.gd" id="3_b35ov"]
+[ext_resource type="Script" path="res://ui/canvas/canvas.gd" id="3_b35ov"]
+[ext_resource type="Material" path="res://ui/canvas/element_painter.tres" id="4_gkdgx"]
 [ext_resource type="Script" path="res://ui/help_label.gd" id="4_vr722"]
-[ext_resource type="Script" path="res://ui/element_selector.gd" id="5_waeqw"]
+[ext_resource type="Script" path="res://ui/element_selector/element_selector.gd" id="5_waeqw"]
 [ext_resource type="Script" path="res://ui/fps_label.gd" id="6_wixoe"]
-[ext_resource type="Script" path="res://ui/splash_screen.gd" id="7_rul6o"]
+[ext_resource type="Script" path="res://ui/splash_screen/splash_screen.gd" id="7_rul6o"]
+[ext_resource type="PackedScene" uid="uid://6fwtlgnkakme" path="res://ui/save_control/save_file_panel/SaveFilePanel.tscn" id="9_agvyx"]
 [ext_resource type="Script" path="res://ui/save_control/save_control.gd" id="9_i7quj"]
 [ext_resource type="Script" path="res://save_file/save_file_manager.gd" id="10_ipwke"]
 
@@ -736,18 +737,11 @@ content_margin_left = 8.0
 content_margin_top = 8.0
 content_margin_right = 8.0
 content_margin_bottom = 8.0
-bg_color = Color(0.196078, 0.196078, 0.196078, 1)
+bg_color = Color(0.298039, 0.298039, 0.298039, 1)
 corner_radius_top_left = 12
 corner_radius_top_right = 12
 corner_radius_bottom_right = 12
 corner_radius_bottom_left = 12
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mmnjk"]
-bg_color = Color(0.133333, 0.133333, 0.133333, 1)
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
 
 [sub_resource type="Animation" id="Animation_swdin"]
 length = 0.001
@@ -933,7 +927,7 @@ element_selector = NodePath("ScreenContainer/MarginContainer/VBoxContainer/Eleme
 save_control = NodePath("SaveControl")
 eraser_button = NodePath("ScreenContainer/MarginContainer/VBoxContainer/OptionContainer/Eraser")
 clear_button = NodePath("ScreenContainer/MarginContainer/VBoxContainer/OptionContainer/Clear")
-save_button = NodePath("ScreenContainer/MarginContainer/VBoxContainer/OptionContainer/Save")
+save_button = NodePath("ScreenContainer/MarginContainer/VBoxContainer/OptionContainer/File")
 size_slider = NodePath("ScreenContainer/MarginContainer/VBoxContainer/OptionContainer/VBoxContainer/BrushSlider")
 speed_slider = NodePath("ScreenContainer/MarginContainer/VBoxContainer/OptionContainer/VBoxContainer2/SpeedSlider")
 splash_screen = NodePath("SplashScreen")
@@ -951,7 +945,7 @@ theme = SubResource("Theme_n7xkt")
 
 [node name="Canvas" type="TextureRect" parent="UI/ScreenContainer"]
 texture_filter = 1
-material = ExtResource("3_4kcdt")
+material = ExtResource("4_gkdgx")
 layout_mode = 2
 offset_right = 1000.0
 offset_bottom = 501.0
@@ -1012,7 +1006,7 @@ custom_minimum_size = Vector2i(0, 80)
 layout_mode = 2
 offset_right = 984.0
 offset_bottom = 80.0
-theme_override_constants/separation = 8
+theme_override_constants/separation = 12
 
 [node name="Clear" type="Button" parent="UI/ScreenContainer/MarginContainer/VBoxContainer/OptionContainer"]
 custom_minimum_size = Vector2i(100, 0)
@@ -1028,8 +1022,8 @@ text = "Clear"
 [node name="Eraser" type="Button" parent="UI/ScreenContainer/MarginContainer/VBoxContainer/OptionContainer"]
 custom_minimum_size = Vector2i(100, 0)
 layout_mode = 2
-offset_left = 108.0
-offset_right = 208.0
+offset_left = 112.0
+offset_right = 212.0
 offset_bottom = 80.0
 size_flags_horizontal = 8
 focus_mode = 0
@@ -1038,8 +1032,8 @@ text = "Eraser"
 [node name="VBoxContainer" type="VBoxContainer" parent="UI/ScreenContainer/MarginContainer/VBoxContainer/OptionContainer"]
 custom_minimum_size = Vector2i(0, 32)
 layout_mode = 2
-offset_left = 216.0
-offset_right = 466.0
+offset_left = 224.0
+offset_right = 469.0
 offset_bottom = 80.0
 size_flags_horizontal = 3
 theme_override_constants/separation = 0
@@ -1048,7 +1042,7 @@ theme_override_constants/separation = 0
 custom_minimum_size = Vector2i(0, 32)
 layout_mode = 2
 offset_top = 10.0
-offset_right = 250.0
+offset_right = 245.0
 offset_bottom = 42.0
 size_flags_horizontal = 3
 size_flags_vertical = 10
@@ -1058,9 +1052,9 @@ value = 6.0
 
 [node name="Label" type="Label" parent="UI/ScreenContainer/MarginContainer/VBoxContainer/OptionContainer/VBoxContainer"]
 layout_mode = 2
-offset_left = 99.0
+offset_left = 96.0
 offset_top = 42.0
-offset_right = 151.0
+offset_right = 148.0
 offset_bottom = 80.0
 size_flags_horizontal = 4
 size_flags_vertical = 1
@@ -1069,8 +1063,8 @@ vertical_alignment = 1
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="UI/ScreenContainer/MarginContainer/VBoxContainer/OptionContainer"]
 layout_mode = 2
-offset_left = 474.0
-offset_right = 725.0
+offset_left = 481.0
+offset_right = 726.0
 offset_bottom = 80.0
 size_flags_horizontal = 3
 theme_override_constants/separation = 0
@@ -1079,7 +1073,7 @@ theme_override_constants/separation = 0
 custom_minimum_size = Vector2i(0, 32)
 layout_mode = 2
 offset_top = 10.0
-offset_right = 251.0
+offset_right = 245.0
 offset_bottom = 42.0
 size_flags_horizontal = 3
 size_flags_vertical = 10
@@ -1090,14 +1084,14 @@ value = 150000.0
 [node name="Speed" type="Label" parent="UI/ScreenContainer/MarginContainer/VBoxContainer/OptionContainer/VBoxContainer2"]
 layout_mode = 2
 offset_top = 42.0
-offset_right = 251.0
+offset_right = 245.0
 offset_bottom = 80.0
 size_flags_vertical = 1
 text = " Speed"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Save" type="Button" parent="UI/ScreenContainer/MarginContainer/VBoxContainer/OptionContainer"]
+[node name="File" type="Button" parent="UI/ScreenContainer/MarginContainer/VBoxContainer/OptionContainer"]
 custom_minimum_size = Vector2i(100, 0)
 layout_mode = 2
 offset_left = 884.0
@@ -1797,7 +1791,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_3h784")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_jbbp0")
 text = "black hole"
 
-[node name="SaveControl" type="Control" parent="UI" node_paths=PackedStringArray("save_button", "load_button", "back_button")]
+[node name="SaveControl" type="Control" parent="UI" node_paths=PackedStringArray("save_file_manager", "save_file_container", "save_button", "load_button", "back_button", "delete_button", "new_button", "new_file_name")]
 visible = false
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
@@ -1807,9 +1801,15 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("9_i7quj")
+save_file_panel = ExtResource("9_agvyx")
+save_file_manager = NodePath("../../SaveFileManager")
+save_file_container = NodePath("SaveContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer")
 save_button = NodePath("SaveContainer/PanelContainer/VBoxContainer/HBoxContainer/SaveFile")
 load_button = NodePath("SaveContainer/PanelContainer/VBoxContainer/HBoxContainer/LoadFile")
-back_button = NodePath("SaveContainer/PanelContainer/VBoxContainer/HBoxContainer/Back")
+back_button = NodePath("SaveContainer/PanelContainer/Back")
+delete_button = NodePath("SaveContainer/PanelContainer/VBoxContainer/HBoxContainer/DeleteFile")
+new_button = NodePath("SaveContainer/PanelContainer/VBoxContainer/HBoxContainer2/New")
+new_file_name = NodePath("SaveContainer/PanelContainer/VBoxContainer/HBoxContainer2/TextEdit")
 
 [node name="SaveCover" type="ColorRect" parent="UI/SaveControl"]
 layout_mode = 1
@@ -1848,20 +1848,45 @@ offset_left = 8.0
 offset_top = 8.0
 offset_right = 736.0
 offset_bottom = 536.0
+theme_override_constants/separation = 8
 
 [node name="Label" type="Label" parent="UI/SaveControl/SaveContainer/PanelContainer/VBoxContainer"]
 layout_mode = 2
-offset_left = 254.0
-offset_right = 473.0
+offset_left = 256.0
+offset_right = 472.0
 offset_bottom = 38.0
 size_flags_horizontal = 4
 text = "Manage save files"
 
+[node name="HBoxContainer2" type="HBoxContainer" parent="UI/SaveControl/SaveContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+offset_top = 328.0
+offset_right = 728.0
+offset_bottom = 376.0
+
+[node name="TextEdit" type="TextEdit" parent="UI/SaveControl/SaveContainer/PanelContainer/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2i(0, 48)
+layout_mode = 2
+offset_top = 8.0
+offset_right = 728.0
+offset_bottom = 56.0
+size_flags_horizontal = 3
+placeholder_text = "Type new file name"
+
+[node name="New" type="Button" parent="UI/SaveControl/SaveContainer/PanelContainer/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2i(128, 48)
+layout_mode = 2
+offset_top = 64.0
+offset_right = 728.0
+offset_bottom = 128.0
+focus_mode = 0
+text = "Create new file"
+
 [node name="ScrollContainer" type="ScrollContainer" parent="UI/SaveControl/SaveContainer/PanelContainer/VBoxContainer"]
 layout_mode = 2
-offset_top = 42.0
+offset_top = 46.0
 offset_right = 728.0
-offset_bottom = 460.0
+offset_bottom = 320.0
 size_flags_vertical = 3
 
 [node name="VBoxContainer" type="VBoxContainer" parent="UI/SaveControl/SaveContainer/PanelContainer/VBoxContainer/ScrollContainer"]
@@ -1872,9 +1897,9 @@ theme_override_constants/separation = 8
 
 [node name="HBoxContainer" type="HBoxContainer" parent="UI/SaveControl/SaveContainer/PanelContainer/VBoxContainer"]
 layout_mode = 2
-offset_left = 256.0
+offset_left = 164.0
 offset_top = 464.0
-offset_right = 472.0
+offset_right = 564.0
 offset_bottom = 528.0
 size_flags_horizontal = 4
 theme_override_constants/separation = 8
@@ -1886,29 +1911,42 @@ offset_right = 128.0
 offset_bottom = 64.0
 size_flags_horizontal = 4
 focus_mode = 0
-theme_override_styles/normal = SubResource("StyleBoxFlat_mmnjk")
 text = "Save"
 
 [node name="LoadFile" type="Button" parent="UI/SaveControl/SaveContainer/PanelContainer/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2i(128, 64)
 layout_mode = 2
-offset_right = 128.0
+offset_left = 136.0
+offset_right = 264.0
 offset_bottom = 64.0
 size_flags_horizontal = 4
 focus_mode = 0
-theme_override_styles/normal = SubResource("StyleBoxFlat_mmnjk")
 text = "Load"
 
-[node name="Back" type="Button" parent="UI/SaveControl/SaveContainer/PanelContainer/VBoxContainer/HBoxContainer"]
+[node name="DeleteFile" type="Button" parent="UI/SaveControl/SaveContainer/PanelContainer/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2i(128, 64)
 layout_mode = 2
-offset_left = 136.0
-offset_right = 216.0
+offset_left = 272.0
+offset_right = 400.0
 offset_bottom = 64.0
 size_flags_horizontal = 4
 focus_mode = 0
-theme_override_styles/normal = SubResource("StyleBoxFlat_mmnjk")
-text = "Back"
+text = "Delete"
+
+[node name="Back" type="Button" parent="UI/SaveControl/SaveContainer/PanelContainer"]
+custom_minimum_size = Vector2i(32, 0)
+layout_mode = 2
+offset_left = 704.0
+offset_top = 8.0
+offset_right = 736.0
+offset_bottom = 43.0
+size_flags_horizontal = 8
+size_flags_vertical = 0
+focus_mode = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_5esfr")
+theme_override_styles/hover = SubResource("StyleBoxFlat_hwm88")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_evmbs")
+text = "x"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="UI/SaveControl"]
 playback_speed = 3.0

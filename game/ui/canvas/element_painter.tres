@@ -1,11 +1,11 @@
-[gd_resource type="ShaderMaterial" load_steps=7 format=3 uid="uid://cumbpag0yra8d"]
+[gd_resource type="ShaderMaterial" load_steps=7 format=3]
 
-[ext_resource type="Shader" path="res://canvas/element_painter.gdshader" id="1_2v6tn"]
-[ext_resource type="Texture2D" uid="uid://b2er78i2yjm8w" path="res://canvas/textures/crystal.jpg" id="2_g0d6y"]
-[ext_resource type="Texture2D" uid="uid://cfx44bcne3145" path="res://canvas/textures/fire_noise.jpg" id="2_nfg6x"]
-[ext_resource type="Texture2D" uid="uid://411hddjsr572" path="res://canvas/textures/marble.jpg" id="3_7fen1"]
-[ext_resource type="Texture2D" uid="uid://7ulbs6l163vf" path="res://canvas/textures/glass.png" id="4_bgplp"]
-[ext_resource type="Texture2D" uid="uid://dv72a2xnad210" path="res://canvas/textures/water_noise.jpg" id="4_st85m"]
+[ext_resource type="Shader" path="res://ui/canvas/element_painter.gdshader" id="1_2v6tn"]
+[ext_resource type="Texture2D" uid="uid://b2er78i2yjm8w" path="res://ui/canvas/textures/crystal.jpg" id="2_g0d6y"]
+[ext_resource type="Texture2D" uid="uid://cfx44bcne3145" path="res://ui/canvas/textures/fire_noise.jpg" id="2_nfg6x"]
+[ext_resource type="Texture2D" uid="uid://411hddjsr572" path="res://ui/canvas/textures/marble.jpg" id="3_7fen1"]
+[ext_resource type="Texture2D" uid="uid://7ulbs6l163vf" path="res://ui/canvas/textures/glass.png" id="4_bgplp"]
+[ext_resource type="Texture2D" uid="uid://dv72a2xnad210" path="res://ui/canvas/textures/water_noise.jpg" id="4_st85m"]
 
 [resource]
 shader = ExtResource("1_2v6tn")
