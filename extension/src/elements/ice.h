@@ -12,18 +12,18 @@ public:
 
     void process(SandSimulation *sim, int row, int col) override {
         // Melt
-        if (randf() < FLAME && sim->is_on_fire(row, col)) {
+        if (sim->randf() < FLAME && sim->is_on_fire(row, col)) {
             sim->set_cell(row, col, 3);
             return;
         }
 
-        if (randf() >= GROW) {
+        if (sim->randf() >= GROW) {
             return;
         }
 
         // We need to empty this cell for ice branching checks
         sim->set_cell(row, col, 0);
-        int dir = (std::rand() % 3) - 1;
+        int dir = (int) (sim->randf() * 3) - 1;
         if (dir != 0 && sim->cardinal_touch_count(row, col + dir, 19) == 0) {
             sim->grow(row, col + dir, 3, 19);
         } else if (sim->cardinal_touch_count(row + 1, col, 19) == 0) {

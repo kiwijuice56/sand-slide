@@ -10,10 +10,10 @@ public:
 
     void process(SandSimulation *sim, int row, int col) override {
         // Adding a limit slows the explosion down
-        if (randf() > PROCESS) {
+        if (sim->randf() > PROCESS) {
             return;
         // We eliminate explosions that reach the end, as they tend to linger for a long time if not checked
-        } else if (randf() < DECAY || sim->touch_count(row, col, 6) > 1 ||
+        } else if (sim->randf() < DECAY || sim->touch_count(row, col, 6) > 1 ||
             row == sim->get_height() - 1 || col == sim->get_width() - 1 || col == 0 || row == 0) {
             sim->set_cell(row, col, 6);
         } else {

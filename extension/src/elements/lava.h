@@ -11,17 +11,17 @@ public:
 
     void process(SandSimulation *sim, int row, int col) override {
         // Cooling
-        if (randf() < COOL && sim->touch_count(row, col, 3)) {
+        if (sim->randf() < COOL && sim->touch_count(row, col, 3)) {
             sim->set_cell(row, col, 2);
             return;
         }
-        int dir = (std::rand() % 3) - 1;
+        int dir = (int) (sim->randf() * 3) - 1;
         if (dir != 0) {
             sim->move_and_swap(row, col, row, col + dir);
         } else {
            sim->move_and_swap(row, col, row + 1, col);
         }
-        if (randf() < FLAME) {
+        if (sim->randf() < FLAME) {
             sim->grow(row - 1, col, 0, 5);
             sim->grow(row, col - 1, 0, 5);
             sim->grow(row, col + 1, 0, 5);

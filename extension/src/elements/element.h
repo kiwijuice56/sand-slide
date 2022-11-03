@@ -16,8 +16,6 @@ public:
     virtual double get_explode_resistance() = 0;
     virtual double get_acid_resistance() = 0;
 
-    // Helper method to return a random number [0, 1)
-    static double randf() { return ((double) rand() / (RAND_MAX)); }
 };
 
 #endif // ELEMENT_H

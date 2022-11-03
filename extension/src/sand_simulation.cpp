@@ -161,7 +161,7 @@ void SandSimulation::grow(int row, int col, int food, int replacer) {
     if (food == -1) {
         // Since only explosions/lasers grow into all cells, we run a check for explosion resistance
         // This should probably be inside the explosion element code, but this is more convenient
-        if (Element::randf() >= (1.0 - elements.at(get_cell(row, col))->get_explode_resistance())) {
+        if (randf() >= (1.0 - elements.at(get_cell(row, col))->get_explode_resistance())) {
             return;
         }
     } else {
@@ -210,19 +210,40 @@ bool SandSimulation::in_bounds(int row, int col) {
 
 // Check if the cell is touching an element intended to destroy life, such as acid
 bool SandSimulation::is_poisoned(int row, int col) {
-    return 
-    touch_count(row, col, 10) + touch_count(row, col, 21) + 
-    touch_count(row, col, 22) + touch_count(row, col, 35) > 0;
+    for (int y = -1; y <= 1; y++) {
+        for (int x = -1; x <= 1; x++) {
+            if (x == 0 && y == 0 || !in_bounds(row + y, col + x)) {
+                continue;
+            }
+            int c = get_cell(row + y, col + x);
+            if (c == 10 || c == 21 || c == 22 || c == 35) {
+                return true;
+            }
+        }
+    } 
+    return false; 
 }
 
 // Check if a cell is touching any flame producing elements
 bool SandSimulation::is_on_fire(int row, int col) {
-    return 
-    touch_count(row, col, 24) + touch_count(row, col, 5) + 
-    touch_count(row, col, 26) + touch_count(row, col, 34) +
-    touch_count(row, col, 37) + touch_count(row, col, 38) +
-    touch_count(row, col, 40) > 0;
+    for (int y = -1; y <= 1; y++) {
+        for (int x = -1; x <= 1; x++) {
+            if (x == 0 && y == 0 || !in_bounds(row + y, col + x)) {
+                continue;
+            }
+            int c = get_cell(row + y, col + x);
+            if (c == 24 || c == 5 || c == 26 || c == 34 || c == 37 || c == 38 || c == 40) {
+                return true;
+            }
+        }
+    } 
+    return false;
 }
+
+inline float SandSimulation::randf() { 
+    g_seed = (214013 * g_seed + 2531011); 
+    return ((g_seed>>16) & 0x7FFF) / (double) 0x7FFF; 
+} 
 
 int SandSimulation::get_cell(int row, int col) {
     return cells.at(row * width + col);

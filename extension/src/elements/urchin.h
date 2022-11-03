@@ -12,7 +12,7 @@ public:
             sim->set_cell(row, col, 0);
         } else if (sim->touch_count(row, col, 31) > 2 || sim->touch_count(row, col, 4) > 0) {
             sim->set_cell(row, col, 3);
-        } else if (randf() < GROWTH) {
+        } else if (sim->randf() < GROWTH) {
             sim->grow(row + 1, col, 3, 31);
             sim->grow(row - 1, col, 3, 31);
             sim->grow(row, col - 1, 3, 31);

@@ -11,16 +11,16 @@ public:
 
     void process(SandSimulation *sim, int row, int col) override {  
         // Catch on fire
-        if (randf() < FLAME && sim->is_on_fire(row, col)) {
+        if (sim->randf() < FLAME && sim->is_on_fire(row, col)) {
             sim->set_cell(row, col, 5);
             return;
         }
 
         // Grow into water
-        if (randf() < GROWTH && sim->touch_count(row, col, 3) > 0) {
-            sim->grow(row + (std::rand() % 2) - 1, col + std::rand() % 2 - 1, 3, 7);
+        if (sim->randf() < GROWTH && sim->touch_count(row, col, 3) > 0) {
+            sim->grow(row + (int) (sim->randf() * 3) - 1, col + (int) (sim->randf() * 3) - 1, 3, 7);
         }
-        else if (randf() < DEATH) {
+        else if (sim->randf() < DEATH) {
             sim->set_cell(row, col, 3);
         } else if (sim->is_poisoned(row, col)) {
             sim->set_cell(row, col, 16);

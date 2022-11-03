@@ -12,12 +12,12 @@ public:
 
     void process(SandSimulation *sim, int row, int col) override {
         // Decay
-        if (randf() < DECAY && sim->touch_count(row, col, 0) > 0) {
+        if (sim->randf() < DECAY && sim->touch_count(row, col, 0) > 0) {
             sim->set_cell(row, col, 22);
             return;
         }
 
-        int dir = (std::rand() % 3) - 1;
+        int dir = (int) (sim->randf() * 3) - 1;
         int newCol = col;
         int newRow = row;
         if (dir != 0) {
@@ -33,12 +33,12 @@ public:
             return;
 
         // Swap and delete
-        if (sim->get_cell(newRow, newCol) == 0 || randf() < EAT * (1.0 - sim->elements.at(sim->get_cell(newRow, newCol))->get_acid_resistance())) {
+        if (sim->get_cell(newRow, newCol) == 0 || sim->randf() < EAT * (1.0 - sim->elements.at(sim->get_cell(newRow, newCol))->get_acid_resistance())) {
             sim->move_and_swap(row, col, newRow, newCol);
             sim->set_cell(row, col, 0);
         }
 
-        if (randf() < EMIT) {
+        if (sim->randf() < EMIT) {
             sim->grow(row - 1, col, 0, 22);
         }
     }

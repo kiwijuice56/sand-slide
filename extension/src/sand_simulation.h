@@ -14,6 +14,8 @@ using namespace godot;
 class SandSimulation : public RefCounted {
     GDCLASS(SandSimulation, RefCounted);
 
+    unsigned int g_seed = 1234;
+
     // Screen dimensions
     int width = 256;
     int height = 256;
@@ -54,6 +56,7 @@ public:
     bool in_bounds(int row, int col);
     bool is_poisoned(int row, int col);
     bool is_on_fire(int row, int col);
+    float randf();
 
     int get_cell(int row, int col);
     void set_cell(int row, int col, int type);

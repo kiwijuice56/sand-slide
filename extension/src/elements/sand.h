@@ -8,7 +8,7 @@ public:
     const double FLAME = 1 / 64.0;
 
     void process(SandSimulation *sim, int row, int col) override {
-        if (randf() < FLAME && sim->is_on_fire(row, col)) {
+        if (sim->randf() < FLAME && sim->is_on_fire(row, col)) {
             sim->set_cell(row, col, 25);
             return;
         }

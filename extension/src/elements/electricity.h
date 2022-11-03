@@ -13,8 +13,8 @@ public:
         if (n_count != 8) {
             sim->set_cell(row, col, 38);
         } else {
-            int rand_row = row + (randf() < DOWN ? 1 : -1);
-            int rand_col = col + (std::rand() % 3) - 1;
+            int rand_row = row + (sim->randf() < DOWN ? 1 : -1);
+            int rand_col = col + (int) (sim->randf() * 3) - 1;
             sim->set_cell(row, col, 0);
             if (sim->touch_count(rand_row, rand_col, 37) <= 1) {
                 sim->grow(rand_row, rand_col, 0, 37);

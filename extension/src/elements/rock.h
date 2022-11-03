@@ -10,7 +10,7 @@ public:
     const double WEATHER = 1.0 / 2056;
 
     void process(SandSimulation *sim, int row, int col) override {
-        if (randf() < WEATHER && sim->touch_count(row, col, 3) > 0) {
+        if (sim->randf() < WEATHER && sim->touch_count(row, col, 3) > 0) {
             sim->set_cell(row, col, 11);
         }
     }

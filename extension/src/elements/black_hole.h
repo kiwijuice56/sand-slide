@@ -11,7 +11,7 @@ public:
     const double PROCESS = 1.0 / 64;
 
     void process(SandSimulation *sim, int row, int col) override {
-        if (randf() < PROCESS) {
+        if (sim->randf() < PROCESS) {
             return;
         }
         for (int y = row - 1; y <= row + 1; y++) {
@@ -26,7 +26,7 @@ public:
         }
         for (int y = row - 5; y <= row + 5; y++) {
             for (int x = col - 5; x <= col + 5; x++) {
-                if (randf() >= GRAB) {
+                if (sim->randf() >= GRAB) {
                     continue;
                 }
                 if (!sim->in_bounds(y, x) || sim->get_cell(y, x) == 29) {

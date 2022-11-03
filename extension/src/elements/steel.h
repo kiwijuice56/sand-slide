@@ -10,8 +10,8 @@ public:
     const double MELT = 1.0 / 16;
     const double EXPLODE = 1.0 / 8;
     void process(SandSimulation *sim, int row, int col) override {
-        if (randf() < MELT && sim->touch_count(row, col, 38) + sim->touch_count(row, col, 39) > 0) {
-            sim->set_cell(row, col, randf() < EXPLODE ? 9 : 38);
+        if (sim->randf() < MELT && sim->touch_count(row, col, 38) + sim->touch_count(row, col, 39) > 0) {
+            sim->set_cell(row, col, sim->randf() < EXPLODE ? 9 : 38);
         }
     }
 

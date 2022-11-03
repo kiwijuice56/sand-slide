@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://ui/ui.gd" id="2_27ols"]
 [ext_resource type="FontFile" uid="uid://b8lxwo5dkwrs4" path="res://ui/font/Poppins-Regular.ttf" id="2_iejaa"]
 [ext_resource type="Script" path="res://ui/canvas/canvas.gd" id="3_b35ov"]
-[ext_resource type="Material" path="res://ui/canvas/element_painter.tres" id="4_gkdgx"]
+[ext_resource type="Material" uid="uid://b5j81jl74j6yl" path="res://ui/canvas/element_painter.tres" id="4_gkdgx"]
 [ext_resource type="Script" path="res://ui/help_label.gd" id="4_vr722"]
 [ext_resource type="Script" path="res://ui/element_selector/element_selector.gd" id="5_waeqw"]
 [ext_resource type="Script" path="res://ui/fps_label.gd" id="6_wixoe"]
@@ -906,13 +906,12 @@ _data = {
 "intro": SubResource("Animation_mci7d")
 }
 
-[node name="Main" type="Node" node_paths=PackedStringArray("save_file_manager", "canvas", "splash_screen")]
+[node name="Main" type="Node" node_paths=PackedStringArray("save_file_manager", "canvas")]
 script = ExtResource("1_b657u")
 save_file_manager = NodePath("SaveFileManager")
 canvas = NodePath("UI/ScreenContainer/Canvas")
-splash_screen = NodePath("UI/SplashScreen")
-simulation_speed = 120000
-chunk_size = 16
+simulation_speed = 2400
+chunk_size = 32
 
 [node name="UI" type="Control" parent="." node_paths=PackedStringArray("sim_holder", "element_selector", "save_control", "eraser_button", "clear_button", "save_button", "size_slider", "speed_slider", "splash_screen")]
 layout_mode = 3
@@ -1077,9 +1076,8 @@ offset_right = 245.0
 offset_bottom = 42.0
 size_flags_horizontal = 3
 size_flags_vertical = 10
-min_value = 5000.0
-max_value = 250000.0
-value = 150000.0
+max_value = 4800.0
+value = 2400.0
 
 [node name="Speed" type="Label" parent="UI/ScreenContainer/MarginContainer/VBoxContainer/OptionContainer/VBoxContainer2"]
 layout_mode = 2

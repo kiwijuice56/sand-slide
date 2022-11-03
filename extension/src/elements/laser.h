@@ -8,11 +8,11 @@ public:
     const double DECAY = 1.0 / 4;
     const double EXPLODE = 1.0 / 94;
     void process(SandSimulation *sim, int row, int col) override {
-        if (randf() < DECAY && sim->in_bounds(row - 1, col) && sim->get_cell(row - 1, col) != 26) {
+        if (sim->randf() < DECAY && sim->in_bounds(row - 1, col) && sim->get_cell(row - 1, col) != 26) {
             sim->set_cell(row, col, 6);
             return;
         }
-        if (randf() < EXPLODE && sim->in_bounds(row + 1, col) && sim->get_cell(row + 1, col) != 0 && sim->get_cell(row + 1, col) != 29) {
+        if (sim->randf() < EXPLODE && sim->in_bounds(row + 1, col) && sim->get_cell(row + 1, col) != 0 && sim->get_cell(row + 1, col) != 29) {
             sim->set_cell(row + 1, col, 9);
         } else {
             sim->grow(row + 1, col, -1, 26);

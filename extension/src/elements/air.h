@@ -8,14 +8,14 @@ public:
     const double DECAY = 1.0 / 360;
 
     void process(SandSimulation *sim, int row, int col) override {
-        if (randf() < DECAY) {
+        if (sim->randf() < DECAY) {
             sim->set_cell(row, col, 0);
         }
         
-        int newRow = row + (std::rand() % 3) - 1;
-        int newCol = col + (std::rand() % 3) - 1;
+        int newRow = row + (int) (sim->randf() * 3) - 1;
+        int newCol = col + (int) (sim->randf() * 3) - 1;
 
-        if (sim->in_bounds(newRow, newCol) && randf() < 1.0 - sim->elements.at(sim->get_cell(newRow, newCol))->get_density() / 32.0) {
+        if (sim->in_bounds(newRow, newCol) && sim->randf() < 1.0 - sim->elements.at(sim->get_cell(newRow, newCol))->get_density() / 32.0) {
             sim->move_and_swap(row, col, newRow, newCol);
         } 
     }

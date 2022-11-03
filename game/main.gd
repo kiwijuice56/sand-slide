@@ -15,10 +15,6 @@ const ELEMENT_INDEX = [
 @export var save_file_manager: Node
 @export var canvas: TextureRect
 
-# Connections to UI nodes that directly modify the simulation/drawing variables
-
-@export var splash_screen: ColorRect
-
 @export var simulation_speed: int = 100000
 @export var chunk_size: int = 8
 
@@ -59,10 +55,7 @@ func _notification(what):
 
 func _process(delta) -> void:
 	if draw_enabled:
-		# If we don't limit the delta, the larger step will cause 
-		# the next delta to be even higher, causing a loop until the
-		# program crashes
-		sim.step(int(simulation_speed * min(0.005, delta)))
+		sim.step(simulation_speed)
 		canvas.repaint(sim)
 
 # Draw a circle of the element onto the simulation

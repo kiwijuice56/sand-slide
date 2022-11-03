@@ -12,14 +12,14 @@ public:
 
     void process(SandSimulation *sim, int row, int col) override {
         // Catch on fire
-        if (randf() < FLAME && sim->is_on_fire(row, col)) {
+        if (sim->randf() < FLAME && sim->is_on_fire(row, col)) {
             sim->set_cell(row, col, 5);
             return;
         }
 
-        if (randf() < GROW) {
+        if (sim->randf() < GROW) {
             int newCol = col;
-            double r = randf();
+            double r = sim->randf();
             if (r < LEFT) {
                 newCol--;
             } else if (r < RIGHT) {

@@ -1,4 +1,4 @@
-[gd_resource type="ShaderMaterial" load_steps=7 format=3]
+[gd_resource type="ShaderMaterial" load_steps=8 format=3]
 
 [ext_resource type="Shader" path="res://ui/canvas/element_painter.gdshader" id="1_2v6tn"]
 [ext_resource type="Texture2D" uid="uid://b2er78i2yjm8w" path="res://ui/canvas/textures/crystal.jpg" id="2_g0d6y"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://411hddjsr572" path="res://ui/canvas/textures/marble.jpg" id="3_7fen1"]
 [ext_resource type="Texture2D" uid="uid://7ulbs6l163vf" path="res://ui/canvas/textures/glass.png" id="4_bgplp"]
 [ext_resource type="Texture2D" uid="uid://dv72a2xnad210" path="res://ui/canvas/textures/water_noise.jpg" id="4_st85m"]
+[ext_resource type="Texture2D" uid="uid://caevplyk1e8y0" path="res://ui/canvas/textures/sky.jpg" id="6_2mjjp"]
 
 [resource]
 shader = ExtResource("1_2v6tn")
@@ -61,6 +62,7 @@ shader_parameter/sand_color_1 = Color(0.980392, 0.47451, 0.137255, 1)
 shader_parameter/sand_duck_color_1 = Color(0.988235, 0.737255, 0.384314, 1)
 shader_parameter/seed_color_1 = Color(0.72549, 1, 0.368627, 1)
 shader_parameter/seed_color_2 = Color(0.294118, 0.678431, 0.141176, 1)
+shader_parameter/sky_texture = ExtResource("6_2mjjp")
 shader_parameter/smoke_color_1 = Color(0.2, 0.172549, 0.172549, 1)
 shader_parameter/smoke_color_2 = Color(0.329412, 0.329412, 0.329412, 1)
 shader_parameter/soil_color = Color(0.501961, 0.156863, 0.121569, 1)
@@ -70,8 +72,8 @@ shader_parameter/storm_plasma_color_1 = Color(0.0980392, 0.180392, 0.65098, 1)
 shader_parameter/storm_plasma_color_2 = Color(1, 0.317647, 0.439216, 1)
 shader_parameter/uranium_color_1 = Color(0.517647, 0.564706, 0.501961, 1)
 shader_parameter/urchin_color_1 = Color(0.301961, 0.101961, 0.309804, 1)
-shader_parameter/water_color_1 = Color(0.145098, 0.231373, 0.980392, 1)
-shader_parameter/water_color_2 = Color(0.14902, 0.447059, 0.929412, 1)
-shader_parameter/water_color_3 = Color(0.105882, 0.00784314, 0.537255, 1)
+shader_parameter/water_color_1 = Color(0.145098, 0.337255, 0.980392, 1)
+shader_parameter/water_color_2 = Color(0.14902, 0.607843, 0.929412, 1)
+shader_parameter/water_color_3 = Color(0.105882, 0.145098, 0.537255, 1)
 shader_parameter/water_noise = ExtResource("4_st85m")
 shader_parameter/wood_color_1 = Color(0.631373, 0.368627, 0.12549, 1)

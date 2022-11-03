@@ -11,7 +11,7 @@ public:
 
     void process(SandSimulation *sim, int row, int col) override {
         // Catch on fire
-        if (randf() < FLAME && sim->is_on_fire(row, col)) {
+        if (sim->randf() < FLAME && sim->is_on_fire(row, col)) {
             sim->set_cell(row, col, 5);
             return;
         }
@@ -19,9 +19,9 @@ public:
         sim->move_and_swap(row, col, row + 1, col);
 
         // Turn into a germinated seed
-        if (randf() < DECAY) {
+        if (sim->randf() < DECAY) {
             sim->set_cell(row, col, 11);
-        } else if (randf() < GERMINATE && sim->touch_count(row, col, 3) > 0) {
+        } else if (sim->randf() < GERMINATE && sim->touch_count(row, col, 3) > 0) {
             sim->set_cell(row, col, 13);
         }
     }
