@@ -57,6 +57,8 @@ func overwrite_save_file(file: SaveFile) -> void:
 	var path: String = file.get_path()
 	var folder: String = path.substr(0, path.rfind("/") + 1)
 	sim_holder.save_image(folder + "/img.png")
+	file.version = ProjectSettings.get_setting("application/config/version")
+	ResourceSaver.save(file, path)
 	
 	update_files()
 

@@ -34,8 +34,8 @@ state from surrounding cells. You can get information and manipulate the simulat
 const double FLAME = 1 / 64.0;
 
 void process(SandSimulation *sim, int row, int col) override {
-	// randf is a helper method defined within element.h that returns a random number [0, 1)
-	if (randf() < FLAME && sim->is_on_fire(row, col)) {
+	// randf is a helper method defined within sand_simulation.h that returns a random number [0, 1)
+	if (sim->randf() < FLAME && sim->is_on_fire(row, col)) {
 		// Set this cell to glass when on fire
 		sim->set_cell(row, col, 25); // 25 is the ID of glass, as explained further below
 		return;
@@ -56,3 +56,8 @@ is replaced with glass. Glass is placed at the 25th spot of the `elements` vecto
 In the godot project, add your element name to the `ELEMENT_INDEX` list within `game\main.gd` at the same index you placed it within `elements`. 
 The visuals of your element can be modified through the `game\canvas\element_shader.gd` file.
 Finally, create a button with the matching name that you put within the list.
+
+## Save Files
+The game allows you to manage save files. Files are stored in `user:\\` which is `%APPDATA%\Godot\app_userdata\Sand Slide` on Windows.
+Each folder corresponds to a save file and contains a Godot resource and an image. Each luminosity value in the texture represents an element,
+so you can edit the file in an external editor and load it back into the game.

@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://ui/ui.gd" id="2_27ols"]
 [ext_resource type="FontFile" uid="uid://b8lxwo5dkwrs4" path="res://ui/font/Poppins-Regular.ttf" id="2_iejaa"]
 [ext_resource type="Script" path="res://ui/canvas/canvas.gd" id="3_b35ov"]
-[ext_resource type="Material" uid="uid://c4yk1luulvf23" path="res://ui/canvas/element_painter.tres" id="4_gkdgx"]
+[ext_resource type="Material" path="res://ui/canvas/element_painter.tres" id="4_gkdgx"]
 [ext_resource type="Script" path="res://ui/help_label.gd" id="4_vr722"]
 [ext_resource type="Script" path="res://ui/element_selector/element_selector.gd" id="5_waeqw"]
 [ext_resource type="Script" path="res://ui/fps_label.gd" id="6_wixoe"]
@@ -971,6 +971,7 @@ offset_right = 1000.0
 offset_bottom = 501.0
 size_flags_vertical = 3
 script = ExtResource("3_b35ov")
+px_scale = 3
 
 [node name="HelpLabel" type="Label" parent="UI/ScreenContainer/Canvas" node_paths=PackedStringArray("sim_holder", "canvas", "splash_screen")]
 layout_mode = 1
