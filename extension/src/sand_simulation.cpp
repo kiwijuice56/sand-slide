@@ -41,6 +41,7 @@
 #include "elements/plasma.h"
 #include "elements/electricity_storm.h"
 #include "elements/storm_plasma.h"
+#include "elements/hurricane.h"
 
 #include <godot_cpp/core/class_db.hpp>
 #include <random>
@@ -95,6 +96,7 @@ SandSimulation::SandSimulation() {
     elements.at(38) = new Plasma();
     elements.at(39) = new ElectricityStorm();
     elements.at(40) = new StormPlasma();
+    elements.at(41) = new Hurricane();
 
     draw_data = PackedByteArray();
 
@@ -232,7 +234,7 @@ bool SandSimulation::is_on_fire(int row, int col) {
                 continue;
             }
             int c = get_cell(row + y, col + x);
-            if (c == 24 || c == 5 || c == 26 || c == 34 || c == 37 || c == 38 || c == 40) {
+            if (c == 24 || c == 5 || c == 9 || c == 20 || c == 26 || c == 34 || c == 37 || c == 38 || c == 40) {
                 return true;
             }
         }

@@ -15,7 +15,7 @@ public:
         }
 
         if (sim->randf() < DECAY) {
-            sim->set_cell(row, col, 5);
+            sim->set_cell(row, col, 0);
         }
 
         int dir = (int) (sim->randf() * 3) - 1;

@@ -24,8 +24,8 @@ public:
         if (sim->cardinal_touch_count(row, col, 0) == 0) {
             return;
         }
-        for (int y = row - 5; y <= row + 5; y++) {
-            for (int x = col - 5; x <= col + 5; x++) {
+        for (int y = row - 8; y <= row + 8; y++) {
+            for (int x = col - 8; x <= col + 8; x++) {
                 if (sim->randf() >= GRAB) {
                     continue;
                 }

@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://411hddjsr572" path="res://ui/canvas/textures/marble.jpg" id="3_7fen1"]
 [ext_resource type="Texture2D" uid="uid://7ulbs6l163vf" path="res://ui/canvas/textures/glass.png" id="4_bgplp"]
 [ext_resource type="Texture2D" uid="uid://dv72a2xnad210" path="res://ui/canvas/textures/water_noise.jpg" id="4_st85m"]
-[ext_resource type="Texture2D" uid="uid://caevplyk1e8y0" path="res://ui/canvas/textures/sky.jpg" id="6_2mjjp"]
+[ext_resource type="Texture2D" uid="uid://cec1m7ldlvbee" path="res://ui/canvas/textures/sky.jpg" id="6_epgtd"]
 
 [resource]
 shader = ExtResource("1_2v6tn")
@@ -21,8 +21,8 @@ shader_parameter/algae_color_1 = Color(0.0235294, 0.45098, 0.101961, 1)
 shader_parameter/b_fire_color_1 = Color(0, 0.2, 0.639216, 1)
 shader_parameter/b_fire_color_2 = Color(0.647059, 0.94902, 0.92549, 1)
 shader_parameter/b_fire_color_3 = Color(0.188235, 0.0392157, 0.568627, 1)
-shader_parameter/background_color = Color(0.0862745, 0.0823529, 0.14902, 1)
-shader_parameter/black_hole_color_1 = Color(0.101961, 0.0627451, 0.129412, 1)
+shader_parameter/background_color = Color(0.658824, 0.658824, 0.658824, 1)
+shader_parameter/black_hole_color_1 = Color(0.0980392, 0, 0.254902, 1)
 shader_parameter/black_hole_color_2 = Color(0, 0, 0, 1)
 shader_parameter/critter_color_1 = Color(0.823529, 0.560784, 1, 1)
 shader_parameter/crystal_color_1 = Color(0.686275, 0.556863, 0.772549, 1)
@@ -42,6 +42,8 @@ shader_parameter/fire_color_3 = Color(0.615686, 0, 0.294118, 1)
 shader_parameter/fire_noise = ExtResource("2_nfg6x")
 shader_parameter/glass_texture = ExtResource("4_bgplp")
 shader_parameter/grass_color_1 = Color(0.152941, 0.529412, 0.00784314, 1)
+shader_parameter/hurricane_color_1 = Color(0.376471, 0.431373, 0.580392, 1)
+shader_parameter/hurricane_color_2 = Color(0.231373, 0.215686, 0.305882, 1)
 shader_parameter/laser_color_1 = Color(1, 0.309804, 0.52549, 1)
 shader_parameter/laser_color_2 = Color(1, 1, 1, 1)
 shader_parameter/lead_azide_color_1 = Color(0.607843, 0.607843, 0.607843, 1)
@@ -62,7 +64,7 @@ shader_parameter/sand_color_1 = Color(0.980392, 0.47451, 0.137255, 1)
 shader_parameter/sand_duck_color_1 = Color(0.988235, 0.737255, 0.384314, 1)
 shader_parameter/seed_color_1 = Color(0.72549, 1, 0.368627, 1)
 shader_parameter/seed_color_2 = Color(0.294118, 0.678431, 0.141176, 1)
-shader_parameter/sky_texture = ExtResource("6_2mjjp")
+shader_parameter/sky_texture = ExtResource("6_epgtd")
 shader_parameter/smoke_color_1 = Color(0.2, 0.172549, 0.172549, 1)
 shader_parameter/smoke_color_2 = Color(0.329412, 0.329412, 0.329412, 1)
 shader_parameter/soil_color = Color(0.501961, 0.156863, 0.121569, 1)

@@ -1,10 +1,10 @@
-[gd_scene load_steps=122 format=3 uid="uid://dare8w77k701"]
+[gd_scene load_steps=125 format=3 uid="uid://dare8w77k701"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_b657u"]
 [ext_resource type="Script" path="res://ui/ui.gd" id="2_27ols"]
 [ext_resource type="FontFile" uid="uid://b8lxwo5dkwrs4" path="res://ui/font/Poppins-Regular.ttf" id="2_iejaa"]
 [ext_resource type="Script" path="res://ui/canvas/canvas.gd" id="3_b35ov"]
-[ext_resource type="Material" uid="uid://b5j81jl74j6yl" path="res://ui/canvas/element_painter.tres" id="4_gkdgx"]
+[ext_resource type="Material" uid="uid://c4yk1luulvf23" path="res://ui/canvas/element_painter.tres" id="4_gkdgx"]
 [ext_resource type="Script" path="res://ui/help_label.gd" id="4_vr722"]
 [ext_resource type="Script" path="res://ui/element_selector/element_selector.gd" id="5_waeqw"]
 [ext_resource type="Script" path="res://ui/fps_label.gd" id="6_wixoe"]
@@ -580,6 +580,27 @@ corner_radius_bottom_left = 4
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rurje"]
 bg_color = Color(0.494118, 0.74902, 0.85098, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q6a40"]
+bg_color = Color(0.231373, 0.215686, 0.305882, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qcidr"]
+bg_color = Color(0.27451, 0.286275, 0.360784, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_geoh2"]
+bg_color = Color(0.203922, 0.168627, 0.258824, 1)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
@@ -1572,7 +1593,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_cm7pv")
 layout_mode = 2
 offset_left = 8.0
 offset_top = 8.0
-offset_right = 1496.0
+offset_right = 1632.0
 offset_bottom = 140.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -1646,6 +1667,21 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_ml551")
 theme_override_styles/hover = SubResource("StyleBoxFlat_7f7pq")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_rurje")
 text = "blue fire"
+
+[node name="Hurricane" type="Button" parent="UI/ScreenContainer/MarginContainer/VBoxContainer/ElementSelector/Chemical/HBoxContainer"]
+custom_minimum_size = Vector2i(128, 128)
+layout_mode = 2
+offset_right = 128.0
+offset_bottom = 128.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 0
+focus_mode = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_q6a40")
+theme_override_styles/hover = SubResource("StyleBoxFlat_qcidr")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_geoh2")
+text = "hurricane"
 
 [node name="Acid" type="Button" parent="UI/ScreenContainer/MarginContainer/VBoxContainer/ElementSelector/Chemical/HBoxContainer"]
 custom_minimum_size = Vector2i(128, 128)

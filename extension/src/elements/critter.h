@@ -6,7 +6,7 @@
 
 class Critter: public Element {
 public:
-    const double FLAME = 1.0 / 128;
+    const double FLAME = 1.0 / 32;
     const double JUMP = 1.0 / 8;
     const double MOVE = 1.0 / 32;
 

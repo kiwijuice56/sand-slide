@@ -6,6 +6,7 @@
 class Air: public Element {
 public:
     const double DECAY = 1.0 / 360;
+    const double MOVE = 1.0 / 4;
 
     void process(SandSimulation *sim, int row, int col) override {
         if (sim->randf() < DECAY) {
@@ -15,7 +16,8 @@ public:
         int newRow = row + (int) (sim->randf() * 3) - 1;
         int newCol = col + (int) (sim->randf() * 3) - 1;
 
-        if (sim->in_bounds(newRow, newCol) && sim->randf() < 1.0 - sim->elements.at(sim->get_cell(newRow, newCol))->get_density() / 32.0) {
+        if (sim->randf() < MOVE && sim->in_bounds(newRow, newCol) && 
+        sim->randf() < 1.0 - sim->elements.at(sim->get_cell(newRow, newCol))->get_density() / 32.0) {
             sim->move_and_swap(row, col, newRow, newCol);
         } 
     }

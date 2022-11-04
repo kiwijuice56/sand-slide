@@ -6,7 +6,7 @@
 class NeutronBeam: public Element {
 public:
     const double DECAY = 1.0 / 2;
-    const double EXPLODE = 1.0 / 128;
+    const double EXPLODE = 1.0 / 164;
     void process(SandSimulation *sim, int row, int col) override {
         if (sim->randf() < DECAY && sim->in_bounds(row - 1, col) && sim->get_cell(row - 1, col) != 36) {
             sim->set_cell(row, col, 22);

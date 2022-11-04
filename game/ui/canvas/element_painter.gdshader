@@ -105,6 +105,9 @@ uniform vec4 electron_color_2: source_color = vec4(1.0);
 uniform vec4 storm_plasma_color_1: source_color = vec4(1.0);
 uniform vec4 storm_plasma_color_2: source_color = vec4(1.0);
 
+uniform vec4 hurricane_color_1: source_color = vec4(1.0);
+uniform vec4 hurricane_color_2: source_color = vec4(1.0);
+
 // Short hand of shifting the range [-1, 1] to [0, 1] since the negative return 
 // values of sin/cos can cause errors
 float shift(float x) {
@@ -349,6 +352,10 @@ void fragment() {
 		case 40:
 			float y = match_amount(TEXTURE, UV, 40);
 			COLOR = storm_plasma_color_2 * y + storm_plasma_color_1 * (1.0 - y);
+			break;
+		case 41:
+			float y = match_amount(TEXTURE, UV, 41);
+			COLOR = hurricane_color_2 * y + hurricane_color_1 * (1.0 - y);
 			break;
 	}
 }

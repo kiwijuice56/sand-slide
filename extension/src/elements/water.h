@@ -8,7 +8,7 @@ class Water: public Element {
 public:
     const double ABSORB = 1.0 / 4098;
     const double EVAPORATION = 1.0 / 128;
-    const double MELT = 1.0 / 256;
+    const double MELT = 1.0 / 64;
 
     void process(SandSimulation *sim, int row, int col) override {
         // Evaporation
@@ -18,7 +18,7 @@ public:
         }
 
         // Plasma melting
-        if (sim->randf() < MELT && sim->touch_count(row, col, 38) > 0) {
+        if (sim->randf() < MELT && (sim->touch_count(row, col, 38) > 0 || sim->touch_count(row, col, 40) > 0)) {
             sim->set_cell(row, col, 38);
             return;
         }
