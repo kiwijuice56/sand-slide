@@ -1,4 +1,4 @@
-# godot-falling-sand
+# sand-slide
 Prototype falling sand game made with Godot 4 beta 3 and GDextension. The full game can be downloaded for free at the [itch.io page](https://kiwijuice56.itch.io/sand-slide).
 This repository is intended to serve as an example of using GDextension in a full project and to allow people to add new elements.
 
@@ -16,7 +16,7 @@ is not open in another window while compiling.
 3. In a command prompt at `godot-cpp`, run `scons` (and add `target=template_release` for exported projects). You only need to do this the first time you download the repository.
 4. You are now ready to make changes to the project!
 
-## Compiling changes
+## Compiling Changes
 Compiling any changes is as simple as opening a command prompt at the root of the project directory and running `scons` (and adding `target=template_release` for exported projects). 
 The dll inside of `game\bin` should be updated and require no further steps to run alongside the Godot project. 
 
