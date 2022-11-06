@@ -1,4 +1,4 @@
-[gd_scene load_steps=125 format=3 uid="uid://dare8w77k701"]
+[gd_scene load_steps=128 format=3 uid="uid://dare8w77k701"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_b657u"]
 [ext_resource type="Script" path="res://ui/ui.gd" id="2_27ols"]
@@ -340,8 +340,8 @@ corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m0trg"]
-bg_color = Color(0.360784, 0.301961, 0.329412, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dhkpo"]
+bg_color = Color(0.270588, 0.2, 0.239216, 1)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
@@ -349,6 +349,27 @@ corner_radius_bottom_left = 4
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b4sp5"]
 bg_color = Color(0.270588, 0.203922, 0.239216, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m0trg"]
+bg_color = Color(1, 0.0784314, 0.286275, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3vgxk"]
+bg_color = Color(1, 0.239216, 0.341176, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sgko8"]
+bg_color = Color(0.85098, 0.0666667, 0.368627, 1)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
@@ -1392,12 +1413,11 @@ size_flags_vertical = 0
 focus_mode = 0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_pt5xu")
-theme_override_styles/hover = SubResource("StyleBoxFlat_m0trg")
+theme_override_styles/hover = SubResource("StyleBoxFlat_dhkpo")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_b4sp5")
 text = "dust"
 
 [node name="Powder" type="Button" parent="UI/ScreenContainer/MarginContainer/VBoxContainer/ElementSelector/Build/HBoxContainer"]
-visible = false
 custom_minimum_size = Vector2i(128, 100)
 layout_mode = 2
 offset_left = 816.0
@@ -1408,9 +1428,9 @@ grow_vertical = 2
 size_flags_vertical = 0
 focus_mode = 0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_pt5xu")
-theme_override_styles/hover = SubResource("StyleBoxFlat_m0trg")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_b4sp5")
+theme_override_styles/normal = SubResource("StyleBoxFlat_m0trg")
+theme_override_styles/hover = SubResource("StyleBoxFlat_3vgxk")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_sgko8")
 text = "powder"
 
 [node name="Life" type="ScrollContainer" parent="UI/ScreenContainer/MarginContainer/VBoxContainer/ElementSelector"]

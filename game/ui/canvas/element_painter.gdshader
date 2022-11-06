@@ -5,6 +5,9 @@ shader_type canvas_item;
 
 // This code is not optimal or modular, but convenient to quickly add elements
 
+uniform int width = 1000;
+uniform int height = 800;
+
 // Noise and other textures for elements that are not simple colors
 uniform sampler2D water_noise: repeat_enable, source_color, filter_nearest;
 uniform sampler2D fire_noise: repeat_enable, source_color, filter_nearest;
@@ -109,6 +112,9 @@ uniform vec4 storm_plasma_color_2: source_color = vec4(1.0);
 uniform vec4 hurricane_color_1: source_color = vec4(1.0);
 uniform vec4 hurricane_color_2: source_color = vec4(1.0);
 
+uniform vec4 powder_color_2: source_color = vec4(1.0);
+uniform vec4 powder_color_3: source_color = vec4(1.0);
+
 // Short hand of shifting the range [-1, 1] to [0, 1] since the negative return 
 // values of sin/cos can cause errors
 float shift(float x) {
@@ -134,6 +140,33 @@ float match_amount(sampler2D tex, vec2 uv, int given_id) {
 		}
 	}
 	return float(matching) / 8.0;
+}
+
+vec3 hueShift( vec3 color, float hueAdjust ){
+
+    const vec3  kRGBToYPrime = vec3 (0.299, 0.587, 0.114);
+    const vec3  kRGBToI      = vec3 (0.596, -0.275, -0.321);
+    const vec3  kRGBToQ      = vec3 (0.212, -0.523, 0.311);
+
+    const vec3  kYIQToR     = vec3 (1.0, 0.956, 0.621);
+    const vec3  kYIQToG     = vec3 (1.0, -0.272, -0.647);
+    const vec3  kYIQToB     = vec3 (1.0, -1.107, 1.704);
+
+    float   YPrime  = dot (color, kRGBToYPrime);
+    float   I       = dot (color, kRGBToI);
+    float   Q       = dot (color, kRGBToQ);
+    float   hue     = atan (Q, I);
+    float   chroma  = sqrt (I * I + Q * Q);
+
+    hue += hueAdjust;
+
+    Q = chroma * sin (hue);
+    I = chroma * cos (hue);
+
+    vec3    yIQ   = vec3 (YPrime, I, Q);
+
+    return vec3( dot (yIQ, kYIQToR), dot (yIQ, kYIQToG), dot (yIQ, kYIQToB) );
+
 }
 
 // Given the screen size in pixels (SCREEN_PIXEL_SIZE), returns the aspect ratio
@@ -359,7 +392,39 @@ void fragment() {
 			COLOR = hurricane_color_2 * y + hurricane_color_1 * (1.0 - y);
 			break;
 		case 42:
+			float p1 = cos(floor(UV.x * float(width / 3)));
+			float p2 = cos(floor(UV.y * float(height / 3)));
 			
+			float z = float(floatBitsToInt(12312.4324143 + p1 * 2134904234234323.21332421 * p2 * 392342342324892.3242341) & 0xFF) / float(0xFF);
+			if (z < 0.5)
+				z += 0.5;
+			vec3 col = hueShift(vec3(z, 0.0, 1.0), shift(cos(UV.y)) * shift(sin(8.0 * UV.x * sin(TIME / 12.0))) * shift(sin(z)) * 2.0 * PI);
+			COLOR = vec4(col.r, col.g, col.b, 1.0);
+			break;
+		case 43: 
+			float p1 = cos(floor(UV.x * float(width / 3)));
+			float p2 = cos(floor(UV.y * float(height / 3)));
+			
+			float z = float(floatBitsToInt(12312.4324143 + p1 * 2134904234234323.21332421 * p2 * 392342342324892.3242341) & 0xFF) / float(0xFF);
+			if (z < 0.5)
+				z += 0.5;
+			vec3 col = hueShift(vec3(z, 0.0, 1.0), shift(cos(UV.y)) * shift(sin(8.0 * UV.x * sin(TIME / 12.0))) * shift(sin(z)) * 2.0 * PI);
+			vec4 powder_color = vec4(col.r, col.g, col.b, 1.0) / 2.5;;
+			
+			vec2 ratio = screen_ratio(SCREEN_PIXEL_SIZE);
+			vec2 texCoord = vec2(2.0*UV.x + sin(TIME / 32.0), 2.0*UV.y + sin(TIME / 32.0));
+			
+			float x = texture(water_noise, ratio * texCoord).r * (UV.x + UV.y + sin(UV.x / 4.0) * 2.0 + sin(TIME / 2.0));
+			float y = shift(cos(sin(3.0 * UV.x + TIME / 16.0) * 16.0 * UV.x + PI * x + UV.y * 8.0));
+			y = abs(y - 0.5);
+			
+			COLOR = powder_color * y + powder_color_2 * (1.0 - y);
+			
+			z = match_amount(TEXTURE, UV, id);
+			
+			vec2 texCoord2 = vec2(1.5 * UV.x + sin(TIME / 24.0), 1.5 * UV.y + sin(TIME / 24.0));
+			
+			COLOR = shift(cos(TIME / 4.0)) / 2.0 * texture(water_noise, ratio * texCoord2) + COLOR * z + powder_color_3 * (1.0 - z);
 			break;
 	}
 }

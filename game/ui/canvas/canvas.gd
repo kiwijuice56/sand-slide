@@ -10,6 +10,11 @@ func _ready() -> void:
 	var image = Image.new()
 	image.create(256, 256, false, Image.FORMAT_BPTC_RGBA)
 	texture = ImageTexture.create_from_image(image)
+	resized.connect(_resized)
+
+func _resized() -> void:
+	get_material().set_shader_parameter("width", size.x)
+	get_material().set_shader_parameter("height", size.y)
 
 func _process(_delta: float) -> void:
 	# Keep track of both mouse buttons so that we can use the left mouse

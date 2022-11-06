@@ -43,6 +43,8 @@
 #include "elements/storm_plasma.h"
 #include "elements/hurricane.h"
 #include "elements/powder.h"
+#include "elements/liquid_powder.h"
+
 
 #include <godot_cpp/core/class_db.hpp>
 #include <random>
@@ -99,6 +101,7 @@ SandSimulation::SandSimulation() {
     elements.at(40) = new StormPlasma();
     elements.at(41) = new Hurricane();
     elements.at(42) = new Powder();
+    elements.at(43) = new LiquidPowder();
 
     draw_data = PackedByteArray();
 
