@@ -12,6 +12,7 @@ uniform sampler2D marble_texture: repeat_enable, source_color, filter_nearest;
 uniform sampler2D glass_texture: repeat_enable, source_color;
 uniform sampler2D crystal_texture: repeat_enable, source_color;
 uniform sampler2D sky_texture;
+uniform sampler2D powder_noise: repeat_enable, source_color;
 
 uniform vec4 background_color: source_color = vec4(1.0);
 
@@ -148,7 +149,7 @@ void fragment() {
 	// Each element has its own case to draw
 	// IDs are the same as the ones given in ../extension/sand_simulation.cpp
 	switch (id) {
-		case 0: COLOR = texture(sky_texture, UV *  screen_ratio(SCREEN_PIXEL_SIZE)); break;
+		case 0: COLOR = texture(sky_texture, UV * screen_ratio(SCREEN_PIXEL_SIZE)); break;
 		case 1: COLOR = sand_color_1; break;
 		case 2: COLOR = rock_color_1; break;
 		case 3: // Water
@@ -356,6 +357,9 @@ void fragment() {
 		case 41:
 			float y = match_amount(TEXTURE, UV, 41);
 			COLOR = hurricane_color_2 * y + hurricane_color_1 * (1.0 - y);
+			break;
+		case 42:
+			
 			break;
 	}
 }

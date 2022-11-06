@@ -11,7 +11,7 @@ const ELEMENT_INDEX = [
 	"Blue Fire", "Glass", "Laser", "Crystal", "Air", "Black Hole",
 	"Oil", "Urchin", "Dragon", "Critter", "Nuclear Explosion", 
 	"Uranium", "Neutron", "Lightning", "Plasma", "Electron", "StormPlasma",
-	"Hurricane"]
+	"Hurricane", "Powder"]
 
 @export var save_file_manager: Node
 @export var canvas: TextureRect
@@ -54,7 +54,7 @@ func _notification(what):
 		sim.clean_up()
 		get_tree().quit()
 
-func _process(delta) -> void:
+func _process(_delta) -> void:
 	if draw_enabled:
 		sim.step(simulation_speed)
 		canvas.repaint(sim)

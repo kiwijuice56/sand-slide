@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://ui/ui.gd" id="2_27ols"]
 [ext_resource type="FontFile" uid="uid://b8lxwo5dkwrs4" path="res://ui/font/Poppins-Regular.ttf" id="2_iejaa"]
 [ext_resource type="Script" path="res://ui/canvas/canvas.gd" id="3_b35ov"]
-[ext_resource type="Material" path="res://ui/canvas/element_painter.tres" id="4_gkdgx"]
+[ext_resource type="Material" uid="uid://cm3vg10lyus24" path="res://ui/canvas/element_painter.tres" id="4_gkdgx"]
 [ext_resource type="Script" path="res://ui/help_label.gd" id="4_vr722"]
 [ext_resource type="Script" path="res://ui/element_selector/element_selector.gd" id="5_waeqw"]
 [ext_resource type="Script" path="res://ui/fps_label.gd" id="6_wixoe"]
@@ -968,7 +968,7 @@ texture_filter = 1
 material = ExtResource("4_gkdgx")
 layout_mode = 2
 offset_right = 1000.0
-offset_bottom = 501.0
+offset_bottom = 539.0
 size_flags_vertical = 3
 script = ExtResource("3_b35ov")
 px_scale = 3
@@ -1004,11 +1004,11 @@ libraries = {
 }
 
 [node name="MarginContainer" type="MarginContainer" parent="UI/ScreenContainer"]
-custom_minimum_size = Vector2i(0, 295)
 layout_mode = 2
-offset_top = 505.0
+offset_top = 543.0
 offset_right = 1000.0
 offset_bottom = 800.0
+size_flags_vertical = 8
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
@@ -1019,21 +1019,22 @@ layout_mode = 2
 offset_left = 8.0
 offset_top = 8.0
 offset_right = 992.0
-offset_bottom = 287.0
+offset_bottom = 249.0
+size_flags_vertical = 8
 theme_override_constants/separation = 8
 
 [node name="OptionContainer" type="HBoxContainer" parent="UI/ScreenContainer/MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2i(0, 80)
+custom_minimum_size = Vector2i(0, 60)
 layout_mode = 2
 offset_right = 984.0
-offset_bottom = 80.0
+offset_bottom = 70.0
 theme_override_constants/separation = 12
 
 [node name="Clear" type="Button" parent="UI/ScreenContainer/MarginContainer/VBoxContainer/OptionContainer"]
 custom_minimum_size = Vector2i(100, 0)
 layout_mode = 2
 offset_right = 100.0
-offset_bottom = 80.0
+offset_bottom = 70.0
 focus_mode = 0
 theme_override_styles/normal = SubResource("StyleBoxFlat_5esfr")
 theme_override_styles/hover = SubResource("StyleBoxFlat_hwm88")
@@ -1045,7 +1046,7 @@ custom_minimum_size = Vector2i(100, 0)
 layout_mode = 2
 offset_left = 112.0
 offset_right = 212.0
-offset_bottom = 80.0
+offset_bottom = 70.0
 size_flags_horizontal = 8
 focus_mode = 0
 text = "Eraser"
@@ -1055,16 +1056,15 @@ custom_minimum_size = Vector2i(0, 32)
 layout_mode = 2
 offset_left = 224.0
 offset_right = 469.0
-offset_bottom = 80.0
+offset_bottom = 70.0
 size_flags_horizontal = 3
 theme_override_constants/separation = 0
 
 [node name="BrushSlider" type="HSlider" parent="UI/ScreenContainer/MarginContainer/VBoxContainer/OptionContainer/VBoxContainer"]
 custom_minimum_size = Vector2i(0, 32)
 layout_mode = 2
-offset_top = 10.0
 offset_right = 245.0
-offset_bottom = 42.0
+offset_bottom = 32.0
 size_flags_horizontal = 3
 size_flags_vertical = 10
 min_value = 1.0
@@ -1074,9 +1074,9 @@ value = 6.0
 [node name="Label" type="Label" parent="UI/ScreenContainer/MarginContainer/VBoxContainer/OptionContainer/VBoxContainer"]
 layout_mode = 2
 offset_left = 96.0
-offset_top = 42.0
+offset_top = 32.0
 offset_right = 148.0
-offset_bottom = 80.0
+offset_bottom = 70.0
 size_flags_horizontal = 4
 size_flags_vertical = 1
 text = " Size"
@@ -1086,16 +1086,15 @@ vertical_alignment = 1
 layout_mode = 2
 offset_left = 481.0
 offset_right = 726.0
-offset_bottom = 80.0
+offset_bottom = 70.0
 size_flags_horizontal = 3
 theme_override_constants/separation = 0
 
 [node name="SpeedSlider" type="HSlider" parent="UI/ScreenContainer/MarginContainer/VBoxContainer/OptionContainer/VBoxContainer2"]
 custom_minimum_size = Vector2i(0, 32)
 layout_mode = 2
-offset_top = 10.0
 offset_right = 245.0
-offset_bottom = 42.0
+offset_bottom = 32.0
 size_flags_horizontal = 3
 size_flags_vertical = 10
 max_value = 4800.0
@@ -1103,9 +1102,9 @@ value = 2400.0
 
 [node name="Speed" type="Label" parent="UI/ScreenContainer/MarginContainer/VBoxContainer/OptionContainer/VBoxContainer2"]
 layout_mode = 2
-offset_top = 42.0
+offset_top = 32.0
 offset_right = 245.0
-offset_bottom = 80.0
+offset_bottom = 70.0
 size_flags_vertical = 1
 text = " Speed"
 horizontal_alignment = 1
@@ -1116,16 +1115,16 @@ custom_minimum_size = Vector2i(100, 0)
 layout_mode = 2
 offset_left = 884.0
 offset_right = 984.0
-offset_bottom = 80.0
+offset_bottom = 70.0
 size_flags_horizontal = 10
 focus_mode = 0
 text = "File"
 
 [node name="ElementSelector" type="TabContainer" parent="UI/ScreenContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
-offset_top = 88.0
+offset_top = 78.0
 offset_right = 984.0
-offset_bottom = 279.0
+offset_bottom = 241.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 3
@@ -1133,6 +1132,7 @@ clip_tabs = false
 script = ExtResource("5_waeqw")
 
 [node name="Primary" type="ScrollContainer" parent="UI/ScreenContainer/MarginContainer/VBoxContainer/ElementSelector"]
+custom_minimum_size = Vector2i(0, 120)
 layout_mode = 2
 anchors_preset = 15
 anchor_right = 1.0
@@ -1147,16 +1147,16 @@ layout_mode = 2
 offset_left = 8.0
 offset_top = 8.0
 offset_right = 976.0
-offset_bottom = 140.0
+offset_bottom = 112.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/separation = 8
 
 [node name="Sand" type="Button" parent="UI/ScreenContainer/MarginContainer/VBoxContainer/ElementSelector/Primary/HBoxContainer"]
-custom_minimum_size = Vector2i(128, 128)
+custom_minimum_size = Vector2i(128, 100)
 layout_mode = 2
 offset_right = 128.0
-offset_bottom = 128.0
+offset_bottom = 100.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 0
@@ -1168,11 +1168,11 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_457eu")
 text = "sand"
 
 [node name="Rock" type="Button" parent="UI/ScreenContainer/MarginContainer/VBoxContainer/ElementSelector/Primary/HBoxContainer"]
-custom_minimum_size = Vector2i(128, 128)
+custom_minimum_size = Vector2i(128, 100)
 layout_mode = 2
 offset_left = 136.0
 offset_right = 264.0
-offset_bottom = 128.0
+offset_bottom = 100.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 0
@@ -1184,11 +1184,11 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_s867d")
 text = "rock"
 
 [node name="Water" type="Button" parent="UI/ScreenContainer/MarginContainer/VBoxContainer/ElementSelector/Primary/HBoxContainer"]
-custom_minimum_size = Vector2i(128, 128)
+custom_minimum_size = Vector2i(128, 100)
 layout_mode = 2
 offset_left = 272.0
 offset_right = 400.0
-offset_bottom = 128.0
+offset_bottom = 100.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 0
@@ -1200,11 +1200,11 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_msh0k")
 text = "water"
 
 [node name="Fire" type="Button" parent="UI/ScreenContainer/MarginContainer/VBoxContainer/ElementSelector/Primary/HBoxContainer"]
-custom_minimum_size = Vector2i(128, 128)
+custom_minimum_size = Vector2i(128, 100)
 layout_mode = 2
 offset_left = 408.0
 offset_right = 536.0
-offset_bottom = 128.0
+offset_bottom = 100.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 0
@@ -1216,11 +1216,11 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_bs4ox")
 text = "fire"
 
 [node name="Air" type="Button" parent="UI/ScreenContainer/MarginContainer/VBoxContainer/ElementSelector/Primary/HBoxContainer"]
-custom_minimum_size = Vector2i(128, 128)
+custom_minimum_size = Vector2i(128, 100)
 layout_mode = 2
 offset_left = 544.0
 offset_right = 672.0
-offset_bottom = 128.0
+offset_bottom = 100.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 0
@@ -1232,11 +1232,11 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_dcp2l")
 text = "air"
 
 [node name="Lightning" type="Button" parent="UI/ScreenContainer/MarginContainer/VBoxContainer/ElementSelector/Primary/HBoxContainer"]
-custom_minimum_size = Vector2i(128, 128)
+custom_minimum_size = Vector2i(128, 100)
 layout_mode = 2
 offset_left = 680.0
 offset_right = 808.0
-offset_bottom = 128.0
+offset_bottom = 100.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 0
@@ -1254,6 +1254,7 @@ text = "lightning"
 
 [node name="Build" type="ScrollContainer" parent="UI/ScreenContainer/MarginContainer/VBoxContainer/ElementSelector"]
 visible = false
+custom_minimum_size = Vector2i(0, 120)
 layout_mode = 2
 anchors_preset = 15
 anchor_right = 1.0
@@ -1267,14 +1268,14 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_cm7pv")
 layout_mode = 2
 offset_left = 8.0
 offset_top = 8.0
-offset_right = 976.0
-offset_bottom = 140.0
+offset_right = 1088.0
+offset_bottom = 112.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/separation = 8
 
 [node name="Soil" type="Button" parent="UI/ScreenContainer/MarginContainer/VBoxContainer/ElementSelector/Build/HBoxContainer"]
-custom_minimum_size = Vector2i(128, 128)
+custom_minimum_size = Vector2i(128, 100)
 layout_mode = 2
 offset_right = 128.0
 offset_bottom = 128.0
@@ -1289,7 +1290,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_2sydf")
 text = "soil"
 
 [node name="Glass" type="Button" parent="UI/ScreenContainer/MarginContainer/VBoxContainer/ElementSelector/Build/HBoxContainer"]
-custom_minimum_size = Vector2i(128, 128)
+custom_minimum_size = Vector2i(128, 100)
 layout_mode = 2
 offset_left = 136.0
 offset_right = 264.0
@@ -1305,7 +1306,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_fwrmq")
 text = "glass"
 
 [node name="Wood" type="Button" parent="UI/ScreenContainer/MarginContainer/VBoxContainer/ElementSelector/Build/HBoxContainer"]
-custom_minimum_size = Vector2i(128, 128)
+custom_minimum_size = Vector2i(128, 100)
 layout_mode = 2
 offset_left = 272.0
 offset_right = 400.0
@@ -1321,7 +1322,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_hgsbg")
 text = "wood"
 
 [node name="Crystal" type="Button" parent="UI/ScreenContainer/MarginContainer/VBoxContainer/ElementSelector/Build/HBoxContainer"]
-custom_minimum_size = Vector2i(128, 128)
+custom_minimum_size = Vector2i(128, 100)
 layout_mode = 2
 offset_left = 408.0
 offset_right = 536.0
@@ -1337,7 +1338,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_2po0a")
 text = "crystal"
 
 [node name="Steel" type="Button" parent="UI/ScreenContainer/MarginContainer/VBoxContainer/ElementSelector/Build/HBoxContainer"]
-custom_minimum_size = Vector2i(128, 128)
+custom_minimum_size = Vector2i(128, 100)
 layout_mode = 2
 offset_left = 544.0
 offset_right = 672.0
@@ -1358,7 +1359,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_rvw6y")
 text = "steel"
 
 [node name="Marble" type="Button" parent="UI/ScreenContainer/MarginContainer/VBoxContainer/ElementSelector/Build/HBoxContainer"]
-custom_minimum_size = Vector2i(128, 128)
+custom_minimum_size = Vector2i(128, 100)
 layout_mode = 2
 offset_left = 680.0
 offset_right = 808.0
@@ -1380,7 +1381,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_vv1to")
 text = "marble"
 
 [node name="Dust" type="Button" parent="UI/ScreenContainer/MarginContainer/VBoxContainer/ElementSelector/Build/HBoxContainer"]
-custom_minimum_size = Vector2i(128, 128)
+custom_minimum_size = Vector2i(128, 100)
 layout_mode = 2
 offset_left = 816.0
 offset_right = 944.0
@@ -1395,8 +1396,26 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_m0trg")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_b4sp5")
 text = "dust"
 
+[node name="Powder" type="Button" parent="UI/ScreenContainer/MarginContainer/VBoxContainer/ElementSelector/Build/HBoxContainer"]
+visible = false
+custom_minimum_size = Vector2i(128, 100)
+layout_mode = 2
+offset_left = 816.0
+offset_right = 944.0
+offset_bottom = 128.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 0
+focus_mode = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_pt5xu")
+theme_override_styles/hover = SubResource("StyleBoxFlat_m0trg")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_b4sp5")
+text = "powder"
+
 [node name="Life" type="ScrollContainer" parent="UI/ScreenContainer/MarginContainer/VBoxContainer/ElementSelector"]
 visible = false
+custom_minimum_size = Vector2i(0, 120)
 layout_mode = 2
 anchors_preset = 15
 anchor_right = 1.0
@@ -1411,13 +1430,13 @@ layout_mode = 2
 offset_left = 8.0
 offset_top = 8.0
 offset_right = 1088.0
-offset_bottom = 140.0
+offset_bottom = 112.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/separation = 8
 
 [node name="Polliwog" type="Button" parent="UI/ScreenContainer/MarginContainer/VBoxContainer/ElementSelector/Life/HBoxContainer"]
-custom_minimum_size = Vector2i(128, 128)
+custom_minimum_size = Vector2i(128, 100)
 layout_mode = 2
 offset_right = 128.0
 offset_bottom = 128.0
@@ -1437,7 +1456,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_5dx7s")
 text = "polliwog"
 
 [node name="Algae" type="Button" parent="UI/ScreenContainer/MarginContainer/VBoxContainer/ElementSelector/Life/HBoxContainer"]
-custom_minimum_size = Vector2i(128, 128)
+custom_minimum_size = Vector2i(128, 100)
 layout_mode = 2
 offset_left = 136.0
 offset_right = 264.0
@@ -1453,7 +1472,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_fvw5r")
 text = "algae"
 
 [node name="Urchin" type="Button" parent="UI/ScreenContainer/MarginContainer/VBoxContainer/ElementSelector/Life/HBoxContainer"]
-custom_minimum_size = Vector2i(128, 128)
+custom_minimum_size = Vector2i(128, 100)
 layout_mode = 2
 offset_left = 272.0
 offset_right = 400.0
@@ -1474,7 +1493,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_cgna5")
 text = "urchin"
 
 [node name="Sand Duck" type="Button" parent="UI/ScreenContainer/MarginContainer/VBoxContainer/ElementSelector/Life/HBoxContainer"]
-custom_minimum_size = Vector2i(128, 128)
+custom_minimum_size = Vector2i(128, 100)
 layout_mode = 2
 offset_left = 408.0
 offset_right = 536.0
@@ -1496,7 +1515,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_qcn7j")
 text = "sandduck"
 
 [node name="Seed" type="Button" parent="UI/ScreenContainer/MarginContainer/VBoxContainer/ElementSelector/Life/HBoxContainer"]
-custom_minimum_size = Vector2i(128, 128)
+custom_minimum_size = Vector2i(128, 100)
 layout_mode = 2
 offset_left = 544.0
 offset_right = 672.0
@@ -1517,7 +1536,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_c0d0v")
 text = "seed"
 
 [node name="Fairy" type="Button" parent="UI/ScreenContainer/MarginContainer/VBoxContainer/ElementSelector/Life/HBoxContainer"]
-custom_minimum_size = Vector2i(128, 128)
+custom_minimum_size = Vector2i(128, 100)
 layout_mode = 2
 offset_left = 680.0
 offset_right = 808.0
@@ -1538,7 +1557,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_q4tn0")
 text = "fairy"
 
 [node name="Dragon" type="Button" parent="UI/ScreenContainer/MarginContainer/VBoxContainer/ElementSelector/Life/HBoxContainer"]
-custom_minimum_size = Vector2i(128, 128)
+custom_minimum_size = Vector2i(128, 100)
 layout_mode = 2
 offset_left = 816.0
 offset_right = 944.0
@@ -1559,7 +1578,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_sxore")
 text = "dragon"
 
 [node name="Critter" type="Button" parent="UI/ScreenContainer/MarginContainer/VBoxContainer/ElementSelector/Life/HBoxContainer"]
-custom_minimum_size = Vector2i(128, 128)
+custom_minimum_size = Vector2i(128, 100)
 layout_mode = 2
 offset_left = 816.0
 offset_right = 944.0
@@ -1581,6 +1600,7 @@ text = "critter"
 
 [node name="Chemical" type="ScrollContainer" parent="UI/ScreenContainer/MarginContainer/VBoxContainer/ElementSelector"]
 visible = false
+custom_minimum_size = Vector2i(0, 120)
 layout_mode = 2
 anchors_preset = 15
 anchor_right = 1.0
@@ -1595,13 +1615,13 @@ layout_mode = 2
 offset_left = 8.0
 offset_top = 8.0
 offset_right = 1632.0
-offset_bottom = 140.0
+offset_bottom = 112.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/separation = 8
 
 [node name="Ice" type="Button" parent="UI/ScreenContainer/MarginContainer/VBoxContainer/ElementSelector/Chemical/HBoxContainer"]
-custom_minimum_size = Vector2i(128, 128)
+custom_minimum_size = Vector2i(128, 100)
 layout_mode = 2
 offset_right = 128.0
 offset_bottom = 128.0
@@ -1616,7 +1636,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_2xunh")
 text = "ice"
 
 [node name="Oil" type="Button" parent="UI/ScreenContainer/MarginContainer/VBoxContainer/ElementSelector/Chemical/HBoxContainer"]
-custom_minimum_size = Vector2i(128, 128)
+custom_minimum_size = Vector2i(128, 100)
 layout_mode = 2
 offset_left = 136.0
 offset_right = 264.0
@@ -1632,7 +1652,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_gxiyd")
 text = "oil"
 
 [node name="Lava" type="Button" parent="UI/ScreenContainer/MarginContainer/VBoxContainer/ElementSelector/Chemical/HBoxContainer"]
-custom_minimum_size = Vector2i(128, 128)
+custom_minimum_size = Vector2i(128, 100)
 layout_mode = 2
 offset_left = 272.0
 offset_right = 400.0
@@ -1648,7 +1668,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_bs4ox")
 text = "lava"
 
 [node name="Blue Fire" type="Button" parent="UI/ScreenContainer/MarginContainer/VBoxContainer/ElementSelector/Chemical/HBoxContainer"]
-custom_minimum_size = Vector2i(128, 128)
+custom_minimum_size = Vector2i(128, 100)
 layout_mode = 2
 offset_left = 408.0
 offset_right = 536.0
@@ -1670,7 +1690,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_rurje")
 text = "blue fire"
 
 [node name="Hurricane" type="Button" parent="UI/ScreenContainer/MarginContainer/VBoxContainer/ElementSelector/Chemical/HBoxContainer"]
-custom_minimum_size = Vector2i(128, 128)
+custom_minimum_size = Vector2i(128, 100)
 layout_mode = 2
 offset_right = 128.0
 offset_bottom = 128.0
@@ -1682,10 +1702,10 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_q6a40")
 theme_override_styles/hover = SubResource("StyleBoxFlat_qcidr")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_geoh2")
-text = "hurricane"
+text = "storm"
 
 [node name="Acid" type="Button" parent="UI/ScreenContainer/MarginContainer/VBoxContainer/ElementSelector/Chemical/HBoxContainer"]
-custom_minimum_size = Vector2i(128, 128)
+custom_minimum_size = Vector2i(128, 100)
 layout_mode = 2
 offset_left = 680.0
 offset_right = 808.0
@@ -1706,7 +1726,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_2omdr")
 text = "acid"
 
 [node name="Lead Azide" type="Button" parent="UI/ScreenContainer/MarginContainer/VBoxContainer/ElementSelector/Chemical/HBoxContainer"]
-custom_minimum_size = Vector2i(128, 128)
+custom_minimum_size = Vector2i(128, 100)
 layout_mode = 2
 offset_left = 544.0
 offset_right = 672.0
@@ -1727,7 +1747,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_78bka")
 text = "bomb"
 
 [node name="Uranium" type="Button" parent="UI/ScreenContainer/MarginContainer/VBoxContainer/ElementSelector/Chemical/HBoxContainer"]
-custom_minimum_size = Vector2i(128, 128)
+custom_minimum_size = Vector2i(128, 100)
 layout_mode = 2
 offset_left = 544.0
 offset_right = 672.0
@@ -1748,7 +1768,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_j4bb3")
 text = "uranium"
 
 [node name="Laser" type="Button" parent="UI/ScreenContainer/MarginContainer/VBoxContainer/ElementSelector/Chemical/HBoxContainer"]
-custom_minimum_size = Vector2i(128, 128)
+custom_minimum_size = Vector2i(128, 100)
 layout_mode = 2
 offset_left = 816.0
 offset_right = 944.0
@@ -1769,7 +1789,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_4pg2j")
 text = "laser"
 
 [node name="Neutron" type="Button" parent="UI/ScreenContainer/MarginContainer/VBoxContainer/ElementSelector/Chemical/HBoxContainer"]
-custom_minimum_size = Vector2i(128, 128)
+custom_minimum_size = Vector2i(128, 100)
 layout_mode = 2
 offset_left = 816.0
 offset_right = 944.0
@@ -1790,7 +1810,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_gxlw2")
 text = "quasar"
 
 [node name="Electron" type="Button" parent="UI/ScreenContainer/MarginContainer/VBoxContainer/ElementSelector/Chemical/HBoxContainer"]
-custom_minimum_size = Vector2i(128, 128)
+custom_minimum_size = Vector2i(128, 100)
 layout_mode = 2
 offset_left = 816.0
 offset_right = 944.0
@@ -1811,7 +1831,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_nhb3t")
 text = "plasma"
 
 [node name="Black Hole" type="Button" parent="UI/ScreenContainer/MarginContainer/VBoxContainer/ElementSelector/Chemical/HBoxContainer"]
-custom_minimum_size = Vector2i(128, 128)
+custom_minimum_size = Vector2i(128, 100)
 layout_mode = 2
 offset_left = 952.0
 offset_right = 1080.0

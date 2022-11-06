@@ -1,4 +1,4 @@
-[gd_resource type="ShaderMaterial" load_steps=8 format=3]
+[gd_resource type="ShaderMaterial" load_steps=9 format=3 uid="uid://cm3vg10lyus24"]
 
 [ext_resource type="Shader" path="res://ui/canvas/element_painter.gdshader" id="1_2v6tn"]
 [ext_resource type="Texture2D" uid="uid://b2er78i2yjm8w" path="res://ui/canvas/textures/crystal.jpg" id="2_g0d6y"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://7ulbs6l163vf" path="res://ui/canvas/textures/glass.png" id="4_bgplp"]
 [ext_resource type="Texture2D" uid="uid://dv72a2xnad210" path="res://ui/canvas/textures/water_noise.jpg" id="4_st85m"]
 [ext_resource type="Texture2D" uid="uid://cec1m7ldlvbee" path="res://ui/canvas/textures/sky.jpg" id="6_epgtd"]
+[ext_resource type="Texture2D" uid="uid://txs1h1e3txo0" path="res://ui/canvas/textures/powder_noise.png" id="6_uduh7"]
 
 [resource]
 shader = ExtResource("1_2v6tn")
@@ -59,6 +60,7 @@ shader_parameter/oil_color_3 = Color(0.141176, 0.0941176, 0.160784, 1)
 shader_parameter/plasma_color_1 = Color(1, 1, 1, 1)
 shader_parameter/plasma_color_2 = Color(0.737255, 1, 0.831373, 1)
 shader_parameter/polliwog_color_1 = Color(0.419608, 0.941176, 1, 1)
+shader_parameter/powder_noise = ExtResource("6_uduh7")
 shader_parameter/rock_color_1 = Color(0.278431, 0.109804, 0.109804, 1)
 shader_parameter/sand_color_1 = Color(0.980392, 0.47451, 0.137255, 1)
 shader_parameter/sand_duck_color_1 = Color(0.988235, 0.737255, 0.384314, 1)
