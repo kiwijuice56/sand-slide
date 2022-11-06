@@ -7,12 +7,16 @@ class Air: public Element {
 public:
     const double DECAY = 1.0 / 360;
     const double MOVE = 1.0 / 4;
+    const double FLAME = 1.0 / 16;
 
     void process(SandSimulation *sim, int row, int col) override {
         if (sim->randf() < DECAY) {
             sim->set_cell(row, col, 0);
         }
-        
+        if (sim->randf() < FLAME && sim->is_on_fire(row, col)) {
+            sim->set_cell(row, col, 5);
+        }
+
         int newRow = row + (int) (sim->randf() * 3) - 1;
         int newCol = col + (int) (sim->randf() * 3) - 1;
 

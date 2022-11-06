@@ -14,6 +14,9 @@ public:
         if (sim->randf() < FLAME && sim->is_on_fire(row, col)) {
             sim->set_cell(row, col, 6);
             return;
+        } else if (sim->is_poisoned(row, col)) {
+            sim->set_cell(row, col, 16);
+            return;
         }
 
         bool on_ground = !sim->in_bounds(row + 1, col) || sim->get_cell(row + 1, col) != 0;

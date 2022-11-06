@@ -1,19 +1,20 @@
-#ifndef OIL_H
-#define OIL_H
+#ifndef MERCURY_H
+#define MERCURY_H
 
 #include "element.h"
 #include <stdlib.h>
 
-class Oil: public Element {
+class Mercury: public Element {
 public:
-    const double FLAME = 1.0 / 32;
+    const double MELT = 1.0 / 64;
 
     void process(SandSimulation *sim, int row, int col) override {
-        // Burning
-        if (sim->randf() < FLAME && (sim->is_on_fire(row, col) || sim->touch_count(row, col, 6) > 0)) {
-            sim->set_cell(row, col, 5);
+        // Plasma melting
+        if (sim->randf() < MELT && (sim->touch_count(row, col, 38) > 0 || sim->touch_count(row, col, 40) > 0)) {
+            sim->set_cell(row, col, 38);
             return;
         }
+
 
         int dir = (int) (sim->randf() * 3) - 1;
         if (dir != 0) {
@@ -24,16 +25,16 @@ public:
     }
 
     double get_density() override {
-        return 0.8;
+        return 3.0;
     }
 
     double get_explode_resistance() override {
-        return 0.1;
+        return 0.5;
     }
 
     double get_acid_resistance() override {
-        return 0.6;
+        return 0.99;
     }
 };
 
-#endif // OIL_H
+#endif // MERCURY_H

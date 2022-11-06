@@ -39,7 +39,9 @@ uniform vec4 smoke_color_2: source_color = vec4(1.0);
 
 uniform vec4 algae_color_1: source_color = vec4(1.0);
 uniform vec4 sand_duck_color_1: source_color = vec4(1.0);
+
 uniform vec4 lead_azide_color_1: source_color = vec4(1.0);
+uniform vec4 lead_azide_color_2: source_color = vec4(1.0);
 
 uniform vec4 explosion_color_1: source_color = vec4(1.0);
 uniform vec4 explosion_color_2: source_color = vec4(1.0);
@@ -90,7 +92,9 @@ uniform vec4 oil_color_3: source_color = vec4(1.0);
 uniform vec4 urchin_color_1: source_color = vec4(1.0);
 uniform vec4 dragon_color_1: source_color = vec4(1.0);
 uniform vec4 critter_color_1: source_color = vec4(1.0);
+
 uniform vec4 uranium_color_1: source_color = vec4(1.0);
+uniform vec4 uranium_color_2: source_color = vec4(1.0);
 
 uniform vec4 nuclear_explosion_color_1: source_color = vec4(1.0);
 uniform vec4 nuclear_explosion_color_2: source_color = vec4(1.0);
@@ -230,7 +234,9 @@ void fragment() {
 			float x = match_amount(TEXTURE, UV, 9);
 			COLOR = explosion_color_1 * x + explosion_color_2 * (1.0 - x);
 			break;
-		case 10: COLOR = lead_azide_color_1; break;
+		case 10: 
+			float x = shift(sin(TIME));
+			COLOR = lead_azide_color_1 * x + lead_azide_color_2 * (1.0 - x); break;
 		case 11: COLOR = soil_color; break;
 		case 12: COLOR = seed_color_1; break;
 		case 13: COLOR = seed_color_2; break;
@@ -369,7 +375,9 @@ void fragment() {
 			float x = match_amount(TEXTURE, UV, 34);
 			COLOR = nuclear_explosion_color_1 * x + nuclear_explosion_color_2 * (1.0 - x);
 			break;
-		case 35: COLOR = uranium_color_1; break;
+		case 35:
+			float x = shift(sin(TIME));
+			COLOR = uranium_color_1 * x + uranium_color_2 * (1.0 - x); break;
 		case 36:
 			float y = match_amount(TEXTURE, UV, 36);
 			COLOR = neutron_color_2 * y + neutron_color_1 * (1.0 - y);
@@ -398,7 +406,7 @@ void fragment() {
 			float z = float(floatBitsToInt(12312.4324143 + p1 * 2134904234234323.21332421 * p2 * 392342342324892.3242341) & 0xFF) / float(0xFF);
 			if (z < 0.5)
 				z += 0.5;
-			vec3 col = hueShift(vec3(z, 0.0, 1.0), shift(cos(UV.y)) * shift(sin(8.0 * UV.x * sin(TIME / 12.0))) * shift(sin(z)) * 2.0 * PI);
+			vec3 col = hueShift(vec3(z, 0.2, 1.0), shift(cos(UV.y)) * shift(sin(8.0 * UV.x * sin(TIME / 12.0))) * shift(sin(z)) * 2.0 * PI);
 			COLOR = vec4(col.r, col.g, col.b, 1.0);
 			break;
 		case 43: 
@@ -425,6 +433,22 @@ void fragment() {
 			vec2 texCoord2 = vec2(1.5 * UV.x + sin(TIME / 24.0), 1.5 * UV.y + sin(TIME / 24.0));
 			
 			COLOR = shift(cos(TIME / 4.0)) / 2.0 * texture(water_noise, ratio * texCoord2) + COLOR * z + powder_color_3 * (1.0 - z);
+			break;
+		case 44:
+			vec2 ratio = screen_ratio(SCREEN_PIXEL_SIZE);
+			vec2 texCoord = vec2(2.0*UV.x + sin(TIME / 32.0), 2.0*UV.y + sin(TIME / 32.0));
+			
+			float x = texture(water_noise, ratio * texCoord).r * (UV.x + UV.y + sin(UV.x / 4.0) * 2.0 + sin(TIME / 2.0));
+			
+			float y = shift(cos(sin(3.0 * UV.x + TIME / 16.0) * 16.0 * UV.x + PI * x + UV.y * 8.0));
+			y = abs(y - 0.5);
+			
+			COLOR = UV.y * y * steel_color_1 + steel_color_1 * (1.0 - UV.y) * (1.0 - y);
+			
+			float z = match_amount(TEXTURE, UV, id);
+			
+			texCoord = vec2(1.5 * UV.x + sin(TIME / 24.0), 1.5 * UV.y + sin(TIME / 24.0));
+			COLOR = shift(cos(TIME / 4.0)) / 2.0 * texture(water_noise, ratio * texCoord) + COLOR * z + vec4(1.0) * (1.0 - z);
 			break;
 	}
 }

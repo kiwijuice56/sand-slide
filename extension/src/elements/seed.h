@@ -14,6 +14,9 @@ public:
         if (sim->randf() < FLAME && sim->is_on_fire(row, col)) {
             sim->set_cell(row, col, 5);
             return;
+        } else if (sim->is_poisoned(row, col)) {
+            sim->set_cell(row, col, 16);
+            return;
         }
 
         sim->move_and_swap(row, col, row + 1, col);
@@ -23,7 +26,7 @@ public:
             sim->set_cell(row, col, 11);
         } else if (sim->randf() < GERMINATE && sim->touch_count(row, col, 3) > 0) {
             sim->set_cell(row, col, 13);
-        }
+        } 
     }
 
     double get_density() override {

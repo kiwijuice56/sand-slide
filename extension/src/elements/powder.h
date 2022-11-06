@@ -5,7 +5,7 @@
 
 class Powder: public Element {
 public:
-    const double FLAME = 1 / 64.0;
+    const double FLAME = 1 / 32.0;
     const double DISSOLVE = 1 / 256.0;
 
     void process(SandSimulation *sim, int row, int col) override {

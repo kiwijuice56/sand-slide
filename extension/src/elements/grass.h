@@ -15,6 +15,9 @@ public:
         if (sim->randf() < FLAME && sim->is_on_fire(row, col)) {
             sim->set_cell(row, col, 5);
             return;
+        } else if (sim->is_poisoned(row, col)) {
+            sim->set_cell(row, col, 16);
+            return;
         }
 
         if (sim->randf() < GROW) {
@@ -31,8 +34,6 @@ public:
             sim->grow(row - 1, newCol, 11, 14);
             sim->grow(row - 1, newCol, 12, 14);
             sim->grow(row - 1, newCol, 13, 14);
-        } else if (sim->touch_count(row, col, 10)) {
-            sim->set_cell(row, col, 16);
         }
     }
 

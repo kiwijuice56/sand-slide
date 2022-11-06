@@ -1,4 +1,4 @@
-[gd_scene load_steps=128 format=3 uid="uid://dare8w77k701"]
+[gd_scene load_steps=131 format=3 uid="uid://dare8w77k701"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_b657u"]
 [ext_resource type="Script" path="res://ui/ui.gd" id="2_27ols"]
@@ -375,6 +375,44 @@ corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
+[sub_resource type="Animation" id="Animation_7ro7j"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:theme_override_styles/normal:bg_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 0.0784314, 0.286275, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_lqxbb"]
+resource_name = "shine"
+length = 3.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:theme_override_styles/normal:bg_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1.1, 1.7, 2.3, 2.9, 3.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 0, 0, 1), Color(1, 0.368627, 0, 1), Color(1, 0.835294, 0, 1), Color(0, 1, 0.05, 1), Color(0, 0.25098, 1, 1), Color(1, 0, 0.6, 1), Color(1, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5smay"]
+_data = {
+"RESET": SubResource("Animation_7ro7j"),
+"shine": SubResource("Animation_lqxbb")
+}
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tc47p"]
 bg_color = Color(0.419608, 0.941176, 1, 1)
 corner_radius_top_left = 4
@@ -564,6 +602,27 @@ corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q6a40"]
+bg_color = Color(0.231373, 0.215686, 0.305882, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qcidr"]
+bg_color = Color(0.27451, 0.286275, 0.360784, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_geoh2"]
+bg_color = Color(0.203922, 0.168627, 0.258824, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q8fr1"]
 bg_color = Color(0.117647, 0.105882, 0.133333, 1)
 corner_radius_top_left = 4
@@ -606,85 +665,64 @@ corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q6a40"]
-bg_color = Color(0.231373, 0.215686, 0.305882, 1)
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qcidr"]
-bg_color = Color(0.27451, 0.286275, 0.360784, 1)
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_geoh2"]
-bg_color = Color(0.203922, 0.168627, 0.258824, 1)
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e8k14"]
-bg_color = Color(0.74902, 0.74902, 0.74902, 1)
+bg_color = Color(0.756863, 0.929412, 0.603922, 1)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8kwuy"]
-bg_color = Color(0.690196, 0.690196, 0.690196, 1)
+bg_color = Color(0.85098, 0.968627, 0.690196, 1)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2omdr"]
-bg_color = Color(0.521569, 0.521569, 0.521569, 1)
+bg_color = Color(0.345098, 0.25098, 0.478431, 1)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cmgkr"]
-bg_color = Color(0.607843, 0.607843, 0.607843, 1)
+bg_color = Color(0.694118, 0.694118, 0.694118, 1)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3xqsb"]
-bg_color = Color(0.690196, 0.690196, 0.690196, 1)
+bg_color = Color(0.827451, 0.827451, 0.827451, 1)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_78bka"]
-bg_color = Color(0.521569, 0.521569, 0.521569, 1)
+bg_color = Color(0.701961, 0.419608, 0.54902, 1)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fgt8d"]
-bg_color = Color(0.517647, 0.564706, 0.501961, 1)
+bg_color = Color(0.411765, 0.45098, 0.4, 1)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eho5g"]
-bg_color = Color(0.611765, 0.631373, 0.584314, 1)
+bg_color = Color(0.137255, 0.768627, 0.654902, 1)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j4bb3"]
-bg_color = Color(0.419608, 0.501961, 0.415686, 1)
+bg_color = Color(0.282353, 0.341176, 0.278431, 1)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
@@ -1433,6 +1471,13 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_3vgxk")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_sgko8")
 text = "powder"
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="UI/ScreenContainer/MarginContainer/VBoxContainer/ElementSelector/Build/HBoxContainer/Powder"]
+autoplay = "shine"
+playback_speed = 0.25
+libraries = {
+"": SubResource("AnimationLibrary_5smay")
+}
+
 [node name="Life" type="ScrollContainer" parent="UI/ScreenContainer/MarginContainer/VBoxContainer/ElementSelector"]
 visible = false
 custom_minimum_size = Vector2i(0, 120)
@@ -1634,7 +1679,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_cm7pv")
 layout_mode = 2
 offset_left = 8.0
 offset_top = 8.0
-offset_right = 1632.0
+offset_right = 1768.0
 offset_bottom = 112.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -1655,6 +1700,21 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_j3hob")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_2xunh")
 text = "ice"
 
+[node name="Hurricane" type="Button" parent="UI/ScreenContainer/MarginContainer/VBoxContainer/ElementSelector/Chemical/HBoxContainer"]
+custom_minimum_size = Vector2i(128, 100)
+layout_mode = 2
+offset_right = 128.0
+offset_bottom = 128.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 0
+focus_mode = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_q6a40")
+theme_override_styles/hover = SubResource("StyleBoxFlat_qcidr")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_geoh2")
+text = "storm"
+
 [node name="Oil" type="Button" parent="UI/ScreenContainer/MarginContainer/VBoxContainer/ElementSelector/Chemical/HBoxContainer"]
 custom_minimum_size = Vector2i(128, 100)
 layout_mode = 2
@@ -1670,6 +1730,27 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_q8fr1")
 theme_override_styles/hover = SubResource("StyleBoxFlat_yes4h")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_gxiyd")
 text = "oil"
+
+[node name="Mercury" type="Button" parent="UI/ScreenContainer/MarginContainer/VBoxContainer/ElementSelector/Chemical/HBoxContainer"]
+custom_minimum_size = Vector2i(128, 100)
+layout_mode = 2
+offset_left = 544.0
+offset_right = 672.0
+offset_bottom = 128.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 0
+focus_mode = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_eqnvp")
+theme_override_styles/hover = SubResource("StyleBoxFlat_5dmnr")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_rvw6y")
+text = "mercury"
 
 [node name="Lava" type="Button" parent="UI/ScreenContainer/MarginContainer/VBoxContainer/ElementSelector/Chemical/HBoxContainer"]
 custom_minimum_size = Vector2i(128, 100)
@@ -1708,21 +1789,6 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_ml551")
 theme_override_styles/hover = SubResource("StyleBoxFlat_7f7pq")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_rurje")
 text = "blue fire"
-
-[node name="Hurricane" type="Button" parent="UI/ScreenContainer/MarginContainer/VBoxContainer/ElementSelector/Chemical/HBoxContainer"]
-custom_minimum_size = Vector2i(128, 100)
-layout_mode = 2
-offset_right = 128.0
-offset_bottom = 128.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_vertical = 0
-focus_mode = 0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_q6a40")
-theme_override_styles/hover = SubResource("StyleBoxFlat_qcidr")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_geoh2")
-text = "storm"
 
 [node name="Acid" type="Button" parent="UI/ScreenContainer/MarginContainer/VBoxContainer/ElementSelector/Chemical/HBoxContainer"]
 custom_minimum_size = Vector2i(128, 100)
@@ -1776,12 +1842,12 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 0
 focus_mode = 0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_fgt8d")
 theme_override_styles/hover = SubResource("StyleBoxFlat_eho5g")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_j4bb3")

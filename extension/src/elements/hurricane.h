@@ -5,11 +5,12 @@
 
 class Hurricane: public Element {
 public:
-    const double DECAY = 1.0 / 240;
+    const double DECAY = 1.0 / 300;
     const double THUNDER = 0.25;
     const double RAIN = 0.45; 
     const double UP = 0.65;
     const double PRECIPITATE = 1.0 / 48;
+    const double GROW = 1.0 / 360;
 
     void process(SandSimulation *sim, int row, int col) override {
         if (sim->randf() < DECAY) {
@@ -34,6 +35,9 @@ public:
             sim->move_and_swap(row, col, newRow, newCol);
         } else if (sim->randf() < PRECIPITATE) {
             sim->grow(row + 1, col, 0, 3);
+        } else if (sim->randf() < GROW) {
+            sim->grow(row + 1, col + 1, 0, 41);
+            sim->grow(row + 1, col - 1, 0, 41);
         }
     }
 

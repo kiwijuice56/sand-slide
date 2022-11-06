@@ -11,6 +11,9 @@ public:
     void process(SandSimulation *sim, int row, int col) override {
         if (sim->touch_count(row, col, 32) > 3) {
             sim->set_cell(row, col, 0);
+        } else if (sim->is_poisoned(row, col)) {
+            sim->set_cell(row, col, 16);
+            return;
         } else if (sim->touch_count(row, col, 23) > 0 || sim->randf() < DISSOLVE && sim->touch_count(row, col, 30) > 0) {
             sim->set_cell(row, col, 16);
         } else if (sim->randf() < GROWTH * (sim->is_on_fire(row, col) ? 12.0 : 1.0)) {
@@ -27,11 +30,11 @@ public:
     }
 
     double get_explode_resistance() override {
-        return 0.99;
+        return 0.8;
     }
 
     double get_acid_resistance() override {
-        return 0.99;
+        return 0.8;
     }
 };
 

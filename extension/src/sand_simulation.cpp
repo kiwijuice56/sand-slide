@@ -44,7 +44,7 @@
 #include "elements/hurricane.h"
 #include "elements/powder.h"
 #include "elements/liquid_powder.h"
-
+#include "elements/mercury.h"
 
 #include <godot_cpp/core/class_db.hpp>
 #include <random>
@@ -102,6 +102,7 @@ SandSimulation::SandSimulation() {
     elements.at(41) = new Hurricane();
     elements.at(42) = new Powder();
     elements.at(43) = new LiquidPowder();
+    elements.at(44) = new Mercury();
 
     draw_data = PackedByteArray();
 
@@ -223,7 +224,7 @@ bool SandSimulation::is_poisoned(int row, int col) {
                 continue;
             }
             int c = get_cell(row + y, col + x);
-            if (c == 10 || c == 21 || c == 22 || c == 35) {
+            if (c == 10 || c == 21 || c == 22 || c == 35 || c == 44) {
                 return true;
             }
         }

@@ -24,7 +24,7 @@ public:
             sim->set_cell(row, col, 3);
         } else if (sim->is_poisoned(row, col)) {
             sim->set_cell(row, col, 16);
-        }
+        } 
     }
 
     double get_density() override {
