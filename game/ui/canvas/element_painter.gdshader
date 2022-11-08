@@ -147,30 +147,25 @@ float match_amount(sampler2D tex, vec2 uv, int given_id) {
 }
 
 vec3 hueShift( vec3 color, float hueAdjust ){
-
-    const vec3  kRGBToYPrime = vec3 (0.299, 0.587, 0.114);
-    const vec3  kRGBToI      = vec3 (0.596, -0.275, -0.321);
-    const vec3  kRGBToQ      = vec3 (0.212, -0.523, 0.311);
-
-    const vec3  kYIQToR     = vec3 (1.0, 0.956, 0.621);
-    const vec3  kYIQToG     = vec3 (1.0, -0.272, -0.647);
-    const vec3  kYIQToB     = vec3 (1.0, -1.107, 1.704);
-
-    float   YPrime  = dot (color, kRGBToYPrime);
-    float   I       = dot (color, kRGBToI);
-    float   Q       = dot (color, kRGBToQ);
-    float   hue     = atan (Q, I);
-    float   chroma  = sqrt (I * I + Q * Q);
-
-    hue += hueAdjust;
-
-    Q = chroma * sin (hue);
-    I = chroma * cos (hue);
-
-    vec3    yIQ   = vec3 (YPrime, I, Q);
-
-    return vec3( dot (yIQ, kYIQToR), dot (yIQ, kYIQToG), dot (yIQ, kYIQToB) );
-
+	const vec3  kRGBToYPrime = vec3 (0.299, 0.587, 0.114);
+	const vec3  kRGBToI      = vec3 (0.596, -0.275, -0.321);
+	const vec3  kRGBToQ      = vec3 (0.212, -0.523, 0.311);
+	const vec3  kYIQToR     = vec3 (1.0, 0.956, 0.621);
+	const vec3  kYIQToG     = vec3 (1.0, -0.272, -0.647);
+	const vec3  kYIQToB     = vec3 (1.0, -1.107, 1.704);
+	float   YPrime  = dot (color, kRGBToYPrime);
+	float   I       = dot (color, kRGBToI);
+	float   Q       = dot (color, kRGBToQ);
+	float   hue     = atan (Q, I);
+	float   chroma  = sqrt (I * I + Q * Q);
+	
+	hue += hueAdjust;
+	
+	Q = chroma * sin (hue);
+	I = chroma * cos (hue);
+	
+	vec3    yIQ   = vec3 (YPrime, I, Q);
+	return vec3( dot (yIQ, kYIQToR), dot (yIQ, kYIQToG), dot (yIQ, kYIQToB) );
 }
 
 // Given the screen size in pixels (SCREEN_PIXEL_SIZE), returns the aspect ratio
@@ -186,7 +181,7 @@ void fragment() {
 	// Each element has its own case to draw
 	// IDs are the same as the ones given in ../extension/sand_simulation.cpp
 	switch (id) {
-		case 0: COLOR = texture(sky_texture, UV * screen_ratio(SCREEN_PIXEL_SIZE)); break;
+		case 0: COLOR = texture(sky_texture, vec2(shift(sin(TIME / 32.0)) / 2.0, shift(cos(TIME / 48.0)) / 2.0) + UV * 0.5 * screen_ratio(SCREEN_PIXEL_SIZE)); break;
 		case 1: COLOR = sand_color_1; break;
 		case 2: COLOR = rock_color_1; break;
 		case 3: // Water
@@ -327,6 +322,7 @@ void fragment() {
 			COLOR = 0.5 * vec4(texture(glass_texture, vec2(cos(TIME / 64.0), sin(TIME / 64.0)) + SCREEN_UV * ratio).a * dif);
 			COLOR += 0.5 * vec4(texture(glass_texture, vec2(cos(TIME / 48.0), sin(TIME / 48.0)) + SCREEN_UV * ratio).a * (1.0 - dif));
 			COLOR += vec4((sin(TIME / 42.0) + 1.0) / 8.0);
+			COLOR += (0.25 + shift(sin(TIME/16.0)) / 2.0) * texture(sky_texture, vec2(shift(sin(TIME / 32.0)) / 2.0, shift(cos(TIME / 48.0)) / 2.0) + UV * 0.5 * screen_ratio(SCREEN_PIXEL_SIZE));
 			COLOR.a = 1.0;
 			
 			break;
