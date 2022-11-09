@@ -471,5 +471,15 @@ void fragment() {
 			texCoord = vec2(1.5 * PUV.x + sin(TIME / 24.0), 1.5 * PUV.y + sin(TIME / 24.0));
 			COLOR = shift(cos(TIME / 4.0)) / 2.0 * soft_sample(water_noise, ratio * texCoord) + COLOR * z + vec4(1.0) * (1.0 - z);
 			break;
+		case 45:
+			float p1 = cos(floor(UV.x * float(width / px_scale)));
+			float p2 = cos(floor(UV.y * float(height / px_scale)));
+			
+			float z = float(floatBitsToInt(12312.4324143 + p1 * 2134904234234323.21332421 * p2 * 392342342324892.3242341) & 0xFF) / float(0xFF);
+
+			float x  = shift(cos(PUV.y)) * shift(sin(16.0 * PUV.x * sin(TIME / 5.0))) * shift(sin(z)) * (1.0 + shift(sin(TIME)));
+			x += z / 4.0;
+			COLOR = steel_color_1 * x + steel_color_2 * (1.0 - x);
+			break;
 	}
 }

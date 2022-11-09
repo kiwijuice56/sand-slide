@@ -1,4 +1,4 @@
-[gd_scene load_steps=131 format=3 uid="uid://dare8w77k701"]
+[gd_scene load_steps=134 format=3 uid="uid://dare8w77k701"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_b657u"]
 [ext_resource type="Script" path="res://ui/ui.gd" id="2_27ols"]
@@ -292,7 +292,7 @@ corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eqnvp"]
-bg_color = Color(0.796078, 0.796078, 0.796078, 1)
+bg_color = Color(0.780392, 0.772549, 0.72549, 1)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
@@ -306,7 +306,7 @@ corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rvw6y"]
-bg_color = Color(0.682353, 0.682353, 0.729412, 1)
+bg_color = Color(0.607843, 0.607843, 0.658824, 1)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
@@ -665,29 +665,8 @@ corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e8k14"]
-bg_color = Color(0.756863, 0.929412, 0.603922, 1)
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8kwuy"]
-bg_color = Color(0.85098, 0.968627, 0.690196, 1)
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2omdr"]
-bg_color = Color(0.345098, 0.25098, 0.478431, 1)
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cmgkr"]
-bg_color = Color(0.694118, 0.694118, 0.694118, 1)
+bg_color = Color(0.690196, 0.635294, 0.635294, 1)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
@@ -702,6 +681,27 @@ corner_radius_bottom_left = 4
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_78bka"]
 bg_color = Color(0.701961, 0.419608, 0.54902, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1hjyp"]
+bg_color = Color(0.513726, 0.513726, 0.541176, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fihf2"]
+bg_color = Color(0.411765, 0.411765, 0.470588, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g5sfm"]
+bg_color = Color(0.607843, 0.607843, 0.658824, 1)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
@@ -723,6 +723,27 @@ corner_radius_bottom_left = 4
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j4bb3"]
 bg_color = Color(0.282353, 0.341176, 0.278431, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e8k14"]
+bg_color = Color(0.756863, 0.929412, 0.603922, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8kwuy"]
+bg_color = Color(0.85098, 0.968627, 0.690196, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2omdr"]
+bg_color = Color(0.345098, 0.25098, 0.478431, 1)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
@@ -1244,9 +1265,9 @@ size_flags_vertical = 3
 theme_override_constants/separation = 8
 
 [node name="Sand" type="Button" parent="UI/ScreenContainer/MarginContainer/VBoxContainer/ElementSelector/Primary/HBoxContainer"]
-custom_minimum_size = Vector2i(128, 100)
+custom_minimum_size = Vector2i(136, 100)
 layout_mode = 2
-offset_right = 128.0
+offset_right = 136.0
 offset_bottom = 100.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -1259,10 +1280,10 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_457eu")
 text = "sand"
 
 [node name="Rock" type="Button" parent="UI/ScreenContainer/MarginContainer/VBoxContainer/ElementSelector/Primary/HBoxContainer"]
-custom_minimum_size = Vector2i(128, 100)
+custom_minimum_size = Vector2i(136, 100)
 layout_mode = 2
-offset_left = 136.0
-offset_right = 264.0
+offset_left = 144.0
+offset_right = 280.0
 offset_bottom = 100.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -1275,10 +1296,10 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_s867d")
 text = "rock"
 
 [node name="Water" type="Button" parent="UI/ScreenContainer/MarginContainer/VBoxContainer/ElementSelector/Primary/HBoxContainer"]
-custom_minimum_size = Vector2i(128, 100)
+custom_minimum_size = Vector2i(136, 100)
 layout_mode = 2
-offset_left = 272.0
-offset_right = 400.0
+offset_left = 288.0
+offset_right = 424.0
 offset_bottom = 100.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -1291,10 +1312,10 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_msh0k")
 text = "water"
 
 [node name="Fire" type="Button" parent="UI/ScreenContainer/MarginContainer/VBoxContainer/ElementSelector/Primary/HBoxContainer"]
-custom_minimum_size = Vector2i(128, 100)
+custom_minimum_size = Vector2i(136, 100)
 layout_mode = 2
-offset_left = 408.0
-offset_right = 536.0
+offset_left = 432.0
+offset_right = 568.0
 offset_bottom = 100.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -1307,10 +1328,10 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_bs4ox")
 text = "fire"
 
 [node name="Air" type="Button" parent="UI/ScreenContainer/MarginContainer/VBoxContainer/ElementSelector/Primary/HBoxContainer"]
-custom_minimum_size = Vector2i(128, 100)
+custom_minimum_size = Vector2i(136, 100)
 layout_mode = 2
-offset_left = 544.0
-offset_right = 672.0
+offset_left = 576.0
+offset_right = 712.0
 offset_bottom = 100.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -1323,10 +1344,10 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_dcp2l")
 text = "air"
 
 [node name="Lightning" type="Button" parent="UI/ScreenContainer/MarginContainer/VBoxContainer/ElementSelector/Primary/HBoxContainer"]
-custom_minimum_size = Vector2i(128, 100)
+custom_minimum_size = Vector2i(136, 100)
 layout_mode = 2
-offset_left = 680.0
-offset_right = 808.0
+offset_left = 720.0
+offset_right = 856.0
 offset_bottom = 100.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -1359,14 +1380,14 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_cm7pv")
 layout_mode = 2
 offset_left = 8.0
 offset_top = 8.0
-offset_right = 1088.0
+offset_right = 1152.0
 offset_bottom = 112.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/separation = 8
 
 [node name="Soil" type="Button" parent="UI/ScreenContainer/MarginContainer/VBoxContainer/ElementSelector/Build/HBoxContainer"]
-custom_minimum_size = Vector2i(128, 100)
+custom_minimum_size = Vector2i(136, 100)
 layout_mode = 2
 offset_right = 128.0
 offset_bottom = 128.0
@@ -1381,7 +1402,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_2sydf")
 text = "soil"
 
 [node name="Glass" type="Button" parent="UI/ScreenContainer/MarginContainer/VBoxContainer/ElementSelector/Build/HBoxContainer"]
-custom_minimum_size = Vector2i(128, 100)
+custom_minimum_size = Vector2i(136, 100)
 layout_mode = 2
 offset_left = 136.0
 offset_right = 264.0
@@ -1397,7 +1418,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_fwrmq")
 text = "glass"
 
 [node name="Wood" type="Button" parent="UI/ScreenContainer/MarginContainer/VBoxContainer/ElementSelector/Build/HBoxContainer"]
-custom_minimum_size = Vector2i(128, 100)
+custom_minimum_size = Vector2i(136, 100)
 layout_mode = 2
 offset_left = 272.0
 offset_right = 400.0
@@ -1413,7 +1434,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_hgsbg")
 text = "wood"
 
 [node name="Crystal" type="Button" parent="UI/ScreenContainer/MarginContainer/VBoxContainer/ElementSelector/Build/HBoxContainer"]
-custom_minimum_size = Vector2i(128, 100)
+custom_minimum_size = Vector2i(136, 100)
 layout_mode = 2
 offset_left = 408.0
 offset_right = 536.0
@@ -1429,7 +1450,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_2po0a")
 text = "crystal"
 
 [node name="Steel" type="Button" parent="UI/ScreenContainer/MarginContainer/VBoxContainer/ElementSelector/Build/HBoxContainer"]
-custom_minimum_size = Vector2i(128, 100)
+custom_minimum_size = Vector2i(136, 100)
 layout_mode = 2
 offset_left = 544.0
 offset_right = 672.0
@@ -1450,7 +1471,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_rvw6y")
 text = "steel"
 
 [node name="Marble" type="Button" parent="UI/ScreenContainer/MarginContainer/VBoxContainer/ElementSelector/Build/HBoxContainer"]
-custom_minimum_size = Vector2i(128, 100)
+custom_minimum_size = Vector2i(136, 100)
 layout_mode = 2
 offset_left = 680.0
 offset_right = 808.0
@@ -1472,7 +1493,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_vv1to")
 text = "marble"
 
 [node name="Dust" type="Button" parent="UI/ScreenContainer/MarginContainer/VBoxContainer/ElementSelector/Build/HBoxContainer"]
-custom_minimum_size = Vector2i(128, 100)
+custom_minimum_size = Vector2i(136, 100)
 layout_mode = 2
 offset_left = 816.0
 offset_right = 944.0
@@ -1488,7 +1509,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_b4sp5")
 text = "dust"
 
 [node name="Powder" type="Button" parent="UI/ScreenContainer/MarginContainer/VBoxContainer/ElementSelector/Build/HBoxContainer"]
-custom_minimum_size = Vector2i(128, 100)
+custom_minimum_size = Vector2i(136, 100)
 layout_mode = 2
 offset_left = 816.0
 offset_right = 944.0
@@ -1526,14 +1547,14 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_cm7pv")
 layout_mode = 2
 offset_left = 8.0
 offset_top = 8.0
-offset_right = 1088.0
+offset_right = 1152.0
 offset_bottom = 112.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/separation = 8
 
 [node name="Polliwog" type="Button" parent="UI/ScreenContainer/MarginContainer/VBoxContainer/ElementSelector/Life/HBoxContainer"]
-custom_minimum_size = Vector2i(128, 100)
+custom_minimum_size = Vector2i(136, 100)
 layout_mode = 2
 offset_right = 128.0
 offset_bottom = 128.0
@@ -1553,7 +1574,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_5dx7s")
 text = "polliwog"
 
 [node name="Algae" type="Button" parent="UI/ScreenContainer/MarginContainer/VBoxContainer/ElementSelector/Life/HBoxContainer"]
-custom_minimum_size = Vector2i(128, 100)
+custom_minimum_size = Vector2i(136, 100)
 layout_mode = 2
 offset_left = 136.0
 offset_right = 264.0
@@ -1569,7 +1590,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_fvw5r")
 text = "algae"
 
 [node name="Urchin" type="Button" parent="UI/ScreenContainer/MarginContainer/VBoxContainer/ElementSelector/Life/HBoxContainer"]
-custom_minimum_size = Vector2i(128, 100)
+custom_minimum_size = Vector2i(136, 100)
 layout_mode = 2
 offset_left = 272.0
 offset_right = 400.0
@@ -1590,7 +1611,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_cgna5")
 text = "urchin"
 
 [node name="Sand Duck" type="Button" parent="UI/ScreenContainer/MarginContainer/VBoxContainer/ElementSelector/Life/HBoxContainer"]
-custom_minimum_size = Vector2i(128, 100)
+custom_minimum_size = Vector2i(136, 100)
 layout_mode = 2
 offset_left = 408.0
 offset_right = 536.0
@@ -1612,7 +1633,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_qcn7j")
 text = "sandduck"
 
 [node name="Seed" type="Button" parent="UI/ScreenContainer/MarginContainer/VBoxContainer/ElementSelector/Life/HBoxContainer"]
-custom_minimum_size = Vector2i(128, 100)
+custom_minimum_size = Vector2i(136, 100)
 layout_mode = 2
 offset_left = 544.0
 offset_right = 672.0
@@ -1633,7 +1654,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_c0d0v")
 text = "seed"
 
 [node name="Fairy" type="Button" parent="UI/ScreenContainer/MarginContainer/VBoxContainer/ElementSelector/Life/HBoxContainer"]
-custom_minimum_size = Vector2i(128, 100)
+custom_minimum_size = Vector2i(136, 100)
 layout_mode = 2
 offset_left = 680.0
 offset_right = 808.0
@@ -1654,7 +1675,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_q4tn0")
 text = "fairy"
 
 [node name="Dragon" type="Button" parent="UI/ScreenContainer/MarginContainer/VBoxContainer/ElementSelector/Life/HBoxContainer"]
-custom_minimum_size = Vector2i(128, 100)
+custom_minimum_size = Vector2i(136, 100)
 layout_mode = 2
 offset_left = 816.0
 offset_right = 944.0
@@ -1675,7 +1696,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_sxore")
 text = "dragon"
 
 [node name="Critter" type="Button" parent="UI/ScreenContainer/MarginContainer/VBoxContainer/ElementSelector/Life/HBoxContainer"]
-custom_minimum_size = Vector2i(128, 100)
+custom_minimum_size = Vector2i(136, 100)
 layout_mode = 2
 offset_left = 816.0
 offset_right = 944.0
@@ -1711,14 +1732,14 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_cm7pv")
 layout_mode = 2
 offset_left = 8.0
 offset_top = 8.0
-offset_right = 1768.0
+offset_right = 2016.0
 offset_bottom = 112.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/separation = 8
 
 [node name="Ice" type="Button" parent="UI/ScreenContainer/MarginContainer/VBoxContainer/ElementSelector/Chemical/HBoxContainer"]
-custom_minimum_size = Vector2i(128, 100)
+custom_minimum_size = Vector2i(136, 100)
 layout_mode = 2
 offset_right = 128.0
 offset_bottom = 128.0
@@ -1733,7 +1754,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_2xunh")
 text = "ice"
 
 [node name="Hurricane" type="Button" parent="UI/ScreenContainer/MarginContainer/VBoxContainer/ElementSelector/Chemical/HBoxContainer"]
-custom_minimum_size = Vector2i(128, 100)
+custom_minimum_size = Vector2i(136, 100)
 layout_mode = 2
 offset_right = 128.0
 offset_bottom = 128.0
@@ -1748,7 +1769,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_geoh2")
 text = "storm"
 
 [node name="Oil" type="Button" parent="UI/ScreenContainer/MarginContainer/VBoxContainer/ElementSelector/Chemical/HBoxContainer"]
-custom_minimum_size = Vector2i(128, 100)
+custom_minimum_size = Vector2i(136, 100)
 layout_mode = 2
 offset_left = 136.0
 offset_right = 264.0
@@ -1763,29 +1784,8 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_yes4h")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_gxiyd")
 text = "oil"
 
-[node name="Mercury" type="Button" parent="UI/ScreenContainer/MarginContainer/VBoxContainer/ElementSelector/Chemical/HBoxContainer"]
-custom_minimum_size = Vector2i(128, 100)
-layout_mode = 2
-offset_left = 544.0
-offset_right = 672.0
-offset_bottom = 128.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_vertical = 0
-focus_mode = 0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_eqnvp")
-theme_override_styles/hover = SubResource("StyleBoxFlat_5dmnr")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_rvw6y")
-text = "mercury"
-
 [node name="Lava" type="Button" parent="UI/ScreenContainer/MarginContainer/VBoxContainer/ElementSelector/Chemical/HBoxContainer"]
-custom_minimum_size = Vector2i(128, 100)
+custom_minimum_size = Vector2i(136, 100)
 layout_mode = 2
 offset_left = 272.0
 offset_right = 400.0
@@ -1801,7 +1801,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_bs4ox")
 text = "lava"
 
 [node name="Blue Fire" type="Button" parent="UI/ScreenContainer/MarginContainer/VBoxContainer/ElementSelector/Chemical/HBoxContainer"]
-custom_minimum_size = Vector2i(128, 100)
+custom_minimum_size = Vector2i(136, 100)
 layout_mode = 2
 offset_left = 408.0
 offset_right = 536.0
@@ -1822,29 +1822,8 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_7f7pq")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_rurje")
 text = "blue fire"
 
-[node name="Acid" type="Button" parent="UI/ScreenContainer/MarginContainer/VBoxContainer/ElementSelector/Chemical/HBoxContainer"]
-custom_minimum_size = Vector2i(128, 100)
-layout_mode = 2
-offset_left = 680.0
-offset_right = 808.0
-offset_bottom = 128.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_vertical = 0
-focus_mode = 0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
-theme_override_styles/normal = SubResource("StyleBoxFlat_e8k14")
-theme_override_styles/hover = SubResource("StyleBoxFlat_8kwuy")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_2omdr")
-text = "acid"
-
 [node name="Lead Azide" type="Button" parent="UI/ScreenContainer/MarginContainer/VBoxContainer/ElementSelector/Chemical/HBoxContainer"]
-custom_minimum_size = Vector2i(128, 100)
+custom_minimum_size = Vector2i(136, 100)
 layout_mode = 2
 offset_left = 544.0
 offset_right = 672.0
@@ -1864,8 +1843,50 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_3xqsb")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_78bka")
 text = "bomb"
 
+[node name="Mercury" type="Button" parent="UI/ScreenContainer/MarginContainer/VBoxContainer/ElementSelector/Chemical/HBoxContainer"]
+custom_minimum_size = Vector2i(136, 100)
+layout_mode = 2
+offset_left = 544.0
+offset_right = 680.0
+offset_bottom = 128.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 0
+focus_mode = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_1hjyp")
+theme_override_styles/hover = SubResource("StyleBoxFlat_5dmnr")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_fihf2")
+text = "mercury"
+
+[node name="Potassium" type="Button" parent="UI/ScreenContainer/MarginContainer/VBoxContainer/ElementSelector/Chemical/HBoxContainer"]
+custom_minimum_size = Vector2i(136, 100)
+layout_mode = 2
+offset_left = 544.0
+offset_right = 672.0
+offset_bottom = 128.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 0
+focus_mode = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_eqnvp")
+theme_override_styles/hover = SubResource("StyleBoxFlat_5dmnr")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_g5sfm")
+text = "potassium"
+
 [node name="Uranium" type="Button" parent="UI/ScreenContainer/MarginContainer/VBoxContainer/ElementSelector/Chemical/HBoxContainer"]
-custom_minimum_size = Vector2i(128, 100)
+custom_minimum_size = Vector2i(136, 100)
 layout_mode = 2
 offset_left = 544.0
 offset_right = 672.0
@@ -1885,8 +1906,29 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_eho5g")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_j4bb3")
 text = "uranium"
 
+[node name="Acid" type="Button" parent="UI/ScreenContainer/MarginContainer/VBoxContainer/ElementSelector/Chemical/HBoxContainer"]
+custom_minimum_size = Vector2i(136, 100)
+layout_mode = 2
+offset_left = 680.0
+offset_right = 816.0
+offset_bottom = 128.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 0
+focus_mode = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_e8k14")
+theme_override_styles/hover = SubResource("StyleBoxFlat_8kwuy")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2omdr")
+text = "acid"
+
 [node name="Laser" type="Button" parent="UI/ScreenContainer/MarginContainer/VBoxContainer/ElementSelector/Chemical/HBoxContainer"]
-custom_minimum_size = Vector2i(128, 100)
+custom_minimum_size = Vector2i(136, 100)
 layout_mode = 2
 offset_left = 816.0
 offset_right = 944.0
@@ -1907,7 +1949,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_4pg2j")
 text = "laser"
 
 [node name="Neutron" type="Button" parent="UI/ScreenContainer/MarginContainer/VBoxContainer/ElementSelector/Chemical/HBoxContainer"]
-custom_minimum_size = Vector2i(128, 100)
+custom_minimum_size = Vector2i(136, 100)
 layout_mode = 2
 offset_left = 816.0
 offset_right = 944.0
@@ -1928,7 +1970,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_gxlw2")
 text = "quasar"
 
 [node name="Electron" type="Button" parent="UI/ScreenContainer/MarginContainer/VBoxContainer/ElementSelector/Chemical/HBoxContainer"]
-custom_minimum_size = Vector2i(128, 100)
+custom_minimum_size = Vector2i(136, 100)
 layout_mode = 2
 offset_left = 816.0
 offset_right = 944.0
@@ -1949,7 +1991,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_nhb3t")
 text = "plasma"
 
 [node name="Black Hole" type="Button" parent="UI/ScreenContainer/MarginContainer/VBoxContainer/ElementSelector/Chemical/HBoxContainer"]
-custom_minimum_size = Vector2i(128, 100)
+custom_minimum_size = Vector2i(136, 100)
 layout_mode = 2
 offset_left = 952.0
 offset_right = 1080.0
@@ -2176,7 +2218,7 @@ text = "Source code available at https://github.com/kiwijuice56/sand-slide"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="UI/SplashScreen"]
 autoplay = "intro"
-playback_speed = 8.0
+playback_speed = 1.5
 libraries = {
 "": SubResource("AnimationLibrary_4jxq8")
 }
