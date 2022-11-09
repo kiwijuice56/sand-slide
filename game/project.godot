@@ -95,7 +95,6 @@ config/version="1.1"
 window/size/viewport_width=1000
 window/size/viewport_height=800
 window/size/mode=2
-window/vsync/vsync_mode=0
 window/stretch/aspect="ignore"
 
 [input]

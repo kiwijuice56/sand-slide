@@ -15,7 +15,6 @@ func update_files() -> void:
 		if not folder.begins_with("save"):
 			continue
 		
-		var found_files: PackedStringArray = dir.get_files_at(dir.get_current_dir() + folder)
 		var res: SaveFile = ResourceLoader.load("%s/%s/res.tres" % [dir.get_current_dir(), folder])
 		var img_file: FileAccess = FileAccess.open("%s/%s/img.png" % [dir.get_current_dir(), folder], FileAccess.READ)
 		res.size = img_file.get_length()
@@ -24,12 +23,12 @@ func update_files() -> void:
 
 func create_save_file(save_name: String) -> SaveFile:
 	var cleaned_name: String = ""
-	for char in save_name:
-		if char in "\\/:*?\"<>":
+	for c in save_name:
+		if c in "\\/:*?\"<>":
 			continue
-		if char == " ":
-			char = "_"
-		cleaned_name += char.to_lower()
+		if c == " ":
+			c = "_"
+		cleaned_name += c.to_lower()
 	if len(cleaned_name) == 0:
 		cleaned_name = "new_file"
 	save_name = cleaned_name

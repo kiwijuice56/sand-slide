@@ -14,6 +14,7 @@ class_name UI
 
 @export var size_slider: HSlider
 @export var speed_slider: HSlider
+@export var zoom_slider: HSlider
 
 @export var splash_screen: ColorRect
 
@@ -22,6 +23,7 @@ func _ready() -> void:
 	element_selector.element_selected.connect(_on_element_selected)
 	size_slider.value_changed.connect(_on_size_changed)
 	speed_slider.value_changed.connect(_on_speed_changed)
+	zoom_slider.value_changed.connect(_on_zoom_changed)
 	eraser_button.pressed.connect(_on_eraser_selected)
 	clear_button.pressed.connect(_on_clear_selected)
 	save_button.pressed.connect(_on_save_selected)
@@ -39,6 +41,10 @@ func _on_size_changed(new_brush_size: int) -> void:
 
 func _on_speed_changed(new_speed: int) -> void:
 	sim_holder.simulation_speed = new_speed
+
+func _on_zoom_changed(new_zoom: int) -> void:
+	sim_holder.canvas.px_scale = new_zoom
+	sim_holder.canvas.resized.emit()
 
 func _on_eraser_selected() -> void:
 	sim_holder.selected_element = 0

@@ -15,6 +15,7 @@ func _ready() -> void:
 func _resized() -> void:
 	get_material().set_shader_parameter("width", size.x)
 	get_material().set_shader_parameter("height", size.y)
+	get_material().set_shader_parameter("px_scale", px_scale)
 
 func _process(_delta: float) -> void:
 	# Keep track of both mouse buttons so that we can use the left mouse

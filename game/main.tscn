@@ -954,7 +954,7 @@ tracks/2/keys = {
 
 [sub_resource type="Animation" id="Animation_mci7d"]
 resource_name = "intro"
-length = 2.4
+length = 5.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -962,7 +962,7 @@ tracks/0/path = NodePath("Label:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.4),
+"times": PackedFloat32Array(0, 0.8),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
@@ -974,7 +974,7 @@ tracks/1/path = NodePath(".:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 1.8, 2.4),
+"times": PackedFloat32Array(0, 4.4, 5),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
@@ -992,8 +992,9 @@ save_file_manager = NodePath("SaveFileManager")
 canvas = NodePath("UI/ScreenContainer/Canvas")
 simulation_speed = 2400
 chunk_size = 32
+metadata/_edit_vertical_guides_ = []
 
-[node name="UI" type="Control" parent="." node_paths=PackedStringArray("sim_holder", "element_selector", "save_control", "eraser_button", "clear_button", "save_button", "size_slider", "speed_slider", "splash_screen")]
+[node name="UI" type="Control" parent="." node_paths=PackedStringArray("sim_holder", "element_selector", "save_control", "eraser_button", "clear_button", "save_button", "size_slider", "speed_slider", "zoom_slider", "splash_screen")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -1009,6 +1010,7 @@ clear_button = NodePath("ScreenContainer/MarginContainer/VBoxContainer/OptionCon
 save_button = NodePath("ScreenContainer/MarginContainer/VBoxContainer/OptionContainer/File")
 size_slider = NodePath("ScreenContainer/MarginContainer/VBoxContainer/OptionContainer/VBoxContainer/BrushSlider")
 speed_slider = NodePath("ScreenContainer/MarginContainer/VBoxContainer/OptionContainer/VBoxContainer2/SpeedSlider")
+zoom_slider = NodePath("ScreenContainer/MarginContainer/VBoxContainer/OptionContainer/VBoxContainer3/ZoomSlider")
 splash_screen = NodePath("SplashScreen")
 
 [node name="ScreenContainer" type="VBoxContainer" parent="UI"]
@@ -1030,9 +1032,9 @@ offset_right = 1000.0
 offset_bottom = 539.0
 size_flags_vertical = 3
 script = ExtResource("3_b35ov")
-px_scale = 3
 
 [node name="HelpLabel" type="Label" parent="UI/ScreenContainer/Canvas" node_paths=PackedStringArray("sim_holder", "canvas", "splash_screen")]
+custom_minimum_size = Vector2i(256, 0)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -1045,10 +1047,8 @@ offset_right = 450.0
 offset_bottom = 19.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-text = "Select an element and 
-press the screen to draw.
-Have fun!"
+theme_override_colors/font_color = Color(0.121569, 0.133333, 0.215686, 1)
+text = "Select an element and press the screen to draw. Have fun!"
 horizontal_alignment = 1
 script = ExtResource("4_vr722")
 sim_holder = NodePath("../../../..")
@@ -1114,7 +1114,7 @@ text = "Eraser"
 custom_minimum_size = Vector2i(0, 32)
 layout_mode = 2
 offset_left = 224.0
-offset_right = 469.0
+offset_right = 405.0
 offset_bottom = 70.0
 size_flags_horizontal = 3
 theme_override_constants/separation = 0
@@ -1122,29 +1122,30 @@ theme_override_constants/separation = 0
 [node name="BrushSlider" type="HSlider" parent="UI/ScreenContainer/MarginContainer/VBoxContainer/OptionContainer/VBoxContainer"]
 custom_minimum_size = Vector2i(0, 32)
 layout_mode = 2
-offset_right = 245.0
+offset_right = 181.0
 offset_bottom = 32.0
 size_flags_horizontal = 3
 size_flags_vertical = 10
 min_value = 1.0
 max_value = 32.0
 value = 6.0
+tick_count = 8
 
 [node name="Label" type="Label" parent="UI/ScreenContainer/MarginContainer/VBoxContainer/OptionContainer/VBoxContainer"]
 layout_mode = 2
-offset_left = 96.0
+offset_left = 28.0
 offset_top = 32.0
-offset_right = 148.0
+offset_right = 153.0
 offset_bottom = 70.0
 size_flags_horizontal = 4
 size_flags_vertical = 1
-text = " Size"
+text = " Brush Size"
 vertical_alignment = 1
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="UI/ScreenContainer/MarginContainer/VBoxContainer/OptionContainer"]
 layout_mode = 2
-offset_left = 481.0
-offset_right = 726.0
+offset_left = 417.0
+offset_right = 598.0
 offset_bottom = 70.0
 size_flags_horizontal = 3
 theme_override_constants/separation = 0
@@ -1152,20 +1153,51 @@ theme_override_constants/separation = 0
 [node name="SpeedSlider" type="HSlider" parent="UI/ScreenContainer/MarginContainer/VBoxContainer/OptionContainer/VBoxContainer2"]
 custom_minimum_size = Vector2i(0, 32)
 layout_mode = 2
-offset_right = 245.0
+offset_right = 181.0
 offset_bottom = 32.0
 size_flags_horizontal = 3
 size_flags_vertical = 10
 max_value = 4800.0
 value = 2400.0
+tick_count = 8
 
 [node name="Speed" type="Label" parent="UI/ScreenContainer/MarginContainer/VBoxContainer/OptionContainer/VBoxContainer2"]
 layout_mode = 2
 offset_top = 32.0
-offset_right = 245.0
+offset_right = 181.0
 offset_bottom = 70.0
 size_flags_vertical = 1
 text = " Speed"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="UI/ScreenContainer/MarginContainer/VBoxContainer/OptionContainer"]
+layout_mode = 2
+offset_left = 610.0
+offset_right = 791.0
+offset_bottom = 70.0
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+
+[node name="ZoomSlider" type="HSlider" parent="UI/ScreenContainer/MarginContainer/VBoxContainer/OptionContainer/VBoxContainer3"]
+custom_minimum_size = Vector2i(0, 32)
+layout_mode = 2
+offset_right = 181.0
+offset_bottom = 32.0
+size_flags_horizontal = 3
+size_flags_vertical = 10
+min_value = 1.0
+max_value = 8.0
+value = 4.0
+tick_count = 8
+
+[node name="Zoom" type="Label" parent="UI/ScreenContainer/MarginContainer/VBoxContainer/OptionContainer/VBoxContainer3"]
+layout_mode = 2
+offset_top = 32.0
+offset_right = 181.0
+offset_bottom = 70.0
+size_flags_vertical = 1
+text = "Zoom"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -2140,10 +2172,11 @@ offset_right = 82.0
 offset_bottom = 13.0
 grow_horizontal = 2
 grow_vertical = 2
+text = "Source code available at https://github.com/kiwijuice56/sand-slide"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="UI/SplashScreen"]
 autoplay = "intro"
-playback_speed = 6.0
+playback_speed = 8.0
 libraries = {
 "": SubResource("AnimationLibrary_4jxq8")
 }

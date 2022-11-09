@@ -2,9 +2,9 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dv72a2xnad210"
-path.s3tc="res://.godot/imported/water_noise.jpg-f7e0b1bbfc47b68da3148e1fe2c0b4bd.s3tc.ctex"
-path.etc2="res://.godot/imported/water_noise.jpg-f7e0b1bbfc47b68da3148e1fe2c0b4bd.etc2.ctex"
+uid="uid://dwneer3dth3iw"
+path.s3tc="res://.godot/imported/water_noise.png-8daf1297e324ef81e2e165e18ac0cfca.s3tc.ctex"
+path.etc2="res://.godot/imported/water_noise.png-8daf1297e324ef81e2e165e18ac0cfca.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc", "etc2"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://ui/canvas/textures/water_noise.jpg"
-dest_files=["res://.godot/imported/water_noise.jpg-f7e0b1bbfc47b68da3148e1fe2c0b4bd.s3tc.ctex", "res://.godot/imported/water_noise.jpg-f7e0b1bbfc47b68da3148e1fe2c0b4bd.etc2.ctex"]
+source_file="res://ui/canvas/textures/water_noise.png"
+dest_files=["res://.godot/imported/water_noise.png-8daf1297e324ef81e2e165e18ac0cfca.s3tc.ctex", "res://.godot/imported/water_noise.png-8daf1297e324ef81e2e165e18ac0cfca.etc2.ctex"]
 
 [params]
 
