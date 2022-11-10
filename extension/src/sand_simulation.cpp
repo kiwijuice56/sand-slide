@@ -153,7 +153,7 @@ void SandSimulation::move_and_swap(int row, int col, int row2, int col2) {
         return;
     }
 
-    if (elements.at(get_cell(row, col))->get_density() <= elements.at(get_cell(row2, col2))->get_density()) {
+    if (elements.at(get_cell(row, col))->get_density() < elements.at(get_cell(row2, col2))->get_density()) {
         return;
     }
 

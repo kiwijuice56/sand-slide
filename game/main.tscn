@@ -2218,7 +2218,7 @@ text = "Source code available at https://github.com/kiwijuice56/sand-slide"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="UI/SplashScreen"]
 autoplay = "intro"
-playback_speed = 1.5
+playback_speed = 8.0
 libraries = {
 "": SubResource("AnimationLibrary_4jxq8")
 }

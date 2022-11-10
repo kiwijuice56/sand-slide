@@ -7,6 +7,8 @@
 class Oil: public Element {
 public:
     const double FLAME = 1.0 / 32;
+    const double DOWN_BLOCK = 1.0 / 16;
+    const double DOWN = 1.0 / 1.5;
 
     void process(SandSimulation *sim, int row, int col) override {
         // Burning
@@ -15,11 +17,11 @@ public:
             return;
         }
 
-        int dir = (int) (sim->randf() * 3) - 1;
-        if (dir != 0) {
-            sim->move_and_swap(row, col, row, col + dir);
-        } else {
+        bool blocked = !sim->in_bounds(row + 1, col) || sim->get_cell(row + 1, col) == 30;
+        if (sim->randf() < (blocked ? DOWN_BLOCK : DOWN)) {
             sim->move_and_swap(row, col, row + 1, col);
+        } else {
+            sim->move_and_swap(row, col, row + (sim->randf() < DOWN_BLOCK ? 1 : 0), col + (sim->randf() < 0.5 ? 1 : -1));
         }
     }
 

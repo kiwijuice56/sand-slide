@@ -7,11 +7,14 @@ class SandSimulation;
 
 class Steel: public Element {
 public:
-    const double MELT = 1.0 / 16;
+    const double PLASMA = 1.0 / 16;
+    const double MELT = 1.0 / 2048;
     const double EXPLODE = 1.0 / 64;
     void process(SandSimulation *sim, int row, int col) override {
-        if (sim->randf() < MELT && (sim->touch_count(row, col, 38) > 0 || sim->touch_count(row, col, 40) > 0)) {
+        if (sim->randf() < PLASMA && (sim->touch_count(row, col, 38) > 0 || sim->touch_count(row, col, 40) > 0)) {
             sim->set_cell(row, col, sim->randf() < EXPLODE ? 9 : 38);
+        } else if (sim -> randf() < MELT && sim->is_on_fire(row, col)) {
+            sim->set_cell(row, col, 44);
         }
     }
 
