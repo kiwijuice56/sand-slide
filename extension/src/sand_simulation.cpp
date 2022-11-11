@@ -155,8 +155,9 @@ void SandSimulation::move_and_swap(int row, int col, int row2, int col2) {
         return;
     }
 
-    if (elements.at(get_cell(row, col))->get_density() < elements.at(get_cell(row2, col2))->get_density()) {
-        return;
+    if (elements.at(get_cell(row, col))->get_density() <= elements.at(get_cell(row2, col2))->get_density()) {
+        if (get_cell(row, col) != get_cell(row2, col2))
+            return;
     }
 
     int old = get_cell(row, col);
@@ -244,7 +245,7 @@ bool SandSimulation::is_on_fire(int row, int col) {
                 continue;
             }
             int c = get_cell(row + y, col + x);
-            if (c == 24 || c == 5 || c == 9 || c == 20 || c == 26 || c == 34 || c == 37 || c == 38 || c == 40) {
+            if (c == 24 || c == 5 || c == 9 || c == 20 || c == 26 || c == 34 || c == 37 || c == 38 || c == 40 || c == 46) {
                 return true;
             }
         }

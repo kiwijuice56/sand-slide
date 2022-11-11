@@ -69,7 +69,7 @@ func draw(center_row: int, center_col: int, draw_element: int, radius: int) -> v
 			if row*row + col*col < radius*radius and sim.in_bounds(row + center_row, col + center_col):
 				# Check if cell is empty when drawing a fluid
 				var at_cell: int = sim.get_cell(row + center_row, col + center_col)
-				if (draw_element in [3, 5, 20, 21, 24, 28, 30, 37, 39, 41]) and at_cell != 0:
+				if (draw_element in [3, 5, 20, 21, 24, 28, 30, 37, 39, 41, 44]) and at_cell != 0:
 					continue
 				sim.set_cell(row + center_row, col + center_col, draw_element)
 
