@@ -117,6 +117,10 @@ uniform vec4 hurricane_color_2: source_color = vec4(1.0);
 uniform vec4 powder_color_2: source_color = vec4(1.0);
 uniform vec4 powder_color_3: source_color = vec4(1.0);
 
+uniform vec4 p_explosion_color_1: source_color = vec4(1.0);
+uniform vec4 p_explosion_color_2: source_color = vec4(1.0);
+
+
 // Short hand of shifting the range [-1, 1] to [0, 1] since the negative return 
 // values of sin/cos can cause errors
 float shift(float x) {
@@ -290,33 +294,33 @@ void fragment() {
 			break;
 		case 20: // Lava
 			vec2 ratio = screen_ratio(SCREEN_PIXEL_SIZE);
-			vec2 texCoord = vec2(2.0*PUV.x + sin(TIME / 32.0), 2.0*PUV.y + sin(TIME / 32.0));
+			vec2 texCoord = vec2(2.0*PUV.x + sin(TIME / 48.0), 2.0*PUV.y + sin(TIME / 64.0));
 			
-			float x = soft_sample(fire_noise, ratio * texCoord).r * (PUV.x + PUV.y + sin(PUV.x / 4.0) * 2.0 + sin(TIME / 2.0));
-			float y = shift(cos(sin(3.0 * PUV.x + TIME / 16.0) * 16.0 * PUV.x + PI * x * 2.0 + PUV.y * 8.0));
+			float x = soft_sample(fire_noise, ratio * texCoord).r * (PUV.x + PUV.y + sin(PUV.x / 4.0) * 2.0 + sin(TIME / 6.0));
+			float y = shift(cos(sin(3.0 * PUV.x + TIME / 32.0) * 16.0 * PUV.x + PI * x * 2.0 + PUV.y * 8.0));
 			y = abs(y - 0.5);
 			
 			COLOR = fire_color_1 * y + fire_color_2 * (1.0 - y);
 			
 			float z = match_amount(TEXTURE, UV, id);
 			
-			texCoord = vec2(2.0 * PUV.x + sin(TIME / 24.0), 2.0 * PUV.y + sin(TIME / 24.0));
-			COLOR = shift(cos(TIME / 4.0)) * soft_sample(fire_noise, ratio * texCoord) + COLOR * z + fire_color_3 * (1.0 - z);
+			texCoord = vec2(2.0 * PUV.x + sin(TIME / 64.0), 2.0 * PUV.y + sin(TIME / 64.0));
+			COLOR = shift(cos(TIME / 9.0)) * soft_sample(fire_noise, ratio * texCoord) + COLOR * z + fire_color_3 * (1.0 - z);
 			break;
 		case 21: // Acid
 			vec2 ratio = screen_ratio(SCREEN_PIXEL_SIZE);
-			vec2 texCoord = vec2(2.0*PUV.x + sin(TIME / 32.0), 2.0*PUV.y + sin(TIME / 32.0));
+			vec2 texCoord = vec2(2.0*PUV.x + sin(TIME / 48.0), 2.0*PUV.y + sin(TIME / 64.0));
 			
 			float x = soft_sample(water_noise, ratio * texCoord).r * (PUV.x + PUV.y + sin(PUV.x / 4.0) * 2.0 + sin(TIME / 2.0));
 			
-			float y = shift(cos(sin(3.0 * PUV.x + TIME / 16.0) * 16.0 * PUV.x + PI * x + PUV.y * 8.0));
+			float y = shift(cos(sin(3.0 * PUV.x + TIME / 32.0) * 16.0 * PUV.x + PI * x + PUV.y * 8.0));
 			y = abs(y - 0.5);
 			
 			COLOR = acid_color_1 * y + acid_color_2 * (1.0 - y);
 			
 			float z = match_amount(TEXTURE, UV, id);
 			
-			texCoord = vec2(1.5 * PUV.x + sin(TIME / 24.0), 1.5 * PUV.y + sin(TIME / 24.0));
+			texCoord = vec2(1.5 * PUV.x + sin(TIME / 32.0), 1.5 * PUV.y + sin(TIME / 48.0));
 			COLOR = shift(cos(TIME / 4.0)) / 2.0 * soft_sample(water_noise, ratio * texCoord) + COLOR * z + acid_color_3 * (1.0 - z);
 			break;
 		case 22:
@@ -459,17 +463,17 @@ void fragment() {
 			vec2 ratio = screen_ratio(SCREEN_PIXEL_SIZE);
 			vec2 texCoord = vec2(2.0*PUV.x + sin(TIME / 32.0), 2.0*PUV.y + sin(TIME / 32.0));
 			
-			float x = soft_sample(water_noise, ratio * texCoord).r * (PUV.x + PUV.y + sin(PUV.x / 4.0) * 2.0 + sin(TIME / 2.0));
+			float x = soft_sample(water_noise, ratio * texCoord).r * (PUV.x + PUV.y + sin(PUV.x / 4.0) * 3.0 + sin(TIME / 1.5));
 			
-			float y = shift(cos(sin(3.0 * PUV.x + TIME / 16.0) * 16.0 * PUV.x + PI * x + PUV.y * 8.0));
+			float y = shift(cos(sin(4.0 * PUV.x + TIME / 12.0) * 22.0 * PUV.x + PI * x + PUV.y * 12.0));
 			y = abs(y - 0.5);
 			
 			COLOR = PUV.y * y * steel_color_1 + steel_color_1 * (1.0 - PUV.y) * (1.0 - y);
 			
 			float z = match_amount(TEXTURE, UV, id);
 			
-			texCoord = vec2(1.5 * PUV.x + sin(TIME / 24.0), 1.5 * PUV.y + sin(TIME / 24.0));
-			COLOR = shift(cos(TIME / 4.0)) / 2.0 * soft_sample(water_noise, ratio * texCoord) + COLOR * z + vec4(1.0) * (1.0 - z);
+			texCoord = vec2(1.5 * PUV.x + sin(TIME / 16.0), 1.5 * PUV.y + sin(TIME / 16.0));
+			COLOR = shift(cos(TIME / 3.0)) / 2.0 * soft_sample(water_noise, ratio * texCoord) + COLOR * z + vec4(1.0) * (1.0 - z);
 			break;
 		case 45:
 			float p1 = cos(floor(UV.x * float(width / px_scale)));
@@ -480,6 +484,10 @@ void fragment() {
 			float x  = shift(cos(PUV.y)) * shift(sin(16.0 * PUV.x * sin(TIME / 5.0))) * shift(sin(z)) * (1.0 + shift(sin(TIME)));
 			x += z / 4.0;
 			COLOR = steel_color_1 * x + steel_color_2 * (1.0 - x);
+			break;
+		case 46:
+			float x = match_amount(TEXTURE, UV, 46);
+			COLOR = p_explosion_color_1 * x + p_explosion_color_2 * (1.0 - x);
 			break;
 	}
 }

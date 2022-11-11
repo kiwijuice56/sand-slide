@@ -10,13 +10,13 @@ public:
 
     void process(SandSimulation *sim, int row, int col) override {
         if (sim->randf() < FLAME && sim->is_on_fire(row, col)) {
-            sim->set_cell(row, col, 9);
+            sim->set_cell(row, col, 46);
         }
         else if (sim->randf() < WATER && sim->touch_count(row, col, 3)) {
-            for (int y = -1; y <= 1; y++) {
-                for (int x = -1; x <= 1; x++) {
+            for (int y = -3; y <= 3; y++) {
+                for (int x = -3; x <= 3; x++) {
                     if (sim->in_bounds(row + y, col + x) ) {
-                        sim->set_cell(row + y, col + x, 9);
+                        sim->set_cell(row + y, col + x, 46);
                     }
                 }
             }
@@ -29,7 +29,7 @@ public:
     }
 
     double get_explode_resistance() override {
-        return 0.3;
+        return 0.1;
     }
 
     double get_acid_resistance() override {

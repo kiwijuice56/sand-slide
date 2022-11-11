@@ -24,7 +24,7 @@ public:
         if (sim->randf() < (blocked ? UP_BLOCK : UP)) {
             sim->move_and_swap(row, col, row - 1, col);
         } else {
-            sim->move_and_swap(row, col, row - (sim->randf() < UP_BLOCK ? 1 : 0), col + (sim->randf() < 0.5 ? 1 : -1));
+            sim->move_and_swap(row, col, row, col + (sim->randf() < 0.5 ? 1 : -1));
         }
     }
 

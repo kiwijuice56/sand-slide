@@ -7,7 +7,7 @@ class SandSimulation;
 
 class Ice: public Element {
 public:
-    const double GROW = 1.0 / 3000;
+    const double GROW = 1.0 / 2000;
     const double FLAME = 1.0 / 800;
 
     void process(SandSimulation *sim, int row, int col) override {

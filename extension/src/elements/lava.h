@@ -22,7 +22,7 @@ public:
         if (sim->randf() < (blocked ? DOWN_BLOCK : DOWN)) {
             sim->move_and_swap(row, col, row + 1, col);
         } else {
-            sim->move_and_swap(row, col, row + (sim->randf() < DOWN_BLOCK ? 1 : 0), col + (sim->randf() < 0.5 ? 1 : -1));
+            sim->move_and_swap(row, col, row, col + (sim->randf() < 0.5 ? 1 : -1));
         }
         if (sim->randf() < FLAME) {
             sim->grow(row - 1, col, 0, 5);

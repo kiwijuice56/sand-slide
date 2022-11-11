@@ -1,11 +1,10 @@
-[gd_scene load_steps=134 format=3 uid="uid://dare8w77k701"]
+[gd_scene load_steps=130 format=3 uid="uid://dare8w77k701"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_b657u"]
 [ext_resource type="Script" path="res://ui/ui.gd" id="2_27ols"]
 [ext_resource type="FontFile" uid="uid://b8lxwo5dkwrs4" path="res://ui/font/Poppins-Regular.ttf" id="2_iejaa"]
 [ext_resource type="Script" path="res://ui/canvas/canvas.gd" id="3_b35ov"]
 [ext_resource type="Material" uid="uid://cm3vg10lyus24" path="res://ui/canvas/element_painter.tres" id="4_gkdgx"]
-[ext_resource type="Script" path="res://ui/help_label.gd" id="4_vr722"]
 [ext_resource type="Script" path="res://ui/element_selector/element_selector.gd" id="5_waeqw"]
 [ext_resource type="Script" path="res://ui/fps_label.gd" id="6_wixoe"]
 [ext_resource type="Script" path="res://ui/splash_screen/splash_screen.gd" id="7_rul6o"]
@@ -16,42 +15,6 @@
 [sub_resource type="Theme" id="Theme_n7xkt"]
 default_font = ExtResource("2_iejaa")
 default_font_size = 24
-
-[sub_resource type="Animation" id="Animation_rtx4o"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("HelpLabel:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_vhiqr"]
-resource_name = "hide"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("HelpLabel:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_8aucn"]
-_data = {
-"RESET": SubResource("Animation_rtx4o"),
-"hide": SubResource("Animation_vhiqr")
-}
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5esfr"]
 bg_color = Color(0.231373, 0.0784314, 0.137255, 1)
@@ -1053,35 +1016,6 @@ offset_right = 1000.0
 offset_bottom = 539.0
 size_flags_vertical = 3
 script = ExtResource("3_b35ov")
-
-[node name="HelpLabel" type="Label" parent="UI/ScreenContainer/Canvas" node_paths=PackedStringArray("sim_holder", "canvas", "splash_screen")]
-custom_minimum_size = Vector2i(256, 0)
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -450.0
-offset_top = -19.0
-offset_right = 450.0
-offset_bottom = 19.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(0.121569, 0.133333, 0.215686, 1)
-text = "Select an element and press the screen to draw. Have fun!"
-horizontal_alignment = 1
-script = ExtResource("4_vr722")
-sim_holder = NodePath("../../../..")
-canvas = NodePath("..")
-splash_screen = NodePath("../../../SplashScreen")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="UI/ScreenContainer/Canvas/HelpLabel"]
-root_node = NodePath("../..")
-playback_speed = 2.0
-libraries = {
-"": SubResource("AnimationLibrary_8aucn")
-}
 
 [node name="MarginContainer" type="MarginContainer" parent="UI/ScreenContainer"]
 layout_mode = 2
@@ -2218,7 +2152,7 @@ text = "Source code available at https://github.com/kiwijuice56/sand-slide"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="UI/SplashScreen"]
 autoplay = "intro"
-playback_speed = 8.0
+playback_speed = 2.0
 libraries = {
 "": SubResource("AnimationLibrary_4jxq8")
 }

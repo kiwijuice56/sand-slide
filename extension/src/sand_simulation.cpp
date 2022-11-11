@@ -46,6 +46,7 @@
 #include "elements/liquid_powder.h"
 #include "elements/mercury.h"
 #include "elements/potassium.h"
+#include "elements/p_explosion.h"
 
 #include <godot_cpp/core/class_db.hpp>
 #include <random>
@@ -105,6 +106,7 @@ SandSimulation::SandSimulation() {
     elements.at(43) = new LiquidPowder();
     elements.at(44) = new Mercury();
     elements.at(45) = new Potassium();
+    elements.at(46) = new PExplosion();
 
     draw_data = PackedByteArray();
 
