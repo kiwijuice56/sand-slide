@@ -8,6 +8,7 @@ shader_type canvas_item;
 uniform int width = 1000;
 uniform int height = 800;
 uniform int px_scale = 4;
+uniform float day = 0.0;
 
 // Noise and other textures for elements that are not simple colors
 uniform sampler2D water_noise: repeat_enable, source_color, filter_nearest;
@@ -16,6 +17,10 @@ uniform sampler2D marble_texture: repeat_enable, source_color, filter_nearest;
 uniform sampler2D glass_texture: repeat_enable, source_color, filter_nearest;
 uniform sampler2D crystal_texture: repeat_enable, source_color, filter_nearest;
 uniform sampler2D sky_texture: repeat_enable, filter_nearest;
+uniform sampler2D sky_texture2: repeat_enable, filter_nearest;
+uniform sampler2D sky_texture3: repeat_enable, filter_nearest;
+
+
 
 uniform vec4 rock_color_1: source_color = vec4(1.0);
 uniform vec4 sand_color_1: source_color = vec4(1.0);
@@ -163,26 +168,26 @@ vec4 soft_sample(sampler2D tex, vec2 uv) {
 }
 
 // Take a hue value and cyclically shift it
-vec3 hueShift( vec3 color, float hueAdjust ){
-	const vec3  kRGBToYPrime = vec3 (0.299, 0.587, 0.114);
-	const vec3  kRGBToI      = vec3 (0.596, -0.275, -0.321);
-	const vec3  kRGBToQ      = vec3 (0.212, -0.523, 0.311);
-	const vec3  kYIQToR     = vec3 (1.0, 0.956, 0.621);
-	const vec3  kYIQToG     = vec3 (1.0, -0.272, -0.647);
-	const vec3  kYIQToB     = vec3 (1.0, -1.107, 1.704);
-	float   YPrime  = dot (color, kRGBToYPrime);
-	float   I       = dot (color, kRGBToI);
-	float   Q       = dot (color, kRGBToQ);
-	float   hue     = atan (Q, I);
-	float   chroma  = sqrt (I * I + Q * Q);
+vec3 hue_shift(vec3 color, float hueAdjust){
+	const vec3 kRGBToYPrime = vec3(0.299, 0.587, 0.114);
+	const vec3 kRGBToI = vec3(0.596, -0.275, -0.321);
+	const vec3 kRGBToQ = vec3(0.212, -0.523, 0.311);
+	const vec3 kYIQToR = vec3(1.0, 0.956, 0.621);
+	const vec3 kYIQToG = vec3(1.0, -0.272, -0.647);
+	const vec3 kYIQToB = vec3(1.0, -1.107, 1.704);
+	float YPrime = dot(color, kRGBToYPrime);
+	float I = dot(color, kRGBToI);
+	float Q = dot(color, kRGBToQ);
+	float hue = atan(Q, I);
+	float chroma = sqrt(I * I + Q * Q);
 	
 	hue += hueAdjust;
 	
 	Q = chroma * sin (hue);
 	I = chroma * cos (hue);
 	
-	vec3    yIQ   = vec3 (YPrime, I, Q);
-	return vec3( dot (yIQ, kYIQToR), dot (yIQ, kYIQToG), dot (yIQ, kYIQToB) );
+	vec3 yIQ = vec3(YPrime, I, Q);
+	return vec3(dot (yIQ, kYIQToR), dot(yIQ, kYIQToG), dot(yIQ, kYIQToB));
 }
 
 // Given the screen size in pixels (SCREEN_PIXEL_SIZE), returns the aspect ratio
@@ -199,18 +204,24 @@ void fragment() {
 	// IDs are the same as the ones given in ../extension/sand_simulation.cpp
 	
 	// PUVs scaled to pixels 
-	int pX = int(floor(UV.x * float(width) / float(px_scale)));
-	int pY = int(floor(UV.y * float(height) / float(px_scale)));
-	vec2 PUV = vec2(float(pX) / float(width / px_scale), float(pY) / float(height / px_scale));
+	int pX = int(round(floor(UV.x * float(width) / float(px_scale))));
+	int pY = int(round(floor(UV.y * float(height) / float(px_scale))));
+	vec2 PUV = vec2(float(pX) / (float(width) / float(px_scale)), float(pY) / (float(height) / float(px_scale)));
 	
 	switch (id) {
 		case 0: 
-			COLOR = soft_sample(sky_texture, 
-			 screen_ratio(SCREEN_PIXEL_SIZE) * vec2(
-				shift(sin(TIME / 64.0)) / 2.0, 
-				shift(cos(TIME / 80.0)) / 2.0) + PUV * 0.5 
-				/ 1.0); 
-				break;
+			vec2 offset = vec2(shift(sin(TIME / 64.0)) / 2.0, shift(cos(TIME / 80.0)) / 2.0);
+			vec4 a = soft_sample(sky_texture, screen_ratio(SCREEN_PIXEL_SIZE) * offset + screen_ratio(SCREEN_PIXEL_SIZE) * 0.5 * PUV); 
+			vec4 b = soft_sample(sky_texture2, screen_ratio(SCREEN_PIXEL_SIZE) * offset + screen_ratio(SCREEN_PIXEL_SIZE) * 0.5 * PUV); 
+			vec4 c = soft_sample(sky_texture3, screen_ratio(SCREEN_PIXEL_SIZE) * offset + screen_ratio(SCREEN_PIXEL_SIZE) * 0.5 * PUV); 
+			
+			if (day >= 0.2)
+				COLOR = a * ((day - 0.2) / 0.1) + c * (1.0 - (day - 0.2) / 0.1);
+			else if (day >= 0.1)
+				COLOR = c * ((day - 0.1) / 0.1) + b * (1.0 - (day - 0.1) / 0.1);
+			else
+				COLOR = b * ((day - 0.0) / 0.1) + a * (1.0 - (day - 0.0) / 0.1); 
+			break;
 		case 1: COLOR = sand_color_1; break;
 		case 2: COLOR = rock_color_1; break;
 		case 3: // Water
@@ -431,7 +442,7 @@ void fragment() {
 			float z = float(floatBitsToInt(12312.4324143 + p1 * 2134904234234323.21332421 * p2 * 392342342324892.3242341) & 0xFF) / float(0xFF);
 			if (z < 0.5)
 				z += 0.5;
-			vec3 col = hueShift(vec3(z, 0.2, 1.0), shift(cos(PUV.y)) * shift(sin(8.0 * PUV.x * sin(TIME / 12.0))) * shift(sin(z)) * 2.0 * PI);
+			vec3 col = hue_shift(vec3(z, 0.2, 1.0), shift(cos(PUV.y)) * shift(sin(8.0 * PUV.x * sin(TIME / 12.0))) * shift(sin(z)) * 2.0 * PI);
 			COLOR = vec4(col.r, col.g, col.b, 1.0);
 			break;
 		case 43: 
@@ -441,7 +452,7 @@ void fragment() {
 			float z = float(floatBitsToInt(12312.4324143 + p1 * 2134904234234323.21332421 * p2 * 392342342324892.3242341) & 0xFF) / float(0xFF);
 			if (z < 0.5)
 				z += 0.5;
-			vec3 col = hueShift(vec3(z, 0.0, 1.0), shift(cos(PUV.y)) * shift(sin(8.0 * PUV.x * sin(TIME / 12.0))) * shift(sin(z)) * 2.0 * PI);
+			vec3 col = hue_shift(vec3(z, 0.0, 1.0), shift(cos(PUV.y)) * shift(sin(8.0 * PUV.x * sin(TIME / 12.0))) * shift(sin(z)) * 2.0 * PI);
 			vec4 powder_color = vec4(col.r, col.g, col.b, 1.0) / 2.5;
 			
 			vec2 ratio = screen_ratio(SCREEN_PIXEL_SIZE);

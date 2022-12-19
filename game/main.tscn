@@ -1,4 +1,4 @@
-[gd_scene load_steps=130 format=3 uid="uid://dare8w77k701"]
+[gd_scene load_steps=133 format=3 uid="uid://dare8w77k701"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_b657u"]
 [ext_resource type="Script" path="res://ui/ui.gd" id="2_27ols"]
@@ -15,6 +15,56 @@
 [sub_resource type="Theme" id="Theme_n7xkt"]
 default_font = ExtResource("2_iejaa")
 default_font_size = 24
+
+[sub_resource type="Animation" id="Animation_tv17p"]
+resource_name = "day_cycle"
+length = 10.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:material:shader_parameter/day")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3.5, 3.8, 6.7, 7, 10.3, 10.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, 0.1, 0.1, 0.2, 0.2, 0.2]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3.5, 3.8, 6.7, 7, 10.3, 10.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(0.329412, 0.329412, 0.329412, 0), Color(0.329412, 0.329412, 0.329412, 0), Color(0.607843, 0.2, 0.184314, 0.403922), Color(0.607843, 0.2, 0.184314, 0.403922), Color(0.121569, 0.12549, 0.14902, 0.45098), Color(0.121569, 0.12549, 0.14902, 0.45098), Color(0.329412, 0.329412, 0.329412, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_6dc5s"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.329412, 0.329412, 0.329412, 0.164706)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ayxmy"]
+_data = {
+"RESET": SubResource("Animation_6dc5s"),
+"day_cycle": SubResource("Animation_tv17p")
+}
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5esfr"]
 bg_color = Color(0.231373, 0.0784314, 0.137255, 1)
@@ -1017,6 +1067,22 @@ offset_bottom = 539.0
 size_flags_vertical = 3
 script = ExtResource("3_b35ov")
 
+[node name="ColorRect" type="ColorRect" parent="UI/ScreenContainer/Canvas"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.329412, 0.329412, 0.329412, 0.164706)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="UI/ScreenContainer/Canvas"]
+autoplay = "day_cycle"
+playback_speed = 0.05
+libraries = {
+"": SubResource("AnimationLibrary_ayxmy")
+}
+
 [node name="MarginContainer" type="MarginContainer" parent="UI/ScreenContainer"]
 layout_mode = 2
 offset_top = 543.0
@@ -2009,33 +2075,32 @@ text = "Manage save files"
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="UI/SaveControl/SaveContainer/PanelContainer/VBoxContainer"]
 layout_mode = 2
-offset_top = 328.0
+offset_top = 46.0
 offset_right = 728.0
-offset_bottom = 376.0
+offset_bottom = 94.0
 
 [node name="TextEdit" type="TextEdit" parent="UI/SaveControl/SaveContainer/PanelContainer/VBoxContainer/HBoxContainer2"]
 custom_minimum_size = Vector2i(0, 48)
 layout_mode = 2
-offset_top = 8.0
-offset_right = 728.0
-offset_bottom = 56.0
+offset_right = 536.0
+offset_bottom = 48.0
 size_flags_horizontal = 3
 placeholder_text = "Type new file name"
 
 [node name="New" type="Button" parent="UI/SaveControl/SaveContainer/PanelContainer/VBoxContainer/HBoxContainer2"]
 custom_minimum_size = Vector2i(128, 48)
 layout_mode = 2
-offset_top = 64.0
+offset_left = 540.0
 offset_right = 728.0
-offset_bottom = 128.0
+offset_bottom = 48.0
 focus_mode = 0
 text = "Create new file"
 
 [node name="ScrollContainer" type="ScrollContainer" parent="UI/SaveControl/SaveContainer/PanelContainer/VBoxContainer"]
 layout_mode = 2
-offset_top = 46.0
+offset_top = 102.0
 offset_right = 728.0
-offset_bottom = 320.0
+offset_bottom = 456.0
 size_flags_vertical = 3
 
 [node name="VBoxContainer" type="VBoxContainer" parent="UI/SaveControl/SaveContainer/PanelContainer/VBoxContainer/ScrollContainer"]
