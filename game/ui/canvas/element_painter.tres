@@ -1,14 +1,30 @@
-[gd_resource type="ShaderMaterial" load_steps=26 format=3 uid="uid://d2pi1o3ywasht"]
+[gd_resource type="ShaderMaterial" load_steps=31 format=3 uid="uid://d2pi1o3ywasht"]
 
 [ext_resource type="Shader" path="res://ui/canvas/element_painter.gdshader" id="1_2v6tn"]
 [ext_resource type="Texture2D" uid="uid://b2er78i2yjm8w" path="res://ui/canvas/textures/crystal.jpg" id="2_g0d6y"]
 [ext_resource type="Texture2D" uid="uid://cfx44bcne3145" path="res://ui/canvas/textures/fire_noise.jpg" id="2_nfg6x"]
 [ext_resource type="Texture2D" uid="uid://411hddjsr572" path="res://ui/canvas/textures/marble.jpg" id="3_7fen1"]
 [ext_resource type="Texture2D" uid="uid://7ulbs6l163vf" path="res://ui/canvas/textures/glass.png" id="4_bgplp"]
+[ext_resource type="Texture2D" uid="uid://blln4xfttemer" path="res://ui/canvas/textures/gold.jpg" id="5_yl43b"]
 [ext_resource type="Texture2D" uid="uid://cvk2wj7fw1xd8" path="res://ui/canvas/textures/sky2.jpg" id="6_nnjce"]
 [ext_resource type="Texture2D" uid="uid://c56vg7euqwhmj" path="res://ui/canvas/textures/sky3.jpg" id="7_5f8pu"]
 [ext_resource type="Texture2D" uid="uid://cec1m7ldlvbee" path="res://ui/canvas/textures/sky.jpg" id="7_qhpal"]
 [ext_resource type="Texture2D" uid="uid://dwneer3dth3iw" path="res://ui/canvas/textures/water_noise.png" id="8_pfnvs"]
+
+[sub_resource type="Gradient" id="Gradient_g3gql"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0, 0.618729, 1)
+colors = PackedColorArray(1, 0.73, 0.973, 1, 0.823529, 0.560784, 1, 1, 0.66352, 0.5192, 0.88, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_wisr6"]
+gradient = SubResource("Gradient_g3gql")
+
+[sub_resource type="Gradient" id="Gradient_do5gl"]
+offsets = PackedFloat32Array(0, 0.511706, 1)
+colors = PackedColorArray(0.0204, 0.34, 0.174873, 1, 0.815686, 0.921569, 0.286275, 1, 0.98, 0.959747, 0.6762, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_d1mxa"]
+gradient = SubResource("Gradient_do5gl")
 
 [sub_resource type="Gradient" id="Gradient_ao58v"]
 interpolation_mode = 2
@@ -36,7 +52,7 @@ gradient = SubResource("Gradient_iqyjr")
 
 [sub_resource type="Gradient" id="Gradient_rere3"]
 offsets = PackedFloat32Array(0, 0.276995, 0.647887, 1)
-colors = PackedColorArray(0.72, 0.37056, 0.0648, 1, 0.94902, 0.737255, 0.247059, 1, 1, 0.914667, 0.68, 1, 1, 1, 1, 1)
+colors = PackedColorArray(0.721569, 0.368627, 0.0666667, 1, 0.94902, 0.737255, 0.247059, 1, 1, 0.914667, 0.68, 1, 1, 1, 1, 1)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_pj0if"]
 gradient = SubResource("Gradient_rere3")
@@ -86,12 +102,12 @@ shader_parameter/b_fire_color_2 = Color(0.647059, 0.94902, 0.92549, 1)
 shader_parameter/b_fire_color_3 = Color(0.188235, 0.0392157, 0.568627, 1)
 shader_parameter/black_hole_color_1 = Color(0.0980392, 0, 0.254902, 1)
 shader_parameter/black_hole_color_2 = Color(0, 0, 0, 1)
-shader_parameter/critter_color_1 = Color(0.823529, 0.560784, 1, 1)
+shader_parameter/critter_gradient = SubResource("GradientTexture1D_wisr6")
 shader_parameter/crystal_color_1 = Color(0.686275, 0.556863, 0.772549, 1)
 shader_parameter/crystal_color_2 = Color(0.235294, 0.2, 0.509804, 1)
 shader_parameter/crystal_texture = ExtResource("2_g0d6y")
 shader_parameter/day = 0.1
-shader_parameter/dragon_color_1 = Color(0.811765, 0.890196, 0.4, 1)
+shader_parameter/dragon_gradient = SubResource("GradientTexture1D_d1mxa")
 shader_parameter/dust_color_1 = Color(0.309804, 0.25098, 0.290196, 1)
 shader_parameter/dust_color_2 = Color(0.435294, 0.435294, 0.435294, 1)
 shader_parameter/electron_gradient = SubResource("GradientTexture1D_ppik5")
@@ -104,8 +120,9 @@ shader_parameter/fire_color_3 = Color(0.615686, 0, 0.294118, 1)
 shader_parameter/fire_noise = ExtResource("2_nfg6x")
 shader_parameter/glass_texture = ExtResource("4_bgplp")
 shader_parameter/gold_color_1 = Color(0.988235, 0.909804, 0.694118, 1)
-shader_parameter/gold_color_2 = Color(0.611765, 0.360784, 0.207843, 1)
+shader_parameter/gold_color_2 = Color(0.721569, 0.368627, 0.0666667, 1)
 shader_parameter/gold_color_3 = Color(0.768627, 0.333333, 0.160784, 1)
+shader_parameter/gold_texture = ExtResource("5_yl43b")
 shader_parameter/grass_color_1 = Color(0.152941, 0.529412, 0.00784314, 1)
 shader_parameter/h_explode_gradient = SubResource("GradientTexture1D_pj0if")
 shader_parameter/h_gas_gradient = SubResource("GradientTexture1D_p2vys")

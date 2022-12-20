@@ -8,7 +8,7 @@ class SandSimulation;
 class Gold: public Element {
 public:
     const double PLASMA = 1.0 / 14;
-    const double MELT = 1.0 / 256;
+    const double MELT = 1.0 / 290;
     const double EXPLODE = 1.0 / 90;
     void process(SandSimulation *sim, int row, int col) override {
         if (sim->randf() < PLASMA && (sim->touch_count(row, col, 38) > 0 || sim->touch_count(row, col, 40) > 0)) {

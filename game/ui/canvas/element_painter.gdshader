@@ -19,6 +19,7 @@ uniform sampler2D crystal_texture: repeat_enable, source_color, filter_nearest;
 uniform sampler2D sky_texture: repeat_enable, filter_nearest;
 uniform sampler2D sky_texture2: repeat_enable, filter_nearest;
 uniform sampler2D sky_texture3: repeat_enable, filter_nearest;
+uniform sampler2D gold_texture: repeat_enable, filter_nearest;
 
 uniform vec4 rock_color_1: source_color = vec4(1.0);
 uniform vec4 sand_color_1: source_color = vec4(1.0);
@@ -90,8 +91,8 @@ uniform vec4 oil_color_2: source_color = vec4(1.0);
 uniform vec4 oil_color_3: source_color = vec4(1.0);
 
 uniform vec4 urchin_color_1: source_color = vec4(1.0);
-uniform vec4 dragon_color_1: source_color = vec4(1.0);
-uniform vec4 critter_color_1: source_color = vec4(1.0);
+uniform sampler2D dragon_gradient: source_color;
+uniform sampler2D critter_gradient: source_color;
 
 uniform vec4 uranium_color_1: source_color = vec4(1.0);
 uniform vec4 uranium_color_2: source_color = vec4(1.0);
@@ -360,7 +361,19 @@ void fragment() {
 			COLOR = 0.5 * vec4(soft_sample(glass_texture, vec2(cos(TIME / 64.0), sin(TIME / 64.0)) + PUV * ratio).a * dif);
 			COLOR += 0.5 * vec4(soft_sample(glass_texture, vec2(cos(TIME / 48.0), sin(TIME / 48.0)) + PUV * ratio).a * (1.0 - dif));
 			COLOR += vec4((sin(TIME / 42.0) + 1.0) / 8.0);
-			COLOR += (0.25 + shift(sin(TIME/16.0)) / 2.0) * soft_sample(sky_texture, vec2(shift(sin(TIME / 32.0)) / 2.0, shift(cos(TIME / 48.0)) / 2.0) + PUV * 0.5 * screen_ratio(SCREEN_PIXEL_SIZE));
+			vec4 sky_reflection = vec4(0, 0, 0, 0);
+			vec2 offset = vec2(shift(sin(TIME / 64.0)) / 2.0, shift(cos(TIME / 80.0)) / 2.0);
+			vec4 a = soft_sample(sky_texture, screen_ratio(SCREEN_PIXEL_SIZE) * offset + screen_ratio(SCREEN_PIXEL_SIZE) * 0.5 * PUV); 
+			vec4 b = soft_sample(sky_texture2, screen_ratio(SCREEN_PIXEL_SIZE) * offset + screen_ratio(SCREEN_PIXEL_SIZE) * 0.5 * PUV); 
+			vec4 c = soft_sample(sky_texture3, screen_ratio(SCREEN_PIXEL_SIZE) * offset + screen_ratio(SCREEN_PIXEL_SIZE) * 0.5 * PUV); 
+			
+			if (day >= 0.2)
+				sky_reflection = a * ((day - 0.2) / 0.1) + c * (1.0 - (day - 0.2) / 0.1);
+			else if (day >= 0.1)
+				sky_reflection = c * ((day - 0.1) / 0.1) + b * (1.0 - (day - 0.1) / 0.1);
+			else
+				sky_reflection = b * ((day - 0.0) / 0.1) + a * (1.0 - (day - 0.0) / 0.1); 
+			COLOR += (0.25 + shift(sin(TIME/16.0)) / 2.0) * sky_reflection;
 			COLOR.a = 1.0;
 			
 			break;
@@ -404,8 +417,14 @@ void fragment() {
 			COLOR = shift(cos(TIME / 4.0)) / 2.0 * soft_sample(water_noise, ratio * texCoord2) + COLOR * z + oil_color_3 * (1.0 - z);
 			break;
 		case 31: COLOR = urchin_color_1; break;
-		case 32: COLOR = dragon_color_1; break;
-		case 33: COLOR = critter_color_1; break;
+		case 32:
+			float x = max(0.05, match_amount(TEXTURE, UV, 32));
+			COLOR = texture(dragon_gradient, vec2(x, 0.5));
+			break;
+		case 33:
+			float x = max(0.05, match_amount(TEXTURE, UV, 33));
+			COLOR = texture(critter_gradient, vec2(x, 0.5));
+			break;
 		case 34:
 			float x = max(0.05, match_amount(TEXTURE, UV, 34));
 			COLOR = texture(nuclear_explode_gradient, vec2(x, 0.5));
@@ -512,7 +531,7 @@ void fragment() {
 		case 49: COLOR = penguin_color_1; break;
 		case 51:
 			vec2 ratio = screen_ratio(SCREEN_PIXEL_SIZE);
-			vec4 col = soft_sample(crystal_texture, PUV * ratio);
+			vec4 col = soft_sample(gold_texture, PUV * ratio);
 			float x = (col.r + col.g + col.b) / 3.0;
 			x = shift(sin(x)) * shift(sin(TIME / 3.0));
 			COLOR = gold_color_1 * x + gold_color_2 * (1.0 - x);
@@ -532,7 +551,7 @@ void fragment() {
 			COLOR += 0.2 * (gold_color_1 * PUV.y + gold_color_2 * (1.0 - PUV.y));
 			float z = match_amount(TEXTURE, UV, id);
 			texCoord = vec2(1.5 * PUV.x + sin(TIME / 4824.0), 1.5 * PUV.y + sin(TIME / 48.0));
-			COLOR = shift(cos(TIME / 16.0)) / 2.0 * soft_sample(water_noise, ratio * texCoord) + COLOR * z + gold_color_3 * (1.0 - z);
+			COLOR = shift(cos(TIME / 16.0)) / 2.0 * soft_sample(water_noise, ratio * texCoord) * soft_sample(gold_texture, ratio * texCoord) + COLOR * z + gold_color_3 * (1.0 - z);
 			break;
 	}
 }
