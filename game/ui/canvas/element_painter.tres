@@ -1,4 +1,4 @@
-[gd_resource type="ShaderMaterial" load_steps=10 format=3]
+[gd_resource type="ShaderMaterial" load_steps=26 format=3 uid="uid://d2pi1o3ywasht"]
 
 [ext_resource type="Shader" path="res://ui/canvas/element_painter.gdshader" id="1_2v6tn"]
 [ext_resource type="Texture2D" uid="uid://b2er78i2yjm8w" path="res://ui/canvas/textures/crystal.jpg" id="2_g0d6y"]
@@ -9,6 +9,67 @@
 [ext_resource type="Texture2D" uid="uid://c56vg7euqwhmj" path="res://ui/canvas/textures/sky3.jpg" id="7_5f8pu"]
 [ext_resource type="Texture2D" uid="uid://cec1m7ldlvbee" path="res://ui/canvas/textures/sky.jpg" id="7_qhpal"]
 [ext_resource type="Texture2D" uid="uid://dwneer3dth3iw" path="res://ui/canvas/textures/water_noise.png" id="8_pfnvs"]
+
+[sub_resource type="Gradient" id="Gradient_ao58v"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(-0.01, 0.187793, 0.361502, 0.591549, 1)
+colors = PackedColorArray(0.501961, 0.0156863, 0.509804, 1, 0.619608, 0.0117647, 0.478431, 1, 0.890196, 0.301961, 0.321569, 1, 1, 0.764706, 0.478431, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_ppik5"]
+gradient = SubResource("Gradient_ao58v")
+
+[sub_resource type="Gradient" id="Gradient_hjjtw"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0, 0.211268, 0.619718, 1)
+colors = PackedColorArray(0.192955, 0.0481, 0.37, 1, 0.211417, 0.177, 0.59, 1, 0.52549, 0.45098, 0.690196, 1, 0.97, 0.634168, 0.940409, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_1crhq"]
+gradient = SubResource("Gradient_hjjtw")
+
+[sub_resource type="Gradient" id="Gradient_iqyjr"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(-0.01, 0.107981, 0.28169, 0.568075, 1)
+colors = PackedColorArray(0.501961, 0.0156863, 0.509804, 1, 0.619608, 0.0117647, 0.478431, 1, 0.890196, 0.301961, 0.321569, 1, 1, 0.764706, 0.478431, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_i16pb"]
+gradient = SubResource("Gradient_iqyjr")
+
+[sub_resource type="Gradient" id="Gradient_rere3"]
+offsets = PackedFloat32Array(0, 0.276995, 0.647887, 1)
+colors = PackedColorArray(0.72, 0.37056, 0.0648, 1, 0.94902, 0.737255, 0.247059, 1, 1, 0.914667, 0.68, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_pj0if"]
+gradient = SubResource("Gradient_rere3")
+
+[sub_resource type="Gradient" id="Gradient_hou7w"]
+offsets = PackedFloat32Array(0, 0.225352, 0.446009, 1)
+colors = PackedColorArray(0.72, 0.72, 0.72, 1, 1, 1, 1, 1, 0.74, 0.74, 0.74, 1, 0.92, 0.92, 0.92, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_p2vys"]
+gradient = SubResource("Gradient_hou7w")
+
+[sub_resource type="Gradient" id="Gradient_35ccn"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0, 0.492958, 1)
+colors = PackedColorArray(0.131867, 0.086, 0.43, 1, 0.211417, 0.177, 0.59, 1, 0.1587, 0.450915, 0.69, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_epec5"]
+gradient = SubResource("Gradient_35ccn")
+
+[sub_resource type="Gradient" id="Gradient_5grpu"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0, 0.183099, 0.408451, 1)
+colors = PackedColorArray(0.156863, 0.117647, 0.419608, 1, 0.203922, 0.580392, 0.890196, 1, 0.682353, 0.945098, 0.901961, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_ttwmk"]
+gradient = SubResource("Gradient_5grpu")
+
+[sub_resource type="Gradient" id="Gradient_6n83b"]
+offsets = PackedFloat32Array(0, 0.173709, 0.328638, 0.568075, 1)
+colors = PackedColorArray(0.12814, 0.0946, 0.43, 1, 0.2592, 0.189, 0.54, 1, 0.67, 0.2613, 0.67, 1, 0.91, 0.5551, 0.63791, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_jv2k5"]
+gradient = SubResource("Gradient_6n83b")
 
 [resource]
 shader = ExtResource("1_2v6tn")
@@ -29,14 +90,13 @@ shader_parameter/critter_color_1 = Color(0.823529, 0.560784, 1, 1)
 shader_parameter/crystal_color_1 = Color(0.686275, 0.556863, 0.772549, 1)
 shader_parameter/crystal_color_2 = Color(0.235294, 0.2, 0.509804, 1)
 shader_parameter/crystal_texture = ExtResource("2_g0d6y")
-shader_parameter/day = 0.0
+shader_parameter/day = 0.1
 shader_parameter/dragon_color_1 = Color(0.811765, 0.890196, 0.4, 1)
 shader_parameter/dust_color_1 = Color(0.309804, 0.25098, 0.290196, 1)
 shader_parameter/dust_color_2 = Color(0.435294, 0.435294, 0.435294, 1)
-shader_parameter/electron_color_1 = Color(0.94902, 0.541176, 0.188235, 1)
-shader_parameter/electron_color_2 = Color(1, 0.847059, 0.168627, 1)
-shader_parameter/explosion_color_1 = Color(1, 0.898039, 0.709804, 1)
-shader_parameter/explosion_color_2 = Color(1, 0.298039, 0, 1)
+shader_parameter/electron_gradient = SubResource("GradientTexture1D_ppik5")
+shader_parameter/electron_plasma_gradient = SubResource("GradientTexture1D_1crhq")
+shader_parameter/explode_gradient = SubResource("GradientTexture1D_i16pb")
 shader_parameter/fairy_color_1 = Color(1, 0.721569, 0.905882, 1)
 shader_parameter/fire_color_1 = Color(1, 0.294118, 0.168627, 1)
 shader_parameter/fire_color_2 = Color(1, 0.835294, 0, 1)
@@ -44,6 +104,8 @@ shader_parameter/fire_color_3 = Color(0.615686, 0, 0.294118, 1)
 shader_parameter/fire_noise = ExtResource("2_nfg6x")
 shader_parameter/glass_texture = ExtResource("4_bgplp")
 shader_parameter/grass_color_1 = Color(0.152941, 0.529412, 0.00784314, 1)
+shader_parameter/h_explode_gradient = SubResource("GradientTexture1D_pj0if")
+shader_parameter/h_gas_gradient = SubResource("GradientTexture1D_p2vys")
 shader_parameter/height = null
 shader_parameter/hurricane_color_1 = Color(0.376471, 0.431373, 0.580392, 1)
 shader_parameter/hurricane_color_2 = Color(0.180392, 0.164706, 0.258824, 1)
@@ -51,19 +113,17 @@ shader_parameter/laser_color_1 = Color(1, 0.309804, 0.52549, 1)
 shader_parameter/laser_color_2 = Color(1, 1, 1, 1)
 shader_parameter/lead_azide_color_1 = Color(0.694118, 0.694118, 0.694118, 1)
 shader_parameter/lead_azide_color_2 = Color(0.701961, 0.419608, 0.54902, 1)
-shader_parameter/lightning_color_1 = Color(0.184314, 0.172549, 0.419608, 1)
+shader_parameter/lightning_gradient = SubResource("GradientTexture1D_epec5")
 shader_parameter/marble_texture = ExtResource("3_7fen1")
 shader_parameter/neutron_color_1 = Color(0, 0.894118, 0.937255, 1)
 shader_parameter/neutron_color_2 = Color(1, 1, 1, 1)
-shader_parameter/nuclear_explosion_color_1 = Color(1, 1, 1, 1)
-shader_parameter/nuclear_explosion_color_2 = Color(0.34902, 0.85098, 0.854902, 1)
+shader_parameter/nuclear_explode_gradient = SubResource("GradientTexture1D_ttwmk")
 shader_parameter/oil_color_1 = Color(0.235294, 0.219608, 0.247059, 1)
 shader_parameter/oil_color_2 = Color(0.117647, 0.105882, 0.133333, 1)
 shader_parameter/oil_color_3 = Color(0.141176, 0.0941176, 0.160784, 1)
-shader_parameter/p_explosion_color_1 = Color(1, 1, 1, 1)
-shader_parameter/p_explosion_color_2 = Color(0.635294, 0.262745, 0.831373, 1)
-shader_parameter/plasma_color_1 = Color(0.803922, 1, 1, 1)
-shader_parameter/plasma_color_2 = Color(0.996078, 1, 0.741176, 1)
+shader_parameter/p_explode_gradient = SubResource("GradientTexture1D_jv2k5")
+shader_parameter/penguin_color_1 = Color(0, 0, 0, 1)
+shader_parameter/plasma_gradient = SubResource("GradientTexture1D_ttwmk")
 shader_parameter/polliwog_color_1 = Color(0.419608, 0.941176, 1, 1)
 shader_parameter/powder_color_2 = Color(0.992157, 0.988235, 1, 1)
 shader_parameter/powder_color_3 = Color(1, 1, 1, 1)
@@ -81,8 +141,6 @@ shader_parameter/smoke_color_2 = Color(0.329412, 0.329412, 0.329412, 1)
 shader_parameter/soil_color = Color(0.501961, 0.156863, 0.121569, 1)
 shader_parameter/steel_color_1 = Color(0.796078, 0.796078, 0.796078, 1)
 shader_parameter/steel_color_2 = Color(0.407843, 0.407843, 0.509804, 1)
-shader_parameter/storm_plasma_color_1 = Color(0.0980392, 0.180392, 0.65098, 1)
-shader_parameter/storm_plasma_color_2 = Color(1, 0.317647, 0.439216, 1)
 shader_parameter/uranium_color_1 = Color(0.411765, 0.45098, 0.4, 1)
 shader_parameter/uranium_color_2 = Color(0.0235294, 0.890196, 0.737255, 1)
 shader_parameter/urchin_color_1 = Color(0.301961, 0.101961, 0.309804, 1)

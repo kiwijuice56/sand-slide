@@ -20,8 +20,6 @@ uniform sampler2D sky_texture: repeat_enable, filter_nearest;
 uniform sampler2D sky_texture2: repeat_enable, filter_nearest;
 uniform sampler2D sky_texture3: repeat_enable, filter_nearest;
 
-
-
 uniform vec4 rock_color_1: source_color = vec4(1.0);
 uniform vec4 sand_color_1: source_color = vec4(1.0);
 
@@ -46,8 +44,7 @@ uniform vec4 sand_duck_color_1: source_color = vec4(1.0);
 uniform vec4 lead_azide_color_1: source_color = vec4(1.0);
 uniform vec4 lead_azide_color_2: source_color = vec4(1.0);
 
-uniform vec4 explosion_color_1: source_color = vec4(1.0);
-uniform vec4 explosion_color_2: source_color = vec4(1.0);
+uniform sampler2D explode_gradient: source_color;
 
 uniform vec4 soil_color: source_color = vec4(1.0);
 uniform vec4 grass_color_1: source_color = vec4(1.0);
@@ -99,22 +96,16 @@ uniform vec4 critter_color_1: source_color = vec4(1.0);
 uniform vec4 uranium_color_1: source_color = vec4(1.0);
 uniform vec4 uranium_color_2: source_color = vec4(1.0);
 
-uniform vec4 nuclear_explosion_color_1: source_color = vec4(1.0);
-uniform vec4 nuclear_explosion_color_2: source_color = vec4(1.0);
+uniform sampler2D nuclear_explode_gradient: source_color;
 
 uniform vec4 neutron_color_1: source_color = vec4(1.0);
 uniform vec4 neutron_color_2: source_color = vec4(1.0);
 
-uniform vec4 lightning_color_1: source_color = vec4(1.0);
+uniform sampler2D lightning_gradient: source_color;
+uniform sampler2D plasma_gradient: source_color;
 
-uniform vec4 plasma_color_1: source_color = vec4(1.0);
-uniform vec4 plasma_color_2: source_color = vec4(1.0);
-
-uniform vec4 electron_color_1: source_color = vec4(1.0);
-uniform vec4 electron_color_2: source_color = vec4(1.0);
-
-uniform vec4 storm_plasma_color_1: source_color = vec4(1.0);
-uniform vec4 storm_plasma_color_2: source_color = vec4(1.0);
+uniform sampler2D electron_gradient: source_color;
+uniform sampler2D electron_plasma_gradient: source_color;
 
 uniform vec4 hurricane_color_1: source_color = vec4(1.0);
 uniform vec4 hurricane_color_2: source_color = vec4(1.0);
@@ -122,9 +113,12 @@ uniform vec4 hurricane_color_2: source_color = vec4(1.0);
 uniform vec4 powder_color_2: source_color = vec4(1.0);
 uniform vec4 powder_color_3: source_color = vec4(1.0);
 
-uniform vec4 p_explosion_color_1: source_color = vec4(1.0);
-uniform vec4 p_explosion_color_2: source_color = vec4(1.0);
+uniform sampler2D p_explode_gradient: source_color;
 
+uniform sampler2D h_explode_gradient: source_color;
+uniform sampler2D h_gas_gradient: source_color;
+
+uniform vec4 penguin_color_1: source_color = vec4(1.0);
 
 // Short hand of shifting the range [-1, 1] to [0, 1] since the negative return 
 // values of sin/cos can cause errors
@@ -266,8 +260,8 @@ void fragment() {
 		case 7: COLOR = algae_color_1; break;
 		case 8: COLOR = sand_duck_color_1; break;
 		case 9:
-			float x = match_amount(TEXTURE, UV, 9);
-			COLOR = explosion_color_1 * x + explosion_color_2 * (1.0 - x);
+			float x = max(0.05, match_amount(TEXTURE, UV, 9));
+			COLOR = texture(explode_gradient, vec2(x, 0.5));
 			break;
 		case 10: 
 			float x = shift(sin(TIME));
@@ -408,8 +402,8 @@ void fragment() {
 		case 32: COLOR = dragon_color_1; break;
 		case 33: COLOR = critter_color_1; break;
 		case 34:
-			float x = match_amount(TEXTURE, UV, 34);
-			COLOR = nuclear_explosion_color_1 * x + nuclear_explosion_color_2 * (1.0 - x);
+			float x = max(0.05, match_amount(TEXTURE, UV, 34));
+			COLOR = texture(nuclear_explode_gradient, vec2(x, 0.5));
 			break;
 		case 35:
 			float x = shift(sin(TIME));
@@ -418,18 +412,21 @@ void fragment() {
 			float y = match_amount(TEXTURE, UV, 36);
 			COLOR = neutron_color_2 * y + neutron_color_1 * (1.0 - y);
 			break;
-		case 37: COLOR = lightning_color_1; break;
+		case 37:
+			float x = max(0.05, match_amount(TEXTURE, UV, 37));
+			COLOR = texture(lightning_gradient, vec2(x, 0.5));
+			break;
 		case 38:
-			float y = match_amount(TEXTURE, UV, 38);
-			COLOR = plasma_color_2 * y + plasma_color_1 * (1.0 - y);
+			float x = max(0.05, match_amount(TEXTURE, UV, 38));
+			COLOR = texture(plasma_gradient, vec2(x, 0.5));
 			break;
 		case 39:
-			float y = match_amount(TEXTURE, UV, 39);
-			COLOR = electron_color_2 * y + electron_color_1 * (1.0 - y);
+			float x = max(0.05, match_amount(TEXTURE, UV, 39));
+			COLOR = texture(electron_gradient, vec2(x, 0.5));
 			break;
 		case 40:
-			float y = match_amount(TEXTURE, UV, 40);
-			COLOR = storm_plasma_color_2 * y + storm_plasma_color_1 * (1.0 - y);
+			float x = max(0.05, match_amount(TEXTURE, UV, 40));
+			COLOR = texture(electron_plasma_gradient, vec2(x, 0.5));
 			break;
 		case 41:
 			float y = match_amount(TEXTURE, UV, 41);
@@ -489,16 +486,24 @@ void fragment() {
 		case 45:
 			float p1 = cos(floor(UV.x * float(width / px_scale)));
 			float p2 = cos(floor(UV.y * float(height / px_scale)));
-			
+			// Random, predictable number generator
 			float z = float(floatBitsToInt(12312.4324143 + p1 * 2134904234234323.21332421 * p2 * 392342342324892.3242341) & 0xFF) / float(0xFF);
-
 			float x  = shift(cos(PUV.y)) * shift(sin(16.0 * PUV.x * sin(TIME / 5.0))) * shift(sin(z)) * (1.0 + shift(sin(TIME)));
 			x += z / 4.0;
 			COLOR = steel_color_1 * x + steel_color_2 * (1.0 - x);
 			break;
 		case 46:
-			float x = match_amount(TEXTURE, UV, 46);
-			COLOR = p_explosion_color_1 * x + p_explosion_color_2 * (1.0 - x);
+			float x = max(0.05, match_amount(TEXTURE, UV, 46));
+			COLOR = texture(p_explode_gradient, vec2(x, 0.5));
 			break;
+		case 47:
+			float x = max(0.05, match_amount(TEXTURE, UV, 47));
+			COLOR = texture(h_gas_gradient, vec2(x, 0.5));
+			break;
+		case 48:
+			float x = max(0.05, match_amount(TEXTURE, UV, 48));
+			COLOR = texture(h_explode_gradient, vec2(x, 0.5));
+			break;
+		case 49: COLOR = penguin_color_1; break;
 	}
 }
