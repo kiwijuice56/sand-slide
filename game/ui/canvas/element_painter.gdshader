@@ -120,6 +120,10 @@ uniform sampler2D h_gas_gradient: source_color;
 
 uniform vec4 penguin_color_1: source_color = vec4(1.0);
 
+uniform vec4 gold_color_1: source_color = vec4(1.0);
+uniform vec4 gold_color_2: source_color = vec4(1.0);
+uniform vec4 gold_color_3: source_color = vec4(1.0);
+
 // Short hand of shifting the range [-1, 1] to [0, 1] since the negative return 
 // values of sin/cos can cause errors
 float shift(float x) {
@@ -382,6 +386,7 @@ void fragment() {
 			float y = match_amount(TEXTURE, UV, 29);
 			COLOR = black_hole_color_2 * y + black_hole_color_1 * (1.0 - y);
 			break;
+		case 50: // Burning oil
 		case 30: // Oil
 			vec2 ratio = screen_ratio(SCREEN_PIXEL_SIZE);
 			vec2 texCoord = vec2(2.0*PUV.x + sin(TIME / 32.0), 2.0*PUV.y + sin(TIME / 32.0));
@@ -505,5 +510,29 @@ void fragment() {
 			COLOR = texture(h_explode_gradient, vec2(x, 0.5));
 			break;
 		case 49: COLOR = penguin_color_1; break;
+		case 51:
+			vec2 ratio = screen_ratio(SCREEN_PIXEL_SIZE);
+			vec4 col = soft_sample(crystal_texture, PUV * ratio);
+			float x = (col.r + col.g + col.b) / 3.0;
+			x = shift(sin(x)) * shift(sin(TIME / 3.0));
+			COLOR = gold_color_1 * x + gold_color_2 * (1.0 - x);
+			vec2 texCoord = vec2(1.5 * PUV.x + sin(TIME / 24.0), 1.5 * PUV.y + sin(TIME / 24.0));
+			COLOR += 0.2 * (gold_color_1 * PUV.y + gold_color_2 * (1.0 - PUV.y));
+			COLOR += x * shift(cos(TIME / 4.0)) * soft_sample(water_noise, ratio * texCoord);
+			break;
+		case 52:
+			vec2 ratio = screen_ratio(SCREEN_PIXEL_SIZE);
+			vec2 texCoord = vec2(2.0*PUV.x + sin(TIME / 80.0), 2.0*PUV.y + sin(TIME / 80.0));
+			
+			float x = soft_sample(water_noise, ratio * texCoord).r * (PUV.x + PUV.y + sin(PUV.x / 4.0) * 2.0 + sin(TIME / 7.0));
+			float y = shift(cos(sin(3.0 * PUV.x + sin(TIME / 48.0)) * 16.0 * PUV.x + PI * x + PUV.y * 8.0));
+			y = abs(y - 0.5);
+			
+			COLOR = gold_color_1 * y + gold_color_2 * (1.0 - y);
+			COLOR += 0.2 * (gold_color_1 * PUV.y + gold_color_2 * (1.0 - PUV.y));
+			float z = match_amount(TEXTURE, UV, id);
+			texCoord = vec2(1.5 * PUV.x + sin(TIME / 4824.0), 1.5 * PUV.y + sin(TIME / 48.0));
+			COLOR = shift(cos(TIME / 16.0)) / 2.0 * soft_sample(water_noise, ratio * texCoord) + COLOR * z + gold_color_3 * (1.0 - z);
+			break;
 	}
 }

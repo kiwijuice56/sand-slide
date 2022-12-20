@@ -50,6 +50,9 @@
 #include "elements/hydrogen.h"
 #include "elements/hydrogen_explosion.h"
 #include "elements/penguin.h"
+#include "elements/burning_oil.h"
+#include "elements/gold.h"
+#include "elements/molten_gold.h"
 
 #include <godot_cpp/core/class_db.hpp>
 #include <random>
@@ -113,6 +116,9 @@ SandSimulation::SandSimulation() {
     elements.at(47) = new Hydrogen();
     elements.at(48) = new HydrogenExplosion();
     elements.at(49) = new Penguin();
+    elements.at(50) = new BurningOil();
+    elements.at(51) = new Gold();
+    elements.at(52) = new MoltenGold();
 
     draw_data = PackedByteArray();
 
@@ -251,7 +257,7 @@ bool SandSimulation::is_on_fire(int row, int col) {
                 continue;
             }
             int c = get_cell(row + y, col + x);
-            if (c == 24 || c == 5 || c == 9 || c == 20 || c == 26 || c == 34 || c == 37 || c == 38 || c == 40 || c == 46 || c == 48) {
+            if (c == 24 || c == 5 || c == 9 || c == 20 || c == 26 || c == 34 || c == 37 || c == 38 || c == 40 || c == 46 || c == 48 || c == 50 || c == 52) {
                 return true;
             }
         }

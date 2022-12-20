@@ -5,7 +5,7 @@
 
 class Explosion: public Element {
 public:
-    const double PROCESS = 1.0 / 7;
+    const double PROCESS = 1.0 / 6;
     const double DECAY = 1.0 / 9.0;
 
     void process(SandSimulation *sim, int row, int col) override {

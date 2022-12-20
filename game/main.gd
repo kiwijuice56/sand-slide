@@ -12,7 +12,8 @@ const ELEMENT_INDEX = [
 	"Oil", "Urchin", "Dragon", "Critter", "Nuclear Explosion", 
 	"Uranium", "Neutron", "Lightning", "Plasma", "Electron", "StormPlasma",
 	"Hurricane", "Powder", "Liquid Powder", "Mercury", "Potassium",
-	"PExplosion", "Hydrogen", "HExplosion", "Penguin"]
+	"PExplosion", "Hydrogen", "HExplosion", "Penguin", "BurningOil",
+	"Gold"]
 
 @export var save_file_manager: Node
 @export var canvas: TextureRect

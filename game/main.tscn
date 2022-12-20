@@ -1,4 +1,4 @@
-[gd_scene load_steps=142 format=3 uid="uid://dare8w77k701"]
+[gd_scene load_steps=145 format=3 uid="uid://dare8w77k701"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_b657u"]
 [ext_resource type="Script" path="res://ui/ui.gd" id="2_27ols"]
@@ -323,6 +323,27 @@ corner_radius_bottom_left = 4
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rvw6y"]
 bg_color = Color(0.607843, 0.607843, 0.658824, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0sdxy"]
+bg_color = Color(0.898039, 0.772549, 0.462745, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t8xlp"]
+bg_color = Color(0.960784, 0.921569, 0.721569, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ot0nh"]
+bg_color = Color(0.85098, 0.564706, 0.4, 1)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
@@ -1445,7 +1466,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_cm7pv")
 layout_mode = 2
 offset_left = 8.0
 offset_top = 8.0
-offset_right = 1024.0
+offset_right = 1152.0
 offset_bottom = 82.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -1540,6 +1561,28 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_5dmnr")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_rvw6y")
 text = "steel"
 
+[node name="Gold" type="Button" parent="UI/ScreenContainer/MarginContainer/VBoxContainer/ElementSelector/Build/HBoxContainer"]
+custom_minimum_size = Vector2i(120, 70)
+layout_mode = 2
+offset_left = 544.0
+offset_right = 672.0
+offset_bottom = 128.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 0
+focus_mode = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxFlat_0sdxy")
+theme_override_styles/hover = SubResource("StyleBoxFlat_t8xlp")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ot0nh")
+text = "gold"
+
 [node name="Marble" type="Button" parent="UI/ScreenContainer/MarginContainer/VBoxContainer/ElementSelector/Build/HBoxContainer"]
 custom_minimum_size = Vector2i(120, 70)
 layout_mode = 2
@@ -1620,7 +1663,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_cm7pv")
 layout_mode = 2
 offset_left = 8.0
 offset_top = 8.0
-offset_right = 1024.0
+offset_right = 1152.0
 offset_bottom = 82.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
