@@ -50,7 +50,7 @@ size_label = NodePath("MarginContainer/VBoxContainer/FileSize")
 [node name="Button" type="Button" parent="."]
 layout_mode = 2
 offset_right = 1000.0
-offset_bottom = 800.0
+offset_bottom = 600.0
 theme_override_styles/normal = SubResource("StyleBoxEmpty_faecs")
 theme_override_styles/hover = SubResource("StyleBoxFlat_wn5pg")
 theme_override_styles/focus = SubResource("StyleBoxFlat_slap3")
@@ -58,7 +58,7 @@ theme_override_styles/focus = SubResource("StyleBoxFlat_slap3")
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 2
 offset_right = 1000.0
-offset_bottom = 800.0
+offset_bottom = 600.0
 mouse_filter = 2
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 8
@@ -70,7 +70,7 @@ layout_mode = 2
 offset_left = 8.0
 offset_top = 8.0
 offset_right = 992.0
-offset_bottom = 792.0
+offset_bottom = 592.0
 mouse_filter = 2
 
 [node name="FileName" type="Label" parent="MarginContainer/VBoxContainer"]

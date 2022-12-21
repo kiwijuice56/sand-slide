@@ -151,8 +151,15 @@ void SandSimulation::step(int iterations) {
     // Do more iterations when more chunks are active to prevent speed inconsistencies
     for (int i = 0; i < iterations * active_chunks.size(); i++) {
         int chunk = active_chunks.at(randChunk(rng));
-        int row = std::min((unsigned int) get_height() - 1, (chunk / chunk_width) * chunk_size + randCell(rng));
-        int col = std::min((unsigned int) get_width() - 1, (chunk % chunk_width) * chunk_size + randCell(rng));
+
+        // Some weird type issues for the android build doesn't allow the use of std::min
+        int row = (chunk / chunk_width) * chunk_size + randCell(rng);
+        if (row >= get_height())
+            row = get_height() - 1;
+        int col = (chunk % chunk_width) * chunk_size + randCell(rng);
+        if (col >= get_width())
+            col = get_width() - 1;
+
         if (get_cell(row, col) == 0) {
             continue;
         }
@@ -336,11 +343,9 @@ void SandSimulation::set_chunk_size(int new_size) {
     resize(width, height);
 }
 
-// Handle created instances on program close
+// Do nothing...
 void SandSimulation::clean_up() {
-    for (auto e : elements) {
-        delete e;
-    }
+    
 }
 
 void SandSimulation::_bind_methods() {

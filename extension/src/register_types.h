@@ -1,7 +1,7 @@
-#ifndef SAND_REGISTER_TYPES_H
-#define SAND_REGISTER_TYPES_H
+#ifndef SUMMATOR_REGISTER_TYPES_H
+#define SUMMATOR_REGISTER_TYPES_H
 
-void register_sand_types();
-void unregister_sand_types();
+void initialize_summator_types();
+void uninitialize_summator_types();
 
-#endif // SAND_REGISTER_TYPES_H
+#endif // SUMMATOR_REGISTER_TYPES_H

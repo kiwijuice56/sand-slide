@@ -84,7 +84,7 @@ func save_image(path: String) -> void:
 
 func load_image(path: String) -> void:
 	clear()
-	var img: Image = canvas.texture.get_image().load_from_file(path)
+	var img: Image = Image.load_from_file(path)
 	for i in range(sim.get_height()):
 		for j in range(sim.get_width()):
 			if j >= img.get_width() or i >= img.get_height():

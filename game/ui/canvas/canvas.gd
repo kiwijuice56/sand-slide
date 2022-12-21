@@ -7,9 +7,7 @@ class_name SandCanvas
 signal mouse_pressed(row, col, is_left)
 
 func _ready() -> void:
-	var image = Image.new()
-	image.create(256, 256, false, Image.FORMAT_BPTC_RGBA)
-	texture = ImageTexture.create_from_image(image)
+	texture = ImageTexture.new()
 	resized.connect(_resized)
 
 func _resized() -> void:
@@ -28,8 +26,8 @@ func _process(_delta: float) -> void:
 		mouse_pressed.emit(row, col, left_pressed)
 
 func repaint(sim: SandSimulation) -> void:
-	var image: Image = texture.get_image()
 	# The simulation stores a single byte for each element, so we can use the luminosity format
 	# to save space
-	image.create_from_data(sim.get_width(), sim.get_height(), false, Image.FORMAT_L8, sim.get_draw_data())
-	texture.set_image(image)
+	if sim.get_width() <= 0 or sim.get_height() <= 0:
+		return
+	texture.set_image(Image.create_from_data(sim.get_width(), sim.get_height(), false, Image.FORMAT_L8, sim.get_draw_data()))
