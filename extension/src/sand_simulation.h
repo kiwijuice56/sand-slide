@@ -30,6 +30,8 @@ class SandSimulation : public RefCounted {
     // Pointers to an instance of each element to access class properties and methods
     std::vector<Element*> elements;
 
+    std::vector<bool> visited;
+
     // Contains the actual particles 
     std::vector<int> cells;
 
@@ -60,6 +62,7 @@ public:
 
     int get_cell(int row, int col);
     void set_cell(int row, int col, int type);
+    void draw_cell(int row, int col, int type);
     int get_chunk(int c);
 
     PackedByteArray get_draw_data();

@@ -20,7 +20,7 @@ const ELEMENT_INDEX = [
 
 @export var simulation_speed: int = 100000
 @export var chunk_size: int = 8
-
+var pause := false
 
 var sim: SandSimulation
 var brush_size: int = 6
@@ -63,21 +63,28 @@ func _process(_delta) -> void:
 
 # Draw a circle of the element onto the simulation
 func draw(center_row: int, center_col: int, draw_element: int, radius: int) -> void:
+	pause = not pause
+	if pause:
+		return
 	if not sim.in_bounds(center_row, center_col):
 		return
+	var is_liquid := draw_element in [3, 5, 20, 21, 24, 28, 30, 37, 39, 41, 44, 47]
+	var is_life := draw_element in [4, 8, 23, 32, 33, 49]
 	for row in range(-radius, radius + 1):
 		for col in range(-radius, radius + 1):
 			if row*row + col*col < radius*radius and sim.in_bounds(row + center_row, col + center_col):
+				if is_life and randf() > 0.6:
+					continue
 				# Check if cell is empty when drawing a fluid
 				var at_cell: int = sim.get_cell(row + center_row, col + center_col)
-				if (draw_element in [3, 5, 20, 21, 24, 28, 30, 37, 39, 41, 44, 47]) and at_cell != 0:
+				if is_liquid and at_cell != 0:
 					continue
-				sim.set_cell(row + center_row, col + center_col, draw_element)
+				sim.draw_cell(row + center_row, col + center_col, draw_element)
 
 func clear() -> void:
 	for i in range(sim.get_height()):
 		for j in range(sim.get_width()):
-			sim.set_cell(i, j, 0)
+			sim.draw_cell(i, j, 0)
 
 func save_image(path: String) -> void:
 	canvas.texture.get_image().save_png(path)

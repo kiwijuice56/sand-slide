@@ -7,8 +7,12 @@ class Powder: public Element {
 public:
     const double FLAME = 1 / 32.0;
     const double DISSOLVE = 1 / 256.0;
+    const double POWDER = 1 / 1.125;
 
     void process(SandSimulation *sim, int row, int col) override {
+        if (sim->randf() >= POWDER)
+            return;
+
         if (sim->randf() < FLAME && sim->is_on_fire(row, col)) {
             sim->set_cell(row, col, 16);
             return;

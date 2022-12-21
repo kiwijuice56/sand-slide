@@ -1097,7 +1097,7 @@ _data = {
 script = ExtResource("1_b657u")
 save_file_manager = NodePath("SaveFileManager")
 canvas = NodePath("UI/ScreenContainer/Canvas")
-simulation_speed = 2400
+simulation_speed = 1
 chunk_size = 32
 metadata/_edit_vertical_guides_ = []
 
@@ -1224,8 +1224,8 @@ custom_minimum_size = Vector2(0, 32)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 10
-max_value = 4800.0
-value = 2400.0
+max_value = 8.0
+value = 8.0
 tick_count = 8
 
 [node name="Speed" type="Label" parent="UI/ScreenContainer/MarginContainer/VBoxContainer/OptionContainer/VBoxContainer2"]

@@ -7,8 +7,12 @@ class GerminatedSeed: public Element {
 public:
     const double GROW = 1.0 / 1024;
     const double FLAME = 1.0 / 48;
+    const double POWDER = 1.0 / 1.3;
 
     void process(SandSimulation *sim, int row, int col) override {
+        if (sim->randf() >= POWDER)
+            return;
+
         // Catch on fire
         if (sim->randf() < FLAME && sim->is_on_fire(row, col)) {
             sim->set_cell(row, col, 5);

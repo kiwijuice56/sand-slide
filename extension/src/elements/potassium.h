@@ -7,11 +7,14 @@ class Potassium: public Element {
 public:
     const double FLAME = 1 / 64.0;
     const double WATER = 1 / 32.0;
+    const double POWDER = 1 / 1.025;
 
     void process(SandSimulation *sim, int row, int col) override {
-        if (sim->randf() < FLAME && sim->is_on_fire(row, col)) {
+        if (sim->randf() >= POWDER)
+            return;
+
+        if (sim->randf() < FLAME && sim->is_on_fire(row, col)) 
             sim->set_cell(row, col, 46);
-        }
         else if (sim->randf() < WATER && sim->touch_count(row, col, 3)) {
             for (int y = -3; y <= 3; y++) {
                 for (int x = -3; x <= 3; x++) {

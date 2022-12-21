@@ -55,7 +55,6 @@
 #include "elements/molten_gold.h"
 
 #include <godot_cpp/core/class_db.hpp>
-#include <random>
 
 using namespace godot;
 
@@ -124,6 +123,7 @@ SandSimulation::SandSimulation() {
 
     draw_data.resize(width * height);
     draw_data.fill(0);
+    visited.resize(width * height);
     cells.resize(width * height);
     chunks.resize(chunk_width * chunk_height);
 }
@@ -132,52 +132,34 @@ SandSimulation::~SandSimulation() {}
 
 // Run the simulation `iterations` times
 void SandSimulation::step(int iterations) {
-    std::random_device dev;
-    std::mt19937 rng(dev());
-    std::uniform_int_distribution<std::mt19937::result_type> randCell(0, chunk_size - 1);
-
-    // Keep a vector of active chunk indices
-    std::vector<int> active_chunks;
-    for (int chunk = 0; chunk < chunks.size(); chunk++) {
-        if (chunks.at(chunk) != 0) {
-            active_chunks.resize(active_chunks.size() + 1);
-            active_chunks.at(active_chunks.size() - 1) = chunk;
+    for (int i = 0; i < iterations; i++) {
+        for (int chunk = chunks.size() - 1; chunk >= 0; chunk--) {
+            if (chunks.at(chunk) == 0)
+                continue;
+            for (int row = chunk_size - 1; row >= 0; row--) {
+                for (int col = 0; col < chunk_size; col++) {
+                    int rRow = (chunk / chunk_width) * chunk_size + row;
+                    int rCol = (chunk % chunk_width) * chunk_size + col;
+                    if (rRow >= height || rCol >= width)
+                        continue;
+                    if (visited.at(rRow * width + rCol)) 
+                        visited.at(rRow * width + rCol) = false;
+                    else 
+                        elements.at(get_cell(rRow, rCol))->process(this, rRow, rCol);
+                }
+            }
         }
     }
-    
-    std::uniform_int_distribution<std::mt19937::result_type> randChunk(0, active_chunks.size() - 1);
-
-    // Randomly select a cell to process within an active chunk
-    // Do more iterations when more chunks are active to prevent speed inconsistencies
-    for (int i = 0; i < iterations * active_chunks.size(); i++) {
-        int chunk = active_chunks.at(randChunk(rng));
-
-        // Some weird type issues for the android build doesn't allow the use of std::min
-        int row = (chunk / chunk_width) * chunk_size + randCell(rng);
-        if (row >= get_height())
-            row = get_height() - 1;
-        int col = (chunk % chunk_width) * chunk_size + randCell(rng);
-        if (col >= get_width())
-            col = get_width() - 1;
-
-        if (get_cell(row, col) == 0) {
-            continue;
-        }
-        elements.at(get_cell(row, col))->process(this, row, col);
-    }
-    
 }
 
 // Swap the elements at the two cells if the first cell has a higher density
 void SandSimulation::move_and_swap(int row, int col, int row2, int col2) {
-    if (!in_bounds(row, col) || !in_bounds(row2, col2)) {
+    if (!in_bounds(row, col) || !in_bounds(row2, col2)) 
         return;
-    }
 
-    if (elements.at(get_cell(row, col))->get_density() <= elements.at(get_cell(row2, col2))->get_density()) {
+    if (elements.at(get_cell(row, col))->get_density() <= elements.at(get_cell(row2, col2))->get_density()) 
         if (get_cell(row, col) != get_cell(row2, col2))
             return;
-    }
 
     int old = get_cell(row, col);
     set_cell(row, col, get_cell(row2, col2));
@@ -187,21 +169,15 @@ void SandSimulation::move_and_swap(int row, int col, int row2, int col2) {
 // Move the `replacer` element into the given cell if it is of type `food`
 // A `food` value of -1 is equivalent to all elements
 void SandSimulation::grow(int row, int col, int food, int replacer) {
-    if (!in_bounds(row, col)) {
+    if (!in_bounds(row, col)) 
         return;
-    }
     if (food == -1) {
         // Since only explosions/lasers grow into all cells, we run a check for explosion resistance
         // This should probably be inside the explosion element code, but this is more convenient
-        if (randf() >= (1.0 - elements.at(get_cell(row, col))->get_explode_resistance())) {
+        if (randf() >= (1.0 - elements.at(get_cell(row, col))->get_explode_resistance())) 
             return;
-        }
-    } else {
-        if (get_cell(row, col) != food) {
-            return;
-        }
-    }
-
+    } else if (get_cell(row, col) != food) 
+        return;
     set_cell(row, col, replacer);
 }
 
@@ -210,12 +186,10 @@ int SandSimulation::touch_count(int row, int col, int type) {
     int touches = 0;
     for (int y = -1; y <= 1; y++) {
         for (int x = -1; x <= 1; x++) {
-            if (x == 0 && y == 0 || !in_bounds(row + y, col + x)) {
+            if (x == 0 && y == 0 || !in_bounds(row + y, col + x)) 
                 continue;
-            }
-            if (get_cell(row + y, col + x) == type) {
+            if (get_cell(row + y, col + x) == type) 
                 touches++;
-            }
         }
     }
     return touches;
@@ -244,13 +218,11 @@ bool SandSimulation::in_bounds(int row, int col) {
 bool SandSimulation::is_poisoned(int row, int col) {
     for (int y = -1; y <= 1; y++) {
         for (int x = -1; x <= 1; x++) {
-            if (x == 0 && y == 0 || !in_bounds(row + y, col + x)) {
+            if (x == 0 && y == 0 || !in_bounds(row + y, col + x)) 
                 continue;
-            }
             int c = get_cell(row + y, col + x);
-            if (c == 10 || c == 21 || c == 22 || c == 35 || c == 44) {
+            if (c == 10 || c == 21 || c == 22 || c == 35 || c == 44) 
                 return true;
-            }
         }
     } 
     return false; 
@@ -260,13 +232,11 @@ bool SandSimulation::is_poisoned(int row, int col) {
 bool SandSimulation::is_on_fire(int row, int col) {
     for (int y = -1; y <= 1; y++) {
         for (int x = -1; x <= 1; x++) {
-            if (x == 0 && y == 0 || !in_bounds(row + y, col + x)) {
+            if (x == 0 && y == 0 || !in_bounds(row + y, col + x))
                 continue;
-            }
             int c = get_cell(row + y, col + x);
-            if (c == 24 || c == 5 || c == 9 || c == 20 || c == 26 || c == 34 || c == 37 || c == 38 || c == 40 || c == 46 || c == 48 || c == 50 || c == 52) {
+            if (c == 24 || c == 5 || c == 9 || c == 20 || c == 26 || c == 34 || c == 37 || c == 38 || c == 40 || c == 46 || c == 48 || c == 50 || c == 52) 
                 return true;
-            }
         }
     } 
     return false;
@@ -282,13 +252,19 @@ int SandSimulation::get_cell(int row, int col) {
 }
 
 void SandSimulation::set_cell(int row, int col, int type) {
-    if (cells.at(row * width + col) == 0 && type != 0) {
+    if (cells.at(row * width + col) == 0 && type != 0) 
         chunks.at((row / chunk_size) * chunk_width + (col / chunk_size))++;
-    } else if (cells.at(row * width + col) != 0 && type == 0) {
+    else if (cells.at(row * width + col) != 0 && type == 0) 
         chunks.at((row / chunk_size) * chunk_width + (col / chunk_size))--;
-    }
+    
+    visited.at(row * width + col) = type != 0;
     cells.at(row * width + col) = type;
     draw_data.set(row * width + col, type);
+}
+
+void SandSimulation::draw_cell(int row, int col, int type) {
+    set_cell(row, col, type);
+    visited.at(row * width + col) = false;
 }
 
 
@@ -314,6 +290,9 @@ void SandSimulation::resize(int new_width, int new_height) {
     cells.clear();
     cells.resize(new_width * new_height);
     
+    visited.clear();
+    visited.resize(new_width * new_height);
+
     chunk_width = (int) std::ceil(new_width / (float) chunk_size);
     chunk_height = (int) std::ceil(new_height / (float) chunk_size);
     
@@ -328,9 +307,8 @@ void SandSimulation::resize(int new_width, int new_height) {
         for (int col = 0; col < std::min(new_width, width); col++) {
             cells.at(row * new_width + col) = temp.at(row * width + col);
             draw_data.set(row * new_width + col, temp.at(row * width + col));
-            if (temp.at(row * width + col) != 0) {
+            if (temp.at(row * width + col) != 0) 
                 chunks.at((row / chunk_size) * chunk_width + (col / chunk_size))++;
-            }
         }
     }
 
@@ -359,6 +337,7 @@ void SandSimulation::_bind_methods() {
 
     ClassDB::bind_method(D_METHOD("get_cell"), &SandSimulation::get_cell);
     ClassDB::bind_method(D_METHOD("set_cell"), &SandSimulation::set_cell);
+    ClassDB::bind_method(D_METHOD("draw_cell"), &SandSimulation::draw_cell);
     ClassDB::bind_method(D_METHOD("get_chunk"), &SandSimulation::get_chunk);
 
     ClassDB::bind_method(D_METHOD("get_draw_data"), &SandSimulation::get_draw_data);
