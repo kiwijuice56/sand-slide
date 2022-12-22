@@ -1,17 +1,31 @@
-[gd_scene load_steps=145 format=3 uid="uid://dare8w77k701"]
+[gd_scene load_steps=158 format=3 uid="uid://dare8w77k701"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_b657u"]
 [ext_resource type="Script" path="res://ui/ui.gd" id="2_27ols"]
 [ext_resource type="FontFile" uid="uid://b8lxwo5dkwrs4" path="res://ui/font/Poppins-Regular.ttf" id="2_iejaa"]
 [ext_resource type="Script" path="res://ui/canvas/canvas.gd" id="3_b35ov"]
-[ext_resource type="Material" uid="uid://d2pi1o3ywasht" path="res://ui/canvas/element_painter.tres" id="4_gkdgx"]
+[ext_resource type="Shader" path="res://ui/canvas/element_painter.gdshader" id="4_0qiky"]
+[ext_resource type="Resource" uid="uid://cds4k4ta4celb" path="res://ui/canvas/elements/water.tres" id="5_51vs8"]
 [ext_resource type="Script" path="res://ui/element_selector/element_selector.gd" id="5_waeqw"]
-[ext_resource type="Material" uid="uid://dnx0kf1do6pbp" path="res://ui/canvas/temperature.tres" id="6_vd1p6"]
+[ext_resource type="Resource" uid="uid://dnbnt0k6dntt4" path="res://ui/canvas/elements/fairy.tres" id="6_4e6di"]
+[ext_resource type="Texture2D" uid="uid://dwneer3dth3iw" path="res://ui/canvas/textures/water_noise.png" id="6_64sak"]
+[ext_resource type="Resource" uid="uid://dmqbkx0bc04i0" path="res://ui/canvas/elements/sand.tres" id="6_foond"]
 [ext_resource type="Script" path="res://ui/fps_label.gd" id="6_wixoe"]
+[ext_resource type="Resource" uid="uid://clneg620r7x5b" path="res://ui/canvas/elements/algae.tres" id="7_2vbpk"]
 [ext_resource type="Script" path="res://ui/splash_screen/splash_screen.gd" id="7_rul6o"]
+[ext_resource type="Resource" uid="uid://bd6wb8xfoy8xe" path="res://ui/canvas/elements/dragon.tres" id="8_xk4rv"]
 [ext_resource type="PackedScene" uid="uid://6fwtlgnkakme" path="res://ui/save_control/save_file_panel/SaveFilePanel.tscn" id="9_agvyx"]
 [ext_resource type="Script" path="res://ui/save_control/save_control.gd" id="9_i7quj"]
+[ext_resource type="Resource" uid="uid://jl81oexe6ecd" path="res://ui/canvas/elements/germ_seed.tres" id="9_l0ag2"]
+[ext_resource type="Resource" uid="uid://ckoirxpmy5rj3" path="res://ui/canvas/elements/penguin.tres" id="10_cu5jh"]
 [ext_resource type="Script" path="res://save_file/save_file_manager.gd" id="10_ipwke"]
+[ext_resource type="Resource" uid="uid://dvjo6ah4vpthj" path="res://ui/canvas/elements/polliwog.tres" id="11_6exdr"]
+[ext_resource type="Resource" uid="uid://ck64yrw1jcemx" path="res://ui/canvas/elements/rock.tres" id="12_816cf"]
+[ext_resource type="Resource" uid="uid://6jku18jqioc2" path="res://ui/canvas/elements/sand_duck.tres" id="14_1qnw8"]
+[ext_resource type="Resource" uid="uid://b887td830n0u0" path="res://ui/canvas/elements/seed.tres" id="15_i7isi"]
+[ext_resource type="Resource" uid="uid://cnw7obupot408" path="res://ui/canvas/elements/soil.tres" id="16_ctafh"]
+[ext_resource type="Resource" uid="uid://sprmkvhjeccq" path="res://ui/canvas/elements/urchin.tres" id="17_aprtl"]
+[ext_resource type="Resource" uid="uid://djwtkdplr0yhg" path="res://ui/canvas/elements/wood.tres" id="19_1mm3k"]
 
 [sub_resource type="Theme" id="Theme_twp2m"]
 
@@ -19,55 +33,33 @@
 default_font = ExtResource("2_iejaa")
 default_font_size = 24
 
-[sub_resource type="Animation" id="Animation_6dc5s"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("TemperatureCover:material:shader_parameter/temperature")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.3]
-}
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_knnd6"]
+shader = ExtResource("4_0qiky")
+shader_parameter/width = 1000.0
+shader_parameter/height = 385.0
+shader_parameter/px_scale = 4
+shader_parameter/flat_color_id_match = [0, 7, 6, 0, 5, 0, 0, 1, 8, 0, 0, 10, 9, 3, 0, 0, 0, 0, 12, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 11, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 0]
+shader_parameter/flat_color = [Vector3(0.0235294, 0.45098, 0.101961), Vector3(0.929412, 0.619608, 0.792157), Vector3(0.294118, 0.678431, 0.141176), Vector3(0, 0, 0), Vector3(0.419608, 0.941176, 1), Vector3(0.278431, 0.109804, 0.109804), Vector3(0.980392, 0.47451, 0.137255), Vector3(0.988235, 0.737255, 0.384314), Vector3(0.72549, 1, 0.368627), Vector3(0.501961, 0.156863, 0.121569), Vector3(0.301961, 0.101961, 0.309804), Vector3(0.631373, 0.368627, 0.12549), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0)]
+shader_parameter/gradient_id_match = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+shader_parameter/gradient_color_a = [Color(0.811765, 0.890196, 0.4, 1), Color(0.639216, 0.47451, 0.729412, 1), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0)]
+shader_parameter/gradient_color_b = [Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0)]
+shader_parameter/fluid_id_match = [0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+shader_parameter/color_a = [Vector3(0.145098, 0.337255, 0.980392), 0, 0, 0, 0, 0, 0, 0, 0, 0]
+shader_parameter/color_b = [Vector3(0.14902, 0.682353, 0.929412), 0, 0, 0, 0, 0, 0, 0, 0, 0]
+shader_parameter/color_c = [Vector3(0.105882, 0.145098, 0.537255), 0, 0, 0, 0, 0, 0, 0, 0, 0]
+shader_parameter/noise_scale = [2.0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+shader_parameter/noise_speed = [15.0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+shader_parameter/current_size = [16.0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+shader_parameter/wave_cycle = [3.0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+shader_parameter/contraction_size = [16.0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+shader_parameter/wave_density = [2.0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+shader_parameter/shimmer_speed = [24.0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+shader_parameter/shimmer_density = [1.5, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+shader_parameter/shimmer_opacity = [0.5, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+shader_parameter/shimmer_cycle = [2.0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+shader_parameter/water_texture = ExtResource("6_64sak")
 
-[sub_resource type="Animation" id="Animation_tv17p"]
-resource_name = "day_cycle"
-length = 10.5
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:material:shader_parameter/day")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 3.5, 3.8, 6.7, 7, 10.3, 10.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [0.0, 0.0, 0.1, 0.1, 0.2, 0.2, 0.3]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("TemperatureCover:material:shader_parameter/temperature")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 3.5, 3.8, 4.3, 5, 5.8, 6.7, 7, 7.7, 8.4, 9.1, 9.8, 10.3),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [0.0, 0.0, 0.3, 0.3, 0.5, 0.2, 0.1, -0.3, -0.5, -0.3, -0.2, -0.1, 0.0]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_ayxmy"]
-_data = {
-"RESET": SubResource("Animation_6dc5s"),
-"day_cycle": SubResource("Animation_tv17p")
-}
+[sub_resource type="ImageTexture" id="ImageTexture_jcs0n"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5esfr"]
 bg_color = Color(0.231373, 0.0784314, 0.137255, 1)
@@ -1134,26 +1126,12 @@ theme = SubResource("Theme_n7xkt")
 
 [node name="Canvas" type="TextureRect" parent="UI/ScreenContainer"]
 texture_filter = 1
-material = ExtResource("4_gkdgx")
+material = SubResource("ShaderMaterial_knnd6")
 layout_mode = 2
 size_flags_vertical = 3
+texture = SubResource("ImageTexture_jcs0n")
 script = ExtResource("3_b35ov")
-
-[node name="TemperatureCover" type="ColorRect" parent="UI/ScreenContainer/Canvas"]
-material = ExtResource("6_vd1p6")
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="UI/ScreenContainer/Canvas"]
-autoplay = "day_cycle"
-playback_speed = 0.05
-libraries = {
-"": SubResource("AnimationLibrary_ayxmy")
-}
+element_materials = [ExtResource("7_2vbpk"), ExtResource("8_xk4rv"), ExtResource("6_4e6di"), ExtResource("9_l0ag2"), ExtResource("10_cu5jh"), ExtResource("11_6exdr"), ExtResource("12_816cf"), ExtResource("6_foond"), ExtResource("14_1qnw8"), ExtResource("15_i7isi"), ExtResource("16_ctafh"), ExtResource("17_aprtl"), ExtResource("5_51vs8"), ExtResource("19_1mm3k")]
 
 [node name="MarginContainer" type="MarginContainer" parent="UI/ScreenContainer"]
 layout_mode = 2
@@ -1247,9 +1225,9 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 10
 min_value = 1.0
-max_value = 8.0
-value = 4.0
-tick_count = 8
+max_value = 10.0
+value = 6.0
+tick_count = 10
 
 [node name="Zoom" type="Label" parent="UI/ScreenContainer/MarginContainer/VBoxContainer/OptionContainer/VBoxContainer3"]
 layout_mode = 2
@@ -2046,7 +2024,6 @@ theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 0
 
 [node name="FPSLabel" type="Label" parent="UI/FPSLabelContainer"]
-visible = false
 layout_mode = 2
 text = "FPS 0"
 script = ExtResource("6_wixoe")

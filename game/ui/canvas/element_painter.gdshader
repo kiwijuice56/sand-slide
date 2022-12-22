@@ -8,122 +8,31 @@ shader_type canvas_item;
 uniform int width = 1000;
 uniform int height = 800;
 uniform int px_scale = 4;
-uniform float day = 0.0;
 
-// Noise and other textures for elements that are not simple colors
-uniform sampler2D water_noise: repeat_enable, source_color, filter_nearest;
-uniform sampler2D fire_noise: repeat_enable, source_color, filter_nearest;
-uniform sampler2D marble_texture: repeat_enable, source_color, filter_nearest;
-uniform sampler2D glass_texture: repeat_enable, source_color, filter_nearest;
-uniform sampler2D crystal_texture: repeat_enable, source_color, filter_nearest;
-uniform sampler2D sky_texture: repeat_enable, filter_nearest;
-uniform sampler2D sky_texture2: repeat_enable, filter_nearest;
-uniform sampler2D sky_texture3: repeat_enable, filter_nearest;
-uniform sampler2D gold_texture: repeat_enable, filter_nearest;
+uniform int[53] flat_color_id_match;
+uniform vec3[13] flat_color;
 
-uniform vec4 rock_color_1: source_color = vec4(1.0);
-uniform vec4 sand_color_1: source_color = vec4(1.0);
+uniform int[53] gradient_id_match;
+uniform vec3[19] gradient_color_a;
+uniform vec3[19] gradient_color_b;
 
-// Elements can define multiple uniform colors that can be interpolated based on
-// position, time, etc.
-uniform vec4 water_color_1: source_color = vec4(1.0);
-uniform vec4 water_color_2: source_color = vec4(1.0);
-uniform vec4 water_color_3: source_color = vec4(1.0);
+uniform int[53] fluid_id_match;
 
-uniform vec4 polliwog_color_1: source_color = vec4(1.0);
+uniform vec3[10] color_a;
+uniform vec3[10] color_b;
+uniform vec3[10] color_c;
+uniform float[10] noise_scale;
+uniform float[10] noise_speed;
+uniform float[10] current_size;
+uniform float[10] wave_cycle;
+uniform float[10] contraction_size;
+uniform float[10] wave_density;
+uniform float[10] shimmer_speed;
+uniform float[10] shimmer_density;
+uniform float[10] shimmer_opacity;
+uniform float[10] shimmer_cycle;
 
-uniform vec4 fire_color_1: source_color = vec4(1.0);
-uniform vec4 fire_color_2: source_color = vec4(1.0);
-uniform vec4 fire_color_3: source_color = vec4(1.0);
-
-uniform vec4 smoke_color_1: source_color = vec4(1.0);
-uniform vec4 smoke_color_2: source_color = vec4(1.0);
-
-uniform vec4 algae_color_1: source_color = vec4(1.0);
-uniform vec4 sand_duck_color_1: source_color = vec4(1.0);
-
-uniform vec4 lead_azide_color_1: source_color = vec4(1.0);
-uniform vec4 lead_azide_color_2: source_color = vec4(1.0);
-
-uniform sampler2D explode_gradient: source_color;
-
-uniform vec4 soil_color: source_color = vec4(1.0);
-uniform vec4 grass_color_1: source_color = vec4(1.0);
-
-uniform vec4 seed_color_1: source_color = vec4(1.0);
-uniform vec4 seed_color_2: source_color = vec4(1.0);
-
-uniform vec4 dust_color_1: source_color = vec4(1.0);
-uniform vec4 dust_color_2: source_color = vec4(1.0);
-
-uniform vec4 steel_color_1: source_color = vec4(1.0);
-uniform vec4 steel_color_2: source_color = vec4(1.0);
-
-uniform vec4 wood_color_1: source_color = vec4(1.0);
-
-uniform vec4 acid_color_1: source_color = vec4(1.0);
-uniform vec4 acid_color_2: source_color = vec4(1.0);
-uniform vec4 acid_color_3: source_color = vec4(1.0);
-
-uniform vec4 acid_gas_color_1: source_color = vec4(1.0);
-uniform vec4 acid_gas_color_2: source_color = vec4(1.0);
-
-uniform vec4 fairy_color_1: source_color = vec4(1.0);
-
-uniform vec4 b_fire_color_1: source_color = vec4(1.0);
-uniform vec4 b_fire_color_2: source_color = vec4(1.0);
-uniform vec4 b_fire_color_3: source_color = vec4(1.0);
-
-uniform vec4 laser_color_1: source_color = vec4(1.0);
-uniform vec4 laser_color_2: source_color = vec4(1.0);
-
-uniform vec4 air_color_1: source_color = vec4(1.0);
-uniform vec4 air_color_2: source_color = vec4(1.0);
-
-uniform vec4 crystal_color_1: source_color = vec4(1.0);
-uniform vec4 crystal_color_2: source_color = vec4(1.0);
-
-uniform vec4 black_hole_color_1: source_color = vec4(1.0);
-uniform vec4 black_hole_color_2: source_color = vec4(1.0);
-
-uniform vec4 oil_color_1: source_color = vec4(1.0);
-uniform vec4 oil_color_2: source_color = vec4(1.0);
-uniform vec4 oil_color_3: source_color = vec4(1.0);
-
-uniform vec4 urchin_color_1: source_color = vec4(1.0);
-uniform sampler2D dragon_gradient: source_color;
-uniform sampler2D critter_gradient: source_color;
-
-uniform vec4 uranium_color_1: source_color = vec4(1.0);
-uniform vec4 uranium_color_2: source_color = vec4(1.0);
-
-uniform sampler2D nuclear_explode_gradient: source_color;
-
-uniform vec4 neutron_color_1: source_color = vec4(1.0);
-uniform vec4 neutron_color_2: source_color = vec4(1.0);
-
-uniform sampler2D lightning_gradient: source_color;
-uniform sampler2D plasma_gradient: source_color;
-
-uniform sampler2D electron_gradient: source_color;
-uniform sampler2D electron_plasma_gradient: source_color;
-
-uniform vec4 hurricane_color_1: source_color = vec4(1.0);
-uniform vec4 hurricane_color_2: source_color = vec4(1.0);
-
-uniform vec4 powder_color_2: source_color = vec4(1.0);
-uniform vec4 powder_color_3: source_color = vec4(1.0);
-
-uniform sampler2D p_explode_gradient: source_color;
-
-uniform sampler2D h_explode_gradient: source_color;
-uniform sampler2D h_gas_gradient: source_color;
-
-uniform vec4 penguin_color_1: source_color = vec4(1.0);
-
-uniform vec4 gold_color_1: source_color = vec4(1.0);
-uniform vec4 gold_color_2: source_color = vec4(1.0);
-uniform vec4 gold_color_3: source_color = vec4(1.0);
+uniform sampler2D water_texture: source_color, repeat_enable;
 
 // Short hand of shifting the range [-1, 1] to [0, 1] since the negative return 
 // values of sin/cos can cause errors
@@ -160,7 +69,10 @@ vec4 soft_sample(sampler2D tex, vec2 uv) {
     for(int y = -1; y <= 1; y++) {
 		for(int x = -1; x <= 1; x++) {
 			vec2 pixel_off = vec2(float(x), float(y));
-			col += texture(tex, uv + pixel_off * pixel_size);
+			uv += pixel_off * pixel_size;
+			uv.x -= floor(uv.x);
+			uv.y -= floor(uv.y);
+			col += texture(tex, uv);
 		}
 	}
 	return col / 9.0;
@@ -207,351 +119,26 @@ void fragment() {
 	int pY = int(round(floor(UV.y * float(height) / float(px_scale))));
 	vec2 PUV = vec2(float(pX) / (float(width) / float(px_scale)), float(pY) / (float(height) / float(px_scale)));
 	
-	switch (id) {
-		case 0: 
-			vec2 offset = vec2(shift(sin(TIME / 64.0)) / 2.0, shift(cos(TIME / 80.0)) / 2.0);
-			vec4 a = soft_sample(sky_texture, screen_ratio(SCREEN_PIXEL_SIZE) * offset + screen_ratio(SCREEN_PIXEL_SIZE) * 0.5 * PUV); 
-			vec4 b = soft_sample(sky_texture2, screen_ratio(SCREEN_PIXEL_SIZE) * offset + screen_ratio(SCREEN_PIXEL_SIZE) * 0.5 * PUV); 
-			vec4 c = soft_sample(sky_texture3, screen_ratio(SCREEN_PIXEL_SIZE) * offset + screen_ratio(SCREEN_PIXEL_SIZE) * 0.5 * PUV); 
-			
-			if (day >= 0.2)
-				COLOR = a * ((day - 0.2) / 0.1) + c * (1.0 - (day - 0.2) / 0.1);
-			else if (day >= 0.1)
-				COLOR = c * ((day - 0.1) / 0.1) + b * (1.0 - (day - 0.1) / 0.1);
-			else
-				COLOR = b * ((day - 0.0) / 0.1) + a * (1.0 - (day - 0.0) / 0.1); 
-			break;
-		case 1: COLOR = sand_color_1; break;
-		case 2: COLOR = rock_color_1; break;
-		case 3: // Water
-			// I am honestly not entirely sure how this code works, but it is esentially using
-			// sin and cos of different scales of TIME to create wavey effects
-			vec2 ratio = screen_ratio(SCREEN_PIXEL_SIZE);
-			vec2 texCoord = vec2(2.0*PUV.x + sin(TIME / 32.0), 2.0*PUV.y + sin(TIME / 32.0));
-			
-			float x = soft_sample(water_noise, ratio * texCoord).r * (PUV.x + PUV.y + sin(PUV.x / 4.0) * 2.0 + sin(TIME / 2.0));
-			float y = shift(cos(sin(3.0 * PUV.x + sin(TIME / 16.0)) * 16.0 * PUV.x + PI * x + PUV.y * 8.0));
-			y = abs(y - 0.5);
-			
-			// Base color for the waves
-			COLOR = water_color_1 * y + water_color_2 * (1.0 - y);
-			
-			// Adding a layer of the noise texture and using match_amount to give shading to 
-			// other cells in water
-			float z = match_amount(TEXTURE, UV, id);
-			texCoord = vec2(1.5 * PUV.x + sin(TIME / 24.0), 1.5 * PUV.y + sin(TIME / 24.0));
-			COLOR = shift(cos(TIME / 4.0)) / 2.0 * soft_sample(water_noise, ratio * texCoord) + COLOR * z + water_color_3 * (1.0 - z);
-			break;
-		case 4: COLOR = polliwog_color_1; break;
-		case 5: // Fire, same effect as water
-			vec2 ratio = screen_ratio(SCREEN_PIXEL_SIZE);
-			vec2 texCoord = vec2(2.0*PUV.x + sin(TIME / 32.0), 2.0*PUV.y + sin(TIME / 32.0));
-			
-			float x = soft_sample(fire_noise, ratio * texCoord).r * (PUV.x + PUV.y + sin(PUV.x / 4.0) * 2.0 + sin(TIME / 2.0));
-			float y = shift(cos(sin(3.0 * PUV.x + TIME / 16.0) * 16.0 * PUV.x + PI * x * 2.0 + PUV.y * 8.0));
-			y = abs(y - 0.5);
-			
-			COLOR = fire_color_1 * y + fire_color_2 * (1.0 - y);
-			
-			float z = match_amount(TEXTURE, UV, id);
-			texCoord = vec2(2.0 * PUV.x + sin(TIME / 24.0), 2.0 * PUV.y + sin(TIME / 24.0));
-			
-			COLOR = shift(cos(TIME / 4.0)) * soft_sample(fire_noise, ratio * texCoord) + COLOR * z + fire_color_3 * (1.0 - z);
-			break;
-		case 6:
-			float y = match_amount(TEXTURE, UV, 6);
-			COLOR = smoke_color_1 * y + smoke_color_2 * (1.0 - y);
-			break;
-		case 7: COLOR = algae_color_1; break;
-		case 8: COLOR = sand_duck_color_1; break;
-		case 9:
-			float x = max(0.05, match_amount(TEXTURE, UV, 9));
-			COLOR = texture(explode_gradient, vec2(x, 0.5));
-			break;
-		case 10: 
-			float x = shift(sin(TIME));
-			COLOR = lead_azide_color_1 * x + lead_azide_color_2 * (1.0 - x); break;
-		case 11: COLOR = soil_color; break;
-		case 12: COLOR = seed_color_1; break;
-		case 13: COLOR = seed_color_2; break;
-		case 14: COLOR = grass_color_1; break;
-		case 15:
-			COLOR = soft_sample(marble_texture, PUV * screen_ratio(SCREEN_PIXEL_SIZE));
-			break;
-		case 16:
-			float x = match_amount(TEXTURE, UV, 16);
-			COLOR = dust_color_1 * x + dust_color_2 * (1.0 - x);
-			break;
-		case 17:
-			COLOR = PUV.y * steel_color_2 + (1.0 - PUV.y) * steel_color_1;
-			break;
-		case 18: COLOR = wood_color_1; break;
-		case 19: // Ice is virtually the same as water except we slow the waves and lighten it up 
-			vec2 ratio = screen_ratio(SCREEN_PIXEL_SIZE);
-			vec2 texCoord = vec2(2.0*PUV.x + sin(TIME / 128.0), 2.0*PUV.y + sin(TIME / 128.0));
-			
-			float x = soft_sample(water_noise, ratio * texCoord).r * (PUV.x + PUV.y + sin(PUV.x / 4.0) * 2.0 + sin(TIME / 2.0));
-			
-			float y = shift(cos(sin(3.0 * PUV.x + TIME / 64.0) * 16.0 * PUV.x + PI * x + PUV.y * 8.0));
-			y = abs(y - 0.5);
-			
-			COLOR = water_color_1 * y + 1.35 * water_color_2 * (1.0 - y);
-			
-			float z = match_amount(TEXTURE, UV, id);
-			
-			texCoord = vec2(1.5 * PUV.x + sin(TIME / 60.0), 1.5 * PUV.y + sin(TIME / 60.0));
-			COLOR = 1.8 * shift(cos(TIME / 32.0)) / 2.0 * soft_sample(water_noise, ratio * texCoord) + COLOR * z + water_color_3 * (1.0 - z);
-			break;
-		case 20: // Lava
-			vec2 ratio = screen_ratio(SCREEN_PIXEL_SIZE);
-			vec2 texCoord = vec2(2.0*PUV.x + sin(TIME / 48.0), 2.0*PUV.y + sin(TIME / 64.0));
-			
-			float x = soft_sample(fire_noise, ratio * texCoord).r * (PUV.x + PUV.y + sin(PUV.x / 4.0) * 2.0 + sin(TIME / 6.0));
-			float y = shift(cos(sin(3.0 * PUV.x + TIME / 32.0) * 16.0 * PUV.x + PI * x * 2.0 + PUV.y * 8.0));
-			y = abs(y - 0.5);
-			
-			COLOR = fire_color_1 * y + fire_color_2 * (1.0 - y);
-			
-			float z = match_amount(TEXTURE, UV, id);
-			
-			texCoord = vec2(2.0 * PUV.x + sin(TIME / 64.0), 2.0 * PUV.y + sin(TIME / 64.0));
-			COLOR = shift(cos(TIME / 9.0)) * soft_sample(fire_noise, ratio * texCoord) + COLOR * z + fire_color_3 * (1.0 - z);
-			break;
-		case 21: // Acid
-			vec2 ratio = screen_ratio(SCREEN_PIXEL_SIZE);
-			vec2 texCoord = vec2(2.0*PUV.x + sin(TIME / 48.0), 2.0*PUV.y + sin(TIME / 64.0));
-			
-			float x = soft_sample(water_noise, ratio * texCoord).r * (PUV.x + PUV.y + sin(PUV.x / 4.0) * 2.0 + sin(TIME / 2.0));
-			
-			float y = shift(cos(sin(3.0 * PUV.x + TIME / 32.0) * 16.0 * PUV.x + PI * x + PUV.y * 8.0));
-			y = abs(y - 0.5);
-			
-			COLOR = acid_color_1 * y + acid_color_2 * (1.0 - y);
-			
-			float z = match_amount(TEXTURE, UV, id);
-			
-			texCoord = vec2(1.5 * PUV.x + sin(TIME / 32.0), 1.5 * PUV.y + sin(TIME / 48.0));
-			COLOR = shift(cos(TIME / 4.0)) / 2.0 * soft_sample(water_noise, ratio * texCoord) + COLOR * z + acid_color_3 * (1.0 - z);
-			break;
-		case 22:
-			float y = match_amount(TEXTURE, UV, 22);
-			COLOR = acid_gas_color_1 * y + acid_gas_color_2 * (1.0 - y);
-			break;
-		case 23: COLOR = fairy_color_1; break;
-		case 24: // Blue fire
-			vec2 ratio = screen_ratio(SCREEN_PIXEL_SIZE);
-			vec2 texCoord = vec2(2.0*PUV.x + sin(TIME / 32.0), 2.0*PUV.y + sin(TIME / 32.0));
-			
-			float x = soft_sample(fire_noise, ratio * texCoord).r * (PUV.x + PUV.y + sin(PUV.x / 4.0) * 2.0 + sin(TIME / 2.0));
-			float y = shift(cos(sin(3.0 * PUV.x + TIME / 16.0) * 16.0 * PUV.x + PI * x * 2.0 + PUV.y * 8.0));
-			y = abs(y - 0.5);
-			
-			COLOR = b_fire_color_1 * y + b_fire_color_2 * (1.0 - y);
-			
-			float z = match_amount(TEXTURE, UV, id);
-			
-			texCoord = vec2(2.0 * PUV.x + sin(TIME / 24.0), 2.0 * PUV.y + sin(TIME / 24.0));
-			COLOR = shift(cos(TIME / 4.0)) * soft_sample(fire_noise, ratio * texCoord) + COLOR * z + b_fire_color_3 * (1.0 - z);
-			break;
-		case 25: // Glass
-			vec2 ratio = screen_ratio(SCREEN_PIXEL_SIZE);
-			float dif = 1.0 - abs(PUV.x + PUV.y - abs(sin(TIME / 4.0)));
-			if (dif < 0.0)
-				dif = 0.0;
-			COLOR = 0.5 * vec4(soft_sample(glass_texture, vec2(cos(TIME / 64.0), sin(TIME / 64.0)) + PUV * ratio).a * dif);
-			COLOR += 0.5 * vec4(soft_sample(glass_texture, vec2(cos(TIME / 48.0), sin(TIME / 48.0)) + PUV * ratio).a * (1.0 - dif));
-			COLOR += vec4((sin(TIME / 42.0) + 1.0) / 8.0);
-			vec4 sky_reflection = vec4(0, 0, 0, 0);
-			vec2 offset = vec2(shift(sin(TIME / 64.0)) / 2.0, shift(cos(TIME / 80.0)) / 2.0);
-			vec4 a = soft_sample(sky_texture, screen_ratio(SCREEN_PIXEL_SIZE) * offset + screen_ratio(SCREEN_PIXEL_SIZE) * 0.5 * PUV); 
-			vec4 b = soft_sample(sky_texture2, screen_ratio(SCREEN_PIXEL_SIZE) * offset + screen_ratio(SCREEN_PIXEL_SIZE) * 0.5 * PUV); 
-			vec4 c = soft_sample(sky_texture3, screen_ratio(SCREEN_PIXEL_SIZE) * offset + screen_ratio(SCREEN_PIXEL_SIZE) * 0.5 * PUV); 
-			
-			if (day >= 0.2)
-				sky_reflection = a * ((day - 0.2) / 0.1) + c * (1.0 - (day - 0.2) / 0.1);
-			else if (day >= 0.1)
-				sky_reflection = c * ((day - 0.1) / 0.1) + b * (1.0 - (day - 0.1) / 0.1);
-			else
-				sky_reflection = b * ((day - 0.0) / 0.1) + a * (1.0 - (day - 0.0) / 0.1); 
-			COLOR += (0.25 + shift(sin(TIME/16.0)) / 2.0) * sky_reflection;
-			COLOR.a = 1.0;
-			
-			break;
-		case 26:
-			float y = match_amount(TEXTURE, UV, 26);
-			COLOR = laser_color_2 * y + laser_color_1 * (1.0 - y);
-			break;
-		case 27: // Crystal
-			vec2 ratio = screen_ratio(SCREEN_PIXEL_SIZE);
-			vec4 col = soft_sample(crystal_texture, PUV * ratio);
-			float x = (col.r + col.g + col.b) / 3.0;
-			x = shift(sin(x)) * shift(sin(TIME / 3.0));
-			COLOR = crystal_color_1 * x + crystal_color_2 * (1.0 - x);
-			vec2 texCoord = vec2(1.5 * PUV.x + sin(TIME / 24.0), 1.5 * PUV.y + sin(TIME / 24.0));
-			
-			COLOR += x * shift(cos(TIME / 4.0)) * soft_sample(water_noise, ratio * texCoord);
-			break;
-		case 28:
-			float y = match_amount(TEXTURE, UV, 28);
-			COLOR = air_color_2 * y + air_color_1 * (1.0 - y);
-			break;
-		case 29:
-			float y = match_amount(TEXTURE, UV, 29);
-			COLOR = black_hole_color_2 * y + black_hole_color_1 * (1.0 - y);
-			break;
-		case 50: // Burning oil
-		case 30: // Oil
-			vec2 ratio = screen_ratio(SCREEN_PIXEL_SIZE);
-			vec2 texCoord = vec2(2.0*PUV.x + sin(TIME / 32.0), 2.0*PUV.y + sin(TIME / 32.0));
-			
-			float x = soft_sample(water_noise, ratio * texCoord).r * (PUV.x + PUV.y + sin(PUV.x / 4.0) * 2.0 + sin(TIME / 2.0));
-			float y = shift(cos(sin(3.0 * PUV.x + TIME / 16.0) * 16.0 * PUV.x + PI * x + PUV.y * 8.0));
-			y = abs(y - 0.5);
-			
-			COLOR = oil_color_1 * y + oil_color_2 * (1.0 - y);
-			
-			float z = match_amount(TEXTURE, UV, id);
-			
-			vec2 texCoord2 = vec2(1.5 * PUV.x + sin(TIME / 24.0), 1.5 * PUV.y + sin(TIME / 24.0));
-			
-			COLOR = shift(cos(TIME / 4.0)) / 2.0 * soft_sample(water_noise, ratio * texCoord2) + COLOR * z + oil_color_3 * (1.0 - z);
-			break;
-		case 31: COLOR = urchin_color_1; break;
-		case 32:
-			float x = max(0.05, match_amount(TEXTURE, UV, 32));
-			COLOR = texture(dragon_gradient, vec2(x, 0.5));
-			break;
-		case 33:
-			float x = max(0.05, match_amount(TEXTURE, UV, 33));
-			COLOR = texture(critter_gradient, vec2(x, 0.5));
-			break;
-		case 34:
-			float x = max(0.05, match_amount(TEXTURE, UV, 34));
-			COLOR = texture(nuclear_explode_gradient, vec2(x, 0.5));
-			break;
-		case 35:
-			float x = shift(sin(TIME));
-			COLOR = uranium_color_1 * x + uranium_color_2 * (1.0 - x); break;
-		case 36:
-			float y = match_amount(TEXTURE, UV, 36);
-			COLOR = neutron_color_2 * y + neutron_color_1 * (1.0 - y);
-			break;
-		case 37:
-			float x = max(0.05, match_amount(TEXTURE, UV, 37));
-			COLOR = texture(lightning_gradient, vec2(x, 0.5));
-			break;
-		case 38:
-			float x = max(0.05, match_amount(TEXTURE, UV, 38));
-			COLOR = texture(plasma_gradient, vec2(x, 0.5));
-			break;
-		case 39:
-			float x = max(0.05, match_amount(TEXTURE, UV, 39));
-			COLOR = texture(electron_gradient, vec2(x, 0.5));
-			break;
-		case 40:
-			float x = max(0.05, match_amount(TEXTURE, UV, 40));
-			COLOR = texture(electron_plasma_gradient, vec2(x, 0.5));
-			break;
-		case 41:
-			float y = match_amount(TEXTURE, UV, 41);
-			COLOR = hurricane_color_2 * y + hurricane_color_1 * (1.0 - y);
-			break;
-		case 42:
-			float p1 = cos(floor(UV.x * float(width / px_scale)));
-			float p2 = cos(floor(UV.y * float(height / px_scale)));
-			
-			float z = float(floatBitsToInt(12312.4324143 + p1 * 2134904234234323.21332421 * p2 * 392342342324892.3242341) & 0xFF) / float(0xFF);
-			if (z < 0.5)
-				z += 0.5;
-			vec3 col = hue_shift(vec3(z, 0.2, 1.0), shift(cos(PUV.y)) * shift(sin(8.0 * PUV.x * sin(TIME / 12.0))) * shift(sin(z)) * 2.0 * PI);
-			COLOR = vec4(col.r, col.g, col.b, 1.0);
-			break;
-		case 43: 
-			float p1 = cos(floor(UV.x * float(width / px_scale)));
-			float p2 = cos(floor(UV.y * float(height / px_scale)));
-			
-			float z = float(floatBitsToInt(12312.4324143 + p1 * 2134904234234323.21332421 * p2 * 392342342324892.3242341) & 0xFF) / float(0xFF);
-			if (z < 0.5)
-				z += 0.5;
-			vec3 col = hue_shift(vec3(z, 0.0, 1.0), shift(cos(PUV.y)) * shift(sin(8.0 * PUV.x * sin(TIME / 12.0))) * shift(sin(z)) * 2.0 * PI);
-			vec4 powder_color = vec4(col.r, col.g, col.b, 1.0) / 2.5;
-			
-			vec2 ratio = screen_ratio(SCREEN_PIXEL_SIZE);
-			vec2 texCoord = vec2(2.0*PUV.x + sin(TIME / 32.0), 2.0*PUV.y + sin(TIME / 32.0));
-			
-			float x = soft_sample(water_noise, ratio * texCoord).r * (PUV.x + PUV.y + sin(PUV.x / 4.0) * 2.0 + sin(TIME / 2.0));
-			float y = shift(cos(sin(3.0 * PUV.x + TIME / 16.0) * 16.0 * PUV.x + PI * x + PUV.y * 8.0));
-			y = abs(y - 0.5);
-			
-			COLOR = powder_color * y + powder_color_2 * (1.0 - y);
-			
-			z = match_amount(TEXTURE, UV, id);
-			
-			vec2 texCoord2 = vec2(1.5 * PUV.x + sin(TIME / 24.0), 1.5 * PUV.y + sin(TIME / 24.0));
-			
-			COLOR = shift(cos(TIME / 4.0)) / 2.0 * soft_sample(water_noise, ratio * texCoord2) + COLOR * z + powder_color_3 * (1.0 - z);
-			break;
-		case 44:
-			vec2 ratio = screen_ratio(SCREEN_PIXEL_SIZE);
-			vec2 texCoord = vec2(2.0*PUV.x + sin(TIME / 32.0), 2.0*PUV.y + sin(TIME / 32.0));
-			
-			float x = soft_sample(water_noise, ratio * texCoord).r * (PUV.x + PUV.y + sin(PUV.x / 4.0) * 3.0 + sin(TIME / 1.5));
-			
-			float y = shift(cos(sin(4.0 * PUV.x + TIME / 12.0) * 22.0 * PUV.x + PI * x + PUV.y * 12.0));
-			y = abs(y - 0.5);
-			
-			COLOR = PUV.y * y * steel_color_1 + steel_color_1 * (1.0 - PUV.y) * (1.0 - y);
-			
-			float z = match_amount(TEXTURE, UV, id);
-			
-			texCoord = vec2(1.5 * PUV.x + sin(TIME / 16.0), 1.5 * PUV.y + sin(TIME / 16.0));
-			COLOR = shift(cos(TIME / 3.0)) / 2.0 * soft_sample(water_noise, ratio * texCoord) + COLOR * z + vec4(1.0) * (1.0 - z);
-			break;
-		case 45:
-			float p1 = cos(floor(UV.x * float(width / px_scale)));
-			float p2 = cos(floor(UV.y * float(height / px_scale)));
-			// Random, predictable number generator
-			float z = float(floatBitsToInt(12312.4324143 + p1 * 2134904234234323.21332421 * p2 * 392342342324892.3242341) & 0xFF) / float(0xFF);
-			float x  = shift(cos(PUV.y)) * shift(sin(16.0 * PUV.x * sin(TIME / 5.0))) * shift(sin(z)) * (1.0 + shift(sin(TIME)));
-			x += z / 4.0;
-			COLOR = steel_color_1 * x + steel_color_2 * (1.0 - x);
-			break;
-		case 46:
-			float x = max(0.05, match_amount(TEXTURE, UV, 46));
-			COLOR = texture(p_explode_gradient, vec2(x, 0.5));
-			break;
-		case 47:
-			float x = max(0.05, match_amount(TEXTURE, UV, 47));
-			COLOR = texture(h_gas_gradient, vec2(x, 0.5));
-			break;
-		case 48:
-			float x = max(0.05, match_amount(TEXTURE, UV, 48));
-			COLOR = texture(h_explode_gradient, vec2(x, 0.5));
-			break;
-		case 49: COLOR = penguin_color_1; break;
-		case 51:
-			vec2 ratio = screen_ratio(SCREEN_PIXEL_SIZE);
-			vec4 col = soft_sample(gold_texture, PUV * ratio);
-			float x = (col.r + col.g + col.b) / 3.0;
-			x = shift(sin(x)) * shift(sin(TIME / 3.0));
-			COLOR = gold_color_1 * x + gold_color_2 * (1.0 - x);
-			vec2 texCoord = vec2(1.5 * PUV.x + sin(TIME / 24.0), 1.5 * PUV.y + sin(TIME / 24.0));
-			COLOR += 0.2 * (gold_color_1 * PUV.y + gold_color_2 * (1.0 - PUV.y));
-			COLOR += x * shift(cos(TIME / 4.0)) * soft_sample(water_noise, ratio * texCoord);
-			break;
-		case 52:
-			vec2 ratio = screen_ratio(SCREEN_PIXEL_SIZE);
-			vec2 texCoord = vec2(2.0*PUV.x + sin(TIME / 80.0), 2.0*PUV.y + sin(TIME / 80.0));
-			
-			float x = soft_sample(water_noise, ratio * texCoord).r * (PUV.x + PUV.y + sin(PUV.x / 4.0) * 2.0 + sin(TIME / 7.0));
-			float y = shift(cos(sin(3.0 * PUV.x + sin(TIME / 48.0)) * 16.0 * PUV.x + PI * x + PUV.y * 8.0));
-			y = abs(y - 0.5);
-			
-			COLOR = gold_color_1 * y + gold_color_2 * (1.0 - y);
-			COLOR += 0.2 * (gold_color_1 * PUV.y + gold_color_2 * (1.0 - PUV.y));
-			float z = match_amount(TEXTURE, UV, id);
-			texCoord = vec2(1.5 * PUV.x + sin(TIME / 4824.0), 1.5 * PUV.y + sin(TIME / 48.0));
-			COLOR = shift(cos(TIME / 16.0)) / 2.0 * soft_sample(water_noise, ratio * texCoord) * soft_sample(gold_texture, ratio * texCoord) + COLOR * z + gold_color_3 * (1.0 - z);
-			break;
+	vec3 col = vec3(0.0);
+	if (fluid_id_match[id] != 0) {
+		int i = fluid_id_match[id] - 1;
+		vec2 ratio = screen_ratio(SCREEN_PIXEL_SIZE);
+		vec2 texCoord = vec2(noise_scale[i] * PUV.x + sin(TIME / noise_speed[i]), noise_scale[i] * PUV.y + sin(TIME / noise_speed[i]));
+		float x = soft_sample(water_texture, ratio * texCoord).r * (PUV.x + PUV.y + sin(PUV.x / current_size[i]) * 2.0 + sin(TIME / wave_cycle[i]));
+		float y = abs(shift(cos(sin(wave_density[i] * PUV.x + sin(TIME / contraction_size[i])) * 16.0 * PUV.x + PI * x + PUV.y * 8.0)) - 0.5);
+		float z = match_amount(TEXTURE, UV, id);
+		col = color_a[i].rgb * y + color_b[i].rgb * (1.0 - y);
+		texCoord = vec2(shimmer_density[i] * PUV.x + sin(TIME / shimmer_speed[i]), shimmer_density[i] * PUV.y + sin(TIME / shimmer_speed[i]));
+		col = shift(cos(TIME / shimmer_cycle[i])) * shimmer_opacity[i] * soft_sample(water_texture, ratio * texCoord).rgb + col * z + color_c[i] * (1.0 - z);
+	} else if (flat_color_id_match[id] != 0) {
+		col = flat_color[flat_color_id_match[id] - 1];
+	} else if (gradient_id_match[id] != 0) {
+		float x = match_amount(TEXTURE, UV, id);
+		int i = gradient_id_match[id] - 1;
+		col = gradient_color_a[i] * x + gradient_color_b[i] * (1.0 - x);
+	} else {
+		col = COLOR.rgb;
 	}
+	COLOR = vec4(col.r, col.g, col.b, 1.0);
+	
 }

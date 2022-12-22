@@ -1,0 +1,8 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://ck64yrw1jcemx"]
+
+[ext_resource type="Script" path="res://ui/canvas/elements/flat_color.gd" id="1_f074c"]
+
+[resource]
+script = ExtResource("1_f074c")
+color = Color(0.278431, 0.109804, 0.109804, 1)
+id = 2

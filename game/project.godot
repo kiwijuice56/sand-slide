@@ -14,10 +14,30 @@ _global_script_classes=[{
 "language": &"GDScript",
 "path": "res://ui/element_selector/element_selector.gd"
 }, {
+"base": "Resource",
+"class": &"ElementVisual",
+"language": &"GDScript",
+"path": "res://ui/canvas/elements/element_visual.gd"
+}, {
+"base": "ElementVisual",
+"class": &"FlatColor",
+"language": &"GDScript",
+"path": "res://ui/canvas/elements/flat_color.gd"
+}, {
+"base": "ElementVisual",
+"class": &"Fluid",
+"language": &"GDScript",
+"path": "res://ui/canvas/elements/fluid.gd"
+}, {
 "base": "Label",
 "class": &"FpsLabel",
 "language": &"GDScript",
 "path": "res://ui/fps_label.gd"
+}, {
+"base": "ElementVisual",
+"class": &"GradientColor",
+"language": &"GDScript",
+"path": "res://ui/canvas/elements/gradient_color.gd"
 }, {
 "base": "Label",
 "class": &"HelpLabel",
@@ -66,7 +86,11 @@ _global_script_classes=[{
 }]
 _global_script_class_icons={
 "ElementSelector": "",
+"ElementVisual": "",
+"FlatColor": "",
+"Fluid": "",
 "FpsLabel": "",
+"GradientColor": "",
 "HelpLabel": "",
 "Main": "",
 "SandCanvas": "",
@@ -94,6 +118,7 @@ config/version="1.2"
 
 window/size/viewport_width=1000
 window/size/viewport_height=600
+window/handheld/orientation=1
 window/stretch/aspect="ignore"
 
 [input]
@@ -122,5 +147,4 @@ toggle_fps={
 
 [rendering]
 
-renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
