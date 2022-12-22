@@ -1,0 +1,21 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://ydmrv06jvtoo"]
+
+[ext_resource type="Script" path="res://ui/canvas/elements/fluid.gd" id="1_xt043"]
+
+[resource]
+script = ExtResource("1_xt043")
+noise_texture = 0
+color_a = Color(1, 0.827451, 0, 1)
+color_b = Color(0.988235, 0.486275, 0.168627, 1)
+color_c = Color(0.729412, 0, 0.0117647, 1)
+noise_scale = 0.5
+noise_speed = 4.0
+current_size = 16.0
+wave_cycle = 3.0
+contraction_size = 16.0
+wave_density = 2.0
+shimmer_speed = 4.0
+shimmer_density = 1.5
+shimmer_opacity = 0.9
+shimmer_cycle = 0.5
+id = 5

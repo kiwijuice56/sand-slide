@@ -11,7 +11,6 @@ class_name SandCanvas
 signal mouse_pressed(row, col, is_left)
 
 func initialize_elements() -> void:
-	pass
 	element_materials = []
 	var dir: DirAccess = DirAccess.open(element_folder_path)
 	for file in dir.get_files():
@@ -20,7 +19,7 @@ func initialize_elements() -> void:
 		element_materials.append(ResourceLoader.load("%s/%s" % [dir.get_current_dir(), file]))
 
 func _ready() -> void:
-	# initialize_elements()
+	#initialize_elements()
 	material = ShaderMaterial.new()
 	material.shader = preload("res://ui/canvas/element_painter.gdshader")
 	texture = ImageTexture.new()

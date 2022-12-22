@@ -116,10 +116,11 @@ config/version="1.2"
 
 [display]
 
-window/size/viewport_width=1000
-window/size/viewport_height=600
+window/size/viewport_width=500
+window/size/viewport_height=700
 window/handheld/orientation=1
 window/stretch/aspect="ignore"
+window/stretch/scale=2.0
 
 [input]
 

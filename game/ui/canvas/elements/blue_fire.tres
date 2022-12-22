@@ -1,21 +1,21 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://cds4k4ta4celb"]
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://beom8xwatrpgw"]
 
-[ext_resource type="Script" path="res://ui/canvas/elements/fluid.gd" id="1_ujkl6"]
+[ext_resource type="Script" path="res://ui/canvas/elements/fluid.gd" id="1_86k37"]
 
 [resource]
-script = ExtResource("1_ujkl6")
+script = ExtResource("1_86k37")
 noise_texture = 0
 color_a = Color(0.145098, 0.337255, 0.980392, 1)
 color_b = Color(0.14902, 0.682353, 0.929412, 1)
 color_c = Color(0.105882, 0.145098, 0.537255, 1)
 noise_scale = 2.0
-noise_speed = 4.0
-current_size = 24.0
+noise_speed = 15.0
+current_size = 16.0
 wave_cycle = 3.0
 contraction_size = 16.0
 wave_density = 2.0
 shimmer_speed = 24.0
 shimmer_density = 1.5
 shimmer_opacity = 0.5
-shimmer_cycle = 2.2
+shimmer_cycle = 2.0
 id = 3
