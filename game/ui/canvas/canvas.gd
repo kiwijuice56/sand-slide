@@ -19,7 +19,7 @@ func initialize_elements() -> void:
 		element_materials.append(ResourceLoader.load("%s/%s" % [dir.get_current_dir(), file]))
 
 func _ready() -> void:
-	#initialize_elements()
+	initialize_elements()
 	material = ShaderMaterial.new()
 	material.shader = preload("res://ui/canvas/element_painter.gdshader")
 	texture = ImageTexture.new()
@@ -53,7 +53,7 @@ func _ready() -> void:
 	for _i in range(54):
 		flat_params.append(Vector3())
 	
-	for _i in range(2):
+	for _i in range(8):
 		var param := []
 		for _j in range(19):
 			param.append(Vector3())
@@ -86,6 +86,12 @@ func _ready() -> void:
 		if mat is GradientColor:
 			gradient_params[0][gid] = Vector3(mat.color_a.r, mat.color_a.g, mat.color_a.b)
 			gradient_params[1][gid] = Vector3(mat.color_b.r, mat.color_b.g, mat.color_b.b)
+			gradient_params[2][gid] = Vector3(mat.color_c.r, mat.color_c.g, mat.color_c.b)
+			gradient_params[3][gid] = Vector3(mat.color_d.r, mat.color_d.g, mat.color_d.b)
+			gradient_params[4][gid] = Vector3(mat.color_e.r, mat.color_e.g, mat.color_e.b)
+			gradient_params[5][gid] = mat.offset_1
+			gradient_params[6][gid] = mat.offset_2
+			gradient_params[7][gid] = mat.offset_3
 			gid += 1
 			gradient_ids[mat.id] = gid 
 	get_material().set_shader_parameter("fluid_id_match", fluid_ids)
@@ -110,6 +116,12 @@ func _ready() -> void:
 	
 	get_material().set_shader_parameter("gradient_color_a", gradient_params[0])
 	get_material().set_shader_parameter("gradient_color_b", gradient_params[1])
+	get_material().set_shader_parameter("gradient_color_c", gradient_params[2])
+	get_material().set_shader_parameter("gradient_color_d", gradient_params[3])
+	get_material().set_shader_parameter("gradient_color_e", gradient_params[4])
+	get_material().set_shader_parameter("gradient_offset_1", gradient_params[5])
+	get_material().set_shader_parameter("gradient_offset_2", gradient_params[6])
+	get_material().set_shader_parameter("gradient_offset_3", gradient_params[7])
 	
 	get_material().set_shader_parameter("water_texture", preload("res://ui/canvas/elements/textures/water_noise.png"))
 

@@ -1,10 +1,5 @@
 shader_type canvas_item;
 
-// Each element defines its uniforms for colors, textures, etc. and uses them to 
-// render itself. The parameters can be configured at canvas/element_painter.tres
-
-// This code is not optimal or modular, but convenient to quickly add elements
-
 uniform int width = 1000;
 uniform int height = 800;
 uniform int px_scale = 4;
@@ -15,9 +10,15 @@ uniform vec3[13] flat_color;
 uniform int[53] gradient_id_match;
 uniform vec3[19] gradient_color_a;
 uniform vec3[19] gradient_color_b;
+uniform vec3[19] gradient_color_c;
+uniform vec3[19] gradient_color_d;
+uniform vec3[19] gradient_color_e;
+
+uniform float[19] gradient_offset_1;
+uniform float[19] gradient_offset_2;
+uniform float[19] gradient_offset_3;
 
 uniform int[53] fluid_id_match;
-
 uniform vec3[10] color_a;
 uniform vec3[10] color_b;
 uniform vec3[10] color_c;
@@ -33,12 +34,6 @@ uniform float[10] shimmer_opacity;
 uniform float[10] shimmer_cycle;
 
 uniform sampler2D water_texture: source_color, repeat_enable;
-
-// Short hand of shifting the range [-1, 1] to [0, 1] since the negative return 
-// values of sin/cos can cause errors
-float shift(float x) {
-	return (x + 1.0) / 2.0;
-}
 
 // Returns a value [0, 1] of the saturation of cells given_id arround the pixel
 // at uv. Returns 0 when no cells of given_id are touching the 
@@ -125,20 +120,20 @@ void fragment() {
 		vec2 ratio = screen_ratio(SCREEN_PIXEL_SIZE);
 		vec2 texCoord = vec2(noise_scale[i] * PUV.x + sin(TIME / noise_speed[i]), noise_scale[i] * PUV.y + sin(TIME / noise_speed[i]));
 		float x = soft_sample(water_texture, ratio * texCoord).r * (PUV.x + PUV.y + sin(PUV.x / current_size[i]) * 2.0 + sin(TIME / wave_cycle[i]));
-		float y = abs(shift(cos(sin(wave_density[i] * PUV.x + sin(TIME / contraction_size[i])) * 16.0 * PUV.x + PI * x + PUV.y * 8.0)) - 0.5);
+		float y = abs((cos(sin(wave_density[i] * PUV.x + sin(TIME / contraction_size[i])) * 16.0 * PUV.x + PI * x + PUV.y * 8.0) + 1.0) / 2.0 - 0.5);
 		float z = match_amount(TEXTURE, UV, id);
 		col = color_a[i].rgb * y + color_b[i].rgb * (1.0 - y);
 		texCoord = vec2(shimmer_density[i] * PUV.x + sin(TIME / shimmer_speed[i]), shimmer_density[i] * PUV.y + sin(TIME / shimmer_speed[i]));
-		col = shift(cos(TIME / shimmer_cycle[i])) * shimmer_opacity[i] * soft_sample(water_texture, ratio * texCoord).rgb + col * z + color_c[i] * (1.0 - z);
+		col = (cos(TIME / shimmer_cycle[i]) + 1.0) / 2.0 * shimmer_opacity[i] * soft_sample(water_texture, ratio * texCoord).rgb + col * z + color_c[i] * (1.0 - z);
 	} else if (flat_color_id_match[id] != 0) {
 		col = flat_color[flat_color_id_match[id] - 1];
 	} else if (gradient_id_match[id] != 0) {
 		float x = match_amount(TEXTURE, UV, id);
 		int i = gradient_id_match[id] - 1;
-		col = gradient_color_a[i] * x + gradient_color_b[i] * (1.0 - x);
-	} else {
-		col = COLOR.rgb;
-	}
+		col = mix(gradient_color_a[i], gradient_color_b[i], smoothstep(0.0, gradient_offset_1[i], x));
+		col = mix(col, gradient_color_c[i], smoothstep(gradient_offset_1[i], gradient_offset_2[i], x));
+		col = mix(col, gradient_color_d[i], smoothstep(gradient_offset_2[i], gradient_offset_3[i], x));
+		col = mix(col, gradient_color_e[i], smoothstep(gradient_offset_3[i], 1.0, x));
+	} 
 	COLOR = vec4(col.r, col.g, col.b, 1.0);
-	
 }

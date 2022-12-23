@@ -13,8 +13,7 @@ signal exited
 @export var load_button: Button
 @export var back_button: Button
 @export var delete_button: Button
-@export var new_button: Button
-@export var new_file_name: TextEdit
+@export var new_file_name: LineEdit
 
 var selected_panel: SaveFilePanel
 
@@ -24,7 +23,7 @@ func _ready() -> void:
 	load_button.pressed.connect(_on_load_selected)
 	back_button.pressed.connect(_on_back_selected)
 	delete_button.pressed.connect(_on_delete_selected)
-	new_button.pressed.connect(_on_new_button_selected)
+	new_file_name.text_submitted.connect(_on_text_submitted)
 	
 	new_file_name.focus_entered.connect(deselect_panel)
 
@@ -53,9 +52,11 @@ func _on_delete_selected() -> void:
 	save_file_manager.delete_save_file(selected_panel.file)
 	refresh_panels()
 
-func _on_new_button_selected() -> void:
+func _on_text_submitted(text: String) -> void:
 	deselect_panel()
-	save_file_manager.create_save_file(new_file_name.text)
+	save_file_manager.create_save_file(text)
+	new_file_name.text = ""
+	new_file_name.release_focus()
 	refresh_panels()
 
 func enable_components() -> void:
