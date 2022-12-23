@@ -2,9 +2,9 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://411hddjsr572"
-path.s3tc="res://.godot/imported/marble.jpg-d59de990b5e31c571b40cb1d2d266f9c.s3tc.ctex"
-path.etc2="res://.godot/imported/marble.jpg-d59de990b5e31c571b40cb1d2d266f9c.etc2.ctex"
+uid="uid://b2er78i2yjm8w"
+path.s3tc="res://.godot/imported/crystal.jpg-05f1d8d206554be95274079e52c61851.s3tc.ctex"
+path.etc2="res://.godot/imported/crystal.jpg-05f1d8d206554be95274079e52c61851.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc", "etc2"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://ui/canvas/textures/marble.jpg"
-dest_files=["res://.godot/imported/marble.jpg-d59de990b5e31c571b40cb1d2d266f9c.s3tc.ctex", "res://.godot/imported/marble.jpg-d59de990b5e31c571b40cb1d2d266f9c.etc2.ctex"]
+source_file="res://ui/canvas/elements/textures/crystal.jpg"
+dest_files=["res://.godot/imported/crystal.jpg-05f1d8d206554be95274079e52c61851.s3tc.ctex", "res://.godot/imported/crystal.jpg-05f1d8d206554be95274079e52c61851.etc2.ctex"]
 
 [params]
 

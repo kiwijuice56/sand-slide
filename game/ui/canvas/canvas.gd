@@ -111,7 +111,7 @@ func _ready() -> void:
 	get_material().set_shader_parameter("gradient_color_a", gradient_params[0])
 	get_material().set_shader_parameter("gradient_color_b", gradient_params[1])
 	
-	get_material().set_shader_parameter("water_texture", preload("res://ui/canvas/textures/water_noise.png"))
+	get_material().set_shader_parameter("water_texture", preload("res://ui/canvas/elements/textures/water_noise.png"))
 
 func _resized() -> void:
 	get_material().set_shader_parameter("width", size.x)

@@ -23,7 +23,7 @@ const ELEMENT_INDEX = [
 var pause := false
 
 var sim: SandSimulation
-var brush_size: int = 6
+var brush_size: int = 12
 var selected_element: int = 1
 
 var draw_enabled: bool = false:
@@ -85,6 +85,7 @@ func clear() -> void:
 	for i in range(sim.get_height()):
 		for j in range(sim.get_width()):
 			sim.draw_cell(i, j, 0)
+	canvas.repaint(sim)
 
 func save_image(path: String) -> void:
 	canvas.texture.get_image().save_png(path)

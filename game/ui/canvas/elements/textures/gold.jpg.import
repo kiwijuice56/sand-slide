@@ -2,9 +2,9 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cec1m7ldlvbee"
-path.s3tc="res://.godot/imported/sky.jpg-5d160bc7e8d9c733e5e01fca032a701a.s3tc.ctex"
-path.etc2="res://.godot/imported/sky.jpg-5d160bc7e8d9c733e5e01fca032a701a.etc2.ctex"
+uid="uid://blln4xfttemer"
+path.s3tc="res://.godot/imported/gold.jpg-f1276605300eebf3c83a1a8a31f230fa.s3tc.ctex"
+path.etc2="res://.godot/imported/gold.jpg-f1276605300eebf3c83a1a8a31f230fa.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc", "etc2"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://ui/canvas/textures/sky.jpg"
-dest_files=["res://.godot/imported/sky.jpg-5d160bc7e8d9c733e5e01fca032a701a.s3tc.ctex", "res://.godot/imported/sky.jpg-5d160bc7e8d9c733e5e01fca032a701a.etc2.ctex"]
+source_file="res://ui/canvas/elements/textures/gold.jpg"
+dest_files=["res://.godot/imported/gold.jpg-f1276605300eebf3c83a1a8a31f230fa.s3tc.ctex", "res://.godot/imported/gold.jpg-f1276605300eebf3c83a1a8a31f230fa.etc2.ctex"]
 
 [params]
 

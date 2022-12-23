@@ -6,7 +6,7 @@ signal exited
 
 @export var save_file_panel: PackedScene
 
-@export var save_file_manager: Node
+@export var save_file_manager: SaveFileManager
 @export var save_file_container: VBoxContainer
 
 @export var save_button: Button

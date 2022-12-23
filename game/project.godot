@@ -74,6 +74,11 @@ _global_script_classes=[{
 "language": &"GDScript",
 "path": "res://ui/save_control/save_file_panel/save_file_panel.gd"
 }, {
+"base": "Control",
+"class": &"SettingsControl",
+"language": &"GDScript",
+"path": "res://ui/settings_control/settings_control.gd"
+}, {
 "base": "ColorRect",
 "class": &"SplashScreen",
 "language": &"GDScript",
@@ -98,6 +103,7 @@ _global_script_class_icons={
 "SaveFile": "",
 "SaveFileManager": "",
 "SaveFilePanel": "",
+"SettingsControl": "",
 "SplashScreen": "",
 "UI": ""
 }
@@ -112,15 +118,15 @@ boot_splash/show_image=false
 boot_splash/bg_color=Color(0, 0, 0, 1)
 config/icon="res://icon.png"
 config/windows_native_icon="res://favicon.ico"
-config/version="1.2"
+config/version="2.0"
 
 [display]
 
-window/size/viewport_width=500
-window/size/viewport_height=700
+window/size/viewport_width=600
+window/size/viewport_height=1024
 window/handheld/orientation=1
-window/stretch/aspect="ignore"
-window/stretch/scale=2.0
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
 
 [input]
 

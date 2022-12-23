@@ -2,9 +2,9 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cvk2wj7fw1xd8"
-path.s3tc="res://.godot/imported/sky2.jpg-00e50daccf429d5665eaea90d2191985.s3tc.ctex"
-path.etc2="res://.godot/imported/sky2.jpg-00e50daccf429d5665eaea90d2191985.etc2.ctex"
+uid="uid://txs1h1e3txo0"
+path.s3tc="res://.godot/imported/powder_noise.png-8a37b858ecd5e294939e1b29fe91751c.s3tc.ctex"
+path.etc2="res://.godot/imported/powder_noise.png-8a37b858ecd5e294939e1b29fe91751c.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc", "etc2"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://ui/canvas/textures/sky2.jpg"
-dest_files=["res://.godot/imported/sky2.jpg-00e50daccf429d5665eaea90d2191985.s3tc.ctex", "res://.godot/imported/sky2.jpg-00e50daccf429d5665eaea90d2191985.etc2.ctex"]
+source_file="res://ui/canvas/elements/textures/powder_noise.png"
+dest_files=["res://.godot/imported/powder_noise.png-8a37b858ecd5e294939e1b29fe91751c.s3tc.ctex", "res://.godot/imported/powder_noise.png-8a37b858ecd5e294939e1b29fe91751c.etc2.ctex"]
 
 [params]
 

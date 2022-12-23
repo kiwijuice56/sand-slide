@@ -2,9 +2,9 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c56vg7euqwhmj"
-path.s3tc="res://.godot/imported/sky3.jpg-064aecd0a18c58088c114f5e40dec76c.s3tc.ctex"
-path.etc2="res://.godot/imported/sky3.jpg-064aecd0a18c58088c114f5e40dec76c.etc2.ctex"
+uid="uid://7ulbs6l163vf"
+path.s3tc="res://.godot/imported/glass.png-b023b252bb49c14dc1b18d8fedd2c65c.s3tc.ctex"
+path.etc2="res://.godot/imported/glass.png-b023b252bb49c14dc1b18d8fedd2c65c.etc2.ctex"
 metadata={
 "imported_formats": ["s3tc", "etc2"],
 "vram_texture": true
@@ -12,8 +12,8 @@ metadata={
 
 [deps]
 
-source_file="res://ui/canvas/textures/sky3.jpg"
-dest_files=["res://.godot/imported/sky3.jpg-064aecd0a18c58088c114f5e40dec76c.s3tc.ctex", "res://.godot/imported/sky3.jpg-064aecd0a18c58088c114f5e40dec76c.etc2.ctex"]
+source_file="res://ui/canvas/elements/textures/glass.png"
+dest_files=["res://.godot/imported/glass.png-b023b252bb49c14dc1b18d8fedd2c65c.s3tc.ctex", "res://.godot/imported/glass.png-b023b252bb49c14dc1b18d8fedd2c65c.etc2.ctex"]
 
 [params]
 
