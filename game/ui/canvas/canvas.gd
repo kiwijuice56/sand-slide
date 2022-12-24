@@ -4,7 +4,7 @@ class_name SandCanvas
 
 # Draws data from the simulation onto an image for display
 
-@export var px_scale: int = 4
+@export var px_scale: int = 3
 @export var element_folder_path: String = "res://ui/canvas/elements/"
 @export var element_materials: Array[ElementVisual] = []
 
@@ -29,20 +29,25 @@ func _ready() -> void:
 	var fluid_ids := []
 	var flat_ids := []
 	var gradient_ids := []
+	var metal_ids := []
+	
 	for _i in range(64):
 		fluid_ids.append(0)
 		flat_ids.append(0)
 		gradient_ids.append(0)
+		metal_ids.append(0)
 	
 	# Left-most empty index of each category of arrays
 	var fid := 0
 	var aid := 0
 	var gid := 0
+	var mid := 0
 	
 	# Initialize the array for each parameter, for each category
 	var fluid_params := []
 	var flat_params := []
 	var gradient_params := []
+	var metal_params := []
 	
 	for _i in range(14):
 		var param := []
@@ -58,6 +63,12 @@ func _ready() -> void:
 		for _j in range(24):
 			param.append(Vector3())
 		gradient_params.append(param)
+	
+	for _i in range(2):
+		var param := []
+		for _j in range(24):
+			param.append(Vector3())
+		metal_params.append(param)
 	
 	# Load the arrays from data in each resource
 	for mat in element_materials:
@@ -94,9 +105,16 @@ func _ready() -> void:
 			gradient_params[7][gid] = mat.offset_3
 			gid += 1
 			gradient_ids[mat.id] = gid 
+		if mat is Metal:
+			metal_params[0][mid] = Vector3(mat.color_a.r, mat.color_a.g, mat.color_a.b)
+			metal_params[1][mid] = Vector3(mat.color_b.r, mat.color_b.g, mat.color_b.b)
+			mid += 1
+			metal_ids[mat.id] = mid 
+			
 	get_material().set_shader_parameter("fluid_id_match", fluid_ids)
 	get_material().set_shader_parameter("flat_color_id_match", flat_ids)
 	get_material().set_shader_parameter("gradient_id_match", gradient_ids)
+	get_material().set_shader_parameter("metal_id_match", metal_ids)
 	
 	get_material().set_shader_parameter("noise_scale", fluid_params[0])
 	get_material().set_shader_parameter("noise_speed", fluid_params[1])
@@ -124,12 +142,13 @@ func _ready() -> void:
 	get_material().set_shader_parameter("gradient_offset_2", gradient_params[6])
 	get_material().set_shader_parameter("gradient_offset_3", gradient_params[7])
 	
+	get_material().set_shader_parameter("metal_color_a", metal_params[0])
+	get_material().set_shader_parameter("metal_color_b", metal_params[1])
+	
 	# We have to initialize these things on a new material since godot 4 beta 9 crashes with uniform arrays :(
 	get_material().set_shader_parameter("water_texture", preload("res://ui/canvas/elements/textures/water_noise.png"))
 	get_material().set_shader_parameter("fire_texture", preload("res://ui/canvas/elements/textures/fire_noise.jpg"))
 	get_material().set_shader_parameter("crystal_texture", preload("res://ui/canvas/elements/textures/crystal.jpg"))
-	get_material().set_shader_parameter("glass_texture", preload("res://ui/canvas/elements/textures/glass.png"))
-	get_material().set_shader_parameter("marble_texture", preload("res://ui/canvas/elements/textures/marble.jpg"))
 
 func _resized() -> void:
 	get_material().set_shader_parameter("width", size.x)

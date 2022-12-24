@@ -1,0 +1,9 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://byh6auoc80dbw"]
+
+[ext_resource type="Script" path="res://ui/canvas/elements/types/metal.gd" id="1_cncil"]
+
+[resource]
+script = ExtResource("1_cncil")
+color_a = Color(0.937255, 0.937255, 0.937255, 1)
+color_b = Color(0.411765, 0.47451, 0.529412, 1)
+id = 17

@@ -34,14 +34,13 @@ uniform float[24] shimmer_density;
 uniform float[24] shimmer_opacity;
 uniform float[24] shimmer_cycle;
 
+uniform int[64] metal_id_match;
+uniform vec3[24] metal_color_a;
+uniform vec3[24] metal_color_b; 
+
 uniform sampler2D water_texture: source_color, repeat_enable;
 uniform sampler2D fire_texture: source_color, repeat_enable;
 uniform sampler2D crystal_texture: source_color, repeat_enable;
-uniform sampler2D glass_texture: source_color, repeat_enable;
-uniform sampler2D marble_texture: source_color, repeat_enable;
-
-const vec3 powder_color_2 = vec3(1.0);
-const vec3 powder_color_3 = vec3(1.0);
 
 // Returns a value [0, 1] of the saturation of cells given_id arround the pixel
 // at uv. Returns 0 when no cells of given_id are touching the 
@@ -62,16 +61,6 @@ float match_amount(sampler2D tex, vec2 uv, int given_id) {
 	return float(matching) / 8.0;
 }
 
-// Given the screen size in pixels (SCREEN_PIXEL_SIZE), returns the aspect ratio
-// to unstretch textures
-vec2 screen_ratio(vec2 ps) {
-	return (ps.x > ps.y) ? vec2(ps.y / ps.x, 1) : vec2(1, ps.x / ps.y);
-}
-
-float shift(float x) {
-	return (x + 1.0) / 2.0;
-}
-
 void fragment() {
 	// Since the SandSimulation saves the grid as an L8 texture, we can check
 	// the identity of a point by seeing how bright it is
@@ -87,7 +76,9 @@ void fragment() {
 	vec3 col = vec3(0.0);
 	if (fluid_id_match[id] != 0) {
 		int i = fluid_id_match[id] - 1;
-		vec2 ratio = screen_ratio(SCREEN_PIXEL_SIZE);
+		vec2 ratio = (SCREEN_PIXEL_SIZE.x > SCREEN_PIXEL_SIZE.y) ?
+			vec2(SCREEN_PIXEL_SIZE.y / SCREEN_PIXEL_SIZE.x, 1) : 
+			vec2(1, SCREEN_PIXEL_SIZE.x / SCREEN_PIXEL_SIZE.y);
 		vec2 texCoord = vec2(noise_scale[i] * PUV.x + sin(TIME / noise_speed[i]), noise_scale[i] * PUV.y + sin(TIME / noise_speed[i]));
 		
 		float x = PUV.x + PUV.y + sin(PUV.x / current_size[i]) * 2.0 + sin(TIME / wave_cycle[i]);
@@ -119,6 +110,9 @@ void fragment() {
 		col = mix(col, gradient_color_c[i], smoothstep(gradient_offset_1[i], gradient_offset_2[i], x));
 		col = mix(col, gradient_color_d[i], smoothstep(gradient_offset_2[i], gradient_offset_3[i], x));
 		col = mix(col, gradient_color_e[i], smoothstep(gradient_offset_3[i], 1.0, x));
-	} 
+	} else if (metal_id_match[id] != 0) {
+		int i = metal_id_match[id] - 1;
+		col = mix(metal_color_a[i], metal_color_b[i], PUV.y);
+	}
 	COLOR = vec4(col.r, col.g, col.b, 1.0);
 }

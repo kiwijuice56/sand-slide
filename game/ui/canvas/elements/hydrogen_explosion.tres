@@ -1,6 +1,6 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://cy3k0pjm67nye"]
+[gd_resource type="Resource" load_steps=2 format=3]
 
-[ext_resource type="Script" path="res://ui/canvas/elements/gradient_color.gd" id="1_2685n"]
+[ext_resource type="Script" path="res://ui/canvas/elements/types/gradient_color.gd" id="1_2685n"]
 
 [resource]
 script = ExtResource("1_2685n")

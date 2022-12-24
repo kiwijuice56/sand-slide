@@ -23,7 +23,7 @@ const ELEMENT_INDEX = [
 var pause := false
 
 var sim: SandSimulation
-var brush_size: int = 12
+var brush_size: int = 16
 var selected_element: int = 1
 
 var draw_enabled: bool = false:
