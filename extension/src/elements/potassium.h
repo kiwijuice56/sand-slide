@@ -7,11 +7,21 @@ class Potassium: public Element {
 public:
     const double FLAME = 1 / 64.0;
     const double WATER = 1 / 32.0;
+    const double PLASMA = 1 / 18.0;
     const double POWDER = 1 / 1.025;
 
     void process(SandSimulation *sim, int row, int col) override {
+        if (sim->randf() < PLASMA && (sim->touch_count(row, col, 38) > 0 || sim->touch_count(row, col, 40) > 0)) {
+            sim->grow(row + 1, col, 45, 38);
+            sim->grow(row - 1, col, 45, 38);
+            sim->grow(row, col - 1, 45, 38);
+            sim->grow(row, col + 1, 45, 38);
+            return;
+        }
+
         if (sim->randf() >= POWDER)
             return;
+
 
         if (sim->randf() < FLAME && sim->is_on_fire(row, col)) 
             sim->set_cell(row, col, 46);
@@ -28,11 +38,11 @@ public:
     }
 
     double get_density() override {
-        return 4.0;
+        return 6.0;
     }
 
     double get_explode_resistance() override {
-        return 0.1;
+        return 0.6;
     }
 
     double get_acid_resistance() override {

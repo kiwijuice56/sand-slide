@@ -12,7 +12,7 @@ public:
         if (sim->randf() >= POWDER)
             return;
         if (sim->randf() < FLAME && sim->is_on_fire(row, col)) {
-            sim->set_cell(row, col, 25);
+            sim->set_cell(row, col, 53);
             return;
         }
         sim->move_and_swap(row, col, row + 1, col);

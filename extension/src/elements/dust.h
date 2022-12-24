@@ -7,26 +7,28 @@
 class Dust: public Element {
 public:
     const double FLAME = 1.0 / 64;
-    const double PROCESS = 1.0 / 3;
+    const double PROCESS = 1.0 / 2;
+    const double FLY = 1.0 / 1.5;
     void process(SandSimulation *sim, int row, int col) override {
         if (sim->randf() < FLAME && sim->is_on_fire(row, col)) {
             sim->set_cell(row, col, 5);
             return;
         }
+        if (sim->randf() < FLY && sim->touch_count(row, col, 28) > 0) {
+            sim->move_and_swap(row, col, row - 2, col);
+        }
 
-        if (sim->randf() > PROCESS || !sim->in_bounds(row + 1, col) || sim->get_cell(row + 1, col) != 0) {
+        if (sim->randf() > PROCESS || !sim->in_bounds(row + 1, col) || sim->get_cell(row + 1, col) != 0) 
             return;
-        }
         int dir = (int) (sim->randf() * 3) - 1;
-        if (dir != 0) {
+        if (dir != 0) 
             sim->move_and_swap(row, col, row, col + dir);
-        } else {
+        else 
             sim->move_and_swap(row, col, row + 1, col);
-        }
     }
 
     double get_density() override {
-        return 0.5;
+        return 1.05;
     }
 
     double get_explode_resistance() override {

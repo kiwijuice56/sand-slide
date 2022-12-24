@@ -6,7 +6,7 @@
 class Air: public Element {
 public:
     const double DECAY = 1.0 / 360;
-    const double MOVE = 1.0 / 4;
+    const double MOVE = 1.0 / 3;
     const double FLAME = 1.0 / 16;
 
     void process(SandSimulation *sim, int row, int col) override {

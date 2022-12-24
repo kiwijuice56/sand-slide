@@ -7,7 +7,7 @@ class SandSimulation;
 
 class Ice: public Element {
 public:
-    const double GROW = 1.0 / 2000;
+    const double GROW = 1.0 / 1700;
     const double FLAME = 1.0 / 800;
 
     void process(SandSimulation *sim, int row, int col) override {
@@ -17,9 +17,8 @@ public:
             return;
         }
 
-        if (sim->randf() >= GROW) {
+        if (sim->randf() >= GROW) 
             return;
-        }
 
         // We need to empty this cell for ice branching checks
         sim->set_cell(row, col, 0);

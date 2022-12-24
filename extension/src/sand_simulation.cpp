@@ -7,7 +7,7 @@
 #include "elements/polliwog.h"
 #include "elements/fire.h"
 #include "elements/smoke.h"
-#include "elements/algae.h"
+#include "elements/algae_green.h"
 #include "elements/sandduck.h"
 #include "elements/explosion.h"
 #include "elements/lead_azide.h"
@@ -53,6 +53,9 @@
 #include "elements/burning_oil.h"
 #include "elements/gold.h"
 #include "elements/molten_gold.h"
+#include "elements/molten_glass.h"
+#include "elements/algae_red.h"
+#include "elements/algae_brown.h"
 
 #include <godot_cpp/core/class_db.hpp>
 
@@ -72,7 +75,7 @@ SandSimulation::SandSimulation() {
     elements.at(4) = new Polliwog();
     elements.at(5) = new Fire();
     elements.at(6) = new Smoke();
-    elements.at(7) = new Algae();
+    elements.at(7) = new AlgaeGreen();
     elements.at(8) = new SandDuck();
     elements.at(9) = new Explosion();
     elements.at(10) = new LeadAzide();
@@ -118,6 +121,9 @@ SandSimulation::SandSimulation() {
     elements.at(50) = new BurningOil();
     elements.at(51) = new Gold();
     elements.at(52) = new MoltenGold();
+    elements.at(53) = new MoltenGlass();
+    elements.at(54) = new AlgaeRed();
+    elements.at(55) = new AlgaeBrown();
 
     draw_data = PackedByteArray();
 
@@ -303,12 +309,12 @@ void SandSimulation::resize(int new_width, int new_height) {
     draw_data.fill(0);
 
     // Data has to be copied cell-by-cell since the dimensions of the vectors changed
-    for (int row = 0; row < std::min(new_height, height); row++) {
-        for (int col = 0; col < std::min(new_width, width); col++) {
-            cells.at(row * new_width + col) = temp.at(row * width + col);
-            draw_data.set(row * new_width + col, temp.at(row * width + col));
-            if (temp.at(row * width + col) != 0) 
-                chunks.at((row / chunk_size) * chunk_width + (col / chunk_size))++;
+    for (int row = height - 1, new_row = new_height - 1; row >= 0 && new_row >= 0; row--, new_row--) {
+        for (int col = 0, new_col = 0; col < width && new_col < new_width; col++, new_col++) {
+            cells.at(new_row * new_width + new_col) = temp.at(row * width + col);
+            draw_data.set(new_row * new_width + new_col, temp.at(row * width + col));
+            if (cells.at(new_row * new_width + new_col) != 0) 
+                chunks.at((new_row / chunk_size) * chunk_width + (new_col / chunk_size))++;
         }
     }
 

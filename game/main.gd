@@ -13,7 +13,7 @@ const ELEMENT_INDEX = [
 	"Uranium", "Neutron", "Lightning", "Plasma", "Electron", "StormPlasma",
 	"Hurricane", "Powder", "Liquid Powder", "Mercury", "Potassium",
 	"PExplosion", "Hydrogen", "HExplosion", "Penguin", "BurningOil",
-	"Gold"]
+	"Gold", "MoltenGlass", "AlgaeRed", "AlgaeBrown"]
 
 @export var save_file_manager: Node
 @export var canvas: TextureRect
@@ -69,10 +69,11 @@ func draw(center_row: int, center_col: int, draw_element: int, radius: int) -> v
 	if not sim.in_bounds(center_row, center_col):
 		return
 	var is_liquid := draw_element in [3, 5, 20, 21, 24, 28, 30, 37, 39, 41, 44, 47]
-	var is_life := draw_element in [4, 8, 23, 32, 33, 49]
+	var is_life := draw_element in [4, 8, 23, 31, 32, 33, 49]
 	for row in range(-radius, radius + 1):
 		for col in range(-radius, radius + 1):
 			if row*row + col*col < radius*radius and sim.in_bounds(row + center_row, col + center_col):
+				# Some life can't live too close, so they need to be randomly scattered
 				if is_life and randf() > 0.6:
 					continue
 				# Check if cell is empty when drawing a fluid

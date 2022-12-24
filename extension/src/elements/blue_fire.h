@@ -5,7 +5,7 @@
 
 class BlueFire: public Element {
 public:
-    const double DECAY = 1.0 / 460; 
+    const double DECAY = 1.0 / 400; 
     const double UP = 1.0 / 1.5;
     const double UP_BLOCK = 1.0 / 16;
 

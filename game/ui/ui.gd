@@ -30,6 +30,9 @@ func _ready() -> void:
 
 func _on_element_selected(element_name: String) -> void:
 	sim_holder.selected_element = sim_holder.ELEMENT_INDEX.find(element_name)
+	# Algae can be different colors!
+	if sim_holder.selected_element == 7:
+		sim_holder.selected_element = [7, 54, 55][randi() % 3]
 
 func _on_eraser_selected() -> void:
 	sim_holder.selected_element = 0

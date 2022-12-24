@@ -29,7 +29,7 @@ func _ready() -> void:
 	var fluid_ids := []
 	var flat_ids := []
 	var gradient_ids := []
-	for _i in range(53):
+	for _i in range(64):
 		fluid_ids.append(0)
 		flat_ids.append(0)
 		gradient_ids.append(0)
@@ -46,16 +46,16 @@ func _ready() -> void:
 	
 	for _i in range(14):
 		var param := []
-		for _j in range(10):
+		for _j in range(24):
 			param.append(0)
 		fluid_params.append(param)
 	
-	for _i in range(54):
+	for _i in range(24):
 		flat_params.append(Vector3())
 	
 	for _i in range(8):
 		var param := []
-		for _j in range(19):
+		for _j in range(24):
 			param.append(Vector3())
 		gradient_params.append(param)
 	
@@ -111,6 +111,7 @@ func _ready() -> void:
 	get_material().set_shader_parameter("color_a", fluid_params[10])
 	get_material().set_shader_parameter("color_b", fluid_params[11])
 	get_material().set_shader_parameter("color_c", fluid_params[12])
+	get_material().set_shader_parameter("noise_texture", fluid_params[13])
 	
 	get_material().set_shader_parameter("flat_color", flat_params)
 	
@@ -123,7 +124,12 @@ func _ready() -> void:
 	get_material().set_shader_parameter("gradient_offset_2", gradient_params[6])
 	get_material().set_shader_parameter("gradient_offset_3", gradient_params[7])
 	
+	# We have to initialize these things on a new material since godot 4 beta 9 crashes with uniform arrays :(
 	get_material().set_shader_parameter("water_texture", preload("res://ui/canvas/elements/textures/water_noise.png"))
+	get_material().set_shader_parameter("fire_texture", preload("res://ui/canvas/elements/textures/fire_noise.jpg"))
+	get_material().set_shader_parameter("crystal_texture", preload("res://ui/canvas/elements/textures/crystal.jpg"))
+	get_material().set_shader_parameter("glass_texture", preload("res://ui/canvas/elements/textures/glass.png"))
+	get_material().set_shader_parameter("marble_texture", preload("res://ui/canvas/elements/textures/marble.jpg"))
 
 func _resized() -> void:
 	get_material().set_shader_parameter("width", size.x)

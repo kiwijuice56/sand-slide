@@ -1,7 +1,7 @@
 extends ElementVisual
 class_name Fluid
 
-@export_enum(WATER, FIRE) var noise_texture: int
+@export_enum(WATER, FIRE, CRYSTAL) var noise_texture: int
 @export var color_a: Color
 @export var color_b: Color
 @export var color_c: Color
