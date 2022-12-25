@@ -5,12 +5,24 @@
 
 class Fire: public Element {
 public:
-    const double DECAY = 1.0 / 90; 
+    const double DECAY = 1.0 / 90;
+    const double EVAPORATE = 1.0 / 5;
 
     void process(SandSimulation *sim, int row, int col) override {
+        // Evaporate nearby water, since smoke tends to put distance between fire and water
+        if (sim->randf() < EVAPORATE) {
+            for (int y = row - 1; y <= row + 1; y++) {
+                for (int x = col - 1; x <= col + 1; x++) { 
+                    if (sim->in_bounds(y, x) && sim->get_cell(y, x) == 3) { 
+                        sim->set_cell(y, x, 58);
+                    }
+                }
+            }
+        }
+
         // Extinguish 
         if (sim->touch_count(row, col, 3)) {
-            sim->set_cell(row, col, 58);
+            sim->set_cell(row, col, 6);
             return;
         }
 

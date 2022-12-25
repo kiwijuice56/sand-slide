@@ -1,12 +1,12 @@
-[gd_scene load_steps=202 format=3 uid="uid://38oo0ks8g5u2"]
+[gd_scene load_steps=212 format=3 uid="uid://dwgj0s7yjlqcm"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_b657u"]
 [ext_resource type="Script" path="res://main/ui/ui.gd" id="2_p7nhq"]
 [ext_resource type="Texture2D" uid="uid://o2dtwnhoumtj" path="res://main/ui/icons/split_icon.png" id="3_syxpm"]
 [ext_resource type="Shader" path="res://main/ui/canvas/element_painter.gdshader" id="4_sug76"]
-[ext_resource type="Texture2D" uid="uid://b2er78i2yjm8w" path="res://main/element_visuals/textures/crystal.jpg" id="5_e2mbj"]
-[ext_resource type="Texture2D" uid="uid://cfx44bcne3145" path="res://main/element_visuals/textures/fire_noise.jpg" id="6_xbtk6"]
-[ext_resource type="Texture2D" uid="uid://dwneer3dth3iw" path="res://main/element_visuals/textures/water_noise.png" id="7_26qh4"]
+[ext_resource type="Texture2D" uid="uid://b2er78i2yjm8w" path="res://main/element_visuals/textures/crystal.jpg" id="5_is6pa"]
+[ext_resource type="Texture2D" uid="uid://cfx44bcne3145" path="res://main/element_visuals/textures/fire_noise.jpg" id="6_eojey"]
+[ext_resource type="Texture2D" uid="uid://dwneer3dth3iw" path="res://main/element_visuals/textures/water_noise.png" id="7_exsp2"]
 [ext_resource type="Script" path="res://main/ui/canvas/canvas.gd" id="8_hdu0v"]
 [ext_resource type="Resource" path="res://main/element_visuals/acid.tres" id="9_fwcna"]
 [ext_resource type="Resource" path="res://main/element_visuals/acid_gas.tres" id="10_ytbvl"]
@@ -20,6 +20,7 @@
 [ext_resource type="Resource" path="res://main/element_visuals/bomb.tres" id="17_cdwcv"]
 [ext_resource type="Resource" path="res://main/element_visuals/burning_oil.tres" id="18_fhsew"]
 [ext_resource type="Resource" path="res://main/element_visuals/cool_lava.tres" id="19_roqjh"]
+[ext_resource type="Resource" uid="uid://b5ryhy8v0m2pe" path="res://main/element_visuals/burning_potassium.tres" id="20_6donx"]
 [ext_resource type="Resource" path="res://main/element_visuals/critter.tres" id="20_yr4nu"]
 [ext_resource type="Resource" path="res://main/element_visuals/crystal.tres" id="21_inpyd"]
 [ext_resource type="Resource" path="res://main/element_visuals/dragon.tres" id="22_byt1w"]
@@ -34,10 +35,11 @@
 [ext_resource type="Resource" path="res://main/element_visuals/grass.tres" id="31_swb0l"]
 [ext_resource type="Resource" path="res://main/element_visuals/hydrogen.tres" id="32_8dvre"]
 [ext_resource type="Resource" path="res://main/element_visuals/hydrogen_explosion.tres" id="33_yvkgn"]
-[ext_resource type="Resource" path="res://main/element_visuals/ice.tres" id="34_mn8op"]
+[ext_resource type="Resource" uid="uid://ce77aka8fecw5" path="res://main/element_visuals/ice.tres" id="34_mn8op"]
 [ext_resource type="Resource" path="res://main/element_visuals/laser.tres" id="35_rnnnf"]
 [ext_resource type="Resource" path="res://main/element_visuals/lava.tres" id="36_oc5r4"]
 [ext_resource type="Resource" path="res://main/element_visuals/lightning.tres" id="37_urebx"]
+[ext_resource type="Resource" uid="uid://bgjs6bxfuy4c3" path="res://main/element_visuals/kuiper.tres" id="38_2x8xa"]
 [ext_resource type="Resource" path="res://main/element_visuals/molten_glass.tres" id="39_ojai2"]
 [ext_resource type="Resource" uid="uid://bveocaq17m0eg" path="res://main/element_visuals/mercury.tres" id="39_xema6"]
 [ext_resource type="Resource" path="res://main/element_visuals/nuclear_explosion.tres" id="40_d5eed"]
@@ -48,6 +50,7 @@
 [ext_resource type="Resource" path="res://main/element_visuals/plasma.tres" id="44_4eg7y"]
 [ext_resource type="Resource" uid="uid://dqc6q7r3ik521" path="res://main/element_visuals/plasma_plasma.tres" id="45_78phe"]
 [ext_resource type="Resource" path="res://main/element_visuals/polliwog.tres" id="46_egcml"]
+[ext_resource type="Resource" uid="uid://c8oahikj3s6tf" path="res://main/element_visuals/oxidized_potassium.tres" id="46_h3vtw"]
 [ext_resource type="Resource" uid="uid://322ette1kh58" path="res://main/element_visuals/potassium.tres" id="47_8auyn"]
 [ext_resource type="Resource" path="res://main/element_visuals/quasar.tres" id="48_krjmk"]
 [ext_resource type="Resource" uid="uid://blut61r10j2ve" path="res://main/element_visuals/rock.tres" id="49_co4lw"]
@@ -58,16 +61,21 @@
 [ext_resource type="Resource" path="res://main/element_visuals/smoke.tres" id="53_esoqo"]
 [ext_resource type="Resource" path="res://main/element_visuals/soil.tres" id="54_oywrd"]
 [ext_resource type="Resource" path="res://main/element_visuals/storm.tres" id="55_reisd"]
-[ext_resource type="Resource" path="res://main/element_visuals/uranium.tres" id="56_d8agm"]
+[ext_resource type="Resource" uid="uid://c27guhdhf8enb" path="res://main/element_visuals/rust.tres" id="56_7d6ie"]
+[ext_resource type="Resource" uid="uid://df1rn65u50uf6" path="res://main/element_visuals/uranium.tres" id="56_d8agm"]
 [ext_resource type="Resource" path="res://main/element_visuals/urchin.tres" id="57_bkkpa"]
 [ext_resource type="Resource" path="res://main/element_visuals/vapor.tres" id="58_6ln88"]
 [ext_resource type="Resource" path="res://main/element_visuals/water.tres" id="59_l74qo"]
 [ext_resource type="Resource" path="res://main/element_visuals/wood.tres" id="60_nuurj"]
-[ext_resource type="Resource" path="res://main/element_visuals/zinc.tres" id="61_rxerk"]
+[ext_resource type="Resource" uid="uid://b5b74c0ny20by" path="res://main/element_visuals/stardust_c.tres" id="61_hkkjq"]
 [ext_resource type="Texture2D" uid="uid://frfosxi3v3fq" path="res://main/ui/icons/eraser.png" id="62_k2baf"]
+[ext_resource type="Resource" uid="uid://bj1euek03ssrj" path="res://main/element_visuals/stardust_a.tres" id="62_q43nu"]
+[ext_resource type="Resource" uid="uid://ef7360axg4jc" path="res://main/element_visuals/stardust_b.tres" id="63_18ary"]
 [ext_resource type="Texture2D" uid="uid://bsdea08owut0v" path="res://main/ui/icons/settings.png" id="63_mopj1"]
 [ext_resource type="Texture2D" uid="uid://c4k2cs4ly1agb" path="res://main/ui/icons/file.png" id="64_sg6c0"]
 [ext_resource type="Script" path="res://main/ui/element_selector/element_selector.gd" id="65_f2i3q"]
+[ext_resource type="Resource" uid="uid://8mfv0yawb0gn" path="res://main/element_visuals/stardust_liquid.tres" id="65_yldrp"]
+[ext_resource type="Resource" uid="uid://cexko3hualro7" path="res://main/element_visuals/iron.tres" id="66_gcuab"]
 [ext_resource type="Script" path="res://main/ui/submenu/save/save_file_menu.gd" id="66_vo33r"]
 [ext_resource type="PackedScene" uid="uid://jclyvf0uqt3r" path="res://main/ui/submenu/save/save_file_panel/SaveFilePanel.tscn" id="67_mvp4m"]
 [ext_resource type="FontFile" uid="uid://b8lxwo5dkwrs4" path="res://main/ui/font/Poppins-Regular.ttf" id="68_seh6y"]
@@ -79,45 +87,45 @@
 
 [sub_resource type="Theme" id="Theme_twp2m"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_hca8t"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_f4wva"]
 shader = ExtResource("4_sug76")
 shader_parameter/width = 360.0
 shader_parameter/height = 388.0
 shader_parameter/px_scale = 3
-shader_parameter/flat_color_id_match = [1, 8, 7, 0, 6, 0, 0, 0, 9, 0, 2, 11, 10, 4, 0, 0, 0, 0, 14, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 13, 0, 0, 0, 12, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-shader_parameter/flat_color = [Vector3(0.0392157, 0.172549, 0.329412), Vector3(0.690196, 0.635294, 0.635294), Vector3(0.929412, 0.619608, 0.792157), Vector3(0.294118, 0.678431, 0.141176), Vector3(0, 0, 0), Vector3(0.419608, 0.941176, 1), Vector3(0.278431, 0.109804, 0.109804), Vector3(0.980392, 0.47451, 0.137255), Vector3(0.988235, 0.737255, 0.384314), Vector3(0.72549, 1, 0.368627), Vector3(0.501961, 0.156863, 0.121569), Vector3(0.411765, 0.45098, 0.4), Vector3(0.301961, 0.101961, 0.309804), Vector3(0.631373, 0.368627, 0.12549), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0)]
-shader_parameter/gradient_id_match = [0, 0, 0, 0, 0, 0, 21, 4, 0, 10, 0, 0, 0, 0, 11, 0, 8, 0, 0, 0, 0, 0, 1, 0, 0, 0, 14, 0, 2, 0, 0, 0, 7, 6, 16, 0, 20, 15, 17, 9, 18, 22, 0, 0, 0, 0, 19, 12, 13, 0, 0, 0, 0, 0, 5, 3, 0, 0, 23, 0, 0, 0, 0, 0]
-shader_parameter/gradient_color_a = [Vector3(0.141176, 0.360784, 0.411765), Vector3(0.188235, 0.0705882, 0.478431), Vector3(0.6, 0.576471, 0.270588), Vector3(0.811765, 0.890196, 0.4), Vector3(0.85098, 0.541176, 0.321569), Vector3(0.796078, 0.839216, 0.992157), Vector3(0.831373, 0.890196, 0.4), Vector3(0.27451, 0.27451, 0.309804), Vector3(0.14902, 0.0470588, 0.4), Vector3(0.415686, 0.0235294, 0.278431), Vector3(0.811765, 0.890196, 0.4), Vector3(1, 1, 1), Vector3(0.419608, 0.117647, 0.0235294), Vector3(0.4, 0, 0.172549), Vector3(0.14902, 0.0470588, 0.4), Vector3(0.0313726, 0.235294, 0.403922), Vector3(0.188235, 0.0705882, 0.478431), Vector3(0.137255, 0.0509804, 0.2), Vector3(0.141176, 0.0509804, 0.180392), Vector3(0.0313726, 0.235294, 0.403922), Vector3(0.309804, 0.27451, 0.27451), Vector3(0.282353, 0.262745, 0.360784), Vector3(0.27451, 0.286275, 0.368627), Vector3(0, 0, 0)]
-shader_parameter/gradient_color_b = [Vector3(0.0784314, 0.266667, 0.309804), Vector3(0.168627, 0.431373, 0.752941), Vector3(0.54902, 0.278431, 0.196078), Vector3(0.611765, 0.858824, 0.345098), Vector3(0.811765, 0.345098, 0.27451), Vector3(0.694118, 0.631373, 0.992157), Vector3(0.560784, 0.768627, 0.309804), Vector3(0.14902, 0.113725, 0.137255), Vector3(0.145098, 0.0862745, 0.611765), Vector3(0.8, 0.054902, 0.0862745), Vector3(0.611765, 0.858824, 0.345098), Vector3(0.54902, 0.54902, 0.54902), Vector3(0.929412, 0.576471, 0.156863), Vector3(0.619608, 0.129412, 0.407843), Vector3(0.172549, 0.0862745, 0.611765), Vector3(0.133333, 0.462745, 0.623529), Vector3(0.168627, 0.431373, 0.752941), Vector3(0.619608, 0.0941176, 0.278431), Vector3(0.411765, 0.101961, 0.380392), Vector3(0.133333, 0.462745, 0.623529), Vector3(0.14902, 0.113725, 0.113725), Vector3(0.4, 0.345098, 0.486275), Vector3(0.113725, 0.113725, 0.235294), Vector3(0, 0, 0)]
-shader_parameter/gradient_color_c = [Vector3(0.0627451, 0.211765, 0.278431), Vector3(0.219608, 0.678431, 0.568627), Vector3(0.529412, 0.356863, 0.207843), Vector3(0.431373, 0.74902, 0.286275), Vector3(0.74902, 0.215686, 0.215686), Vector3(0.658824, 0.560784, 0.94902), Vector3(0.164706, 0.690196, 0.341176), Vector3(0.203922, 0.176471, 0.231373), Vector3(0.462745, 0.101961, 0.670588), Vector3(0.980392, 0.290196, 0.105882), Vector3(0.431373, 0.74902, 0.286275), Vector3(0.658824, 0.658824, 0.658824), Vector3(0.980392, 0.709804, 0.105882), Vector3(0.741176, 0.25098, 0.439216), Vector3(0.101961, 0.168627, 0.670588), Vector3(0.184314, 0.627451, 0.741176), Vector3(0.176471, 0.658824, 0.733333), Vector3(0.960784, 0.584314, 0.0862745), Vector3(0.94902, 0.568627, 0.647059), Vector3(0.184314, 0.627451, 0.741176), Vector3(0.231373, 0.176471, 0.176471), Vector3(0.345098, 0.298039, 0.45098), Vector3(0.176471, 0.184314, 0.329412), Vector3(0, 0, 0)]
-shader_parameter/gradient_color_d = [Vector3(0.0431373, 0.14902, 0.25098), Vector3(0.662745, 1, 0.94902), Vector3(0.54902, 0.419608, 0.227451), Vector3(0.137255, 0.588235, 0.156863), Vector3(0.658824, 0.145098, 0.152941), Vector3(0.588235, 0.498039, 0.921569), Vector3(0.14902, 0.54902, 0.376471), Vector3(0.215686, 0.227451, 0.258824), Vector3(0.623529, 0.137255, 0.729412), Vector3(1, 0.764706, 0.439216), Vector3(0.137255, 0.588235, 0.156863), Vector3(0.788235, 0.788235, 0.788235), Vector3(1, 0.92549, 0.65098), Vector3(0.988235, 0.682353, 0.760784), Vector3(0.137255, 0.32549, 0.729412), Vector3(0.678431, 0.988235, 0.952941), Vector3(0.956863, 1, 0.709804), Vector3(1, 0.929412, 0.478431), Vector3(1, 0.890196, 0.878431), Vector3(0.678431, 0.988235, 0.952941), Vector3(0.301961, 0.239216, 0.239216), Vector3(0.235294, 0.243137, 0.388235), Vector3(0.235294, 0.247059, 0.407843), Vector3(0, 0, 0)]
-shader_parameter/gradient_color_e = [Vector3(0.0431373, 0.141176, 0.258824), Vector3(1, 1, 1), Vector3(0.568627, 0.490196, 0.254902), Vector3(0.0901961, 0.521569, 0.231373), Vector3(0.521569, 0.0588235, 0.282353), Vector3(0.498039, 0.4, 0.85098), Vector3(0.137255, 0.219608, 0.470588), Vector3(0.243137, 0.254902, 0.278431), Vector3(0.74902, 0.164706, 0.611765), Vector3(1, 1, 1), Vector3(0.0901961, 0.521569, 0.231373), Vector3(0.878431, 0.878431, 0.878431), Vector3(1, 1, 1), Vector3(1, 1, 1), Vector3(0.168627, 0.431373, 0.752941), Vector3(1, 1, 1), Vector3(1, 1, 1), Vector3(1, 1, 1), Vector3(1, 1, 1), Vector3(1, 1, 1), Vector3(0.341176, 0.286275, 0.266667), Vector3(0.188235, 0.2, 0.333333), Vector3(0.266667, 0.333333, 0.470588), Vector3(0, 0, 0)]
-shader_parameter/gradient_offset_1 = [0.1, 0.1, 0.2, 0.2, 0.2, 0.2, 0.2, 0.3, 0.4, 0.1, 0.2, 0.3, 0.05, 0.1, 0.4, 0.1, 0.1, 0.2, 0.35, 0.1, 0.3, 0.1, 0.3, Vector3(0, 0, 0)]
-shader_parameter/gradient_offset_2 = [0.3, 0.3, 0.6, 0.6, 0.6, 0.4, 0.4, 0.7, 0.6, 0.4, 0.6, 0.7, 0.2, 0.3, 0.6, 0.3, 0.3, 0.5, 0.7, 0.3, 0.7, 0.3, 0.7, Vector3(0, 0, 0)]
-shader_parameter/gradient_offset_3 = [0.6, 0.6, 0.8, 0.8, 0.8, 0.6, 0.6, 0.9, 0.9, 0.6, 0.8, 0.9, 0.6, 0.6, 0.9, 0.6, 0.6, 0.8, 0.9, 0.6, 0.9, 0.6, 0.9, Vector3(0, 0, 0)]
-shader_parameter/fluid_id_match = [0, 0, 0, 16, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 10, 1, 0, 0, 3, 8, 0, 6, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 11, 0, 0, 0, 0, 0, 15, 0, 13, 12, 0, 0, 5, 14, 0, 2, 0, 0, 0, 0]
-shader_parameter/color_a = [Vector3(0.298039, 0.607843, 0.470588), Vector3(0.298039, 0.607843, 0.470588), Vector3(0.180392, 0.788235, 0.941176), Vector3(0, 0, 0), Vector3(0.811765, 0, 0.431373), Vector3(0.592157, 0.337255, 0.980392), Vector3(1, 0.827451, 0), Vector3(0.556863, 0.615686, 0.901961), Vector3(0.301961, 0.698039, 1), Vector3(0.811765, 0, 0.054902), Vector3(0.160784, 0.160784, 0.160784), Vector3(0.631373, 0.760784, 0.901961), Vector3(0.960784, 0.658824, 0.270588), Vector3(0.109804, 0.0156863, 0.0588235), Vector3(0, 0, 0), Vector3(0.145098, 0.337255, 0.980392), 0, 0, 0, 0, 0, 0, 0, 0]
-shader_parameter/color_b = [Vector3(0.662745, 0.921569, 0.933333), Vector3(0.14902, 0.682353, 0.929412), Vector3(0.576471, 1, 1), Vector3(0.14902, 0.109804, 0.0823529), Vector3(0.968627, 0.270588, 0.164706), Vector3(0.686275, 0.682353, 0.929412), Vector3(0.988235, 0.486275, 0.168627), Vector3(1, 1, 1), Vector3(0.345098, 0.866667, 0.960784), Vector3(0.968627, 0.654902, 0.164706), Vector3(0.631373, 0.631373, 0.631373), Vector3(1, 1, 1), Vector3(1, 0.882353, 0.411765), Vector3(0.0431373, 0.0431373, 0.141176), Vector3(0.14902, 0.109804, 0.0823529), Vector3(0.14902, 0.682353, 0.929412), 0, 0, 0, 0, 0, 0, 0, 0]
-shader_parameter/color_c = [Vector3(0.258824, 0.12549, 0.443137), Vector3(0.298039, 0.733333, 0.780392), Vector3(0.207843, 0.180392, 0.439216), Vector3(0.211765, 0.184314, 0.156863), Vector3(1, 0.709804, 0.329412), Vector3(0.282353, 0.145098, 0.537255), Vector3(0.729412, 0, 0.0117647), Vector3(0.894118, 0.929412, 0.968627), Vector3(0.156863, 0.278431, 0.541176), Vector3(1, 1, 0.329412), Vector3(1, 1, 1), Vector3(0.894118, 0.929412, 0.968627), Vector3(1, 1, 1), Vector3(0, 0, 0), Vector3(0.321569, 0.219608, 0.160784), Vector3(0.105882, 0.145098, 0.537255), 0, 0, 0, 0, 0, 0, 0, 0]
-shader_parameter/noise_texture = [0, 0, 1, 0, 0, 2, 1, 2, 0, 0, 0, 2, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-shader_parameter/noise_scale = [5.0, 5.0, 0.3, 2.0, 0.5, 2.0, 0.5, 2.0, 4.0, 0.5, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 0, 0, 0, 0, 0, 0, 0, 0]
-shader_parameter/noise_speed = [2.0, 2.0, 4.0, 15.0, 24.0, 32.0, 4.0, 32.0, 16.0, 15.0, 2.5, 32.0, 2.5, 32.0, 12.0, 4.0, 0, 0, 0, 0, 0, 0, 0, 0]
-shader_parameter/current_size = [64.0, 64.0, 4.0, 16.0, 16.0, 24.0, 16.0, 24.0, 32.0, 16.0, 90.0, 24.0, 90.0, 24.0, 16.0, 24.0, 0, 0, 0, 0, 0, 0, 0, 0]
-shader_parameter/wave_cycle = [3.5, 3.5, 3.0, 3.0, 5.0, 3.0, 3.0, 3.0, 3.0, 2.5, 12.0, 3.0, 12.0, 3.0, 2.5, 3.0, 0, 0, 0, 0, 0, 0, 0, 0]
-shader_parameter/contraction_size = [24.0, 24.0, 16.0, 16.0, 16.0, 16.0, 16.0, 16.0, 16.0, 16.0, 12.0, 16.0, 12.0, 16.0, 16.0, 16.0, 0, 0, 0, 0, 0, 0, 0, 0]
-shader_parameter/wave_density = [3.0, 3.0, 2.0, 2.0, 1.2, 2.0, 2.0, 2.0, 2.0, 1.2, 2.0, 2.0, 2.0, 2.0, 3.0, 2.0, 0, 0, 0, 0, 0, 0, 0, 0]
-shader_parameter/shimmer_speed = [16.0, 16.0, 4.0, 24.0, 24.0, 32.0, 4.0, 32.0, 24.0, 24.0, 8.0, 32.0, 8.0, 32.0, 16.0, 24.0, 0, 0, 0, 0, 0, 0, 0, 0]
-shader_parameter/shimmer_density = [5.0, 5.0, 3.0, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 0, 0, 0, 0, 0, 0, 0, 0]
-shader_parameter/shimmer_opacity = [0.7, 0.7, 0.9, 0.5, 0.6, 0.8, 0.9, 0.7, 0.9, 0.8, 0.7, 0.8, 0.7, 0.4, 0.5, 0.6, 0, 0, 0, 0, 0, 0, 0, 0]
-shader_parameter/shimmer_cycle = [7.0, 7.0, 0.3, 2.0, 4.0, 1.5, 0.5, 1.5, 7.0, 2.0, 7.0, 1.5, 7.0, 1.5, 1.5, 1.8, 0, 0, 0, 0, 0, 0, 0, 0]
-shader_parameter/metal_id_match = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-shader_parameter/metal_color_a = [Vector3(1, 0.882353, 0.411765), Vector3(1, 1, 1), Vector3(0.937255, 0.937255, 0.937255), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0)]
-shader_parameter/metal_color_b = [Vector3(0.960784, 0.658824, 0.270588), Vector3(0.494118, 0.466667, 0.34902), Vector3(0.411765, 0.47451, 0.529412), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0)]
-shader_parameter/water_texture = ExtResource("7_26qh4")
-shader_parameter/fire_texture = ExtResource("6_xbtk6")
-shader_parameter/crystal_texture = ExtResource("5_e2mbj")
+shader_parameter/flat_color_id_match = [1, 9, 7, 0, 6, 0, 0, 0, 10, 0, 2, 12, 11, 4, 0, 0, 0, 0, 14, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 13, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+shader_parameter/flat_color = [Vector3(0.0392157, 0.172549, 0.329412), Vector3(0.690196, 0.635294, 0.635294), Vector3(0.929412, 0.619608, 0.792157), Vector3(0.294118, 0.678431, 0.141176), Vector3(0, 0, 0), Vector3(0.419608, 0.941176, 1), Vector3(0.278431, 0.109804, 0.109804), Vector3(0.384314, 0.223529, 0.027451), Vector3(0.980392, 0.47451, 0.137255), Vector3(0.988235, 0.737255, 0.384314), Vector3(0.72549, 1, 0.368627), Vector3(0.501961, 0.156863, 0.121569), Vector3(0.301961, 0.101961, 0.309804), Vector3(0.631373, 0.368627, 0.12549), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0)]
+shader_parameter/gradient_id_match = [0, 0, 0, 0, 0, 0, 21, 4, 0, 10, 0, 0, 0, 0, 11, 0, 8, 0, 0, 0, 0, 0, 1, 0, 0, 0, 14, 0, 2, 0, 0, 0, 7, 6, 16, 0, 20, 15, 17, 9, 18, 25, 22, 0, 0, 0, 19, 12, 13, 0, 0, 0, 0, 0, 5, 3, 0, 0, 26, 0, 0, 0, 0, 23, 24, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+shader_parameter/gradient_color_a = [Vector3(0.141176, 0.360784, 0.411765), Vector3(0.188235, 0.0705882, 0.478431), Vector3(0.6, 0.576471, 0.270588), Vector3(0.811765, 0.890196, 0.4), Vector3(0.85098, 0.541176, 0.321569), Vector3(0.796078, 0.839216, 0.992157), Vector3(0.831373, 0.890196, 0.4), Vector3(0.27451, 0.27451, 0.309804), Vector3(0.14902, 0.0470588, 0.4), Vector3(0.415686, 0.0235294, 0.278431), Vector3(0.811765, 0.890196, 0.4), Vector3(1, 1, 1), Vector3(0.419608, 0.117647, 0.0235294), Vector3(0.4, 0, 0.172549), Vector3(0.14902, 0.0470588, 0.4), Vector3(0.0313726, 0.235294, 0.403922), Vector3(0.188235, 0.0705882, 0.478431), Vector3(0.137255, 0.0509804, 0.2), Vector3(0.141176, 0.0509804, 0.180392), Vector3(0.0313726, 0.235294, 0.403922), Vector3(0.309804, 0.27451, 0.27451), Vector3(0.415686, 0.407843, 0.768627), Vector3(0.415686, 0.407843, 0.768627), Vector3(0.415686, 0.407843, 0.768627), Vector3(0.282353, 0.262745, 0.360784), Vector3(0.27451, 0.286275, 0.368627), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0)]
+shader_parameter/gradient_color_b = [Vector3(0.0784314, 0.266667, 0.309804), Vector3(0.168627, 0.431373, 0.752941), Vector3(0.54902, 0.278431, 0.196078), Vector3(0.611765, 0.858824, 0.345098), Vector3(0.811765, 0.345098, 0.27451), Vector3(0.694118, 0.631373, 0.992157), Vector3(0.560784, 0.768627, 0.309804), Vector3(0.14902, 0.113725, 0.137255), Vector3(0.145098, 0.0862745, 0.611765), Vector3(0.8, 0.054902, 0.0862745), Vector3(0.611765, 0.858824, 0.345098), Vector3(0.54902, 0.54902, 0.54902), Vector3(0.929412, 0.576471, 0.156863), Vector3(0.619608, 0.129412, 0.407843), Vector3(0.172549, 0.0862745, 0.611765), Vector3(0.133333, 0.462745, 0.623529), Vector3(0.168627, 0.431373, 0.752941), Vector3(0.619608, 0.0941176, 0.278431), Vector3(0.411765, 0.101961, 0.380392), Vector3(0.133333, 0.462745, 0.623529), Vector3(0.14902, 0.113725, 0.113725), Vector3(0.537255, 0.466667, 0.819608), Vector3(0.537255, 0.466667, 0.819608), Vector3(0.537255, 0.466667, 0.819608), Vector3(0.4, 0.345098, 0.486275), Vector3(0.113725, 0.113725, 0.235294), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0)]
+shader_parameter/gradient_color_c = [Vector3(0.0627451, 0.211765, 0.278431), Vector3(0.219608, 0.678431, 0.568627), Vector3(0.529412, 0.356863, 0.207843), Vector3(0.431373, 0.74902, 0.286275), Vector3(0.74902, 0.215686, 0.215686), Vector3(0.658824, 0.560784, 0.94902), Vector3(0.164706, 0.690196, 0.341176), Vector3(0.203922, 0.176471, 0.231373), Vector3(0.462745, 0.101961, 0.670588), Vector3(0.980392, 0.290196, 0.105882), Vector3(0.431373, 0.74902, 0.286275), Vector3(0.658824, 0.658824, 0.658824), Vector3(0.980392, 0.709804, 0.105882), Vector3(0.741176, 0.25098, 0.439216), Vector3(0.101961, 0.168627, 0.670588), Vector3(0.184314, 0.627451, 0.741176), Vector3(0.176471, 0.658824, 0.733333), Vector3(0.960784, 0.584314, 0.0862745), Vector3(0.94902, 0.568627, 0.647059), Vector3(0.184314, 0.627451, 0.741176), Vector3(0.231373, 0.176471, 0.176471), Vector3(0.603922, 0.537255, 0.878431), Vector3(0.603922, 0.537255, 0.878431), Vector3(0.603922, 0.537255, 0.878431), Vector3(0.345098, 0.298039, 0.45098), Vector3(0.176471, 0.184314, 0.329412), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0)]
+shader_parameter/gradient_color_d = [Vector3(0.0431373, 0.14902, 0.25098), Vector3(0.662745, 1, 0.94902), Vector3(0.54902, 0.419608, 0.227451), Vector3(0.137255, 0.588235, 0.156863), Vector3(0.658824, 0.145098, 0.152941), Vector3(0.588235, 0.498039, 0.921569), Vector3(0.14902, 0.54902, 0.376471), Vector3(0.215686, 0.227451, 0.258824), Vector3(0.623529, 0.137255, 0.729412), Vector3(1, 0.764706, 0.439216), Vector3(0.137255, 0.588235, 0.156863), Vector3(0.788235, 0.788235, 0.788235), Vector3(1, 0.92549, 0.65098), Vector3(0.988235, 0.682353, 0.760784), Vector3(0.137255, 0.32549, 0.729412), Vector3(0.678431, 0.988235, 0.952941), Vector3(0.956863, 1, 0.709804), Vector3(1, 0.929412, 0.478431), Vector3(1, 0.890196, 0.878431), Vector3(0.678431, 0.988235, 0.952941), Vector3(0.301961, 0.239216, 0.239216), Vector3(0.74902, 0.615686, 0.929412), Vector3(0.74902, 0.615686, 0.929412), Vector3(0.74902, 0.615686, 0.929412), Vector3(0.235294, 0.243137, 0.388235), Vector3(0.235294, 0.247059, 0.407843), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0)]
+shader_parameter/gradient_color_e = [Vector3(0.0431373, 0.141176, 0.258824), Vector3(1, 1, 1), Vector3(0.568627, 0.490196, 0.254902), Vector3(0.0901961, 0.521569, 0.231373), Vector3(0.521569, 0.0588235, 0.282353), Vector3(0.498039, 0.4, 0.85098), Vector3(0.137255, 0.219608, 0.470588), Vector3(0.243137, 0.254902, 0.278431), Vector3(0.74902, 0.164706, 0.611765), Vector3(1, 1, 1), Vector3(0.0901961, 0.521569, 0.231373), Vector3(0.878431, 0.878431, 0.878431), Vector3(1, 1, 1), Vector3(1, 1, 1), Vector3(0.168627, 0.431373, 0.752941), Vector3(1, 1, 1), Vector3(1, 1, 1), Vector3(1, 1, 1), Vector3(1, 1, 1), Vector3(1, 1, 1), Vector3(0.341176, 0.286275, 0.266667), Vector3(0.85098, 0.701961, 1), Vector3(0.85098, 0.701961, 1), Vector3(0.85098, 0.701961, 1), Vector3(0.188235, 0.2, 0.333333), Vector3(0.266667, 0.333333, 0.470588), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0)]
+shader_parameter/gradient_offset_1 = [0.1, 0.1, 0.2, 0.2, 0.2, 0.2, 0.2, 0.3, 0.4, 0.1, 0.2, 0.3, 0.05, 0.1, 0.4, 0.1, 0.1, 0.2, 0.35, 0.1, 0.3, 0.1, 0.1, 0.1, 0.1, 0.3, Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0)]
+shader_parameter/gradient_offset_2 = [0.3, 0.3, 0.6, 0.6, 0.6, 0.4, 0.4, 0.7, 0.6, 0.4, 0.6, 0.7, 0.2, 0.3, 0.6, 0.3, 0.3, 0.5, 0.7, 0.3, 0.7, 0.3, 0.3, 0.3, 0.3, 0.7, Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0)]
+shader_parameter/gradient_offset_3 = [0.6, 0.6, 0.8, 0.8, 0.8, 0.6, 0.6, 0.9, 0.9, 0.6, 0.8, 0.9, 0.6, 0.6, 0.9, 0.6, 0.6, 0.8, 0.9, 0.6, 0.9, 0.6, 0.6, 0.6, 0.6, 0.9, Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0)]
+shader_parameter/fluid_id_match = [0, 0, 0, 18, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 11, 1, 0, 0, 3, 8, 0, 6, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 17, 12, 0, 0, 0, 0, 0, 16, 0, 14, 13, 0, 0, 5, 15, 0, 2, 0, 0, 0, 0, 0, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+shader_parameter/color_a = [Vector3(0.298039, 0.607843, 0.470588), Vector3(0.298039, 0.607843, 0.470588), Vector3(0.180392, 0.788235, 0.941176), Vector3(0, 0, 0), Vector3(0.811765, 0, 0.431373), Vector3(0.592157, 0.337255, 0.980392), Vector3(1, 0.827451, 0), Vector3(0.556863, 0.615686, 0.901961), Vector3(0.4, 0.607843, 1), Vector3(0.65098, 0.878431, 1), Vector3(0.811765, 0, 0.054902), Vector3(0.160784, 0.160784, 0.160784), Vector3(0.631373, 0.760784, 0.901961), Vector3(0.960784, 0.658824, 0.270588), Vector3(0.109804, 0.0156863, 0.0588235), Vector3(0, 0, 0), Vector3(0.690196, 0.533333, 0.909804), Vector3(0.145098, 0.337255, 0.980392), 0, 0, 0, 0, 0, 0]
+shader_parameter/color_b = [Vector3(0.662745, 0.921569, 0.933333), Vector3(0.14902, 0.682353, 0.929412), Vector3(0.576471, 1, 1), Vector3(0.14902, 0.109804, 0.0823529), Vector3(0.968627, 0.270588, 0.164706), Vector3(0.686275, 0.682353, 0.929412), Vector3(0.988235, 0.486275, 0.168627), Vector3(1, 1, 1), Vector3(0.470588, 0.866667, 1), Vector3(0.52549, 0.635294, 0.890196), Vector3(0.968627, 0.654902, 0.164706), Vector3(0.631373, 0.631373, 0.631373), Vector3(1, 1, 1), Vector3(1, 0.882353, 0.411765), Vector3(0.0431373, 0.0431373, 0.141176), Vector3(0.14902, 0.109804, 0.0823529), Vector3(0.85098, 0.701961, 1), Vector3(0.14902, 0.682353, 0.929412), 0, 0, 0, 0, 0, 0]
+shader_parameter/color_c = [Vector3(0.258824, 0.12549, 0.443137), Vector3(0.298039, 0.733333, 0.780392), Vector3(0.207843, 0.180392, 0.439216), Vector3(0.211765, 0.184314, 0.156863), Vector3(1, 0.709804, 0.329412), Vector3(0.282353, 0.145098, 0.537255), Vector3(0.729412, 0, 0.0117647), Vector3(0.894118, 0.929412, 0.968627), Vector3(0.847059, 0.890196, 0.976471), Vector3(1, 1, 1), Vector3(1, 1, 0.329412), Vector3(1, 1, 1), Vector3(0.894118, 0.929412, 0.968627), Vector3(1, 1, 1), Vector3(0, 0, 0), Vector3(0.321569, 0.219608, 0.160784), Vector3(0.94902, 0.901961, 1), Vector3(0.105882, 0.145098, 0.537255), 0, 0, 0, 0, 0, 0]
+shader_parameter/noise_texture = [0, 0, 1, 0, 0, 2, 1, 2, 0, 0, 0, 0, 2, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+shader_parameter/noise_scale = [5.0, 5.0, 0.3, 2.0, 0.5, 2.0, 0.5, 2.0, 4.0, 4.0, 0.5, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 2.0, 0, 0, 0, 0, 0, 0]
+shader_parameter/noise_speed = [2.0, 2.0, 4.0, 15.0, 24.0, 32.0, 4.0, 32.0, 16.0, 24.0, 15.0, 2.5, 32.0, 2.5, 32.0, 12.0, 3.0, 4.0, 0, 0, 0, 0, 0, 0]
+shader_parameter/current_size = [64.0, 64.0, 4.0, 16.0, 16.0, 24.0, 16.0, 24.0, 32.0, 32.0, 16.0, 90.0, 24.0, 90.0, 24.0, 16.0, 24.0, 24.0, 0, 0, 0, 0, 0, 0]
+shader_parameter/wave_cycle = [3.5, 3.5, 3.0, 3.0, 5.0, 3.0, 3.0, 3.0, 3.0, 3.0, 2.5, 12.0, 3.0, 12.0, 3.0, 2.5, 3.0, 3.0, 0, 0, 0, 0, 0, 0]
+shader_parameter/contraction_size = [24.0, 24.0, 16.0, 16.0, 16.0, 16.0, 16.0, 16.0, 16.0, 16.0, 16.0, 12.0, 16.0, 12.0, 16.0, 16.0, 16.0, 16.0, 0, 0, 0, 0, 0, 0]
+shader_parameter/wave_density = [3.0, 3.0, 2.0, 2.0, 1.2, 2.0, 2.0, 2.0, 2.0, 2.0, 1.2, 2.0, 2.0, 2.0, 2.0, 3.0, 2.0, 2.0, 0, 0, 0, 0, 0, 0]
+shader_parameter/shimmer_speed = [16.0, 16.0, 4.0, 24.0, 24.0, 32.0, 4.0, 32.0, 24.0, 32.0, 24.0, 8.0, 32.0, 8.0, 32.0, 16.0, 24.0, 24.0, 0, 0, 0, 0, 0, 0]
+shader_parameter/shimmer_density = [5.0, 5.0, 3.0, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 1.5, 0, 0, 0, 0, 0, 0]
+shader_parameter/shimmer_opacity = [0.7, 0.7, 0.9, 0.5, 0.6, 0.8, 0.9, 0.7, 0.9, 0.95, 0.8, 0.7, 0.8, 0.7, 0.4, 0.5, 0.8, 0.6, 0, 0, 0, 0, 0, 0]
+shader_parameter/shimmer_cycle = [7.0, 7.0, 0.3, 2.0, 4.0, 1.5, 0.5, 1.5, 7.0, 7.0, 2.0, 7.0, 1.5, 7.0, 1.5, 1.5, 1.8, 1.8, 0, 0, 0, 0, 0, 0]
+shader_parameter/metal_id_match = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 4, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+shader_parameter/metal_color_a = [Vector3(0.941176, 0.901961, 0.92549), Vector3(1, 0.882353, 0.411765), Vector3(0.937255, 0.937255, 0.937255), Vector3(0.913725, 0.921569, 0.882353), Vector3(0.937255, 0.937255, 0.937255), Vector3(0.890196, 0.921569, 0.772549), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0)]
+shader_parameter/metal_color_b = [Vector3(0.427451, 0.4, 0.45098), Vector3(0.960784, 0.658824, 0.270588), Vector3(0.596078, 0.482353, 0.403922), Vector3(0.364706, 0.396078, 0.411765), Vector3(0.384314, 0.407843, 0.45098), Vector3(0.364706, 0.545098, 0.411765), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0)]
+shader_parameter/water_texture = ExtResource("7_exsp2")
+shader_parameter/fire_texture = ExtResource("6_eojey")
+shader_parameter/crystal_texture = ExtResource("5_is6pa")
 
-[sub_resource type="ImageTexture" id="ImageTexture_h4t2e"]
+[sub_resource type="ImageTexture" id="ImageTexture_38huf"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_520gh"]
 bg_color = Color(0.980392, 0.47451, 0.137255, 1)
@@ -693,36 +701,43 @@ corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eqnvp"]
-bg_color = Color(0.780392, 0.772549, 0.72549, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5urly"]
+bg_color = Color(0.384314, 0.407843, 0.45098, 1)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5dmnr"]
-bg_color = Color(1, 1, 1, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l4ueg"]
+bg_color = Color(0.454902, 0.498039, 0.501961, 1)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g5sfm"]
-bg_color = Color(0.607843, 0.607843, 0.658824, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g8gy2"]
+bg_color = Color(0.282353, 0.294118, 0.380392, 1)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0j7nv"]
-bg_color = Color(0.709804, 0.745098, 0.780392, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qholx"]
+bg_color = Color(0.596078, 0.482353, 0.403922, 1)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rvw6y"]
-bg_color = Color(0.607843, 0.607843, 0.658824, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b04si"]
+bg_color = Color(0.678431, 0.596078, 0.509804, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ciday"]
+bg_color = Color(0.529412, 0.329412, 0.305882, 1)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
@@ -751,6 +766,13 @@ corner_radius_bottom_left = 4
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1hjyp"]
 bg_color = Color(0.513726, 0.513726, 0.541176, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5dmnr"]
+bg_color = Color(1, 1, 1, 1)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
@@ -869,63 +891,46 @@ corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m0trg"]
-bg_color = Color(1, 0.0784314, 0.286275, 1)
+bg_color = Color(0.537255, 0.466667, 0.819608, 1)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3vgxk"]
-bg_color = Color(1, 0.239216, 0.341176, 1)
+bg_color = Color(0.635294, 0.505882, 0.831373, 1)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sgko8"]
-bg_color = Color(0.85098, 0.0666667, 0.368627, 1)
+bg_color = Color(0.403922, 0.341176, 0.709804, 1)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
-[sub_resource type="Animation" id="Animation_7ro7j"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:theme_override_styles/normal:bg_color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 0.0784314, 0.286275, 1)]
-}
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_un1ev"]
+bg_color = Color(0.368627, 0.756863, 1, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
 
-[sub_resource type="Animation" id="Animation_lqxbb"]
-resource_name = "shine"
-length = 3.5
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:theme_override_styles/normal:bg_color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5, 1.1, 1.7, 2.3, 2.9, 3.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Color(1, 0, 0, 1), Color(1, 0.368627, 0, 1), Color(1, 0.835294, 0, 1), Color(0, 1, 0.05, 1), Color(0, 0.25098, 1, 1), Color(1, 0, 0.6, 1), Color(1, 0, 0, 1)]
-}
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8gvnx"]
+bg_color = Color(0.360784, 0.945098, 1, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_5smay"]
-_data = {
-"RESET": SubResource("Animation_7ro7j"),
-"shine": SubResource("Animation_lqxbb")
-}
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eroe7"]
+bg_color = Color(0.113725, 0.305882, 0.878431, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
 
 [sub_resource type="Theme" id="Theme_n7xkt"]
 default_font = ExtResource("68_seh6y")
@@ -1119,16 +1124,16 @@ theme_override_icons/grabber = ExtResource("3_syxpm")
 
 [node name="Canvas" type="TextureRect" parent="UI/VSplitContainer"]
 texture_filter = 1
-material = SubResource("ShaderMaterial_hca8t")
+material = SubResource("ShaderMaterial_f4wva")
 custom_minimum_size = Vector2(0, 64)
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 2.0
-texture = SubResource("ImageTexture_h4t2e")
+texture = SubResource("ImageTexture_38huf")
 ignore_texture_size = true
 script = ExtResource("8_hdu0v")
 element_folder_path = "res://main/element_visuals"
-element_materials = [ExtResource("9_fwcna"), ExtResource("10_ytbvl"), ExtResource("11_2w6u7"), ExtResource("11_4aoyx"), ExtResource("12_lgdsd"), ExtResource("13_iet5v"), ExtResource("14_f7w31"), ExtResource("15_dchjw"), ExtResource("16_2ac6e"), ExtResource("17_cdwcv"), ExtResource("18_fhsew"), ExtResource("19_roqjh"), ExtResource("20_yr4nu"), ExtResource("21_inpyd"), ExtResource("22_byt1w"), ExtResource("23_356xy"), ExtResource("24_s676v"), ExtResource("25_gowqp"), ExtResource("26_a5dsc"), ExtResource("27_rtgb3"), ExtResource("28_vdt02"), ExtResource("29_b82q0"), ExtResource("30_xqdfg"), ExtResource("31_swb0l"), ExtResource("32_8dvre"), ExtResource("33_yvkgn"), ExtResource("34_mn8op"), ExtResource("35_rnnnf"), ExtResource("36_oc5r4"), ExtResource("37_urebx"), ExtResource("39_xema6"), ExtResource("39_ojai2"), ExtResource("41_re04o"), ExtResource("40_d5eed"), ExtResource("41_83ruo"), ExtResource("42_gawqj"), ExtResource("43_7v4u3"), ExtResource("44_4eg7y"), ExtResource("45_78phe"), ExtResource("46_egcml"), ExtResource("47_8auyn"), ExtResource("50_kyqb1"), ExtResource("48_krjmk"), ExtResource("49_co4lw"), ExtResource("50_ekhby"), ExtResource("51_f0bav"), ExtResource("52_77y1w"), ExtResource("53_esoqo"), ExtResource("54_oywrd"), ExtResource("55_reisd"), ExtResource("56_d8agm"), ExtResource("57_bkkpa"), ExtResource("58_6ln88"), ExtResource("59_l74qo"), ExtResource("60_nuurj"), ExtResource("61_rxerk")]
+element_materials = [ExtResource("9_fwcna"), ExtResource("10_ytbvl"), ExtResource("11_2w6u7"), ExtResource("11_4aoyx"), ExtResource("12_lgdsd"), ExtResource("13_iet5v"), ExtResource("14_f7w31"), ExtResource("15_dchjw"), ExtResource("16_2ac6e"), ExtResource("17_cdwcv"), ExtResource("18_fhsew"), ExtResource("20_6donx"), ExtResource("19_roqjh"), ExtResource("20_yr4nu"), ExtResource("21_inpyd"), ExtResource("22_byt1w"), ExtResource("23_356xy"), ExtResource("24_s676v"), ExtResource("25_gowqp"), ExtResource("26_a5dsc"), ExtResource("27_rtgb3"), ExtResource("28_vdt02"), ExtResource("29_b82q0"), ExtResource("30_xqdfg"), ExtResource("31_swb0l"), ExtResource("32_8dvre"), ExtResource("33_yvkgn"), ExtResource("34_mn8op"), ExtResource("66_gcuab"), ExtResource("38_2x8xa"), ExtResource("35_rnnnf"), ExtResource("36_oc5r4"), ExtResource("37_urebx"), ExtResource("39_xema6"), ExtResource("39_ojai2"), ExtResource("41_re04o"), ExtResource("40_d5eed"), ExtResource("41_83ruo"), ExtResource("42_gawqj"), ExtResource("46_h3vtw"), ExtResource("43_7v4u3"), ExtResource("44_4eg7y"), ExtResource("45_78phe"), ExtResource("46_egcml"), ExtResource("47_8auyn"), ExtResource("50_kyqb1"), ExtResource("48_krjmk"), ExtResource("49_co4lw"), ExtResource("56_7d6ie"), ExtResource("50_ekhby"), ExtResource("51_f0bav"), ExtResource("52_77y1w"), ExtResource("53_esoqo"), ExtResource("54_oywrd"), ExtResource("62_q43nu"), ExtResource("63_18ary"), ExtResource("61_hkkjq"), ExtResource("65_yldrp"), ExtResource("55_reisd"), ExtResource("56_d8agm"), ExtResource("57_bkkpa"), ExtResource("58_6ln88"), ExtResource("59_l74qo"), ExtResource("60_nuurj")]
 
 [node name="BottomPanel" type="MarginContainer" parent="UI/VSplitContainer"]
 layout_mode = 2
@@ -1862,16 +1867,16 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
 mouse_filter = 1
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 16
-theme_override_styles/normal = SubResource("StyleBoxFlat_eqnvp")
-theme_override_styles/hover = SubResource("StyleBoxFlat_5dmnr")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_g5sfm")
+theme_override_styles/normal = SubResource("StyleBoxFlat_5urly")
+theme_override_styles/hover = SubResource("StyleBoxFlat_l4ueg")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_g8gy2")
 text = "potassium"
 text_overrun_behavior = 1
 
@@ -1881,17 +1886,17 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
 mouse_filter = 1
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 16
-theme_override_styles/normal = SubResource("StyleBoxFlat_0j7nv")
-theme_override_styles/hover = SubResource("StyleBoxFlat_5dmnr")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_rvw6y")
-text = "zinc"
+theme_override_styles/normal = SubResource("StyleBoxFlat_qholx")
+theme_override_styles/hover = SubResource("StyleBoxFlat_b04si")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ciday")
+text = "iron"
 text_overrun_behavior = 1
 
 [node name="Gold" type="Button" parent="UI/VSplitContainer/BottomPanel/VBoxContainer/ElementSelector/Chem/Chemical"]
@@ -2111,12 +2116,19 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_sgko8")
 text = "stardust"
 text_overrun_behavior = 1
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="UI/VSplitContainer/BottomPanel/VBoxContainer/ElementSelector/Space/Space/Powder"]
-autoplay = "shine"
-playback_speed = 0.25
-libraries = {
-"": SubResource("AnimationLibrary_5smay")
-}
+[node name="Kuiper" type="Button" parent="UI/VSplitContainer/BottomPanel/VBoxContainer/ElementSelector/Space/Space"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 0
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_un1ev")
+theme_override_styles/hover = SubResource("StyleBoxFlat_8gvnx")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_eroe7")
+text = "kuiper"
+text_overrun_behavior = 1
 
 [node name="Empty" type="Button" parent="UI/VSplitContainer/BottomPanel/VBoxContainer/ElementSelector/Space/Space"]
 layout_mode = 2
@@ -2194,21 +2206,6 @@ text = " "
 text_overrun_behavior = 1
 
 [node name="Empty6" type="Button" parent="UI/VSplitContainer/BottomPanel/VBoxContainer/ElementSelector/Space/Space"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-focus_mode = 0
-mouse_filter = 1
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 16
-theme_override_styles/normal = SubResource("StyleBoxFlat_pt5xu")
-theme_override_styles/hover = SubResource("StyleBoxFlat_dhkpo")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_b4sp5")
-disabled = true
-text = " "
-text_overrun_behavior = 1
-
-[node name="Empty7" type="Button" parent="UI/VSplitContainer/BottomPanel/VBoxContainer/ElementSelector/Space/Space"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3

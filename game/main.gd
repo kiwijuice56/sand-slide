@@ -14,8 +14,9 @@ const ELEMENT_INDEX = [
 	"Uranium", "Neutron", "Lightning", "Plasma", "Electron", "StormPlasma",
 	"Hurricane", "Powder", "Liquid Powder", "Mercury", "Potassium",
 	"PExplosion", "Hydrogen", "HExplosion", "Penguin", "BurningOil",
-	"Gold", "MoltenGlass", "AlgaeRed", "AlgaeBrown", "CoolLava",
-	"Obsidian", "Vapor"]
+	"Gold", "MoltenGold", "MoltenGlass", "AlgaeRed", "AlgaeBrown", "CoolLava",
+	"Obsidian", "Vapor", "AcidWater", "OxidizedPotassium", 
+	"BurningPotassium",  "Rust", "PowderB", "PowderC", "Kuiper"]
 
 @export var save_file_manager: Node
 @export var canvas: TextureRect
@@ -71,9 +72,16 @@ func draw(center_row: int, center_col: int, draw_element: int, radius: int) -> v
 				# Some life can't live too close, so they need to be randomly scattered
 				if is_life and randf() > 0.6:
 					continue
+					
 				# Prevent fluids from being drawn over solids
-				if is_liquid and sim.get_cell(row + center_row, col + center_col) != 0:
+				var at: int = sim.get_cell(row + center_row, col + center_col)
+				# Specifically, fire (blue and regular) can draw over vapor and smoke
+				if not ((draw_element == 5 or draw_element == 24) and (at == 6 or at == 58)) and is_liquid and at != 0:
 					continue
+				
+				# Shuffle stardust at every pixel
+				if draw_element in [42, 63, 64]:
+					draw_element = [42, 63, 64][randi() % 3]
 				sim.draw_cell(row + center_row, col + center_col, draw_element)
 
 func clear() -> void:

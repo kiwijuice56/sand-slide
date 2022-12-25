@@ -42,11 +42,11 @@
 #include "elements/electricity_storm.h"
 #include "elements/storm_plasma.h"
 #include "elements/hurricane.h"
-#include "elements/powder.h"
+#include "elements/powder_a.h"
 #include "elements/liquid_powder.h"
 #include "elements/mercury.h"
 #include "elements/potassium.h"
-#include "elements/p_explosion.h"
+#include "elements/potassium_explosion.h"
 #include "elements/hydrogen.h"
 #include "elements/hydrogen_explosion.h"
 #include "elements/penguin.h"
@@ -60,6 +60,12 @@
 #include "elements/obsidian.h"
 #include "elements/vapor.h"
 #include "elements/acid_water.h"
+#include "elements/oxidized_potassium.h"
+#include "elements/burning_potassium.h"
+#include "elements/rust.h"
+#include "elements/powder_b.h"
+#include "elements/powder_c.h"
+#include "elements/kuiper.h"
 
 #include <godot_cpp/core/class_db.hpp>
 
@@ -71,7 +77,7 @@ SandSimulation::SandSimulation() {
     // is called for each element type
 
     // The order in the vector is arbitrary, but it must match the list order in main.gd
-    elements.resize(64);
+    elements.resize(84);
     elements.at(0) = new Void();
     elements.at(1) = new Sand();
     elements.at(2) = new Rock();
@@ -114,7 +120,7 @@ SandSimulation::SandSimulation() {
     elements.at(39) = new ElectricityStorm();
     elements.at(40) = new StormPlasma();
     elements.at(41) = new Hurricane();
-    elements.at(42) = new Powder();
+    elements.at(42) = new PowderA();
     elements.at(43) = new LiquidPowder();
     elements.at(44) = new Mercury();
     elements.at(45) = new Potassium();
@@ -132,6 +138,12 @@ SandSimulation::SandSimulation() {
     elements.at(57) = new Obsidian();
     elements.at(58) = new Vapor();
     elements.at(59) = new AcidWater();
+    elements.at(60) = new OxidizedPotassium();
+    elements.at(61) = new BurningPotassium();
+    elements.at(62) = new Rust();
+    elements.at(63) = new PowderB();
+    elements.at(64) = new PowderB();
+    elements.at(65) = new Kuiper();
 
     draw_data = PackedByteArray();
 
@@ -249,7 +261,7 @@ bool SandSimulation::is_on_fire(int row, int col) {
             if (x == 0 && y == 0 || !in_bounds(row + y, col + x))
                 continue;
             int c = get_cell(row + y, col + x);
-            if (c == 24 || c == 5 || c == 9 || c == 20 || c == 26 || c == 34 || c == 37 || c == 38 || c == 40 || c == 46 || c == 48 || c == 50 || c == 52) 
+            if (c == 24 || c == 5 || c == 9 || c == 20 || c == 26 || c == 34 || c == 37 || c == 38 || c == 40 || c == 46 || c == 48 || c == 50 || c == 52 || c == 61) 
                 return true;
         }
     } 

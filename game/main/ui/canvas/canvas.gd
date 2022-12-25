@@ -31,7 +31,7 @@ func _ready() -> void:
 	var gradient_ids := []
 	var metal_ids := []
 	
-	for _i in range(64):
+	for _i in range(84):
 		fluid_ids.append(0)
 		flat_ids.append(0)
 		gradient_ids.append(0)
@@ -60,7 +60,7 @@ func _ready() -> void:
 	
 	for _i in range(8):
 		var param := []
-		for _j in range(24):
+		for _j in range(32):
 			param.append(Vector3())
 		gradient_params.append(param)
 	
