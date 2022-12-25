@@ -10,7 +10,7 @@ public:
     void process(SandSimulation *sim, int row, int col) override {
         // Extinguish 
         if (sim->touch_count(row, col, 3)) {
-            sim->set_cell(row, col, 6);
+            sim->set_cell(row, col, 58);
             return;
         }
 

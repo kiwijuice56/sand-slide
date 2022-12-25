@@ -1,9 +1,0 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://hgh82m4bbi4h"]
-
-[ext_resource type="Script" path="res://ui/canvas/elements/types/metal.gd" id="1_xs6s7"]
-
-[resource]
-script = ExtResource("1_xs6s7")
-color_a = Color(0.937255, 0.937255, 0.937255, 1)
-color_b = Color(0.494118, 0.466667, 0.34902, 1)
-id = 45

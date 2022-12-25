@@ -56,6 +56,10 @@
 #include "elements/molten_glass.h"
 #include "elements/algae_red.h"
 #include "elements/algae_brown.h"
+#include "elements/cool_lava.h"
+#include "elements/obsidian.h"
+#include "elements/vapor.h"
+#include "elements/acid_water.h"
 
 #include <godot_cpp/core/class_db.hpp>
 
@@ -124,6 +128,10 @@ SandSimulation::SandSimulation() {
     elements.at(53) = new MoltenGlass();
     elements.at(54) = new AlgaeRed();
     elements.at(55) = new AlgaeBrown();
+    elements.at(56) = new CoolLava();
+    elements.at(57) = new Obsidian();
+    elements.at(58) = new Vapor();
+    elements.at(59) = new AcidWater();
 
     draw_data = PackedByteArray();
 
@@ -227,7 +235,7 @@ bool SandSimulation::is_poisoned(int row, int col) {
             if (x == 0 && y == 0 || !in_bounds(row + y, col + x)) 
                 continue;
             int c = get_cell(row + y, col + x);
-            if (c == 10 || c == 21 || c == 22 || c == 35 || c == 44) 
+            if (c == 10 || c == 21 || c == 22 || c == 35 || c == 44 || c == 59) 
                 return true;
         }
     } 

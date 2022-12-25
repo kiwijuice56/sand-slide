@@ -5,14 +5,15 @@
 
 class BlueFire: public Element {
 public:
-    const double DECAY = 1.0 / 400; 
+    const double DECAY = 1.0 / 128; 
     const double UP = 1.0 / 1.5;
     const double UP_BLOCK = 1.0 / 16;
+    const double DOWN = 1.0 / 4;
 
     void process(SandSimulation *sim, int row, int col) override {
         // Extinguish 
         if (sim->touch_count(row, col, 3)) {
-            sim->set_cell(row, col, 6);
+            sim->set_cell(row, col, 58);
             return;
         }
 
@@ -23,8 +24,8 @@ public:
         bool blocked = !sim->in_bounds(row - 1, col) || sim->get_cell(row - 1, col) == 24;
         if (sim->randf() < (blocked ? UP_BLOCK : UP)) {
             sim->move_and_swap(row, col, row - 1, col);
-        } else {
-            sim->move_and_swap(row, col, row, col + (sim->randf() < 0.5 ? 1 : -1));
+        } else { 
+            sim->move_and_swap(row, col, row + (sim->randf() < DOWN ? 0 : 1), col + (sim->randf() < 0.5 ? 1 : -1));
         }
     }
 

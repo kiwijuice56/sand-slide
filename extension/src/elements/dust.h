@@ -28,7 +28,7 @@ public:
     }
 
     double get_density() override {
-        return 1.05;
+        return 0.96;
     }
 
     double get_explode_resistance() override {

@@ -8,12 +8,12 @@ public:
     const double DECAY = 1.0 / 160;
 
     void process(SandSimulation *sim, int row, int col) override {
-        if (sim->randf() < DECAY) {
+        if (sim->randf() < DECAY)  {
             sim->set_cell(row, col, 0);
         }
 
         int dir = (int) (sim->randf() * 3) - 1;
-        if (dir != 0) {
+        if (dir != 0) { 
             sim->move_and_swap(row, col, row, col + dir);
         } else {
             sim->move_and_swap(row, col, row - 1, col);
@@ -21,7 +21,7 @@ public:
     }
 
     double get_density() override {
-        return 0.35;
+        return 32.0;
     }
 
     double get_explode_resistance() override {

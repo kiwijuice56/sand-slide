@@ -21,19 +21,21 @@ public:
 
         bool on_ground = !sim->in_bounds(row + 1, col) || sim->get_cell(row + 1, col) != 0;
 
-        // Jumping
+        // Jumping while on the floor
         if (sim->randf() < JUMP && on_ground) {
             int dir = (int) (sim->randf() * 3) - 1;
             sim->move_and_swap(row, col, row - dir, col);
             return;
         }
+        
+        // Moving horizontally
         if (on_ground && sim->randf() >= MOVE) {
             return;
         }
         int dir = (int) (sim->randf() * 3) - 1;
-        if (dir != 0) {
+        if (dir != 0) { 
             sim->move_and_swap(row, col, row, col + dir);
-        } else {
+        } else { 
             sim->move_and_swap(row, col, row + 1, col);
         }
     }

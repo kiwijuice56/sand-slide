@@ -1,8 +1,0 @@
-[gd_resource type="Resource" load_steps=2 format=3]
-
-[ext_resource type="Script" path="res://ui/canvas/elements/types/flat_color.gd" id="1_dev6d"]
-
-[resource]
-script = ExtResource("1_dev6d")
-color = Color(0.419608, 0.941176, 1, 1)
-id = 4

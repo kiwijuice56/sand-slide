@@ -11,6 +11,7 @@ public:
     const double DOWN_BLOCK = 1.0 / 16;
     const double DOWN = 1.0 / 1.5;
 
+    // Share the same properties as regular oil but spread flames to other oil while randomly burning off
     void process(SandSimulation *sim, int row, int col) override {
         if (sim->randf() < DECAY) {
             sim->set_cell(row, col, 6);

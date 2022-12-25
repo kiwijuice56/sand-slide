@@ -10,6 +10,7 @@ public:
     const double DOWN_BLOCK = 1.0 / 16;
     const double DOWN = 1.0 / 1.5;
     const double COOL = 1.0 / 24;
+    const double REG_COOL = 1.0 / 512;
 
     void process(SandSimulation *sim, int row, int col) override {
         // Plasma melting
@@ -17,7 +18,7 @@ public:
             sim->set_cell(row, col, 38);
             return;
         }
-        if (sim->randf() < COOL && sim->touch_count(row, col, 0) > 0) {
+        if (sim->randf() < COOL && sim->touch_count(row, col, 0) > 0 || sim->randf() < REG_COOL) {
             sim->set_cell(row, col, 51);
             return;
         }

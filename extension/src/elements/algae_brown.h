@@ -20,11 +20,15 @@ public:
         if (sim->randf() < GROWTH && sim->touch_count(row, col, 3) > 0) {
             sim->grow(row + (int) (sim->randf() * 3) - 1, col + (int) (sim->randf() * 3) - 1, 3, 55);
         }
-        else if (sim->randf() < DEATH) {
+
+        // Randomly decay to keep populations smaller
+        if (sim->randf() < DEATH) {
             sim->set_cell(row, col, 3);
-        } else if (sim->is_poisoned(row, col)) {
-            sim->set_cell(row, col, 16);
         } 
+        
+        if (sim->is_poisoned(row, col)) { 
+            sim->set_cell(row, col, 16);
+        }
     }
 
     double get_density() override {

@@ -5,7 +5,7 @@
 
 class Smoke: public Element {
 public:
-    const double DECAY = 1.0 / 190;
+    const double DECAY = 1.0 / 130;
     const double UP = 1.0 / 1.5;
     const double UP_BLOCK = 1.0 / 16;
 

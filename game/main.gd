@@ -1,8 +1,9 @@
 extends Node
 class_name Main
-# Contains the main simulation and runs the program
+# Contains the sand simulation and acts as the root of the game
 
-# Keep track of element indices of the simulation to be able comminucate drawing info
+# Keep track of the indices of each element so that this node can draw  
+# it into the simulation
 const ELEMENT_INDEX = [
 	"Void", "Sand", "Rock", "Water", "Polliwog", "Fire", 
 	"Smoke", "Algae", "Sand Duck", "Explosion", "Lead Azide",
@@ -13,18 +14,19 @@ const ELEMENT_INDEX = [
 	"Uranium", "Neutron", "Lightning", "Plasma", "Electron", "StormPlasma",
 	"Hurricane", "Powder", "Liquid Powder", "Mercury", "Potassium",
 	"PExplosion", "Hydrogen", "HExplosion", "Penguin", "BurningOil",
-	"Gold", "MoltenGlass", "AlgaeRed", "AlgaeBrown"]
+	"Gold", "MoltenGlass", "AlgaeRed", "AlgaeBrown", "CoolLava",
+	"Obsidian", "Vapor"]
 
 @export var save_file_manager: Node
 @export var canvas: TextureRect
-
-@export var simulation_speed: int = 100000
-@export var chunk_size: int = 8
-var pause := false
-
 var sim: SandSimulation
-var brush_size: int = 16
+
+@export var simulation_speed: int = 3
+@export var chunk_size: int = 16
+@export var brush_size: int = 16
+
 var selected_element: int = 1
+var pause := false
 
 var draw_enabled: bool = false:
 	set(value):
@@ -49,13 +51,6 @@ func _on_window_resized() -> void:
 func _on_mouse_pressed(row: int, col: int, is_left: bool) -> void:
 	draw(row, col, selected_element if is_left else 0, brush_size)
 
-# Clean up memory in simulation
-func _notification(what):
-	if what == Window.NOTIFICATION_WM_CLOSE_REQUEST or what == Window.NOTIFICATION_WM_GO_BACK_REQUEST:
-		set_process(false)
-		sim.clean_up()
-		get_tree().quit()
-
 func _process(_delta) -> void:
 	if draw_enabled:
 		sim.step(simulation_speed)
@@ -76,9 +71,8 @@ func draw(center_row: int, center_col: int, draw_element: int, radius: int) -> v
 				# Some life can't live too close, so they need to be randomly scattered
 				if is_life and randf() > 0.6:
 					continue
-				# Check if cell is empty when drawing a fluid
-				var at_cell: int = sim.get_cell(row + center_row, col + center_col)
-				if is_liquid and at_cell != 0:
+				# Prevent fluids from being drawn over solids
+				if is_liquid and sim.get_cell(row + center_row, col + center_col) != 0:
 					continue
 				sim.draw_cell(row + center_row, col + center_col, draw_element)
 

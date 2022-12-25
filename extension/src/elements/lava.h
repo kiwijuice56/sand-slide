@@ -6,7 +6,7 @@
 
 class Lava: public Element {
 public:
-    const double COOL = 1.0 / 200;
+    const double COOL = 1.0 / 64;
     const double FLAME = 1.0 / 16;
     const double DOWN_BLOCK = 1.0 / 16;
     const double DOWN = 1.0 / 1.5;
@@ -14,16 +14,15 @@ public:
     void process(SandSimulation *sim, int row, int col) override {
         // Cooling
         if (sim->randf() < COOL && sim->touch_count(row, col, 3)) {
-            sim->set_cell(row, col, 2);
+            sim->set_cell(row, col, 56);
             return;
         }
 
         bool blocked = !sim->in_bounds(row + 1, col) || sim->get_cell(row + 1, col) == 20;
-        if (sim->randf() < (blocked ? DOWN_BLOCK : DOWN)) {
+        if (sim->randf() < (blocked ? DOWN_BLOCK : DOWN)) 
             sim->move_and_swap(row, col, row + 1, col);
-        } else {
+        else 
             sim->move_and_swap(row, col, row, col + (sim->randf() < 0.5 ? 1 : -1));
-        }
         if (sim->randf() < FLAME) {
             sim->grow(row - 1, col, 0, 5);
             sim->grow(row, col - 1, 0, 5);
