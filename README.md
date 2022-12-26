@@ -1,5 +1,5 @@
 # sand-slide
-Prototype falling sand game made with Godot 4 beta 3 and GDextension. The full game can be downloaded for free at the [itch.io page](https://kiwijuice56.itch.io/sand-slide).
+Prototype falling sand game made with Godot 4 beta 9 and GDextension. The full game can be downloaded for free at the [itch.io page](https://kiwijuice56.itch.io/sand-slide).
 This repository is intended to serve as an example of using GDextension in a full project and to allow people to add new elements.
 
 ![Title](docs/background_sand_slide.png)
@@ -7,10 +7,10 @@ This repository is intended to serve as an example of using GDextension in a ful
 ![The elements](docs/elements.png)
 
 ## Project Structure
-This project was based on another open-source [template project](https://github.com/paddy-exe/GDExtensionSummator).
+The GDExtension project was based on another open-source [demo project](https://github.com/paddy-exe/GDExtensionSummator).
 
 The majority of the game is implemented in C++ as a GDextension (in `extension\src`) that gets compiled into a dll file (in `game\bin`). 
-The user interface was created in a godot project (in `game`) that calls methods from the GDextension as if it waas a node.
+The user interface was created in a godot project (in `game`) that calls methods from the GDextension as if it was a node.
 
 ## Set Up
 1. Clone/download the repository
@@ -57,11 +57,20 @@ When you are ready to add your element to the game, import the header file in `e
 The index that you add the element to is its `ID`. Other elements reference this `ID` when checking conditions, such as above where sand
 is replaced with glass. Glass is placed at the 25th spot of the `elements` vector, hence its `ID` being 25.
 
-In the godot project, add your element name to the `ELEMENT_INDEX` list within `game\main.gd` at the same index you placed it within `elements`. 
-The visuals of your element can be modified through the `game\canvas\element_shader.gd` file.
-Finally, create a button with the matching name that you put within the list.
+In the godot project, add your element name to the `ELEMENT_INDEX` list within `game\main\main.gd` at the same index you placed it within `elements`. 
+The visuals of your element can be modified by creating a resource that extends the `ElementVisual` class and placing it within `game\main\element_visuals\`.
+Finally, create a button with the same name that you inserted into the list.
 
 ## Save Files
 The game allows you to manage save files. Files are stored in `user:\\` which is `%APPDATA%\Godot\app_userdata\Sand Slide` on Windows.
 Each folder corresponds to a save file and contains a Godot resource and an image. Each luminosity value in the texture represents an element,
 so you can edit the file in an external editor and load it back into the game.
+
+## Attribution
+[Plumbing](https://icons8.com/icon/67287/plumbing), [eraser](https://icons8.com/icon/78855/eraser), 
+[file](https://icons8.com/icon/77782/file), [settings](https://icons8.com/icon/60006/support) and 
+[exit](https://icons8.com/icon/71200/close) icons by [Icons8](https://icons8.com/).
+
+Implementation of Bresenham's Line Algorithm by [Saideep Dicholkar](https://saideepdicholkar.blogspot.com/2017/04/bresenhams-line-algorithm-thick-line.html)
+
+GDExtension Starter Project by [paddy-exe](https://github.com/paddy-exe/GDExtensionSummator)

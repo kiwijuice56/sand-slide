@@ -8,7 +8,11 @@ class_name SandCanvas
 @export var element_folder_path: String = "res://main/element_visuals/"
 @export var element_materials: Array[ElementVisual] = []
 
-signal mouse_pressed(row, col, is_left)
+var released := true
+var start_draw: Vector2
+var end_draw: Vector2
+
+signal mouse_pressed(start, end)
 
 func initialize_elements() -> void:
 	element_materials = []
@@ -31,7 +35,7 @@ func _ready() -> void:
 	var gradient_ids := []
 	var metal_ids := []
 	
-	for _i in range(84):
+	for _i in range(256):
 		fluid_ids.append(0)
 		flat_ids.append(0)
 		gradient_ids.append(0)
@@ -110,7 +114,7 @@ func _ready() -> void:
 			metal_params[1][mid] = Vector3(mat.color_b.r, mat.color_b.g, mat.color_b.b)
 			mid += 1
 			metal_ids[mat.id] = mid 
-			
+	# Load all the values into the shader
 	get_material().set_shader_parameter("fluid_id_match", fluid_ids)
 	get_material().set_shader_parameter("flat_color_id_match", flat_ids)
 	get_material().set_shader_parameter("gradient_id_match", gradient_ids)
@@ -156,14 +160,16 @@ func _resized() -> void:
 	get_material().set_shader_parameter("px_scale", px_scale)
 
 func _process(_delta: float) -> void:
-	# Keep track of both mouse buttons so that we can use the left mouse
-	# as the draw button and the right mouse as the erase button
-	var left_pressed: bool = Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT)
-	var right_pressed: bool = Input.is_mouse_button_pressed(MOUSE_BUTTON_RIGHT)
-	if left_pressed or right_pressed:
-		var row: int = int(get_viewport().get_mouse_position().y / px_scale)
-		var col: int = int(get_viewport().get_mouse_position().x / px_scale)
-		mouse_pressed.emit(row, col, left_pressed)
+	if Input.is_action_just_released("tap"):
+		released = true
+	elif Input.is_action_pressed("tap"):
+		if released:
+			start_draw = get_viewport().get_mouse_position() / px_scale
+			released = false
+		else:
+			end_draw = get_viewport().get_mouse_position() / px_scale
+			mouse_pressed.emit(start_draw, end_draw)
+			start_draw = end_draw
 
 func repaint(sim: SandSimulation) -> void:
 	# The simulation stores a single byte for each element, so we can use the luminosity format

@@ -26,6 +26,8 @@ public:
             return;
         }
 
+        sim->liquid_process(row, col, 1); 
+
         bool blocked = !sim->in_bounds(row + 1, col) || sim->get_cell(row + 1, col) == 3;
         int new_row = row, new_col = col;
 

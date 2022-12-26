@@ -9,8 +9,9 @@ class Crystal: public Element {
 public:
     const double GROW = 1.0 / 2000;
     void process(SandSimulation *sim, int row, int col) override {
-        if (sim->randf() >= GROW) 
+        if (sim->randf() >= GROW) {
             return;
+        }
 
         // We need to empty this cell for crystal branching checks
         sim->set_cell(row, col, 0);

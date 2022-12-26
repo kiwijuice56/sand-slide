@@ -5,10 +5,11 @@
 
 class Soil: public Element {
 public:
-    const double POWDER = 1 / 1.05;
+    const double POWDER = 1 / 1.02;
     void process(SandSimulation *sim, int row, int col) override {
-        if (sim->randf() >= POWDER)
+        if (sim->randf() >= POWDER) {
             return;
+        }
         sim->move_and_swap(row, col, row + 1, col);
     }
 

@@ -15,12 +15,7 @@ public:
             return;
         }
 
-        int dir = (int) (sim->randf() * 3) - 1;
-        if (dir != 0) {
-            sim->move_and_swap(row, col, row, col + dir);
-        } else {
-            sim->move_and_swap(row, col, row + 1, col);
-        }
+        sim->liquid_process(row, col, 4);
     }
 
     double get_density() override {

@@ -12,6 +12,7 @@ public:
     const double OXIDIZE_A = 1 / 16;
     const double OXIDIZE_B = 1 / 256;
 
+    // Mostly duplicate of regular potassium, but can not be oxidized again
     void process(SandSimulation *sim, int row, int col) override {
         if (sim->randf() < PLASMA && (sim->touch_count(row, col, 38) > 0 || sim->touch_count(row, col, 40) > 0)) {
             sim->grow(row + 1, col, 60, 38);

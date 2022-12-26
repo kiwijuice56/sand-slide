@@ -9,7 +9,7 @@ public:
     const double DECAY = 1.0 / 1024;
     const double EVAPORATE = 1.0 / 64;
     const double EAT = 1.0 / 8;
-    const double MIX = 1.0 / 2;
+    const double MIX = 1.0 / 4;
     const double EMIT = 1.0 / 64;
     const double DOWN = 1.0 / 1.2;
     const double DOWN_BLOCK = 1.0 / 16;
@@ -32,6 +32,8 @@ public:
             sim->set_cell(row, col, 59);
             return;
         }
+
+        sim->liquid_process(row, col, 2); 
 
         bool blocked = !sim->in_bounds(row + 1, col) || sim->get_cell(row + 1, col) == 3;
         int new_row = row, new_col = col;

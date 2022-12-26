@@ -4,10 +4,10 @@ uniform int width = 1000;
 uniform int height = 800;
 uniform int px_scale = 4;
 
-uniform int[84] flat_color_id_match;
+uniform int[256] flat_color_id_match;
 uniform vec3[24] flat_color;
 
-uniform int[84] gradient_id_match;
+uniform int[256] gradient_id_match;
 uniform vec3[32] gradient_color_a;
 uniform vec3[32] gradient_color_b;
 uniform vec3[32] gradient_color_c;
@@ -18,7 +18,7 @@ uniform float[32] gradient_offset_1;
 uniform float[32] gradient_offset_2;
 uniform float[32] gradient_offset_3;
 
-uniform int[84] fluid_id_match;
+uniform int[256] fluid_id_match;
 uniform vec3[24] color_a;
 uniform vec3[24] color_b;
 uniform vec3[24] color_c;
@@ -34,7 +34,7 @@ uniform float[24] shimmer_density;
 uniform float[24] shimmer_opacity;
 uniform float[24] shimmer_cycle;
 
-uniform int[84] metal_id_match;
+uniform int[256] metal_id_match;
 uniform vec3[24] metal_color_a;
 uniform vec3[24] metal_color_b; 
 
@@ -73,7 +73,7 @@ void fragment() {
 	int pY = int(round(floor(UV.y * float(height) / float(px_scale))));
 	vec2 PUV = vec2(float(pX) / (float(width) / float(px_scale)), float(pY) / (float(height) / float(px_scale)));
 	
-	vec3 col = vec3(0.0);
+	vec3 col = vec3(1.0);
 	if (fluid_id_match[id] != 0) {
 		int i = fluid_id_match[id] - 1;
 		vec2 ratio = (SCREEN_PIXEL_SIZE.x > SCREEN_PIXEL_SIZE.y) ?

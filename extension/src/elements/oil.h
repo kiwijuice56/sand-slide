@@ -7,8 +7,6 @@
 class Oil: public Element {
 public:
     const double FLAME = 1.0 / 64;
-    const double DOWN_BLOCK = 1.0 / 16;
-    const double DOWN = 1.0 / 1.5;
 
     void process(SandSimulation *sim, int row, int col) override {
         // Burning
@@ -17,12 +15,7 @@ public:
             return;
         }
 
-        bool blocked = !sim->in_bounds(row + 1, col) || sim->get_cell(row + 1, col) == 30 || sim->get_cell(row + 1, col) == 50;
-        if (sim->randf() < (blocked ? DOWN_BLOCK : DOWN)) {
-            sim->move_and_swap(row, col, row + 1, col);
-        } else {
-            sim->move_and_swap(row, col, row, col + (sim->randf() < 0.5 ? 1 : -1));
-        }
+        sim->liquid_process(row, col, 6); 
     }
 
     double get_density() override {

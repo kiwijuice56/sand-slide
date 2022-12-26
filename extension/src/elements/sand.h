@@ -6,7 +6,7 @@
 class Sand: public Element {
 public:
     const double FLAME = 1 / 64.0;
-    const double POWDER = 1 / 1.1;
+    const double POWDER = 1 / 1.05;
 
     void process(SandSimulation *sim, int row, int col) override {
         if (sim->randf() >= POWDER)

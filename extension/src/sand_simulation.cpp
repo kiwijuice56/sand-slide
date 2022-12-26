@@ -15,9 +15,9 @@
 #include "elements/seed.h"
 #include "elements/germ_seed.h"
 #include "elements/grass.h"
-#include "elements/marble.h"
+#include "elements/wall.h"
 #include "elements/dust.h"
-#include "elements/steel.h"
+#include "elements/iron.h"
 #include "elements/wood.h"
 #include "elements/ice.h"
 #include "elements/lava.h"
@@ -93,9 +93,9 @@ SandSimulation::SandSimulation() {
     elements.at(12) = new Seed();
     elements.at(13) = new GerminatedSeed();
     elements.at(14) = new Grass();
-    elements.at(15) = new Marble();
+    elements.at(15) = new Wall();
     elements.at(16) = new Dust();
-    elements.at(17) = new Steel();
+    elements.at(17) = new Iron();
     elements.at(18) = new Wood();
     elements.at(19) = new Ice();
     elements.at(20) = new Lava();
@@ -170,8 +170,23 @@ void SandSimulation::step(int iterations) {
                         continue;
                     if (visited.at(rRow * width + rCol)) 
                         visited.at(rRow * width + rCol) = false;
-                    else 
-                        elements.at(get_cell(rRow, rCol))->process(this, rRow, rCol);
+                    else {
+                        // Taps are the element offset by 128; get_cell() returns only the first few bits, so we can use this to spawn the element!
+                        if (cells.at(rRow * width + rCol) >= 128) {
+                            int x = cells.at(rRow * width + rCol) - 128;
+                            grow(rRow + 1, rCol, 0, x);
+                            grow(rRow + 1, rCol + 1, 0, x);
+                            grow(rRow + 1, rCol - 1, 0, x);
+                            grow(rRow - 1, rCol, 0, x);
+                            grow(rRow - 1, rCol + 1, 0, x);
+                            grow(rRow - 1, rCol - 1, 0, x);
+                            grow(rRow, rCol, 0, x);
+                            grow(rRow, rCol + 1, 0, x);
+                            grow(rRow, rCol - 1, 0, x);
+                        } else {
+                            elements.at(get_cell(rRow, rCol))->process(this, rRow, rCol);
+                        }
+                    }
                 }
             }
         }
@@ -205,6 +220,18 @@ void SandSimulation::grow(int row, int col, int food, int replacer) {
     } else if (get_cell(row, col) != food) 
         return;
     set_cell(row, col, replacer);
+}
+
+void SandSimulation::liquid_process(int row, int col, int fluidity) {
+    for (int i = 0; i < fluidity; i++) {
+            int new_col = col + (randf() < 0.5 ? 1 : -1);
+            int new_row = row + (is_swappable(row, col, row + 1, new_col) && randf() > 0.2 ? 1 : 0);
+            if (is_swappable(row, col, new_row, new_col) && (randf() < 0.3 || !is_swappable(row, col, new_row + 1, new_col))) {
+                move_and_swap(row, col, new_row, new_col);
+                row = new_row;
+                col = new_col;
+            }
+        }
 }
 
 // Returns the amount of cells of `type` surrounding the given cell
@@ -268,12 +295,24 @@ bool SandSimulation::is_on_fire(int row, int col) {
     return false;
 }
 
+bool SandSimulation::is_swappable(int row, int col, int row2, int col2) {
+    if (!in_bounds(row, col) || !in_bounds(row2, col2)) 
+        return false;
+
+    if (elements.at(get_cell(row, col))->get_density() <= elements.at(get_cell(row2, col2))->get_density()) 
+        return false;
+
+    return true;
+}
+
 inline float SandSimulation::randf() { 
     g_seed = (214013 * g_seed + 2531011); 
     return ((g_seed>>16) & 0x7FFF) / (double) 0x7FFF; 
 } 
 
 int SandSimulation::get_cell(int row, int col) {
+    if (cells.at(row * width + col) > 127)
+        return 15;
     return cells.at(row * width + col);
 }
 
@@ -356,6 +395,7 @@ void SandSimulation::_bind_methods() {
     ClassDB::bind_method(D_METHOD("step"), &SandSimulation::step);
 
     ClassDB::bind_method(D_METHOD("move_and_swap"), &SandSimulation::move_and_swap);
+    ClassDB::bind_method(D_METHOD("is_swappable"), &SandSimulation::is_swappable);
     ClassDB::bind_method(D_METHOD("grow"), &SandSimulation::grow);
     ClassDB::bind_method(D_METHOD("touch_count"), &SandSimulation::touch_count);
     ClassDB::bind_method(D_METHOD("cardinal_touch_count"), &SandSimulation::cardinal_touch_count);

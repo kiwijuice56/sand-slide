@@ -18,13 +18,15 @@ public:
             return;
         }
 
+        // Return to regular ice
         if (sim->randf() < DECAY) {
             sim->set_cell(row, col, 19);
             return;
         }
 
-        if (sim->randf() >= GROW) 
+        if (sim->randf() >= GROW) {
             return;
+        }
 
         // We need to empty this cell for ice branching checks
         sim->set_cell(row, col, 0);

@@ -18,11 +18,8 @@ public:
             return;
         }
 
-        bool blocked = !sim->in_bounds(row + 1, col) || sim->get_cell(row + 1, col) == 20;
-        if (sim->randf() < (blocked ? DOWN_BLOCK : DOWN)) 
-            sim->move_and_swap(row, col, row + 1, col);
-        else 
-            sim->move_and_swap(row, col, row, col + (sim->randf() < 0.5 ? 1 : -1));
+        sim->liquid_process(row, col, 2);
+
         if (sim->randf() < FLAME) {
             sim->grow(row - 1, col, 0, 5);
             sim->grow(row, col - 1, 0, 5);

@@ -7,8 +7,9 @@ class Rust: public Element {
 public:
     const double POWDER = 1 / 1.15;
     void process(SandSimulation *sim, int row, int col) override {
-        if (sim->randf() >= POWDER)
+        if (sim->randf() >= POWDER) {
             return;
+        }
         sim->move_and_swap(row, col, row + 1, col);
     }
 

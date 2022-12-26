@@ -52,12 +52,15 @@ public:
 
     // Helper methods for elements
     void move_and_swap(int row, int col, int row2, int col2);
+   
     void grow(int row, int col, int food, int replacer);
+    void liquid_process(int row, int col, int fluidity);
     int touch_count(int row, int col, int type);
     int cardinal_touch_count(int row, int col, int type);
     bool in_bounds(int row, int col);
     bool is_poisoned(int row, int col);
     bool is_on_fire(int row, int col);
+    bool is_swappable(int row, int col, int row2, int col2);
     float randf();
 
     int get_cell(int row, int col);

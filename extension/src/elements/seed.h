@@ -14,22 +14,27 @@ public:
         if (sim->randf() >= POWDER)
             return;
 
-        // Catch on fire
         if (sim->randf() < FLAME && sim->is_on_fire(row, col)) {
             sim->set_cell(row, col, 5);
             return;
-        } else if (sim->is_poisoned(row, col)) {
+        }
+        
+        if (sim->is_poisoned(row, col)) {
             sim->set_cell(row, col, 16);
             return;
         }
 
         sim->move_and_swap(row, col, row + 1, col);
 
-        // Turn into a germinated seed
+        // Turn into a germinated seed when watered, but wither out after a while
         if (sim->randf() < DECAY) {
             sim->set_cell(row, col, 11);
-        } else if (sim->randf() < GERMINATE && sim->touch_count(row, col, 3) > 0) {
+            return;
+        } 
+        
+        if (sim->randf() < GERMINATE && sim->touch_count(row, col, 3) > 0) {
             sim->set_cell(row, col, 13);
+            return;
         } 
     }
 

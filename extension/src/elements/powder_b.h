@@ -9,10 +9,11 @@ public:
     const double DISSOLVE = 1 / 256.0;
     const double POWDER = 1 / 1.125;
 
+    // Duplicate of PowderA
     void process(SandSimulation *sim, int row, int col) override {
-        if (sim->randf() >= POWDER)
+        if (sim->randf() >= POWDER){
             return;
-
+        }
         if (sim->randf() < FLAME && sim->is_on_fire(row, col)) {
             sim->set_cell(row, col, 16);
             return;

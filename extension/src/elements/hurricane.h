@@ -7,12 +7,13 @@ class Hurricane: public Element {
 public:
     const double DECAY = 1.0 / 300;
     const double THUNDER = 0.25;
-    const double RAIN = 0.45; 
+    const double RAIN = 0.65; 
     const double UP = 0.65;
     const double PRECIPITATE = 1.0 / 48;
-    const double GROW = 1.0 / 360;
+    const double GROW = 1.0 / 200;
 
     void process(SandSimulation *sim, int row, int col) override {
+        // Decay into either rain, nothing, or thunder
         if (sim->randf() < DECAY) {
             double x = sim->randf();
             if (x < THUNDER)

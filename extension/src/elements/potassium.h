@@ -34,6 +34,7 @@ public:
             sim->set_cell(row, col, 61);
         }
         
+        // Make mini flashes of explosions in a square grid
         if (sim->randf() < WATER && sim->touch_count(row, col, 3)) {
             for (int y = -3; y <= 3; y++) {
                 for (int x = -3; x <= 3; x++) {
