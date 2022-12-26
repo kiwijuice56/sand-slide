@@ -11,7 +11,7 @@ public:
     void process(SandSimulation *sim, int row, int col) override {
         if (sim->touch_count(row, col, 23) > 0) {
             sim->set_cell(row, col, 0);
-        } else if (sim->touch_count(row, col, 32) > 0 || sim->randf() < DISSOLVE && sim->touch_count(row, col, 3) > 0) {
+        } else if (sim->touch_count(row, col, 32) > 0 || sim->randf() < DISSOLVE && sim->touch_count(row, col, 3) + sim->touch_count(row, col, 71) > 0) {
             sim->set_cell(row, col, 16);
         } else if (sim->randf() < GROWTH * (sim->is_on_fire(row, col) ? 6.0 : 1.0)) {
             int dir = (int) (sim->randf() * 2);

@@ -11,7 +11,7 @@ public:
     const double MELT = 1.0 / 1024;
 
     void process(SandSimulation *sim, int row, int col) override {
-        if (sim->randf() < WEATHER && sim->touch_count(row, col, 3) > 0) {
+        if (sim->randf() < WEATHER && sim->touch_count(row, col, 3) + sim->touch_count(row, col, 71) > 0) {
             sim->set_cell(row, col, 11);
         } else if (sim->randf() < MELT && sim->is_on_fire(row, col)) {
             sim->set_cell(row, col, 20);

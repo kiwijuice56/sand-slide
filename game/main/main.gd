@@ -16,7 +16,7 @@ const ELEMENT_INDEX = [
 	"Gold", "MoltenGold", "MoltenGlass", "AlgaeRed", "AlgaeBrown", "CoolLava",
 	"Obsidian", "Vapor", "AcidWater", "OxidizedPotassium", 
 	"BurningPotassium", "Rust", "PowderB", "PowderC", "Kuiper", "Sun",
-	"FireworkB", "FireworkC", "FireworkTrail"]
+	"FireworkB", "FireworkC", "FireworkTrail", "Salt", "SaltWater"]
 
 var LIFE = {}
 var FLUID = {}

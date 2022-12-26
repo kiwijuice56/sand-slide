@@ -8,15 +8,20 @@ public:
     const double GROWTH = 0.000425;
 
     void process(SandSimulation *sim, int row, int col) override {
-        if (sim->touch_count(row, col, 3) == 0) {
+        if (sim->touch_count(row, col, 3) + sim->touch_count(row, col, 71) == 0) {
             sim->set_cell(row, col, 0);
         } else if (sim->touch_count(row, col, 31) > 3 || sim->touch_count(row, col, 4) > 0) {
-            sim->set_cell(row, col, 3);
+            sim->set_cell(row, col, sim->touch_count(row, col, 71) > sim->touch_count(row, col, 3) ? 71 : 3);
         } else if (sim->randf() < GROWTH) {
             sim->grow(row + (sim->randf() < 0.5 ? 1 : 2), col, 3, 31);
             sim->grow(row - (sim->randf() < 0.5 ? 1 : 2), col, 3, 31);
             sim->grow(row, col - (sim->randf() < 0.5 ? 1 : 2), 3, 31);
             sim->grow(row, col + (sim->randf() < 0.5 ? 1 : 2), 3, 31);
+
+            sim->grow(row + (sim->randf() < 0.5 ? 1 : 2), col, 71, 31);
+            sim->grow(row - (sim->randf() < 0.5 ? 1 : 2), col, 71, 31);
+            sim->grow(row, col - (sim->randf() < 0.5 ? 1 : 2), 71, 31);
+            sim->grow(row, col + (sim->randf() < 0.5 ? 1 : 2), 71, 31);
         } else if (sim->is_poisoned(row, col)) {
             sim->set_cell(row, col, 16);
         }

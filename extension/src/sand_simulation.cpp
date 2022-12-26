@@ -70,6 +70,8 @@
 #include "elements/firework_b.h"
 #include "elements/firework_c.h"
 #include "elements/firework_trail.h"
+#include "elements/salt.h"
+#include "elements/salt_water.h"
 
 #include <godot_cpp/core/class_db.hpp>
 
@@ -152,6 +154,8 @@ SandSimulation::SandSimulation() {
     elements.at(67) = new FireworkB();
     elements.at(68) = new FireworkC();
     elements.at(69) = new FireworkTrail();
+    elements.at(70) = new Salt();
+    elements.at(71) = new SaltWater();
 
     draw_data = PackedByteArray();
 

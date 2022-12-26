@@ -34,7 +34,7 @@ public:
             return;
         }
         
-        if (sim->randf() < WATER && sim->touch_count(row, col, 3)) {
+        if (sim->randf() < WATER && sim->touch_count(row, col, 3) + sim->touch_count(row, col, 71) > 0) {
             for (int y = -3; y <= 3; y++) {
                 for (int x = -3; x <= 3; x++) {
                     if (sim->in_bounds(row + y, col + x) ) {

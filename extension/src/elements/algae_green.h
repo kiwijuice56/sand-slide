@@ -17,13 +17,14 @@ public:
         }
 
         // Grow into water
-        if (sim->randf() < GROWTH && sim->touch_count(row, col, 3) > 0) {
+        if (sim->randf() < GROWTH) {
             sim->grow(row + (int) (sim->randf() * 3) - 1, col + (int) (sim->randf() * 3) - 1, 3, 7);
+            sim->grow(row + (int) (sim->randf() * 3) - 1, col + (int) (sim->randf() * 3) - 1, 71, 7);
         }
 
         // Randomly decay to keep populations smaller
         if (sim->randf() < DEATH) {
-            sim->set_cell(row, col, 3);
+            sim->set_cell(row, col, sim->touch_count(row, col, 71) > sim->touch_count(row, col, 3) ? 71 : 3);
         } 
         
         if (sim->is_poisoned(row, col)) { 

@@ -26,8 +26,10 @@ public:
         int dir = (int) (sim->randf() * 3) - 1;
         if (dir != 0 && sim->cardinal_touch_count(row, col + dir, 19) + sim->cardinal_touch_count(row, col + dir, 65) == 0) {
             sim->grow(row, col + dir, 3, 19);
+            sim->grow(row, col + dir, 71, 19);
         } else if (sim->cardinal_touch_count(row + 1, col, 19) + sim->cardinal_touch_count(row + 1, col, 65) == 0) {
             sim->grow(row + 1, col, 3, 19);
+            sim->grow(row + 1, col, 71, 19);
         }
         sim->set_cell(row, col, 19);
     }

@@ -1,13 +1,13 @@
-[gd_resource type="Resource" load_steps=2 format=3]
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://bv1fwq06l1wqx"]
 
 [ext_resource type="Script" path="res://main/element_visuals/types/fluid.gd" id="1_3a3kf"]
 
 [resource]
 script = ExtResource("1_3a3kf")
 noise_texture = 0
-color_a = Color(0.298039, 0.607843, 0.470588, 1)
-color_b = Color(0.14902, 0.682353, 0.929412, 1)
-color_c = Color(0.298039, 0.733333, 0.780392, 1)
+color_a = Color(0.223529, 0.466667, 0.482353, 1)
+color_b = Color(0.34902, 0.796078, 1, 1)
+color_c = Color(0.462745, 0.827451, 0.870588, 1)
 noise_scale = 5.0
 noise_speed = 2.0
 current_size = 64.0

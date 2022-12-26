@@ -4,3 +4,5 @@ godot-cpp/*
 game/android/*
 game/out/*
 out/*
+game/sandslide.apk
+*.mdp

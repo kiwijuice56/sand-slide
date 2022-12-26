@@ -27,6 +27,11 @@ public:
             return;
         }
 
+        if (sim->randf() < MIX && sim->touch_count(row, col, 70) > 0) {
+            sim->set_cell(row, col, 71);
+            return;
+        }
+
         // Evaporation when heated
         if (sim->randf() < EVAPORATION && sim->is_on_fire(row, col)) {
             sim->set_cell(row, col, 58);
@@ -39,7 +44,7 @@ public:
             return;
         }
 
-        sim->liquid_process(row, col, 5);    
+        sim->liquid_process(row, col, 4);    
     }
 
     double get_density() override {

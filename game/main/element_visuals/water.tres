@@ -1,4 +1,4 @@
-[gd_resource type="Resource" load_steps=2 format=3]
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://cf3ub58lwoiw3"]
 
 [ext_resource type="Script" path="res://main/element_visuals/types/fluid.gd" id="1_ujkl6"]
 

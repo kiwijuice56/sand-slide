@@ -14,7 +14,7 @@ public:
 
     void process(SandSimulation *sim, int row, int col) override {
         // Cooling
-        if (sim->randf() < COOL && sim->touch_count(row, col, 3)) {
+        if (sim->randf() < COOL && sim->touch_count(row, col, 3) + sim->touch_count(row, col, 71) > 0) {
             sim->set_cell(row, col, 56);
             return;
         }

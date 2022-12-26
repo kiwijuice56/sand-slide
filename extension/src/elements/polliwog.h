@@ -7,6 +7,7 @@ class Polliwog: public Element {
 public:
     const double GROWTH = 1.0 / 550;
     const double DEATH = 1.0 / 512;
+    const double POISON = 1.0 / 8;
 
     void process(SandSimulation *sim, int row, int col) override {
         if (sim->touch_count(row, col, 3) == 0) {
@@ -18,7 +19,7 @@ public:
             sim->grow(row - (sim->randf() < 0.5 ? 1 : 2), col, 3, 4);
             sim->grow(row, col - (sim->randf() < 0.5 ? 1 : 2), 3, 4);
             sim->grow(row, col + (sim->randf() < 0.5 ? 1 : 2), 3, 4);
-        } else if (sim->is_poisoned(row, col)) {
+        } else if (sim->randf() < POISON && (sim->is_poisoned(row, col) || sim->touch_count(row, col, 71))) {
             sim->set_cell(row, col, 16);
         }
     }
