@@ -8,11 +8,12 @@ class SandSimulation;
 class LeadAzide: public Element {
 public:
     const double FLAME = 0.05;
+    const double FIREWORK = 1.0 / 22;
 
     void process(SandSimulation *sim, int row, int col) override {
         // Explode
         if (sim->randf() < FLAME && sim->is_on_fire(row, col)) {
-            sim->set_cell(row, col, 9);
+            sim->set_cell(row, col, sim->randf() < FIREWORK ? 66 : 9);
         }
     }
 

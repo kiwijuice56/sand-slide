@@ -23,7 +23,7 @@ func initialize_elements() -> void:
 		element_materials.append(ResourceLoader.load("%s/%s" % [dir.get_current_dir(), file]))
 
 func _ready() -> void:
-	# initialize_elements()
+	initialize_elements()
 	material = ShaderMaterial.new()
 	material.shader = preload("res://main/ui/canvas/element_painter.gdshader")
 	texture = ImageTexture.new()
@@ -160,12 +160,13 @@ func _resized() -> void:
 	get_material().set_shader_parameter("px_scale", px_scale)
 
 func _process(_delta: float) -> void:
-	if Input.is_action_just_released("tap"):
+	if Input.is_action_just_released("screen_press"):
 		released = true
-	elif Input.is_action_pressed("tap"):
+	elif Input.is_action_pressed("screen_press"):
 		if released:
 			start_draw = get_viewport().get_mouse_position() / px_scale
 			released = false
+			mouse_pressed.emit(start_draw, start_draw)
 		else:
 			end_draw = get_viewport().get_mouse_position() / px_scale
 			mouse_pressed.emit(start_draw, end_draw)

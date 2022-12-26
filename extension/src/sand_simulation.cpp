@@ -66,6 +66,10 @@
 #include "elements/powder_b.h"
 #include "elements/powder_c.h"
 #include "elements/kuiper.h"
+#include "elements/firework_a.h"
+#include "elements/firework_b.h"
+#include "elements/firework_c.h"
+#include "elements/firework_trail.h"
 
 #include <godot_cpp/core/class_db.hpp>
 
@@ -77,7 +81,7 @@ SandSimulation::SandSimulation() {
     // is called for each element type
 
     // The order in the vector is arbitrary, but it must match the list order in main.gd
-    elements.resize(84);
+    elements.resize(128);
     elements.at(0) = new Void();
     elements.at(1) = new Sand();
     elements.at(2) = new Rock();
@@ -144,6 +148,10 @@ SandSimulation::SandSimulation() {
     elements.at(63) = new PowderB();
     elements.at(64) = new PowderB();
     elements.at(65) = new Kuiper();
+    elements.at(66) = new FireworkA();
+    elements.at(67) = new FireworkB();
+    elements.at(68) = new FireworkC();
+    elements.at(69) = new FireworkTrail();
 
     draw_data = PackedByteArray();
 
@@ -288,7 +296,9 @@ bool SandSimulation::is_on_fire(int row, int col) {
             if (x == 0 && y == 0 || !in_bounds(row + y, col + x))
                 continue;
             int c = get_cell(row + y, col + x);
-            if (c == 24 || c == 5 || c == 9 || c == 20 || c == 26 || c == 34 || c == 37 || c == 38 || c == 40 || c == 46 || c == 48 || c == 50 || c == 52 || c == 61) 
+            if (
+                c == 24 || c == 5 || c == 9 || c == 20 || c == 26 || c == 34 || c == 37 || c == 38 || 
+                c == 40 || c == 46 || c == 48 || c == 50 || c == 52 || c == 61 || c == 66 || c == 67 || c == 68 || c == 69) 
                 return true;
         }
     } 

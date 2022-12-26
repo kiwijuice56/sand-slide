@@ -11,6 +11,7 @@ public:
     const double POWDER = 1 / 1.025;
     const double OXIDIZE_A = 1.0 / 128;
     const double OXIDIZE_B = 1.0 / 400;
+    const double FIREWORK = 1.0 / 24;
 
     void process(SandSimulation *sim, int row, int col) override {
         if (sim->randf() < PLASMA && (sim->touch_count(row, col, 38) > 0 || sim->touch_count(row, col, 40) > 0)) {
@@ -39,7 +40,7 @@ public:
             for (int y = -3; y <= 3; y++) {
                 for (int x = -3; x <= 3; x++) {
                     if (sim->in_bounds(row + y, col + x) ) {
-                        sim->set_cell(row + y, col + x, 46);
+                        sim->set_cell(row + y, col + x, sim->randf() < FIREWORK ? 66 : 46);
                     }
                 }
             }

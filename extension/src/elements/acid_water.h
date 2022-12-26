@@ -46,7 +46,6 @@ public:
             return;
         }
 
-
         if (sim->get_cell(new_row, new_col) == 3 || sim->get_cell(new_row, new_col) == 21) {
             sim->move_and_swap(row, col, new_row, new_col);
         } else if (sim->get_cell(new_row, new_col) == 0 || sim->randf() < EAT * (1.0 - sim->elements.at(sim->get_cell(new_row, new_col))->get_acid_resistance())) {

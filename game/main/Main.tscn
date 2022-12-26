@@ -1,7 +1,8 @@
-[gd_scene load_steps=218 format=3 uid="uid://ca4fuex6r7u2h"]
+[gd_scene load_steps=226 format=3 uid="uid://ca4fuex6r7u2h"]
 
 [ext_resource type="Script" path="res://main/main.gd" id="1_2pidp"]
 [ext_resource type="Script" path="res://main/ui/ui.gd" id="2_ged2y"]
+[ext_resource type="Theme" uid="uid://dwqrk16thiq6h" path="res://main/ui/theme.tres" id="2_scbws"]
 [ext_resource type="Texture2D" uid="uid://o2dtwnhoumtj" path="res://main/ui/icons/split_icon.png" id="3_ck1he"]
 [ext_resource type="Shader" path="res://main/ui/canvas/element_painter.gdshader" id="4_p0bpj"]
 [ext_resource type="Texture2D" uid="uid://b2er78i2yjm8w" path="res://main/element_visuals/textures/crystal.jpg" id="5_li5n6"]
@@ -30,9 +31,13 @@
 [ext_resource type="Resource" path="res://main/element_visuals/explosion.tres" id="28_rdjf1"]
 [ext_resource type="Resource" path="res://main/element_visuals/fairy.tres" id="29_cefya"]
 [ext_resource type="Resource" path="res://main/element_visuals/fire.tres" id="30_6kqmy"]
+[ext_resource type="Resource" uid="uid://b2kh1gvcdydd8" path="res://main/element_visuals/firework_a.tres" id="31_ka3as"]
 [ext_resource type="Resource" path="res://main/element_visuals/germ_seed.tres" id="31_oncvc"]
-[ext_resource type="Resource" path="res://main/element_visuals/glass.tres" id="32_3iyad"]
+[ext_resource type="Resource" uid="uid://b6hrnmll6rn5t" path="res://main/element_visuals/glass.tres" id="32_3iyad"]
+[ext_resource type="Resource" uid="uid://30wdhavjpl77" path="res://main/element_visuals/firework_b.tres" id="32_laes5"]
+[ext_resource type="Resource" uid="uid://dq47pv4yanfgo" path="res://main/element_visuals/firework_c.tres" id="33_jnwmq"]
 [ext_resource type="Resource" uid="uid://c81sh1uvji0rt" path="res://main/element_visuals/gold.tres" id="33_xyc7y"]
+[ext_resource type="Resource" uid="uid://c2ry0cbfs22nh" path="res://main/element_visuals/firework_trail.tres" id="34_alun7"]
 [ext_resource type="Resource" path="res://main/element_visuals/grass.tres" id="34_qg1e2"]
 [ext_resource type="Resource" path="res://main/element_visuals/hydrogen.tres" id="35_c22m2"]
 [ext_resource type="Resource" path="res://main/element_visuals/hydrogen_explosion.tres" id="36_c7fgs"]
@@ -80,32 +85,30 @@
 [ext_resource type="Texture2D" uid="uid://c4k2cs4ly1agb" path="res://main/ui/icons/file.png" id="78_o45e4"]
 [ext_resource type="Script" path="res://main/ui/element_selector/element_selector.gd" id="79_mv3j4"]
 [ext_resource type="Script" path="res://main/ui/submenu/save/save_file_menu.gd" id="80_xf3pj"]
-[ext_resource type="PackedScene" uid="uid://jclyvf0uqt3r" path="res://main/ui/submenu/save/save_file_panel/SaveFilePanel.tscn" id="81_ummek"]
 [ext_resource type="FontFile" uid="uid://b8lxwo5dkwrs4" path="res://main/ui/font/Poppins-Regular.ttf" id="82_73581"]
 [ext_resource type="Texture2D" uid="uid://skg5bmd8m812" path="res://main/ui/icons/close.png" id="83_o0jjy"]
-[ext_resource type="Script" path="res://main/ui/submenu/settings/settings_menu.gd" id="84_l3lvf"]
 [ext_resource type="Script" path="res://main/ui/fps_label.gd" id="85_5af3y"]
+[ext_resource type="PackedScene" uid="uid://jclyvf0uqt3r" path="res://main/ui/submenu/save/save_file_panel/SaveFilePanel.tscn" id="85_ismj6"]
 [ext_resource type="Script" path="res://main/ui/splash_screen/splash_screen.gd" id="86_hmcqf"]
 [ext_resource type="Script" path="res://main/save_file/save_file_manager.gd" id="87_5tqe6"]
+[ext_resource type="Script" path="res://main/ui/submenu/settings/settings_menu.gd" id="88_yg1ft"]
 
-[sub_resource type="Theme" id="Theme_twp2m"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_80oq8"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_10eqv"]
 shader = ExtResource("4_p0bpj")
 shader_parameter/width = 360.0
 shader_parameter/height = 388.0
 shader_parameter/px_scale = 3
 shader_parameter/flat_color_id_match = [1, 10, 8, 0, 7, 0, 0, 0, 11, 0, 3, 13, 12, 5, 0, 15, 0, 0, 16, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 2, 0, 14, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 shader_parameter/flat_color = [Vector3(0.0392157, 0.172549, 0.329412), Vector3(0, 0, 0), Vector3(0.690196, 0.635294, 0.635294), Vector3(0.929412, 0.619608, 0.792157), Vector3(0.294118, 0.678431, 0.141176), Vector3(0, 0, 0), Vector3(0.419608, 0.941176, 1), Vector3(0.278431, 0.109804, 0.109804), Vector3(0.384314, 0.223529, 0.027451), Vector3(0.980392, 0.47451, 0.137255), Vector3(0.988235, 0.737255, 0.384314), Vector3(0.72549, 1, 0.368627), Vector3(0.501961, 0.156863, 0.121569), Vector3(0.301961, 0.101961, 0.309804), Vector3(0.407843, 0.407843, 0.407843), Vector3(0.631373, 0.368627, 0.12549), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0)]
-shader_parameter/gradient_id_match = [0, 0, 0, 0, 0, 0, 21, 4, 0, 10, 0, 0, 0, 0, 11, 0, 8, 0, 0, 0, 0, 0, 1, 0, 0, 0, 14, 0, 2, 0, 0, 0, 7, 6, 16, 0, 20, 15, 17, 9, 18, 25, 22, 0, 0, 0, 19, 12, 13, 0, 0, 0, 0, 0, 5, 3, 0, 0, 26, 0, 0, 0, 0, 23, 24, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-shader_parameter/gradient_color_a = [Vector3(0.141176, 0.360784, 0.411765), Vector3(0.188235, 0.0705882, 0.478431), Vector3(0.6, 0.576471, 0.270588), Vector3(0.811765, 0.890196, 0.4), Vector3(0.85098, 0.541176, 0.321569), Vector3(0.796078, 0.839216, 0.992157), Vector3(0.831373, 0.890196, 0.4), Vector3(0.27451, 0.27451, 0.309804), Vector3(0.14902, 0.0470588, 0.4), Vector3(0.415686, 0.0235294, 0.278431), Vector3(0.811765, 0.890196, 0.4), Vector3(1, 1, 1), Vector3(0.419608, 0.117647, 0.0235294), Vector3(0.4, 0, 0.172549), Vector3(0.14902, 0.0470588, 0.4), Vector3(0.0313726, 0.235294, 0.403922), Vector3(0.188235, 0.0705882, 0.478431), Vector3(0.137255, 0.0509804, 0.2), Vector3(0.141176, 0.0509804, 0.180392), Vector3(0.0313726, 0.235294, 0.403922), Vector3(0.309804, 0.27451, 0.27451), Vector3(0.415686, 0.407843, 0.768627), Vector3(0.415686, 0.407843, 0.768627), Vector3(0.415686, 0.407843, 0.768627), Vector3(0.282353, 0.262745, 0.360784), Vector3(0.27451, 0.286275, 0.368627), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0)]
-shader_parameter/gradient_color_b = [Vector3(0.0784314, 0.266667, 0.309804), Vector3(0.168627, 0.431373, 0.752941), Vector3(0.54902, 0.278431, 0.196078), Vector3(0.611765, 0.858824, 0.345098), Vector3(0.811765, 0.345098, 0.27451), Vector3(0.694118, 0.631373, 0.992157), Vector3(0.560784, 0.768627, 0.309804), Vector3(0.14902, 0.113725, 0.137255), Vector3(0.145098, 0.0862745, 0.611765), Vector3(0.8, 0.054902, 0.0862745), Vector3(0.611765, 0.858824, 0.345098), Vector3(0.54902, 0.54902, 0.54902), Vector3(0.929412, 0.576471, 0.156863), Vector3(0.619608, 0.129412, 0.407843), Vector3(0.172549, 0.0862745, 0.611765), Vector3(0.133333, 0.462745, 0.623529), Vector3(0.168627, 0.431373, 0.752941), Vector3(0.619608, 0.0941176, 0.278431), Vector3(0.411765, 0.101961, 0.380392), Vector3(0.133333, 0.462745, 0.623529), Vector3(0.14902, 0.113725, 0.113725), Vector3(0.537255, 0.466667, 0.819608), Vector3(0.537255, 0.466667, 0.819608), Vector3(0.537255, 0.466667, 0.819608), Vector3(0.4, 0.345098, 0.486275), Vector3(0.113725, 0.113725, 0.235294), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0)]
-shader_parameter/gradient_color_c = [Vector3(0.0627451, 0.211765, 0.278431), Vector3(0.219608, 0.678431, 0.568627), Vector3(0.529412, 0.356863, 0.207843), Vector3(0.431373, 0.74902, 0.286275), Vector3(0.74902, 0.215686, 0.215686), Vector3(0.658824, 0.560784, 0.94902), Vector3(0.164706, 0.690196, 0.341176), Vector3(0.203922, 0.176471, 0.231373), Vector3(0.462745, 0.101961, 0.670588), Vector3(0.980392, 0.290196, 0.105882), Vector3(0.431373, 0.74902, 0.286275), Vector3(0.658824, 0.658824, 0.658824), Vector3(0.980392, 0.709804, 0.105882), Vector3(0.741176, 0.25098, 0.439216), Vector3(0.101961, 0.168627, 0.670588), Vector3(0.184314, 0.627451, 0.741176), Vector3(0.176471, 0.658824, 0.733333), Vector3(0.960784, 0.584314, 0.0862745), Vector3(0.94902, 0.568627, 0.647059), Vector3(0.184314, 0.627451, 0.741176), Vector3(0.231373, 0.176471, 0.176471), Vector3(0.603922, 0.537255, 0.878431), Vector3(0.603922, 0.537255, 0.878431), Vector3(0.603922, 0.537255, 0.878431), Vector3(0.345098, 0.298039, 0.45098), Vector3(0.176471, 0.184314, 0.329412), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0)]
-shader_parameter/gradient_color_d = [Vector3(0.0431373, 0.14902, 0.25098), Vector3(0.662745, 1, 0.94902), Vector3(0.54902, 0.419608, 0.227451), Vector3(0.137255, 0.588235, 0.156863), Vector3(0.658824, 0.145098, 0.152941), Vector3(0.588235, 0.498039, 0.921569), Vector3(0.14902, 0.54902, 0.376471), Vector3(0.215686, 0.227451, 0.258824), Vector3(0.623529, 0.137255, 0.729412), Vector3(1, 0.764706, 0.439216), Vector3(0.137255, 0.588235, 0.156863), Vector3(0.788235, 0.788235, 0.788235), Vector3(1, 0.92549, 0.65098), Vector3(0.988235, 0.682353, 0.760784), Vector3(0.137255, 0.32549, 0.729412), Vector3(0.678431, 0.988235, 0.952941), Vector3(0.956863, 1, 0.709804), Vector3(1, 0.929412, 0.478431), Vector3(1, 0.890196, 0.878431), Vector3(0.678431, 0.988235, 0.952941), Vector3(0.301961, 0.239216, 0.239216), Vector3(0.74902, 0.615686, 0.929412), Vector3(0.74902, 0.615686, 0.929412), Vector3(0.74902, 0.615686, 0.929412), Vector3(0.235294, 0.243137, 0.388235), Vector3(0.235294, 0.247059, 0.407843), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0)]
-shader_parameter/gradient_color_e = [Vector3(0.0431373, 0.141176, 0.258824), Vector3(1, 1, 1), Vector3(0.568627, 0.490196, 0.254902), Vector3(0.0901961, 0.521569, 0.231373), Vector3(0.521569, 0.0588235, 0.282353), Vector3(0.498039, 0.4, 0.85098), Vector3(0.137255, 0.219608, 0.470588), Vector3(0.243137, 0.254902, 0.278431), Vector3(0.74902, 0.164706, 0.611765), Vector3(1, 1, 1), Vector3(0.0901961, 0.521569, 0.231373), Vector3(0.878431, 0.878431, 0.878431), Vector3(1, 1, 1), Vector3(1, 1, 1), Vector3(0.168627, 0.431373, 0.752941), Vector3(1, 1, 1), Vector3(1, 1, 1), Vector3(1, 1, 1), Vector3(1, 1, 1), Vector3(1, 1, 1), Vector3(0.341176, 0.286275, 0.266667), Vector3(0.85098, 0.701961, 1), Vector3(0.85098, 0.701961, 1), Vector3(0.85098, 0.701961, 1), Vector3(0.188235, 0.2, 0.333333), Vector3(0.266667, 0.333333, 0.470588), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0)]
-shader_parameter/gradient_offset_1 = [0.1, 0.1, 0.2, 0.2, 0.2, 0.2, 0.2, 0.3, 0.4, 0.1, 0.2, 0.3, 0.05, 0.1, 0.4, 0.1, 0.1, 0.2, 0.35, 0.1, 0.3, 0.1, 0.1, 0.1, 0.1, 0.3, Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0)]
-shader_parameter/gradient_offset_2 = [0.3, 0.3, 0.6, 0.6, 0.6, 0.4, 0.4, 0.7, 0.6, 0.4, 0.6, 0.7, 0.2, 0.3, 0.6, 0.3, 0.3, 0.5, 0.7, 0.3, 0.7, 0.3, 0.3, 0.3, 0.3, 0.7, Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0)]
-shader_parameter/gradient_offset_3 = [0.6, 0.6, 0.8, 0.8, 0.8, 0.6, 0.6, 0.9, 0.9, 0.6, 0.8, 0.9, 0.6, 0.6, 0.9, 0.6, 0.6, 0.8, 0.9, 0.6, 0.9, 0.6, 0.6, 0.6, 0.6, 0.9, Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0)]
+shader_parameter/gradient_id_match = [0, 0, 0, 0, 0, 0, 25, 4, 0, 10, 0, 0, 0, 0, 15, 0, 8, 0, 0, 0, 0, 0, 1, 0, 0, 0, 18, 0, 2, 0, 0, 0, 7, 6, 20, 0, 24, 19, 21, 9, 22, 29, 26, 0, 0, 0, 23, 16, 17, 0, 0, 0, 0, 0, 5, 3, 0, 0, 30, 0, 0, 0, 0, 27, 28, 0, 11, 12, 13, 14, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+shader_parameter/gradient_color_a = [Vector3(0.141176, 0.360784, 0.411765), Vector3(0.188235, 0.0705882, 0.478431), Vector3(0.6, 0.576471, 0.270588), Vector3(0.811765, 0.890196, 0.4), Vector3(0.85098, 0.541176, 0.321569), Vector3(0.796078, 0.839216, 0.992157), Vector3(0.831373, 0.890196, 0.4), Vector3(0.27451, 0.27451, 0.309804), Vector3(0.14902, 0.0470588, 0.4), Vector3(0.415686, 0.0235294, 0.278431), Vector3(0.415686, 0.0235294, 0.278431), Vector3(0.415686, 0.0235294, 0.278431), Vector3(0.415686, 0.0235294, 0.278431), Vector3(0.415686, 0.0235294, 0.278431), Vector3(0.811765, 0.890196, 0.4), Vector3(1, 1, 1), Vector3(0.419608, 0.117647, 0.0235294), Vector3(0.4, 0, 0.172549), Vector3(0.14902, 0.0470588, 0.4), Vector3(0.0313726, 0.235294, 0.403922), Vector3(0.188235, 0.0705882, 0.478431), Vector3(0.137255, 0.0509804, 0.2), Vector3(0.141176, 0.0509804, 0.180392), Vector3(0.0313726, 0.235294, 0.403922), Vector3(0.309804, 0.27451, 0.27451), Vector3(0.415686, 0.407843, 0.768627), Vector3(0.415686, 0.407843, 0.768627), Vector3(0.415686, 0.407843, 0.768627), Vector3(0.282353, 0.262745, 0.360784), Vector3(0.27451, 0.286275, 0.368627), Vector3(0, 0, 0), Vector3(0, 0, 0)]
+shader_parameter/gradient_color_b = [Vector3(0.0784314, 0.266667, 0.309804), Vector3(0.168627, 0.431373, 0.752941), Vector3(0.54902, 0.278431, 0.196078), Vector3(0.611765, 0.858824, 0.345098), Vector3(0.811765, 0.345098, 0.27451), Vector3(0.694118, 0.631373, 0.992157), Vector3(0.560784, 0.768627, 0.309804), Vector3(0.14902, 0.113725, 0.137255), Vector3(0.145098, 0.0862745, 0.611765), Vector3(0.8, 0.054902, 0.0862745), Vector3(0.8, 0.054902, 0.0862745), Vector3(0.8, 0.054902, 0.0862745), Vector3(0.8, 0.054902, 0.0862745), Vector3(0.8, 0.054902, 0.0862745), Vector3(0.611765, 0.858824, 0.345098), Vector3(0.54902, 0.54902, 0.54902), Vector3(0.929412, 0.576471, 0.156863), Vector3(0.619608, 0.129412, 0.407843), Vector3(0.172549, 0.0862745, 0.611765), Vector3(0.133333, 0.462745, 0.623529), Vector3(0.168627, 0.431373, 0.752941), Vector3(0.619608, 0.0941176, 0.278431), Vector3(0.411765, 0.101961, 0.380392), Vector3(0.133333, 0.462745, 0.623529), Vector3(0.14902, 0.113725, 0.113725), Vector3(0.537255, 0.466667, 0.819608), Vector3(0.537255, 0.466667, 0.819608), Vector3(0.537255, 0.466667, 0.819608), Vector3(0.4, 0.345098, 0.486275), Vector3(0.113725, 0.113725, 0.235294), Vector3(0, 0, 0), Vector3(0, 0, 0)]
+shader_parameter/gradient_color_c = [Vector3(0.0627451, 0.211765, 0.278431), Vector3(0.219608, 0.678431, 0.568627), Vector3(0.529412, 0.356863, 0.207843), Vector3(0.431373, 0.74902, 0.286275), Vector3(0.74902, 0.215686, 0.215686), Vector3(0.658824, 0.560784, 0.94902), Vector3(0.164706, 0.690196, 0.341176), Vector3(0.203922, 0.176471, 0.231373), Vector3(0.462745, 0.101961, 0.670588), Vector3(0.980392, 0.290196, 0.105882), Vector3(0.980392, 0.290196, 0.105882), Vector3(0.980392, 0.290196, 0.105882), Vector3(0.980392, 0.290196, 0.105882), Vector3(0.980392, 0.290196, 0.105882), Vector3(0.431373, 0.74902, 0.286275), Vector3(0.658824, 0.658824, 0.658824), Vector3(0.980392, 0.709804, 0.105882), Vector3(0.741176, 0.25098, 0.439216), Vector3(0.101961, 0.168627, 0.670588), Vector3(0.184314, 0.627451, 0.741176), Vector3(0.176471, 0.658824, 0.733333), Vector3(0.960784, 0.584314, 0.0862745), Vector3(0.94902, 0.568627, 0.647059), Vector3(0.184314, 0.627451, 0.741176), Vector3(0.231373, 0.176471, 0.176471), Vector3(0.603922, 0.537255, 0.878431), Vector3(0.603922, 0.537255, 0.878431), Vector3(0.603922, 0.537255, 0.878431), Vector3(0.345098, 0.298039, 0.45098), Vector3(0.176471, 0.184314, 0.329412), Vector3(0, 0, 0), Vector3(0, 0, 0)]
+shader_parameter/gradient_color_d = [Vector3(0.0431373, 0.14902, 0.25098), Vector3(0.662745, 1, 0.94902), Vector3(0.54902, 0.419608, 0.227451), Vector3(0.137255, 0.588235, 0.156863), Vector3(0.658824, 0.145098, 0.152941), Vector3(0.588235, 0.498039, 0.921569), Vector3(0.14902, 0.54902, 0.376471), Vector3(0.215686, 0.227451, 0.258824), Vector3(0.623529, 0.137255, 0.729412), Vector3(1, 0.764706, 0.439216), Vector3(1, 0.65098, 0.278431), Vector3(1, 0.65098, 0.278431), Vector3(1, 0.65098, 0.278431), Vector3(1, 0.65098, 0.278431), Vector3(0.137255, 0.588235, 0.156863), Vector3(0.788235, 0.788235, 0.788235), Vector3(1, 0.92549, 0.65098), Vector3(0.988235, 0.682353, 0.760784), Vector3(0.137255, 0.32549, 0.729412), Vector3(0.678431, 0.988235, 0.952941), Vector3(0.956863, 1, 0.709804), Vector3(1, 0.929412, 0.478431), Vector3(1, 0.890196, 0.878431), Vector3(0.678431, 0.988235, 0.952941), Vector3(0.301961, 0.239216, 0.239216), Vector3(0.74902, 0.615686, 0.929412), Vector3(0.74902, 0.615686, 0.929412), Vector3(0.74902, 0.615686, 0.929412), Vector3(0.235294, 0.243137, 0.388235), Vector3(0.235294, 0.247059, 0.407843), Vector3(0, 0, 0), Vector3(0, 0, 0)]
+shader_parameter/gradient_color_e = [Vector3(0.0431373, 0.141176, 0.258824), Vector3(1, 1, 1), Vector3(0.568627, 0.490196, 0.254902), Vector3(0.0901961, 0.521569, 0.231373), Vector3(0.521569, 0.0588235, 0.282353), Vector3(0.498039, 0.4, 0.85098), Vector3(0.137255, 0.219608, 0.470588), Vector3(0.243137, 0.254902, 0.278431), Vector3(0.74902, 0.164706, 0.611765), Vector3(1, 1, 1), Vector3(1, 0.952941, 0.941176), Vector3(1, 0.952941, 0.941176), Vector3(1, 0.952941, 0.941176), Vector3(1, 0.952941, 0.941176), Vector3(0.0901961, 0.521569, 0.231373), Vector3(0.878431, 0.878431, 0.878431), Vector3(1, 1, 1), Vector3(1, 1, 1), Vector3(0.168627, 0.431373, 0.752941), Vector3(1, 1, 1), Vector3(1, 1, 1), Vector3(1, 1, 1), Vector3(1, 1, 1), Vector3(1, 1, 1), Vector3(0.341176, 0.286275, 0.266667), Vector3(0.85098, 0.701961, 1), Vector3(0.85098, 0.701961, 1), Vector3(0.85098, 0.701961, 1), Vector3(0.188235, 0.2, 0.333333), Vector3(0.266667, 0.333333, 0.470588), Vector3(0, 0, 0), Vector3(0, 0, 0)]
+shader_parameter/gradient_offset_1 = [0.1, 0.1, 0.2, 0.2, 0.2, 0.2, 0.2, 0.3, 0.4, 0.1, 0.1, 0.1, 0.1, 0.1, 0.2, 0.3, 0.05, 0.1, 0.4, 0.1, 0.1, 0.2, 0.35, 0.1, 0.3, 0.1, 0.1, 0.1, 0.1, 0.3, Vector3(0, 0, 0), Vector3(0, 0, 0)]
+shader_parameter/gradient_offset_2 = [0.3, 0.3, 0.6, 0.6, 0.6, 0.4, 0.4, 0.7, 0.6, 0.4, 0.4, 0.4, 0.4, 0.4, 0.6, 0.7, 0.2, 0.3, 0.6, 0.3, 0.3, 0.5, 0.7, 0.3, 0.7, 0.3, 0.3, 0.3, 0.3, 0.7, Vector3(0, 0, 0), Vector3(0, 0, 0)]
+shader_parameter/gradient_offset_3 = [0.6, 0.6, 0.8, 0.8, 0.8, 0.6, 0.6, 0.9, 0.9, 0.6, 0.6, 0.6, 0.6, 0.6, 0.8, 0.9, 0.6, 0.6, 0.9, 0.6, 0.6, 0.8, 0.9, 0.6, 0.9, 0.6, 0.6, 0.6, 0.6, 0.9, Vector3(0, 0, 0), Vector3(0, 0, 0)]
 shader_parameter/fluid_id_match = [0, 0, 0, 18, 0, 7, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 11, 1, 0, 0, 3, 8, 0, 6, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 17, 12, 0, 0, 0, 0, 0, 16, 0, 14, 13, 0, 0, 5, 15, 0, 2, 0, 0, 0, 0, 0, 10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 shader_parameter/color_a = [Vector3(0.298039, 0.607843, 0.470588), Vector3(0.298039, 0.607843, 0.470588), Vector3(0.180392, 0.788235, 0.941176), Vector3(0, 0, 0), Vector3(0.811765, 0, 0.431373), Vector3(0.592157, 0.337255, 0.980392), Vector3(1, 0.827451, 0), Vector3(0.556863, 0.615686, 0.901961), Vector3(0.4, 0.607843, 1), Vector3(0.65098, 0.878431, 1), Vector3(0.811765, 0, 0.054902), Vector3(0.160784, 0.160784, 0.160784), Vector3(0.631373, 0.760784, 0.901961), Vector3(0.960784, 0.658824, 0.270588), Vector3(0.109804, 0.0156863, 0.0588235), Vector3(0, 0, 0), Vector3(0.690196, 0.533333, 0.909804), Vector3(0.145098, 0.337255, 0.980392), 0, 0, 0, 0, 0, 0]
 shader_parameter/color_b = [Vector3(0.662745, 0.921569, 0.933333), Vector3(0.14902, 0.682353, 0.929412), Vector3(0.576471, 1, 1), Vector3(0.14902, 0.109804, 0.0823529), Vector3(0.968627, 0.270588, 0.164706), Vector3(0.686275, 0.682353, 0.929412), Vector3(0.988235, 0.486275, 0.168627), Vector3(1, 1, 1), Vector3(0.470588, 0.866667, 1), Vector3(0.52549, 0.635294, 0.890196), Vector3(0.968627, 0.654902, 0.164706), Vector3(0.631373, 0.631373, 0.631373), Vector3(1, 1, 1), Vector3(1, 0.882353, 0.411765), Vector3(0.0431373, 0.0431373, 0.141176), Vector3(0.14902, 0.109804, 0.0823529), Vector3(0.85098, 0.701961, 1), Vector3(0.14902, 0.682353, 0.929412), 0, 0, 0, 0, 0, 0]
@@ -128,7 +131,7 @@ shader_parameter/water_texture = ExtResource("7_gboeb")
 shader_parameter/fire_texture = ExtResource("6_0h488")
 shader_parameter/crystal_texture = ExtResource("5_li5n6")
 
-[sub_resource type="ImageTexture" id="ImageTexture_suvxi"]
+[sub_resource type="ImageTexture" id="ImageTexture_vlj1f"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_520gh"]
 bg_color = Color(0.980392, 0.47451, 0.137255, 1)
@@ -956,6 +959,27 @@ corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n3ufx"]
+bg_color = Color(1, 0.760784, 0.101961, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cxxb0"]
+bg_color = Color(1, 0.87451, 0.239216, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qejgw"]
+bg_color = Color(0.929412, 0.470588, 0.0666667, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
 [sub_resource type="Theme" id="Theme_n7xkt"]
 default_font = ExtResource("82_73581")
 default_font_size = 24
@@ -1110,6 +1134,9 @@ _data = {
 "intro": SubResource("Animation_mci7d")
 }
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2bb3j"]
+bg_color = Color(0.141176, 0.141176, 0.141176, 1)
+
 [node name="SimulationMain" type="Node" node_paths=PackedStringArray("save_file_manager", "canvas")]
 script = ExtResource("1_2pidp")
 save_file_manager = NodePath("SaveFileManager")
@@ -1125,7 +1152,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = SubResource("Theme_twp2m")
+theme = ExtResource("2_scbws")
 script = ExtResource("2_ged2y")
 simulation = NodePath("..")
 save_control = NodePath("SaveFileMenu")
@@ -1148,16 +1175,16 @@ theme_override_icons/grabber = ExtResource("3_ck1he")
 
 [node name="Canvas" type="TextureRect" parent="UI/VSplitContainer"]
 texture_filter = 1
-material = SubResource("ShaderMaterial_80oq8")
+material = SubResource("ShaderMaterial_10eqv")
 custom_minimum_size = Vector2(0, 64)
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 2.0
-texture = SubResource("ImageTexture_suvxi")
+texture = SubResource("ImageTexture_vlj1f")
 ignore_texture_size = true
 script = ExtResource("8_alh6i")
 element_folder_path = "res://main/element_visuals"
-element_materials = [ExtResource("9_bwvuy"), ExtResource("10_v1ni6"), ExtResource("11_vbxum"), ExtResource("12_ggi3x"), ExtResource("13_5kjft"), ExtResource("14_2p8bn"), ExtResource("15_ang73"), ExtResource("16_v3ujy"), ExtResource("17_7it5n"), ExtResource("18_an1fq"), ExtResource("19_galm3"), ExtResource("20_m15mx"), ExtResource("21_n2yda"), ExtResource("22_krhwu"), ExtResource("23_f8gny"), ExtResource("24_r6acf"), ExtResource("25_nvlxm"), ExtResource("26_tiq1j"), ExtResource("27_65f3m"), ExtResource("28_rdjf1"), ExtResource("29_cefya"), ExtResource("30_6kqmy"), ExtResource("31_oncvc"), ExtResource("32_3iyad"), ExtResource("33_xyc7y"), ExtResource("34_qg1e2"), ExtResource("35_c22m2"), ExtResource("36_c7fgs"), ExtResource("37_rohla"), ExtResource("38_7eknt"), ExtResource("39_4norp"), ExtResource("40_mnbcv"), ExtResource("41_f2eke"), ExtResource("42_lccc4"), ExtResource("43_6aglb"), ExtResource("44_5clp3"), ExtResource("45_ut7m2"), ExtResource("46_jm6i3"), ExtResource("47_nmo2d"), ExtResource("48_rqy3y"), ExtResource("49_ukgwx"), ExtResource("50_pq1b1"), ExtResource("51_n7iye"), ExtResource("52_q42jt"), ExtResource("53_yrjrt"), ExtResource("54_hxggx"), ExtResource("55_4vpoc"), ExtResource("56_xpaoc"), ExtResource("57_oritf"), ExtResource("58_cm7um"), ExtResource("59_5hsyx"), ExtResource("60_papa3"), ExtResource("61_b0no1"), ExtResource("62_ynuke"), ExtResource("63_n6drt"), ExtResource("64_gpo5j"), ExtResource("65_1tvyv"), ExtResource("66_jo1y0"), ExtResource("67_kisg3"), ExtResource("68_2jc5i"), ExtResource("69_ytsbu"), ExtResource("70_j1ywu"), ExtResource("71_f4ycf"), ExtResource("72_mb8a0"), ExtResource("73_osfee"), ExtResource("74_cy4d6")]
+element_materials = [ExtResource("9_bwvuy"), ExtResource("10_v1ni6"), ExtResource("11_vbxum"), ExtResource("12_ggi3x"), ExtResource("13_5kjft"), ExtResource("14_2p8bn"), ExtResource("15_ang73"), ExtResource("16_v3ujy"), ExtResource("17_7it5n"), ExtResource("18_an1fq"), ExtResource("19_galm3"), ExtResource("20_m15mx"), ExtResource("21_n2yda"), ExtResource("22_krhwu"), ExtResource("23_f8gny"), ExtResource("24_r6acf"), ExtResource("25_nvlxm"), ExtResource("26_tiq1j"), ExtResource("27_65f3m"), ExtResource("28_rdjf1"), ExtResource("29_cefya"), ExtResource("30_6kqmy"), ExtResource("31_ka3as"), ExtResource("32_laes5"), ExtResource("33_jnwmq"), ExtResource("34_alun7"), ExtResource("31_oncvc"), ExtResource("32_3iyad"), ExtResource("33_xyc7y"), ExtResource("34_qg1e2"), ExtResource("35_c22m2"), ExtResource("36_c7fgs"), ExtResource("37_rohla"), ExtResource("38_7eknt"), ExtResource("39_4norp"), ExtResource("40_mnbcv"), ExtResource("41_f2eke"), ExtResource("42_lccc4"), ExtResource("43_6aglb"), ExtResource("44_5clp3"), ExtResource("45_ut7m2"), ExtResource("46_jm6i3"), ExtResource("47_nmo2d"), ExtResource("48_rqy3y"), ExtResource("49_ukgwx"), ExtResource("50_pq1b1"), ExtResource("51_n7iye"), ExtResource("52_q42jt"), ExtResource("53_yrjrt"), ExtResource("54_hxggx"), ExtResource("55_4vpoc"), ExtResource("56_xpaoc"), ExtResource("57_oritf"), ExtResource("58_cm7um"), ExtResource("59_5hsyx"), ExtResource("60_papa3"), ExtResource("61_b0no1"), ExtResource("62_ynuke"), ExtResource("63_n6drt"), ExtResource("64_gpo5j"), ExtResource("65_1tvyv"), ExtResource("66_jo1y0"), ExtResource("67_kisg3"), ExtResource("68_2jc5i"), ExtResource("69_ytsbu"), ExtResource("70_j1ywu"), ExtResource("71_f4ycf"), ExtResource("72_mb8a0"), ExtResource("73_osfee"), ExtResource("74_cy4d6")]
 
 [node name="BottomPanel" type="MarginContainer" parent="UI/VSplitContainer"]
 layout_mode = 2
@@ -2163,6 +2190,20 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_eroe7")
 text = "kuiper"
 text_overrun_behavior = 1
 
+[node name="Sun" type="Button" parent="UI/VSplitContainer/BottomPanel/VBoxContainer/ElementSelector/Space/Space"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 0
+mouse_filter = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_n3ufx")
+theme_override_styles/hover = SubResource("StyleBoxFlat_cxxb0")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_qejgw")
+text = "sun"
+text_overrun_behavior = 1
+
 [node name="Empty" type="Button" parent="UI/VSplitContainer/BottomPanel/VBoxContainer/ElementSelector/Space/Space"]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -2238,21 +2279,6 @@ disabled = true
 text = " "
 text_overrun_behavior = 1
 
-[node name="Empty6" type="Button" parent="UI/VSplitContainer/BottomPanel/VBoxContainer/ElementSelector/Space/Space"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-focus_mode = 0
-mouse_filter = 1
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 16
-theme_override_styles/normal = SubResource("StyleBoxFlat_pt5xu")
-theme_override_styles/hover = SubResource("StyleBoxFlat_dhkpo")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_b4sp5")
-disabled = true
-text = " "
-text_overrun_behavior = 1
-
 [node name="SaveFileMenu" type="Control" parent="UI" node_paths=PackedStringArray("save_file_manager", "save_file_container", "save_button", "load_button", "delete_button", "new_file_name", "simulation", "anim", "back_button")]
 visible = false
 modulate = Color(1, 1, 1, 0)
@@ -2263,7 +2289,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("80_xf3pj")
-save_file_panel = ExtResource("81_ummek")
+save_file_panel = ExtResource("85_ismj6")
 save_file_manager = NodePath("../../SaveFileManager")
 save_file_container = NodePath("SaveContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer")
 save_button = NodePath("SaveContainer/PanelContainer/VBoxContainer/OptionContainer/SaveFile")
@@ -2374,7 +2400,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("84_l3lvf")
+script = ExtResource("88_yg1ft")
 size_slider = NodePath("SettingsContainer/PanelContainer/VBoxContainer/BrushContainer/BrushSlider")
 speed_slider = NodePath("SettingsContainer/PanelContainer/VBoxContainer/SpeedContainer/SpeedSlider")
 zoom_slider = NodePath("SettingsContainer/PanelContainer/VBoxContainer/ZoomContainer/ZoomSlider")
@@ -2613,6 +2639,705 @@ playback_speed = 3.0
 libraries = {
 "": SubResource("AnimationLibrary_4jxq8")
 }
+
+[node name="PanelContainer" type="PanelContainer" parent="UI"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_scbws")
+theme_override_styles/panel = SubResource("StyleBoxFlat_2bb3j")
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="GridContainer" type="GridContainer" parent="UI/PanelContainer/MarginContainer"]
+layout_mode = 2
+columns = 6
+
+[node name="Sand" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 0
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_520gh")
+theme_override_styles/hover = SubResource("StyleBoxFlat_7xfm4")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_457eu")
+text = "sand"
+
+[node name="Water" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 0
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_x28qr")
+theme_override_styles/hover = SubResource("StyleBoxFlat_nnycb")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_msh0k")
+text = "water"
+
+[node name="Fire" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 0
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_8ntsk")
+theme_override_styles/hover = SubResource("StyleBoxFlat_cdwbg")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_bs4ox")
+text = "fire"
+
+[node name="Oil" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 0
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_q8fr1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_yes4h")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_gxiyd")
+text = "oil"
+text_overrun_behavior = 1
+
+[node name="Rock" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 0
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_aei81")
+theme_override_styles/hover = SubResource("StyleBoxFlat_eypt1")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_s867d")
+text = "rock"
+
+[node name="Ice" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 0
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_5vg7v")
+theme_override_styles/hover = SubResource("StyleBoxFlat_j3hob")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2xunh")
+text = "ice"
+text_overrun_behavior = 1
+
+[node name="Lava" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 0
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_i8lwk")
+theme_override_styles/hover = SubResource("StyleBoxFlat_cdwbg")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_bs4ox")
+text = "lava"
+text_overrun_behavior = 1
+
+[node name="Air" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 0
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_qss3a")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6hhhi")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_dcp2l")
+text = "air"
+
+[node name="Lightning" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 0
+mouse_filter = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_t7g8i")
+theme_override_styles/hover = SubResource("StyleBoxFlat_p37fq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_qegqj")
+text = "lightning"
+text_overrun_behavior = 1
+
+[node name="Lead Azide" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 0
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_cmgkr")
+theme_override_styles/hover = SubResource("StyleBoxFlat_3xqsb")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_78bka")
+text = "bomb"
+text_overrun_behavior = 1
+
+[node name="Soil" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 0
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_8bfmg")
+theme_override_styles/hover = SubResource("StyleBoxFlat_tcxuo")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2sydf")
+text = "soil"
+text_overrun_behavior = 1
+
+[node name="Wall" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 0
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_m4nap")
+theme_override_styles/hover = SubResource("StyleBoxFlat_dbe73")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_p08fi")
+text = "wall"
+text_overrun_behavior = 1
+
+[node name="Wood" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 0
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_g0e01")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ctj8m")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hgsbg")
+text = "wood"
+text_overrun_behavior = 1
+
+[node name="Glass" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 0
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_6q3l8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_klcww")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_fwrmq")
+text = "glass"
+text_overrun_behavior = 1
+
+[node name="Crystal" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 0
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_s5fxl")
+theme_override_styles/hover = SubResource("StyleBoxFlat_rg3j8")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2po0a")
+text = "crystal"
+text_overrun_behavior = 1
+
+[node name="Dust" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 0
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_pt5xu")
+theme_override_styles/hover = SubResource("StyleBoxFlat_dhkpo")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_b4sp5")
+text = "dust"
+text_overrun_behavior = 1
+
+[node name="Polliwog" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 0
+mouse_filter = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_tc47p")
+theme_override_styles/hover = SubResource("StyleBoxFlat_d7bg4")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_5dx7s")
+text = "polliwog"
+text_overrun_behavior = 1
+
+[node name="Algae" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 0
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_6cxqo")
+theme_override_styles/hover = SubResource("StyleBoxFlat_00oaa")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_fvw5r")
+text = "algae"
+text_overrun_behavior = 1
+
+[node name="Urchin" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 0
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_oitsm")
+theme_override_styles/hover = SubResource("StyleBoxFlat_kn2ji")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_cgna5")
+text = "urchin"
+text_overrun_behavior = 1
+
+[node name="Sand Duck" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 0
+mouse_filter = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_u5maq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_666fg")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_qcn7j")
+text = "sanduck"
+text_overrun_behavior = 1
+
+[node name="Penguin" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 0
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_fn62n")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1mn38")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_nhtpl")
+text = "penguin"
+text_overrun_behavior = 1
+
+[node name="Seed" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 0
+mouse_filter = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_gelso")
+theme_override_styles/hover = SubResource("StyleBoxFlat_3k3lf")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_c0d0v")
+text = "seed"
+text_overrun_behavior = 1
+
+[node name="Fairy" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 0
+mouse_filter = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_61msw")
+theme_override_styles/hover = SubResource("StyleBoxFlat_pxyux")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_q4tn0")
+text = "fairy"
+text_overrun_behavior = 1
+
+[node name="Dragon" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 0
+mouse_filter = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_aux0l")
+theme_override_styles/hover = SubResource("StyleBoxFlat_xaxu6")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_sxore")
+text = "dragon"
+text_overrun_behavior = 1
+
+[node name="Critter" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 0
+mouse_filter = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_vfdwq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6yxdd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_k4dtp")
+text = "critter"
+text_overrun_behavior = 1
+
+[node name="Hurricane" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 0
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_q6a40")
+theme_override_styles/hover = SubResource("StyleBoxFlat_qcidr")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_geoh2")
+text = "storm"
+text_overrun_behavior = 1
+
+[node name="Acid" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 0
+mouse_filter = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_e8k14")
+theme_override_styles/hover = SubResource("StyleBoxFlat_8kwuy")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2omdr")
+text = "acid"
+text_overrun_behavior = 1
+
+[node name="Blue Fire" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 0
+mouse_filter = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_ml551")
+theme_override_styles/hover = SubResource("StyleBoxFlat_7f7pq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_rurje")
+text = "blue fire"
+text_overrun_behavior = 1
+
+[node name="Hydrogen" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 0
+mouse_filter = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_gqgwn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_rxqyp")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_yhxmn")
+text = "hydrogen"
+text_overrun_behavior = 1
+
+[node name="Potassium" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 0
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_5urly")
+theme_override_styles/hover = SubResource("StyleBoxFlat_l4ueg")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_g8gy2")
+text = "potassium"
+text_overrun_behavior = 1
+
+[node name="Iron" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 0
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_qholx")
+theme_override_styles/hover = SubResource("StyleBoxFlat_b04si")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ciday")
+text = "iron"
+text_overrun_behavior = 1
+
+[node name="Gold" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 0
+mouse_filter = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_0sdxy")
+theme_override_styles/hover = SubResource("StyleBoxFlat_t8xlp")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ot0nh")
+text = "gold"
+text_overrun_behavior = 1
+
+[node name="Mercury" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 0
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_1hjyp")
+theme_override_styles/hover = SubResource("StyleBoxFlat_5dmnr")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_fihf2")
+text = "mercury"
+text_overrun_behavior = 1
+
+[node name="Uranium" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 0
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_fgt8d")
+theme_override_styles/hover = SubResource("StyleBoxFlat_eho5g")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_j4bb3")
+text = "uranium"
+text_overrun_behavior = 1
+
+[node name="Laser" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 0
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_5u0yn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_tim5j")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_4pg2j")
+text = "laser"
+text_overrun_behavior = 1
+
+[node name="Neutron" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 0
+mouse_filter = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_rwxnb")
+theme_override_styles/hover = SubResource("StyleBoxFlat_qae3l")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_gxlw2")
+text = "quasar"
+text_overrun_behavior = 1
+
+[node name="Black Hole" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 0
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_dn34k")
+theme_override_styles/hover = SubResource("StyleBoxFlat_3h784")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_jbbp0")
+text = "black hole"
+text_overrun_behavior = 1
+
+[node name="Electron" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 0
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_hunuh")
+theme_override_styles/hover = SubResource("StyleBoxFlat_j4426")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_nhb3t")
+text = "plasma"
+text_overrun_behavior = 1
+
+[node name="Powder" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 0
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_m0trg")
+theme_override_styles/hover = SubResource("StyleBoxFlat_3vgxk")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_sgko8")
+text = "stardust"
+text_overrun_behavior = 1
+
+[node name="Kuiper" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 0
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_un1ev")
+theme_override_styles/hover = SubResource("StyleBoxFlat_8gvnx")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_eroe7")
+text = "kuiper"
+text_overrun_behavior = 1
+
+[node name="Sun" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 0
+mouse_filter = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_n3ufx")
+theme_override_styles/hover = SubResource("StyleBoxFlat_cxxb0")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_qejgw")
+text = "sun"
+text_overrun_behavior = 1
 
 [node name="SaveFileManager" type="Node" parent="." node_paths=PackedStringArray("sim_holder")]
 script = ExtResource("87_5tqe6")

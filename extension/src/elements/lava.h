@@ -10,6 +10,7 @@ public:
     const double FLAME = 1.0 / 16;
     const double DOWN_BLOCK = 1.0 / 16;
     const double DOWN = 1.0 / 1.5;
+    const double FIREWORK = 1.0 / 70;
 
     void process(SandSimulation *sim, int row, int col) override {
         // Cooling
@@ -21,7 +22,7 @@ public:
         sim->liquid_process(row, col, 2);
 
         if (sim->randf() < FLAME) {
-            sim->grow(row - 1, col, 0, 5);
+            sim->grow(row - 1, col, 0, sim->randf() < FIREWORK ? 66 : 5);
             sim->grow(row, col - 1, 0, 5);
             sim->grow(row, col + 1, 0, 5);
         }
