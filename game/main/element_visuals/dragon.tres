@@ -1,10 +1,10 @@
-[gd_resource type="Resource" load_steps=2 format=3]
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://ci8gpnn1vv4af"]
 
 [ext_resource type="Script" path="res://main/element_visuals/types/gradient_color.gd" id="1_xn8b6"]
 
 [resource]
 script = ExtResource("1_xn8b6")
-color_a = Color(0.831373, 0.890196, 0.4, 1)
+color_a = Color(0.831373, 0.109804, 0.4, 1)
 color_b = Color(0.560784, 0.768627, 0.309804, 1)
 color_c = Color(0.164706, 0.690196, 0.341176, 1)
 color_d = Color(0.14902, 0.54902, 0.376471, 1)
