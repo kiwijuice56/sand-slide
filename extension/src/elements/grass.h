@@ -5,17 +5,18 @@
 
 class Grass: public Element {
 public:
-    const double GROW = 1 / 8000.0;
+    const double GROW = 1.0 / 1500;
     const double FLAME = 1.0 / 16;
     const double LEFT = 0.1;
     const double RIGHT = 0.2;
+    const double POISON = 1.0 / 16;
 
     void process(SandSimulation *sim, int row, int col) override {
         // Catch on fire
         if (sim->randf() < FLAME && sim->is_on_fire(row, col)) {
             sim->set_cell(row, col, 5);
             return;
-        } else if (sim->is_poisoned(row, col)) {
+        } else if (sim->randf() < POISON && sim->is_poisoned(row, col)) {
             sim->set_cell(row, col, 16);
             return;
         }

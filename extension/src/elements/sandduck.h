@@ -7,18 +7,19 @@ class SandDuck: public Element {
 public:
     const double GROWTH = 1.0 / 550;
     const double DEATH = 1.0 / 512;
+    const double POISON = 1.0 / 16;
 
     void process(SandSimulation *sim, int row, int col) override {
         if (sim->touch_count(row, col, 1) == 0) {
             sim->set_cell(row, col, 0);
-        } else if (sim->touch_count(row, col, 8) > 0 || sim->randf() < DEATH) {
+        } else if (sim->touch_count(row, col, 8) > 1 || sim->randf() < DEATH) {
             sim->set_cell(row, col, 1);
         } else if (sim->randf() < GROWTH) {
             sim->grow(row + (sim->randf() < 0.5 ? 1 : 2), col, 1, 8);
             sim->grow(row - (sim->randf() < 0.5 ? 1 : 2), col, 1, 8);
             sim->grow(row, col - (sim->randf() < 0.5 ? 1 : 2), 1, 8);
             sim->grow(row, col + (sim->randf() < 0.5 ? 1 : 2), 1, 8);
-        } else if (sim->is_poisoned(row, col)) {
+        } else if (sim->randf() < POISON && sim->is_poisoned(row, col)) {
             sim->set_cell(row, col, 16);
         }
     }

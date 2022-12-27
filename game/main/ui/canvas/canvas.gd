@@ -1,9 +1,9 @@
 extends TextureRect
 class_name SandCanvas
 @tool
-
 # Draws data from the simulation onto an image for display
 
+@export var background_colors: Array[Color]
 @export var px_scale: int = 3
 @export var element_folder_path: String = "res://main/element_visuals/"
 @export var element_materials: Array[ElementVisual] = []
@@ -11,6 +11,9 @@ class_name SandCanvas
 var released := true
 var start_draw: Vector2
 var end_draw: Vector2
+
+var flat_params: Array[Vector3]
+var bg_idx: int
 
 signal mouse_pressed(start, end)
 
@@ -49,7 +52,7 @@ func _ready() -> void:
 	
 	# Initialize the array for each parameter, for each category
 	var fluid_params := []
-	var flat_params := []
+	flat_params = [] # Keep flat params as an instance variable so we can change the background color at runtime
 	var gradient_params := []
 	var metal_params := []
 	
@@ -98,6 +101,8 @@ func _ready() -> void:
 			flat_params[aid] = Vector3(mat.color.r, mat.color.g, mat.color.b)
 			aid += 1
 			flat_ids[mat.id] = aid
+			if mat.id == 0:
+				bg_idx = aid - 1
 		if mat is GradientColor:
 			gradient_params[0][gid] = Vector3(mat.color_a.r, mat.color_a.g, mat.color_a.b)
 			gradient_params[1][gid] = Vector3(mat.color_b.r, mat.color_b.g, mat.color_b.b)
@@ -178,3 +183,7 @@ func repaint(sim: SandSimulation) -> void:
 	if sim.get_width() <= 0 or sim.get_height() <= 0:
 		return
 	texture.set_image(Image.create_from_data(sim.get_width(), sim.get_height(), false, Image.FORMAT_L8, sim.get_draw_data()))
+
+func set_background_color(col: Color) -> void:
+	flat_params[bg_idx] = Vector3(col.r, col.g, col.b)
+	get_material().set_shader_parameter("flat_color", flat_params)

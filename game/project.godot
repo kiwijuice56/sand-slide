@@ -168,6 +168,10 @@ screen_press={
 ]
 }
 
+[input_devices]
+
+pointing/emulate_touch_from_mouse=true
+
 [network]
 
 limits/debugger/max_errors_per_second=1

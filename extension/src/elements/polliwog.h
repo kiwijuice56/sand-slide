@@ -7,7 +7,7 @@ class Polliwog: public Element {
 public:
     const double GROWTH = 1.0 / 550;
     const double DEATH = 1.0 / 512;
-    const double POISON = 1.0 / 8;
+    const double POISON = 1.0 / 16;
 
     void process(SandSimulation *sim, int row, int col) override {
         if (sim->touch_count(row, col, 3) == 0) {

@@ -6,3 +6,4 @@ game/out/*
 out/*
 game/sandslide.apk
 *.mdp
+android_project/*

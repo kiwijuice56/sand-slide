@@ -6,6 +6,7 @@ class_name SettingsMenu
 @export var speed_slider: HSlider
 @export var zoom_slider: HSlider
 @export var clear_button: Button
+@export var background_picker: ColorPicker
 
 var selected_panel: SaveFilePanel
 
@@ -15,7 +16,8 @@ func _ready() -> void:
 	size_slider.value_changed.connect(_on_size_changed)
 	speed_slider.value_changed.connect(_on_speed_changed)
 	zoom_slider.value_changed.connect(_on_zoom_changed)
-	clear_button.pressed.connect(_on_clear_selected)
+	clear_button.pressed.connect(simulation.clear)
+	background_picker.color_changed.connect(simulation.canvas.set_background_color)
 
 func _on_size_changed(new_brush_size: int) -> void:
 	simulation.brush_size = new_brush_size
@@ -26,6 +28,3 @@ func _on_speed_changed(new_speed: int) -> void:
 func _on_zoom_changed(new_zoom: int) -> void:
 	simulation.canvas.px_scale = new_zoom
 	simulation.canvas.resized.emit()
-
-func _on_clear_selected() -> void:
-	simulation.clear()

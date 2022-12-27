@@ -9,11 +9,11 @@ class_name ElementSelector
 var tap_on := false
 
 func _ready():
-	eraser_button.pressed.connect(_on_eraser_selected)
+	eraser_button.button_down.connect(_on_eraser_selected)
 	tap_button.pressed.connect(_on_tap_selected)
 	for scroll_container in get_children():
 		for button in scroll_container.get_child(0).get_children():
-			button.pressed.connect(_on_element_selected.bind(button.name))
+			button.button_down.connect(_on_element_selected.bind(button.name))
 
 func _on_element_selected(element_name: String) -> void:
 	tap_button.button_pressed = false

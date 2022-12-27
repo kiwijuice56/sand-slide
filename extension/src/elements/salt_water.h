@@ -14,10 +14,10 @@ public:
     void process(SandSimulation *sim, int row, int col) override {
         // Conductivity 
         if (sim->randf() < MELT && (sim->touch_count(row, col, 38) > 0 || sim->touch_count(row, col, 40) > 0)) {
-            sim->grow(row + 1, col, 3, 71);
-            sim->grow(row - 1, col, 3, 71);
-            sim->grow(row, col - 1, 3, 71);
-            sim->grow(row, col + 1, 3, 71);
+            sim->grow(row + 1, col, 71, 38);
+            sim->grow(row - 1, col, 71, 38);
+            sim->grow(row, col - 1, 71, 38);
+            sim->grow(row, col + 1, 71, 38);
             return;
         }
 
@@ -38,7 +38,7 @@ public:
             return;
         }
 
-        sim->liquid_process(row, col, 4);    
+        sim->liquid_process(row, col, 3);    
     }
 
     double get_density() override {
@@ -46,7 +46,7 @@ public:
     }
 
     double get_explode_resistance() override {
-        return 0.8;
+        return 0.9;
     }
 
     double get_acid_resistance() override {

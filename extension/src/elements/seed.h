@@ -9,6 +9,7 @@ public:
     const double GERMINATE = 1.0 / 1024;
     const double FLAME = 1.0 / 48;
     const double POWDER = 1 / 1.125;
+    const double POISON = 1.0 / 16;
 
     void process(SandSimulation *sim, int row, int col) override {
         if (sim->randf() >= POWDER)
@@ -19,7 +20,7 @@ public:
             return;
         }
         
-        if (sim->is_poisoned(row, col)) {
+        if (sim->randf() < POISON && sim->is_poisoned(row, col)) {
             sim->set_cell(row, col, 16);
             return;
         }

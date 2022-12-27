@@ -9,7 +9,7 @@ var file: SaveFile
 signal selected()
 
 func _ready() -> void:
-	$Button.pressed.connect(_on_pressed)
+	$Button.button_down.connect(_on_pressed)
 
 func _on_pressed() -> void:
 	selected.emit()

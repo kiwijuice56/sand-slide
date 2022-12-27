@@ -8,6 +8,7 @@ public:
     const double GROWTH = 1.0 / 2048;
     const double DEATH = 1.0 / 6000;
     const double FLAME = 1.0 / 48;
+    const double POISON = 1.0 / 16;
 
     void process(SandSimulation *sim, int row, int col) override {  
         // Catch on fire
@@ -26,7 +27,7 @@ public:
             sim->set_cell(row, col, sim->touch_count(row, col, 71) > sim->touch_count(row, col, 3) ? 71 : 3);
         } 
         
-        if (sim->is_poisoned(row, col)) { 
+        if (sim->randf() < POISON && sim->is_poisoned(row, col)) { 
             sim->set_cell(row, col, 16);
         }
     }

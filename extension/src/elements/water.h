@@ -44,7 +44,7 @@ public:
             return;
         }
 
-        sim->liquid_process(row, col, 4);    
+        sim->liquid_process(row, col, 3);    
     }
 
     double get_density() override {
@@ -52,7 +52,7 @@ public:
     }
 
     double get_explode_resistance() override {
-        return 0.8;
+        return 0.2;
     }
 
     double get_acid_resistance() override {

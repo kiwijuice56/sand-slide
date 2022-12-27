@@ -6,6 +6,7 @@
 class Urchin: public Element {
 public:
     const double GROWTH = 0.000425;
+    const double POISON = 1.0 / 16;
 
     void process(SandSimulation *sim, int row, int col) override {
         if (sim->touch_count(row, col, 3) + sim->touch_count(row, col, 71) == 0) {
@@ -22,7 +23,7 @@ public:
             sim->grow(row - (sim->randf() < 0.5 ? 1 : 2), col, 71, 31);
             sim->grow(row, col - (sim->randf() < 0.5 ? 1 : 2), 71, 31);
             sim->grow(row, col + (sim->randf() < 0.5 ? 1 : 2), 71, 31);
-        } else if (sim->is_poisoned(row, col)) {
+        } else if (sim->randf() < POISON && sim->is_poisoned(row, col)) {
             sim->set_cell(row, col, 16);
         }
     }

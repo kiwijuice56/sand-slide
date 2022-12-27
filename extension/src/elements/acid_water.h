@@ -6,7 +6,7 @@
 
 class AcidWater: public Element {
 public:
-    const double DECAY = 1.0 / 2048;
+    const double DECAY = 1.0 / 256;
     const double EVAPORATE = 1.0 / 64;
     const double EAT = 1.0 / 16;
     const double EMIT = 1.0 / 64;
