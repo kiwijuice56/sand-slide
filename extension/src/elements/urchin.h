@@ -7,9 +7,10 @@ class Urchin: public Element {
 public:
     const double GROWTH = 0.000425;
     const double POISON = 1.0 / 16;
+    const double AIR = 1.0 / 16;
 
     void process(SandSimulation *sim, int row, int col) override {
-        if (sim->touch_count(row, col, 3) + sim->touch_count(row, col, 71) == 0) {
+        if (sim->randf() < AIR && sim->touch_count(row, col, 3) + sim->touch_count(row, col, 71) == 0) {
             sim->set_cell(row, col, 0);
         } else if (sim->touch_count(row, col, 31) > 3 || sim->touch_count(row, col, 4) > 0) {
             sim->set_cell(row, col, sim->touch_count(row, col, 71) > sim->touch_count(row, col, 3) ? 71 : 3);
@@ -37,7 +38,7 @@ public:
     }
 
     double get_acid_resistance() override {
-        return 0.05;
+        return 0.2;
     }
 };
 

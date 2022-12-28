@@ -72,6 +72,9 @@
 #include "elements/firework_trail.h"
 #include "elements/salt.h"
 #include "elements/salt_water.h"
+#include "elements/fish_left.h"
+#include "elements/fish_right.h"
+#include "elements/strange.h"
 
 #include <godot_cpp/core/class_db.hpp>
 
@@ -156,6 +159,9 @@ SandSimulation::SandSimulation() {
     elements.at(69) = new FireworkTrail();
     elements.at(70) = new Salt();
     elements.at(71) = new SaltWater();
+    elements.at(72) = new FishLeft();
+    elements.at(73) = new FishRight();
+    elements.at(74) = new Strange();
 
     draw_data = PackedByteArray();
 
@@ -184,7 +190,7 @@ void SandSimulation::step(int iterations) {
                         visited.at(rRow * width + rCol) = false;
                     else {
                         // Taps are the element offset by 128; get_cell() returns only the first few bits, so we can use this to spawn the element!
-                        if (cells.at(rRow * width + rCol) >= 128) {
+                        if (cells.at(rRow * width + rCol) >= 128 && randf() < 1.0 / 4) {
                             int x = cells.at(rRow * width + rCol) - 128;
                             grow(rRow + 1, rCol, 0, x);
                             grow(rRow + 1, rCol + 1, 0, x);
@@ -237,6 +243,8 @@ void SandSimulation::grow(int row, int col, int food, int replacer) {
 void SandSimulation::liquid_process(int row, int col, int fluidity) {
     for (int i = 0; i < fluidity; i++) {
             int new_col = col + (randf() < 0.5 ? 1 : -1);
+            if (randf() < 1.0 / 32)
+                new_col = col;
             int new_row = row + (is_swappable(row, col, row + 1, new_col) && randf() > 0.2 ? 1 : 0);
             if (is_swappable(row, col, new_row, new_col) && (randf() < 0.3 || !is_swappable(row, col, new_row + 1, new_col))) {
                 move_and_swap(row, col, new_row, new_col);

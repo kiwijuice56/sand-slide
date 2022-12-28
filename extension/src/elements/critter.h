@@ -49,7 +49,7 @@ public:
     }
 
     double get_acid_resistance() override {
-        return 0.2;
+        return 0.5;
     }
 };
 

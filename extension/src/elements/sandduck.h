@@ -8,9 +8,10 @@ public:
     const double GROWTH = 1.0 / 550;
     const double DEATH = 1.0 / 512;
     const double POISON = 1.0 / 16;
+    const double AIR = 1.0 / 16;
 
     void process(SandSimulation *sim, int row, int col) override {
-        if (sim->touch_count(row, col, 1) == 0) {
+        if (sim->randf() < AIR && sim->touch_count(row, col, 1) == 0) {
             sim->set_cell(row, col, 0);
         } else if (sim->touch_count(row, col, 8) > 1 || sim->randf() < DEATH) {
             sim->set_cell(row, col, 1);
@@ -33,7 +34,7 @@ public:
     }
 
     double get_acid_resistance() override {
-        return 0.05;
+        return 0.8;
     }
 };
 

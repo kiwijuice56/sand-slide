@@ -5,7 +5,7 @@
 
 class Grass: public Element {
 public:
-    const double GROW = 1.0 / 1500;
+    const double GROW = 1.0 / 1024;
     const double FLAME = 1.0 / 16;
     const double LEFT = 0.1;
     const double RIGHT = 0.2;
@@ -47,7 +47,7 @@ public:
     }
 
     double get_acid_resistance() override {
-        return 0.05;
+        return 0.2;
     }
 };
 

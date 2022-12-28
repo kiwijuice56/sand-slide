@@ -5,8 +5,8 @@
 [resource]
 script = ExtResource("1_ujkl6")
 noise_texture = 0
-color_a = Color(0.101961, 0.345098, 0.909804, 1)
-color_b = Color(0.25098, 0.843137, 0.870588, 1)
+color_a = Color(0.0862745, 0.141176, 0.878431, 1)
+color_b = Color(0.380392, 0.654902, 0.94902, 1)
 color_c = Color(0.568627, 0.878431, 0.905882, 1)
 noise_scale = 2.0
 noise_speed = 4.0

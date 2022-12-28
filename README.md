@@ -68,7 +68,7 @@ so you can edit the file in an external editor and load it back into the game.
 
 ## Attribution
 [Plumbing](https://icons8.com/icon/67287/plumbing), [eraser](https://icons8.com/icon/78855/eraser), 
-[file](https://icons8.com/icon/77782/file), [settings](https://icons8.com/icon/60006/support) and 
+[file](https://icons8.com/icon/77782/file), [support](https://icons8.com/icon/60006/support), [help](https://icons8.com/icon/59807/help) and 
 [exit](https://icons8.com/icon/71200/close) icons by [Icons8](https://icons8.com/).
 
 Implementation of Bresenham's Line Algorithm by [Saideep Dicholkar](https://saideepdicholkar.blogspot.com/2017/04/bresenhams-line-algorithm-thick-line.html)
