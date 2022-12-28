@@ -17,7 +17,8 @@ const ELEMENT_INDEX = [
 	"Obsidian", "Vapor", "AcidWater", "OxidizedPotassium", 
 	"BurningPotassium", "Rust", "PowderB", "PowderC", "Kuiper", "Sun",
 	"FireworkB", "FireworkC", "FireworkTrail", "Salt", "SaltWater",
-	"Fish", "FishRight", "Strange"]
+	"Fish", "FishRight", "Strange", "Meteor", "MeteorB", "MeteorC",
+	"Lapis", "Ruby", "Emerald"]
 
 var LIFE = {}
 var FLUID = {}
@@ -47,7 +48,7 @@ func _ready() -> void:
 	
 	for i in [3, 5, 20, 21, 24, 28, 30, 37, 39, 41, 44, 47, 66]:
 		FLUID[i] = true
-	for i in [4, 8, 23, 31, 32, 33, 49]:
+	for i in [4, 8, 23, 31, 32, 33, 49, 72, 75]:
 		LIFE[i] = true
 	
 	sim = SandSimulation.new()
@@ -143,6 +144,9 @@ func draw_pixel(row: float, col: float) -> void:
 	
 	if selected_element in [42, 63, 64]:
 		selected_element = [42, 63, 64][randi() % 3]
+	
+	if selected_element in [75, 76, 77]:
+		selected_element = [75, 76, 77][randi() % 3]
 	
 	sim.draw_cell(y, x, selected_element)
 

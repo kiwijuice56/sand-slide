@@ -26,6 +26,7 @@ func initialize_elements() -> void:
 		element_materials.append(ResourceLoader.load("%s/%s" % [dir.get_current_dir(), file]))
 
 func _ready() -> void:
+	# This initializes the element list in the editor
 	# initialize_elements()
 	material = ShaderMaterial.new()
 	material.shader = preload("res://main/ui/canvas/element_painter.gdshader")

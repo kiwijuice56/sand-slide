@@ -1,4 +1,4 @@
-[gd_scene load_steps=241 format=3 uid="uid://ca4fuex6r7u2h"]
+[gd_scene load_steps=259 format=3 uid="uid://ca4fuex6r7u2h"]
 
 [ext_resource type="Script" path="res://main/main.gd" id="1_2pidp"]
 [ext_resource type="Script" path="res://main/ui/ui.gd" id="2_ged2y"]
@@ -21,8 +21,9 @@
 [ext_resource type="Resource" uid="uid://b5ryhy8v0m2pe" path="res://main/element_visuals/burning_potassium.tres" id="21_n2yda"]
 [ext_resource type="Resource" path="res://main/element_visuals/cool_lava.tres" id="22_krhwu"]
 [ext_resource type="Resource" uid="uid://ccy5nyyo2n6py" path="res://main/element_visuals/critter.tres" id="23_f8gny"]
-[ext_resource type="Resource" path="res://main/element_visuals/crystal.tres" id="24_r6acf"]
+[ext_resource type="Resource" uid="uid://1ocrmt565gkb" path="res://main/element_visuals/crystal.tres" id="24_r6acf"]
 [ext_resource type="Resource" uid="uid://ci8gpnn1vv4af" path="res://main/element_visuals/dragon.tres" id="25_nvlxm"]
+[ext_resource type="Resource" uid="uid://cxsohkco8aa8q" path="res://main/element_visuals/emerald.tres" id="26_7ds2c"]
 [ext_resource type="Resource" path="res://main/element_visuals/dust.tres" id="26_tiq1j"]
 [ext_resource type="Resource" path="res://main/element_visuals/electricity_storm.tres" id="27_65f3m"]
 [ext_resource type="Resource" path="res://main/element_visuals/explosion.tres" id="28_rdjf1"]
@@ -48,11 +49,15 @@
 [ext_resource type="Resource" path="res://main/element_visuals/lightning.tres" id="42_lccc4"]
 [ext_resource type="Resource" uid="uid://bveocaq17m0eg" path="res://main/element_visuals/mercury.tres" id="43_6aglb"]
 [ext_resource type="Resource" path="res://main/element_visuals/molten_glass.tres" id="44_5clp3"]
+[ext_resource type="Resource" uid="uid://ln6lkyinnk7u" path="res://main/element_visuals/lapis.tres" id="44_mbagv"]
 [ext_resource type="Resource" uid="uid://3100gr8o2g2s" path="res://main/element_visuals/molten_gold.tres" id="45_ut7m2"]
 [ext_resource type="Resource" path="res://main/element_visuals/nuclear_explosion.tres" id="46_jm6i3"]
 [ext_resource type="Resource" path="res://main/element_visuals/obsidian.tres" id="47_nmo2d"]
+[ext_resource type="Resource" uid="uid://dot57m21wruas" path="res://main/element_visuals/meteor_a.tres" id="48_g83o5"]
 [ext_resource type="Resource" path="res://main/element_visuals/oil.tres" id="48_rqy3y"]
+[ext_resource type="Resource" uid="uid://b1f0njgx3nqmn" path="res://main/element_visuals/meteor_b.tres" id="49_4xmwn"]
 [ext_resource type="Resource" uid="uid://c8oahikj3s6tf" path="res://main/element_visuals/oxidized_potassium.tres" id="49_ukgwx"]
+[ext_resource type="Resource" uid="uid://drsf6com2ft20" path="res://main/element_visuals/meteor_c.tres" id="50_af3d6"]
 [ext_resource type="Resource" path="res://main/element_visuals/penguin.tres" id="50_pq1b1"]
 [ext_resource type="Resource" uid="uid://13ag4mrgfxiy" path="res://main/element_visuals/plasma.tres" id="51_n7iye"]
 [ext_resource type="Resource" uid="uid://dqc6q7r3ik521" path="res://main/element_visuals/plasma_plasma.tres" id="52_q42jt"]
@@ -72,6 +77,7 @@
 [ext_resource type="Resource" uid="uid://ef7360axg4jc" path="res://main/element_visuals/stardust_b.tres" id="65_1tvyv"]
 [ext_resource type="Resource" uid="uid://dm8ev2lxoj4vm" path="res://main/element_visuals/salt_water.tres" id="65_sdyjr"]
 [ext_resource type="Resource" uid="uid://b5b74c0ny20by" path="res://main/element_visuals/stardust_c.tres" id="66_jo1y0"]
+[ext_resource type="Resource" uid="uid://b0uohilcol211" path="res://main/element_visuals/ruby.tres" id="66_n6ioa"]
 [ext_resource type="Resource" uid="uid://8mfv0yawb0gn" path="res://main/element_visuals/stardust_liquid.tres" id="67_kisg3"]
 [ext_resource type="Resource" uid="uid://b6aylci4dwtse" path="res://main/element_visuals/storm.tres" id="68_2jc5i"]
 [ext_resource type="Resource" uid="uid://df1rn65u50uf6" path="res://main/element_visuals/uranium.tres" id="69_ytsbu"]
@@ -98,7 +104,7 @@
 [ext_resource type="Script" path="res://main/ui/submenu/submenu.gd" id="93_0x0qy"]
 [ext_resource type="Script" path="res://main/ui/hyperlink.gd" id="94_2m5ah"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_sspw7"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hg507"]
 shader = ExtResource("4_p0bpj")
 shader_parameter/width = 360.0
 shader_parameter/height = 379.0
@@ -133,7 +139,7 @@ shader_parameter/metal_id_match = null
 shader_parameter/metal_color_a = null
 shader_parameter/metal_color_b = null
 
-[sub_resource type="ImageTexture" id="ImageTexture_sl31s"]
+[sub_resource type="ImageTexture" id="ImageTexture_iu8g1"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_520gh"]
 bg_color = Color(0.980392, 0.47451, 0.137255, 1)
@@ -465,7 +471,7 @@ corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s5fxl"]
-bg_color = Color(0.686275, 0.556863, 0.772549, 1)
+bg_color = Color(0.737255, 0.560784, 1, 1)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
@@ -479,7 +485,70 @@ corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2po0a"]
-bg_color = Color(0.537255, 0.454902, 0.701961, 1)
+bg_color = Color(0.407843, 0.231373, 0.890196, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jpdmx"]
+bg_color = Color(0.352941, 0.403922, 0.980392, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pt3sr"]
+bg_color = Color(0.294118, 0.603922, 0.980392, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hxfwl"]
+bg_color = Color(0.278431, 0, 0.788235, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f3xcv"]
+bg_color = Color(0.415686, 0.85098, 0.494118, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w7m1t"]
+bg_color = Color(0.482353, 0.909804, 0.560784, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0ncqh"]
+bg_color = Color(0.188235, 0.701961, 0.435294, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tkkkf"]
+bg_color = Color(0.941176, 0.376471, 0.52549, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2fksl"]
+bg_color = Color(0.960784, 0.462745, 0.592157, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_24y6k"]
+bg_color = Color(0.760784, 0.0235294, 0.219608, 1)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
@@ -717,7 +786,7 @@ corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e8k14"]
-bg_color = Color(0.298039, 0.607843, 0.470588, 1)
+bg_color = Color(0.298039, 0.607843, 0.576471, 1)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
@@ -1052,6 +1121,27 @@ corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xn320"]
+bg_color = Color(0.529412, 0.0470588, 0.305882, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n23q0"]
+bg_color = Color(0.768627, 0.176471, 0.188235, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0gdwx"]
+bg_color = Color(0.380392, 0.00784314, 0.32549, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
 [sub_resource type="Theme" id="Theme_n7xkt"]
 default_font = ExtResource("82_73581")
 default_font_size = 24
@@ -1250,17 +1340,17 @@ split_offset = -32
 
 [node name="Canvas" type="TextureRect" parent="UI/VSplitContainer"]
 texture_filter = 1
-material = SubResource("ShaderMaterial_sspw7")
+material = SubResource("ShaderMaterial_hg507")
 custom_minimum_size = Vector2(0, 64)
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 2.0
-texture = SubResource("ImageTexture_sl31s")
+texture = SubResource("ImageTexture_iu8g1")
 ignore_texture_size = true
 script = ExtResource("8_alh6i")
 background_colors = []
 element_folder_path = "res://main/element_visuals"
-element_materials = [ExtResource("9_bwvuy"), ExtResource("10_v1ni6"), ExtResource("11_vbxum"), ExtResource("12_ggi3x"), ExtResource("13_5kjft"), ExtResource("14_2p8bn"), ExtResource("15_ang73"), ExtResource("16_v3ujy"), ExtResource("17_7it5n"), ExtResource("18_an1fq"), ExtResource("19_galm3"), ExtResource("20_m15mx"), ExtResource("21_n2yda"), ExtResource("22_krhwu"), ExtResource("23_f8gny"), ExtResource("24_r6acf"), ExtResource("25_nvlxm"), ExtResource("26_tiq1j"), ExtResource("27_65f3m"), ExtResource("28_rdjf1"), ExtResource("29_cefya"), ExtResource("30_6kqmy"), ExtResource("31_ka3as"), ExtResource("32_laes5"), ExtResource("33_jnwmq"), ExtResource("34_alun7"), ExtResource("36_w6d6j"), ExtResource("37_t3aeh"), ExtResource("31_oncvc"), ExtResource("32_3iyad"), ExtResource("33_xyc7y"), ExtResource("34_qg1e2"), ExtResource("35_c22m2"), ExtResource("36_c7fgs"), ExtResource("37_rohla"), ExtResource("38_7eknt"), ExtResource("39_4norp"), ExtResource("40_mnbcv"), ExtResource("41_f2eke"), ExtResource("42_lccc4"), ExtResource("43_6aglb"), ExtResource("44_5clp3"), ExtResource("45_ut7m2"), ExtResource("46_jm6i3"), ExtResource("47_nmo2d"), ExtResource("48_rqy3y"), ExtResource("49_ukgwx"), ExtResource("50_pq1b1"), ExtResource("51_n7iye"), ExtResource("52_q42jt"), ExtResource("53_yrjrt"), ExtResource("54_hxggx"), ExtResource("55_4vpoc"), ExtResource("56_xpaoc"), ExtResource("57_oritf"), ExtResource("58_cm7um"), ExtResource("64_oqs7l"), ExtResource("65_sdyjr"), ExtResource("59_5hsyx"), ExtResource("60_papa3"), ExtResource("61_b0no1"), ExtResource("62_ynuke"), ExtResource("63_n6drt"), ExtResource("64_gpo5j"), ExtResource("65_1tvyv"), ExtResource("66_jo1y0"), ExtResource("67_kisg3"), ExtResource("68_2jc5i"), ExtResource("75_nxldc"), ExtResource("69_ytsbu"), ExtResource("79_6d0do"), ExtResource("71_f4ycf"), ExtResource("72_mb8a0"), ExtResource("73_osfee"), ExtResource("74_cy4d6")]
+element_materials = [ExtResource("9_bwvuy"), ExtResource("10_v1ni6"), ExtResource("11_vbxum"), ExtResource("12_ggi3x"), ExtResource("13_5kjft"), ExtResource("14_2p8bn"), ExtResource("15_ang73"), ExtResource("16_v3ujy"), ExtResource("17_7it5n"), ExtResource("18_an1fq"), ExtResource("19_galm3"), ExtResource("20_m15mx"), ExtResource("21_n2yda"), ExtResource("22_krhwu"), ExtResource("23_f8gny"), ExtResource("24_r6acf"), ExtResource("25_nvlxm"), ExtResource("26_tiq1j"), ExtResource("27_65f3m"), ExtResource("26_7ds2c"), ExtResource("28_rdjf1"), ExtResource("29_cefya"), ExtResource("30_6kqmy"), ExtResource("31_ka3as"), ExtResource("32_laes5"), ExtResource("33_jnwmq"), ExtResource("34_alun7"), ExtResource("36_w6d6j"), ExtResource("37_t3aeh"), ExtResource("31_oncvc"), ExtResource("32_3iyad"), ExtResource("33_xyc7y"), ExtResource("34_qg1e2"), ExtResource("35_c22m2"), ExtResource("36_c7fgs"), ExtResource("37_rohla"), ExtResource("38_7eknt"), ExtResource("39_4norp"), ExtResource("44_mbagv"), ExtResource("40_mnbcv"), ExtResource("41_f2eke"), ExtResource("42_lccc4"), ExtResource("43_6aglb"), ExtResource("48_g83o5"), ExtResource("49_4xmwn"), ExtResource("50_af3d6"), ExtResource("44_5clp3"), ExtResource("45_ut7m2"), ExtResource("46_jm6i3"), ExtResource("47_nmo2d"), ExtResource("48_rqy3y"), ExtResource("49_ukgwx"), ExtResource("50_pq1b1"), ExtResource("51_n7iye"), ExtResource("52_q42jt"), ExtResource("53_yrjrt"), ExtResource("54_hxggx"), ExtResource("55_4vpoc"), ExtResource("56_xpaoc"), ExtResource("57_oritf"), ExtResource("66_n6ioa"), ExtResource("58_cm7um"), ExtResource("64_oqs7l"), ExtResource("65_sdyjr"), ExtResource("59_5hsyx"), ExtResource("60_papa3"), ExtResource("61_b0no1"), ExtResource("62_ynuke"), ExtResource("63_n6drt"), ExtResource("64_gpo5j"), ExtResource("65_1tvyv"), ExtResource("66_jo1y0"), ExtResource("67_kisg3"), ExtResource("68_2jc5i"), ExtResource("75_nxldc"), ExtResource("69_ytsbu"), ExtResource("79_6d0do"), ExtResource("71_f4ycf"), ExtResource("72_mb8a0"), ExtResource("73_osfee"), ExtResource("74_cy4d6")]
 
 [node name="BottomPanel" type="MarginContainer" parent="UI/VSplitContainer"]
 layout_mode = 2
@@ -1611,20 +1701,6 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_fwrmq")
 text = "glass"
 text_overrun_behavior = 1
 
-[node name="Crystal" type="Button" parent="UI/VSplitContainer/BottomPanel/VBoxContainer/ElementSelector/Build/Build"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-focus_mode = 0
-mouse_filter = 1
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 16
-theme_override_styles/normal = SubResource("StyleBoxFlat_s5fxl")
-theme_override_styles/hover = SubResource("StyleBoxFlat_rg3j8")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_2po0a")
-text = "crystal"
-text_overrun_behavior = 1
-
 [node name="Dust" type="Button" parent="UI/VSplitContainer/BottomPanel/VBoxContainer/ElementSelector/Build/Build"]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -1637,6 +1713,72 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_pt5xu")
 theme_override_styles/hover = SubResource("StyleBoxFlat_dhkpo")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_b4sp5")
 text = "dust"
+text_overrun_behavior = 1
+
+[node name="Crystal" type="Button" parent="UI/VSplitContainer/BottomPanel/VBoxContainer/ElementSelector/Build/Build"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 0
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_s5fxl")
+theme_override_styles/hover = SubResource("StyleBoxFlat_rg3j8")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2po0a")
+text = "amethyst"
+text_overrun_behavior = 1
+
+[node name="Lapis" type="Button" parent="UI/VSplitContainer/BottomPanel/VBoxContainer/ElementSelector/Build/Build"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 0
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_jpdmx")
+theme_override_styles/hover = SubResource("StyleBoxFlat_pt3sr")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hxfwl")
+text = "lapis"
+text_overrun_behavior = 1
+
+[node name="Emerald" type="Button" parent="UI/VSplitContainer/BottomPanel/VBoxContainer/ElementSelector/Build/Build"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 0
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_f3xcv")
+theme_override_styles/hover = SubResource("StyleBoxFlat_w7m1t")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_0ncqh")
+text = "emerald"
+text_overrun_behavior = 1
+
+[node name="Ruby" type="Button" parent="UI/VSplitContainer/BottomPanel/VBoxContainer/ElementSelector/Build/Build"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 0
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_tkkkf")
+theme_override_styles/hover = SubResource("StyleBoxFlat_2fksl")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_24y6k")
+text = "ruby"
 text_overrun_behavior = 1
 
 [node name="Empty" type="Button" parent="UI/VSplitContainer/BottomPanel/VBoxContainer/ElementSelector/Build/Build"]
@@ -1655,51 +1797,6 @@ text = " "
 text_overrun_behavior = 1
 
 [node name="Empty2" type="Button" parent="UI/VSplitContainer/BottomPanel/VBoxContainer/ElementSelector/Build/Build"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-focus_mode = 0
-mouse_filter = 1
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 16
-theme_override_styles/normal = SubResource("StyleBoxFlat_pt5xu")
-theme_override_styles/hover = SubResource("StyleBoxFlat_dhkpo")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_b4sp5")
-disabled = true
-text = " "
-text_overrun_behavior = 1
-
-[node name="Empty3" type="Button" parent="UI/VSplitContainer/BottomPanel/VBoxContainer/ElementSelector/Build/Build"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-focus_mode = 0
-mouse_filter = 1
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 16
-theme_override_styles/normal = SubResource("StyleBoxFlat_pt5xu")
-theme_override_styles/hover = SubResource("StyleBoxFlat_dhkpo")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_b4sp5")
-disabled = true
-text = " "
-text_overrun_behavior = 1
-
-[node name="Empty4" type="Button" parent="UI/VSplitContainer/BottomPanel/VBoxContainer/ElementSelector/Build/Build"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-focus_mode = 0
-mouse_filter = 1
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 16
-theme_override_styles/normal = SubResource("StyleBoxFlat_pt5xu")
-theme_override_styles/hover = SubResource("StyleBoxFlat_dhkpo")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_b4sp5")
-disabled = true
-text = " "
-text_overrun_behavior = 1
-
-[node name="Empty5" type="Button" parent="UI/VSplitContainer/BottomPanel/VBoxContainer/ElementSelector/Build/Build"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -1947,7 +2044,7 @@ disabled = true
 text = " "
 text_overrun_behavior = 1
 
-[node name="Chem" type="MarginContainer" parent="UI/VSplitContainer/BottomPanel/VBoxContainer/ElementSelector"]
+[node name="Chemical" type="MarginContainer" parent="UI/VSplitContainer/BottomPanel/VBoxContainer/ElementSelector"]
 visible = false
 layout_mode = 2
 theme_override_constants/margin_left = 4
@@ -1955,7 +2052,7 @@ theme_override_constants/margin_top = 4
 theme_override_constants/margin_right = 4
 theme_override_constants/margin_bottom = 4
 
-[node name="Chemical" type="GridContainer" parent="UI/VSplitContainer/BottomPanel/VBoxContainer/ElementSelector/Chem"]
+[node name="Chemical" type="GridContainer" parent="UI/VSplitContainer/BottomPanel/VBoxContainer/ElementSelector/Chemical"]
 custom_minimum_size = Vector2(0, 70)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -1964,7 +2061,7 @@ theme_override_constants/h_separation = 2
 theme_override_constants/v_separation = 2
 columns = 4
 
-[node name="Acid" type="Button" parent="UI/VSplitContainer/BottomPanel/VBoxContainer/ElementSelector/Chem/Chemical"]
+[node name="Acid" type="Button" parent="UI/VSplitContainer/BottomPanel/VBoxContainer/ElementSelector/Chemical/Chemical"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -1983,7 +2080,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_2omdr")
 text = "acid"
 text_overrun_behavior = 1
 
-[node name="Blue Fire" type="Button" parent="UI/VSplitContainer/BottomPanel/VBoxContainer/ElementSelector/Chem/Chemical"]
+[node name="Blue Fire" type="Button" parent="UI/VSplitContainer/BottomPanel/VBoxContainer/ElementSelector/Chemical/Chemical"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -2003,7 +2100,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_rurje")
 text = "blue fire"
 text_overrun_behavior = 1
 
-[node name="Hydrogen" type="Button" parent="UI/VSplitContainer/BottomPanel/VBoxContainer/ElementSelector/Chem/Chemical"]
+[node name="Hydrogen" type="Button" parent="UI/VSplitContainer/BottomPanel/VBoxContainer/ElementSelector/Chemical/Chemical"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -2022,7 +2119,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_yhxmn")
 text = "hydrogen"
 text_overrun_behavior = 1
 
-[node name="Potassium" type="Button" parent="UI/VSplitContainer/BottomPanel/VBoxContainer/ElementSelector/Chem/Chemical"]
+[node name="Potassium" type="Button" parent="UI/VSplitContainer/BottomPanel/VBoxContainer/ElementSelector/Chemical/Chemical"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -2041,7 +2138,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_g8gy2")
 text = "potassium"
 text_overrun_behavior = 1
 
-[node name="Iron" type="Button" parent="UI/VSplitContainer/BottomPanel/VBoxContainer/ElementSelector/Chem/Chemical"]
+[node name="Iron" type="Button" parent="UI/VSplitContainer/BottomPanel/VBoxContainer/ElementSelector/Chemical/Chemical"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -2060,7 +2157,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_ciday")
 text = "iron"
 text_overrun_behavior = 1
 
-[node name="Gold" type="Button" parent="UI/VSplitContainer/BottomPanel/VBoxContainer/ElementSelector/Chem/Chemical"]
+[node name="Gold" type="Button" parent="UI/VSplitContainer/BottomPanel/VBoxContainer/ElementSelector/Chemical/Chemical"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -2079,7 +2176,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_ot0nh")
 text = "gold"
 text_overrun_behavior = 1
 
-[node name="Mercury" type="Button" parent="UI/VSplitContainer/BottomPanel/VBoxContainer/ElementSelector/Chem/Chemical"]
+[node name="Mercury" type="Button" parent="UI/VSplitContainer/BottomPanel/VBoxContainer/ElementSelector/Chemical/Chemical"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -2098,7 +2195,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_fihf2")
 text = "mercury"
 text_overrun_behavior = 1
 
-[node name="Uranium" type="Button" parent="UI/VSplitContainer/BottomPanel/VBoxContainer/ElementSelector/Chem/Chemical"]
+[node name="Uranium" type="Button" parent="UI/VSplitContainer/BottomPanel/VBoxContainer/ElementSelector/Chemical/Chemical"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -2117,7 +2214,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_j4bb3")
 text = "uranium"
 text_overrun_behavior = 1
 
-[node name="Empty" type="Button" parent="UI/VSplitContainer/BottomPanel/VBoxContainer/ElementSelector/Chem/Chemical"]
+[node name="Empty" type="Button" parent="UI/VSplitContainer/BottomPanel/VBoxContainer/ElementSelector/Chemical/Chemical"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -2132,7 +2229,7 @@ disabled = true
 text = " "
 text_overrun_behavior = 1
 
-[node name="Empty2" type="Button" parent="UI/VSplitContainer/BottomPanel/VBoxContainer/ElementSelector/Chem/Chemical"]
+[node name="Empty2" type="Button" parent="UI/VSplitContainer/BottomPanel/VBoxContainer/ElementSelector/Chemical/Chemical"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -2147,7 +2244,7 @@ disabled = true
 text = " "
 text_overrun_behavior = 1
 
-[node name="Empty3" type="Button" parent="UI/VSplitContainer/BottomPanel/VBoxContainer/ElementSelector/Chem/Chemical"]
+[node name="Empty3" type="Button" parent="UI/VSplitContainer/BottomPanel/VBoxContainer/ElementSelector/Chemical/Chemical"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -2162,7 +2259,7 @@ disabled = true
 text = " "
 text_overrun_behavior = 1
 
-[node name="Empty4" type="Button" parent="UI/VSplitContainer/BottomPanel/VBoxContainer/ElementSelector/Chem/Chemical"]
+[node name="Empty4" type="Button" parent="UI/VSplitContainer/BottomPanel/VBoxContainer/ElementSelector/Chemical/Chemical"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -2332,6 +2429,25 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_2hlke")
 text = "strange"
 text_overrun_behavior = 1
 
+[node name="Meteor" type="Button" parent="UI/VSplitContainer/BottomPanel/VBoxContainer/ElementSelector/Space/Space"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 0
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_xn320")
+theme_override_styles/hover = SubResource("StyleBoxFlat_n23q0")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_0gdwx")
+text = "meteor"
+text_overrun_behavior = 1
+
 [node name="Empty" type="Button" parent="UI/VSplitContainer/BottomPanel/VBoxContainer/ElementSelector/Space/Space"]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -2378,6 +2494,7 @@ text = " "
 text_overrun_behavior = 1
 
 [node name="Empty4" type="Button" parent="UI/VSplitContainer/BottomPanel/VBoxContainer/ElementSelector/Space/Space"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -2939,32 +3056,6 @@ theme_override_constants/margin_bottom = 16
 layout_mode = 2
 columns = 6
 
-[node name="Sand" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-focus_mode = 0
-mouse_filter = 1
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 16
-theme_override_styles/normal = SubResource("StyleBoxFlat_520gh")
-theme_override_styles/hover = SubResource("StyleBoxFlat_7xfm4")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_457eu")
-text = "sand"
-
-[node name="Water" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-focus_mode = 0
-mouse_filter = 1
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 16
-theme_override_styles/normal = SubResource("StyleBoxFlat_x28qr")
-theme_override_styles/hover = SubResource("StyleBoxFlat_nnycb")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_msh0k")
-text = "water"
-
 [node name="Fire" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -2978,45 +3069,23 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_cdwbg")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_ddylc")
 text = "fire"
 
-[node name="Oil" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
+[node name="Fish" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
 mouse_filter = 1
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 16
-theme_override_styles/normal = SubResource("StyleBoxFlat_q8fr1")
-theme_override_styles/hover = SubResource("StyleBoxFlat_yes4h")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_gxiyd")
-text = "oil"
-text_overrun_behavior = 1
-
-[node name="Rock" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-focus_mode = 0
-mouse_filter = 1
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 16
-theme_override_styles/normal = SubResource("StyleBoxFlat_aei81")
-theme_override_styles/hover = SubResource("StyleBoxFlat_eypt1")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_s867d")
-text = "rock"
-
-[node name="Ice" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-focus_mode = 0
-mouse_filter = 1
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 16
-theme_override_styles/normal = SubResource("StyleBoxFlat_5vg7v")
-theme_override_styles/hover = SubResource("StyleBoxFlat_j3hob")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_2xunh")
-text = "ice"
+theme_override_styles/normal = SubResource("StyleBoxFlat_n4ht6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_uogm4")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_7cwls")
+text = "fish"
 text_overrun_behavior = 1
 
 [node name="Lava" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
@@ -3033,6 +3102,168 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_bs4ox")
 text = "lava"
 text_overrun_behavior = 1
 
+[node name="Sand" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 0
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_520gh")
+theme_override_styles/hover = SubResource("StyleBoxFlat_7xfm4")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_457eu")
+text = "sand"
+
+[node name="Sun" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 0
+mouse_filter = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_n3ufx")
+theme_override_styles/hover = SubResource("StyleBoxFlat_cxxb0")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_qejgw")
+text = "sun"
+text_overrun_behavior = 1
+
+[node name="Gold" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 0
+mouse_filter = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_0sdxy")
+theme_override_styles/hover = SubResource("StyleBoxFlat_t8xlp")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ot0nh")
+text = "gold"
+text_overrun_behavior = 1
+
+[node name="Sand Duck" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 0
+mouse_filter = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_u5maq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_666fg")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_qcn7j")
+text = "sanduck"
+text_overrun_behavior = 1
+
+[node name="Dragon" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 0
+mouse_filter = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_aux0l")
+theme_override_styles/hover = SubResource("StyleBoxFlat_xaxu6")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_sxore")
+text = "dragon"
+text_overrun_behavior = 1
+
+[node name="Seed" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 0
+mouse_filter = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_gelso")
+theme_override_styles/hover = SubResource("StyleBoxFlat_3k3lf")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_c0d0v")
+text = "seed"
+text_overrun_behavior = 1
+
+[node name="Algae" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 0
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_6cxqo")
+theme_override_styles/hover = SubResource("StyleBoxFlat_00oaa")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_fvw5r")
+text = "algae"
+text_overrun_behavior = 1
+
+[node name="Emerald" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 0
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_f3xcv")
+theme_override_styles/hover = SubResource("StyleBoxFlat_w7m1t")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_0ncqh")
+text = "emerald"
+text_overrun_behavior = 1
+
+[node name="Uranium" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 0
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_fgt8d")
+theme_override_styles/hover = SubResource("StyleBoxFlat_eho5g")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_j4bb3")
+text = "uranium"
+text_overrun_behavior = 1
+
 [node name="Air" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -3045,6 +3276,25 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_qss3a")
 theme_override_styles/hover = SubResource("StyleBoxFlat_6hhhi")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_dcp2l")
 text = "air"
+
+[node name="Acid" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 0
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_e8k14")
+theme_override_styles/hover = SubResource("StyleBoxFlat_8kwuy")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2omdr")
+text = "acid"
+text_overrun_behavior = 1
 
 [node name="Lightning" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
 layout_mode = 2
@@ -3063,6 +3313,327 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_t7g8i")
 theme_override_styles/hover = SubResource("StyleBoxFlat_p37fq")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_qegqj")
 text = "lightning"
+text_overrun_behavior = 1
+
+[node name="Neutron" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 0
+mouse_filter = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_rwxnb")
+theme_override_styles/hover = SubResource("StyleBoxFlat_qae3l")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_gxlw2")
+text = "quasar"
+text_overrun_behavior = 1
+
+[node name="Blue Fire" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 0
+mouse_filter = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_ml551")
+theme_override_styles/hover = SubResource("StyleBoxFlat_7f7pq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_rurje")
+text = "blue fire"
+text_overrun_behavior = 1
+
+[node name="Polliwog" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 0
+mouse_filter = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_tc47p")
+theme_override_styles/hover = SubResource("StyleBoxFlat_d7bg4")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_5dx7s")
+text = "polliwog"
+text_overrun_behavior = 1
+
+[node name="Ice" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 0
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_5vg7v")
+theme_override_styles/hover = SubResource("StyleBoxFlat_j3hob")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2xunh")
+text = "ice"
+text_overrun_behavior = 1
+
+[node name="Kuiper" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 0
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_un1ev")
+theme_override_styles/hover = SubResource("StyleBoxFlat_8gvnx")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_eroe7")
+text = "kuiper"
+text_overrun_behavior = 1
+
+[node name="Water" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 0
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_x28qr")
+theme_override_styles/hover = SubResource("StyleBoxFlat_nnycb")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_msh0k")
+text = "water"
+
+[node name="Lapis" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 0
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_jpdmx")
+theme_override_styles/hover = SubResource("StyleBoxFlat_pt3sr")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hxfwl")
+text = "lapis"
+text_overrun_behavior = 1
+
+[node name="Electron" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 0
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_hunuh")
+theme_override_styles/hover = SubResource("StyleBoxFlat_j4426")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_nhb3t")
+text = "plasma"
+text_overrun_behavior = 1
+
+[node name="Hurricane" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 0
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_q6a40")
+theme_override_styles/hover = SubResource("StyleBoxFlat_qcidr")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_geoh2")
+text = "storm"
+text_overrun_behavior = 1
+
+[node name="Glass" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 0
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_6q3l8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_klcww")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_fwrmq")
+text = "glass"
+text_overrun_behavior = 1
+
+[node name="Powder" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 0
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_m0trg")
+theme_override_styles/hover = SubResource("StyleBoxFlat_3vgxk")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_sgko8")
+text = "stardust"
+text_overrun_behavior = 1
+
+[node name="Crystal" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 0
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_s5fxl")
+theme_override_styles/hover = SubResource("StyleBoxFlat_rg3j8")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2po0a")
+text = "amethyst"
+text_overrun_behavior = 1
+
+[node name="Critter" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 0
+mouse_filter = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_vfdwq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6yxdd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_k4dtp")
+text = "critter"
+text_overrun_behavior = 1
+
+[node name="Urchin" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 0
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_oitsm")
+theme_override_styles/hover = SubResource("StyleBoxFlat_kn2ji")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_cgna5")
+text = "urchin"
+text_overrun_behavior = 1
+
+[node name="Meteor" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 0
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_xn320")
+theme_override_styles/hover = SubResource("StyleBoxFlat_n23q0")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_0gdwx")
+text = "meteor"
+text_overrun_behavior = 1
+
+[node name="Ruby" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 0
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_tkkkf")
+theme_override_styles/hover = SubResource("StyleBoxFlat_2fksl")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_24y6k")
+text = "ruby"
+text_overrun_behavior = 1
+
+[node name="Laser" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 0
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_5u0yn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_tim5j")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_4pg2j")
+text = "laser"
+text_overrun_behavior = 1
+
+[node name="Fairy" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 0
+mouse_filter = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_61msw")
+theme_override_styles/hover = SubResource("StyleBoxFlat_pxyux")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_q4tn0")
+text = "fairy"
+text_overrun_behavior = 1
+
+[node name="Salt" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 0
+mouse_filter = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_m050v")
+theme_override_styles/hover = SubResource("StyleBoxFlat_68bg6")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_8fyet")
+text = "salt"
 text_overrun_behavior = 1
 
 [node name="Lead Azide" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
@@ -3098,26 +3669,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_2sydf")
 text = "soil"
 text_overrun_behavior = 1
 
-[node name="Salt" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-focus_mode = 0
-mouse_filter = 1
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 16
-theme_override_styles/normal = SubResource("StyleBoxFlat_m050v")
-theme_override_styles/hover = SubResource("StyleBoxFlat_68bg6")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_8fyet")
-text = "salt"
-text_overrun_behavior = 1
-
-[node name="Wall" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
+[node name="Rock" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -3125,10 +3677,28 @@ focus_mode = 0
 mouse_filter = 1
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 16
-theme_override_styles/normal = SubResource("StyleBoxFlat_m4nap")
-theme_override_styles/hover = SubResource("StyleBoxFlat_dbe73")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_p08fi")
-text = "wall"
+theme_override_styles/normal = SubResource("StyleBoxFlat_aei81")
+theme_override_styles/hover = SubResource("StyleBoxFlat_eypt1")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_s867d")
+text = "rock"
+
+[node name="Iron" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 0
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_qholx")
+theme_override_styles/hover = SubResource("StyleBoxFlat_b04si")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ciday")
+text = "iron"
 text_overrun_behavior = 1
 
 [node name="Wood" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
@@ -3145,34 +3715,6 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_hgsbg")
 text = "wood"
 text_overrun_behavior = 1
 
-[node name="Glass" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-focus_mode = 0
-mouse_filter = 1
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 16
-theme_override_styles/normal = SubResource("StyleBoxFlat_6q3l8")
-theme_override_styles/hover = SubResource("StyleBoxFlat_klcww")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_fwrmq")
-text = "glass"
-text_overrun_behavior = 1
-
-[node name="Crystal" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-focus_mode = 0
-mouse_filter = 1
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 16
-theme_override_styles/normal = SubResource("StyleBoxFlat_s5fxl")
-theme_override_styles/hover = SubResource("StyleBoxFlat_rg3j8")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_2po0a")
-text = "crystal"
-text_overrun_behavior = 1
-
 [node name="Dust" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -3187,26 +3729,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_b4sp5")
 text = "dust"
 text_overrun_behavior = 1
 
-[node name="Polliwog" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-focus_mode = 0
-mouse_filter = 1
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 16
-theme_override_styles/normal = SubResource("StyleBoxFlat_tc47p")
-theme_override_styles/hover = SubResource("StyleBoxFlat_d7bg4")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_5dx7s")
-text = "polliwog"
-text_overrun_behavior = 1
-
-[node name="Algae" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
+[node name="Wall" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -3214,217 +3737,10 @@ focus_mode = 0
 mouse_filter = 1
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 16
-theme_override_styles/normal = SubResource("StyleBoxFlat_6cxqo")
-theme_override_styles/hover = SubResource("StyleBoxFlat_00oaa")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_fvw5r")
-text = "algae"
-text_overrun_behavior = 1
-
-[node name="Urchin" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-focus_mode = 0
-mouse_filter = 1
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
-theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
-theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
-theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 16
-theme_override_styles/normal = SubResource("StyleBoxFlat_oitsm")
-theme_override_styles/hover = SubResource("StyleBoxFlat_kn2ji")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_cgna5")
-text = "urchin"
-text_overrun_behavior = 1
-
-[node name="Sand Duck" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-focus_mode = 0
-mouse_filter = 1
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 16
-theme_override_styles/normal = SubResource("StyleBoxFlat_u5maq")
-theme_override_styles/hover = SubResource("StyleBoxFlat_666fg")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_qcn7j")
-text = "sanduck"
-text_overrun_behavior = 1
-
-[node name="Penguin" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-focus_mode = 0
-mouse_filter = 1
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
-theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
-theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
-theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
-theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 16
-theme_override_styles/normal = SubResource("StyleBoxFlat_fn62n")
-theme_override_styles/hover = SubResource("StyleBoxFlat_1mn38")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_nhtpl")
-text = "penguin"
-text_overrun_behavior = 1
-
-[node name="Seed" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-focus_mode = 0
-mouse_filter = 1
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 16
-theme_override_styles/normal = SubResource("StyleBoxFlat_gelso")
-theme_override_styles/hover = SubResource("StyleBoxFlat_3k3lf")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_c0d0v")
-text = "seed"
-text_overrun_behavior = 1
-
-[node name="Fairy" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-focus_mode = 0
-mouse_filter = 1
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 16
-theme_override_styles/normal = SubResource("StyleBoxFlat_61msw")
-theme_override_styles/hover = SubResource("StyleBoxFlat_pxyux")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_q4tn0")
-text = "fairy"
-text_overrun_behavior = 1
-
-[node name="Dragon" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-focus_mode = 0
-mouse_filter = 1
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 16
-theme_override_styles/normal = SubResource("StyleBoxFlat_aux0l")
-theme_override_styles/hover = SubResource("StyleBoxFlat_xaxu6")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_sxore")
-text = "dragon"
-text_overrun_behavior = 1
-
-[node name="Critter" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-focus_mode = 0
-mouse_filter = 1
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 16
-theme_override_styles/normal = SubResource("StyleBoxFlat_vfdwq")
-theme_override_styles/hover = SubResource("StyleBoxFlat_6yxdd")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_k4dtp")
-text = "critter"
-text_overrun_behavior = 1
-
-[node name="Hurricane" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-focus_mode = 0
-mouse_filter = 1
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 16
-theme_override_styles/normal = SubResource("StyleBoxFlat_q6a40")
-theme_override_styles/hover = SubResource("StyleBoxFlat_qcidr")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_geoh2")
-text = "storm"
-text_overrun_behavior = 1
-
-[node name="Acid" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-focus_mode = 0
-mouse_filter = 1
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
-theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
-theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
-theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 16
-theme_override_styles/normal = SubResource("StyleBoxFlat_e8k14")
-theme_override_styles/hover = SubResource("StyleBoxFlat_8kwuy")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_2omdr")
-text = "acid"
-text_overrun_behavior = 1
-
-[node name="Blue Fire" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-focus_mode = 0
-mouse_filter = 1
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 16
-theme_override_styles/normal = SubResource("StyleBoxFlat_ml551")
-theme_override_styles/hover = SubResource("StyleBoxFlat_7f7pq")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_rurje")
-text = "blue fire"
-text_overrun_behavior = 1
-
-[node name="Hydrogen" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-focus_mode = 0
-mouse_filter = 1
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 16
-theme_override_styles/normal = SubResource("StyleBoxFlat_gqgwn")
-theme_override_styles/hover = SubResource("StyleBoxFlat_rxqyp")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_yhxmn")
-text = "hydrogen"
+theme_override_styles/normal = SubResource("StyleBoxFlat_m4nap")
+theme_override_styles/hover = SubResource("StyleBoxFlat_dbe73")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_p08fi")
+text = "wall"
 text_overrun_behavior = 1
 
 [node name="Potassium" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
@@ -3446,44 +3762,6 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_g8gy2")
 text = "potassium"
 text_overrun_behavior = 1
 
-[node name="Iron" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-focus_mode = 0
-mouse_filter = 1
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
-theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
-theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
-theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 16
-theme_override_styles/normal = SubResource("StyleBoxFlat_qholx")
-theme_override_styles/hover = SubResource("StyleBoxFlat_b04si")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_ciday")
-text = "iron"
-text_overrun_behavior = 1
-
-[node name="Gold" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-focus_mode = 0
-mouse_filter = 1
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 16
-theme_override_styles/normal = SubResource("StyleBoxFlat_0sdxy")
-theme_override_styles/hover = SubResource("StyleBoxFlat_t8xlp")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_ot0nh")
-text = "gold"
-text_overrun_behavior = 1
-
 [node name="Mercury" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -3503,45 +3781,26 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_fihf2")
 text = "mercury"
 text_overrun_behavior = 1
 
-[node name="Uranium" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
+[node name="Strange" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
 mouse_filter = 1
-theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
-theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
-theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 16
-theme_override_styles/normal = SubResource("StyleBoxFlat_fgt8d")
-theme_override_styles/hover = SubResource("StyleBoxFlat_eho5g")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_j4bb3")
-text = "uranium"
+theme_override_styles/normal = SubResource("StyleBoxFlat_btpp7")
+theme_override_styles/hover = SubResource("StyleBoxFlat_or35c")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2hlke")
+text = "strange"
 text_overrun_behavior = 1
 
-[node name="Laser" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-focus_mode = 0
-mouse_filter = 1
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
-theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
-theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
-theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 16
-theme_override_styles/normal = SubResource("StyleBoxFlat_5u0yn")
-theme_override_styles/hover = SubResource("StyleBoxFlat_tim5j")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_4pg2j")
-text = "laser"
-text_overrun_behavior = 1
-
-[node name="Neutron" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
+[node name="Hydrogen" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -3554,10 +3813,24 @@ theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 16
-theme_override_styles/normal = SubResource("StyleBoxFlat_rwxnb")
-theme_override_styles/hover = SubResource("StyleBoxFlat_qae3l")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_gxlw2")
-text = "quasar"
+theme_override_styles/normal = SubResource("StyleBoxFlat_gqgwn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_rxqyp")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_yhxmn")
+text = "hydrogen"
+text_overrun_behavior = 1
+
+[node name="Oil" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 0
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_q8fr1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_yes4h")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_gxiyd")
+text = "oil"
 text_overrun_behavior = 1
 
 [node name="Black Hole" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
@@ -3574,7 +3847,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_jbbp0")
 text = "black hole"
 text_overrun_behavior = 1
 
-[node name="Electron" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
+[node name="Penguin" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -3586,53 +3859,12 @@ theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
 theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 16
-theme_override_styles/normal = SubResource("StyleBoxFlat_hunuh")
-theme_override_styles/hover = SubResource("StyleBoxFlat_j4426")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_nhb3t")
-text = "plasma"
-text_overrun_behavior = 1
-
-[node name="Powder" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-focus_mode = 0
-mouse_filter = 1
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 16
-theme_override_styles/normal = SubResource("StyleBoxFlat_m0trg")
-theme_override_styles/hover = SubResource("StyleBoxFlat_3vgxk")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_sgko8")
-text = "stardust"
-text_overrun_behavior = 1
-
-[node name="Kuiper" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-focus_mode = 0
-mouse_filter = 1
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 16
-theme_override_styles/normal = SubResource("StyleBoxFlat_un1ev")
-theme_override_styles/hover = SubResource("StyleBoxFlat_8gvnx")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_eroe7")
-text = "kuiper"
-text_overrun_behavior = 1
-
-[node name="Sun" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-focus_mode = 0
-mouse_filter = 1
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 16
-theme_override_styles/normal = SubResource("StyleBoxFlat_n3ufx")
-theme_override_styles/hover = SubResource("StyleBoxFlat_cxxb0")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_qejgw")
-text = "sun"
+theme_override_styles/normal = SubResource("StyleBoxFlat_fn62n")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1mn38")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_nhtpl")
+text = "penguin"
 text_overrun_behavior = 1
 
 [node name="SaveFileManager" type="Node" parent="." node_paths=PackedStringArray("sim_holder")]

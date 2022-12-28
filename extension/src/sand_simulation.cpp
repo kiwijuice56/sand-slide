@@ -75,6 +75,12 @@
 #include "elements/fish_left.h"
 #include "elements/fish_right.h"
 #include "elements/strange.h"
+#include "elements/meteor_a.h"
+#include "elements/meteor_b.h"
+#include "elements/meteor_c.h"
+#include "elements/lapis.h"
+#include "elements/ruby.h"
+#include "elements/emerald.h"
 
 #include <godot_cpp/core/class_db.hpp>
 
@@ -162,6 +168,12 @@ SandSimulation::SandSimulation() {
     elements.at(72) = new FishLeft();
     elements.at(73) = new FishRight();
     elements.at(74) = new Strange();
+    elements.at(75) = new MeteorA();
+    elements.at(76) = new MeteorB();
+    elements.at(77) = new MeteorC();
+    elements.at(78) = new Lapis();
+    elements.at(79) = new Ruby();
+    elements.at(80) = new Emerald();
 
     draw_data = PackedByteArray();
 

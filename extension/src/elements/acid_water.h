@@ -6,7 +6,8 @@
 
 class AcidWater: public Element {
 public:
-    const double DECAY = 1.0 / 256;
+    const double DECAY = 1.0 / 512;
+    const double DECAY_AIR = 1.0 / 256;
     const double EVAPORATE = 1.0 / 64;
     const double EAT = 1.0 / 16;
     const double EMIT = 1.0 / 64;
@@ -15,7 +16,7 @@ public:
 
     void process(SandSimulation *sim, int row, int col) override {
         // Decay
-        if (sim->randf() < DECAY && sim->touch_count(row, col, 0) > 0) {
+        if (sim->randf() < DECAY_AIR && sim->touch_count(row, col, 0) > 0 || sim->randf() < DECAY) {
             sim->set_cell(row, col, 22);
             return;
         }

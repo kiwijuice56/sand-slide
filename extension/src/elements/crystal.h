@@ -29,11 +29,11 @@ public:
     }
 
     double get_explode_resistance() override {
-        return 1.0;
+        return 0.99;
     }
 
     double get_acid_resistance() override {
-        return 1.0;
+        return 0.99;
     }
 };
 
