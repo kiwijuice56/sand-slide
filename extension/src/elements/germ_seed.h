@@ -23,12 +23,23 @@ public:
             return;
         }
 
-        sim->move_and_swap(row, col, row + 1, col);
-
         // Turn into grass
         if (sim->randf() < GROW && sim->touch_count(row, col, 11) > 0) {
             sim->set_cell(row, col, 14);
         } 
+
+        bool bot_left = sim->is_swappable(row, col, row + 1, col - 1);
+        bool bot = sim->is_swappable(row, col, row + 1, col);
+        bool bot_right = sim->is_swappable(row, col, row + 1, col + 1);
+        if (bot) {
+            sim->move_and_swap(row, col, row + 1, col);
+        } else if (bot_left && bot_right) {
+            sim->move_and_swap(row, col, row + 1, col + (sim->randf() < 0.5 ? 1 : -1));
+        } else if (bot_left) {
+            sim->move_and_swap(row, col, row + 1, col - 1);
+        } else if (bot_right) {
+            sim->move_and_swap(row, col, row + 1, col + 1);
+        }
     }
 
     double get_density() override {

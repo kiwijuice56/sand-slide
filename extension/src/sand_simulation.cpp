@@ -202,7 +202,7 @@ void SandSimulation::step(int iterations) {
                         visited.at(rRow * width + rCol) = false;
                     else {
                         // Taps are the element offset by 128; get_cell() returns only the first few bits, so we can use this to spawn the element!
-                        if (cells.at(rRow * width + rCol) >= 128 && randf() < 1.0 / 4) {
+                        if (cells.at(rRow * width + rCol) >= 128 && randf() < 1.0 / 16) {
                             int x = cells.at(rRow * width + rCol) - 128;
                             grow(rRow + 1, rCol, 0, x);
                             grow(rRow + 1, rCol + 1, 0, x);

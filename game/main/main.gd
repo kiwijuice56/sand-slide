@@ -20,7 +20,7 @@ const ELEMENT_INDEX = [
 	"Fish", "FishRight", "Strange", "Meteor", "MeteorB", "MeteorC",
 	"Lapis", "Ruby", "Emerald"]
 
-var LIFE = {}
+var POWDER = {}
 var FLUID = {}
 
 @export var save_file_manager: Node
@@ -28,7 +28,7 @@ var FLUID = {}
 var sim: SandSimulation
 
 @export var simulation_speed: int = 3
-@export var chunk_size: int = 16
+@export var chunk_size: int = 8
 @export var brush_size: int = 16
 
 var selected_element: int = 1
@@ -48,8 +48,8 @@ func _ready() -> void:
 	
 	for i in [3, 5, 20, 21, 24, 28, 30, 37, 39, 41, 44, 47, 66]:
 		FLUID[i] = true
-	for i in [4, 8, 23, 31, 32, 33, 49, 72, 75]:
-		LIFE[i] = true
+	for i in [1, 11, 12, 16, 42, 4, 8, 23, 31, 32, 33, 49, 63, 64, 45, 70, 72, 75]:
+		POWDER[i] = true
 	
 	sim = SandSimulation.new()
 	sim.set_chunk_size(chunk_size)
@@ -124,10 +124,10 @@ func draw_circle(x: float, y: float, radius: float) -> void:
 	for row in range(-radius, radius + 1):
 		for col in range(-radius, radius + 1):
 			if row*row + col*col < radius*radius:
-				draw_pixel(roundi(row + y), roundi(col + x))
+				draw_pixel(row + y, col + x)
 
 func draw_pixel(row: float, col: float) -> void:
-	if selected_element in LIFE and randf() > 0.3:
+	if selected_element in POWDER and randf() > 0.1:
 		return
 	
 	var y: int = roundi(row)

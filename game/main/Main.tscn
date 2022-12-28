@@ -104,7 +104,7 @@
 [ext_resource type="Script" path="res://main/ui/submenu/submenu.gd" id="93_0x0qy"]
 [ext_resource type="Script" path="res://main/ui/hyperlink.gd" id="94_2m5ah"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_hg507"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nkhmg"]
 shader = ExtResource("4_p0bpj")
 shader_parameter/width = 360.0
 shader_parameter/height = 379.0
@@ -139,7 +139,7 @@ shader_parameter/metal_id_match = null
 shader_parameter/metal_color_a = null
 shader_parameter/metal_color_b = null
 
-[sub_resource type="ImageTexture" id="ImageTexture_iu8g1"]
+[sub_resource type="ImageTexture" id="ImageTexture_vt8qr"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_520gh"]
 bg_color = Color(0.980392, 0.47451, 0.137255, 1)
@@ -1304,7 +1304,6 @@ script = ExtResource("1_2pidp")
 save_file_manager = NodePath("SaveFileManager")
 canvas = NodePath("UI/VSplitContainer/Canvas")
 simulation_speed = 2
-chunk_size = 32
 metadata/_edit_vertical_guides_ = []
 
 [node name="UI" type="Control" parent="." node_paths=PackedStringArray("simulation", "save_control", "settings_control", "help_control", "splash_screen", "save_button", "settings_button", "help_button")]
@@ -1340,12 +1339,12 @@ split_offset = -32
 
 [node name="Canvas" type="TextureRect" parent="UI/VSplitContainer"]
 texture_filter = 1
-material = SubResource("ShaderMaterial_hg507")
+material = SubResource("ShaderMaterial_nkhmg")
 custom_minimum_size = Vector2(0, 64)
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 2.0
-texture = SubResource("ImageTexture_iu8g1")
+texture = SubResource("ImageTexture_vt8qr")
 ignore_texture_size = true
 script = ExtResource("8_alh6i")
 background_colors = []
