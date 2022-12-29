@@ -1,4 +1,4 @@
-[gd_scene load_steps=263 format=3 uid="uid://ca4fuex6r7u2h"]
+[gd_scene load_steps=269 format=3 uid="uid://ca4fuex6r7u2h"]
 
 [ext_resource type="Script" path="res://main/main.gd" id="1_2pidp"]
 [ext_resource type="Script" path="res://main/ui/ui.gd" id="2_ged2y"]
@@ -12,8 +12,8 @@
 [ext_resource type="Resource" path="res://main/element_visuals/air.tres" id="12_ggi3x"]
 [ext_resource type="Resource" path="res://main/element_visuals/algae_brown.tres" id="13_5kjft"]
 [ext_resource type="Resource" path="res://main/element_visuals/algae_green.tres" id="14_2p8bn"]
-[ext_resource type="Script" path="res://main/element_visuals/types/flat_color.gd" id="15_72s1s"]
 [ext_resource type="Resource" path="res://main/element_visuals/algae_red.tres" id="15_ang73"]
+[ext_resource type="Resource" uid="uid://bu1e4hen8wclb" path="res://main/element_visuals/black_hole.tres" id="15_o2qcf"]
 [ext_resource type="Resource" uid="uid://d0dccyly4luce" path="res://main/element_visuals/background.tres" id="16_v3ujy"]
 [ext_resource type="Resource" uid="uid://dpnm50gp20npl" path="res://main/element_visuals/blue_fire.tres" id="18_an1fq"]
 [ext_resource type="Resource" uid="uid://cm6nri7cem0f8" path="res://main/element_visuals/bomb.tres" id="19_galm3"]
@@ -48,8 +48,11 @@
 [ext_resource type="Resource" path="res://main/element_visuals/lava.tres" id="41_f2eke"]
 [ext_resource type="Resource" path="res://main/element_visuals/lightning.tres" id="42_lccc4"]
 [ext_resource type="Resource" uid="uid://bveocaq17m0eg" path="res://main/element_visuals/mercury.tres" id="43_6aglb"]
+[ext_resource type="Resource" uid="uid://llq0j867onrv" path="res://main/element_visuals/iodine.tres" id="43_mmppy"]
 [ext_resource type="Resource" path="res://main/element_visuals/molten_glass.tres" id="44_5clp3"]
 [ext_resource type="Resource" uid="uid://ln6lkyinnk7u" path="res://main/element_visuals/lapis.tres" id="44_mbagv"]
+[ext_resource type="Resource" uid="uid://dqixga2wr36tn" path="res://main/element_visuals/iodine_gas.tres" id="44_s54lx"]
+[ext_resource type="Resource" uid="uid://dos7p1ugwtqj1" path="res://main/element_visuals/iodine_liquid.tres" id="45_hykdh"]
 [ext_resource type="Resource" uid="uid://3100gr8o2g2s" path="res://main/element_visuals/molten_gold.tres" id="45_ut7m2"]
 [ext_resource type="Resource" path="res://main/element_visuals/nuclear_explosion.tres" id="46_jm6i3"]
 [ext_resource type="Resource" path="res://main/element_visuals/obsidian.tres" id="47_nmo2d"]
@@ -100,11 +103,12 @@
 [ext_resource type="PackedScene" uid="uid://jclyvf0uqt3r" path="res://main/ui/submenu/save/save_file_panel/SaveFilePanel.tscn" id="85_ismj6"]
 [ext_resource type="Script" path="res://main/ui/splash_screen/splash_screen.gd" id="86_hmcqf"]
 [ext_resource type="Script" path="res://main/save_file/save_file_manager.gd" id="87_5tqe6"]
+[ext_resource type="Resource" uid="uid://bait1duxucdr3" path="res://main/element_visuals/worm_hole.tres" id="88_wcyf3"]
 [ext_resource type="Script" path="res://main/ui/submenu/settings/settings_menu.gd" id="88_yg1ft"]
 [ext_resource type="Script" path="res://main/ui/submenu/submenu.gd" id="93_0x0qy"]
 [ext_resource type="Script" path="res://main/ui/hyperlink.gd" id="94_2m5ah"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_pr85e"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cvq76"]
 shader = ExtResource("4_p0bpj")
 shader_parameter/width = 360.0
 shader_parameter/height = 379.0
@@ -139,12 +143,7 @@ shader_parameter/metal_id_match = null
 shader_parameter/metal_color_a = null
 shader_parameter/metal_color_b = null
 
-[sub_resource type="ImageTexture" id="ImageTexture_hl5ll"]
-
-[sub_resource type="Resource" id="Resource_1uqi1"]
-script = ExtResource("15_72s1s")
-color = Color(0, 0, 0, 1)
-id = 29
+[sub_resource type="ImageTexture" id="ImageTexture_s3y7k"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_520gh"]
 bg_color = Color(0.980392, 0.47451, 0.137255, 1)
@@ -958,6 +957,27 @@ corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fg2wb"]
+bg_color = Color(0.254902, 0.172549, 0.411765, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f1fpn"]
+bg_color = Color(0.360784, 0.239216, 0.388235, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e1r6v"]
+bg_color = Color(0.141176, 0.101961, 0.231373, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5u0yn"]
 bg_color = Color(1, 0.309804, 0.52549, 1)
 corner_radius_top_left = 4
@@ -1365,17 +1385,17 @@ split_offset = -32
 
 [node name="Canvas" type="TextureRect" parent="UI/VSplitContainer"]
 texture_filter = 1
-material = SubResource("ShaderMaterial_pr85e")
+material = SubResource("ShaderMaterial_cvq76")
 custom_minimum_size = Vector2(0, 64)
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 2.0
-texture = SubResource("ImageTexture_hl5ll")
+texture = SubResource("ImageTexture_s3y7k")
 ignore_texture_size = true
 script = ExtResource("8_alh6i")
 background_colors = []
 element_folder_path = "res://main/element_visuals"
-element_materials = [ExtResource("9_bwvuy"), ExtResource("10_v1ni6"), ExtResource("11_vbxum"), ExtResource("12_ggi3x"), ExtResource("13_5kjft"), ExtResource("14_2p8bn"), ExtResource("15_ang73"), ExtResource("16_v3ujy"), SubResource("Resource_1uqi1"), ExtResource("18_an1fq"), ExtResource("19_galm3"), ExtResource("20_m15mx"), ExtResource("21_n2yda"), ExtResource("22_krhwu"), ExtResource("23_f8gny"), ExtResource("24_r6acf"), ExtResource("25_nvlxm"), ExtResource("26_tiq1j"), ExtResource("27_65f3m"), ExtResource("26_7ds2c"), ExtResource("28_rdjf1"), ExtResource("29_cefya"), ExtResource("30_6kqmy"), ExtResource("31_ka3as"), ExtResource("32_laes5"), ExtResource("33_jnwmq"), ExtResource("34_alun7"), ExtResource("36_w6d6j"), ExtResource("37_t3aeh"), ExtResource("31_oncvc"), ExtResource("32_3iyad"), ExtResource("33_xyc7y"), ExtResource("34_qg1e2"), ExtResource("35_c22m2"), ExtResource("36_c7fgs"), ExtResource("37_rohla"), ExtResource("38_7eknt"), ExtResource("39_4norp"), ExtResource("44_mbagv"), ExtResource("40_mnbcv"), ExtResource("41_f2eke"), ExtResource("42_lccc4"), ExtResource("43_6aglb"), ExtResource("48_g83o5"), ExtResource("49_4xmwn"), ExtResource("50_af3d6"), ExtResource("44_5clp3"), ExtResource("45_ut7m2"), ExtResource("46_jm6i3"), ExtResource("47_nmo2d"), ExtResource("48_rqy3y"), ExtResource("49_ukgwx"), ExtResource("50_pq1b1"), ExtResource("51_n7iye"), ExtResource("52_q42jt"), ExtResource("53_yrjrt"), ExtResource("54_hxggx"), ExtResource("55_4vpoc"), ExtResource("56_xpaoc"), ExtResource("57_oritf"), ExtResource("66_n6ioa"), ExtResource("58_cm7um"), ExtResource("64_oqs7l"), ExtResource("65_sdyjr"), ExtResource("59_5hsyx"), ExtResource("60_papa3"), ExtResource("61_b0no1"), ExtResource("62_ynuke"), ExtResource("63_n6drt"), ExtResource("64_gpo5j"), ExtResource("65_1tvyv"), ExtResource("66_jo1y0"), ExtResource("67_kisg3"), ExtResource("68_2jc5i"), ExtResource("75_nxldc"), ExtResource("69_ytsbu"), ExtResource("79_6d0do"), ExtResource("71_f4ycf"), ExtResource("72_mb8a0"), ExtResource("73_osfee"), ExtResource("74_cy4d6")]
+element_materials = [ExtResource("9_bwvuy"), ExtResource("10_v1ni6"), ExtResource("11_vbxum"), ExtResource("12_ggi3x"), ExtResource("13_5kjft"), ExtResource("14_2p8bn"), ExtResource("15_ang73"), ExtResource("16_v3ujy"), ExtResource("15_o2qcf"), ExtResource("18_an1fq"), ExtResource("19_galm3"), ExtResource("20_m15mx"), ExtResource("21_n2yda"), ExtResource("22_krhwu"), ExtResource("23_f8gny"), ExtResource("24_r6acf"), ExtResource("25_nvlxm"), ExtResource("26_tiq1j"), ExtResource("27_65f3m"), ExtResource("26_7ds2c"), ExtResource("28_rdjf1"), ExtResource("29_cefya"), ExtResource("30_6kqmy"), ExtResource("31_ka3as"), ExtResource("32_laes5"), ExtResource("33_jnwmq"), ExtResource("34_alun7"), ExtResource("36_w6d6j"), ExtResource("37_t3aeh"), ExtResource("31_oncvc"), ExtResource("32_3iyad"), ExtResource("33_xyc7y"), ExtResource("34_qg1e2"), ExtResource("35_c22m2"), ExtResource("36_c7fgs"), ExtResource("37_rohla"), ExtResource("43_mmppy"), ExtResource("44_s54lx"), ExtResource("45_hykdh"), ExtResource("38_7eknt"), ExtResource("39_4norp"), ExtResource("44_mbagv"), ExtResource("40_mnbcv"), ExtResource("41_f2eke"), ExtResource("42_lccc4"), ExtResource("43_6aglb"), ExtResource("48_g83o5"), ExtResource("49_4xmwn"), ExtResource("50_af3d6"), ExtResource("44_5clp3"), ExtResource("45_ut7m2"), ExtResource("46_jm6i3"), ExtResource("47_nmo2d"), ExtResource("48_rqy3y"), ExtResource("49_ukgwx"), ExtResource("50_pq1b1"), ExtResource("51_n7iye"), ExtResource("52_q42jt"), ExtResource("53_yrjrt"), ExtResource("54_hxggx"), ExtResource("55_4vpoc"), ExtResource("56_xpaoc"), ExtResource("57_oritf"), ExtResource("66_n6ioa"), ExtResource("58_cm7um"), ExtResource("64_oqs7l"), ExtResource("65_sdyjr"), ExtResource("59_5hsyx"), ExtResource("60_papa3"), ExtResource("61_b0no1"), ExtResource("62_ynuke"), ExtResource("63_n6drt"), ExtResource("64_gpo5j"), ExtResource("65_1tvyv"), ExtResource("66_jo1y0"), ExtResource("67_kisg3"), ExtResource("68_2jc5i"), ExtResource("75_nxldc"), ExtResource("69_ytsbu"), ExtResource("79_6d0do"), ExtResource("71_f4ycf"), ExtResource("72_mb8a0"), ExtResource("73_osfee"), ExtResource("74_cy4d6"), ExtResource("88_wcyf3")]
 
 [node name="BottomPanel" type="MarginContainer" parent="UI/VSplitContainer"]
 layout_mode = 2
@@ -1449,10 +1469,10 @@ tap_button = NodePath("../HBoxContainer/Tap")
 
 [node name="Basic" type="MarginContainer" parent="UI/VSplitContainer/BottomPanel/VBoxContainer/ElementSelector"]
 layout_mode = 2
-theme_override_constants/margin_left = 2
-theme_override_constants/margin_top = 2
-theme_override_constants/margin_right = 2
-theme_override_constants/margin_bottom = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
 
 [node name="Basic" type="GridContainer" parent="UI/VSplitContainer/BottomPanel/VBoxContainer/ElementSelector/Basic"]
 custom_minimum_size = Vector2(0, 70)
@@ -2239,6 +2259,25 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_j4bb3")
 text = "uranium"
 text_overrun_behavior = 1
 
+[node name="Iodine" type="Button" parent="UI/VSplitContainer/BottomPanel/VBoxContainer/ElementSelector/Chemical/Chemical"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 0
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_fg2wb")
+theme_override_styles/hover = SubResource("StyleBoxFlat_f1fpn")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_e1r6v")
+text = "iodine"
+text_overrun_behavior = 1
+
 [node name="Empty" type="Button" parent="UI/VSplitContainer/BottomPanel/VBoxContainer/ElementSelector/Chemical/Chemical"]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -2285,6 +2324,7 @@ text = " "
 text_overrun_behavior = 1
 
 [node name="Empty4" type="Button" parent="UI/VSplitContainer/BottomPanel/VBoxContainer/ElementSelector/Chemical/Chemical"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3

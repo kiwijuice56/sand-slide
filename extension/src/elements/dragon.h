@@ -8,11 +8,12 @@ public:
     const double GROWTH = 0.001625;
     const double DISSOLVE = 1.0 / 128;
     const double FIRE = 1.0 / 64;
+    const double POISON = 1.0 / 8;
 
     void process(SandSimulation *sim, int row, int col) override {
         if (sim->touch_count(row, col, 32) > 3) {
             sim->set_cell(row, col, 0);
-        } else if (sim->is_poisoned(row, col)) {
+        } else if (sim->randf() < POISON && sim->is_poisoned(row, col)) {
             sim->set_cell(row, col, 16);
             return;
         } else if (sim->touch_count(row, col, 23) > 0 || sim->randf() < DISSOLVE && sim->touch_count(row, col, 30) > 0) {

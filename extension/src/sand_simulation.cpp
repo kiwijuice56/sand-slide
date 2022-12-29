@@ -82,6 +82,9 @@
 #include "elements/ruby.h"
 #include "elements/emerald.h"
 #include "elements/worm_hole.h"
+#include "elements/iodine.h"
+#include "elements/iodine_gas.h"
+#include "elements/iodine_liquid.h"
 
 #include <godot_cpp/core/class_db.hpp>
 
@@ -176,6 +179,9 @@ SandSimulation::SandSimulation() {
     elements.at(79) = new Ruby();
     elements.at(80) = new Emerald();
     elements.at(81) = new WormHole();
+    elements.at(82) = new Iodine();
+    elements.at(83) = new IodineGas();
+    elements.at(84) = new IodineLiquid();
 
     draw_data = PackedByteArray();
 
@@ -308,7 +314,7 @@ bool SandSimulation::is_poisoned(int row, int col) {
             if (x == 0 && y == 0 || !in_bounds(row + y, col + x)) 
                 continue;
             int c = get_cell(row + y, col + x);
-            if (c == 10 || c == 21 || c == 22 || c == 35 || c == 44 || c == 59) 
+            if (c == 10 || c == 21 || c == 22 || c == 35 || c == 44 || c == 59 || c == 84) 
                 return true;
         }
     } 

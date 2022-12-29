@@ -18,7 +18,7 @@ const ELEMENT_INDEX = [
 	"BurningPotassium", "Rust", "PowderB", "PowderC", "Kuiper", "Sun",
 	"FireworkB", "FireworkC", "FireworkTrail", "Salt", "SaltWater",
 	"Fish", "FishRight", "Strange", "Meteor", "MeteorB", "MeteorC",
-	"Lapis", "Ruby", "Emerald", "Worm Hole"]
+	"Lapis", "Ruby", "Emerald", "Worm Hole", "Iodine", "IodineG", "IodineL"]
 
 var POWDER = {}
 var FLUID = {}
