@@ -1,4 +1,4 @@
-[gd_scene load_steps=259 format=3 uid="uid://ca4fuex6r7u2h"]
+[gd_scene load_steps=263 format=3 uid="uid://ca4fuex6r7u2h"]
 
 [ext_resource type="Script" path="res://main/main.gd" id="1_2pidp"]
 [ext_resource type="Script" path="res://main/ui/ui.gd" id="2_ged2y"]
@@ -12,9 +12,9 @@
 [ext_resource type="Resource" path="res://main/element_visuals/air.tres" id="12_ggi3x"]
 [ext_resource type="Resource" path="res://main/element_visuals/algae_brown.tres" id="13_5kjft"]
 [ext_resource type="Resource" path="res://main/element_visuals/algae_green.tres" id="14_2p8bn"]
+[ext_resource type="Script" path="res://main/element_visuals/types/flat_color.gd" id="15_72s1s"]
 [ext_resource type="Resource" path="res://main/element_visuals/algae_red.tres" id="15_ang73"]
 [ext_resource type="Resource" uid="uid://d0dccyly4luce" path="res://main/element_visuals/background.tres" id="16_v3ujy"]
-[ext_resource type="Resource" uid="uid://ddbjest6mx36j" path="res://main/element_visuals/black_hole.tres" id="17_7it5n"]
 [ext_resource type="Resource" uid="uid://dpnm50gp20npl" path="res://main/element_visuals/blue_fire.tres" id="18_an1fq"]
 [ext_resource type="Resource" uid="uid://cm6nri7cem0f8" path="res://main/element_visuals/bomb.tres" id="19_galm3"]
 [ext_resource type="Resource" path="res://main/element_visuals/burning_oil.tres" id="20_m15mx"]
@@ -104,7 +104,7 @@
 [ext_resource type="Script" path="res://main/ui/submenu/submenu.gd" id="93_0x0qy"]
 [ext_resource type="Script" path="res://main/ui/hyperlink.gd" id="94_2m5ah"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_nkhmg"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pr85e"]
 shader = ExtResource("4_p0bpj")
 shader_parameter/width = 360.0
 shader_parameter/height = 379.0
@@ -139,7 +139,12 @@ shader_parameter/metal_id_match = null
 shader_parameter/metal_color_a = null
 shader_parameter/metal_color_b = null
 
-[sub_resource type="ImageTexture" id="ImageTexture_vt8qr"]
+[sub_resource type="ImageTexture" id="ImageTexture_hl5ll"]
+
+[sub_resource type="Resource" id="Resource_1uqi1"]
+script = ExtResource("15_72s1s")
+color = Color(0, 0, 0, 1)
+id = 29
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_520gh"]
 bg_color = Color(0.980392, 0.47451, 0.137255, 1)
@@ -995,27 +1000,6 @@ corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dn34k"]
-bg_color = Color(0.0784314, 0.0784314, 0.0784314, 1)
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3h784"]
-bg_color = Color(0.180392, 0.180392, 0.180392, 1)
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jbbp0"]
-bg_color = Color(0, 0, 0, 1)
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hunuh"]
 bg_color = Color(0.0980392, 0.180392, 0.65098, 1)
 corner_radius_top_left = 4
@@ -1137,6 +1121,48 @@ corner_radius_bottom_left = 4
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0gdwx"]
 bg_color = Color(0.380392, 0.00784314, 0.32549, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dn34k"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3h784"]
+bg_color = Color(1, 0.803922, 0.380392, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jbbp0"]
+bg_color = Color(0.921569, 0.341176, 0.211765, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bh3a0"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c3m8u"]
+bg_color = Color(0.745098, 1, 1, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qyi51"]
+bg_color = Color(0.129412, 0.188235, 0.639216, 1)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
@@ -1339,24 +1365,24 @@ split_offset = -32
 
 [node name="Canvas" type="TextureRect" parent="UI/VSplitContainer"]
 texture_filter = 1
-material = SubResource("ShaderMaterial_nkhmg")
+material = SubResource("ShaderMaterial_pr85e")
 custom_minimum_size = Vector2(0, 64)
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 2.0
-texture = SubResource("ImageTexture_vt8qr")
+texture = SubResource("ImageTexture_hl5ll")
 ignore_texture_size = true
 script = ExtResource("8_alh6i")
 background_colors = []
 element_folder_path = "res://main/element_visuals"
-element_materials = [ExtResource("9_bwvuy"), ExtResource("10_v1ni6"), ExtResource("11_vbxum"), ExtResource("12_ggi3x"), ExtResource("13_5kjft"), ExtResource("14_2p8bn"), ExtResource("15_ang73"), ExtResource("16_v3ujy"), ExtResource("17_7it5n"), ExtResource("18_an1fq"), ExtResource("19_galm3"), ExtResource("20_m15mx"), ExtResource("21_n2yda"), ExtResource("22_krhwu"), ExtResource("23_f8gny"), ExtResource("24_r6acf"), ExtResource("25_nvlxm"), ExtResource("26_tiq1j"), ExtResource("27_65f3m"), ExtResource("26_7ds2c"), ExtResource("28_rdjf1"), ExtResource("29_cefya"), ExtResource("30_6kqmy"), ExtResource("31_ka3as"), ExtResource("32_laes5"), ExtResource("33_jnwmq"), ExtResource("34_alun7"), ExtResource("36_w6d6j"), ExtResource("37_t3aeh"), ExtResource("31_oncvc"), ExtResource("32_3iyad"), ExtResource("33_xyc7y"), ExtResource("34_qg1e2"), ExtResource("35_c22m2"), ExtResource("36_c7fgs"), ExtResource("37_rohla"), ExtResource("38_7eknt"), ExtResource("39_4norp"), ExtResource("44_mbagv"), ExtResource("40_mnbcv"), ExtResource("41_f2eke"), ExtResource("42_lccc4"), ExtResource("43_6aglb"), ExtResource("48_g83o5"), ExtResource("49_4xmwn"), ExtResource("50_af3d6"), ExtResource("44_5clp3"), ExtResource("45_ut7m2"), ExtResource("46_jm6i3"), ExtResource("47_nmo2d"), ExtResource("48_rqy3y"), ExtResource("49_ukgwx"), ExtResource("50_pq1b1"), ExtResource("51_n7iye"), ExtResource("52_q42jt"), ExtResource("53_yrjrt"), ExtResource("54_hxggx"), ExtResource("55_4vpoc"), ExtResource("56_xpaoc"), ExtResource("57_oritf"), ExtResource("66_n6ioa"), ExtResource("58_cm7um"), ExtResource("64_oqs7l"), ExtResource("65_sdyjr"), ExtResource("59_5hsyx"), ExtResource("60_papa3"), ExtResource("61_b0no1"), ExtResource("62_ynuke"), ExtResource("63_n6drt"), ExtResource("64_gpo5j"), ExtResource("65_1tvyv"), ExtResource("66_jo1y0"), ExtResource("67_kisg3"), ExtResource("68_2jc5i"), ExtResource("75_nxldc"), ExtResource("69_ytsbu"), ExtResource("79_6d0do"), ExtResource("71_f4ycf"), ExtResource("72_mb8a0"), ExtResource("73_osfee"), ExtResource("74_cy4d6")]
+element_materials = [ExtResource("9_bwvuy"), ExtResource("10_v1ni6"), ExtResource("11_vbxum"), ExtResource("12_ggi3x"), ExtResource("13_5kjft"), ExtResource("14_2p8bn"), ExtResource("15_ang73"), ExtResource("16_v3ujy"), SubResource("Resource_1uqi1"), ExtResource("18_an1fq"), ExtResource("19_galm3"), ExtResource("20_m15mx"), ExtResource("21_n2yda"), ExtResource("22_krhwu"), ExtResource("23_f8gny"), ExtResource("24_r6acf"), ExtResource("25_nvlxm"), ExtResource("26_tiq1j"), ExtResource("27_65f3m"), ExtResource("26_7ds2c"), ExtResource("28_rdjf1"), ExtResource("29_cefya"), ExtResource("30_6kqmy"), ExtResource("31_ka3as"), ExtResource("32_laes5"), ExtResource("33_jnwmq"), ExtResource("34_alun7"), ExtResource("36_w6d6j"), ExtResource("37_t3aeh"), ExtResource("31_oncvc"), ExtResource("32_3iyad"), ExtResource("33_xyc7y"), ExtResource("34_qg1e2"), ExtResource("35_c22m2"), ExtResource("36_c7fgs"), ExtResource("37_rohla"), ExtResource("38_7eknt"), ExtResource("39_4norp"), ExtResource("44_mbagv"), ExtResource("40_mnbcv"), ExtResource("41_f2eke"), ExtResource("42_lccc4"), ExtResource("43_6aglb"), ExtResource("48_g83o5"), ExtResource("49_4xmwn"), ExtResource("50_af3d6"), ExtResource("44_5clp3"), ExtResource("45_ut7m2"), ExtResource("46_jm6i3"), ExtResource("47_nmo2d"), ExtResource("48_rqy3y"), ExtResource("49_ukgwx"), ExtResource("50_pq1b1"), ExtResource("51_n7iye"), ExtResource("52_q42jt"), ExtResource("53_yrjrt"), ExtResource("54_hxggx"), ExtResource("55_4vpoc"), ExtResource("56_xpaoc"), ExtResource("57_oritf"), ExtResource("66_n6ioa"), ExtResource("58_cm7um"), ExtResource("64_oqs7l"), ExtResource("65_sdyjr"), ExtResource("59_5hsyx"), ExtResource("60_papa3"), ExtResource("61_b0no1"), ExtResource("62_ynuke"), ExtResource("63_n6drt"), ExtResource("64_gpo5j"), ExtResource("65_1tvyv"), ExtResource("66_jo1y0"), ExtResource("67_kisg3"), ExtResource("68_2jc5i"), ExtResource("75_nxldc"), ExtResource("69_ytsbu"), ExtResource("79_6d0do"), ExtResource("71_f4ycf"), ExtResource("72_mb8a0"), ExtResource("73_osfee"), ExtResource("74_cy4d6")]
 
 [node name="BottomPanel" type="MarginContainer" parent="UI/VSplitContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_constants/margin_left = 10
+theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 12
-theme_override_constants/margin_right = 10
+theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 18
 
 [node name="VBoxContainer" type="VBoxContainer" parent="UI/VSplitContainer/BottomPanel"]
@@ -1423,10 +1449,10 @@ tap_button = NodePath("../HBoxContainer/Tap")
 
 [node name="Basic" type="MarginContainer" parent="UI/VSplitContainer/BottomPanel/VBoxContainer/ElementSelector"]
 layout_mode = 2
-theme_override_constants/margin_left = 4
-theme_override_constants/margin_top = 4
-theme_override_constants/margin_right = 4
-theme_override_constants/margin_bottom = 4
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 2
 
 [node name="Basic" type="GridContainer" parent="UI/VSplitContainer/BottomPanel/VBoxContainer/ElementSelector/Basic"]
 custom_minimum_size = Vector2(0, 70)
@@ -2328,20 +2354,6 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_gxlw2")
 text = "quasar"
 text_overrun_behavior = 1
 
-[node name="Black Hole" type="Button" parent="UI/VSplitContainer/BottomPanel/VBoxContainer/ElementSelector/Space/Space"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-focus_mode = 0
-mouse_filter = 1
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 16
-theme_override_styles/normal = SubResource("StyleBoxFlat_dn34k")
-theme_override_styles/hover = SubResource("StyleBoxFlat_3h784")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_jbbp0")
-text = "black hole"
-text_overrun_behavior = 1
-
 [node name="Electron" type="Button" parent="UI/VSplitContainer/BottomPanel/VBoxContainer/ElementSelector/Space/Space"]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -2447,6 +2459,44 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_0gdwx")
 text = "meteor"
 text_overrun_behavior = 1
 
+[node name="Black Hole" type="Button" parent="UI/VSplitContainer/BottomPanel/VBoxContainer/ElementSelector/Space/Space"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 0
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_dn34k")
+theme_override_styles/hover = SubResource("StyleBoxFlat_3h784")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_jbbp0")
+text = "black hole"
+text_overrun_behavior = 1
+
+[node name="Worm Hole" type="Button" parent="UI/VSplitContainer/BottomPanel/VBoxContainer/ElementSelector/Space/Space"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 0
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_bh3a0")
+theme_override_styles/hover = SubResource("StyleBoxFlat_c3m8u")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_qyi51")
+text = "worm hole"
+text_overrun_behavior = 1
+
 [node name="Empty" type="Button" parent="UI/VSplitContainer/BottomPanel/VBoxContainer/ElementSelector/Space/Space"]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -2463,37 +2513,6 @@ text = " "
 text_overrun_behavior = 1
 
 [node name="Empty2" type="Button" parent="UI/VSplitContainer/BottomPanel/VBoxContainer/ElementSelector/Space/Space"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-focus_mode = 0
-mouse_filter = 1
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 16
-theme_override_styles/normal = SubResource("StyleBoxFlat_pt5xu")
-theme_override_styles/hover = SubResource("StyleBoxFlat_dhkpo")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_b4sp5")
-disabled = true
-text = " "
-text_overrun_behavior = 1
-
-[node name="Empty3" type="Button" parent="UI/VSplitContainer/BottomPanel/VBoxContainer/ElementSelector/Space/Space"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-focus_mode = 0
-mouse_filter = 1
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 16
-theme_override_styles/normal = SubResource("StyleBoxFlat_pt5xu")
-theme_override_styles/hover = SubResource("StyleBoxFlat_dhkpo")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_b4sp5")
-disabled = true
-text = " "
-text_overrun_behavior = 1
-
-[node name="Empty4" type="Button" parent="UI/VSplitContainer/BottomPanel/VBoxContainer/ElementSelector/Space/Space"]
-visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3

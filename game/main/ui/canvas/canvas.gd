@@ -27,7 +27,7 @@ func initialize_elements() -> void:
 
 func _ready() -> void:
 	# This initializes the element list in the editor
-	# initialize_elements()
+	initialize_elements()
 	material = ShaderMaterial.new()
 	material.shader = preload("res://main/ui/canvas/element_painter.gdshader")
 	texture = ImageTexture.new()
@@ -68,7 +68,7 @@ func _ready() -> void:
 	
 	for _i in range(8):
 		var param := []
-		for _j in range(32):
+		for _j in range(48):
 			param.append(Vector3())
 		gradient_params.append(param)
 	

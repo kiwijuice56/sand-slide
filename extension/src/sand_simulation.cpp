@@ -81,6 +81,7 @@
 #include "elements/lapis.h"
 #include "elements/ruby.h"
 #include "elements/emerald.h"
+#include "elements/worm_hole.h"
 
 #include <godot_cpp/core/class_db.hpp>
 
@@ -174,6 +175,7 @@ SandSimulation::SandSimulation() {
     elements.at(78) = new Lapis();
     elements.at(79) = new Ruby();
     elements.at(80) = new Emerald();
+    elements.at(81) = new WormHole();
 
     draw_data = PackedByteArray();
 

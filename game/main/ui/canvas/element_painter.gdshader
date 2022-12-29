@@ -8,15 +8,15 @@ uniform int[256] flat_color_id_match;
 uniform vec3[24] flat_color;
 
 uniform int[256] gradient_id_match;
-uniform vec3[32] gradient_color_a;
-uniform vec3[32] gradient_color_b;
-uniform vec3[32] gradient_color_c;
-uniform vec3[32] gradient_color_d;
-uniform vec3[32] gradient_color_e;
+uniform vec3[48] gradient_color_a;
+uniform vec3[48] gradient_color_b;
+uniform vec3[48] gradient_color_c;
+uniform vec3[48] gradient_color_d;
+uniform vec3[48] gradient_color_e;
 
-uniform float[32] gradient_offset_1;
-uniform float[32] gradient_offset_2;
-uniform float[32] gradient_offset_3;
+uniform float[48] gradient_offset_1;
+uniform float[48] gradient_offset_2;
+uniform float[48] gradient_offset_3;
 
 uniform int[256] fluid_id_match;
 uniform vec3[24] color_a;
