@@ -86,6 +86,7 @@
 #include "elements/iodine_gas.h"
 #include "elements/iodine_liquid.h"
 #include "elements/snow.h"
+#include "elements/slime.h"
 
 #include <godot_cpp/core/class_db.hpp>
 
@@ -184,6 +185,7 @@ SandSimulation::SandSimulation() {
     elements.at(83) = new IodineGas();
     elements.at(84) = new IodineLiquid();
     elements.at(85) = new Snow();
+    elements.at(86) = new Slime();
 
     draw_data = PackedByteArray();
 

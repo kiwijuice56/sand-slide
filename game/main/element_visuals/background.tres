@@ -4,5 +4,5 @@
 
 [resource]
 script = ExtResource("1_0n1cj")
-color = Color(0.145098, 0.172549, 0.34902, 1)
+color = Color(0.137255, 0.254902, 0.458824, 1)
 id = 0

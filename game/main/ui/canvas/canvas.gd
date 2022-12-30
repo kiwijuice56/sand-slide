@@ -27,7 +27,7 @@ func initialize_elements() -> void:
 
 func _ready() -> void:
 	# This initializes the element list in the editor
-	# initialize_elements()
+	initialize_elements()
 	material = ShaderMaterial.new()
 	material.shader = preload("res://main/ui/canvas/element_painter.gdshader")
 	texture = ImageTexture.new()
@@ -59,7 +59,7 @@ func _ready() -> void:
 	
 	for _i in range(14):
 		var param := []
-		for _j in range(24):
+		for _j in range(32):
 			param.append(0)
 		fluid_params.append(param)
 	

@@ -7,6 +7,7 @@
 class Critter: public Element {
 public:
     const double FLAME = 1.0 / 32;
+    const double POISON = 1.0 / 18;
     const double JUMP = 1.0 / 8;
     const double MOVE = 1.0 / 32;
 
@@ -14,7 +15,7 @@ public:
         if (sim->randf() < FLAME && sim->is_on_fire(row, col)) {
             sim->set_cell(row, col, 6);
             return;
-        } else if (sim->is_poisoned(row, col)) {
+        } else if (sim->randf() < POISON && sim->is_poisoned(row, col)) {
             sim->set_cell(row, col, 16);
             return;
         }

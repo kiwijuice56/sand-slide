@@ -19,7 +19,7 @@ const ELEMENT_INDEX = [
 	"FireworkB", "FireworkC", "FireworkTrail", "Salt", "SaltWater",
 	"Fish", "FishRight", "Strange", "Meteor", "MeteorB", "MeteorC",
 	"Lapis", "Ruby", "Emerald", "Worm Hole", "Iodine", "IodineG", "IodineL",
-	"Snow"]
+	"Snow", "Slime"]
 
 var POWDER = {}
 var FLUID = {}
@@ -49,7 +49,7 @@ func _ready() -> void:
 	
 	for i in [3, 5, 20, 21, 24, 28, 30, 37, 39, 41, 44, 47, 66]:
 		FLUID[i] = true
-	for i in [1, 11, 12, 16, 42, 4, 8, 23, 31, 32, 33, 49, 63, 64, 45, 70, 72, 75]:
+	for i in [1, 11, 12, 16, 42, 4, 8, 23, 31, 32, 33, 49, 63, 64, 45, 70, 72, 75, 85]:
 		POWDER[i] = true
 	
 	sim = SandSimulation.new()
