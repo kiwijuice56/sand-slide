@@ -7,24 +7,54 @@ class_name ElementSelector
 @export var tap_button: Button
 
 var tap_on := false
+var last_button: Button
+@export var selected_material: ShaderMaterial
 
 func _ready():
 	eraser_button.button_down.connect(_on_eraser_selected)
 	tap_button.pressed.connect(_on_tap_selected)
 	for scroll_container in get_children():
 		for button in scroll_container.get_child(0).get_children():
-			button.button_down.connect(_on_element_selected.bind(button.name))
+			var i: int = button.get_index()
+			button.button_down.connect(_on_element_selected.bind(button))
+			button.get("theme_override_styles/normal").corner_radius_top_left = 4 if i == 0 else 0
+			button.get("theme_override_styles/normal").corner_radius_bottom_left = 4 if i == 8 else 0
+			button.get("theme_override_styles/normal").corner_radius_top_right = 4 if i == 3 else 0
+			button.get("theme_override_styles/normal").corner_radius_bottom_right = 4 if i == 11 else 0
+			
+			button.get("theme_override_styles/pressed").corner_radius_top_left = 4 if i == 0 else 0
+			button.get("theme_override_styles/pressed").corner_radius_bottom_left = 4 if i == 8 else 0
+			button.get("theme_override_styles/pressed").corner_radius_top_right = 4 if i == 3 else 0
+			button.get("theme_override_styles/pressed").corner_radius_bottom_right = 4 if i == 11 else 0
+			
+			button.get("theme_override_styles/hover").corner_radius_top_left = 4 if i == 0 else 0
+			button.get("theme_override_styles/hover").corner_radius_bottom_left = 4 if i == 8 else 0
+			button.get("theme_override_styles/hover").corner_radius_top_right = 4 if i == 3 else 0
+			button.get("theme_override_styles/hover").corner_radius_bottom_right = 4 if i == 11 else 0
+			
+			if button.get("theme_override_styles/disabled") != null:
+				button.get("theme_override_styles/disabled").corner_radius_top_left = 4 if i == 0 else 0
+				button.get("theme_override_styles/disabled").corner_radius_bottom_left = 4 if i == 8 else 0
+				button.get("theme_override_styles/disabled").corner_radius_top_right = 4 if i == 3 else 0
+				button.get("theme_override_styles/disabled").corner_radius_bottom_right = 4 if i == 11 else 0
 
-func _on_element_selected(element_name: String) -> void:
+func _on_element_selected(button: Button) -> void:
+	var element_name: String = button.name
 	tap_button.button_pressed = false
-	
 	simulation.selected_element = simulation.ELEMENT_INDEX.find(element_name)
+	
+	unbolden_button(last_button)
+	bolden_button(button)
+	last_button = button
 	
 	# Algae can be different colors!
 	if simulation.selected_element == 7:
 		simulation.selected_element = [7, 54, 55][randi() % 3]
 
 func _on_eraser_selected() -> void:
+	bolden_button(eraser_button)
+	unbolden_button(last_button)
+	last_button = eraser_button
 	tap_button.button_pressed = false
 	simulation.selected_element = 0
 
@@ -36,3 +66,11 @@ func _on_tap_selected() -> void:
 	tap_on = tap_button.button_pressed
 	
 	simulation.selected_element += 128 if tap_on else -128
+
+func bolden_button(button: Button) -> void:
+	if is_instance_valid(button):
+		button.material = selected_material
+
+func unbolden_button(button: Button) -> void:
+	if is_instance_valid(button):
+		button.material = null
