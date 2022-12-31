@@ -41,7 +41,7 @@ func _ready():
 func _on_element_selected(button: Button) -> void:
 	var element_name: String = button.name
 	tap_button.button_pressed = false
-	simulation.selected_element = simulation.ELEMENT_INDEX.find(element_name)
+	simulation.selected_element = simulation.ELEMENT_INDEX.find(element_name) + (128 if tap_on else 0)
 	
 	unbolden_button(last_button)
 	bolden_button(button)
@@ -54,16 +54,21 @@ func _on_element_selected(button: Button) -> void:
 func _on_eraser_selected() -> void:
 	bolden_button(eraser_button)
 	unbolden_button(last_button)
+	unbolden_button(tap_button)
+	tap_on = false
 	last_button = eraser_button
-	tap_button.button_pressed = false
 	simulation.selected_element = 0
 
 func _on_tap_selected() -> void:
 	if simulation.selected_element == 0:
-		tap_button.button_pressed = false
 		return
 	
-	tap_on = tap_button.button_pressed
+	tap_on = !tap_on
+	
+	if tap_on:
+		bolden_button(tap_button)
+	else:
+		unbolden_button(tap_button)
 	
 	simulation.selected_element += 128 if tap_on else -128
 

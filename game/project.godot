@@ -179,3 +179,4 @@ limits/debugger/max_errors_per_second=1
 [rendering]
 
 renderer/rendering_method.mobile="gl_compatibility"
+environment/defaults/default_clear_color=Color(0.388235, 0.388235, 0.388235, 1)
