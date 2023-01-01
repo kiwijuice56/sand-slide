@@ -1,4 +1,4 @@
-[gd_scene load_steps=299 format=3 uid="uid://ca4fuex6r7u2h"]
+[gd_scene load_steps=301 format=3 uid="uid://ca4fuex6r7u2h"]
 
 [ext_resource type="Script" path="res://main/main.gd" id="1_2pidp"]
 [ext_resource type="Script" path="res://main/ui/ui.gd" id="2_ged2y"]
@@ -111,7 +111,7 @@
 [ext_resource type="Script" path="res://main/ui/hyperlink.gd" id="94_2m5ah"]
 [ext_resource type="Material" uid="uid://c5qvq03ayjd60" path="res://main/ui/element_selector/selected_material.tres" id="100_iy5pn"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_cxsmt"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4u6gn"]
 shader = ExtResource("4_p0bpj")
 shader_parameter/width = 360.0
 shader_parameter/height = 379.0
@@ -146,7 +146,7 @@ shader_parameter/metal_id_match = null
 shader_parameter/metal_color_a = null
 shader_parameter/metal_color_b = null
 
-[sub_resource type="ImageTexture" id="ImageTexture_nfnu1"]
+[sub_resource type="ImageTexture" id="ImageTexture_er8hh"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_er738"]
 bg_color = Color(0.266667, 0.266667, 0.266667, 1)
@@ -190,8 +190,19 @@ corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bcf5e"]
+content_margin_left = 8.0
+content_margin_right = 8.0
+bg_color = Color(0.254902, 0.254902, 0.254902, 1)
+border_width_top = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nsxwl"]
+content_margin_left = 8.0
+content_margin_right = 8.0
+bg_color = Color(0.184314, 0.184314, 0.184314, 1)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b3p2f"]
-bg_color = Color(0.298039, 0.298039, 0.298039, 1)
+bg_color = Color(0.254902, 0.254902, 0.254902, 1)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
@@ -839,7 +850,7 @@ corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e8k14"]
-bg_color = Color(0.388235, 0.74902, 0.721569, 1)
+bg_color = Color(0.364706, 0.701961, 0.670588, 1)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
@@ -1265,7 +1276,7 @@ content_margin_left = 12.0
 content_margin_top = 16.0
 content_margin_right = 12.0
 content_margin_bottom = 8.0
-bg_color = Color(0.298039, 0.298039, 0.298039, 0.921569)
+bg_color = Color(0.341176, 0.341176, 0.341176, 0.921569)
 corner_radius_top_left = 12
 corner_radius_top_right = 12
 corner_radius_bottom_right = 12
@@ -1453,12 +1464,12 @@ split_offset = -32
 
 [node name="Canvas" type="TextureRect" parent="UI/VSplitContainer"]
 texture_filter = 1
-material = SubResource("ShaderMaterial_cxsmt")
+material = SubResource("ShaderMaterial_4u6gn")
 custom_minimum_size = Vector2(0, 64)
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 2.0
-texture = SubResource("ImageTexture_nfnu1")
+texture = SubResource("ImageTexture_er8hh")
 ignore_texture_size = true
 script = ExtResource("8_alh6i")
 background_colors = []
@@ -1544,6 +1555,8 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/side_margin = 0
 theme_override_font_sizes/font_size = 16
+theme_override_styles/tab_selected = SubResource("StyleBoxFlat_bcf5e")
+theme_override_styles/tab_unselected = SubResource("StyleBoxFlat_nsxwl")
 theme_override_styles/panel = SubResource("StyleBoxFlat_b3p2f")
 script = ExtResource("79_mv3j4")
 simulation = NodePath("../../../../..")
@@ -1552,7 +1565,6 @@ tap_button = NodePath("../HBoxContainer/Tap")
 selected_material = ExtResource("100_iy5pn")
 
 [node name="Basic" type="MarginContainer" parent="UI/VSplitContainer/BottomPanel/VBoxContainer/ElementSelector"]
-visible = false
 layout_mode = 2
 theme_override_constants/margin_left = 4
 theme_override_constants/margin_top = 4
@@ -2420,6 +2432,7 @@ text = " "
 text_overrun_behavior = 1
 
 [node name="Space" type="MarginContainer" parent="UI/VSplitContainer/BottomPanel/VBoxContainer/ElementSelector"]
+visible = false
 layout_mode = 2
 theme_override_constants/margin_left = 4
 theme_override_constants/margin_top = 4
