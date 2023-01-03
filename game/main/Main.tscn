@@ -1,4 +1,4 @@
-[gd_scene load_steps=301 format=3 uid="uid://ca4fuex6r7u2h"]
+[gd_scene load_steps=303 format=3 uid="uid://ca4fuex6r7u2h"]
 
 [ext_resource type="Script" path="res://main/main.gd" id="1_2pidp"]
 [ext_resource type="Script" path="res://main/ui/ui.gd" id="2_ged2y"]
@@ -28,7 +28,7 @@
 [ext_resource type="Resource" path="res://main/element_visuals/electricity_storm.tres" id="27_65f3m"]
 [ext_resource type="Resource" path="res://main/element_visuals/explosion.tres" id="28_rdjf1"]
 [ext_resource type="Resource" uid="uid://bdsibekcs0dbg" path="res://main/element_visuals/fairy.tres" id="29_cefya"]
-[ext_resource type="Resource" path="res://main/element_visuals/fire.tres" id="30_6kqmy"]
+[ext_resource type="Resource" uid="uid://d1fh8vaw74awx" path="res://main/element_visuals/fire.tres" id="30_6kqmy"]
 [ext_resource type="Resource" uid="uid://b2kh1gvcdydd8" path="res://main/element_visuals/firework_a.tres" id="31_ka3as"]
 [ext_resource type="Resource" path="res://main/element_visuals/germ_seed.tres" id="31_oncvc"]
 [ext_resource type="Resource" uid="uid://b6hrnmll6rn5t" path="res://main/element_visuals/glass.tres" id="32_3iyad"]
@@ -110,11 +110,12 @@
 [ext_resource type="Script" path="res://main/ui/submenu/submenu.gd" id="93_0x0qy"]
 [ext_resource type="Script" path="res://main/ui/hyperlink.gd" id="94_2m5ah"]
 [ext_resource type="Material" uid="uid://c5qvq03ayjd60" path="res://main/ui/element_selector/selected_material.tres" id="100_iy5pn"]
+[ext_resource type="Shader" path="res://main/bloom.gdshader" id="110_3wwsd"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_4u6gn"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5nk07"]
 shader = ExtResource("4_p0bpj")
 shader_parameter/width = 360.0
-shader_parameter/height = 379.0
+shader_parameter/height = 273.0
 shader_parameter/px_scale = 3
 shader_parameter/flat_color_id_match = null
 shader_parameter/flat_color = null
@@ -146,7 +147,11 @@ shader_parameter/metal_id_match = null
 shader_parameter/metal_color_a = null
 shader_parameter/metal_color_b = null
 
-[sub_resource type="ImageTexture" id="ImageTexture_er8hh"]
+[sub_resource type="ImageTexture" id="ImageTexture_0vn3f"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qj6nk"]
+shader = ExtResource("110_3wwsd")
+shader_parameter/hdr_threshold = 0.7
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_er738"]
 bg_color = Color(0.266667, 0.266667, 0.266667, 1)
@@ -1427,7 +1432,7 @@ bg_color = Color(0.141176, 0.141176, 0.141176, 1)
 [node name="SimulationMain" type="Node" node_paths=PackedStringArray("save_file_manager", "canvas")]
 script = ExtResource("1_2pidp")
 save_file_manager = NodePath("SaveFileManager")
-canvas = NodePath("UI/VSplitContainer/Canvas")
+canvas = NodePath("UI/VSplitContainer/PanelContainer/Canvas")
 simulation_speed = 2
 metadata/_edit_vertical_guides_ = []
 
@@ -1462,19 +1467,30 @@ theme_override_constants/autohide = 0
 theme_override_icons/grabber = ExtResource("3_ck1he")
 split_offset = -32
 
-[node name="Canvas" type="TextureRect" parent="UI/VSplitContainer"]
+[node name="PanelContainer" type="PanelContainer" parent="UI/VSplitContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Canvas" type="TextureRect" parent="UI/VSplitContainer/PanelContainer"]
 texture_filter = 1
-material = SubResource("ShaderMaterial_4u6gn")
+material = SubResource("ShaderMaterial_5nk07")
 custom_minimum_size = Vector2(0, 64)
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 2.0
-texture = SubResource("ImageTexture_er8hh")
+texture = SubResource("ImageTexture_0vn3f")
 ignore_texture_size = true
 script = ExtResource("8_alh6i")
 background_colors = []
 element_folder_path = "res://main/element_visuals"
 element_materials = [ExtResource("9_bwvuy"), ExtResource("10_v1ni6"), ExtResource("11_vbxum"), ExtResource("12_ggi3x"), ExtResource("13_5kjft"), ExtResource("14_2p8bn"), ExtResource("15_ang73"), ExtResource("16_v3ujy"), ExtResource("15_o2qcf"), ExtResource("18_an1fq"), ExtResource("19_galm3"), ExtResource("20_m15mx"), ExtResource("21_n2yda"), ExtResource("22_krhwu"), ExtResource("23_f8gny"), ExtResource("24_r6acf"), ExtResource("25_nvlxm"), ExtResource("26_tiq1j"), ExtResource("27_65f3m"), ExtResource("26_7ds2c"), ExtResource("28_rdjf1"), ExtResource("29_cefya"), ExtResource("30_6kqmy"), ExtResource("31_ka3as"), ExtResource("32_laes5"), ExtResource("33_jnwmq"), ExtResource("34_alun7"), ExtResource("36_w6d6j"), ExtResource("37_t3aeh"), ExtResource("31_oncvc"), ExtResource("32_3iyad"), ExtResource("33_xyc7y"), ExtResource("34_qg1e2"), ExtResource("35_c22m2"), ExtResource("36_c7fgs"), ExtResource("37_rohla"), ExtResource("43_mmppy"), ExtResource("44_s54lx"), ExtResource("45_hykdh"), ExtResource("38_7eknt"), ExtResource("39_4norp"), ExtResource("44_mbagv"), ExtResource("40_mnbcv"), ExtResource("41_f2eke"), ExtResource("42_lccc4"), ExtResource("43_6aglb"), ExtResource("48_g83o5"), ExtResource("49_4xmwn"), ExtResource("50_af3d6"), ExtResource("44_5clp3"), ExtResource("45_ut7m2"), ExtResource("46_jm6i3"), ExtResource("47_nmo2d"), ExtResource("48_rqy3y"), ExtResource("49_ukgwx"), ExtResource("50_pq1b1"), ExtResource("51_n7iye"), ExtResource("52_q42jt"), ExtResource("53_yrjrt"), ExtResource("54_hxggx"), ExtResource("55_4vpoc"), ExtResource("56_xpaoc"), ExtResource("57_oritf"), ExtResource("66_n6ioa"), ExtResource("58_cm7um"), ExtResource("64_oqs7l"), ExtResource("65_sdyjr"), ExtResource("59_5hsyx"), ExtResource("60_papa3"), ExtResource("61_b0no1"), ExtResource("77_l7hsy"), ExtResource("62_ynuke"), ExtResource("78_1tfao"), ExtResource("63_n6drt"), ExtResource("64_gpo5j"), ExtResource("65_1tvyv"), ExtResource("66_jo1y0"), ExtResource("67_kisg3"), ExtResource("68_2jc5i"), ExtResource("75_nxldc"), ExtResource("69_ytsbu"), ExtResource("79_6d0do"), ExtResource("71_f4ycf"), ExtResource("72_mb8a0"), ExtResource("73_osfee"), ExtResource("74_cy4d6"), ExtResource("88_wcyf3")]
+
+[node name="Bloom" type="ColorRect" parent="UI/VSplitContainer/PanelContainer"]
+material = SubResource("ShaderMaterial_qj6nk")
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+size_flags_stretch_ratio = 2.0
+mouse_filter = 2
 
 [node name="BottomPanel" type="MarginContainer" parent="UI/VSplitContainer"]
 layout_mode = 2
