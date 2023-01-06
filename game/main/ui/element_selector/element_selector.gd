@@ -52,6 +52,9 @@ func _on_element_selected(button: Button) -> void:
 		simulation.selected_element = [7, 54, 55][randi() % 3]
 
 func _on_eraser_selected() -> void:
+	if last_button == eraser_button:
+		return
+	
 	bolden_button(eraser_button)
 	unbolden_button(last_button)
 	unbolden_button(tap_button)

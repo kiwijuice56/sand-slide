@@ -17,7 +17,7 @@ public:
             return;
         }
 
-        sim->liquid_process(row, col, 5); 
+        sim->liquid_process(row, col, 4); 
     }
 
     double get_density() override {

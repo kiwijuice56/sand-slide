@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://main/ui/submenu/save/save_file_panel/save_file_panel.gd" id="1_ftssb"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wwijs"]
-bg_color = Color(0.133333, 0.133333, 0.133333, 1)
+bg_color = Color(0.168627, 0.168627, 0.196078, 1)
 corner_radius_top_left = 8
 corner_radius_top_right = 8
 corner_radius_bottom_right = 8
@@ -12,19 +12,19 @@ corner_radius_bottom_left = 8
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_faecs"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wn5pg"]
-bg_color = Color(0.372549, 0.372549, 0.372549, 0.419608)
+bg_color = Color(1, 1, 1, 0.0745098)
 border_width_left = 4
 border_width_top = 4
 border_width_right = 4
 border_width_bottom = 4
-border_color = Color(0.8, 0.8, 0.8, 0.435294)
+border_color = Color(1, 1, 1, 0.137255)
 corner_radius_top_left = 8
 corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_slap3"]
-bg_color = Color(0.372549, 0.372549, 0.372549, 1)
+bg_color = Color(0.32549, 0.32549, 0.360784, 1)
 border_width_left = 4
 border_width_top = 4
 border_width_right = 4
