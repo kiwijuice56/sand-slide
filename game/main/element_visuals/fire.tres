@@ -5,9 +5,9 @@
 [resource]
 script = ExtResource("1_xt043")
 noise_texture = 1
-color_a = Color(1, 0.878431, 0.278431, 1)
-color_b = Color(0.99, 0.51381, 0.2178, 1)
-color_c = Color(0.729412, 0, 0.0117647, 1)
+color_a = Color(1, 0.776471, 0.109804, 1)
+color_b = Color(0.988235, 0.396078, 0.0313726, 1)
+color_c = Color(0.65098, 0, 0.0117647, 1)
 noise_scale = 0.5
 noise_speed = 4.0
 current_size = 16.0

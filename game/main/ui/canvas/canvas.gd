@@ -7,6 +7,7 @@ class_name SandCanvas
 @export var px_scale: int = 3
 @export var element_folder_path: String = "res://main/element_visuals/"
 @export var element_materials: Array[ElementVisual] = []
+@export var size_mirror: TextureRect
 
 var released := true
 var start_draw: Vector2
@@ -31,7 +32,7 @@ func _ready() -> void:
 	material = ShaderMaterial.new()
 	material.shader = preload("res://main/ui/canvas/element_painter.gdshader")
 	texture = ImageTexture.new()
-	resized.connect(_resized)
+	size_mirror.resized.connect(_resized)
 	
 	# First, we make arrays to keep track of where each element is located in the category arrays
 	var fluid_ids := []
@@ -161,6 +162,7 @@ func _ready() -> void:
 	get_material().set_shader_parameter("crystal_texture", preload("res://main/element_visuals/textures/crystal.jpg"))
 
 func _resized() -> void:
+	size = size_mirror.size
 	get_material().set_shader_parameter("width", size.x)
 	get_material().set_shader_parameter("height", size.y)
 	get_material().set_shader_parameter("px_scale", px_scale)
