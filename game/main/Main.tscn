@@ -115,7 +115,7 @@
 
 [sub_resource type="ImageTexture" id="ImageTexture_y7mie"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_5ejec"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tpc32"]
 shader = ExtResource("4_p0bpj")
 shader_parameter/width = null
 shader_parameter/height = null
@@ -150,7 +150,7 @@ shader_parameter/metal_id_match = null
 shader_parameter/metal_color_a = null
 shader_parameter/metal_color_b = null
 
-[sub_resource type="ImageTexture" id="ImageTexture_2ido0"]
+[sub_resource type="ImageTexture" id="ImageTexture_dadot"]
 
 [sub_resource type="Environment" id="Environment_v44im"]
 background_mode = 3
@@ -307,7 +307,7 @@ bg_color = Color(0.34902, 0.152941, 0.14902, 1)
 border_color = Color(0.439216, 0.231373, 0.176471, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eypt1"]
-bg_color = Color(0.329412, 0.188235, 0.137255, 1)
+bg_color = Color(0.439216, 0.231373, 0.176471, 1)
 border_color = Color(0.411765, 0.266667, 0.196078, 1)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
@@ -1512,7 +1512,6 @@ settings_button = NodePath("VSplitContainer/BottomPanel/BottomPanel/VBoxContaine
 help_button = NodePath("VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/HBoxContainer/Help")
 
 [node name="VSplitContainer" type="VSplitContainer" parent="UI"]
-layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -1525,13 +1524,11 @@ theme_override_icons/grabber = ExtResource("3_ck1he")
 split_offset = 48
 
 [node name="TopPanel" type="PanelContainer" parent="UI/VSplitContainer"]
-layout_mode = 2
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxEmpty_rhx1h")
 
 [node name="CanvasSize" type="TextureRect" parent="UI/VSplitContainer/TopPanel"]
 custom_minimum_size = Vector2(0, 64)
-layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 2.0
 texture = SubResource("ImageTexture_y7mie")
@@ -1542,13 +1539,13 @@ layer = -1
 
 [node name="Canvas" type="TextureRect" parent="UI/VSplitContainer/TopPanel/CanvasLayer" node_paths=PackedStringArray("size_mirror")]
 texture_filter = 1
-material = SubResource("ShaderMaterial_5ejec")
+material = SubResource("ShaderMaterial_tpc32")
 custom_minimum_size = Vector2(0, 64)
 offset_right = 360.0
 offset_bottom = 273.0
 size_flags_vertical = 3
 size_flags_stretch_ratio = 2.0
-texture = SubResource("ImageTexture_2ido0")
+texture = SubResource("ImageTexture_dadot")
 ignore_texture_size = true
 script = ExtResource("8_alh6i")
 background_colors = []
@@ -1560,12 +1557,10 @@ size_mirror = NodePath("../../CanvasSize")
 environment = SubResource("Environment_v44im")
 
 [node name="BottomPanel" type="PanelContainer" parent="UI/VSplitContainer"]
-layout_mode = 2
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_pfsh7")
 
 [node name="BottomPanel" type="MarginContainer" parent="UI/VSplitContainer/BottomPanel"]
-layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 12
@@ -1573,17 +1568,14 @@ theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 16
 
 [node name="VBoxContainer" type="VBoxContainer" parent="UI/VSplitContainer/BottomPanel/BottomPanel"]
-layout_mode = 2
 theme_override_constants/separation = 14
 
 [node name="HBoxContainer" type="HBoxContainer" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer"]
-layout_mode = 2
 size_flags_vertical = 4
 theme_override_constants/separation = 8
 
 [node name="Eraser" type="Button" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
 focus_mode = 0
 theme_override_font_sizes/font_size = 18
 theme_override_styles/normal = SubResource("StyleBoxFlat_er738")
@@ -1594,7 +1586,6 @@ icon_alignment = 1
 
 [node name="Tap" type="Button" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(50, 0)
-layout_mode = 2
 focus_mode = 0
 theme_override_font_sizes/font_size = 18
 theme_override_styles/normal = SubResource("StyleBoxFlat_7pq0y")
@@ -1606,7 +1597,6 @@ icon_alignment = 1
 
 [node name="Help" type="Button" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(50, 0)
-layout_mode = 2
 size_flags_horizontal = 10
 focus_mode = 0
 theme_override_font_sizes/font_size = 18
@@ -1618,7 +1608,6 @@ icon_alignment = 1
 
 [node name="Settings" type="Button" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(50, 0)
-layout_mode = 2
 focus_mode = 0
 theme_override_font_sizes/font_size = 18
 theme_override_styles/normal = SubResource("StyleBoxFlat_7pq0y")
@@ -1629,7 +1618,6 @@ icon_alignment = 1
 
 [node name="File" type="Button" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(50, 0)
-layout_mode = 2
 focus_mode = 0
 theme_override_font_sizes/font_size = 18
 theme_override_styles/normal = SubResource("StyleBoxFlat_7pq0y")
@@ -1639,7 +1627,6 @@ icon = ExtResource("78_o45e4")
 icon_alignment = 1
 
 [node name="ElementSelector" type="TabContainer" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer" node_paths=PackedStringArray("simulation", "eraser_button", "tap_button")]
-layout_mode = 2
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 16
 theme_override_styles/tab_selected = SubResource("StyleBoxFlat_bcf5e")
@@ -1652,7 +1639,12 @@ tap_button = NodePath("../HBoxContainer/Tap")
 selected_material = ExtResource("100_iy5pn")
 
 [node name="Basic" type="MarginContainer" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector"]
-layout_mode = 2
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 31.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_constants/margin_left = 4
 theme_override_constants/margin_top = 4
 theme_override_constants/margin_right = 4
@@ -1660,13 +1652,11 @@ theme_override_constants/margin_bottom = 4
 
 [node name="Basic" type="GridContainer" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Basic"]
 custom_minimum_size = Vector2(0, 70)
-layout_mode = 2
 theme_override_constants/h_separation = 0
 theme_override_constants/v_separation = 0
 columns = 4
 
 [node name="Sand" type="Button" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Basic/Basic"]
-layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -1683,7 +1673,6 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_457eu")
 text = "sand"
 
 [node name="Water" type="Button" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Basic/Basic"]
-layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -1696,7 +1685,6 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_msh0k")
 text = "water"
 
 [node name="Fire" type="Button" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Basic/Basic"]
-layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -1709,7 +1697,6 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_ddylc")
 text = "fire"
 
 [node name="Oil" type="Button" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Basic/Basic"]
-layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -1723,7 +1710,6 @@ text = "oil"
 text_overrun_behavior = 1
 
 [node name="Rock" type="Button" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Basic/Basic"]
-layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -1736,7 +1722,6 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_s867d")
 text = "rock"
 
 [node name="Ice" type="Button" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Basic/Basic"]
-layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -1750,7 +1735,6 @@ text = "ice"
 text_overrun_behavior = 1
 
 [node name="Lava" type="Button" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Basic/Basic"]
-layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -1764,7 +1748,6 @@ text = "lava"
 text_overrun_behavior = 1
 
 [node name="Lightning" type="Button" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Basic/Basic"]
-layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -1783,7 +1766,6 @@ text = "lightning"
 text_overrun_behavior = 1
 
 [node name="Air" type="Button" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Basic/Basic"]
-layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -1796,7 +1778,6 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_dcp2l")
 text = "air"
 
 [node name="Snow" type="Button" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Basic/Basic"]
-layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -1814,7 +1795,6 @@ text = "snow"
 text_overrun_behavior = 1
 
 [node name="Lead Azide" type="Button" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Basic/Basic"]
-layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -1832,7 +1812,6 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_78bka")
 text = "explosive"
 
 [node name="Empty" type="Button" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Basic/Basic"]
-layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -1849,7 +1828,6 @@ text_overrun_behavior = 1
 
 [node name="Build" type="MarginContainer" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector"]
 visible = false
-layout_mode = 2
 theme_override_constants/margin_left = 4
 theme_override_constants/margin_top = 4
 theme_override_constants/margin_right = 4
@@ -1857,13 +1835,11 @@ theme_override_constants/margin_bottom = 4
 
 [node name="Build" type="GridContainer" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Build"]
 custom_minimum_size = Vector2(0, 70)
-layout_mode = 2
 theme_override_constants/h_separation = 0
 theme_override_constants/v_separation = 0
 columns = 4
 
 [node name="Wall" type="Button" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Build/Build"]
-layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -1877,7 +1853,6 @@ text = "wall"
 text_overrun_behavior = 1
 
 [node name="Wood" type="Button" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Build/Build"]
-layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -1891,7 +1866,6 @@ text = "wood"
 text_overrun_behavior = 1
 
 [node name="Soil" type="Button" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Build/Build"]
-layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -1905,7 +1879,6 @@ text = "soil"
 text_overrun_behavior = 1
 
 [node name="Salt" type="Button" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Build/Build"]
-layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -1924,7 +1897,6 @@ text = "salt"
 text_overrun_behavior = 1
 
 [node name="Dust" type="Button" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Build/Build"]
-layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -1938,7 +1910,6 @@ text = "dust"
 text_overrun_behavior = 1
 
 [node name="Glass" type="Button" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Build/Build"]
-layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -1952,7 +1923,6 @@ text = "glass"
 text_overrun_behavior = 1
 
 [node name="Crystal" type="Button" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Build/Build"]
-layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -1966,7 +1936,6 @@ text = "amethyst"
 text_overrun_behavior = 1
 
 [node name="Lapis" type="Button" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Build/Build"]
-layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -1985,7 +1954,6 @@ text = "lapis"
 text_overrun_behavior = 1
 
 [node name="Emerald" type="Button" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Build/Build"]
-layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -2004,7 +1972,6 @@ text = "emerald"
 text_overrun_behavior = 1
 
 [node name="Ruby" type="Button" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Build/Build"]
-layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -2018,7 +1985,6 @@ text = "ruby"
 text_overrun_behavior = 1
 
 [node name="Empty2" type="Button" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Build/Build"]
-layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -2034,7 +2000,6 @@ text = " "
 text_overrun_behavior = 1
 
 [node name="Empty3" type="Button" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Build/Build"]
-layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -2051,7 +2016,6 @@ text_overrun_behavior = 1
 
 [node name="Life" type="MarginContainer" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector"]
 visible = false
-layout_mode = 2
 theme_override_constants/margin_left = 4
 theme_override_constants/margin_top = 4
 theme_override_constants/margin_right = 4
@@ -2059,7 +2023,6 @@ theme_override_constants/margin_bottom = 4
 
 [node name="Life" type="GridContainer" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Life"]
 custom_minimum_size = Vector2(0, 70)
-layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/h_separation = 0
@@ -2067,7 +2030,6 @@ theme_override_constants/v_separation = 0
 columns = 4
 
 [node name="Polliwog" type="Button" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Life/Life"]
-layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -2086,7 +2048,6 @@ text = "polliwog"
 text_overrun_behavior = 1
 
 [node name="Algae" type="Button" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Life/Life"]
-layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -2100,7 +2061,6 @@ text = "algae"
 text_overrun_behavior = 1
 
 [node name="Fish" type="Button" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Life/Life"]
-layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -2119,7 +2079,6 @@ text = "fish"
 text_overrun_behavior = 1
 
 [node name="Urchin" type="Button" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Life/Life"]
-layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -2138,7 +2097,6 @@ text = "urchin"
 text_overrun_behavior = 1
 
 [node name="Sand Duck" type="Button" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Life/Life"]
-layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -2158,7 +2116,6 @@ text = "sanduck"
 text_overrun_behavior = 1
 
 [node name="Penguin" type="Button" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Life/Life"]
-layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -2178,7 +2135,6 @@ text = "penguino"
 text_overrun_behavior = 1
 
 [node name="Seed" type="Button" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Life/Life"]
-layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -2197,7 +2153,6 @@ text = "seed"
 text_overrun_behavior = 1
 
 [node name="Critter" type="Button" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Life/Life"]
-layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -2216,7 +2171,6 @@ text = "critter"
 text_overrun_behavior = 1
 
 [node name="Fairy" type="Button" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Life/Life"]
-layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -2235,7 +2189,6 @@ text = "fairy"
 text_overrun_behavior = 1
 
 [node name="Dragon" type="Button" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Life/Life"]
-layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -2254,7 +2207,6 @@ text = "dragon"
 text_overrun_behavior = 1
 
 [node name="Slime" type="Button" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Life/Life"]
-layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -2268,7 +2220,6 @@ text = "slime"
 text_overrun_behavior = 1
 
 [node name="Hurricane" type="Button" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Life/Life"]
-layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -2283,7 +2234,6 @@ text_overrun_behavior = 1
 
 [node name="Chemical" type="MarginContainer" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector"]
 visible = false
-layout_mode = 2
 theme_override_constants/margin_left = 4
 theme_override_constants/margin_top = 4
 theme_override_constants/margin_right = 4
@@ -2291,7 +2241,6 @@ theme_override_constants/margin_bottom = 4
 
 [node name="Chemical" type="GridContainer" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Chemical"]
 custom_minimum_size = Vector2(0, 70)
-layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/h_separation = 0
@@ -2299,7 +2248,6 @@ theme_override_constants/v_separation = 0
 columns = 4
 
 [node name="Acid" type="Button" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Chemical/Chemical"]
-layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -2318,7 +2266,6 @@ text = "acid"
 text_overrun_behavior = 1
 
 [node name="Blue Fire" type="Button" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Chemical/Chemical"]
-layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -2338,7 +2285,6 @@ text = "blue fire"
 text_overrun_behavior = 1
 
 [node name="Hydrogen" type="Button" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Chemical/Chemical"]
-layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -2357,7 +2303,6 @@ text = "hydrogen"
 text_overrun_behavior = 1
 
 [node name="Potassium" type="Button" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Chemical/Chemical"]
-layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -2376,7 +2321,6 @@ text = "potassium"
 text_overrun_behavior = 1
 
 [node name="Iron" type="Button" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Chemical/Chemical"]
-layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -2395,7 +2339,6 @@ text = "iron"
 text_overrun_behavior = 1
 
 [node name="Iodine" type="Button" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Chemical/Chemical"]
-layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -2414,7 +2357,6 @@ text = "iodine"
 text_overrun_behavior = 1
 
 [node name="Gold" type="Button" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Chemical/Chemical"]
-layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -2433,7 +2375,6 @@ text = "gold"
 text_overrun_behavior = 1
 
 [node name="Mercury" type="Button" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Chemical/Chemical"]
-layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -2452,7 +2393,6 @@ text = "mercury"
 text_overrun_behavior = 1
 
 [node name="Uranium" type="Button" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Chemical/Chemical"]
-layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -2471,7 +2411,6 @@ text = "uranium"
 text_overrun_behavior = 1
 
 [node name="Empty4" type="Button" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Chemical/Chemical"]
-layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -2487,7 +2426,6 @@ text = " "
 text_overrun_behavior = 1
 
 [node name="Empty5" type="Button" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Chemical/Chemical"]
-layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -2503,7 +2441,6 @@ text = " "
 text_overrun_behavior = 1
 
 [node name="Empty6" type="Button" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Chemical/Chemical"]
-layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -2520,7 +2457,6 @@ text_overrun_behavior = 1
 
 [node name="Space" type="MarginContainer" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector"]
 visible = false
-layout_mode = 2
 theme_override_constants/margin_left = 4
 theme_override_constants/margin_top = 4
 theme_override_constants/margin_right = 4
@@ -2528,7 +2464,6 @@ theme_override_constants/margin_bottom = 4
 
 [node name="Space" type="GridContainer" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Space"]
 custom_minimum_size = Vector2(0, 70)
-layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/h_separation = 0
@@ -2536,7 +2471,6 @@ theme_override_constants/v_separation = 0
 columns = 4
 
 [node name="Laser" type="Button" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Space/Space"]
-layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -2555,7 +2489,6 @@ text = "laser"
 text_overrun_behavior = 1
 
 [node name="Neutron" type="Button" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Space/Space"]
-layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -2574,7 +2507,6 @@ text = "quasar"
 text_overrun_behavior = 1
 
 [node name="Meteor" type="Button" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Space/Space"]
-layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -2593,7 +2525,6 @@ text = "meteor"
 text_overrun_behavior = 1
 
 [node name="Sun" type="Button" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Space/Space"]
-layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -2613,7 +2544,6 @@ text = "sun"
 text_overrun_behavior = 1
 
 [node name="Electron" type="Button" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Space/Space"]
-layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -2632,7 +2562,6 @@ text = "plasma"
 text_overrun_behavior = 1
 
 [node name="Powder" type="Button" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Space/Space"]
-layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -2651,7 +2580,6 @@ text = "stardust"
 text_overrun_behavior = 1
 
 [node name="Kuiper" type="Button" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Space/Space"]
-layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -2670,7 +2598,6 @@ text = "kuiper"
 text_overrun_behavior = 1
 
 [node name="Strange" type="Button" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Space/Space"]
-layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -2689,7 +2616,6 @@ text = "strange"
 text_overrun_behavior = 1
 
 [node name="Black Hole" type="Button" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Space/Space"]
-layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -2708,7 +2634,6 @@ text = "black hole"
 text_overrun_behavior = 1
 
 [node name="Worm Hole" type="Button" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Space/Space"]
-layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -2727,7 +2652,6 @@ text = "worm hole"
 text_overrun_behavior = 1
 
 [node name="Empty7" type="Button" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Space/Space"]
-layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -2743,7 +2667,6 @@ text = " "
 text_overrun_behavior = 1
 
 [node name="Empty8" type="Button" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Space/Space"]
-layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -2761,7 +2684,7 @@ text_overrun_behavior = 1
 [node name="SaveFileMenu" type="Control" parent="UI" node_paths=PackedStringArray("save_file_manager", "save_file_container", "save_button", "load_button", "delete_button", "new_file_name", "simulation", "anim", "back_button")]
 visible = false
 modulate = Color(1, 1, 1, 0)
-layout_mode = 1
+layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -2780,7 +2703,6 @@ anim = NodePath("AnimationPlayer")
 back_button = NodePath("SaveContainer/PanelContainer/Back")
 
 [node name="SaveCover" type="ColorRect" parent="UI/SaveFileMenu"]
-layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -2789,7 +2711,6 @@ grow_vertical = 2
 color = Color(0, 0, 0, 0.556863)
 
 [node name="SaveContainer" type="MarginContainer" parent="UI/SaveFileMenu"]
-layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -2803,23 +2724,19 @@ theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 16
 
 [node name="PanelContainer" type="PanelContainer" parent="UI/SaveFileMenu/SaveContainer"]
-layout_mode = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_e160y")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="UI/SaveFileMenu/SaveContainer/PanelContainer"]
-layout_mode = 2
 mouse_filter = 2
 theme_override_constants/separation = 16
 
 [node name="Label" type="Label" parent="UI/SaveFileMenu/SaveContainer/PanelContainer/VBoxContainer"]
-layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 32
 text = "Save Files"
 
 [node name="LineEdit" type="LineEdit" parent="UI/SaveFileMenu/SaveContainer/PanelContainer/VBoxContainer"]
-layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 16
 theme_override_styles/normal = SubResource("StyleBoxFlat_dh3by")
@@ -2827,23 +2744,19 @@ theme_override_styles/focus = SubResource("StyleBoxFlat_ybdfi")
 placeholder_text = "Type new file name.."
 
 [node name="ScrollContainer" type="ScrollContainer" parent="UI/SaveFileMenu/SaveContainer/PanelContainer/VBoxContainer"]
-layout_mode = 2
 size_flags_vertical = 3
 mouse_filter = 0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="UI/SaveFileMenu/SaveContainer/PanelContainer/VBoxContainer/ScrollContainer"]
-layout_mode = 2
 size_flags_horizontal = 3
 mouse_filter = 2
 theme_override_constants/separation = 8
 
 [node name="OptionContainer" type="HBoxContainer" parent="UI/SaveFileMenu/SaveContainer/PanelContainer/VBoxContainer"]
-layout_mode = 2
 theme_override_constants/separation = 8
 
 [node name="SaveFile" type="Button" parent="UI/SaveFileMenu/SaveContainer/PanelContainer/VBoxContainer/OptionContainer"]
 custom_minimum_size = Vector2(0, 32)
-layout_mode = 2
 size_flags_horizontal = 3
 focus_mode = 0
 theme_override_font_sizes/font_size = 16
@@ -2851,7 +2764,6 @@ text = "Save"
 
 [node name="LoadFile" type="Button" parent="UI/SaveFileMenu/SaveContainer/PanelContainer/VBoxContainer/OptionContainer"]
 custom_minimum_size = Vector2(0, 32)
-layout_mode = 2
 size_flags_horizontal = 3
 focus_mode = 0
 theme_override_font_sizes/font_size = 16
@@ -2859,7 +2771,6 @@ text = "Load"
 
 [node name="DeleteFile" type="Button" parent="UI/SaveFileMenu/SaveContainer/PanelContainer/VBoxContainer/OptionContainer"]
 custom_minimum_size = Vector2(0, 32)
-layout_mode = 2
 size_flags_horizontal = 3
 focus_mode = 0
 theme_override_font_sizes/font_size = 16
@@ -2867,7 +2778,6 @@ text = "Delete"
 
 [node name="Back" type="Button" parent="UI/SaveFileMenu/SaveContainer/PanelContainer"]
 custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 0
 focus_mode = 0
@@ -2883,7 +2793,7 @@ libraries = {
 [node name="SettingsMenu" type="Control" parent="UI" node_paths=PackedStringArray("size_slider", "speed_slider", "zoom_slider", "clear_button", "background_picker", "simulation", "anim", "back_button")]
 visible = false
 modulate = Color(1, 1, 1, 0)
-layout_mode = 1
+layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -2900,7 +2810,6 @@ anim = NodePath("AnimationPlayer")
 back_button = NodePath("SettingsContainer/PanelContainer/Back")
 
 [node name="SettingsCover" type="ColorRect" parent="UI/SettingsMenu"]
-layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -2909,7 +2818,6 @@ grow_vertical = 2
 color = Color(0, 0, 0, 0.556863)
 
 [node name="SettingsContainer" type="MarginContainer" parent="UI/SettingsMenu"]
-layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -2923,28 +2831,23 @@ theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 16
 
 [node name="PanelContainer" type="PanelContainer" parent="UI/SettingsMenu/SettingsContainer"]
-layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_e160y")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="UI/SettingsMenu/SettingsContainer/PanelContainer"]
-layout_mode = 2
 theme_override_constants/separation = 2
 
 [node name="Label" type="Label" parent="UI/SettingsMenu/SettingsContainer/PanelContainer/VBoxContainer"]
-layout_mode = 2
 theme_override_font_sizes/font_size = 32
 text = "Settings"
 horizontal_alignment = 1
 
 [node name="BrushContainer" type="VBoxContainer" parent="UI/SettingsMenu/SettingsContainer/PanelContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 28)
-layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 0
 
 [node name="BrushSlider" type="HSlider" parent="UI/SettingsMenu/SettingsContainer/PanelContainer/VBoxContainer/BrushContainer"]
 custom_minimum_size = Vector2(0, 32)
-layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 10
 theme_override_styles/slider = SubResource("StyleBoxFlat_xw2ew")
@@ -2956,10 +2859,8 @@ value = 16.0
 tick_count = 8
 
 [node name="HBoxContainer" type="HBoxContainer" parent="UI/SettingsMenu/SettingsContainer/PanelContainer/VBoxContainer/BrushContainer"]
-layout_mode = 2
 
 [node name="Left" type="Label" parent="UI/SettingsMenu/SettingsContainer/PanelContainer/VBoxContainer/BrushContainer/HBoxContainer"]
-layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 1
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -2968,7 +2869,6 @@ text = "Small"
 vertical_alignment = 1
 
 [node name="Title" type="Label" parent="UI/SettingsMenu/SettingsContainer/PanelContainer/VBoxContainer/BrushContainer/HBoxContainer"]
-layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 1
 theme_override_font_sizes/font_size = 16
@@ -2977,7 +2877,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Right" type="Label" parent="UI/SettingsMenu/SettingsContainer/PanelContainer/VBoxContainer/BrushContainer/HBoxContainer"]
-layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 1
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -2986,13 +2885,11 @@ text = "Large"
 vertical_alignment = 1
 
 [node name="SpeedContainer" type="VBoxContainer" parent="UI/SettingsMenu/SettingsContainer/PanelContainer/VBoxContainer"]
-layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 0
 
 [node name="SpeedSlider" type="HSlider" parent="UI/SettingsMenu/SettingsContainer/PanelContainer/VBoxContainer/SpeedContainer"]
 custom_minimum_size = Vector2(0, 32)
-layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 10
 theme_override_styles/slider = SubResource("StyleBoxFlat_xw2ew")
@@ -3003,10 +2900,8 @@ value = 2.0
 tick_count = 8
 
 [node name="HBoxContainer" type="HBoxContainer" parent="UI/SettingsMenu/SettingsContainer/PanelContainer/VBoxContainer/SpeedContainer"]
-layout_mode = 2
 
 [node name="Left" type="Label" parent="UI/SettingsMenu/SettingsContainer/PanelContainer/VBoxContainer/SpeedContainer/HBoxContainer"]
-layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 1
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -3015,7 +2910,6 @@ text = "Slow"
 vertical_alignment = 1
 
 [node name="Title" type="Label" parent="UI/SettingsMenu/SettingsContainer/PanelContainer/VBoxContainer/SpeedContainer/HBoxContainer"]
-layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 1
 theme_override_font_sizes/font_size = 16
@@ -3024,7 +2918,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Right" type="Label" parent="UI/SettingsMenu/SettingsContainer/PanelContainer/VBoxContainer/SpeedContainer/HBoxContainer"]
-layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 1
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -3033,13 +2926,11 @@ text = "Fast"
 vertical_alignment = 1
 
 [node name="ZoomContainer" type="VBoxContainer" parent="UI/SettingsMenu/SettingsContainer/PanelContainer/VBoxContainer"]
-layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 0
 
 [node name="ZoomSlider" type="HSlider" parent="UI/SettingsMenu/SettingsContainer/PanelContainer/VBoxContainer/ZoomContainer"]
 custom_minimum_size = Vector2(0, 32)
-layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 10
 theme_override_styles/slider = SubResource("StyleBoxFlat_xw2ew")
@@ -3051,10 +2942,8 @@ value = 3.0
 tick_count = 8
 
 [node name="HBoxContainer" type="HBoxContainer" parent="UI/SettingsMenu/SettingsContainer/PanelContainer/VBoxContainer/ZoomContainer"]
-layout_mode = 2
 
 [node name="Left" type="Label" parent="UI/SettingsMenu/SettingsContainer/PanelContainer/VBoxContainer/ZoomContainer/HBoxContainer"]
-layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 1
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -3063,7 +2952,6 @@ text = "Out"
 vertical_alignment = 1
 
 [node name="Title" type="Label" parent="UI/SettingsMenu/SettingsContainer/PanelContainer/VBoxContainer/ZoomContainer/HBoxContainer"]
-layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 1
 theme_override_font_sizes/font_size = 16
@@ -3072,7 +2960,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Right" type="Label" parent="UI/SettingsMenu/SettingsContainer/PanelContainer/VBoxContainer/ZoomContainer/HBoxContainer"]
-layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 1
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -3081,14 +2968,16 @@ text = "In"
 vertical_alignment = 1
 
 [node name="BackgroundLabel" type="Label" parent="UI/SettingsMenu/SettingsContainer/PanelContainer/VBoxContainer"]
-layout_mode = 2
 theme_override_font_sizes/font_size = 16
 text = "Background Color
 "
 horizontal_alignment = 1
 
 [node name="ColorPicker" type="ColorPicker" parent="UI/SettingsMenu/SettingsContainer/PanelContainer/VBoxContainer"]
-layout_mode = 2
+offset_left = 32.0
+offset_top = 16.0
+offset_right = 16.0
+offset_bottom = 16.0
 color = Color(0.145098, 0.172549, 0.34902, 1)
 edit_alpha = false
 can_add_swatches = false
@@ -3100,7 +2989,6 @@ presets_visible = false
 
 [node name="Clear" type="Button" parent="UI/SettingsMenu/SettingsContainer/PanelContainer/VBoxContainer"]
 custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
 size_flags_vertical = 0
 focus_mode = 0
 theme_override_font_sizes/font_size = 16
@@ -3108,7 +2996,6 @@ text = "Clear Canvas"
 
 [node name="Back" type="Button" parent="UI/SettingsMenu/SettingsContainer/PanelContainer"]
 custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 0
 focus_mode = 0
@@ -3124,7 +3011,7 @@ libraries = {
 [node name="HelpMenu" type="Control" parent="UI" node_paths=PackedStringArray("simulation", "anim", "back_button")]
 visible = false
 modulate = Color(1, 1, 1, 0)
-layout_mode = 1
+layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -3136,7 +3023,6 @@ anim = NodePath("AnimationPlayer")
 back_button = NodePath("HelpContainer/PanelContainer/Back")
 
 [node name="HelpCover" type="ColorRect" parent="UI/HelpMenu"]
-layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -3145,7 +3031,6 @@ grow_vertical = 2
 color = Color(0, 0, 0, 0.556863)
 
 [node name="HelpContainer" type="MarginContainer" parent="UI/HelpMenu"]
-layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -3159,37 +3044,30 @@ theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 16
 
 [node name="PanelContainer" type="PanelContainer" parent="UI/HelpMenu/HelpContainer"]
-layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_e160y")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="UI/HelpMenu/HelpContainer/PanelContainer"]
-layout_mode = 2
 theme_override_constants/separation = 14
 
 [node name="Label" type="Label" parent="UI/HelpMenu/HelpContainer/PanelContainer/VBoxContainer"]
-layout_mode = 2
 theme_override_font_sizes/font_size = 32
 text = "Help"
 horizontal_alignment = 1
 
 [node name="WhatContainer" type="VBoxContainer" parent="UI/HelpMenu/HelpContainer/PanelContainer/VBoxContainer"]
-layout_mode = 2
 theme_override_constants/separation = 3
 
 [node name="Title" type="Label" parent="UI/HelpMenu/HelpContainer/PanelContainer/VBoxContainer/WhatContainer"]
-layout_mode = 2
 theme_override_font_sizes/font_size = 16
 text = "What Is Sand Slide?"
 horizontal_alignment = 1
 
 [node name="Text" type="Label" parent="UI/HelpMenu/HelpContainer/PanelContainer/VBoxContainer/WhatContainer"]
-layout_mode = 2
 theme_override_font_sizes/font_size = 12
 text = "This is a falling sand game created by a student! Experiment with elements, express yourself, or just mess around. This is purely a passion project and you can find the source code on my profile: "
 autowrap_mode = 2
 
 [node name="HyperLink" type="RichTextLabel" parent="UI/HelpMenu/HelpContainer/PanelContainer/VBoxContainer/WhatContainer"]
-layout_mode = 2
 theme_override_font_sizes/normal_font_size = 12
 theme_override_font_sizes/bold_font_size = 12
 theme_override_font_sizes/italics_font_size = 12
@@ -3201,39 +3079,32 @@ fit_content_height = true
 script = ExtResource("94_2m5ah")
 
 [node name="SaveContainer" type="VBoxContainer" parent="UI/HelpMenu/HelpContainer/PanelContainer/VBoxContainer"]
-layout_mode = 2
 theme_override_constants/separation = 3
 
 [node name="Title" type="Label" parent="UI/HelpMenu/HelpContainer/PanelContainer/VBoxContainer/SaveContainer"]
-layout_mode = 2
 theme_override_font_sizes/font_size = 16
 text = "How Does Saving Work?"
 horizontal_alignment = 1
 
 [node name="Text" type="Label" parent="UI/HelpMenu/HelpContainer/PanelContainer/VBoxContainer/SaveContainer"]
-layout_mode = 2
 theme_override_font_sizes/font_size = 12
 text = "In the Save File menu, tap the text box to name a new file and press enter. The created file will keep your creation perfectly in tact! When you tap on the button with its name, you can overwrite, load, or delete it."
 autowrap_mode = 2
 
 [node name="DrawContainer" type="VBoxContainer" parent="UI/HelpMenu/HelpContainer/PanelContainer/VBoxContainer"]
-layout_mode = 2
 theme_override_constants/separation = 3
 
 [node name="Title" type="Label" parent="UI/HelpMenu/HelpContainer/PanelContainer/VBoxContainer/DrawContainer"]
-layout_mode = 2
 theme_override_font_sizes/font_size = 16
 text = "Attribution"
 horizontal_alignment = 1
 
 [node name="Text" type="Label" parent="UI/HelpMenu/HelpContainer/PanelContainer/VBoxContainer/DrawContainer"]
-layout_mode = 2
 theme_override_font_sizes/font_size = 12
 text = "Many of the elements are inspired by other falling sand games, including Sand:Box by SmellyMoo and Sandspiel by Max Bittker. Sand Slide was created as a tribute to these great simulators, so check them out too! "
 autowrap_mode = 2
 
 [node name="HyperLinks" type="RichTextLabel" parent="UI/HelpMenu/HelpContainer/PanelContainer/VBoxContainer/DrawContainer"]
-layout_mode = 2
 theme_override_font_sizes/normal_font_size = 12
 theme_override_font_sizes/bold_font_size = 12
 theme_override_font_sizes/italics_font_size = 12
@@ -3246,7 +3117,6 @@ script = ExtResource("94_2m5ah")
 
 [node name="Back" type="Button" parent="UI/HelpMenu/HelpContainer/PanelContainer"]
 custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 0
 focus_mode = 0
@@ -3260,7 +3130,6 @@ libraries = {
 }
 
 [node name="FPSLabelContainer" type="MarginContainer" parent="UI"]
-layout_mode = 0
 offset_right = 360.0
 offset_bottom = 45.0
 size_flags_vertical = 3
@@ -3268,7 +3137,6 @@ theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 8
 
 [node name="FPSLabel" type="Label" parent="UI/FPSLabelContainer"]
-layout_mode = 2
 size_flags_vertical = 1
 theme_override_font_sizes/font_size = 12
 text = "FPS 0"
@@ -3278,7 +3146,6 @@ script = ExtResource("85_5af3y")
 autostart = true
 
 [node name="SplashScreen" type="ColorRect" parent="UI"]
-layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -3298,7 +3165,6 @@ libraries = {
 
 [node name="PanelContainer" type="PanelContainer" parent="UI"]
 visible = false
-layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -3308,18 +3174,15 @@ theme = ExtResource("2_scbws")
 theme_override_styles/panel = SubResource("StyleBoxFlat_2bb3j")
 
 [node name="MarginContainer" type="MarginContainer" parent="UI/PanelContainer"]
-layout_mode = 2
 theme_override_constants/margin_left = 16
 theme_override_constants/margin_top = 16
 theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 16
 
 [node name="GridContainer" type="GridContainer" parent="UI/PanelContainer/MarginContainer"]
-layout_mode = 2
 columns = 6
 
 [node name="Fire" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -3332,7 +3195,6 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_ddylc")
 text = "fire"
 
 [node name="Fish" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -3351,7 +3213,6 @@ text = "fish"
 text_overrun_behavior = 1
 
 [node name="Lava" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -3365,7 +3226,6 @@ text = "lava"
 text_overrun_behavior = 1
 
 [node name="Sand" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -3378,7 +3238,6 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_457eu")
 text = "sand"
 
 [node name="Sun" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -3398,7 +3257,6 @@ text = "sun"
 text_overrun_behavior = 1
 
 [node name="Gold" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -3417,7 +3275,6 @@ text = "gold"
 text_overrun_behavior = 1
 
 [node name="Sand Duck" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -3437,7 +3294,6 @@ text = "sanduck"
 text_overrun_behavior = 1
 
 [node name="Dragon" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -3456,7 +3312,6 @@ text = "dragon"
 text_overrun_behavior = 1
 
 [node name="Seed" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -3475,7 +3330,6 @@ text = "seed"
 text_overrun_behavior = 1
 
 [node name="Algae" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -3489,7 +3343,6 @@ text = "algae"
 text_overrun_behavior = 1
 
 [node name="Emerald" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -3508,7 +3361,6 @@ text = "emerald"
 text_overrun_behavior = 1
 
 [node name="Uranium" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -3527,7 +3379,6 @@ text = "uranium"
 text_overrun_behavior = 1
 
 [node name="Air" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -3540,7 +3391,6 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_dcp2l")
 text = "air"
 
 [node name="Acid" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -3559,7 +3409,6 @@ text = "acid"
 text_overrun_behavior = 1
 
 [node name="Lightning" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -3578,7 +3427,6 @@ text = "lightning"
 text_overrun_behavior = 1
 
 [node name="Neutron" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -3597,7 +3445,6 @@ text = "quasar"
 text_overrun_behavior = 1
 
 [node name="Blue Fire" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -3617,7 +3464,6 @@ text = "blue fire"
 text_overrun_behavior = 1
 
 [node name="Polliwog" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -3636,7 +3482,6 @@ text = "polliwog"
 text_overrun_behavior = 1
 
 [node name="Ice" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -3650,7 +3495,6 @@ text = "ice"
 text_overrun_behavior = 1
 
 [node name="Kuiper" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -3664,7 +3508,6 @@ text = "kuiper"
 text_overrun_behavior = 1
 
 [node name="Water" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -3677,7 +3520,6 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_msh0k")
 text = "water"
 
 [node name="Lapis" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -3696,7 +3538,6 @@ text = "lapis"
 text_overrun_behavior = 1
 
 [node name="Electron" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -3715,7 +3556,6 @@ text = "plasma"
 text_overrun_behavior = 1
 
 [node name="Hurricane" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -3729,7 +3569,6 @@ text = "storm"
 text_overrun_behavior = 1
 
 [node name="Glass" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -3743,7 +3582,6 @@ text = "glass"
 text_overrun_behavior = 1
 
 [node name="Powder" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -3757,7 +3595,6 @@ text = "stardust"
 text_overrun_behavior = 1
 
 [node name="Crystal" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -3771,7 +3608,6 @@ text = "amethyst"
 text_overrun_behavior = 1
 
 [node name="Critter" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -3790,7 +3626,6 @@ text = "critter"
 text_overrun_behavior = 1
 
 [node name="Urchin" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -3809,7 +3644,6 @@ text = "urchin"
 text_overrun_behavior = 1
 
 [node name="Meteor" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -3828,7 +3662,6 @@ text = "meteor"
 text_overrun_behavior = 1
 
 [node name="Ruby" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -3842,7 +3675,6 @@ text = "ruby"
 text_overrun_behavior = 1
 
 [node name="Laser" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -3861,7 +3693,6 @@ text = "laser"
 text_overrun_behavior = 1
 
 [node name="Fairy" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -3880,7 +3711,6 @@ text = "fairy"
 text_overrun_behavior = 1
 
 [node name="Salt" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -3899,7 +3729,6 @@ text = "salt"
 text_overrun_behavior = 1
 
 [node name="Lead Azide" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -3918,7 +3747,6 @@ text = "bomb"
 text_overrun_behavior = 1
 
 [node name="Soil" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -3932,7 +3760,6 @@ text = "soil"
 text_overrun_behavior = 1
 
 [node name="Rock" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -3945,7 +3772,6 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_s867d")
 text = "rock"
 
 [node name="Iron" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -3964,7 +3790,6 @@ text = "iron"
 text_overrun_behavior = 1
 
 [node name="Wood" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -3978,7 +3803,6 @@ text = "wood"
 text_overrun_behavior = 1
 
 [node name="Dust" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -3992,7 +3816,6 @@ text = "dust"
 text_overrun_behavior = 1
 
 [node name="Wall" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -4006,7 +3829,6 @@ text = "wall"
 text_overrun_behavior = 1
 
 [node name="Potassium" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -4025,7 +3847,6 @@ text = "potassium"
 text_overrun_behavior = 1
 
 [node name="Mercury" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -4044,7 +3865,6 @@ text = "mercury"
 text_overrun_behavior = 1
 
 [node name="Strange" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -4063,7 +3883,6 @@ text = "strange"
 text_overrun_behavior = 1
 
 [node name="Hydrogen" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -4082,7 +3901,6 @@ text = "hydrogen"
 text_overrun_behavior = 1
 
 [node name="Oil" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -4096,7 +3914,6 @@ text = "oil"
 text_overrun_behavior = 1
 
 [node name="Black Hole" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -4110,7 +3927,6 @@ text = "black hole"
 text_overrun_behavior = 1
 
 [node name="Penguin" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0

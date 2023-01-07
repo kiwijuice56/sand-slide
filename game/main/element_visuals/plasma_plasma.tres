@@ -11,5 +11,6 @@ color_d = Color(1, 0.929412, 0.478431, 1)
 color_e = Color(1, 1, 1, 1)
 offset_1 = 0.2
 offset_2 = 0.5
-offset_3 = 0.8
+offset_3 = 0.7
 id = 40
+bloom = 0.0

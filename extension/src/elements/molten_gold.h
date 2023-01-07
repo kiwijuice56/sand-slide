@@ -9,8 +9,8 @@ public:
     const double MELT = 1.0 / 80;
     const double DOWN_BLOCK = 1.0 / 16;
     const double DOWN = 1.0 / 1.5;
-    const double COOL = 1.0 / 24;
-    const double REG_COOL = 1.0 / 512;
+    const double COOL = 1.0 / 64;
+    const double REG_COOL = 1.0 / 1024;
 
     void process(SandSimulation *sim, int row, int col) override {
         // Conductivity
