@@ -10,6 +10,7 @@ public:
     const double EVAPORATION = 1.0 / 64;
     const double MELT = 1.0 / 64;
     const double MIX = 1.0 / 4;
+    const double FREEZE = 1.0 / 4;
 
     void process(SandSimulation *sim, int row, int col) override {
         // Conductivity 
@@ -19,6 +20,10 @@ public:
             sim->grow(row, col - 1, 3, 38);
             sim->grow(row, col + 1, 3, 38);
             return;
+        }
+
+        if (sim->randf() < FREEZE && sim->is_cold(row, col)) {
+            sim->set_cell(row, col, sim->randf() < 0.5 ? 19 : 85);
         }
 
         // Mix with water to turn into acidic water

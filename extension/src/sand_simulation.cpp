@@ -87,6 +87,13 @@
 #include "elements/iodine_liquid.h"
 #include "elements/snow.h"
 #include "elements/slime.h"
+#include "elements/cloud.h"
+#include "elements/ice_explosion.h"
+#include "elements/ice_dust.h"
+#include "elements/icework_a.h"
+#include "elements/icework_b.h"
+#include "elements/icework_c.h"
+#include "elements/ice_bomb.h"
 
 #include <godot_cpp/core/class_db.hpp>
 
@@ -186,6 +193,13 @@ SandSimulation::SandSimulation() {
     elements.at(84) = new IodineLiquid();
     elements.at(85) = new Snow();
     elements.at(86) = new Slime();
+    elements.at(87) = new Cloud();
+    elements.at(88) = new IceExplosion();
+    elements.at(89) = new IceDust();
+    elements.at(90) = new IceworkA();
+    elements.at(91) = new IceworkB();
+    elements.at(92) = new IceworkC();
+    elements.at(93) = new IceBomb();
 
     draw_data = PackedByteArray();
 
@@ -340,6 +354,21 @@ bool SandSimulation::is_on_fire(int row, int col) {
     } 
     return false;
 }
+
+// Check if a cell is touching any flame producing elements
+bool SandSimulation::is_cold(int row, int col) {
+    for (int y = -1; y <= 1; y++) {
+        for (int x = -1; x <= 1; x++) {
+            if (x == 0 && y == 0 || !in_bounds(row + y, col + x))
+                continue;
+            int c = get_cell(row + y, col + x);
+            if (c == 65 || c == 87 || c == 88 || c == 89 || c == 90 || c == 91 || c == 92) 
+                return true;
+        }
+    } 
+    return false;
+}
+
 
 bool SandSimulation::is_swappable(int row, int col, int row2, int col2) {
     if (!in_bounds(row, col) || !in_bounds(row2, col2)) 

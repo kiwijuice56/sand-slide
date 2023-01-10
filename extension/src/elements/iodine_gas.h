@@ -14,6 +14,10 @@ public:
             sim->set_cell(row, col, 0);
         }
 
+        if (sim->is_cold(row, col)) {
+            sim->set_cell(row, col, 84);
+        }
+
         bool blocked = !sim->in_bounds(row - 1, col) || sim->get_cell(row - 1, col) == 6;
         if (sim->randf() < (blocked ? UP_BLOCK : UP)) {
             sim->move_and_swap(row, col, row - 1, col);

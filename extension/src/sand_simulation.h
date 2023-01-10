@@ -60,6 +60,7 @@ public:
     bool in_bounds(int row, int col);
     bool is_poisoned(int row, int col);
     bool is_on_fire(int row, int col);
+    bool is_cold(int row, int col);
     bool is_swappable(int row, int col, int row2, int col2);
     float randf();
 

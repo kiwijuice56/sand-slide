@@ -7,8 +7,12 @@
 class IodineLiquid: public Element {
 public:
     const double DECAY = 1.0 / 512;
+    const double EVAPORATE = 1.0 / 16;
 
     void process(SandSimulation *sim, int row, int col) override {
+        if (sim->randf() < EVAPORATE && sim->is_on_fire(row, col)) {
+            sim->set_cell(row, col, 83);
+        }
         if (sim->randf() < DECAY && sim->touch_count(row, col, 0) > 0) {
             sim->set_cell(row, col, 83);
             return;

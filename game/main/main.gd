@@ -19,7 +19,8 @@ const ELEMENT_INDEX = [
 	"FireworkB", "FireworkC", "FireworkTrail", "Salt", "SaltWater",
 	"Fish", "FishRight", "Strange", "Meteor", "MeteorB", "MeteorC",
 	"Lapis", "Ruby", "Emerald", "Worm Hole", "Iodine", "IodineG", "IodineL",
-	"Snow", "Slime"]
+	"Snow", "Slime", "Neptune", "IceExplosion", "IceDust", "IceworkA", "IceworkB",
+	"IceworkC", "IceBomb"]
 
 var POWDER = {}
 var FLUID = {}
@@ -148,7 +149,6 @@ func draw_pixel(row: float, col: float) -> void:
 	
 	if selected_element in [75, 76, 77]:
 		selected_element = [75, 76, 77][randi() % 3]
-	
 	sim.draw_cell(y, x, selected_element)
 
 func clear() -> void:

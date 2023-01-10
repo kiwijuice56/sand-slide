@@ -33,7 +33,7 @@ public:
         int new_row = row, new_col = col;
 
         if (sim->randf() < (blocked ? DOWN_BLOCK : DOWN)) 
-            new_row += (sim->randf() < 0.5 && sim->touch_count(row, col, 3) + sim->touch_count(row, col, 59) + sim->touch_count(row, col, 21) > 0 ? -1 : 1);
+            new_row += (sim->touch_count(row, col, 3) + sim->touch_count(row, col, 59) + sim->touch_count(row, col, 21) > 0 ? -1 : 1);
         else 
             new_col += sim->randf() < 0.5 ? 1 : -1;
 

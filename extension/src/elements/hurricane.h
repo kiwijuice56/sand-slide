@@ -5,7 +5,7 @@
 
 class Hurricane: public Element {
 public:
-    const double DECAY = 1.0 / 300;
+    const double DECAY = 1.0 / 500;
     const double THUNDER = 0.25;
     const double RAIN = 0.65; 
     const double UP = 0.65;

@@ -22,6 +22,10 @@ public:
             return;
         }
 
+        if (sim->is_cold(row, col)) {
+            sim->set_cell(row, col, 30);
+            return;
+        }
         sim->liquid_process(row, col, 6); 
     }
 
