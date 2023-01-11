@@ -8,7 +8,7 @@ public:
     const double PROCESS = 1.0 / 16;
     const double DECAY = 1.0 / 18;
     const double STORM = 1.0 / 16;
-    const double ICE = 1.0 / 64;
+    const double ICE = 1.0 / 512;
 
     void process(SandSimulation *sim, int row, int col) override {
         // Adding a limit slows the cloud down

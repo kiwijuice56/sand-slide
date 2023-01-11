@@ -1,4 +1,4 @@
-[gd_scene load_steps=316 format=3 uid="uid://ca4fuex6r7u2h"]
+[gd_scene load_steps=318 format=3 uid="uid://ca4fuex6r7u2h"]
 
 [ext_resource type="Script" path="res://main/main.gd" id="1_2pidp"]
 [ext_resource type="Script" path="res://main/ui/ui.gd" id="2_ged2y"]
@@ -122,7 +122,7 @@
 
 [sub_resource type="ImageTexture" id="ImageTexture_y7mie"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_mr7ej"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_h34po"]
 shader = ExtResource("4_p0bpj")
 shader_parameter/width = null
 shader_parameter/height = null
@@ -157,7 +157,7 @@ shader_parameter/metal_id_match = null
 shader_parameter/metal_color_a = null
 shader_parameter/metal_color_b = null
 
-[sub_resource type="ImageTexture" id="ImageTexture_i7ikt"]
+[sub_resource type="ImageTexture" id="ImageTexture_eb7y0"]
 
 [sub_resource type="Environment" id="Environment_v44im"]
 background_mode = 3
@@ -903,15 +903,15 @@ corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eho5g"]
-bg_color = Color(0.137255, 0.768627, 0.654902, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kn804"]
+bg_color = Color(1, 1, 1, 1)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j4bb3"]
-bg_color = Color(0.282353, 0.341176, 0.278431, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_igoo4"]
+bg_color = Color(0.556863, 0.823529, 0.929412, 1)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
@@ -1066,6 +1066,20 @@ corner_radius_bottom_left = 4
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fgt8d"]
 bg_color = Color(0.447059, 0.588235, 0.490196, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eho5g"]
+bg_color = Color(0.137255, 0.768627, 0.654902, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j4bb3"]
+bg_color = Color(0.282353, 0.341176, 0.278431, 1)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
@@ -1577,13 +1591,13 @@ layer = -1
 
 [node name="Canvas" type="TextureRect" parent="UI/VSplitContainer/TopPanel/CanvasLayer" node_paths=PackedStringArray("size_mirror")]
 texture_filter = 1
-material = SubResource("ShaderMaterial_mr7ej")
+material = SubResource("ShaderMaterial_h34po")
 custom_minimum_size = Vector2(0, 64)
 offset_right = 360.0
 offset_bottom = 273.0
 size_flags_vertical = 3
 size_flags_stretch_ratio = 2.0
-texture = SubResource("ImageTexture_i7ikt")
+texture = SubResource("ImageTexture_eb7y0")
 ignore_texture_size = true
 script = ExtResource("8_alh6i")
 background_colors = []
@@ -2366,8 +2380,8 @@ theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 16
 theme_override_styles/normal = SubResource("StyleBoxFlat_2i5dy")
-theme_override_styles/hover = SubResource("StyleBoxFlat_eho5g")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_j4bb3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_kn804")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_igoo4")
 text = "ice bomb"
 text_overrun_behavior = 1
 

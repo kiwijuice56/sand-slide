@@ -28,7 +28,7 @@ func initialize_elements() -> void:
 
 func _ready() -> void:
 	# This initializes the element list in the editor
-	initialize_elements()
+	# initialize_elements()
 	material = ShaderMaterial.new()
 	material.shader = preload("res://main/ui/canvas/element_painter.gdshader")
 	texture = ImageTexture.new()
