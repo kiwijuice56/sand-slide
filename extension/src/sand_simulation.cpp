@@ -101,7 +101,7 @@ using namespace godot;
 
 SandSimulation::SandSimulation() {
     // Each element has a single object instance so that the program
-    // can use polymorphism rather than explicity stating which method
+    // can use polymorphism rather than explicitly stating which method
     // is called for each element type
 
     // The order in the vector is arbitrary, but it must match the list order in main.gd
