@@ -179,4 +179,8 @@ limits/debugger/max_errors_per_second=1
 [rendering]
 
 renderer/rendering_method.mobile="gl_compatibility"
+shader_compiler/shader_cache/strip_debug=true
+environment/ssao/quality=1
+environment/ssil/quality=1
+environment/glow/upscale_mode=0
 environment/defaults/default_clear_color=Color(0.356863, 0.356863, 0.356863, 1)

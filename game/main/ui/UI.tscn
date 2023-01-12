@@ -1,129 +1,127 @@
-[gd_scene load_steps=318 format=3 uid="uid://ca4fuex6r7u2h"]
+[gd_scene load_steps=316 format=3 uid="uid://dmxc0wp2r4vfl"]
 
-[ext_resource type="Script" path="res://main/main.gd" id="1_2pidp"]
-[ext_resource type="Theme" uid="uid://dwqrk16thiq6h" path="res://main/ui/theme.tres" id="2_p00c8"]
-[ext_resource type="Script" path="res://main/ui/ui.gd" id="3_a1qq2"]
-[ext_resource type="Texture2D" uid="uid://o2dtwnhoumtj" path="res://main/ui/icons/split_icon.png" id="4_sefvl"]
-[ext_resource type="Shader" path="res://main/ui/canvas/element_painter.gdshader" id="5_mtoof"]
-[ext_resource type="Script" path="res://main/ui/canvas/canvas.gd" id="6_o82wb"]
-[ext_resource type="Resource" uid="uid://bkep074hkpnt0" path="res://main/element_visuals/acid.tres" id="7_g5kcg"]
-[ext_resource type="Resource" path="res://main/element_visuals/acid_gas.tres" id="8_1srjb"]
-[ext_resource type="Resource" uid="uid://bv1fwq06l1wqx" path="res://main/element_visuals/acid_water.tres" id="9_0n1v4"]
-[ext_resource type="Resource" path="res://main/element_visuals/air.tres" id="10_22et8"]
-[ext_resource type="Resource" path="res://main/element_visuals/algae_brown.tres" id="11_7p4mq"]
-[ext_resource type="Resource" path="res://main/element_visuals/algae_green.tres" id="12_ed0v4"]
-[ext_resource type="Resource" path="res://main/element_visuals/algae_red.tres" id="13_mfgnd"]
-[ext_resource type="Resource" uid="uid://d0dccyly4luce" path="res://main/element_visuals/background.tres" id="14_fkda5"]
-[ext_resource type="Resource" uid="uid://bu1e4hen8wclb" path="res://main/element_visuals/black_hole.tres" id="15_pefi6"]
-[ext_resource type="Resource" uid="uid://dpnm50gp20npl" path="res://main/element_visuals/blue_fire.tres" id="16_om8qj"]
-[ext_resource type="Resource" uid="uid://cm6nri7cem0f8" path="res://main/element_visuals/bomb.tres" id="17_cn0w6"]
-[ext_resource type="Resource" path="res://main/element_visuals/burning_oil.tres" id="18_uegxy"]
-[ext_resource type="Resource" uid="uid://b5ryhy8v0m2pe" path="res://main/element_visuals/burning_potassium.tres" id="19_s4edp"]
-[ext_resource type="Resource" path="res://main/element_visuals/cool_lava.tres" id="20_f418p"]
-[ext_resource type="Resource" uid="uid://ccy5nyyo2n6py" path="res://main/element_visuals/critter.tres" id="21_fytws"]
-[ext_resource type="Resource" uid="uid://1ocrmt565gkb" path="res://main/element_visuals/crystal.tres" id="22_qjqqa"]
-[ext_resource type="Resource" uid="uid://ci8gpnn1vv4af" path="res://main/element_visuals/dragon.tres" id="23_lp6rd"]
-[ext_resource type="Resource" path="res://main/element_visuals/dust.tres" id="24_vmbpb"]
-[ext_resource type="Resource" path="res://main/element_visuals/electricity_storm.tres" id="25_eelwd"]
-[ext_resource type="Resource" uid="uid://cxsohkco8aa8q" path="res://main/element_visuals/emerald.tres" id="26_agpso"]
-[ext_resource type="Resource" path="res://main/element_visuals/explosion.tres" id="27_73aby"]
-[ext_resource type="Resource" uid="uid://bdsibekcs0dbg" path="res://main/element_visuals/fairy.tres" id="28_fjalb"]
-[ext_resource type="Resource" uid="uid://d1fh8vaw74awx" path="res://main/element_visuals/fire.tres" id="29_6bt6e"]
-[ext_resource type="Resource" uid="uid://b2kh1gvcdydd8" path="res://main/element_visuals/firework_a.tres" id="30_ullr7"]
-[ext_resource type="Resource" uid="uid://30wdhavjpl77" path="res://main/element_visuals/firework_b.tres" id="31_v5uoo"]
-[ext_resource type="Resource" uid="uid://dq47pv4yanfgo" path="res://main/element_visuals/firework_c.tres" id="32_s3swg"]
-[ext_resource type="Resource" uid="uid://c2ry0cbfs22nh" path="res://main/element_visuals/firework_trail.tres" id="33_u8r5j"]
-[ext_resource type="Resource" uid="uid://bipe3ilt112xw" path="res://main/element_visuals/fish_left.tres" id="34_bjb0m"]
-[ext_resource type="Resource" uid="uid://buydhsicr5xx3" path="res://main/element_visuals/fish_right.tres" id="35_4nqt1"]
-[ext_resource type="Resource" path="res://main/element_visuals/germ_seed.tres" id="36_dnhj5"]
-[ext_resource type="Resource" uid="uid://b6hrnmll6rn5t" path="res://main/element_visuals/glass.tres" id="37_w0jbt"]
-[ext_resource type="Resource" uid="uid://c81sh1uvji0rt" path="res://main/element_visuals/gold.tres" id="38_5hjc2"]
-[ext_resource type="Resource" path="res://main/element_visuals/grass.tres" id="39_slfdp"]
-[ext_resource type="Resource" path="res://main/element_visuals/hydrogen.tres" id="40_vujeq"]
-[ext_resource type="Resource" path="res://main/element_visuals/hydrogen_explosion.tres" id="41_sqlys"]
-[ext_resource type="Resource" uid="uid://ce77aka8fecw5" path="res://main/element_visuals/ice.tres" id="42_yqq7o"]
-[ext_resource type="Resource" uid="uid://b2p4a5lb6m42x" path="res://main/element_visuals/ice_bomb.tres" id="43_dccbs"]
-[ext_resource type="Resource" uid="uid://cfhjp84ln4atd" path="res://main/element_visuals/ice_dust.tres" id="44_i0huk"]
-[ext_resource type="Resource" uid="uid://bi4katowweld4" path="res://main/element_visuals/ice_explosion.tres" id="45_joolq"]
-[ext_resource type="Resource" uid="uid://crirrp3oddnld" path="res://main/element_visuals/icework_a.tres" id="46_gtnxo"]
-[ext_resource type="Resource" uid="uid://dmv56cv36rlov" path="res://main/element_visuals/icework_b.tres" id="47_f32ea"]
-[ext_resource type="Resource" uid="uid://chkmtb3fm1q11" path="res://main/element_visuals/icework_c.tres" id="48_nib0d"]
-[ext_resource type="Resource" uid="uid://llq0j867onrv" path="res://main/element_visuals/iodine.tres" id="49_6ao4a"]
-[ext_resource type="Resource" uid="uid://dqixga2wr36tn" path="res://main/element_visuals/iodine_gas.tres" id="50_kkk5s"]
-[ext_resource type="Resource" uid="uid://dos7p1ugwtqj1" path="res://main/element_visuals/iodine_liquid.tres" id="51_7cn77"]
-[ext_resource type="Resource" uid="uid://cexko3hualro7" path="res://main/element_visuals/iron.tres" id="52_mbvof"]
-[ext_resource type="Resource" uid="uid://bgjs6bxfuy4c3" path="res://main/element_visuals/kuiper.tres" id="53_kmqa5"]
-[ext_resource type="Resource" uid="uid://ln6lkyinnk7u" path="res://main/element_visuals/lapis.tres" id="54_3jh7e"]
-[ext_resource type="Resource" path="res://main/element_visuals/laser.tres" id="55_ms87n"]
-[ext_resource type="Resource" uid="uid://deeptrjww3657" path="res://main/element_visuals/lava.tres" id="56_0xbdp"]
-[ext_resource type="Resource" path="res://main/element_visuals/lightning.tres" id="57_towss"]
-[ext_resource type="Resource" uid="uid://bveocaq17m0eg" path="res://main/element_visuals/mercury.tres" id="58_qusnd"]
-[ext_resource type="Resource" uid="uid://dot57m21wruas" path="res://main/element_visuals/meteor_a.tres" id="59_5hnqs"]
-[ext_resource type="Resource" uid="uid://b1f0njgx3nqmn" path="res://main/element_visuals/meteor_b.tres" id="60_itsrq"]
-[ext_resource type="Resource" uid="uid://drsf6com2ft20" path="res://main/element_visuals/meteor_c.tres" id="61_e7kt2"]
-[ext_resource type="Resource" path="res://main/element_visuals/molten_glass.tres" id="62_hcm1t"]
-[ext_resource type="Resource" uid="uid://3100gr8o2g2s" path="res://main/element_visuals/molten_gold.tres" id="63_5l85h"]
-[ext_resource type="Resource" uid="uid://cecxn7mseld3u" path="res://main/element_visuals/neptune.tres" id="64_prrb0"]
-[ext_resource type="Resource" path="res://main/element_visuals/nuclear_explosion.tres" id="65_uo35f"]
-[ext_resource type="Resource" path="res://main/element_visuals/obsidian.tres" id="66_gw28e"]
-[ext_resource type="Resource" path="res://main/element_visuals/oil.tres" id="67_vixyw"]
-[ext_resource type="Resource" uid="uid://c8oahikj3s6tf" path="res://main/element_visuals/oxidized_potassium.tres" id="68_mppb7"]
-[ext_resource type="Resource" path="res://main/element_visuals/penguin.tres" id="69_t52eq"]
-[ext_resource type="Resource" uid="uid://13ag4mrgfxiy" path="res://main/element_visuals/plasma.tres" id="70_5ch36"]
-[ext_resource type="Resource" uid="uid://dqc6q7r3ik521" path="res://main/element_visuals/plasma_plasma.tres" id="71_xybsx"]
-[ext_resource type="Resource" path="res://main/element_visuals/polliwog.tres" id="72_ddvgm"]
-[ext_resource type="Resource" uid="uid://322ette1kh58" path="res://main/element_visuals/potassium.tres" id="73_dj2lh"]
-[ext_resource type="Resource" uid="uid://dafmqihhta2hy" path="res://main/element_visuals/potassium_explosion.tres" id="74_wjr1q"]
-[ext_resource type="Resource" uid="uid://di0s4ihneo7i1" path="res://main/element_visuals/quasar.tres" id="75_h1ghp"]
-[ext_resource type="Resource" uid="uid://blut61r10j2ve" path="res://main/element_visuals/rock.tres" id="76_7xajy"]
-[ext_resource type="Resource" uid="uid://b0uohilcol211" path="res://main/element_visuals/ruby.tres" id="77_loiju"]
-[ext_resource type="Resource" uid="uid://c27guhdhf8enb" path="res://main/element_visuals/rust.tres" id="78_bg8fe"]
-[ext_resource type="Resource" uid="uid://csjdkvdrnw64k" path="res://main/element_visuals/salt.tres" id="79_vjnsv"]
-[ext_resource type="Resource" uid="uid://dm8ev2lxoj4vm" path="res://main/element_visuals/salt_water.tres" id="80_mbxji"]
-[ext_resource type="Resource" uid="uid://47kku1v7n0lo" path="res://main/element_visuals/sand.tres" id="81_eful5"]
-[ext_resource type="Resource" path="res://main/element_visuals/sand_duck.tres" id="82_ebyn6"]
-[ext_resource type="Resource" path="res://main/element_visuals/seed.tres" id="83_7uqtn"]
-[ext_resource type="Resource" uid="uid://d35s4cofti80e" path="res://main/element_visuals/slime.tres" id="84_8rd6u"]
-[ext_resource type="Resource" path="res://main/element_visuals/smoke.tres" id="85_02ev2"]
-[ext_resource type="Resource" uid="uid://dnnie5qkg4x0r" path="res://main/element_visuals/snow.tres" id="86_fuiyn"]
-[ext_resource type="Script" path="res://main/save_file/save_file_manager.gd" id="87_5tqe6"]
-[ext_resource type="Resource" path="res://main/element_visuals/soil.tres" id="87_i60ij"]
-[ext_resource type="Resource" uid="uid://bj1euek03ssrj" path="res://main/element_visuals/stardust_a.tres" id="88_ouvoa"]
-[ext_resource type="Resource" uid="uid://ef7360axg4jc" path="res://main/element_visuals/stardust_b.tres" id="89_rxbi6"]
-[ext_resource type="Resource" uid="uid://b5b74c0ny20by" path="res://main/element_visuals/stardust_c.tres" id="90_5icfo"]
-[ext_resource type="Resource" uid="uid://8mfv0yawb0gn" path="res://main/element_visuals/stardust_liquid.tres" id="91_olthi"]
-[ext_resource type="Resource" uid="uid://b6aylci4dwtse" path="res://main/element_visuals/storm.tres" id="92_map1m"]
-[ext_resource type="Resource" uid="uid://dexdrnynda75n" path="res://main/element_visuals/strange.tres" id="93_mpl1b"]
-[ext_resource type="Resource" uid="uid://df1rn65u50uf6" path="res://main/element_visuals/uranium.tres" id="94_3p4is"]
-[ext_resource type="Resource" uid="uid://sby4mqymeqwh" path="res://main/element_visuals/urchin.tres" id="95_2wqqn"]
-[ext_resource type="Resource" uid="uid://dfsckbtrh7ohj" path="res://main/element_visuals/vapor.tres" id="96_ysc2q"]
-[ext_resource type="Resource" uid="uid://ccjoyuu5axdgh" path="res://main/element_visuals/wall.tres" id="97_r1ll3"]
-[ext_resource type="Resource" uid="uid://cf3ub58lwoiw3" path="res://main/element_visuals/water.tres" id="98_wf0po"]
-[ext_resource type="Resource" path="res://main/element_visuals/wood.tres" id="99_el7uy"]
-[ext_resource type="Resource" uid="uid://bait1duxucdr3" path="res://main/element_visuals/worm_hole.tres" id="100_dgufl"]
-[ext_resource type="Texture2D" uid="uid://frfosxi3v3fq" path="res://main/ui/icons/eraser.png" id="101_jq1ae"]
-[ext_resource type="Texture2D" uid="uid://5l1d3c5tr7nj" path="res://main/ui/icons/tap.png" id="102_s7yky"]
-[ext_resource type="Texture2D" uid="uid://djtha84eljhde" path="res://main/ui/icons/help.png" id="103_k6t5l"]
-[ext_resource type="Texture2D" uid="uid://bsdea08owut0v" path="res://main/ui/icons/settings.png" id="104_mlh8j"]
-[ext_resource type="Texture2D" uid="uid://c4k2cs4ly1agb" path="res://main/ui/icons/file.png" id="105_qi678"]
-[ext_resource type="Script" path="res://main/ui/element_selector/element_selector.gd" id="106_sbggk"]
-[ext_resource type="Material" uid="uid://c5qvq03ayjd60" path="res://main/ui/element_selector/selected_material.tres" id="107_aj6vj"]
-[ext_resource type="Script" path="res://main/ui/submenu/save/save_file_menu.gd" id="108_skwft"]
-[ext_resource type="PackedScene" uid="uid://jclyvf0uqt3r" path="res://main/ui/submenu/save/save_file_panel/SaveFilePanel.tscn" id="109_42h1v"]
-[ext_resource type="FontFile" uid="uid://b8lxwo5dkwrs4" path="res://main/ui/font/Poppins-Regular.ttf" id="110_1l7wt"]
-[ext_resource type="Texture2D" uid="uid://skg5bmd8m812" path="res://main/ui/icons/close.png" id="111_m06bq"]
-[ext_resource type="Script" path="res://main/ui/submenu/settings/settings_menu.gd" id="112_45qri"]
-[ext_resource type="Script" path="res://main/ui/submenu/submenu.gd" id="113_41qoq"]
-[ext_resource type="Script" path="res://main/ui/hyperlink.gd" id="114_18fi5"]
-[ext_resource type="Script" path="res://main/ui/fps_label.gd" id="115_66pbd"]
-[ext_resource type="Script" path="res://main/ui/splash_screen/splash_screen.gd" id="116_87sfi"]
+[ext_resource type="Theme" uid="uid://dwqrk16thiq6h" path="res://main/ui/theme.tres" id="1_m607f"]
+[ext_resource type="Script" path="res://main/ui/ui.gd" id="2_m1byy"]
+[ext_resource type="Texture2D" uid="uid://o2dtwnhoumtj" path="res://main/ui/icons/split_icon.png" id="3_f4i4r"]
+[ext_resource type="Shader" path="res://main/ui/canvas/element_painter.gdshader" id="4_pyqk0"]
+[ext_resource type="Script" path="res://main/ui/canvas/canvas.gd" id="5_2krge"]
+[ext_resource type="Resource" uid="uid://bkep074hkpnt0" path="res://main/element_visuals/acid.tres" id="6_y8rt1"]
+[ext_resource type="Resource" path="res://main/element_visuals/acid_gas.tres" id="7_1ks27"]
+[ext_resource type="Resource" uid="uid://bv1fwq06l1wqx" path="res://main/element_visuals/acid_water.tres" id="8_211xe"]
+[ext_resource type="Resource" path="res://main/element_visuals/air.tres" id="9_sepfg"]
+[ext_resource type="Resource" path="res://main/element_visuals/algae_brown.tres" id="10_4fprv"]
+[ext_resource type="Resource" path="res://main/element_visuals/algae_green.tres" id="11_br2x6"]
+[ext_resource type="Resource" path="res://main/element_visuals/algae_red.tres" id="12_kstqn"]
+[ext_resource type="Resource" uid="uid://d0dccyly4luce" path="res://main/element_visuals/background.tres" id="13_pn7d3"]
+[ext_resource type="Resource" uid="uid://bu1e4hen8wclb" path="res://main/element_visuals/black_hole.tres" id="14_sj3c6"]
+[ext_resource type="Resource" uid="uid://dpnm50gp20npl" path="res://main/element_visuals/blue_fire.tres" id="15_vcew3"]
+[ext_resource type="Resource" uid="uid://cm6nri7cem0f8" path="res://main/element_visuals/bomb.tres" id="16_3t71g"]
+[ext_resource type="Resource" path="res://main/element_visuals/burning_oil.tres" id="17_c1lb8"]
+[ext_resource type="Resource" uid="uid://b5ryhy8v0m2pe" path="res://main/element_visuals/burning_potassium.tres" id="18_jty2b"]
+[ext_resource type="Resource" path="res://main/element_visuals/cool_lava.tres" id="19_jp8qx"]
+[ext_resource type="Resource" uid="uid://ccy5nyyo2n6py" path="res://main/element_visuals/critter.tres" id="20_eqisa"]
+[ext_resource type="Resource" uid="uid://1ocrmt565gkb" path="res://main/element_visuals/crystal.tres" id="21_tq38u"]
+[ext_resource type="Resource" uid="uid://ci8gpnn1vv4af" path="res://main/element_visuals/dragon.tres" id="22_pqj01"]
+[ext_resource type="Resource" path="res://main/element_visuals/dust.tres" id="23_tt1lw"]
+[ext_resource type="Resource" path="res://main/element_visuals/electricity_storm.tres" id="24_2rvcn"]
+[ext_resource type="Resource" uid="uid://cxsohkco8aa8q" path="res://main/element_visuals/emerald.tres" id="25_6kmt0"]
+[ext_resource type="Resource" path="res://main/element_visuals/explosion.tres" id="26_g14be"]
+[ext_resource type="Resource" uid="uid://bdsibekcs0dbg" path="res://main/element_visuals/fairy.tres" id="27_rnno8"]
+[ext_resource type="Resource" uid="uid://d1fh8vaw74awx" path="res://main/element_visuals/fire.tres" id="28_7uptt"]
+[ext_resource type="Resource" uid="uid://b2kh1gvcdydd8" path="res://main/element_visuals/firework_a.tres" id="29_faqn2"]
+[ext_resource type="Resource" uid="uid://30wdhavjpl77" path="res://main/element_visuals/firework_b.tres" id="30_o4qog"]
+[ext_resource type="Resource" uid="uid://dq47pv4yanfgo" path="res://main/element_visuals/firework_c.tres" id="31_pxir0"]
+[ext_resource type="Resource" uid="uid://c2ry0cbfs22nh" path="res://main/element_visuals/firework_trail.tres" id="32_onmtg"]
+[ext_resource type="Resource" uid="uid://bipe3ilt112xw" path="res://main/element_visuals/fish_left.tres" id="33_flfwd"]
+[ext_resource type="Resource" uid="uid://buydhsicr5xx3" path="res://main/element_visuals/fish_right.tres" id="34_q18n6"]
+[ext_resource type="Resource" path="res://main/element_visuals/germ_seed.tres" id="35_pvhqu"]
+[ext_resource type="Resource" uid="uid://b6hrnmll6rn5t" path="res://main/element_visuals/glass.tres" id="36_oaxue"]
+[ext_resource type="Resource" uid="uid://c81sh1uvji0rt" path="res://main/element_visuals/gold.tres" id="37_oe10b"]
+[ext_resource type="Resource" path="res://main/element_visuals/grass.tres" id="38_t5e7c"]
+[ext_resource type="Resource" path="res://main/element_visuals/hydrogen.tres" id="39_1kkad"]
+[ext_resource type="Resource" path="res://main/element_visuals/hydrogen_explosion.tres" id="40_pr2mw"]
+[ext_resource type="Resource" uid="uid://ce77aka8fecw5" path="res://main/element_visuals/ice.tres" id="41_fe0m1"]
+[ext_resource type="Resource" uid="uid://b2p4a5lb6m42x" path="res://main/element_visuals/ice_bomb.tres" id="42_hnswg"]
+[ext_resource type="Resource" uid="uid://cfhjp84ln4atd" path="res://main/element_visuals/ice_dust.tres" id="43_4pm3y"]
+[ext_resource type="Resource" uid="uid://bi4katowweld4" path="res://main/element_visuals/ice_explosion.tres" id="44_pliuw"]
+[ext_resource type="Resource" uid="uid://crirrp3oddnld" path="res://main/element_visuals/icework_a.tres" id="45_23y8l"]
+[ext_resource type="Resource" uid="uid://dmv56cv36rlov" path="res://main/element_visuals/icework_b.tres" id="46_75si1"]
+[ext_resource type="Resource" uid="uid://chkmtb3fm1q11" path="res://main/element_visuals/icework_c.tres" id="47_c305y"]
+[ext_resource type="Resource" uid="uid://llq0j867onrv" path="res://main/element_visuals/iodine.tres" id="48_ftysw"]
+[ext_resource type="Resource" uid="uid://dqixga2wr36tn" path="res://main/element_visuals/iodine_gas.tres" id="49_cqsvi"]
+[ext_resource type="Resource" uid="uid://dos7p1ugwtqj1" path="res://main/element_visuals/iodine_liquid.tres" id="50_4sebw"]
+[ext_resource type="Resource" uid="uid://cexko3hualro7" path="res://main/element_visuals/iron.tres" id="51_irggt"]
+[ext_resource type="Resource" uid="uid://bgjs6bxfuy4c3" path="res://main/element_visuals/kuiper.tres" id="52_p37no"]
+[ext_resource type="Resource" uid="uid://ln6lkyinnk7u" path="res://main/element_visuals/lapis.tres" id="53_jem0g"]
+[ext_resource type="Resource" path="res://main/element_visuals/laser.tres" id="54_sj36i"]
+[ext_resource type="Resource" uid="uid://deeptrjww3657" path="res://main/element_visuals/lava.tres" id="55_w4j7j"]
+[ext_resource type="Resource" path="res://main/element_visuals/lightning.tres" id="56_vi5vb"]
+[ext_resource type="Resource" uid="uid://bveocaq17m0eg" path="res://main/element_visuals/mercury.tres" id="57_hejc3"]
+[ext_resource type="Resource" uid="uid://dot57m21wruas" path="res://main/element_visuals/meteor_a.tres" id="58_v3we0"]
+[ext_resource type="Resource" uid="uid://b1f0njgx3nqmn" path="res://main/element_visuals/meteor_b.tres" id="59_ywn4t"]
+[ext_resource type="Resource" uid="uid://drsf6com2ft20" path="res://main/element_visuals/meteor_c.tres" id="60_t851d"]
+[ext_resource type="Resource" path="res://main/element_visuals/molten_glass.tres" id="61_ak2xi"]
+[ext_resource type="Resource" uid="uid://3100gr8o2g2s" path="res://main/element_visuals/molten_gold.tres" id="62_sqsox"]
+[ext_resource type="Resource" uid="uid://cecxn7mseld3u" path="res://main/element_visuals/neptune.tres" id="63_p08b8"]
+[ext_resource type="Resource" path="res://main/element_visuals/nuclear_explosion.tres" id="64_lxtxm"]
+[ext_resource type="Resource" path="res://main/element_visuals/obsidian.tres" id="65_fv5lu"]
+[ext_resource type="Resource" path="res://main/element_visuals/oil.tres" id="66_c40np"]
+[ext_resource type="Resource" uid="uid://c8oahikj3s6tf" path="res://main/element_visuals/oxidized_potassium.tres" id="67_hjd87"]
+[ext_resource type="Resource" path="res://main/element_visuals/penguin.tres" id="68_i8jjx"]
+[ext_resource type="Resource" uid="uid://13ag4mrgfxiy" path="res://main/element_visuals/plasma.tres" id="69_y54or"]
+[ext_resource type="Resource" uid="uid://dqc6q7r3ik521" path="res://main/element_visuals/plasma_plasma.tres" id="70_ciq7u"]
+[ext_resource type="Resource" path="res://main/element_visuals/polliwog.tres" id="71_5oliy"]
+[ext_resource type="Resource" uid="uid://322ette1kh58" path="res://main/element_visuals/potassium.tres" id="72_320ss"]
+[ext_resource type="Resource" uid="uid://dafmqihhta2hy" path="res://main/element_visuals/potassium_explosion.tres" id="73_yi3id"]
+[ext_resource type="Resource" uid="uid://di0s4ihneo7i1" path="res://main/element_visuals/quasar.tres" id="74_gxphf"]
+[ext_resource type="Resource" uid="uid://blut61r10j2ve" path="res://main/element_visuals/rock.tres" id="75_yn053"]
+[ext_resource type="Resource" uid="uid://b0uohilcol211" path="res://main/element_visuals/ruby.tres" id="76_6den3"]
+[ext_resource type="Resource" uid="uid://c27guhdhf8enb" path="res://main/element_visuals/rust.tres" id="77_8fxiq"]
+[ext_resource type="Resource" uid="uid://csjdkvdrnw64k" path="res://main/element_visuals/salt.tres" id="78_6s8rc"]
+[ext_resource type="Resource" uid="uid://dm8ev2lxoj4vm" path="res://main/element_visuals/salt_water.tres" id="79_xp0b0"]
+[ext_resource type="Resource" uid="uid://47kku1v7n0lo" path="res://main/element_visuals/sand.tres" id="80_h4ukb"]
+[ext_resource type="Resource" path="res://main/element_visuals/sand_duck.tres" id="81_dihpr"]
+[ext_resource type="Resource" path="res://main/element_visuals/seed.tres" id="82_mb44c"]
+[ext_resource type="Resource" uid="uid://d35s4cofti80e" path="res://main/element_visuals/slime.tres" id="83_er1lr"]
+[ext_resource type="Resource" path="res://main/element_visuals/smoke.tres" id="84_8iegf"]
+[ext_resource type="Resource" uid="uid://dnnie5qkg4x0r" path="res://main/element_visuals/snow.tres" id="85_geklr"]
+[ext_resource type="Resource" path="res://main/element_visuals/soil.tres" id="86_w8rki"]
+[ext_resource type="Resource" uid="uid://bj1euek03ssrj" path="res://main/element_visuals/stardust_a.tres" id="87_xan4l"]
+[ext_resource type="Resource" uid="uid://ef7360axg4jc" path="res://main/element_visuals/stardust_b.tres" id="88_b5pve"]
+[ext_resource type="Resource" uid="uid://b5b74c0ny20by" path="res://main/element_visuals/stardust_c.tres" id="89_nhs37"]
+[ext_resource type="Resource" uid="uid://8mfv0yawb0gn" path="res://main/element_visuals/stardust_liquid.tres" id="90_ft55c"]
+[ext_resource type="Resource" uid="uid://b6aylci4dwtse" path="res://main/element_visuals/storm.tres" id="91_yeoqg"]
+[ext_resource type="Resource" uid="uid://dexdrnynda75n" path="res://main/element_visuals/strange.tres" id="92_vhr4d"]
+[ext_resource type="Resource" uid="uid://df1rn65u50uf6" path="res://main/element_visuals/uranium.tres" id="93_xs7l5"]
+[ext_resource type="Resource" uid="uid://sby4mqymeqwh" path="res://main/element_visuals/urchin.tres" id="94_xua6r"]
+[ext_resource type="Resource" uid="uid://dfsckbtrh7ohj" path="res://main/element_visuals/vapor.tres" id="95_pngxc"]
+[ext_resource type="Resource" uid="uid://ccjoyuu5axdgh" path="res://main/element_visuals/wall.tres" id="96_dgaxq"]
+[ext_resource type="Resource" uid="uid://cf3ub58lwoiw3" path="res://main/element_visuals/water.tres" id="97_apsi3"]
+[ext_resource type="Resource" path="res://main/element_visuals/wood.tres" id="98_sxdfo"]
+[ext_resource type="Resource" uid="uid://bait1duxucdr3" path="res://main/element_visuals/worm_hole.tres" id="99_mtfyf"]
+[ext_resource type="Texture2D" uid="uid://frfosxi3v3fq" path="res://main/ui/icons/eraser.png" id="100_4h3kp"]
+[ext_resource type="Texture2D" uid="uid://5l1d3c5tr7nj" path="res://main/ui/icons/tap.png" id="101_fdn0e"]
+[ext_resource type="Texture2D" uid="uid://djtha84eljhde" path="res://main/ui/icons/help.png" id="102_kpol7"]
+[ext_resource type="Texture2D" uid="uid://bsdea08owut0v" path="res://main/ui/icons/settings.png" id="103_r3bhx"]
+[ext_resource type="Texture2D" uid="uid://c4k2cs4ly1agb" path="res://main/ui/icons/file.png" id="104_8w0fw"]
+[ext_resource type="Script" path="res://main/ui/element_selector/element_selector.gd" id="105_aomj3"]
+[ext_resource type="Material" uid="uid://c5qvq03ayjd60" path="res://main/ui/element_selector/selected_material.tres" id="106_c7t80"]
+[ext_resource type="Script" path="res://main/ui/submenu/save/save_file_menu.gd" id="107_wgbxg"]
+[ext_resource type="PackedScene" uid="uid://jclyvf0uqt3r" path="res://main/ui/submenu/save/save_file_panel/SaveFilePanel.tscn" id="108_gbxft"]
+[ext_resource type="FontFile" uid="uid://b8lxwo5dkwrs4" path="res://main/ui/font/Poppins-Regular.ttf" id="109_pi6ry"]
+[ext_resource type="Texture2D" uid="uid://skg5bmd8m812" path="res://main/ui/icons/close.png" id="110_56cqc"]
+[ext_resource type="Script" path="res://main/ui/submenu/settings/settings_menu.gd" id="111_2uo4e"]
+[ext_resource type="Script" path="res://main/ui/submenu/submenu.gd" id="112_2j8xr"]
+[ext_resource type="Script" path="res://main/ui/hyperlink.gd" id="113_4sh2j"]
+[ext_resource type="Script" path="res://main/ui/fps_label.gd" id="114_mj7nc"]
+[ext_resource type="Script" path="res://main/ui/splash_screen/splash_screen.gd" id="115_hr5oa"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rhx1h"]
 
 [sub_resource type="ImageTexture" id="ImageTexture_y7mie"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_uv4tm"]
-shader = ExtResource("5_mtoof")
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_f22gr"]
+shader = ExtResource("4_pyqk0")
 shader_parameter/width = null
 shader_parameter/height = null
 shader_parameter/px_scale = null
@@ -157,9 +155,9 @@ shader_parameter/metal_id_match = null
 shader_parameter/metal_color_a = null
 shader_parameter/metal_color_b = null
 
-[sub_resource type="ImageTexture" id="ImageTexture_s2ac3"]
+[sub_resource type="ImageTexture" id="ImageTexture_qb4qv"]
 
-[sub_resource type="Environment" id="Environment_iakyf"]
+[sub_resource type="Environment" id="Environment_v44im"]
 background_mode = 3
 background_canvas_max_layer = -1
 glow_enabled = true
@@ -1317,7 +1315,7 @@ corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
 [sub_resource type="Theme" id="Theme_n7xkt"]
-default_font = ExtResource("110_1l7wt")
+default_font = ExtResource("109_pi6ry")
 default_font_size = 24
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e160y"]
@@ -1521,39 +1519,15 @@ _data = {
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2bb3j"]
 bg_color = Color(0.141176, 0.141176, 0.141176, 1)
 
-[node name="SimulationMain" type="Node" node_paths=PackedStringArray("save_file_manager", "canvas")]
-script = ExtResource("1_2pidp")
-save_file_manager = NodePath("SaveFileManager")
-canvas = NodePath("UI/VSplitContainer/TopPanel/CanvasLayer/Canvas")
-simulation_speed = 2
-metadata/_edit_vertical_guides_ = []
-
-[node name="FPSLabelContainer" type="MarginContainer" parent="."]
-offset_right = 360.0
-offset_bottom = 45.0
-size_flags_vertical = 3
-theme_override_constants/margin_left = 8
-theme_override_constants/margin_top = 8
-
-[node name="FPSLabel" type="Label" parent="FPSLabelContainer"]
-layout_mode = 2
-size_flags_vertical = 1
-theme_override_font_sizes/font_size = 12
-text = "FPS 0"
-script = ExtResource("115_66pbd")
-
-[node name="Timer" type="Timer" parent="FPSLabelContainer/FPSLabel"]
-autostart = true
-
-[node name="UI" type="Control" parent="." node_paths=PackedStringArray("simulation", "save_control", "settings_control", "help_control", "splash_screen", "save_button", "settings_button", "help_button")]
+[node name="UI" type="Control" node_paths=PackedStringArray("simulation", "save_control", "settings_control", "help_control", "splash_screen", "save_button", "settings_button", "help_button")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("2_p00c8")
-script = ExtResource("3_a1qq2")
+theme = ExtResource("1_m607f")
+script = ExtResource("2_m1byy")
 simulation = NodePath("..")
 save_control = NodePath("SaveFileMenu")
 settings_control = NodePath("SettingsMenu")
@@ -1563,8 +1537,8 @@ save_button = NodePath("VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/HB
 settings_button = NodePath("VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/HBoxContainer/Settings")
 help_button = NodePath("VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/HBoxContainer/Help")
 
-[node name="VSplitContainer" type="VSplitContainer" parent="UI"]
-layout_mode = 1
+[node name="VSplitContainer" type="VSplitContainer" parent="."]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -1573,152 +1547,156 @@ grow_vertical = 2
 theme_override_constants/separation = 0
 theme_override_constants/minimum_grab_thickness = 30
 theme_override_constants/autohide = 0
-theme_override_icons/grabber = ExtResource("4_sefvl")
+theme_override_icons/grabber = ExtResource("3_f4i4r")
 split_offset = 48
 
-[node name="TopPanel" type="PanelContainer" parent="UI/VSplitContainer"]
-layout_mode = 2
+[node name="TopPanel" type="PanelContainer" parent="VSplitContainer"]
+offset_right = 360.0
+offset_bottom = 353.0
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxEmpty_rhx1h")
 
-[node name="CanvasSize" type="TextureRect" parent="UI/VSplitContainer/TopPanel"]
+[node name="CanvasSize" type="TextureRect" parent="VSplitContainer/TopPanel"]
 custom_minimum_size = Vector2(0, 64)
-layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 2.0
 texture = SubResource("ImageTexture_y7mie")
 ignore_texture_size = true
 
-[node name="CanvasLayer" type="CanvasLayer" parent="UI/VSplitContainer/TopPanel"]
+[node name="CanvasLayer" type="CanvasLayer" parent="VSplitContainer/TopPanel"]
 layer = -1
 
-[node name="Canvas" type="TextureRect" parent="UI/VSplitContainer/TopPanel/CanvasLayer" node_paths=PackedStringArray("size_mirror")]
+[node name="Canvas" type="TextureRect" parent="VSplitContainer/TopPanel/CanvasLayer" node_paths=PackedStringArray("size_mirror")]
 texture_filter = 1
-material = SubResource("ShaderMaterial_uv4tm")
+material = SubResource("ShaderMaterial_f22gr")
 custom_minimum_size = Vector2(0, 64)
 offset_right = 360.0
 offset_bottom = 273.0
 size_flags_vertical = 3
 size_flags_stretch_ratio = 2.0
-texture = SubResource("ImageTexture_s2ac3")
+texture = SubResource("ImageTexture_qb4qv")
 ignore_texture_size = true
-script = ExtResource("6_o82wb")
+script = ExtResource("5_2krge")
 background_colors = []
 element_folder_path = "res://main/element_visuals"
-element_materials = [ExtResource("7_g5kcg"), ExtResource("8_1srjb"), ExtResource("9_0n1v4"), ExtResource("10_22et8"), ExtResource("11_7p4mq"), ExtResource("12_ed0v4"), ExtResource("13_mfgnd"), ExtResource("14_fkda5"), ExtResource("15_pefi6"), ExtResource("16_om8qj"), ExtResource("17_cn0w6"), ExtResource("18_uegxy"), ExtResource("19_s4edp"), ExtResource("20_f418p"), ExtResource("21_fytws"), ExtResource("22_qjqqa"), ExtResource("23_lp6rd"), ExtResource("24_vmbpb"), ExtResource("25_eelwd"), ExtResource("26_agpso"), ExtResource("27_73aby"), ExtResource("28_fjalb"), ExtResource("29_6bt6e"), ExtResource("30_ullr7"), ExtResource("31_v5uoo"), ExtResource("32_s3swg"), ExtResource("33_u8r5j"), ExtResource("34_bjb0m"), ExtResource("35_4nqt1"), ExtResource("36_dnhj5"), ExtResource("37_w0jbt"), ExtResource("38_5hjc2"), ExtResource("39_slfdp"), ExtResource("40_vujeq"), ExtResource("41_sqlys"), ExtResource("42_yqq7o"), ExtResource("43_dccbs"), ExtResource("44_i0huk"), ExtResource("45_joolq"), ExtResource("46_gtnxo"), ExtResource("47_f32ea"), ExtResource("48_nib0d"), ExtResource("49_6ao4a"), ExtResource("50_kkk5s"), ExtResource("51_7cn77"), ExtResource("52_mbvof"), ExtResource("53_kmqa5"), ExtResource("54_3jh7e"), ExtResource("55_ms87n"), ExtResource("56_0xbdp"), ExtResource("57_towss"), ExtResource("58_qusnd"), ExtResource("59_5hnqs"), ExtResource("60_itsrq"), ExtResource("61_e7kt2"), ExtResource("62_hcm1t"), ExtResource("63_5l85h"), ExtResource("64_prrb0"), ExtResource("65_uo35f"), ExtResource("66_gw28e"), ExtResource("67_vixyw"), ExtResource("68_mppb7"), ExtResource("69_t52eq"), ExtResource("70_5ch36"), ExtResource("71_xybsx"), ExtResource("72_ddvgm"), ExtResource("73_dj2lh"), ExtResource("74_wjr1q"), ExtResource("75_h1ghp"), ExtResource("76_7xajy"), ExtResource("77_loiju"), ExtResource("78_bg8fe"), ExtResource("79_vjnsv"), ExtResource("80_mbxji"), ExtResource("81_eful5"), ExtResource("82_ebyn6"), ExtResource("83_7uqtn"), ExtResource("84_8rd6u"), ExtResource("85_02ev2"), ExtResource("86_fuiyn"), ExtResource("87_i60ij"), ExtResource("88_ouvoa"), ExtResource("89_rxbi6"), ExtResource("90_5icfo"), ExtResource("91_olthi"), ExtResource("92_map1m"), ExtResource("93_mpl1b"), ExtResource("94_3p4is"), ExtResource("95_2wqqn"), ExtResource("96_ysc2q"), ExtResource("97_r1ll3"), ExtResource("98_wf0po"), ExtResource("99_el7uy"), ExtResource("100_dgufl")]
+element_materials = [ExtResource("6_y8rt1"), ExtResource("7_1ks27"), ExtResource("8_211xe"), ExtResource("9_sepfg"), ExtResource("10_4fprv"), ExtResource("11_br2x6"), ExtResource("12_kstqn"), ExtResource("13_pn7d3"), ExtResource("14_sj3c6"), ExtResource("15_vcew3"), ExtResource("16_3t71g"), ExtResource("17_c1lb8"), ExtResource("18_jty2b"), ExtResource("19_jp8qx"), ExtResource("20_eqisa"), ExtResource("21_tq38u"), ExtResource("22_pqj01"), ExtResource("23_tt1lw"), ExtResource("24_2rvcn"), ExtResource("25_6kmt0"), ExtResource("26_g14be"), ExtResource("27_rnno8"), ExtResource("28_7uptt"), ExtResource("29_faqn2"), ExtResource("30_o4qog"), ExtResource("31_pxir0"), ExtResource("32_onmtg"), ExtResource("33_flfwd"), ExtResource("34_q18n6"), ExtResource("35_pvhqu"), ExtResource("36_oaxue"), ExtResource("37_oe10b"), ExtResource("38_t5e7c"), ExtResource("39_1kkad"), ExtResource("40_pr2mw"), ExtResource("41_fe0m1"), ExtResource("42_hnswg"), ExtResource("43_4pm3y"), ExtResource("44_pliuw"), ExtResource("45_23y8l"), ExtResource("46_75si1"), ExtResource("47_c305y"), ExtResource("48_ftysw"), ExtResource("49_cqsvi"), ExtResource("50_4sebw"), ExtResource("51_irggt"), ExtResource("52_p37no"), ExtResource("53_jem0g"), ExtResource("54_sj36i"), ExtResource("55_w4j7j"), ExtResource("56_vi5vb"), ExtResource("57_hejc3"), ExtResource("58_v3we0"), ExtResource("59_ywn4t"), ExtResource("60_t851d"), ExtResource("61_ak2xi"), ExtResource("62_sqsox"), ExtResource("63_p08b8"), ExtResource("64_lxtxm"), ExtResource("65_fv5lu"), ExtResource("66_c40np"), ExtResource("67_hjd87"), ExtResource("68_i8jjx"), ExtResource("69_y54or"), ExtResource("70_ciq7u"), ExtResource("71_5oliy"), ExtResource("72_320ss"), ExtResource("73_yi3id"), ExtResource("74_gxphf"), ExtResource("75_yn053"), ExtResource("76_6den3"), ExtResource("77_8fxiq"), ExtResource("78_6s8rc"), ExtResource("79_xp0b0"), ExtResource("80_h4ukb"), ExtResource("81_dihpr"), ExtResource("82_mb44c"), ExtResource("83_er1lr"), ExtResource("84_8iegf"), ExtResource("85_geklr"), ExtResource("86_w8rki"), ExtResource("87_xan4l"), ExtResource("88_b5pve"), ExtResource("89_nhs37"), ExtResource("90_ft55c"), ExtResource("91_yeoqg"), ExtResource("92_vhr4d"), ExtResource("93_xs7l5"), ExtResource("94_xua6r"), ExtResource("95_pngxc"), ExtResource("96_dgaxq"), ExtResource("97_apsi3"), ExtResource("98_sxdfo"), ExtResource("99_mtfyf")]
 size_mirror = NodePath("../../CanvasSize")
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="UI/VSplitContainer/TopPanel/CanvasLayer"]
-environment = SubResource("Environment_iakyf")
+[node name="WorldEnvironment" type="WorldEnvironment" parent="VSplitContainer/TopPanel/CanvasLayer"]
+environment = SubResource("Environment_v44im")
 
-[node name="BottomPanel" type="PanelContainer" parent="UI/VSplitContainer"]
-layout_mode = 2
+[node name="BottomPanel" type="PanelContainer" parent="VSplitContainer"]
+offset_top = 383.0
+offset_right = 360.0
+offset_bottom = 640.0
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_pfsh7")
 
-[node name="BottomPanel" type="MarginContainer" parent="UI/VSplitContainer/BottomPanel"]
-layout_mode = 2
+[node name="BottomPanel" type="MarginContainer" parent="VSplitContainer/BottomPanel"]
 size_flags_vertical = 3
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 12
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 16
 
-[node name="VBoxContainer" type="VBoxContainer" parent="UI/VSplitContainer/BottomPanel/BottomPanel"]
-layout_mode = 2
+[node name="VBoxContainer" type="VBoxContainer" parent="VSplitContainer/BottomPanel/BottomPanel"]
+offset_left = 8.0
+offset_top = 12.0
+offset_right = 290.0
+offset_bottom = 107.0
 theme_override_constants/separation = 14
 
-[node name="HBoxContainer" type="HBoxContainer" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer"]
-layout_mode = 2
+[node name="HBoxContainer" type="HBoxContainer" parent="VSplitContainer/BottomPanel/BottomPanel/VBoxContainer"]
 size_flags_vertical = 4
 theme_override_constants/separation = 8
 
-[node name="Eraser" type="Button" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/HBoxContainer"]
+[node name="Eraser" type="Button" parent="VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
 focus_mode = 0
 theme_override_font_sizes/font_size = 18
 theme_override_styles/normal = SubResource("StyleBoxFlat_er738")
 theme_override_styles/hover = SubResource("StyleBoxFlat_4csg6")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_jp40q")
-icon = ExtResource("101_jq1ae")
+icon = ExtResource("100_4h3kp")
 icon_alignment = 1
 
-[node name="Tap" type="Button" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/HBoxContainer"]
+[node name="Tap" type="Button" parent="VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(50, 0)
-layout_mode = 2
 focus_mode = 0
 theme_override_font_sizes/font_size = 18
 theme_override_styles/normal = SubResource("StyleBoxFlat_7pq0y")
 theme_override_styles/hover = SubResource("StyleBoxFlat_dha6b")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_3h7k3")
 theme_override_styles/focus = SubResource("StyleBoxFlat_dha6b")
-icon = ExtResource("102_s7yky")
+icon = ExtResource("101_fdn0e")
 icon_alignment = 1
 
-[node name="Help" type="Button" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/HBoxContainer"]
+[node name="Help" type="Button" parent="VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(50, 0)
-layout_mode = 2
 size_flags_horizontal = 10
 focus_mode = 0
 theme_override_font_sizes/font_size = 18
 theme_override_styles/normal = SubResource("StyleBoxFlat_7pq0y")
 theme_override_styles/hover = SubResource("StyleBoxFlat_dha6b")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_3h7k3")
-icon = ExtResource("103_k6t5l")
+icon = ExtResource("102_kpol7")
 icon_alignment = 1
 
-[node name="Settings" type="Button" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/HBoxContainer"]
+[node name="Settings" type="Button" parent="VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(50, 0)
-layout_mode = 2
 focus_mode = 0
 theme_override_font_sizes/font_size = 18
 theme_override_styles/normal = SubResource("StyleBoxFlat_7pq0y")
 theme_override_styles/hover = SubResource("StyleBoxFlat_dha6b")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_3h7k3")
-icon = ExtResource("104_mlh8j")
+icon = ExtResource("103_r3bhx")
 icon_alignment = 1
 
-[node name="File" type="Button" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/HBoxContainer"]
+[node name="File" type="Button" parent="VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(50, 0)
-layout_mode = 2
 focus_mode = 0
 theme_override_font_sizes/font_size = 18
 theme_override_styles/normal = SubResource("StyleBoxFlat_7pq0y")
 theme_override_styles/hover = SubResource("StyleBoxFlat_dha6b")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_3h7k3")
-icon = ExtResource("105_qi678")
+icon = ExtResource("104_8w0fw")
 icon_alignment = 1
 
-[node name="ElementSelector" type="TabContainer" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer" node_paths=PackedStringArray("simulation", "eraser_button", "tap_button")]
-layout_mode = 2
+[node name="ElementSelector" type="TabContainer" parent="VSplitContainer/BottomPanel/BottomPanel/VBoxContainer" node_paths=PackedStringArray("simulation", "eraser_button", "tap_button")]
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 16
 theme_override_styles/tab_selected = SubResource("StyleBoxFlat_bcf5e")
 theme_override_styles/tab_unselected = SubResource("StyleBoxFlat_nsxwl")
 theme_override_styles/panel = SubResource("StyleBoxFlat_b3p2f")
-script = ExtResource("106_sbggk")
+script = ExtResource("105_aomj3")
 simulation = NodePath("../../../../../..")
 eraser_button = NodePath("../HBoxContainer/Eraser")
 tap_button = NodePath("../HBoxContainer/Tap")
-selected_material = ExtResource("107_aj6vj")
+selected_material = ExtResource("106_c7t80")
 
-[node name="Basic" type="MarginContainer" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector"]
-layout_mode = 2
+[node name="Basic" type="MarginContainer" parent="VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 31.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_constants/margin_left = 4
 theme_override_constants/margin_top = 4
 theme_override_constants/margin_right = 4
 theme_override_constants/margin_bottom = 4
 
-[node name="Basic" type="GridContainer" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Basic"]
+[node name="Basic" type="GridContainer" parent="VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Basic"]
 custom_minimum_size = Vector2(0, 70)
-layout_mode = 2
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 160.0
+offset_bottom = 74.0
 theme_override_constants/h_separation = 0
 theme_override_constants/v_separation = 0
 columns = 4
 
-[node name="Sand" type="Button" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Basic/Basic"]
-layout_mode = 2
+[node name="Sand" type="Button" parent="VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Basic/Basic"]
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -1734,8 +1712,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_7xfm4")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_457eu")
 text = "sand"
 
-[node name="Water" type="Button" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Basic/Basic"]
-layout_mode = 2
+[node name="Water" type="Button" parent="VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Basic/Basic"]
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -1747,8 +1724,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_nnycb")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_msh0k")
 text = "water"
 
-[node name="Fire" type="Button" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Basic/Basic"]
-layout_mode = 2
+[node name="Fire" type="Button" parent="VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Basic/Basic"]
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -1760,8 +1736,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_cdwbg")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_ddylc")
 text = "fire"
 
-[node name="Oil" type="Button" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Basic/Basic"]
-layout_mode = 2
+[node name="Oil" type="Button" parent="VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Basic/Basic"]
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -1774,8 +1749,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_gxiyd")
 text = "oil"
 text_overrun_behavior = 1
 
-[node name="Rock" type="Button" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Basic/Basic"]
-layout_mode = 2
+[node name="Rock" type="Button" parent="VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Basic/Basic"]
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -1787,8 +1761,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_eypt1")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_s867d")
 text = "rock"
 
-[node name="Ice" type="Button" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Basic/Basic"]
-layout_mode = 2
+[node name="Ice" type="Button" parent="VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Basic/Basic"]
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -1801,8 +1774,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_2xunh")
 text = "ice"
 text_overrun_behavior = 1
 
-[node name="Lava" type="Button" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Basic/Basic"]
-layout_mode = 2
+[node name="Lava" type="Button" parent="VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Basic/Basic"]
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -1815,8 +1787,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_bs4ox")
 text = "lava"
 text_overrun_behavior = 1
 
-[node name="Lightning" type="Button" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Basic/Basic"]
-layout_mode = 2
+[node name="Lightning" type="Button" parent="VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Basic/Basic"]
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -1834,8 +1805,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_qegqj")
 text = "lightning"
 text_overrun_behavior = 1
 
-[node name="Air" type="Button" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Basic/Basic"]
-layout_mode = 2
+[node name="Air" type="Button" parent="VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Basic/Basic"]
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -1847,8 +1817,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_6hhhi")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_dcp2l")
 text = "air"
 
-[node name="Snow" type="Button" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Basic/Basic"]
-layout_mode = 2
+[node name="Snow" type="Button" parent="VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Basic/Basic"]
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -1865,8 +1834,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_asumw")
 text = "snow"
 text_overrun_behavior = 1
 
-[node name="Lead Azide" type="Button" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Basic/Basic"]
-layout_mode = 2
+[node name="Lead Azide" type="Button" parent="VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Basic/Basic"]
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -1883,8 +1851,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_3xqsb")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_78bka")
 text = "explosive"
 
-[node name="Empty" type="Button" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Basic/Basic"]
-layout_mode = 2
+[node name="Empty" type="Button" parent="VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Basic/Basic"]
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -1899,23 +1866,24 @@ disabled = true
 text = " "
 text_overrun_behavior = 1
 
-[node name="Build" type="MarginContainer" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector"]
+[node name="Build" type="MarginContainer" parent="VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector"]
 visible = false
-layout_mode = 2
 theme_override_constants/margin_left = 4
 theme_override_constants/margin_top = 4
 theme_override_constants/margin_right = 4
 theme_override_constants/margin_bottom = 4
 
-[node name="Build" type="GridContainer" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Build"]
+[node name="Build" type="GridContainer" parent="VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Build"]
 custom_minimum_size = Vector2(0, 70)
-layout_mode = 2
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 4.0
+offset_bottom = 74.0
 theme_override_constants/h_separation = 0
 theme_override_constants/v_separation = 0
 columns = 4
 
-[node name="Wall" type="Button" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Build/Build"]
-layout_mode = 2
+[node name="Wall" type="Button" parent="VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Build/Build"]
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -1928,8 +1896,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_p08fi")
 text = "wall"
 text_overrun_behavior = 1
 
-[node name="Wood" type="Button" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Build/Build"]
-layout_mode = 2
+[node name="Wood" type="Button" parent="VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Build/Build"]
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -1942,8 +1909,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_hgsbg")
 text = "wood"
 text_overrun_behavior = 1
 
-[node name="Soil" type="Button" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Build/Build"]
-layout_mode = 2
+[node name="Soil" type="Button" parent="VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Build/Build"]
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -1956,8 +1922,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_2sydf")
 text = "soil"
 text_overrun_behavior = 1
 
-[node name="Salt" type="Button" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Build/Build"]
-layout_mode = 2
+[node name="Salt" type="Button" parent="VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Build/Build"]
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -1975,8 +1940,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_8fyet")
 text = "salt"
 text_overrun_behavior = 1
 
-[node name="Dust" type="Button" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Build/Build"]
-layout_mode = 2
+[node name="Dust" type="Button" parent="VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Build/Build"]
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -1989,8 +1953,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_b4sp5")
 text = "dust"
 text_overrun_behavior = 1
 
-[node name="Glass" type="Button" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Build/Build"]
-layout_mode = 2
+[node name="Glass" type="Button" parent="VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Build/Build"]
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -2003,8 +1966,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_fwrmq")
 text = "glass"
 text_overrun_behavior = 1
 
-[node name="Crystal" type="Button" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Build/Build"]
-layout_mode = 2
+[node name="Crystal" type="Button" parent="VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Build/Build"]
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -2017,8 +1979,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_2po0a")
 text = "amethyst"
 text_overrun_behavior = 1
 
-[node name="Lapis" type="Button" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Build/Build"]
-layout_mode = 2
+[node name="Lapis" type="Button" parent="VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Build/Build"]
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -2036,8 +1997,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_hxfwl")
 text = "lapis"
 text_overrun_behavior = 1
 
-[node name="Emerald" type="Button" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Build/Build"]
-layout_mode = 2
+[node name="Emerald" type="Button" parent="VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Build/Build"]
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -2055,8 +2015,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_0ncqh")
 text = "emerald"
 text_overrun_behavior = 1
 
-[node name="Ruby" type="Button" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Build/Build"]
-layout_mode = 2
+[node name="Ruby" type="Button" parent="VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Build/Build"]
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -2069,8 +2028,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_24y6k")
 text = "ruby"
 text_overrun_behavior = 1
 
-[node name="Empty2" type="Button" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Build/Build"]
-layout_mode = 2
+[node name="Empty2" type="Button" parent="VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Build/Build"]
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -2085,8 +2043,7 @@ disabled = true
 text = " "
 text_overrun_behavior = 1
 
-[node name="Empty3" type="Button" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Build/Build"]
-layout_mode = 2
+[node name="Empty3" type="Button" parent="VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Build/Build"]
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -2101,25 +2058,26 @@ disabled = true
 text = " "
 text_overrun_behavior = 1
 
-[node name="Life" type="MarginContainer" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector"]
+[node name="Life" type="MarginContainer" parent="VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector"]
 visible = false
-layout_mode = 2
 theme_override_constants/margin_left = 4
 theme_override_constants/margin_top = 4
 theme_override_constants/margin_right = 4
 theme_override_constants/margin_bottom = 4
 
-[node name="Life" type="GridContainer" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Life"]
+[node name="Life" type="GridContainer" parent="VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Life"]
 custom_minimum_size = Vector2(0, 70)
-layout_mode = 2
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 4.0
+offset_bottom = 74.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/h_separation = 0
 theme_override_constants/v_separation = 0
 columns = 4
 
-[node name="Polliwog" type="Button" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Life/Life"]
-layout_mode = 2
+[node name="Polliwog" type="Button" parent="VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Life/Life"]
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -2137,8 +2095,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_5dx7s")
 text = "polliwog"
 text_overrun_behavior = 1
 
-[node name="Algae" type="Button" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Life/Life"]
-layout_mode = 2
+[node name="Algae" type="Button" parent="VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Life/Life"]
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -2151,8 +2108,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_fvw5r")
 text = "algae"
 text_overrun_behavior = 1
 
-[node name="Fish" type="Button" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Life/Life"]
-layout_mode = 2
+[node name="Fish" type="Button" parent="VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Life/Life"]
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -2170,8 +2126,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_7cwls")
 text = "fish"
 text_overrun_behavior = 1
 
-[node name="Urchin" type="Button" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Life/Life"]
-layout_mode = 2
+[node name="Urchin" type="Button" parent="VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Life/Life"]
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -2189,8 +2144,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_cgna5")
 text = "urchin"
 text_overrun_behavior = 1
 
-[node name="Sand Duck" type="Button" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Life/Life"]
-layout_mode = 2
+[node name="Sand Duck" type="Button" parent="VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Life/Life"]
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -2209,8 +2163,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_qcn7j")
 text = "sanduck"
 text_overrun_behavior = 1
 
-[node name="Penguin" type="Button" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Life/Life"]
-layout_mode = 2
+[node name="Penguin" type="Button" parent="VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Life/Life"]
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -2229,8 +2182,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_nhtpl")
 text = "penguino"
 text_overrun_behavior = 1
 
-[node name="Seed" type="Button" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Life/Life"]
-layout_mode = 2
+[node name="Seed" type="Button" parent="VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Life/Life"]
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -2248,8 +2200,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_c0d0v")
 text = "seed"
 text_overrun_behavior = 1
 
-[node name="Critter" type="Button" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Life/Life"]
-layout_mode = 2
+[node name="Critter" type="Button" parent="VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Life/Life"]
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -2267,8 +2218,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_k4dtp")
 text = "critter"
 text_overrun_behavior = 1
 
-[node name="Fairy" type="Button" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Life/Life"]
-layout_mode = 2
+[node name="Fairy" type="Button" parent="VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Life/Life"]
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -2286,8 +2236,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_q4tn0")
 text = "fairy"
 text_overrun_behavior = 1
 
-[node name="Dragon" type="Button" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Life/Life"]
-layout_mode = 2
+[node name="Dragon" type="Button" parent="VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Life/Life"]
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -2305,8 +2254,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_sxore")
 text = "dragon"
 text_overrun_behavior = 1
 
-[node name="Slime" type="Button" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Life/Life"]
-layout_mode = 2
+[node name="Slime" type="Button" parent="VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Life/Life"]
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -2319,8 +2267,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_be0xq")
 text = "slime"
 text_overrun_behavior = 1
 
-[node name="Hurricane" type="Button" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Life/Life"]
-layout_mode = 2
+[node name="Hurricane" type="Button" parent="VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Life/Life"]
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -2333,25 +2280,26 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_geoh2")
 text = "storm"
 text_overrun_behavior = 1
 
-[node name="Chemical" type="MarginContainer" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector"]
+[node name="Chemical" type="MarginContainer" parent="VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector"]
 visible = false
-layout_mode = 2
 theme_override_constants/margin_left = 4
 theme_override_constants/margin_top = 4
 theme_override_constants/margin_right = 4
 theme_override_constants/margin_bottom = 4
 
-[node name="Chemical" type="GridContainer" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Chemical"]
+[node name="Chemical" type="GridContainer" parent="VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Chemical"]
 custom_minimum_size = Vector2(0, 70)
-layout_mode = 2
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 4.0
+offset_bottom = 74.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/h_separation = 0
 theme_override_constants/v_separation = 0
 columns = 4
 
-[node name="Acid" type="Button" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Chemical/Chemical"]
-layout_mode = 2
+[node name="Acid" type="Button" parent="VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Chemical/Chemical"]
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -2369,8 +2317,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_2omdr")
 text = "acid"
 text_overrun_behavior = 1
 
-[node name="IceBomb" type="Button" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Chemical/Chemical"]
-layout_mode = 2
+[node name="IceBomb" type="Button" parent="VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Chemical/Chemical"]
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -2388,8 +2335,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_igoo4")
 text = "ice bomb"
 text_overrun_behavior = 1
 
-[node name="Blue Fire" type="Button" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Chemical/Chemical"]
-layout_mode = 2
+[node name="Blue Fire" type="Button" parent="VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Chemical/Chemical"]
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -2408,8 +2354,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_rurje")
 text = "blue fire"
 text_overrun_behavior = 1
 
-[node name="Hydrogen" type="Button" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Chemical/Chemical"]
-layout_mode = 2
+[node name="Hydrogen" type="Button" parent="VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Chemical/Chemical"]
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -2427,8 +2372,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_yhxmn")
 text = "hydrogen"
 text_overrun_behavior = 1
 
-[node name="Potassium" type="Button" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Chemical/Chemical"]
-layout_mode = 2
+[node name="Potassium" type="Button" parent="VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Chemical/Chemical"]
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -2446,8 +2390,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_g8gy2")
 text = "potassium"
 text_overrun_behavior = 1
 
-[node name="Iron" type="Button" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Chemical/Chemical"]
-layout_mode = 2
+[node name="Iron" type="Button" parent="VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Chemical/Chemical"]
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -2465,8 +2408,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_ciday")
 text = "iron"
 text_overrun_behavior = 1
 
-[node name="Iodine" type="Button" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Chemical/Chemical"]
-layout_mode = 2
+[node name="Iodine" type="Button" parent="VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Chemical/Chemical"]
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -2484,8 +2426,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_e1r6v")
 text = "iodine"
 text_overrun_behavior = 1
 
-[node name="Gold" type="Button" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Chemical/Chemical"]
-layout_mode = 2
+[node name="Gold" type="Button" parent="VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Chemical/Chemical"]
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -2503,8 +2444,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_ot0nh")
 text = "gold"
 text_overrun_behavior = 1
 
-[node name="Mercury" type="Button" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Chemical/Chemical"]
-layout_mode = 2
+[node name="Mercury" type="Button" parent="VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Chemical/Chemical"]
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -2522,8 +2462,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_fihf2")
 text = "mercury"
 text_overrun_behavior = 1
 
-[node name="Uranium" type="Button" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Chemical/Chemical"]
-layout_mode = 2
+[node name="Uranium" type="Button" parent="VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Chemical/Chemical"]
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -2541,8 +2480,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_j4bb3")
 text = "uranium"
 text_overrun_behavior = 1
 
-[node name="Empty5" type="Button" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Chemical/Chemical"]
-layout_mode = 2
+[node name="Empty5" type="Button" parent="VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Chemical/Chemical"]
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -2557,8 +2495,7 @@ disabled = true
 text = " "
 text_overrun_behavior = 1
 
-[node name="Empty6" type="Button" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Chemical/Chemical"]
-layout_mode = 2
+[node name="Empty6" type="Button" parent="VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Chemical/Chemical"]
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -2573,25 +2510,26 @@ disabled = true
 text = " "
 text_overrun_behavior = 1
 
-[node name="Space" type="MarginContainer" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector"]
+[node name="Space" type="MarginContainer" parent="VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector"]
 visible = false
-layout_mode = 2
 theme_override_constants/margin_left = 4
 theme_override_constants/margin_top = 4
 theme_override_constants/margin_right = 4
 theme_override_constants/margin_bottom = 4
 
-[node name="Space" type="GridContainer" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Space"]
+[node name="Space" type="GridContainer" parent="VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Space"]
 custom_minimum_size = Vector2(0, 70)
-layout_mode = 2
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 4.0
+offset_bottom = 74.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/h_separation = 0
 theme_override_constants/v_separation = 0
 columns = 4
 
-[node name="Laser" type="Button" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Space/Space"]
-layout_mode = 2
+[node name="Laser" type="Button" parent="VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Space/Space"]
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -2609,8 +2547,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_4pg2j")
 text = "laser"
 text_overrun_behavior = 1
 
-[node name="Neutron" type="Button" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Space/Space"]
-layout_mode = 2
+[node name="Neutron" type="Button" parent="VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Space/Space"]
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -2628,8 +2565,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_gxlw2")
 text = "quasar"
 text_overrun_behavior = 1
 
-[node name="Meteor" type="Button" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Space/Space"]
-layout_mode = 2
+[node name="Meteor" type="Button" parent="VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Space/Space"]
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -2647,8 +2583,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_0gdwx")
 text = "meteor"
 text_overrun_behavior = 1
 
-[node name="Sun" type="Button" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Space/Space"]
-layout_mode = 2
+[node name="Sun" type="Button" parent="VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Space/Space"]
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -2667,8 +2602,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_qejgw")
 text = "sun"
 text_overrun_behavior = 1
 
-[node name="Electron" type="Button" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Space/Space"]
-layout_mode = 2
+[node name="Electron" type="Button" parent="VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Space/Space"]
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -2686,8 +2620,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_nhb3t")
 text = "plasma"
 text_overrun_behavior = 1
 
-[node name="Powder" type="Button" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Space/Space"]
-layout_mode = 2
+[node name="Powder" type="Button" parent="VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Space/Space"]
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -2705,8 +2638,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_sgko8")
 text = "stardust"
 text_overrun_behavior = 1
 
-[node name="Kuiper" type="Button" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Space/Space"]
-layout_mode = 2
+[node name="Kuiper" type="Button" parent="VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Space/Space"]
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -2724,8 +2656,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_eroe7")
 text = "kuiper"
 text_overrun_behavior = 1
 
-[node name="Strange" type="Button" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Space/Space"]
-layout_mode = 2
+[node name="Strange" type="Button" parent="VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Space/Space"]
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -2743,8 +2674,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_2hlke")
 text = "strange"
 text_overrun_behavior = 1
 
-[node name="Neptune" type="Button" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Space/Space"]
-layout_mode = 2
+[node name="Neptune" type="Button" parent="VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Space/Space"]
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -2762,8 +2692,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_aq34r")
 text = "neptune"
 text_overrun_behavior = 1
 
-[node name="Black Hole" type="Button" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Space/Space"]
-layout_mode = 2
+[node name="Black Hole" type="Button" parent="VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Space/Space"]
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -2781,8 +2710,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_jbbp0")
 text = "black hole"
 text_overrun_behavior = 1
 
-[node name="Worm Hole" type="Button" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Space/Space"]
-layout_mode = 2
+[node name="Worm Hole" type="Button" parent="VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Space/Space"]
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -2800,8 +2728,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_qyi51")
 text = "worm hole"
 text_overrun_behavior = 1
 
-[node name="Empty8" type="Button" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Space/Space"]
-layout_mode = 2
+[node name="Empty8" type="Button" parent="VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Space/Space"]
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -2816,17 +2743,17 @@ disabled = true
 text = " "
 text_overrun_behavior = 1
 
-[node name="SaveFileMenu" type="Control" parent="UI" node_paths=PackedStringArray("save_file_manager", "save_file_container", "save_button", "load_button", "delete_button", "new_file_name", "simulation", "anim", "back_button")]
+[node name="SaveFileMenu" type="Control" parent="." node_paths=PackedStringArray("save_file_manager", "save_file_container", "save_button", "load_button", "delete_button", "new_file_name", "simulation", "anim", "back_button")]
 visible = false
 modulate = Color(1, 1, 1, 0)
-layout_mode = 1
+layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("108_skwft")
-save_file_panel = ExtResource("109_42h1v")
+script = ExtResource("107_wgbxg")
+save_file_panel = ExtResource("108_gbxft")
 save_file_manager = NodePath("../../SaveFileManager")
 save_file_container = NodePath("SaveContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer")
 save_button = NodePath("SaveContainer/PanelContainer/VBoxContainer/OptionContainer/SaveFile")
@@ -2837,8 +2764,7 @@ simulation = NodePath("../..")
 anim = NodePath("AnimationPlayer")
 back_button = NodePath("SaveContainer/PanelContainer/Back")
 
-[node name="SaveCover" type="ColorRect" parent="UI/SaveFileMenu"]
-layout_mode = 1
+[node name="SaveCover" type="ColorRect" parent="SaveFileMenu"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -2846,8 +2772,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.556863)
 
-[node name="SaveContainer" type="MarginContainer" parent="UI/SaveFileMenu"]
-layout_mode = 1
+[node name="SaveContainer" type="MarginContainer" parent="SaveFileMenu"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -2860,94 +2785,87 @@ theme_override_constants/margin_top = 16
 theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 16
 
-[node name="PanelContainer" type="PanelContainer" parent="UI/SaveFileMenu/SaveContainer"]
-layout_mode = 2
+[node name="PanelContainer" type="PanelContainer" parent="SaveFileMenu/SaveContainer"]
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 344.0
+offset_bottom = 624.0
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_e160y")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="UI/SaveFileMenu/SaveContainer/PanelContainer"]
-layout_mode = 2
+[node name="VBoxContainer" type="VBoxContainer" parent="SaveFileMenu/SaveContainer/PanelContainer"]
 mouse_filter = 2
 theme_override_constants/separation = 16
 
-[node name="Label" type="Label" parent="UI/SaveFileMenu/SaveContainer/PanelContainer/VBoxContainer"]
-layout_mode = 2
+[node name="Label" type="Label" parent="SaveFileMenu/SaveContainer/PanelContainer/VBoxContainer"]
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 32
 text = "Save Files"
 
-[node name="LineEdit" type="LineEdit" parent="UI/SaveFileMenu/SaveContainer/PanelContainer/VBoxContainer"]
-layout_mode = 2
+[node name="LineEdit" type="LineEdit" parent="SaveFileMenu/SaveContainer/PanelContainer/VBoxContainer"]
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 16
 theme_override_styles/normal = SubResource("StyleBoxFlat_dh3by")
 theme_override_styles/focus = SubResource("StyleBoxFlat_ybdfi")
 placeholder_text = "Type new file name.."
 
-[node name="ScrollContainer" type="ScrollContainer" parent="UI/SaveFileMenu/SaveContainer/PanelContainer/VBoxContainer"]
-layout_mode = 2
+[node name="ScrollContainer" type="ScrollContainer" parent="SaveFileMenu/SaveContainer/PanelContainer/VBoxContainer"]
 size_flags_vertical = 3
 mouse_filter = 0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="UI/SaveFileMenu/SaveContainer/PanelContainer/VBoxContainer/ScrollContainer"]
-layout_mode = 2
+[node name="VBoxContainer" type="VBoxContainer" parent="SaveFileMenu/SaveContainer/PanelContainer/VBoxContainer/ScrollContainer"]
 size_flags_horizontal = 3
 mouse_filter = 2
 theme_override_constants/separation = 8
 
-[node name="OptionContainer" type="HBoxContainer" parent="UI/SaveFileMenu/SaveContainer/PanelContainer/VBoxContainer"]
-layout_mode = 2
+[node name="OptionContainer" type="HBoxContainer" parent="SaveFileMenu/SaveContainer/PanelContainer/VBoxContainer"]
 theme_override_constants/separation = 8
 
-[node name="SaveFile" type="Button" parent="UI/SaveFileMenu/SaveContainer/PanelContainer/VBoxContainer/OptionContainer"]
+[node name="SaveFile" type="Button" parent="SaveFileMenu/SaveContainer/PanelContainer/VBoxContainer/OptionContainer"]
 custom_minimum_size = Vector2(0, 32)
-layout_mode = 2
 size_flags_horizontal = 3
 focus_mode = 0
 theme_override_font_sizes/font_size = 16
 text = "Save"
 
-[node name="LoadFile" type="Button" parent="UI/SaveFileMenu/SaveContainer/PanelContainer/VBoxContainer/OptionContainer"]
+[node name="LoadFile" type="Button" parent="SaveFileMenu/SaveContainer/PanelContainer/VBoxContainer/OptionContainer"]
 custom_minimum_size = Vector2(0, 32)
-layout_mode = 2
 size_flags_horizontal = 3
 focus_mode = 0
 theme_override_font_sizes/font_size = 16
 text = "Load"
 
-[node name="DeleteFile" type="Button" parent="UI/SaveFileMenu/SaveContainer/PanelContainer/VBoxContainer/OptionContainer"]
+[node name="DeleteFile" type="Button" parent="SaveFileMenu/SaveContainer/PanelContainer/VBoxContainer/OptionContainer"]
 custom_minimum_size = Vector2(0, 32)
-layout_mode = 2
 size_flags_horizontal = 3
 focus_mode = 0
 theme_override_font_sizes/font_size = 16
 text = "Delete"
 
-[node name="Back" type="Button" parent="UI/SaveFileMenu/SaveContainer/PanelContainer"]
+[node name="Back" type="Button" parent="SaveFileMenu/SaveContainer/PanelContainer"]
 custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 0
 focus_mode = 0
-icon = ExtResource("111_m06bq")
+icon = ExtResource("110_56cqc")
 icon_alignment = 1
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="UI/SaveFileMenu"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="SaveFileMenu"]
 playback_speed = 3.0
 libraries = {
 "": SubResource("AnimationLibrary_01f6e")
 }
 
-[node name="SettingsMenu" type="Control" parent="UI" node_paths=PackedStringArray("size_slider", "speed_slider", "zoom_slider", "clear_button", "background_picker", "simulation", "anim", "back_button")]
+[node name="SettingsMenu" type="Control" parent="." node_paths=PackedStringArray("size_slider", "speed_slider", "zoom_slider", "clear_button", "background_picker", "simulation", "anim", "back_button")]
 visible = false
 modulate = Color(1, 1, 1, 0)
-layout_mode = 1
+layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("112_45qri")
+script = ExtResource("111_2uo4e")
 size_slider = NodePath("SettingsContainer/PanelContainer/VBoxContainer/BrushContainer/BrushSlider")
 speed_slider = NodePath("SettingsContainer/PanelContainer/VBoxContainer/SpeedContainer/SpeedSlider")
 zoom_slider = NodePath("SettingsContainer/PanelContainer/VBoxContainer/ZoomContainer/ZoomSlider")
@@ -2957,8 +2875,7 @@ simulation = NodePath("../..")
 anim = NodePath("AnimationPlayer")
 back_button = NodePath("SettingsContainer/PanelContainer/Back")
 
-[node name="SettingsCover" type="ColorRect" parent="UI/SettingsMenu"]
-layout_mode = 1
+[node name="SettingsCover" type="ColorRect" parent="SettingsMenu"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -2966,8 +2883,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.556863)
 
-[node name="SettingsContainer" type="MarginContainer" parent="UI/SettingsMenu"]
-layout_mode = 1
+[node name="SettingsContainer" type="MarginContainer" parent="SettingsMenu"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -2980,29 +2896,28 @@ theme_override_constants/margin_top = 16
 theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 16
 
-[node name="PanelContainer" type="PanelContainer" parent="UI/SettingsMenu/SettingsContainer"]
-layout_mode = 2
+[node name="PanelContainer" type="PanelContainer" parent="SettingsMenu/SettingsContainer"]
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 344.0
+offset_bottom = 624.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_e160y")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="UI/SettingsMenu/SettingsContainer/PanelContainer"]
-layout_mode = 2
+[node name="VBoxContainer" type="VBoxContainer" parent="SettingsMenu/SettingsContainer/PanelContainer"]
 theme_override_constants/separation = 2
 
-[node name="Label" type="Label" parent="UI/SettingsMenu/SettingsContainer/PanelContainer/VBoxContainer"]
-layout_mode = 2
+[node name="Label" type="Label" parent="SettingsMenu/SettingsContainer/PanelContainer/VBoxContainer"]
 theme_override_font_sizes/font_size = 32
 text = "Settings"
 horizontal_alignment = 1
 
-[node name="BrushContainer" type="VBoxContainer" parent="UI/SettingsMenu/SettingsContainer/PanelContainer/VBoxContainer"]
+[node name="BrushContainer" type="VBoxContainer" parent="SettingsMenu/SettingsContainer/PanelContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 28)
-layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 0
 
-[node name="BrushSlider" type="HSlider" parent="UI/SettingsMenu/SettingsContainer/PanelContainer/VBoxContainer/BrushContainer"]
+[node name="BrushSlider" type="HSlider" parent="SettingsMenu/SettingsContainer/PanelContainer/VBoxContainer/BrushContainer"]
 custom_minimum_size = Vector2(0, 32)
-layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 10
 theme_override_styles/slider = SubResource("StyleBoxFlat_xw2ew")
@@ -3013,11 +2928,9 @@ max_value = 64.0
 value = 16.0
 tick_count = 8
 
-[node name="HBoxContainer" type="HBoxContainer" parent="UI/SettingsMenu/SettingsContainer/PanelContainer/VBoxContainer/BrushContainer"]
-layout_mode = 2
+[node name="HBoxContainer" type="HBoxContainer" parent="SettingsMenu/SettingsContainer/PanelContainer/VBoxContainer/BrushContainer"]
 
-[node name="Left" type="Label" parent="UI/SettingsMenu/SettingsContainer/PanelContainer/VBoxContainer/BrushContainer/HBoxContainer"]
-layout_mode = 2
+[node name="Left" type="Label" parent="SettingsMenu/SettingsContainer/PanelContainer/VBoxContainer/BrushContainer/HBoxContainer"]
 size_flags_horizontal = 4
 size_flags_vertical = 1
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -3025,8 +2938,7 @@ theme_override_font_sizes/font_size = 12
 text = "Small"
 vertical_alignment = 1
 
-[node name="Title" type="Label" parent="UI/SettingsMenu/SettingsContainer/PanelContainer/VBoxContainer/BrushContainer/HBoxContainer"]
-layout_mode = 2
+[node name="Title" type="Label" parent="SettingsMenu/SettingsContainer/PanelContainer/VBoxContainer/BrushContainer/HBoxContainer"]
 size_flags_horizontal = 6
 size_flags_vertical = 1
 theme_override_font_sizes/font_size = 16
@@ -3034,8 +2946,7 @@ text = "Brush"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Right" type="Label" parent="UI/SettingsMenu/SettingsContainer/PanelContainer/VBoxContainer/BrushContainer/HBoxContainer"]
-layout_mode = 2
+[node name="Right" type="Label" parent="SettingsMenu/SettingsContainer/PanelContainer/VBoxContainer/BrushContainer/HBoxContainer"]
 size_flags_horizontal = 4
 size_flags_vertical = 1
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -3043,14 +2954,12 @@ theme_override_font_sizes/font_size = 12
 text = "Large"
 vertical_alignment = 1
 
-[node name="SpeedContainer" type="VBoxContainer" parent="UI/SettingsMenu/SettingsContainer/PanelContainer/VBoxContainer"]
-layout_mode = 2
+[node name="SpeedContainer" type="VBoxContainer" parent="SettingsMenu/SettingsContainer/PanelContainer/VBoxContainer"]
 size_flags_horizontal = 3
 theme_override_constants/separation = 0
 
-[node name="SpeedSlider" type="HSlider" parent="UI/SettingsMenu/SettingsContainer/PanelContainer/VBoxContainer/SpeedContainer"]
+[node name="SpeedSlider" type="HSlider" parent="SettingsMenu/SettingsContainer/PanelContainer/VBoxContainer/SpeedContainer"]
 custom_minimum_size = Vector2(0, 32)
-layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 10
 theme_override_styles/slider = SubResource("StyleBoxFlat_xw2ew")
@@ -3060,11 +2969,9 @@ max_value = 7.0
 value = 2.0
 tick_count = 8
 
-[node name="HBoxContainer" type="HBoxContainer" parent="UI/SettingsMenu/SettingsContainer/PanelContainer/VBoxContainer/SpeedContainer"]
-layout_mode = 2
+[node name="HBoxContainer" type="HBoxContainer" parent="SettingsMenu/SettingsContainer/PanelContainer/VBoxContainer/SpeedContainer"]
 
-[node name="Left" type="Label" parent="UI/SettingsMenu/SettingsContainer/PanelContainer/VBoxContainer/SpeedContainer/HBoxContainer"]
-layout_mode = 2
+[node name="Left" type="Label" parent="SettingsMenu/SettingsContainer/PanelContainer/VBoxContainer/SpeedContainer/HBoxContainer"]
 size_flags_horizontal = 4
 size_flags_vertical = 1
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -3072,8 +2979,7 @@ theme_override_font_sizes/font_size = 12
 text = "Slow"
 vertical_alignment = 1
 
-[node name="Title" type="Label" parent="UI/SettingsMenu/SettingsContainer/PanelContainer/VBoxContainer/SpeedContainer/HBoxContainer"]
-layout_mode = 2
+[node name="Title" type="Label" parent="SettingsMenu/SettingsContainer/PanelContainer/VBoxContainer/SpeedContainer/HBoxContainer"]
 size_flags_horizontal = 6
 size_flags_vertical = 1
 theme_override_font_sizes/font_size = 16
@@ -3081,8 +2987,7 @@ text = "Time"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Right" type="Label" parent="UI/SettingsMenu/SettingsContainer/PanelContainer/VBoxContainer/SpeedContainer/HBoxContainer"]
-layout_mode = 2
+[node name="Right" type="Label" parent="SettingsMenu/SettingsContainer/PanelContainer/VBoxContainer/SpeedContainer/HBoxContainer"]
 size_flags_horizontal = 4
 size_flags_vertical = 1
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -3090,14 +2995,12 @@ theme_override_font_sizes/font_size = 12
 text = "Fast"
 vertical_alignment = 1
 
-[node name="ZoomContainer" type="VBoxContainer" parent="UI/SettingsMenu/SettingsContainer/PanelContainer/VBoxContainer"]
-layout_mode = 2
+[node name="ZoomContainer" type="VBoxContainer" parent="SettingsMenu/SettingsContainer/PanelContainer/VBoxContainer"]
 size_flags_horizontal = 3
 theme_override_constants/separation = 0
 
-[node name="ZoomSlider" type="HSlider" parent="UI/SettingsMenu/SettingsContainer/PanelContainer/VBoxContainer/ZoomContainer"]
+[node name="ZoomSlider" type="HSlider" parent="SettingsMenu/SettingsContainer/PanelContainer/VBoxContainer/ZoomContainer"]
 custom_minimum_size = Vector2(0, 32)
-layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 10
 theme_override_styles/slider = SubResource("StyleBoxFlat_xw2ew")
@@ -3108,11 +3011,9 @@ max_value = 8.0
 value = 3.0
 tick_count = 8
 
-[node name="HBoxContainer" type="HBoxContainer" parent="UI/SettingsMenu/SettingsContainer/PanelContainer/VBoxContainer/ZoomContainer"]
-layout_mode = 2
+[node name="HBoxContainer" type="HBoxContainer" parent="SettingsMenu/SettingsContainer/PanelContainer/VBoxContainer/ZoomContainer"]
 
-[node name="Left" type="Label" parent="UI/SettingsMenu/SettingsContainer/PanelContainer/VBoxContainer/ZoomContainer/HBoxContainer"]
-layout_mode = 2
+[node name="Left" type="Label" parent="SettingsMenu/SettingsContainer/PanelContainer/VBoxContainer/ZoomContainer/HBoxContainer"]
 size_flags_horizontal = 4
 size_flags_vertical = 1
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -3120,8 +3021,7 @@ theme_override_font_sizes/font_size = 12
 text = "Out"
 vertical_alignment = 1
 
-[node name="Title" type="Label" parent="UI/SettingsMenu/SettingsContainer/PanelContainer/VBoxContainer/ZoomContainer/HBoxContainer"]
-layout_mode = 2
+[node name="Title" type="Label" parent="SettingsMenu/SettingsContainer/PanelContainer/VBoxContainer/ZoomContainer/HBoxContainer"]
 size_flags_horizontal = 6
 size_flags_vertical = 1
 theme_override_font_sizes/font_size = 16
@@ -3129,8 +3029,7 @@ text = "Zoom"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Right" type="Label" parent="UI/SettingsMenu/SettingsContainer/PanelContainer/VBoxContainer/ZoomContainer/HBoxContainer"]
-layout_mode = 2
+[node name="Right" type="Label" parent="SettingsMenu/SettingsContainer/PanelContainer/VBoxContainer/ZoomContainer/HBoxContainer"]
 size_flags_horizontal = 4
 size_flags_vertical = 1
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -3138,15 +3037,17 @@ theme_override_font_sizes/font_size = 12
 text = "In"
 vertical_alignment = 1
 
-[node name="BackgroundLabel" type="Label" parent="UI/SettingsMenu/SettingsContainer/PanelContainer/VBoxContainer"]
-layout_mode = 2
+[node name="BackgroundLabel" type="Label" parent="SettingsMenu/SettingsContainer/PanelContainer/VBoxContainer"]
 theme_override_font_sizes/font_size = 16
 text = "Background Color
 "
 horizontal_alignment = 1
 
-[node name="ColorPicker" type="ColorPicker" parent="UI/SettingsMenu/SettingsContainer/PanelContainer/VBoxContainer"]
-layout_mode = 2
+[node name="ColorPicker" type="ColorPicker" parent="SettingsMenu/SettingsContainer/PanelContainer/VBoxContainer"]
+offset_left = 32.0
+offset_top = 16.0
+offset_right = 16.0
+offset_bottom = 16.0
 color = Color(0.145098, 0.172549, 0.34902, 1)
 edit_alpha = false
 can_add_swatches = false
@@ -3156,45 +3057,42 @@ sliders_visible = false
 hex_visible = false
 presets_visible = false
 
-[node name="Clear" type="Button" parent="UI/SettingsMenu/SettingsContainer/PanelContainer/VBoxContainer"]
+[node name="Clear" type="Button" parent="SettingsMenu/SettingsContainer/PanelContainer/VBoxContainer"]
 custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
 size_flags_vertical = 0
 focus_mode = 0
 theme_override_font_sizes/font_size = 16
 text = "Clear Canvas"
 
-[node name="Back" type="Button" parent="UI/SettingsMenu/SettingsContainer/PanelContainer"]
+[node name="Back" type="Button" parent="SettingsMenu/SettingsContainer/PanelContainer"]
 custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 0
 focus_mode = 0
-icon = ExtResource("111_m06bq")
+icon = ExtResource("110_56cqc")
 icon_alignment = 1
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="UI/SettingsMenu"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="SettingsMenu"]
 playback_speed = 3.0
 libraries = {
 "": SubResource("AnimationLibrary_01f6e")
 }
 
-[node name="HelpMenu" type="Control" parent="UI" node_paths=PackedStringArray("simulation", "anim", "back_button")]
+[node name="HelpMenu" type="Control" parent="." node_paths=PackedStringArray("simulation", "anim", "back_button")]
 visible = false
 modulate = Color(1, 1, 1, 0)
-layout_mode = 1
+layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("113_41qoq")
+script = ExtResource("112_2j8xr")
 simulation = NodePath("../..")
 anim = NodePath("AnimationPlayer")
 back_button = NodePath("HelpContainer/PanelContainer/Back")
 
-[node name="HelpCover" type="ColorRect" parent="UI/HelpMenu"]
-layout_mode = 1
+[node name="HelpCover" type="ColorRect" parent="HelpMenu"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -3202,8 +3100,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.556863)
 
-[node name="HelpContainer" type="MarginContainer" parent="UI/HelpMenu"]
-layout_mode = 1
+[node name="HelpContainer" type="MarginContainer" parent="HelpMenu"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -3216,38 +3113,35 @@ theme_override_constants/margin_top = 16
 theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 16
 
-[node name="PanelContainer" type="PanelContainer" parent="UI/HelpMenu/HelpContainer"]
-layout_mode = 2
+[node name="PanelContainer" type="PanelContainer" parent="HelpMenu/HelpContainer"]
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 344.0
+offset_bottom = 624.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_e160y")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="UI/HelpMenu/HelpContainer/PanelContainer"]
-layout_mode = 2
+[node name="VBoxContainer" type="VBoxContainer" parent="HelpMenu/HelpContainer/PanelContainer"]
 theme_override_constants/separation = 14
 
-[node name="Label" type="Label" parent="UI/HelpMenu/HelpContainer/PanelContainer/VBoxContainer"]
-layout_mode = 2
+[node name="Label" type="Label" parent="HelpMenu/HelpContainer/PanelContainer/VBoxContainer"]
 theme_override_font_sizes/font_size = 32
 text = "Help"
 horizontal_alignment = 1
 
-[node name="WhatContainer" type="VBoxContainer" parent="UI/HelpMenu/HelpContainer/PanelContainer/VBoxContainer"]
-layout_mode = 2
+[node name="WhatContainer" type="VBoxContainer" parent="HelpMenu/HelpContainer/PanelContainer/VBoxContainer"]
 theme_override_constants/separation = 3
 
-[node name="Title" type="Label" parent="UI/HelpMenu/HelpContainer/PanelContainer/VBoxContainer/WhatContainer"]
-layout_mode = 2
+[node name="Title" type="Label" parent="HelpMenu/HelpContainer/PanelContainer/VBoxContainer/WhatContainer"]
 theme_override_font_sizes/font_size = 16
 text = "What Is Sand Slide?"
 horizontal_alignment = 1
 
-[node name="Text" type="Label" parent="UI/HelpMenu/HelpContainer/PanelContainer/VBoxContainer/WhatContainer"]
-layout_mode = 2
+[node name="Text" type="Label" parent="HelpMenu/HelpContainer/PanelContainer/VBoxContainer/WhatContainer"]
 theme_override_font_sizes/font_size = 12
 text = "This is a falling sand game created by a student! Experiment with elements, express yourself, or just mess around. This is purely a passion project and you can find the source code on my profile: "
 autowrap_mode = 2
 
-[node name="HyperLink" type="RichTextLabel" parent="UI/HelpMenu/HelpContainer/PanelContainer/VBoxContainer/WhatContainer"]
-layout_mode = 2
+[node name="HyperLink" type="RichTextLabel" parent="HelpMenu/HelpContainer/PanelContainer/VBoxContainer/WhatContainer"]
 theme_override_font_sizes/normal_font_size = 12
 theme_override_font_sizes/bold_font_size = 12
 theme_override_font_sizes/italics_font_size = 12
@@ -3256,42 +3150,35 @@ theme_override_font_sizes/mono_font_size = 12
 bbcode_enabled = true
 text = "[url=\"https://github.com/kiwijuice56/sand-slide\"]https://github.com/kiwijuice56/sand-slide[/url]"
 fit_content_height = true
-script = ExtResource("114_18fi5")
+script = ExtResource("113_4sh2j")
 
-[node name="SaveContainer" type="VBoxContainer" parent="UI/HelpMenu/HelpContainer/PanelContainer/VBoxContainer"]
-layout_mode = 2
+[node name="SaveContainer" type="VBoxContainer" parent="HelpMenu/HelpContainer/PanelContainer/VBoxContainer"]
 theme_override_constants/separation = 3
 
-[node name="Title" type="Label" parent="UI/HelpMenu/HelpContainer/PanelContainer/VBoxContainer/SaveContainer"]
-layout_mode = 2
+[node name="Title" type="Label" parent="HelpMenu/HelpContainer/PanelContainer/VBoxContainer/SaveContainer"]
 theme_override_font_sizes/font_size = 16
 text = "How Does Saving Work?"
 horizontal_alignment = 1
 
-[node name="Text" type="Label" parent="UI/HelpMenu/HelpContainer/PanelContainer/VBoxContainer/SaveContainer"]
-layout_mode = 2
+[node name="Text" type="Label" parent="HelpMenu/HelpContainer/PanelContainer/VBoxContainer/SaveContainer"]
 theme_override_font_sizes/font_size = 12
 text = "In the Save File menu, tap the text box to name a new file and press enter. The created file will keep your creation perfectly in tact! When you tap on the button with its name, you can overwrite, load, or delete it."
 autowrap_mode = 2
 
-[node name="DrawContainer" type="VBoxContainer" parent="UI/HelpMenu/HelpContainer/PanelContainer/VBoxContainer"]
-layout_mode = 2
+[node name="DrawContainer" type="VBoxContainer" parent="HelpMenu/HelpContainer/PanelContainer/VBoxContainer"]
 theme_override_constants/separation = 3
 
-[node name="Title" type="Label" parent="UI/HelpMenu/HelpContainer/PanelContainer/VBoxContainer/DrawContainer"]
-layout_mode = 2
+[node name="Title" type="Label" parent="HelpMenu/HelpContainer/PanelContainer/VBoxContainer/DrawContainer"]
 theme_override_font_sizes/font_size = 16
 text = "Attribution"
 horizontal_alignment = 1
 
-[node name="Text" type="Label" parent="UI/HelpMenu/HelpContainer/PanelContainer/VBoxContainer/DrawContainer"]
-layout_mode = 2
+[node name="Text" type="Label" parent="HelpMenu/HelpContainer/PanelContainer/VBoxContainer/DrawContainer"]
 theme_override_font_sizes/font_size = 12
 text = "Many of the elements are inspired by other falling sand games, including Sand:Box by SmellyMoo and Sandspiel by Max Bittker. Sand Slide was created as a tribute to these great simulators, so check them out too! "
 autowrap_mode = 2
 
-[node name="HyperLinks" type="RichTextLabel" parent="UI/HelpMenu/HelpContainer/PanelContainer/VBoxContainer/DrawContainer"]
-layout_mode = 2
+[node name="HyperLinks" type="RichTextLabel" parent="HelpMenu/HelpContainer/PanelContainer/VBoxContainer/DrawContainer"]
 theme_override_font_sizes/normal_font_size = 12
 theme_override_font_sizes/bold_font_size = 12
 theme_override_font_sizes/italics_font_size = 12
@@ -3300,25 +3187,43 @@ theme_override_font_sizes/mono_font_size = 12
 bbcode_enabled = true
 text = "[url=\"https://icons8.com/icon/67287/plumbing\"]Plumbing[/url], [url=\"https://icons8.com/icon/78855/eraser\"]eraser[/url], [url=\"https://icons8.com/icon/77782/file\"]file[/url], [url=\"https://icons8.com/icon/60006/support\"]support[/url], and [url=\"https://icons8.com/icon/71200/close\"]close[/url] icons by [url=\"https://icons8.com/\"]Icons8[/url]. "
 fit_content_height = true
-script = ExtResource("114_18fi5")
+script = ExtResource("113_4sh2j")
 
-[node name="Back" type="Button" parent="UI/HelpMenu/HelpContainer/PanelContainer"]
+[node name="Back" type="Button" parent="HelpMenu/HelpContainer/PanelContainer"]
 custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 0
 focus_mode = 0
-icon = ExtResource("111_m06bq")
+icon = ExtResource("110_56cqc")
 icon_alignment = 1
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="UI/HelpMenu"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="HelpMenu"]
 playback_speed = 3.0
 libraries = {
 "": SubResource("AnimationLibrary_01f6e")
 }
 
-[node name="SplashScreen" type="ColorRect" parent="UI"]
-layout_mode = 1
+[node name="FPSLabelContainer" type="MarginContainer" parent="."]
+offset_right = 360.0
+offset_bottom = 45.0
+size_flags_vertical = 3
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+
+[node name="FPSLabel" type="Label" parent="FPSLabelContainer"]
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 360.0
+offset_bottom = 45.0
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 12
+text = "FPS 0"
+script = ExtResource("114_mj7nc")
+
+[node name="Timer" type="Timer" parent="FPSLabelContainer/FPSLabel"]
+autostart = true
+
+[node name="SplashScreen" type="ColorRect" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -3327,39 +3232,39 @@ grow_vertical = 2
 mouse_filter = 2
 theme = SubResource("Theme_n7xkt")
 color = Color(0, 0, 0, 1)
-script = ExtResource("116_87sfi")
+script = ExtResource("115_hr5oa")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="UI/SplashScreen"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="SplashScreen"]
 autoplay = "intro"
 playback_speed = 3.0
 libraries = {
 "": SubResource("AnimationLibrary_4jxq8")
 }
 
-[node name="PanelContainer" type="PanelContainer" parent="UI"]
+[node name="PanelContainer" type="PanelContainer" parent="."]
 visible = false
-layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("2_p00c8")
+theme = ExtResource("1_m607f")
 theme_override_styles/panel = SubResource("StyleBoxFlat_2bb3j")
 
-[node name="MarginContainer" type="MarginContainer" parent="UI/PanelContainer"]
-layout_mode = 2
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
 theme_override_constants/margin_left = 16
 theme_override_constants/margin_top = 16
 theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 16
 
-[node name="GridContainer" type="GridContainer" parent="UI/PanelContainer/MarginContainer"]
-layout_mode = 2
+[node name="GridContainer" type="GridContainer" parent="PanelContainer/MarginContainer"]
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 153.0
+offset_bottom = 228.0
 columns = 6
 
-[node name="Fire" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
+[node name="Fire" type="Button" parent="PanelContainer/MarginContainer/GridContainer"]
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -3371,8 +3276,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_cdwbg")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_ddylc")
 text = "fire"
 
-[node name="Fish" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
+[node name="Fish" type="Button" parent="PanelContainer/MarginContainer/GridContainer"]
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -3390,8 +3294,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_7cwls")
 text = "fish"
 text_overrun_behavior = 1
 
-[node name="Lava" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
+[node name="Lava" type="Button" parent="PanelContainer/MarginContainer/GridContainer"]
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -3404,8 +3307,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_bs4ox")
 text = "lava"
 text_overrun_behavior = 1
 
-[node name="Sand" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
+[node name="Sand" type="Button" parent="PanelContainer/MarginContainer/GridContainer"]
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -3417,8 +3319,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_7xfm4")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_457eu")
 text = "sand"
 
-[node name="Sun" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
+[node name="Sun" type="Button" parent="PanelContainer/MarginContainer/GridContainer"]
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -3437,8 +3338,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_qejgw")
 text = "sun"
 text_overrun_behavior = 1
 
-[node name="Gold" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
+[node name="Gold" type="Button" parent="PanelContainer/MarginContainer/GridContainer"]
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -3456,8 +3356,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_ot0nh")
 text = "gold"
 text_overrun_behavior = 1
 
-[node name="Sand Duck" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
+[node name="Sand Duck" type="Button" parent="PanelContainer/MarginContainer/GridContainer"]
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -3476,8 +3375,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_qcn7j")
 text = "sanduck"
 text_overrun_behavior = 1
 
-[node name="Dragon" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
+[node name="Dragon" type="Button" parent="PanelContainer/MarginContainer/GridContainer"]
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -3495,8 +3393,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_sxore")
 text = "dragon"
 text_overrun_behavior = 1
 
-[node name="Seed" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
+[node name="Seed" type="Button" parent="PanelContainer/MarginContainer/GridContainer"]
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -3514,8 +3411,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_c0d0v")
 text = "seed"
 text_overrun_behavior = 1
 
-[node name="Algae" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
+[node name="Algae" type="Button" parent="PanelContainer/MarginContainer/GridContainer"]
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -3528,8 +3424,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_fvw5r")
 text = "algae"
 text_overrun_behavior = 1
 
-[node name="Emerald" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
+[node name="Emerald" type="Button" parent="PanelContainer/MarginContainer/GridContainer"]
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -3547,8 +3442,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_0ncqh")
 text = "emerald"
 text_overrun_behavior = 1
 
-[node name="Uranium" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
+[node name="Uranium" type="Button" parent="PanelContainer/MarginContainer/GridContainer"]
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -3566,8 +3460,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_j4bb3")
 text = "uranium"
 text_overrun_behavior = 1
 
-[node name="Air" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
+[node name="Air" type="Button" parent="PanelContainer/MarginContainer/GridContainer"]
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -3579,8 +3472,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_6hhhi")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_dcp2l")
 text = "air"
 
-[node name="Acid" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
+[node name="Acid" type="Button" parent="PanelContainer/MarginContainer/GridContainer"]
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -3598,8 +3490,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_2omdr")
 text = "acid"
 text_overrun_behavior = 1
 
-[node name="Lightning" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
+[node name="Lightning" type="Button" parent="PanelContainer/MarginContainer/GridContainer"]
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -3617,8 +3508,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_qegqj")
 text = "lightning"
 text_overrun_behavior = 1
 
-[node name="Neutron" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
+[node name="Neutron" type="Button" parent="PanelContainer/MarginContainer/GridContainer"]
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -3636,8 +3526,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_gxlw2")
 text = "quasar"
 text_overrun_behavior = 1
 
-[node name="Blue Fire" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
+[node name="Blue Fire" type="Button" parent="PanelContainer/MarginContainer/GridContainer"]
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -3656,8 +3545,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_rurje")
 text = "blue fire"
 text_overrun_behavior = 1
 
-[node name="Polliwog" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
+[node name="Polliwog" type="Button" parent="PanelContainer/MarginContainer/GridContainer"]
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -3675,8 +3563,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_5dx7s")
 text = "polliwog"
 text_overrun_behavior = 1
 
-[node name="Ice" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
+[node name="Ice" type="Button" parent="PanelContainer/MarginContainer/GridContainer"]
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -3689,8 +3576,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_2xunh")
 text = "ice"
 text_overrun_behavior = 1
 
-[node name="Kuiper" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
+[node name="Kuiper" type="Button" parent="PanelContainer/MarginContainer/GridContainer"]
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -3703,8 +3589,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_eroe7")
 text = "kuiper"
 text_overrun_behavior = 1
 
-[node name="Water" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
+[node name="Water" type="Button" parent="PanelContainer/MarginContainer/GridContainer"]
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -3716,8 +3601,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_nnycb")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_msh0k")
 text = "water"
 
-[node name="Lapis" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
+[node name="Lapis" type="Button" parent="PanelContainer/MarginContainer/GridContainer"]
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -3735,8 +3619,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_hxfwl")
 text = "lapis"
 text_overrun_behavior = 1
 
-[node name="Electron" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
+[node name="Electron" type="Button" parent="PanelContainer/MarginContainer/GridContainer"]
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -3754,8 +3637,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_nhb3t")
 text = "plasma"
 text_overrun_behavior = 1
 
-[node name="Hurricane" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
+[node name="Hurricane" type="Button" parent="PanelContainer/MarginContainer/GridContainer"]
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -3768,8 +3650,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_geoh2")
 text = "storm"
 text_overrun_behavior = 1
 
-[node name="Glass" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
+[node name="Glass" type="Button" parent="PanelContainer/MarginContainer/GridContainer"]
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -3782,8 +3663,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_fwrmq")
 text = "glass"
 text_overrun_behavior = 1
 
-[node name="Powder" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
+[node name="Powder" type="Button" parent="PanelContainer/MarginContainer/GridContainer"]
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -3796,8 +3676,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_sgko8")
 text = "stardust"
 text_overrun_behavior = 1
 
-[node name="Crystal" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
+[node name="Crystal" type="Button" parent="PanelContainer/MarginContainer/GridContainer"]
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -3810,8 +3689,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_2po0a")
 text = "amethyst"
 text_overrun_behavior = 1
 
-[node name="Critter" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
+[node name="Critter" type="Button" parent="PanelContainer/MarginContainer/GridContainer"]
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -3829,8 +3707,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_k4dtp")
 text = "critter"
 text_overrun_behavior = 1
 
-[node name="Urchin" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
+[node name="Urchin" type="Button" parent="PanelContainer/MarginContainer/GridContainer"]
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -3848,8 +3725,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_cgna5")
 text = "urchin"
 text_overrun_behavior = 1
 
-[node name="Meteor" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
+[node name="Meteor" type="Button" parent="PanelContainer/MarginContainer/GridContainer"]
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -3867,8 +3743,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_0gdwx")
 text = "meteor"
 text_overrun_behavior = 1
 
-[node name="Ruby" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
+[node name="Ruby" type="Button" parent="PanelContainer/MarginContainer/GridContainer"]
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -3881,8 +3756,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_24y6k")
 text = "ruby"
 text_overrun_behavior = 1
 
-[node name="Laser" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
+[node name="Laser" type="Button" parent="PanelContainer/MarginContainer/GridContainer"]
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -3900,8 +3774,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_4pg2j")
 text = "laser"
 text_overrun_behavior = 1
 
-[node name="Fairy" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
+[node name="Fairy" type="Button" parent="PanelContainer/MarginContainer/GridContainer"]
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -3919,8 +3792,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_q4tn0")
 text = "fairy"
 text_overrun_behavior = 1
 
-[node name="Salt" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
+[node name="Salt" type="Button" parent="PanelContainer/MarginContainer/GridContainer"]
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -3938,8 +3810,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_8fyet")
 text = "salt"
 text_overrun_behavior = 1
 
-[node name="Lead Azide" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
+[node name="Lead Azide" type="Button" parent="PanelContainer/MarginContainer/GridContainer"]
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -3957,8 +3828,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_78bka")
 text = "bomb"
 text_overrun_behavior = 1
 
-[node name="Soil" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
+[node name="Soil" type="Button" parent="PanelContainer/MarginContainer/GridContainer"]
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -3971,8 +3841,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_2sydf")
 text = "soil"
 text_overrun_behavior = 1
 
-[node name="Rock" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
+[node name="Rock" type="Button" parent="PanelContainer/MarginContainer/GridContainer"]
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -3984,8 +3853,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_eypt1")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_s867d")
 text = "rock"
 
-[node name="Iron" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
+[node name="Iron" type="Button" parent="PanelContainer/MarginContainer/GridContainer"]
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -4003,8 +3871,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_ciday")
 text = "iron"
 text_overrun_behavior = 1
 
-[node name="Wood" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
+[node name="Wood" type="Button" parent="PanelContainer/MarginContainer/GridContainer"]
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -4017,8 +3884,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_hgsbg")
 text = "wood"
 text_overrun_behavior = 1
 
-[node name="Dust" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
+[node name="Dust" type="Button" parent="PanelContainer/MarginContainer/GridContainer"]
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -4031,8 +3897,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_b4sp5")
 text = "dust"
 text_overrun_behavior = 1
 
-[node name="Wall" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
+[node name="Wall" type="Button" parent="PanelContainer/MarginContainer/GridContainer"]
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -4045,8 +3910,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_p08fi")
 text = "wall"
 text_overrun_behavior = 1
 
-[node name="Potassium" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
+[node name="Potassium" type="Button" parent="PanelContainer/MarginContainer/GridContainer"]
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -4064,8 +3928,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_g8gy2")
 text = "potassium"
 text_overrun_behavior = 1
 
-[node name="Mercury" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
+[node name="Mercury" type="Button" parent="PanelContainer/MarginContainer/GridContainer"]
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -4083,8 +3946,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_fihf2")
 text = "mercury"
 text_overrun_behavior = 1
 
-[node name="Strange" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
+[node name="Strange" type="Button" parent="PanelContainer/MarginContainer/GridContainer"]
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -4102,8 +3964,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_2hlke")
 text = "strange"
 text_overrun_behavior = 1
 
-[node name="Hydrogen" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
+[node name="Hydrogen" type="Button" parent="PanelContainer/MarginContainer/GridContainer"]
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -4121,8 +3982,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_yhxmn")
 text = "hydrogen"
 text_overrun_behavior = 1
 
-[node name="Oil" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
+[node name="Oil" type="Button" parent="PanelContainer/MarginContainer/GridContainer"]
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -4135,8 +3995,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_gxiyd")
 text = "oil"
 text_overrun_behavior = 1
 
-[node name="Black Hole" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
+[node name="Black Hole" type="Button" parent="PanelContainer/MarginContainer/GridContainer"]
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -4149,8 +4008,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_jbbp0")
 text = "black hole"
 text_overrun_behavior = 1
 
-[node name="Penguin" type="Button" parent="UI/PanelContainer/MarginContainer/GridContainer"]
-layout_mode = 2
+[node name="Penguin" type="Button" parent="PanelContainer/MarginContainer/GridContainer"]
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
@@ -4168,7 +4026,3 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_1mn38")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_nhtpl")
 text = "penguin"
 text_overrun_behavior = 1
-
-[node name="SaveFileManager" type="Node" parent="." node_paths=PackedStringArray("sim_holder")]
-script = ExtResource("87_5tqe6")
-sim_holder = NodePath("..")
