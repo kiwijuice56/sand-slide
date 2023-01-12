@@ -14,14 +14,13 @@ The user interface was created in a godot project (in `game`) that calls methods
 
 ## Set Up
 1. Clone/download the repository
-2. Download the official [godot-cpp repository](https://github.com/godotengine/godot-cpp/tree/1044251a9e85e4c5cb484466c50f6cc309a1bfbe) and place it at the root of the project directory alongside `game` and `extension`. 
-Ensure that you install the repository from the link, as compilation will only work if it is synced with Godot 4 beta 3. In addition, make sure that the project
-is not open in another window while compiling.
-3. In a command prompt at `godot-cpp`, run `scons` (and add `target=template_release` for exported projects). You only need to do this the first time you download the repository.
+2. Download the official [godot-cpp repository](https://github.com/godotengine/godot-cpp/commit/02336831735fd6affbe0a6fa252ec98d3e78120c) and place it at the root of the project directory alongside `game` and `extension`. 
+Ensure that you install the repository from the link, as compilation will only work if the branch is synced with Godot 4 beta 9. In addition, make sure that the project is not open in another window while compiling.
+3. In a command prompt open at `godot-cpp`, run `scons` (and add `target=template_release` for exported projects, or `platform=...` for other devices). You only need to do this the first time you download the repository.
 4. You are now ready to make changes to the project!
 
 ## Compiling Changes
-Compiling any changes is as simple as opening a command prompt at the root of the project directory and running `scons` (and adding `target=template_release` for exported projects). 
+Compiling any changes is as simple as opening a command prompt at the root of the project directory and running `scons`. 
 The dll inside of `game\bin` should be updated and require no further steps to run alongside the Godot project. 
 
 ## Creating New Elements
@@ -54,16 +53,12 @@ More methods helper methods for `SandSimulation` can be found in its header file
 `get_explode_resistance()` and `get_acid_resistance()` must return a float [0, 1] in which 0 is no resistance to explosions/acid and 1 is maximum resistance to explosions/acid.
 
 When you are ready to add your element to the game, import the header file in `extension\src\sand_simulation.h` and add it to the `elements` vector in the constructor. 
-The index that you add the element to is its `ID`. Other elements reference this `ID` when checking conditions, such as above where sand
-is replaced with glass. Glass is placed at the 25th spot of the `elements` vector, hence its `ID` being 25.
+The index that you add the element to is its `ID`. Other elements reference this `ID` when checking conditions, such as above where sand is replaced with glass. Glass is placed at the 25th spot of the `elements` vector, hence its `ID` being 25.
 
-In the godot project, add your element name to the `ELEMENT_INDEX` list within `game\main\main.gd` at the same index you placed it within `elements`. 
-The visuals of your element can be modified by creating a resource that extends the `ElementVisual` class and placing it within `game\main\element_visuals\`.
-Finally, create a button with the same name that you inserted into the list.
+In the godot project, add your element name to the `ELEMENT_INDEX` list within `game\main\main.gd` at the same index you placed it within `elements`. If you add this element to the UI, ensure that the button node name matches the name in this list. The visuals of your element can be modified by creating a resource that extends the `ElementVisual` class and placing it within `game\main\element_visuals\`.
 
 ## Save Files
-The game allows you to manage save files. Files are stored in `user:\\` which is `%APPDATA%\Godot\app_userdata\Sand Slide` on Windows.
-Each folder corresponds to a save file and contains a Godot resource and an image. Each luminosity value in the texture represents an element,
+The game allows you to manage save files. Files are stored in `user:\\` which is `%APPDATA%\Godot\app_userdata\Sand Slide` on Windows. Each folder corresponds to a save file and contains a Godot resource and an image. Each luminosity value in the texture represents an element,
 so you can edit the file in an external editor and load it back into the game.
 
 ## Attribution
