@@ -7,7 +7,7 @@ class_name ElementSelector
 @export var tap_button: Button
 
 var tap_on := false
-var last_button: Button
+@export var last_button: Button
 @export var selected_material: ShaderMaterial
 
 func _ready():

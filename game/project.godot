@@ -124,7 +124,7 @@ boot_splash/show_image=false
 boot_splash/bg_color=Color(0, 0, 0, 1)
 config/icon="res://icon.png"
 config/windows_native_icon="res://favicon.ico"
-config/version="2.0"
+config/version="2.1"
 
 [display]
 

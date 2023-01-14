@@ -122,7 +122,7 @@
 
 [sub_resource type="ImageTexture" id="ImageTexture_y7mie"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_5pqk5"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5hmme"]
 shader = ExtResource("5_mtoof")
 shader_parameter/width = null
 shader_parameter/height = null
@@ -157,7 +157,7 @@ shader_parameter/metal_id_match = null
 shader_parameter/metal_color_a = null
 shader_parameter/metal_color_b = null
 
-[sub_resource type="ImageTexture" id="ImageTexture_flcuu"]
+[sub_resource type="ImageTexture" id="ImageTexture_b55ar"]
 
 [sub_resource type="Environment" id="Environment_iakyf"]
 background_mode = 3
@@ -1577,13 +1577,13 @@ layer = -1
 
 [node name="Canvas" type="TextureRect" parent="UI/VSplitContainer/TopPanel/CanvasLayer" node_paths=PackedStringArray("size_mirror")]
 texture_filter = 1
-material = SubResource("ShaderMaterial_5pqk5")
+material = SubResource("ShaderMaterial_5hmme")
 custom_minimum_size = Vector2(0, 64)
 offset_right = 360.0
 offset_bottom = 273.0
 size_flags_vertical = 3
 size_flags_stretch_ratio = 2.0
-texture = SubResource("ImageTexture_flcuu")
+texture = SubResource("ImageTexture_b55ar")
 ignore_texture_size = true
 script = ExtResource("6_o82wb")
 background_colors = []
@@ -1673,7 +1673,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_3h7k3")
 icon = ExtResource("105_qi678")
 icon_alignment = 1
 
-[node name="ElementSelector" type="TabContainer" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer" node_paths=PackedStringArray("simulation", "eraser_button", "tap_button")]
+[node name="ElementSelector" type="TabContainer" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer" node_paths=PackedStringArray("simulation", "eraser_button", "tap_button", "last_button")]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 16
@@ -1684,6 +1684,7 @@ script = ExtResource("106_sbggk")
 simulation = NodePath("../../../../../..")
 eraser_button = NodePath("../HBoxContainer/Eraser")
 tap_button = NodePath("../HBoxContainer/Tap")
+last_button = NodePath("Basic/Basic/Sand")
 selected_material = ExtResource("107_aj6vj")
 
 [node name="Basic" type="MarginContainer" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector"]
@@ -1701,6 +1702,7 @@ theme_override_constants/v_separation = 0
 columns = 4
 
 [node name="Sand" type="Button" parent="UI/VSplitContainer/BottomPanel/BottomPanel/VBoxContainer/ElementSelector/Basic/Basic"]
+material = ExtResource("107_aj6vj")
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -2800,7 +2802,6 @@ text = " "
 text_overrun_behavior = 1
 
 [node name="FPSLabelContainer" type="MarginContainer" parent="UI"]
-visible = false
 layout_mode = 0
 offset_right = 360.0
 offset_bottom = 45.0
@@ -2809,6 +2810,7 @@ theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 8
 
 [node name="FPSLabel" type="Label" parent="UI/FPSLabelContainer"]
+visible = false
 layout_mode = 2
 size_flags_vertical = 1
 theme_override_font_sizes/font_size = 12
