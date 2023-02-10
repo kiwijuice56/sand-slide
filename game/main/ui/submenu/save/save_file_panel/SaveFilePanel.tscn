@@ -51,8 +51,7 @@ date_label = NodePath("MarginContainer/VBoxContainer/FileDate")
 size_label = NodePath("MarginContainer/VBoxContainer/FileSize")
 
 [node name="Button" type="Button" parent="."]
-offset_right = 360.0
-offset_bottom = 640.0
+layout_mode = 2
 mouse_filter = 1
 theme_override_styles/normal = SubResource("StyleBoxEmpty_faecs")
 theme_override_styles/hover = SubResource("StyleBoxFlat_wn5pg")
@@ -61,8 +60,7 @@ theme_override_styles/disabled = SubResource("StyleBoxEmpty_faecs")
 theme_override_styles/focus = SubResource("StyleBoxFlat_slap3")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
-offset_right = 360.0
-offset_bottom = 640.0
+layout_mode = 2
 mouse_filter = 2
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 8
@@ -70,31 +68,23 @@ theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
-offset_left = 8.0
-offset_top = 8.0
-offset_right = 352.0
-offset_bottom = 632.0
+layout_mode = 2
 mouse_filter = 2
 
 [node name="FileName" type="Label" parent="MarginContainer/VBoxContainer"]
-offset_right = 344.0
-offset_bottom = 26.0
+layout_mode = 2
 theme_override_font_sizes/font_size = 16
 text = "Save file 01"
 text_overrun_behavior = 3
 
 [node name="FileDate" type="Label" parent="MarginContainer/VBoxContainer"]
-offset_top = 30.0
-offset_right = 344.0
-offset_bottom = 56.0
+layout_mode = 2
 theme_override_colors/font_color = Color(0.556863, 0.556863, 0.556863, 1)
 theme_override_font_sizes/font_size = 16
 text = "YYYY/MM/DD/HH"
 
 [node name="FileSize" type="Label" parent="MarginContainer/VBoxContainer"]
-offset_top = 60.0
-offset_right = 344.0
-offset_bottom = 86.0
+layout_mode = 2
 theme_override_colors/font_color = Color(0.556863, 0.556863, 0.556863, 1)
 theme_override_font_sizes/font_size = 16
 text = "2 MB"

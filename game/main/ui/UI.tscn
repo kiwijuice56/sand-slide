@@ -120,7 +120,7 @@
 
 [sub_resource type="ImageTexture" id="ImageTexture_y7mie"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_q6xb5"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5evjd"]
 shader = ExtResource("4_pyqk0")
 shader_parameter/width = null
 shader_parameter/height = null
@@ -155,7 +155,7 @@ shader_parameter/metal_id_match = null
 shader_parameter/metal_color_a = null
 shader_parameter/metal_color_b = null
 
-[sub_resource type="ImageTexture" id="ImageTexture_y0ndh"]
+[sub_resource type="ImageTexture" id="ImageTexture_0hi73"]
 
 [sub_resource type="Environment" id="Environment_v44im"]
 background_mode = 3
@@ -1568,13 +1568,13 @@ layer = -1
 
 [node name="Canvas" type="TextureRect" parent="VSplitContainer/TopPanel/CanvasLayer" node_paths=PackedStringArray("size_mirror")]
 texture_filter = 1
-material = SubResource("ShaderMaterial_q6xb5")
+material = SubResource("ShaderMaterial_5evjd")
 custom_minimum_size = Vector2(0, 64)
 offset_right = 360.0
 offset_bottom = 273.0
 size_flags_vertical = 3
 size_flags_stretch_ratio = 2.0
-texture = SubResource("ImageTexture_y0ndh")
+texture = SubResource("ImageTexture_0hi73")
 ignore_texture_size = true
 script = ExtResource("5_2krge")
 background_colors = []
@@ -3044,10 +3044,10 @@ text = "Background Color
 horizontal_alignment = 1
 
 [node name="ColorPicker" type="ColorPicker" parent="SettingsMenu/SettingsContainer/PanelContainer/VBoxContainer"]
-offset_left = 48.0
-offset_top = 24.0
-offset_right = 24.0
-offset_bottom = 24.0
+offset_left = 80.0
+offset_top = 40.0
+offset_right = 40.0
+offset_bottom = 40.0
 color = Color(0.145098, 0.172549, 0.34902, 1)
 edit_alpha = false
 can_add_swatches = false

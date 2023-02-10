@@ -362,7 +362,7 @@ bool SandSimulation::is_cold(int row, int col) {
             if (x == 0 && y == 0 || !in_bounds(row + y, col + x))
                 continue;
             int c = get_cell(row + y, col + x);
-            if (c == 65 || c == 87 || c == 88 || c == 89 || c == 90 || c == 91 || c == 92) 
+            if (c == 87 || c == 88 || c == 89 || c == 90 || c == 91 || c == 92) 
                 return true;
         }
     } 
