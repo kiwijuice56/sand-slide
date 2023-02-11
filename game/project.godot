@@ -8,123 +8,17 @@
 
 config_version=5
 
-_global_script_classes=[{
-"base": "TabContainer",
-"class": &"ElementSelector",
-"language": &"GDScript",
-"path": "res://main/ui/element_selector/element_selector.gd"
-}, {
-"base": "Resource",
-"class": &"ElementVisual",
-"language": &"GDScript",
-"path": "res://main/element_visuals/types/element_visual.gd"
-}, {
-"base": "ElementVisual",
-"class": &"FlatColor",
-"language": &"GDScript",
-"path": "res://main/element_visuals/types/flat_color.gd"
-}, {
-"base": "ElementVisual",
-"class": &"Fluid",
-"language": &"GDScript",
-"path": "res://main/element_visuals/types/fluid.gd"
-}, {
-"base": "Label",
-"class": &"FpsLabel",
-"language": &"GDScript",
-"path": "res://main/ui/fps_label.gd"
-}, {
-"base": "ElementVisual",
-"class": &"GradientColor",
-"language": &"GDScript",
-"path": "res://main/element_visuals/types/gradient_color.gd"
-}, {
-"base": "Node",
-"class": &"Main",
-"language": &"GDScript",
-"path": "res://main/main.gd"
-}, {
-"base": "ElementVisual",
-"class": &"Metal",
-"language": &"GDScript",
-"path": "res://main/element_visuals/types/metal.gd"
-}, {
-"base": "TextureRect",
-"class": &"SandCanvas",
-"language": &"GDScript",
-"path": "res://main/ui/canvas/canvas.gd"
-}, {
-"base": "Resource",
-"class": &"SaveFile",
-"language": &"GDScript",
-"path": "res://main/save_file/save_file.gd"
-}, {
-"base": "Node",
-"class": &"SaveFileManager",
-"language": &"GDScript",
-"path": "res://main/save_file/save_file_manager.gd"
-}, {
-"base": "Submenu",
-"class": &"SaveFileMenu",
-"language": &"GDScript",
-"path": "res://main/ui/submenu/save/save_file_menu.gd"
-}, {
-"base": "PanelContainer",
-"class": &"SaveFilePanel",
-"language": &"GDScript",
-"path": "res://main/ui/submenu/save/save_file_panel/save_file_panel.gd"
-}, {
-"base": "Submenu",
-"class": &"SettingsMenu",
-"language": &"GDScript",
-"path": "res://main/ui/submenu/settings/settings_menu.gd"
-}, {
-"base": "ColorRect",
-"class": &"SplashScreen",
-"language": &"GDScript",
-"path": "res://main/ui/splash_screen/splash_screen.gd"
-}, {
-"base": "Control",
-"class": &"Submenu",
-"language": &"GDScript",
-"path": "res://main/ui/submenu/submenu.gd"
-}, {
-"base": "Control",
-"class": &"UI",
-"language": &"GDScript",
-"path": "res://main/ui/ui.gd"
-}]
-_global_script_class_icons={
-"ElementSelector": "",
-"ElementVisual": "",
-"FlatColor": "",
-"Fluid": "",
-"FpsLabel": "",
-"GradientColor": "",
-"Main": "",
-"Metal": "",
-"SandCanvas": "",
-"SaveFile": "",
-"SaveFileManager": "",
-"SaveFileMenu": "",
-"SaveFilePanel": "",
-"SettingsMenu": "",
-"SplashScreen": "",
-"Submenu": "",
-"UI": ""
-}
-
 [application]
 
 config/name="sandslide"
 run/main_scene="res://main/Main.tscn"
 config/features=PackedStringArray("4.0")
 run/max_fps=60
-boot_splash/show_image=false
 boot_splash/bg_color=Color(0, 0, 0, 1)
+boot_splash/show_image=false
 config/icon="res://icon.png"
 config/windows_native_icon="res://favicon.ico"
-config/version="2.1"
+config/version="2.2"
 
 [display]
 
@@ -154,12 +48,12 @@ ui_down={
 }
 toggle_fps={
 "deadzone": 0.5,
-"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194306,"unicode":0,"echo":false,"script":null)
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194306,"key_label":0,"unicode":0,"echo":false,"script":null)
 ]
 }
 enter={
 "deadzone": 0.5,
-"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194309,"unicode":0,"echo":false,"script":null)
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194309,"key_label":0,"unicode":0,"echo":false,"script":null)
 ]
 }
 screen_press={
@@ -179,6 +73,7 @@ limits/debugger/max_errors_per_second=1
 [rendering]
 
 renderer/rendering_method.mobile="gl_compatibility"
+textures/vram_compression/import_etc2_astc=true
 shader_compiler/shader_cache/strip_debug=true
 environment/ssao/quality=1
 environment/ssil/quality=1

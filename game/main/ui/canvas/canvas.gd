@@ -1,6 +1,5 @@
 extends TextureRect
 class_name SandCanvas
-@tool
 # Draws data from the simulation onto an image for display
 
 @export var background_colors: Array[Color]
