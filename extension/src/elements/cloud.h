@@ -9,11 +9,14 @@ public:
     const double DECAY = 1.0 / 18;
     const double STORM = 1.0 / 16;
     const double ICE = 1.0 / 512;
+    const double MELT = 1.0 / 2;
 
     void process(SandSimulation *sim, int row, int col) override {
         // Adding a limit slows the cloud down
         if (sim->randf() > PROCESS) {
             return;
+        } else if (sim->randf() < MELT && sim->is_on_fire(row, col)) {
+            sim->set_cell(row, col, 0);
         } else if (sim->randf() < ICE && sim->touch_count(row, col, 85)) {
             sim->set_cell(row, col, 88);
         } if (sim->randf() < DECAY || sim->touch_count(row, col, 58) > 2) {

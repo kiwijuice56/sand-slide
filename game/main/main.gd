@@ -20,7 +20,7 @@ const ELEMENT_INDEX = [
 	"Fish", "FishRight", "Strange", "Meteor", "MeteorB", "MeteorC",
 	"Lapis", "Ruby", "Emerald", "Worm Hole", "Iodine", "IodineG", "IodineL",
 	"Snow", "Slime", "Neptune", "IceExplosion", "IceDust", "IceworkA", "IceworkB",
-	"IceworkC", "IceBomb"]
+	"IceworkC", "IceBomb", "Beam", "Nanobot", "CarbonDioxide", "Sandstone"]
 
 var POWDER = {}
 var FLUID = {}
@@ -83,7 +83,7 @@ func _on_mouse_pressed(start: Vector2, end: Vector2) -> void:
 				draw_line(start.x - i, start.y, end.x - i, end.y)
 				draw_line(start.x + i, start.y, end.x + i, end.y)
 				i += 1
-	draw_circle(end.x, end.y, brush_size / 2)
+	draw_circle(end.x, end.y, int(brush_size / 2.0))
 
 func _process(_delta) -> void:
 	if draw_enabled:
@@ -141,7 +141,7 @@ func draw_pixel(row: float, col: float) -> void:
 	
 	# Do not allow fluids to be drawn over solids, unless its fire over vapor/smoke
 	if selected_element in FLUID and not at == 0:
-		if not ((selected_element == 5 or selected_element == 24) and (at == 6 or at == 58)):
+		if not ((selected_element == 5 or selected_element == 24) and (at == 6 or at == 58 or at == 87)):
 			return 
 	
 	if selected_element in [42, 63, 64]:

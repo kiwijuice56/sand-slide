@@ -94,6 +94,10 @@
 #include "elements/icework_b.h"
 #include "elements/icework_c.h"
 #include "elements/ice_bomb.h"
+#include "elements/beam.h"
+#include "elements/nanobot.h"
+#include "elements/sandstone.h"
+#include "elements/carbon_dioxide.h"
 
 #include <godot_cpp/core/class_db.hpp>
 
@@ -200,6 +204,10 @@ SandSimulation::SandSimulation() {
     elements.at(91) = new IceworkB();
     elements.at(92) = new IceworkC();
     elements.at(93) = new IceBomb();
+    elements.at(94) = new Beam();
+    elements.at(95) = new Nanobot();
+    elements.at(96) = new CarbonDioxide();
+    elements.at(97) = new Sandstone();
 
     draw_data = PackedByteArray();
 
@@ -362,7 +370,7 @@ bool SandSimulation::is_cold(int row, int col) {
             if (x == 0 && y == 0 || !in_bounds(row + y, col + x))
                 continue;
             int c = get_cell(row + y, col + x);
-            if (c == 87 || c == 88 || c == 89 || c == 90 || c == 91 || c == 92) 
+            if (c == 87 || c == 88 || c == 89 || c == 90 || c == 91 || c == 92 || c == 96) 
                 return true;
         }
     } 

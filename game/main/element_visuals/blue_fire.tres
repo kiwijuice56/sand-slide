@@ -1,4 +1,4 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://dpnm50gp20npl"]
+[gd_resource type="Resource" script_class="Fluid" load_steps=2 format=3 uid="uid://dpnm50gp20npl"]
 
 [ext_resource type="Script" path="res://main/element_visuals/types/fluid.gd" id="1_86k37"]
 
@@ -19,4 +19,3 @@ shimmer_density = 3.0
 shimmer_opacity = 0.9
 shimmer_cycle = 0.3
 id = 24
-bloom = 0.0

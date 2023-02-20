@@ -5,8 +5,8 @@
 
 class HydrogenExplosion: public Element {
 public:
-    const double PROCESS = 1.0 / 4;
-    const double DECAY = 1.0 / 3.0;
+    const double PROCESS = 1.0 / 8;
+    const double DECAY = 1.0 / 6.0;
     const double EXTINGUISH = 1.0 / 1.2;
 
     void process(SandSimulation *sim, int row, int col) override {

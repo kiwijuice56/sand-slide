@@ -5,7 +5,7 @@
 
 class FishRight: public Element {
 public:
-    const double GROWTH = 1.0 / 1024;
+    const double GROWTH = 1.0 / 256;
     const double DEATH = 1.0 / 1600;
     const double POISON = 1.0 / 16;
     const double PROCESS = 1.0 / 4;

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" load_steps=2 format=3]
+[gd_resource type="Resource" script_class="FlatColor" load_steps=2 format=3 uid="uid://b66c2eofseuy4"]
 
 [ext_resource type="Script" path="res://main/element_visuals/types/flat_color.gd" id="1_q2c46"]
 

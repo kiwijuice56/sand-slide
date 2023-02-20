@@ -7,6 +7,7 @@ class Strange: public Element {
 public:
     const double PROCESS = 1.0 / 2.5;
     const double DECAY = 1.0 / 24;
+    const double DECAY_ALL = 1.0 / 1024;
 
     void process(SandSimulation *sim, int row, int col) override {
         // Adding a limit slows the explosion down
@@ -14,7 +15,7 @@ public:
             return;
         }
 
-        if (sim->touch_count(row, col, 74) + sim->touch_count(row, col, 0) >= 3 && sim->randf() < DECAY) {
+        if (sim->randf() < DECAY_ALL || sim->touch_count(row, col, 74) + sim->touch_count(row, col, 0) >= 3 && sim->randf() < DECAY) {
             sim->set_cell(row, col, 0);
         } else {
             if (sim->in_bounds(row + 1, col) && sim->get_cell(row + 1, col) != 0) 

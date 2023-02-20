@@ -8,7 +8,7 @@ class Water: public Element {
 public:
     const double ABSORB = 1.0 / 4098;
     const double EVAPORATION = 1.0 / 64;
-    const double MELT = 1.0 / 64;
+    const double MELT = 1.0 / 128;
     const double MIX = 1.0 / 4;
     const double FREEZE = 1.0 / 4;
 
