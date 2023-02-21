@@ -38,10 +38,9 @@ func _ready():
 				button.get("theme_override_styles/disabled").corner_radius_top_right = 4 if i == 3 else 0
 				button.get("theme_override_styles/disabled").corner_radius_bottom_right = 4 if i == 11 else 0
 
-func _on_element_selected(button: Button) -> void:
-	var element_name: String = button.name
+func _on_element_selected(button: ElementButton) -> void:
 	tap_button.button_pressed = false
-	simulation.selected_element = simulation.ELEMENT_INDEX.find(element_name) + (128 if tap_on else 0)
+	simulation.selected_element = button.id + (128 if tap_on else 0)
 	
 	unbolden_button(last_button)
 	bolden_button(button)

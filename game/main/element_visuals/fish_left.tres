@@ -1,9 +1,0 @@
-[gd_resource type="Resource" load_steps=2 format=3 uid="uid://bipe3ilt112xw"]
-
-[ext_resource type="Script" path="res://main/element_visuals/types/flat_color.gd" id="1_5mo0f"]
-
-[resource]
-script = ExtResource("1_5mo0f")
-color = Color(0.960784, 0.486275, 0.211765, 1)
-id = 72
-bloom = 0.0

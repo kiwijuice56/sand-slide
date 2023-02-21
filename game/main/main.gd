@@ -2,26 +2,6 @@ extends Node
 class_name Main
 # Contains the sand simulation and acts as the root of the game
 
-# Keep track of the indices of each element so that this node can draw it into the simulation
-const ELEMENT_INDEX = [
-	"Void", "Sand", "Rock", "Water", "Polliwog", "Fire", 
-	"Smoke", "Algae", "Sand Duck", "Explosion", "Lead Azide",
-	"Soil", "Seed", "Germinated Seed", "Grass", "Wall", "Dust",
-	"Iron", "Wood", "Ice", "Lava", "Acid", "Acid Gas", "Fairy", 
-	"Blue Fire", "Glass", "Laser", "Crystal", "Air", "Black Hole",
-	"Oil", "Urchin", "Dragon", "Critter", "Nuclear Explosion", 
-	"Uranium", "Neutron", "Lightning", "Plasma", "Electron", "StormPlasma",
-	"Hurricane", "Powder", "Liquid Powder", "Mercury", "Potassium",
-	"PExplosion", "Hydrogen", "HExplosion", "Penguin", "BurningOil",
-	"Gold", "MoltenGold", "MoltenGlass", "AlgaeRed", "AlgaeBrown", "CoolLava",
-	"Obsidian", "Vapor", "AcidWater", "OxidizedPotassium", 
-	"BurningPotassium", "Rust", "PowderB", "PowderC", "Kuiper", "Sun",
-	"FireworkB", "FireworkC", "FireworkTrail", "Salt", "SaltWater",
-	"Fish", "FishRight", "Strange", "Meteor", "MeteorB", "MeteorC",
-	"Lapis", "Ruby", "Emerald", "Worm Hole", "Iodine", "IodineG", "IodineL",
-	"Snow", "Slime", "Neptune", "IceExplosion", "IceDust", "IceworkA", "IceworkB",
-	"IceworkC", "IceBomb", "Beam", "Nanobot", "CarbonDioxide", "Sandstone"]
-
 var POWDER = {}
 var FLUID = {}
 

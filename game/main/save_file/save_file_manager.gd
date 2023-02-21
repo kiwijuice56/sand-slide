@@ -1,5 +1,6 @@
 extends Node
 class_name SaveFileManager
+# Helper class for managing all save files in user storage
 
 @export var sim_holder: Node
 
@@ -24,13 +25,14 @@ func update_files() -> void:
 func create_save_file(save_name: String) -> SaveFile:
 	var cleaned_name: String = ""
 	for c in save_name:
-		if c in "\\/:*?\"<>":
-			continue
 		if c == " ":
 			c = "_"
+		# Regex would be nice here, but there's no strict match method so I'd rather not mess with it
+		if not c in "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_":
+			continue
 		cleaned_name += c.to_lower()
 	if len(cleaned_name) == 0:
-		cleaned_name = "new_file"
+		cleaned_name = "new_file" + str(randi() % 1000)
 	save_name = cleaned_name
 	
 	var date: Dictionary = Time.get_datetime_dict_from_system(true)

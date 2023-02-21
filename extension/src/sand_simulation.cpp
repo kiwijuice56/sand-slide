@@ -98,6 +98,7 @@
 #include "elements/nanobot.h"
 #include "elements/sandstone.h"
 #include "elements/carbon_dioxide.h"
+#include "elements/osmium.h"
 
 #include <godot_cpp/core/class_db.hpp>
 
@@ -208,6 +209,7 @@ SandSimulation::SandSimulation() {
     elements.at(95) = new Nanobot();
     elements.at(96) = new CarbonDioxide();
     elements.at(97) = new Sandstone();
+    elements.at(98) = new Osmium();
 
     draw_data = PackedByteArray();
 

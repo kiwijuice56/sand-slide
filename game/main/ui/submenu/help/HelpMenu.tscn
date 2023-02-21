@@ -1,0 +1,243 @@
+[gd_scene load_steps=12 format=3 uid="uid://cruyxsiw0utpr"]
+
+[ext_resource type="Theme" uid="uid://co20v1mxv2dfm" path="res://main/ui/_theme/theme.tres" id="1_rrple"]
+[ext_resource type="Script" path="res://main/ui/submenu/submenu.gd" id="2_1h5h1"]
+[ext_resource type="FontFile" uid="uid://b8lxwo5dkwrs4" path="res://main/ui/_theme/font/Poppins-Regular.ttf" id="3_q8qyd"]
+[ext_resource type="Script" path="res://main/ui/submenu/help/hyperlink.gd" id="4_eo6pc"]
+[ext_resource type="Texture2D" uid="uid://skg5bmd8m812" path="res://main/ui/icons/close.png" id="5_6cgdu"]
+
+[sub_resource type="Theme" id="Theme_n7xkt"]
+default_font = ExtResource("3_q8qyd")
+default_font_size = 24
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e160y"]
+content_margin_left = 12.0
+content_margin_top = 16.0
+content_margin_right = 12.0
+content_margin_bottom = 24.0
+bg_color = Color(0.403922, 0.403922, 0.431373, 0.921569)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="Animation" id="Animation_swdin"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_ho8so"]
+resource_name = "enter"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_obmfd"]
+resource_name = "exit"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.3),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_01f6e"]
+_data = {
+"RESET": SubResource("Animation_swdin"),
+"enter": SubResource("Animation_ho8so"),
+"exit": SubResource("Animation_obmfd")
+}
+
+[node name="HelpMenu" type="Control" node_paths=PackedStringArray("simulation", "anim", "back_button")]
+visible = false
+modulate = Color(1, 1, 1, 0)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_rrple")
+script = ExtResource("2_1h5h1")
+simulation = NodePath("")
+anim = NodePath("AnimationPlayer")
+back_button = NodePath("HelpContainer/PanelContainer/Back")
+
+[node name="HelpCover" type="ColorRect" parent="."]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.556863)
+
+[node name="HelpContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = SubResource("Theme_n7xkt")
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="PanelContainer" type="PanelContainer" parent="HelpContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_e160y")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HelpContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="Title" type="Label" parent="HelpContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Help"
+horizontal_alignment = 1
+
+[node name="WhatContainer" type="VBoxContainer" parent="HelpContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/separation = 3
+
+[node name="Title" type="Label" parent="HelpContainer/PanelContainer/VBoxContainer/WhatContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "What Is Sand Slide?"
+horizontal_alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="HelpContainer/PanelContainer/VBoxContainer/WhatContainer"]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 12
+text = "This is an interactive particle game! Experiment with elements, express yourself, or just mess around. This is purely a passion project; No data is collected from users and there are no ads/microtransactions. You can find the source code on the sand slide github (https://github.com/kiwijuice56/sand-slide). Enjoy!"
+fit_content = true
+
+[node name="SaveContainer" type="VBoxContainer" parent="HelpContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/separation = 3
+
+[node name="Title" type="Label" parent="HelpContainer/PanelContainer/VBoxContainer/SaveContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "How Does Saving Work?"
+horizontal_alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="HelpContainer/PanelContainer/VBoxContainer/SaveContainer"]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 12
+text = "In the file menu, tap the text box to name a new file and press enter. The created file will keep your game perfectly in tact! After a file is saved, you can tap on it to overwrite, load, or delete it."
+fit_content = true
+
+[node name="AttributionContainer" type="VBoxContainer" parent="HelpContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/separation = 3
+
+[node name="Title" type="Label" parent="HelpContainer/PanelContainer/VBoxContainer/AttributionContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "Attribution"
+horizontal_alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="HelpContainer/PanelContainer/VBoxContainer/AttributionContainer"]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 12
+text = "Many of the elements in sand slide are inspired by other falling sand games, including Sand:Box by SmellyMoo and Sandspiel by Max Bittker. Check these games out too!
+
+"
+fit_content = true
+
+[node name="HyperLinks" type="RichTextLabel" parent="HelpContainer/PanelContainer/VBoxContainer/AttributionContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_font_sizes/normal_font_size = 12
+theme_override_font_sizes/bold_font_size = 12
+theme_override_font_sizes/italics_font_size = 12
+theme_override_font_sizes/bold_italics_font_size = 12
+theme_override_font_sizes/mono_font_size = 12
+bbcode_enabled = true
+text = "[url=\"https://icons8.com/icon/67287/plumbing\"]Plumbing[/url], [url=\"https://icons8.com/icon/78855/eraser\"]eraser[/url], [url=\"https://icons8.com/icon/77782/file\"]file[/url], [url=\"https://icons8.com/icon/60006/support\"]support[/url], and [url=\"https://icons8.com/icon/71200/close\"]close[/url] icons by [url=\"https://icons8.com/\"]Icons8[/url]. "
+fit_content = true
+script = ExtResource("4_eo6pc")
+
+[node name="Back" type="Button" parent="HelpContainer/PanelContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+focus_mode = 0
+icon = ExtResource("5_6cgdu")
+icon_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+speed_scale = 2.0
+libraries = {
+"": SubResource("AnimationLibrary_01f6e")
+}

@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://dk6olyuqw7m7r"]
+
+[ext_resource type="Script" path="res://main/ui/fps_label/fps_label.gd" id="1_ghyna"]
+
+[node name="FPSLabelContainer" type="MarginContainer"]
+offset_right = 360.0
+offset_bottom = 45.0
+size_flags_vertical = 3
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+metadata/_edit_use_anchors_ = true
+
+[node name="FPSLabel" type="Label" parent="."]
+visible = false
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 12
+text = "FPS 0"
+script = ExtResource("1_ghyna")
+
+[node name="Timer" type="Timer" parent="FPSLabel"]
+autostart = true
