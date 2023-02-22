@@ -1,5 +1,5 @@
 # sand-slide
-Prototype falling sand game made with Godot 4 beta 9 and GDextension. The full game can be downloaded for free at the [itch.io page](https://kiwijuice56.itch.io/sand-slide).
+A falling sand game made with Godot 4.0 and GDextension. The full game can be downloaded for free on [itch.io](https://kiwijuice56.itch.io/sand-slide) or on the [Google Play Store] (https://play.google.com/store/apps/details?id=org.godotengine.sandslide).
 This repository is intended to serve as an example of using GDextension in a full project and to allow people to add new elements.
 
 ![Title](docs/background_sand_slide.png)
@@ -10,7 +10,7 @@ This repository is intended to serve as an example of using GDextension in a ful
 The GDExtension project was based on another open-source [demo project](https://github.com/paddy-exe/GDExtensionSummator).
 
 The majority of the game is implemented in C++ as a GDextension (in `extension\src`) that gets compiled into a dll file (in `game\bin`). 
-The user interface was created in a godot project (in `game`) that calls methods from the GDextension as if it was a node.
+The user interface was created in a godot project (in `game`) that calls methods from a custom GDextension API.
 
 ## Set Up
 1. Clone/download the repository

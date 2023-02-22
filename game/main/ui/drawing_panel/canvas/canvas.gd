@@ -4,9 +4,7 @@ class_name SandCanvas
 # Draws data from the simulation onto an image for display
 
 @export var px_scale: int = 3
-@export var element_folder_path: String = "res://main/element/"
 @export var element_materials: Array[Element] = []
-@export var size_mirror: TextureRect
 
 var released := true
 var start_draw: Vector2
@@ -17,21 +15,24 @@ var bg_idx: int
 
 signal mouse_pressed(start, end)
 
-func initialize_elements() -> void:
+# This method is only called in the editor to initialize the list of elements
+func _initialize_elements() -> void:
+	material = ShaderMaterial.new()
+	material.shader = preload("res://main/ui/drawing_panel/canvas/element_painter.gdshader")
+	texture = ImageTexture.new()
+	
 	element_materials = []
-	var dir: DirAccess = DirAccess.open(element_folder_path)
+	var dir: DirAccess = DirAccess.open("res://main/element/")
 	for file in dir.get_files():
 		if not file.contains(".tres"):
 			continue
 		element_materials.append(ResourceLoader.load("%s/%s" % [dir.get_current_dir(), file]))
 
 func _ready() -> void:
-	# This initializes the element list in the editor
-	# initialize_elements()
-	material = ShaderMaterial.new()
-	material.shader = preload("res://main/ui/drawing_panel/canvas/element_painter.gdshader")
-	texture = ImageTexture.new()
-	size_mirror.resized.connect(_resized)
+	# _initialize_elements()
+	# Initializing the visual element data
+	# As of 4.0 beta, Godot crashes when working with shader array uniforms, so they must be intialized in code 
+	# I would do this in a tool script as well, but Godot doesn't save changes to shader params
 	
 	# First, we make arrays to keep track of where each element is located in the category arrays
 	var fluid_ids := []
@@ -78,24 +79,22 @@ func _ready() -> void:
 			param.append(Vector3())
 		metal_params.append(param)
 	
+	var fluid_param_names: Array[String] = ["noise_scale", "noise_speed", "current_size", "wave_cycle",
+	"contraction_size", "wave_density", "shimmer_speed", "shimmer_density", "shimmer_opacity",
+	"shimmer_cycle", "color_a", "color_b", "color_c", "noise_texture"]
+	
+	var gradient_param_names: Array[String] = ["color_a", "color_b", "color_c",
+	"color_d", "color_e", "offset_1", "offset_2", "offset_3"]
+	
 	# Load the arrays from data in each resource
 	for mat in element_materials:
 		if mat is Fluid:
-			fluid_params[0][fid] = mat.noise_scale
-			fluid_params[1][fid] = mat.noise_speed
-			fluid_params[2][fid] = mat.current_size
-			fluid_params[3][fid] = mat.wave_cycle
-			fluid_params[4][fid] = mat.contraction_size
-			fluid_params[5][fid] = mat.wave_density
-			fluid_params[6][fid] = mat.shimmer_speed
-			fluid_params[7][fid] = mat.shimmer_density
-			fluid_params[8][fid] = mat.shimmer_opacity
-			fluid_params[9][fid] = mat.shimmer_cycle
-			# A bug in godot 4 beta 9 doesn't allow for Colors to be passed as parameters
-			fluid_params[10][fid] = Vector3(mat.color_a.r, mat.color_a.g, mat.color_a.b)
-			fluid_params[11][fid] = Vector3(mat.color_b.r, mat.color_b.g, mat.color_b.b)
-			fluid_params[12][fid] = Vector3(mat.color_c.r, mat.color_c.g, mat.color_c.b)
-			fluid_params[13][fid] = mat.noise_texture
+			for i in range(len(fluid_param_names)):
+				if i >= 10 and i <= 12:
+					# A bug in Godot 4 doesn't allow for Colors to be passed as parameters
+					fluid_params[i][fid] = Vector3(mat.get(fluid_param_names[i]).r, mat.get(fluid_param_names[i]).g, mat.get(fluid_param_names[i]).b)
+				else:
+					fluid_params[i][fid] = mat.get(fluid_param_names[i])
 			fid += 1
 			fluid_ids[mat.id] = fid 
 		if mat is FlatColor:
@@ -105,14 +104,11 @@ func _ready() -> void:
 			if mat.id == 0:
 				bg_idx = aid - 1
 		if mat is GradientColor:
-			gradient_params[0][gid] = Vector3(mat.color_a.r, mat.color_a.g, mat.color_a.b)
-			gradient_params[1][gid] = Vector3(mat.color_b.r, mat.color_b.g, mat.color_b.b)
-			gradient_params[2][gid] = Vector3(mat.color_c.r, mat.color_c.g, mat.color_c.b)
-			gradient_params[3][gid] = Vector3(mat.color_d.r, mat.color_d.g, mat.color_d.b)
-			gradient_params[4][gid] = Vector3(mat.color_e.r, mat.color_e.g, mat.color_e.b)
-			gradient_params[5][gid] = mat.offset_1
-			gradient_params[6][gid] = mat.offset_2
-			gradient_params[7][gid] = mat.offset_3
+			for i in range(len(gradient_param_names)):
+				if i <= 4:
+					gradient_params[i][gid] = Vector3(mat.get(gradient_param_names[i]).r, mat.get(gradient_param_names[i]).g, mat.get(gradient_param_names[i]).b)
+				else:
+					gradient_params[i][gid] = mat.get(gradient_param_names[i])
 			gid += 1
 			gradient_ids[mat.id] = gid 
 		if mat is Metal:
@@ -120,48 +116,33 @@ func _ready() -> void:
 			metal_params[1][mid] = Vector3(mat.color_b.r, mat.color_b.g, mat.color_b.b)
 			mid += 1
 			metal_ids[mat.id] = mid 
-	# Load all the values into the shader
+	# Load all of the values into the shader
 	get_material().set_shader_parameter("fluid_id_match", fluid_ids)
 	get_material().set_shader_parameter("flat_color_id_match", flat_ids)
 	get_material().set_shader_parameter("gradient_id_match", gradient_ids)
 	get_material().set_shader_parameter("metal_id_match", metal_ids)
 	
-	get_material().set_shader_parameter("noise_scale", fluid_params[0])
-	get_material().set_shader_parameter("noise_speed", fluid_params[1])
-	get_material().set_shader_parameter("current_size", fluid_params[2])
-	get_material().set_shader_parameter("wave_cycle", fluid_params[3])
-	get_material().set_shader_parameter("contraction_size", fluid_params[4])
-	get_material().set_shader_parameter("wave_density", fluid_params[5])
-	get_material().set_shader_parameter("shimmer_speed", fluid_params[6])
-	get_material().set_shader_parameter("shimmer_density", fluid_params[7])
-	get_material().set_shader_parameter("shimmer_opacity", fluid_params[8])
-	get_material().set_shader_parameter("shimmer_cycle", fluid_params[9])
-	get_material().set_shader_parameter("color_a", fluid_params[10])
-	get_material().set_shader_parameter("color_b", fluid_params[11])
-	get_material().set_shader_parameter("color_c", fluid_params[12])
-	get_material().set_shader_parameter("noise_texture", fluid_params[13])
+	for i in range(len(fluid_param_names)):
+		get_material().set_shader_parameter(fluid_param_names[i], fluid_params[i])
 	
 	get_material().set_shader_parameter("flat_color", flat_params)
 	
-	get_material().set_shader_parameter("gradient_color_a", gradient_params[0])
-	get_material().set_shader_parameter("gradient_color_b", gradient_params[1])
-	get_material().set_shader_parameter("gradient_color_c", gradient_params[2])
-	get_material().set_shader_parameter("gradient_color_d", gradient_params[3])
-	get_material().set_shader_parameter("gradient_color_e", gradient_params[4])
-	get_material().set_shader_parameter("gradient_offset_1", gradient_params[5])
-	get_material().set_shader_parameter("gradient_offset_2", gradient_params[6])
-	get_material().set_shader_parameter("gradient_offset_3", gradient_params[7])
+	for i in range(len(gradient_param_names)):
+		get_material().set_shader_parameter("gradient_" + gradient_param_names[i], gradient_params[i])
 	
 	get_material().set_shader_parameter("metal_color_a", metal_params[0])
 	get_material().set_shader_parameter("metal_color_b", metal_params[1])
 	
-	# We have to initialize these things on a new material since godot 4 beta 9 crashes with uniform arrays :(
 	get_material().set_shader_parameter("water_texture", preload("res://main/element/textures/water_noise.png"))
 	get_material().set_shader_parameter("fire_texture", preload("res://main/element/textures/fire_noise.jpg"))
 	get_material().set_shader_parameter("crystal_texture", preload("res://main/element/textures/crystal.jpg"))
+	
+	# The actual canvas does not resize according to size flags due to a bug with texture resizing
+	# Instead, a separate canvas is resized properly while this canvas copies its size
+	%SizeMirror.resized.connect(_resized)
 
 func _resized() -> void:
-	size = size_mirror.size
+	size = %SizeMirror.size
 	get_material().set_shader_parameter("width", size.x)
 	get_material().set_shader_parameter("height", size.y)
 	get_material().set_shader_parameter("px_scale", px_scale)
@@ -180,8 +161,7 @@ func _process(_delta: float) -> void:
 			start_draw = end_draw
 
 func repaint(sim: SandSimulation) -> void:
-	# The simulation stores a single byte for each element, so we can use the luminosity format
-	# to save space
+	# The simulation stores a single byte for each element, so we can use the luminosity format to save space
 	if sim.get_width() <= 0 or sim.get_height() <= 0:
 		return
 	texture.set_image(Image.create_from_data(sim.get_width(), sim.get_height(), false, Image.FORMAT_L8, sim.get_draw_data()))

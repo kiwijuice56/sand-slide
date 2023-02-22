@@ -1,10 +1,10 @@
-[gd_scene load_steps=14 format=3 uid="uid://re58dka46cge"]
+[gd_scene load_steps=14 format=3]
 
 [ext_resource type="Theme" uid="uid://co20v1mxv2dfm" path="res://main/ui/_theme/theme.tres" id="1_vtqwt"]
 [ext_resource type="Script" path="res://main/ui/submenu/save/save_file_menu.gd" id="2_djbua"]
 [ext_resource type="PackedScene" path="res://main/ui/submenu/save/save_file_panel/SaveFilePanel.tscn" id="3_v1i8r"]
 [ext_resource type="FontFile" uid="uid://b8lxwo5dkwrs4" path="res://main/ui/_theme/font/Poppins-Regular.ttf" id="4_0qhiq"]
-[ext_resource type="Texture2D" uid="uid://skg5bmd8m812" path="res://main/ui/icons/close.png" id="5_3a25r"]
+[ext_resource type="Texture2D" uid="uid://skg5bmd8m812" path="res://main/ui/_icons/close.png" id="5_3a25r"]
 
 [sub_resource type="Theme" id="Theme_n7xkt"]
 default_font = ExtResource("4_0qhiq")
