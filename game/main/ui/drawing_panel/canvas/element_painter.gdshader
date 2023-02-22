@@ -5,7 +5,7 @@ uniform int height = 800;
 uniform int px_scale = 4;
 
 uniform int[256] flat_color_id_match;
-uniform vec3[24] flat_color;
+uniform vec3[26] flat_color;
 
 uniform int[256] gradient_id_match;
 uniform vec3[48] gradient_color_a;

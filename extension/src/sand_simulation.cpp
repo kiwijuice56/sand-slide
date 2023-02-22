@@ -99,6 +99,8 @@
 #include "elements/sandstone.h"
 #include "elements/carbon_dioxide.h"
 #include "elements/osmium.h"
+#include "elements/dry_sponge.h"
+#include "elements/wet_sponge.h"
 
 #include <godot_cpp/core/class_db.hpp>
 
@@ -210,6 +212,8 @@ SandSimulation::SandSimulation() {
     elements.at(96) = new CarbonDioxide();
     elements.at(97) = new Sandstone();
     elements.at(98) = new Osmium();
+    elements.at(99) = new DrySponge();
+    elements.at(100) = new WetSponge();
 
     draw_data = PackedByteArray();
 

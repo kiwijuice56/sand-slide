@@ -10,7 +10,7 @@ var released := true
 var start_draw: Vector2
 var end_draw: Vector2
 
-var flat_params: Array[Vector3]
+@export var flat_params: Array[Vector3]
 var bg_idx: int
 
 signal mouse_pressed(start, end)
@@ -20,20 +20,13 @@ func _initialize_elements() -> void:
 	material = ShaderMaterial.new()
 	material.shader = preload("res://main/ui/drawing_panel/canvas/element_painter.gdshader")
 	texture = ImageTexture.new()
-	
 	element_materials = []
 	var dir: DirAccess = DirAccess.open("res://main/element/")
 	for file in dir.get_files():
 		if not file.contains(".tres"):
 			continue
 		element_materials.append(ResourceLoader.load("%s/%s" % [dir.get_current_dir(), file]))
-
-func _ready() -> void:
-	# _initialize_elements()
-	# Initializing the visual element data
-	# As of 4.0 beta, Godot crashes when working with shader array uniforms, so they must be intialized in code 
-	# I would do this in a tool script as well, but Godot doesn't save changes to shader params
-	
+		
 	# First, we make arrays to keep track of where each element is located in the category arrays
 	var fluid_ids := []
 	var flat_ids := []
@@ -64,7 +57,7 @@ func _ready() -> void:
 			param.append(0)
 		fluid_params.append(param)
 	
-	for _i in range(24):
+	for _i in range(26):
 		flat_params.append(Vector3())
 	
 	for _i in range(8):
@@ -137,6 +130,10 @@ func _ready() -> void:
 	get_material().set_shader_parameter("fire_texture", preload("res://main/element/textures/fire_noise.jpg"))
 	get_material().set_shader_parameter("crystal_texture", preload("res://main/element/textures/crystal.jpg"))
 	
+	ResourceSaver.save(get_material(), "res://element_painter.tres")
+
+func _ready() -> void:
+	_initialize_elements()
 	# The actual canvas does not resize according to size flags due to a bug with texture resizing
 	# Instead, a separate canvas is resized properly while this canvas copies its size
 	%SizeMirror.resized.connect(_resized)
