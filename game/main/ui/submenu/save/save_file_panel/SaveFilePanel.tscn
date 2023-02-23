@@ -1,8 +1,7 @@
-[gd_scene load_steps=7 format=3]
+[gd_scene load_steps=7 format=3 uid="uid://3k2xt0kc4klb"]
 
-[ext_resource type="Theme" path="res://main/ui/_theme/theme.tres" id="1_1uvf0"]
+[ext_resource type="Theme" uid="uid://co20v1mxv2dfm" path="res://main/ui/_theme/theme.tres" id="1_1uvf0"]
 [ext_resource type="Script" path="res://main/ui/submenu/save/save_file_panel/save_file_panel.gd" id="1_ftssb"]
-
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wwijs"]
 bg_color = Color(0.168627, 0.168627, 0.196078, 1)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=178 format=3 uid="uid://6liggmbly3oa"]
+[gd_scene load_steps=181 format=3 uid="uid://6liggmbly3oa"]
 
 [ext_resource type="Script" path="res://main/ui/element_selector/element_selector.gd" id="1_fxkbl"]
 [ext_resource type="Material" uid="uid://c5qvq03ayjd60" path="res://main/ui/element_selector/selected_material.tres" id="2_30e0c"]
@@ -285,6 +285,27 @@ corner_radius_bottom_left = 4
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8fyet"]
 bg_color = Color(0.929412, 0.752941, 0.752941, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7jmtd"]
+bg_color = Color(0.980392, 0.568627, 0.882353, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6qw4r"]
+bg_color = Color(1, 0.741176, 0.929412, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_72jwj"]
+bg_color = Color(0.921569, 0.356863, 0.854902, 1)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
@@ -1461,16 +1482,16 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
 mouse_filter = 1
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 16
-theme_override_styles/normal = SubResource("StyleBoxFlat_m050v")
-theme_override_styles/hover = SubResource("StyleBoxFlat_68bg6")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_8fyet")
+theme_override_styles/normal = SubResource("StyleBoxFlat_7jmtd")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6qw4r")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_72jwj")
 text = "sponge"
 script = ExtResource("3_bfdgk")
 id = 99

@@ -7,20 +7,17 @@ class SandSimulation;
 
 class WetSponge: public Element {
 public:
-    const double DRY = 1.0 / 16;
+    const double BURN = 1.0 / 16;
+    const double DRY = 1.0 / 1024;
 
     void process(SandSimulation *sim, int row, int col) override {
-        if (sim->randf() < DRY && sim->is_on_fire(row, col)) {
+        if (sim->randf() < BURN && sim->is_on_fire(row, col) || sim->randf() < DRY && sim->touch_count(row, col, 0) > 0) {
             sim->set_cell(row, col, 99);
-            sim->grow(row + 1, col, 0, 3);
-            sim->grow(row - 1, col, 0, 3);
-            sim->grow(row, col + 1, 0, 3);
-            sim->grow(row, col - 1, 0, 3);
-
-            sim->grow(row + 1, col + 1, 0, 3);
-            sim->grow(row - 1, col + 1, 0, 3);
-            sim->grow(row - 1, col - 1, 0, 3);
-            sim->grow(row + 1, col - 1, 0, 3);
+            for (int i = -1; i <= 1; i++) {
+                for (int j = -1; j <= 1; j++) {
+                    sim->grow(row + i, col + j, 0, 3);
+                }
+            }
         }
         
     }

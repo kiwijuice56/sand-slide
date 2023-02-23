@@ -7,11 +7,22 @@ class SandSimulation;
 
 class DrySponge: public Element {
 public:
-    const double GRAB = 1.0 / 32;
-    const double PROCESS = 1.0 / 16;
-    const double WETTEN = 1.0 / 64;
+    const double GRAB = 1.0 / 16;
+    const double PROCESS = 1.0 / 32;
+    const double WETTEN = 1.0 / 8;
+    const double WATER = 1.0 / 32;
 
     void process(SandSimulation *sim, int row, int col) override {
+        if (sim->randf() < WATER) {
+            int new_row = row + (int) (sim->randf() * 3 - 1);
+            int new_col = col + (int) (sim->randf() * 3 - 1);
+            if (sim->in_bounds(new_row, new_col) && sim->get_cell(new_row, new_col) == 100) {
+                sim->set_cell(new_row, new_col, 99);
+                sim->set_cell(row, col, 100);
+                return;
+            }
+        }
+
         if (sim->randf() >= PROCESS) 
             return;
         
