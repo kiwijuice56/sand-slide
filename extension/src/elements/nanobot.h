@@ -19,11 +19,11 @@ public:
             return;
         }
 
-        if (sim->randf() >= PROCESS) {
+        if (sim->randf() >= PROCESS || sim->is_cold(row, col)) {
             return;
         } 
 
-        if (sim->in_bounds(row + 1, col) && (sim->get_cell(row + 1, col) == 23 || sim->get_cell(row + 1, col) == 32)) {
+        if (sim->in_bounds(row + 1, col) && (sim->get_cell(row + 1, col) == 23 || sim->get_cell(row + 1, col) == 32 || sim->get_cell(row + 1, col) == 101)) {
             sim->grow(row + 1, col, -1, 94);
         }
 

@@ -8,7 +8,7 @@ class SandSimulation;
 class WetSponge: public Element {
 public:
     const double BURN = 1.0 / 16;
-    const double DRY = 1.0 / 1024;
+    const double DRY = 1.0 / 64;
 
     void process(SandSimulation *sim, int row, int col) override {
         if (sim->randf() < BURN && sim->is_on_fire(row, col) || sim->randf() < DRY && sim->touch_count(row, col, 0) > 0) {
