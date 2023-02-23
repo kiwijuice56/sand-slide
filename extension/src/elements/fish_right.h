@@ -3,6 +3,8 @@
 
 #include "element.h"
 
+// A salt water fish that shifts left and right through water
+// Left and right varities are the same, but are used to move fish in both directions
 class FishRight: public Element {
 public:
     const double GROWTH = 1.0 / 256;

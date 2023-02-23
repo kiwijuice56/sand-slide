@@ -1,4 +1,4 @@
-[gd_scene load_steps=184 format=3 uid="uid://6liggmbly3oa"]
+[gd_scene load_steps=181 format=3 uid="uid://6liggmbly3oa"]
 
 [ext_resource type="Script" path="res://main/ui/element_selector/element_selector.gd" id="1_fxkbl"]
 [ext_resource type="Material" uid="uid://c5qvq03ayjd60" path="res://main/ui/element_selector/selected_material.tres" id="2_30e0c"]
@@ -250,7 +250,7 @@ corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q815v"]
-bg_color = Color(0.988235, 0.615686, 0.286275, 1)
+bg_color = Color(0.988235, 0.67451, 0.286275, 1)
 border_color = Color(0.439216, 0.231373, 0.176471, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_do5ux"]
@@ -563,27 +563,6 @@ corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6oxfd"]
-bg_color = Color(0.168627, 0.188235, 0.239216, 1)
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gchs4"]
-bg_color = Color(0.301961, 0.298039, 0.368627, 1)
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_anqeg"]
-bg_color = Color(0.0784314, 0.0784314, 0.129412, 1)
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vfdwq"]
 bg_color = Color(0.839216, 0.6, 1, 1)
 corner_radius_top_left = 4
@@ -689,6 +668,27 @@ corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eqrwf"]
+bg_color = Color(0.235294, 0.290196, 0.509804, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xln85"]
+bg_color = Color(0.329412, 0.439216, 0.6, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nxdon"]
+bg_color = Color(0.192157, 0.164706, 0.419608, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e8k14"]
 bg_color = Color(0, 0.639216, 0.545098, 1)
 corner_radius_top_left = 4
@@ -747,27 +747,6 @@ corner_radius_bottom_left = 4
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_igoo4"]
 bg_color = Color(0.556863, 0.823529, 0.929412, 1)
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eqrwf"]
-bg_color = Color(0.235294, 0.290196, 0.509804, 1)
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xln85"]
-bg_color = Color(0.329412, 0.439216, 0.6, 1)
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nxdon"]
-bg_color = Color(0.192157, 0.164706, 0.419608, 1)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
@@ -1473,7 +1452,7 @@ theme_override_font_sizes/font_size = 16
 theme_override_styles/normal = SubResource("StyleBoxFlat_q815v")
 theme_override_styles/hover = SubResource("StyleBoxFlat_do5ux")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_a4wxe")
-text = "sandstone"
+text = "calcite"
 script = ExtResource("3_bfdgk")
 id = 97
 
@@ -1751,27 +1730,6 @@ text = "nanobot"
 script = ExtResource("3_bfdgk")
 id = 95
 
-[node name="Penguin" type="Button" parent="Life/Life"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-focus_mode = 0
-mouse_filter = 1
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
-theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
-theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
-theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
-theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 16
-theme_override_styles/normal = SubResource("StyleBoxFlat_6oxfd")
-theme_override_styles/hover = SubResource("StyleBoxFlat_gchs4")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_anqeg")
-text = "penguino"
-script = ExtResource("3_bfdgk")
-id = 49
-
 [node name="Critter" type="Button" parent="Life/Life"]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -1867,6 +1825,26 @@ text = "seed"
 script = ExtResource("3_bfdgk")
 id = 12
 
+[node name="Virus" type="Button" parent="Life/Life"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 0
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_eqrwf")
+theme_override_styles/hover = SubResource("StyleBoxFlat_xln85")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_nxdon")
+text = "virus"
+script = ExtResource("3_bfdgk")
+id = 101
+
 [node name="Chemical" type="MarginContainer" parent="."]
 visible = false
 layout_mode = 2
@@ -1944,26 +1922,6 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_igoo4")
 text = "dry ice"
 script = ExtResource("3_bfdgk")
 id = 93
-
-[node name="Virus" type="Button" parent="Chemical/Chemical"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-focus_mode = 0
-mouse_filter = 1
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
-theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
-theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
-theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 16
-theme_override_styles/normal = SubResource("StyleBoxFlat_eqrwf")
-theme_override_styles/hover = SubResource("StyleBoxFlat_xln85")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_nxdon")
-text = "virus"
-script = ExtResource("3_bfdgk")
-id = 101
 
 [node name="Hydrogen" type="Button" parent="Chemical/Chemical"]
 layout_mode = 2
@@ -2106,6 +2064,21 @@ script = ExtResource("3_bfdgk")
 id = 35
 
 [node name="Empty6" type="Button" parent="Chemical/Chemical"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 0
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_quppk")
+theme_override_styles/hover = SubResource("StyleBoxFlat_quppk")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_quppk")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_quppk")
+disabled = true
+text = " "
+
+[node name="Empty7" type="Button" parent="Chemical/Chemical"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3

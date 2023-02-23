@@ -10,7 +10,7 @@ public:
     const double DOWN_BLOCK = 1.0 / 16;
     const double DOWN = 1.0 / 1.5;
     const double COOL = 1.0 / 64;
-    const double REG_COOL = 1.0 / 1024;
+    const double REG_COOL = 1.0 / 1500;
 
     void process(SandSimulation *sim, int row, int col) override {
         // Conductivity
@@ -19,7 +19,7 @@ public:
             return;
         }
 
-        if (sim->randf() < COOL && sim->touch_count(row, col, 0) > 0 || sim->randf() < REG_COOL) {
+        if (sim->randf() < COOL && (sim->is_cold(row, col) || sim->touch_count(row, col, 0) > 0) || sim->randf() < REG_COOL) {
             sim->set_cell(row, col, 51);
             return;
         }

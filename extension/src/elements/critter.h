@@ -4,6 +4,7 @@
 #include "element.h"
 #include <stdlib.h>
 
+// A land organism that jumps around randomly
 class Critter: public Element {
 public:
     const double FLAME = 1.0 / 32;
@@ -18,7 +19,7 @@ public:
         } else if (sim->randf() < POISON && sim->is_poisoned(row, col)) {
             sim->set_cell(row, col, 16);
             return;
-        }
+        } 
 
         bool on_ground = !sim->in_bounds(row + 1, col) || sim->get_cell(row + 1, col) != 0;
 

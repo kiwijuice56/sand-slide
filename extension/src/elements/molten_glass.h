@@ -10,7 +10,7 @@ public:
     const double COOL = 1.0 / 32;
     const double SPREAD = 1.0 / 48;
     void process(SandSimulation *sim, int row, int col) override {
-        if (sim->randf() < COOL) {
+        if (sim->randf() < COOL || sim->is_cold(row, col)) {
             sim->set_cell(row, col, 25);
             return;
         }

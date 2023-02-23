@@ -3,11 +3,13 @@
 
 #include "element.h"
 
+// A salt and fresh water animal that grows similarly to dragons, but in water
 class Urchin: public Element {
 public:
     const double GROWTH = 0.000425;
     const double POISON = 1.0 / 16;
     const double AIR = 1.0 / 16;
+    const double EAT = 1.0 / 32;
 
     void process(SandSimulation *sim, int row, int col) override {
         if (sim->randf() < AIR && sim->touch_count(row, col, 3) + sim->touch_count(row, col, 71) == 0) {
@@ -26,6 +28,12 @@ public:
             sim->grow(row, col + (sim->randf() < 0.5 ? 1 : 2), 71, 31);
         } else if (sim->randf() < POISON && sim->is_poisoned(row, col)) {
             sim->set_cell(row, col, 16);
+        } else if (sim->randf() < EAT) {
+            int new_row = row + (sim->randf() < 0.5 ? 1 : -1);
+            int new_col = col + (sim->randf() < 0.5 ? 1 : -1);
+            sim->grow(new_row, new_col, 7, 31);
+            sim->grow(new_row, new_col, 54, 31);
+            sim->grow(new_row, new_col, 55, 31);
         }
     }
 

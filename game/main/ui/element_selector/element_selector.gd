@@ -17,26 +17,12 @@ func _ready():
 		for button in scroll_container.get_child(0).get_children():
 			var i: int = button.get_index()
 			button.button_down.connect(_on_element_selected.bind(button))
-			button.get("theme_override_styles/normal").corner_radius_top_left = 4 if i == 0 else 0
-			button.get("theme_override_styles/normal").corner_radius_bottom_left = 4 if i == 8 else 0
-			button.get("theme_override_styles/normal").corner_radius_top_right = 4 if i == 3 else 0
-			button.get("theme_override_styles/normal").corner_radius_bottom_right = 4 if i == 11 else 0
-			
-			button.get("theme_override_styles/pressed").corner_radius_top_left = 4 if i == 0 else 0
-			button.get("theme_override_styles/pressed").corner_radius_bottom_left = 4 if i == 8 else 0
-			button.get("theme_override_styles/pressed").corner_radius_top_right = 4 if i == 3 else 0
-			button.get("theme_override_styles/pressed").corner_radius_bottom_right = 4 if i == 11 else 0
-			
-			button.get("theme_override_styles/hover").corner_radius_top_left = 4 if i == 0 else 0
-			button.get("theme_override_styles/hover").corner_radius_bottom_left = 4 if i == 8 else 0
-			button.get("theme_override_styles/hover").corner_radius_top_right = 4 if i == 3 else 0
-			button.get("theme_override_styles/hover").corner_radius_bottom_right = 4 if i == 11 else 0
-			
-			if button.get("theme_override_styles/disabled") != null:
-				button.get("theme_override_styles/disabled").corner_radius_top_left = 4 if i == 0 else 0
-				button.get("theme_override_styles/disabled").corner_radius_bottom_left = 4 if i == 8 else 0
-				button.get("theme_override_styles/disabled").corner_radius_top_right = 4 if i == 3 else 0
-				button.get("theme_override_styles/disabled").corner_radius_bottom_right = 4 if i == 11 else 0
+			for style in ["normal", "pressed", "hover", "disabled"]:
+				if not button.get("theme_override_styles/" + style) == null:
+					button.get("theme_override_styles/" + style).corner_radius_top_left = 4 if i == 0 else 0
+					button.get("theme_override_styles/" + style).corner_radius_bottom_left = 4 if i == 8 else 0
+					button.get("theme_override_styles/" + style).corner_radius_top_right = 4 if i == 3 else 0
+					button.get("theme_override_styles/" + style).corner_radius_bottom_right = 4 if i == 11 else 0
 
 func _on_element_selected(button: ElementButton) -> void:
 	tap_button.button_pressed = false
