@@ -6,7 +6,7 @@
 
 class Mercury: public Element {
 public:
-    const double MELT = 1.0 / 64;
+    const double MELT = 1.0 / 4;
     const double DOWN_BLOCK = 1.0 / 16;
     const double DOWN = 1.0 / 1.5;
 

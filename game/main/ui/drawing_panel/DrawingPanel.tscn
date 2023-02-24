@@ -32,11 +32,11 @@
 [ext_resource type="Resource" path="res://main/element/firework_b.tres" id="29_3isx6"]
 [ext_resource type="Resource" path="res://main/element/firework_c.tres" id="30_sepff"]
 [ext_resource type="Resource" path="res://main/element/firework_trail.tres" id="31_othqd"]
-[ext_resource type="Resource" path="res://main/element/fish_left.tres" id="32_hjn4s"]
+[ext_resource type="Resource" uid="uid://cjvk5im3obbh0" path="res://main/element/fish_left.tres" id="32_hjn4s"]
 [ext_resource type="Resource" path="res://main/element/fish_right.tres" id="33_dwkvh"]
 [ext_resource type="Resource" path="res://main/element/germ_seed.tres" id="34_30s2k"]
 [ext_resource type="Resource" path="res://main/element/glass.tres" id="35_gx8ew"]
-[ext_resource type="Resource" path="res://main/element/gold.tres" id="36_epxjl"]
+[ext_resource type="Resource" uid="uid://de5t13vkorgan" path="res://main/element/gold.tres" id="36_epxjl"]
 [ext_resource type="Resource" path="res://main/element/grass.tres" id="37_oq0pw"]
 [ext_resource type="Resource" path="res://main/element/hydrogen.tres" id="38_dqsx2"]
 [ext_resource type="Resource" path="res://main/element/hydrogen_explosion.tres" id="39_xky7v"]
@@ -50,7 +50,7 @@
 [ext_resource type="Resource" path="res://main/element/iodine.tres" id="47_roobc"]
 [ext_resource type="Resource" path="res://main/element/iodine_gas.tres" id="48_2v2y3"]
 [ext_resource type="Resource" path="res://main/element/iodine_liquid.tres" id="49_qhb1k"]
-[ext_resource type="Resource" path="res://main/element/iron.tres" id="50_4oumb"]
+[ext_resource type="Resource" uid="uid://b8crvwsatbcfh" path="res://main/element/iron.tres" id="50_4oumb"]
 [ext_resource type="Resource" path="res://main/element/kuiper.tres" id="51_4fmon"]
 [ext_resource type="Resource" uid="uid://ds63t4f38y1ww" path="res://main/element/lapis.tres" id="52_nm430"]
 [ext_resource type="Resource" path="res://main/element/laser.tres" id="53_sfbcj"]
@@ -62,7 +62,7 @@
 [ext_resource type="Resource" path="res://main/element/meteor_c.tres" id="59_6g8l4"]
 [ext_resource type="Resource" path="res://main/element/molten_glass.tres" id="60_dpoqc"]
 [ext_resource type="Resource" path="res://main/element/molten_gold.tres" id="61_wt7r6"]
-[ext_resource type="Resource" path="res://main/element/nanobot.tres" id="62_dloi2"]
+[ext_resource type="Resource" uid="uid://bv4wq01khk2nn" path="res://main/element/nanobot.tres" id="62_dloi2"]
 [ext_resource type="Resource" path="res://main/element/neptune.tres" id="63_bxdvm"]
 [ext_resource type="Resource" path="res://main/element/nuclear_explosion.tres" id="64_ihi5b"]
 [ext_resource type="Resource" path="res://main/element/obsidian.tres" id="65_af86i"]
@@ -83,7 +83,7 @@
 [ext_resource type="Resource" path="res://main/element/salt_water.tres" id="80_u2pu7"]
 [ext_resource type="Resource" uid="uid://pl5xlfjelw1l" path="res://main/element/sand.tres" id="81_6h85f"]
 [ext_resource type="Resource" path="res://main/element/sand_duck.tres" id="82_r4a6c"]
-[ext_resource type="Resource" path="res://main/element/sandstone.tres" id="83_6vrum"]
+[ext_resource type="Resource" uid="uid://dbbo2ox05mltn" path="res://main/element/sandstone.tres" id="83_6vrum"]
 [ext_resource type="Resource" path="res://main/element/seed.tres" id="84_36klj"]
 [ext_resource type="Resource" path="res://main/element/slime.tres" id="85_kcdbk"]
 [ext_resource type="Resource" path="res://main/element/smoke.tres" id="86_pk75v"]
@@ -109,7 +109,7 @@
 
 [sub_resource type="ImageTexture" id="ImageTexture_y7mie"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_suq86"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dl8ih"]
 shader = ExtResource("1_s3uw4")
 shader_parameter/width = 1000
 shader_parameter/height = 800
@@ -144,7 +144,7 @@ shader_parameter/metal_id_match = null
 shader_parameter/metal_color_a = null
 shader_parameter/metal_color_b = null
 
-[sub_resource type="ImageTexture" id="ImageTexture_pnbxe"]
+[sub_resource type="ImageTexture" id="ImageTexture_8bvql"]
 
 [sub_resource type="Environment" id="Environment_iakyf"]
 background_mode = 3
@@ -175,17 +175,17 @@ layer = -1
 
 [node name="Canvas" type="TextureRect" parent="CanvasLayer"]
 texture_filter = 1
-material = SubResource("ShaderMaterial_suq86")
+material = SubResource("ShaderMaterial_dl8ih")
 custom_minimum_size = Vector2(0, 64)
 offset_right = 360.0
 offset_bottom = 273.0
 size_flags_vertical = 3
 size_flags_stretch_ratio = 2.0
-texture = SubResource("ImageTexture_pnbxe")
+texture = SubResource("ImageTexture_8bvql")
 expand_mode = 1
 script = ExtResource("2_5mtt1")
 element_materials = Array[Resource("res://main/element/types/element.gd")]([ExtResource("3_uo2we"), ExtResource("4_yjjxv"), ExtResource("5_k4gsm"), ExtResource("6_3ikmr"), ExtResource("7_pqx4y"), ExtResource("8_hbu6c"), ExtResource("9_81bbh"), ExtResource("10_6ndi0"), ExtResource("11_7nvf8"), ExtResource("12_kih5o"), ExtResource("13_eyt0o"), ExtResource("14_uxrgh"), ExtResource("15_j24s0"), ExtResource("16_b8416"), ExtResource("17_oetvh"), ExtResource("18_v4vsr"), ExtResource("19_2c5hx"), ExtResource("20_35k11"), ExtResource("21_idh8w"), ExtResource("22_im3yx"), ExtResource("22_vgad0"), ExtResource("23_d4tom"), ExtResource("24_lrchy"), ExtResource("25_n1l71"), ExtResource("26_qad7q"), ExtResource("27_o4nup"), ExtResource("28_n0nga"), ExtResource("29_3isx6"), ExtResource("30_sepff"), ExtResource("31_othqd"), ExtResource("32_hjn4s"), ExtResource("33_dwkvh"), ExtResource("34_30s2k"), ExtResource("35_gx8ew"), ExtResource("36_epxjl"), ExtResource("37_oq0pw"), ExtResource("38_dqsx2"), ExtResource("39_xky7v"), ExtResource("40_a86o3"), ExtResource("41_1lpss"), ExtResource("42_wud1h"), ExtResource("43_g11he"), ExtResource("44_1d7qb"), ExtResource("45_66tc8"), ExtResource("46_ae8a8"), ExtResource("47_roobc"), ExtResource("48_2v2y3"), ExtResource("49_qhb1k"), ExtResource("50_4oumb"), ExtResource("51_4fmon"), ExtResource("52_nm430"), ExtResource("53_sfbcj"), ExtResource("54_xm2vv"), ExtResource("55_ejvqt"), ExtResource("56_lxgh1"), ExtResource("57_7udw0"), ExtResource("58_fgx0v"), ExtResource("59_6g8l4"), ExtResource("60_dpoqc"), ExtResource("61_wt7r6"), ExtResource("62_dloi2"), ExtResource("63_bxdvm"), ExtResource("64_ihi5b"), ExtResource("65_af86i"), ExtResource("66_iloqe"), ExtResource("67_a24gw"), ExtResource("68_73wjv"), ExtResource("69_t5tfp"), ExtResource("70_larfa"), ExtResource("71_xx6bd"), ExtResource("72_53xyd"), ExtResource("73_x5b11"), ExtResource("74_b3d6x"), ExtResource("75_ho1ox"), ExtResource("76_j08mg"), ExtResource("77_26jx3"), ExtResource("78_mb54d"), ExtResource("79_3vd2n"), ExtResource("80_u2pu7"), ExtResource("81_6h85f"), ExtResource("82_r4a6c"), ExtResource("83_6vrum"), ExtResource("84_36klj"), ExtResource("85_kcdbk"), ExtResource("86_pk75v"), ExtResource("87_s41tk"), ExtResource("88_nx26v"), ExtResource("89_euses"), ExtResource("90_cxx7u"), ExtResource("91_8ecfm"), ExtResource("92_va6gm"), ExtResource("93_1alpt"), ExtResource("94_kp367"), ExtResource("95_62s0n"), ExtResource("96_6lqvm"), ExtResource("97_lucbn"), ExtResource("99_w5u2d"), ExtResource("98_he5lb"), ExtResource("99_ggonu"), ExtResource("101_ijiph"), ExtResource("100_4vrp4"), ExtResource("101_di3h5")])
-flat_params = Array[Vector3]([Vector3(0.137255, 0.254902, 0.458824), Vector3(0.788235, 0.635294, 0.635294), Vector3(0.980392, 0.568627, 0.882353), Vector3(1, 0.65098, 0.843137), Vector3(0.960784, 0.486275, 0.211765), Vector3(0.941176, 0.270588, 0.196078), Vector3(0.294118, 0.678431, 0.141176), Vector3(0.203922, 0.203922, 0.290196), Vector3(0.301961, 0.870588, 1), Vector3(0.25098, 0.0862745, 0.0823529), Vector3(0.384314, 0.223529, 0.027451), Vector3(0.988235, 0.917647, 0.913725), Vector3(0.980392, 0.537255, 0.176471), Vector3(0.988235, 0.737255, 0.384314), Vector3(0.988235, 0.615686, 0.286275), Vector3(0.72549, 1, 0.368627), Vector3(0.501961, 0.156863, 0.121569), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0)])
+flat_params = Array[Vector3]([Vector3(0.137255, 0.254902, 0.458824), Vector3(0.788235, 0.635294, 0.635294), Vector3(0.980392, 0.568627, 0.882353), Vector3(1, 0.65098, 0.843137), Vector3(0.960784, 0.529412, 0.0941176), Vector3(0.941176, 0.270588, 0.196078), Vector3(0.294118, 0.678431, 0.141176), Vector3(0.203922, 0.203922, 0.290196), Vector3(0.301961, 0.870588, 1), Vector3(0.25098, 0.0862745, 0.0823529), Vector3(0.384314, 0.223529, 0.027451), Vector3(0.988235, 0.917647, 0.913725), Vector3(0.980392, 0.537255, 0.176471), Vector3(0.988235, 0.737255, 0.384314), Vector3(0.988235, 0.658824, 0.384314), Vector3(0.72549, 1, 0.368627), Vector3(0.501961, 0.156863, 0.121569), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0)])
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="CanvasLayer"]
 environment = SubResource("Environment_iakyf")

@@ -17,7 +17,7 @@ public:
             sim->grow(row, col - 1, 51, 38);
             sim->grow(row, col + 1, 51, 38);
             return;
-        } else if (sim -> randf() < MELT && sim->touch_count(row, col, 24) > 0) {
+        } else if (sim -> randf() < MELT && (sim->touch_count(row, col, 20) + sim->touch_count(row, col, 24) > 0)) {
             sim->set_cell(row, col, 52);
         }
     }

@@ -20,7 +20,7 @@ public:
             sim->grow(row - 1, col, 17, 38);
             sim->grow(row, col - 1, 17, 38);
             sim->grow(row, col + 1, 17, 38);
-        } else if (sim -> randf() < MELT && sim->is_on_fire(row, col)) {
+        } else if (sim -> randf() < MELT && (sim->touch_count(row, col, 20) + sim->touch_count(row, col, 24) > 0)) {
             sim->set_cell(row, col, 20);
         } else if ((sim->randf() < RUST_A && sim->touch_count(row, col, 3) > 0) || (sim->randf() < RUST_B && sim->touch_count(row, col, 62) > 0)
         || (sim->randf() < RUST_C && sim->touch_count(row, col, 71) > 0) )  {
