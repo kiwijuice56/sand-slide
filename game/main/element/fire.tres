@@ -5,19 +5,17 @@
 [resource]
 script = ExtResource("1_xt043")
 noise_texture = 1
-color_a = Color(1, 0.866667, 0.258824, 1)
-color_b = Color(0.988235, 0.380392, 0, 1)
+color_a = Color(1, 0.733333, 0.258824, 1)
+color_b = Color(0.988235, 0.305882, 0, 1)
 color_c = Color(0.780392, 0, 0.0117647, 1)
-noise_scale = 0.5
+noise_scale = 1.0
 noise_speed = 4.0
 current_size = 16.0
 wave_cycle = 3.0
-contraction_size = 16.0
-wave_density = 2.0
-shimmer_speed = 8.0
-shimmer_density = 1.5
+contraction_size = 8.0
+wave_density = 0.5
+shimmer_speed = 14.0
+shimmer_density = 1.0
 shimmer_opacity = 0.95
-shimmer_cycle = 0.5
+shimmer_cycle = 0.3
 id = 5
-noise_type = 3
-noise_pitch = 1.0

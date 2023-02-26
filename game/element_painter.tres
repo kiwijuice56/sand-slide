@@ -1,9 +1,9 @@
 [gd_resource type="ShaderMaterial" load_steps=2 format=3]
 
-[ext_resource type="Shader" path="res://main/ui/drawing_panel/canvas/element_painter.gdshader" id="1_qpaxi"]
+[ext_resource type="Shader" path="res://main/ui/drawing_panel/canvas/element_painter.gdshader" id="1_lvbwe"]
 
 [resource]
-shader = ExtResource("1_qpaxi")
+shader = ExtResource("1_lvbwe")
 shader_parameter/width = 1000
 shader_parameter/height = 800
 shader_parameter/px_scale = 4
