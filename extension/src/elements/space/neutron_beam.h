@@ -14,9 +14,12 @@ public:
         }
         
         if (sim->randf() < EXPLODE && sim->in_bounds(row + 1, col) && sim->get_cell(row + 1, col) != 0 && sim->get_cell(row + 1, col) != 29 && sim->get_cell(row + 1, col) != 15) {
+            sim->set_cell(row + 1, col + 1, 34);
             sim->set_cell(row + 1, col, 34);
+            sim->set_cell(row + 1, col - 1, 34);
         } else {
             sim->grow(row + 1, col, -1, 36);
+            sim->grow(row + 2, col, -1, 36);
         }
     }
 

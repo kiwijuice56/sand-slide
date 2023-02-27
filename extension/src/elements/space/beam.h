@@ -5,7 +5,7 @@
 
 class Beam: public Element {
 public:
-    const double DECAY = 1.0 / 4;
+    const double DECAY = 1.0 / 2;
 
     void process(SandSimulation *sim, int row, int col) override {
         if (sim->randf() < DECAY && sim->in_bounds(row - 1, col) && sim->get_cell(row - 1, col) != 94) {
@@ -13,6 +13,8 @@ public:
             return;
         }
         sim->grow(row + 1, col, -1, 94);
+        sim->grow(row + 2, col, -1, 94);
+        sim->grow(row + 3, col, -1, 94);
     }
 
     double get_density() override {

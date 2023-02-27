@@ -35,6 +35,16 @@
 #include "elements/build/wall.h"
 #include "elements/build/wet_sponge.h"
 #include "elements/build/wood.h"
+#include "elements/build/info_cable.h"
+#include "elements/build/info_cable_charged.h"
+#include "elements/build/info_piston_down.h"
+#include "elements/build/info_piston_up.h"
+#include "elements/build/info_piston_down_charged.h"
+#include "elements/build/info_piston_up_charged.h"
+#include "elements/build/info_source.h"
+#include "elements/build/info_deleter.h"
+#include "elements/build/info_deleter_charged.h"
+#include "elements/build/info_dust.h"
 #include "elements/chemical/acid.h"
 #include "elements/chemical/acid_gas.h"
 #include "elements/chemical/acid_water.h"
@@ -216,6 +226,16 @@ SandSimulation::SandSimulation() {
     elements.at(99) = new DrySponge();
     elements.at(100) = new WetSponge();
     elements.at(101) = new Virus();
+    elements.at(102) = new InfoCable();
+    elements.at(103) = new InfoCableCharged();
+    elements.at(104) = new InfoSource();
+    elements.at(105) = new InfoPistonDown();
+    elements.at(106) = new InfoPistonUp();
+    elements.at(107) = new InfoDeleter();
+    elements.at(108) = new InfoDust();
+    elements.at(109) = new InfoPistonDownCharged();
+    elements.at(110) = new InfoPistonUpCharged();
+    elements.at(111) = new InfoDeleterCharged();
 
     draw_data = PackedByteArray();
 

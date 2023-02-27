@@ -130,7 +130,7 @@ func _initialize_elements() -> void:
 	get_material().set_shader_parameter("fire_texture", preload("res://main/element/textures/fire_noise.jpg"))
 	get_material().set_shader_parameter("crystal_texture", preload("res://main/element/textures/crystal.jpg"))
 	
-	ResourceSaver.save(get_material(), "res://element_painter.tres")
+	# ResourceSaver.save(get_material(), "res://element_painter.tres")
 
 func _ready() -> void:
 	_initialize_elements()

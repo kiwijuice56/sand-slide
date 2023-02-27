@@ -10,6 +10,9 @@ var tap_on := false
 @export var last_button: Button
 @export var selected_material: ShaderMaterial
 
+var gem_idx: int = 0
+var algae_idx: int = 0
+
 func _ready():
 	eraser_button.button_down.connect(_on_eraser_selected)
 	tap_button.pressed.connect(_on_tap_selected)
@@ -34,7 +37,13 @@ func _on_element_selected(button: ElementButton) -> void:
 	
 	# Algae can be different colors!
 	if simulation.selected_element == 7:
-		simulation.selected_element = [7, 54, 55][randi() % 3]
+		simulation.selected_element = [7, 54, 55][algae_idx]
+		algae_idx = (algae_idx + 1) % 3
+	
+	# Algae can be different colors!
+	if simulation.selected_element == 27:
+		simulation.selected_element = [27, 78, 79, 80][gem_idx]
+		gem_idx = (gem_idx + 1) % 4
 
 func _on_eraser_selected() -> void:
 	if last_button == eraser_button:
