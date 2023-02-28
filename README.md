@@ -1,5 +1,5 @@
 # sand-slide
-A falling sand game made with Godot 4.0's GDextension feature. The full game can be downloaded for free on [itch.io](https://kiwijuice56.itch.io/sand-slide) or on the [Google Play Store] (https://play.google.com/store/apps/details?id=org.godotengine.sandslide).
+A falling sand game made with Godot 4.0's GDextension feature. The full game can be downloaded for free on [itch.io](https://kiwijuice56.itch.io/sand-slide) or on the [Google Play Store](https://play.google.com/store/apps/details?id=org.godotengine.sandslide).
 
 ![Title](docs/background_sand_slide.png)
 
