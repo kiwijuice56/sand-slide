@@ -7,11 +7,11 @@ class SandSimulation;
 
 class InfoDust: public Element {
 public:
-    const double DECAY = 1 / 32.0;
+    const double DECAY = 1 / 16.0;
 
     void process(SandSimulation *sim, int row, int col) override {
         if (sim->randf() < DECAY) {
-            sim->set_cell(row, col, 6);
+            sim->set_cell(row, col, 0);
             return;
         }
     }
