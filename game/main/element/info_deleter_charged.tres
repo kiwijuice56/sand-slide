@@ -5,5 +5,5 @@
 [resource]
 script = ExtResource("1_pwtvr")
 color_a = Color(1, 0.996078, 0.94902, 1)
-color_b = Color(0.94902, 0.913725, 0.709804, 1)
+color_b = Color(1, 0.996078, 0.94902, 1)
 id = 111

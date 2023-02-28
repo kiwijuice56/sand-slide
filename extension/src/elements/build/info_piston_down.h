@@ -18,7 +18,7 @@ public:
                 col = new_col;
             }
         }
-        if (sim->touch_count(row, col, 104) + sim->touch_count(row, col, 103) > 0) {
+        if (sim->touch_count(row, col, 104) + sim->touch_count(row, col, 103) + sim->touch_count(row, col, 113) > 0) {
             sim->set_cell(row, col, 109);
         }
     }

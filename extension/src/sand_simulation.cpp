@@ -45,6 +45,8 @@
 #include "elements/build/info_deleter.h"
 #include "elements/build/info_deleter_charged.h"
 #include "elements/build/info_dust.h"
+#include "elements/build/info_amplifier.h"
+#include "elements/build/info_amplifier_charged.h"
 #include "elements/chemical/acid.h"
 #include "elements/chemical/acid_gas.h"
 #include "elements/chemical/acid_water.h"
@@ -236,6 +238,8 @@ SandSimulation::SandSimulation() {
     elements.at(109) = new InfoPistonDownCharged();
     elements.at(110) = new InfoPistonUpCharged();
     elements.at(111) = new InfoDeleterCharged();
+    elements.at(112) = new InfoAmplifier();
+    elements.at(113) = new InfoAmplifierCharged();
 
     draw_data = PackedByteArray();
 

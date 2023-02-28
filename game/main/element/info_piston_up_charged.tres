@@ -4,6 +4,6 @@
 
 [resource]
 script = ExtResource("1_vbwfw")
-color_a = Color(0.827451, 1, 0.729412, 1)
-color_b = Color(0.701961, 0.94902, 0.666667, 1)
+color_a = Color(0.431373, 0.701961, 0.921569, 1)
+color_b = Color(0.431373, 0.701961, 0.921569, 1)
 id = 110
