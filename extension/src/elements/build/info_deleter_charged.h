@@ -27,7 +27,7 @@ public:
                     }
                     if (sim->in_bounds(row + y, col + x)) {
                         int c = sim->get_cell(row + y, col + x);
-                        if (c == 0 || c == 104 || c == 15 || c == 107 || c == 102 || c == 103 || c == 108 || c == 6 || c == 111)
+                        if (c == 0 || c == 104 || c == 15 || c == 107 || c == 102 || c == 103 || c == 108 || c == 6 || c == 111 || c == 112 || c == 113)
                             continue;
                         sim->set_cell(row + y, col + x, 108);
                     }
