@@ -2106,7 +2106,7 @@ theme_override_font_sizes/font_size = 16
 theme_override_styles/normal = SubResource("StyleBoxFlat_a82m7")
 theme_override_styles/hover = SubResource("StyleBoxFlat_a6uvp")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_0j1pm")
-text = "beam"
+text = "freikugel"
 script = ExtResource("3_07h7i")
 id = 94
 

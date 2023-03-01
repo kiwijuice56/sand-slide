@@ -1,4 +1,4 @@
-[gd_scene load_steps=122 format=3 uid="uid://c45dvxidnt6sk"]
+[gd_scene load_steps=124 format=3 uid="uid://c45dvxidnt6sk"]
 
 [ext_resource type="Shader" path="res://main/ui/drawing_panel/canvas/element_painter.gdshader" id="1_e6tsu"]
 [ext_resource type="Script" path="res://main/ui/drawing_panel/canvas/canvas.gd" id="2_5mtt1"]
@@ -11,7 +11,9 @@
 [ext_resource type="Resource" path="res://main/element/algae_red.tres" id="9_81bbh"]
 [ext_resource type="Resource" path="res://main/element/background.tres" id="10_6ndi0"]
 [ext_resource type="Resource" path="res://main/element/beam.tres" id="11_7nvf8"]
+[ext_resource type="Resource" uid="uid://baryphgjf2q36" path="res://main/element/beam_power.tres" id="12_8nld8"]
 [ext_resource type="Resource" path="res://main/element/black_hole.tres" id="12_kih5o"]
+[ext_resource type="Resource" uid="uid://bqxqsvwk1t5lg" path="res://main/element/beam_power_flash.tres" id="13_ap2n3"]
 [ext_resource type="Resource" uid="uid://dmj0li73r47to" path="res://main/element/blue_fire.tres" id="13_eyt0o"]
 [ext_resource type="Resource" path="res://main/element/bomb.tres" id="14_uxrgh"]
 [ext_resource type="Resource" uid="uid://dxcs7qlbanxfx" path="res://main/element/burning_oil.tres" id="15_j24s0"]
@@ -121,7 +123,7 @@
 
 [sub_resource type="ImageTexture" id="ImageTexture_y7mie"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_2nl4p"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2llan"]
 shader = ExtResource("1_e6tsu")
 shader_parameter/width = 1000
 shader_parameter/height = 800
@@ -156,7 +158,7 @@ shader_parameter/metal_id_match = null
 shader_parameter/metal_color_a = null
 shader_parameter/metal_color_b = null
 
-[sub_resource type="ImageTexture" id="ImageTexture_sm1i0"]
+[sub_resource type="ImageTexture" id="ImageTexture_iio3t"]
 
 [sub_resource type="Environment" id="Environment_iakyf"]
 background_mode = 3
@@ -187,16 +189,16 @@ layer = -1
 
 [node name="Canvas" type="TextureRect" parent="CanvasLayer"]
 texture_filter = 1
-material = SubResource("ShaderMaterial_2nl4p")
+material = SubResource("ShaderMaterial_2llan")
 custom_minimum_size = Vector2(0, 64)
 offset_right = 360.0
 offset_bottom = 273.0
 size_flags_vertical = 3
 size_flags_stretch_ratio = 2.0
-texture = SubResource("ImageTexture_sm1i0")
+texture = SubResource("ImageTexture_iio3t")
 expand_mode = 1
 script = ExtResource("2_5mtt1")
-element_materials = Array[Resource("res://main/element/types/element.gd")]([ExtResource("3_uo2we"), ExtResource("4_yjjxv"), ExtResource("5_k4gsm"), ExtResource("6_3ikmr"), ExtResource("7_pqx4y"), ExtResource("8_hbu6c"), ExtResource("9_81bbh"), ExtResource("10_6ndi0"), ExtResource("11_7nvf8"), ExtResource("12_kih5o"), ExtResource("13_eyt0o"), ExtResource("14_uxrgh"), ExtResource("15_j24s0"), ExtResource("16_b8416"), ExtResource("17_oetvh"), ExtResource("18_v4vsr"), ExtResource("19_2c5hx"), ExtResource("20_35k11"), ExtResource("21_idh8w"), ExtResource("22_im3yx"), ExtResource("22_vgad0"), ExtResource("23_d4tom"), ExtResource("24_lrchy"), ExtResource("25_n1l71"), ExtResource("26_qad7q"), ExtResource("27_o4nup"), ExtResource("28_n0nga"), ExtResource("29_3isx6"), ExtResource("30_sepff"), ExtResource("31_othqd"), ExtResource("32_hjn4s"), ExtResource("33_dwkvh"), ExtResource("34_30s2k"), ExtResource("35_gx8ew"), ExtResource("36_epxjl"), ExtResource("37_oq0pw"), ExtResource("38_dqsx2"), ExtResource("39_xky7v"), ExtResource("40_a86o3"), ExtResource("41_1lpss"), ExtResource("42_wud1h"), ExtResource("43_g11he"), ExtResource("44_1d7qb"), ExtResource("45_66tc8"), ExtResource("46_ae8a8"), ExtResource("48_3ns1k"), ExtResource("49_g2d45"), ExtResource("48_i4f1s"), ExtResource("49_emx4k"), ExtResource("50_p07sc"), ExtResource("51_f7je1"), ExtResource("51_vesrl"), ExtResource("50_xqxka"), ExtResource("54_fklpi"), ExtResource("51_rat77"), ExtResource("56_07m18"), ExtResource("51_3m1vc"), ExtResource("47_roobc"), ExtResource("48_2v2y3"), ExtResource("49_qhb1k"), ExtResource("50_4oumb"), ExtResource("51_4fmon"), ExtResource("52_nm430"), ExtResource("53_sfbcj"), ExtResource("54_xm2vv"), ExtResource("55_ejvqt"), ExtResource("56_lxgh1"), ExtResource("57_7udw0"), ExtResource("58_fgx0v"), ExtResource("59_6g8l4"), ExtResource("60_dpoqc"), ExtResource("61_wt7r6"), ExtResource("62_dloi2"), ExtResource("63_bxdvm"), ExtResource("64_ihi5b"), ExtResource("65_af86i"), ExtResource("66_iloqe"), ExtResource("67_a24gw"), ExtResource("68_73wjv"), ExtResource("69_t5tfp"), ExtResource("70_larfa"), ExtResource("71_xx6bd"), ExtResource("72_53xyd"), ExtResource("73_x5b11"), ExtResource("74_b3d6x"), ExtResource("75_ho1ox"), ExtResource("76_j08mg"), ExtResource("77_26jx3"), ExtResource("78_mb54d"), ExtResource("79_3vd2n"), ExtResource("80_u2pu7"), ExtResource("81_6h85f"), ExtResource("82_r4a6c"), ExtResource("83_6vrum"), ExtResource("84_36klj"), ExtResource("85_kcdbk"), ExtResource("86_pk75v"), ExtResource("87_s41tk"), ExtResource("88_nx26v"), ExtResource("89_euses"), ExtResource("90_cxx7u"), ExtResource("91_8ecfm"), ExtResource("92_va6gm"), ExtResource("93_1alpt"), ExtResource("94_kp367"), ExtResource("95_62s0n"), ExtResource("96_6lqvm"), ExtResource("97_lucbn"), ExtResource("99_w5u2d"), ExtResource("98_he5lb"), ExtResource("99_ggonu"), ExtResource("101_ijiph"), ExtResource("100_4vrp4"), ExtResource("101_di3h5")])
+element_materials = Array[Resource("res://main/element/types/element.gd")]([ExtResource("3_uo2we"), ExtResource("4_yjjxv"), ExtResource("5_k4gsm"), ExtResource("6_3ikmr"), ExtResource("7_pqx4y"), ExtResource("8_hbu6c"), ExtResource("9_81bbh"), ExtResource("10_6ndi0"), ExtResource("11_7nvf8"), ExtResource("12_8nld8"), ExtResource("13_ap2n3"), ExtResource("12_kih5o"), ExtResource("13_eyt0o"), ExtResource("14_uxrgh"), ExtResource("15_j24s0"), ExtResource("16_b8416"), ExtResource("17_oetvh"), ExtResource("18_v4vsr"), ExtResource("19_2c5hx"), ExtResource("20_35k11"), ExtResource("21_idh8w"), ExtResource("22_im3yx"), ExtResource("22_vgad0"), ExtResource("23_d4tom"), ExtResource("24_lrchy"), ExtResource("25_n1l71"), ExtResource("26_qad7q"), ExtResource("27_o4nup"), ExtResource("28_n0nga"), ExtResource("29_3isx6"), ExtResource("30_sepff"), ExtResource("31_othqd"), ExtResource("32_hjn4s"), ExtResource("33_dwkvh"), ExtResource("34_30s2k"), ExtResource("35_gx8ew"), ExtResource("36_epxjl"), ExtResource("37_oq0pw"), ExtResource("38_dqsx2"), ExtResource("39_xky7v"), ExtResource("40_a86o3"), ExtResource("41_1lpss"), ExtResource("42_wud1h"), ExtResource("43_g11he"), ExtResource("44_1d7qb"), ExtResource("45_66tc8"), ExtResource("46_ae8a8"), ExtResource("48_3ns1k"), ExtResource("49_g2d45"), ExtResource("48_i4f1s"), ExtResource("49_emx4k"), ExtResource("50_p07sc"), ExtResource("51_f7je1"), ExtResource("51_vesrl"), ExtResource("50_xqxka"), ExtResource("54_fklpi"), ExtResource("51_rat77"), ExtResource("56_07m18"), ExtResource("51_3m1vc"), ExtResource("47_roobc"), ExtResource("48_2v2y3"), ExtResource("49_qhb1k"), ExtResource("50_4oumb"), ExtResource("51_4fmon"), ExtResource("52_nm430"), ExtResource("53_sfbcj"), ExtResource("54_xm2vv"), ExtResource("55_ejvqt"), ExtResource("56_lxgh1"), ExtResource("57_7udw0"), ExtResource("58_fgx0v"), ExtResource("59_6g8l4"), ExtResource("60_dpoqc"), ExtResource("61_wt7r6"), ExtResource("62_dloi2"), ExtResource("63_bxdvm"), ExtResource("64_ihi5b"), ExtResource("65_af86i"), ExtResource("66_iloqe"), ExtResource("67_a24gw"), ExtResource("68_73wjv"), ExtResource("69_t5tfp"), ExtResource("70_larfa"), ExtResource("71_xx6bd"), ExtResource("72_53xyd"), ExtResource("73_x5b11"), ExtResource("74_b3d6x"), ExtResource("75_ho1ox"), ExtResource("76_j08mg"), ExtResource("77_26jx3"), ExtResource("78_mb54d"), ExtResource("79_3vd2n"), ExtResource("80_u2pu7"), ExtResource("81_6h85f"), ExtResource("82_r4a6c"), ExtResource("83_6vrum"), ExtResource("84_36klj"), ExtResource("85_kcdbk"), ExtResource("86_pk75v"), ExtResource("87_s41tk"), ExtResource("88_nx26v"), ExtResource("89_euses"), ExtResource("90_cxx7u"), ExtResource("91_8ecfm"), ExtResource("92_va6gm"), ExtResource("93_1alpt"), ExtResource("94_kp367"), ExtResource("95_62s0n"), ExtResource("96_6lqvm"), ExtResource("97_lucbn"), ExtResource("99_w5u2d"), ExtResource("98_he5lb"), ExtResource("99_ggonu"), ExtResource("101_ijiph"), ExtResource("100_4vrp4"), ExtResource("101_di3h5")])
 flat_params = Array[Vector3]([Vector3(0.137255, 0.254902, 0.458824), Vector3(0.788235, 0.635294, 0.635294), Vector3(0.980392, 0.568627, 0.882353), Vector3(1, 0.65098, 0.843137), Vector3(0.960784, 0.529412, 0.0941176), Vector3(0.941176, 0.270588, 0.196078), Vector3(0.294118, 0.678431, 0.141176), Vector3(0.772549, 0.631373, 1), Vector3(0.917647, 0.788235, 1), Vector3(0.419608, 1, 0.258824), Vector3(0.203922, 0.203922, 0.290196), Vector3(0.301961, 0.870588, 1), Vector3(0.25098, 0.0862745, 0.0823529), Vector3(0.384314, 0.223529, 0.027451), Vector3(0.988235, 0.917647, 0.913725), Vector3(0.980392, 0.537255, 0.176471), Vector3(0.988235, 0.737255, 0.384314), Vector3(0.988235, 0.658824, 0.384314), Vector3(0.72549, 1, 0.368627), Vector3(0.501961, 0.156863, 0.121569), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0)])
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="CanvasLayer"]

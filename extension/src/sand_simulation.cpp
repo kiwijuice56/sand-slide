@@ -23,7 +23,6 @@
 #include "elements/basic/void.h"
 #include "elements/basic/water.h"
 #include "elements/build/crystal.h"
-#include "elements/build/dry_sponge.h"
 #include "elements/build/dust.h"
 #include "elements/build/emerald.h"
 #include "elements/build/glass.h"
@@ -33,7 +32,6 @@
 #include "elements/build/sandstone.h"
 #include "elements/build/soil.h"
 #include "elements/build/wall.h"
-#include "elements/build/wet_sponge.h"
 #include "elements/build/wood.h"
 #include "elements/build/info_cable.h"
 #include "elements/build/info_cable_charged.h"
@@ -76,6 +74,8 @@
 #include "elements/chemical/potassium_explosion.h"
 #include "elements/chemical/rust.h"
 #include "elements/chemical/uranium.h"
+#include "elements/chemical/dry_sponge.h"
+#include "elements/chemical/wet_sponge.h"
 #include "elements/life/algae_brown.h"
 #include "elements/life/algae_green.h"
 #include "elements/life/algae_red.h"
@@ -114,6 +114,8 @@
 #include "elements/space/powder_c.h"
 #include "elements/space/strange.h"
 #include "elements/space/worm_hole.h"
+#include "elements/space/beam_power.h"
+#include "elements/space/beam_power_flash.h"
 
 #include <godot_cpp/core/class_db.hpp>
 
@@ -240,6 +242,8 @@ SandSimulation::SandSimulation() {
     elements.at(111) = new InfoDeleterCharged();
     elements.at(112) = new InfoAmplifier();
     elements.at(113) = new InfoAmplifierCharged();
+    elements.at(114) = new BeamPower();
+    elements.at(115) = new BeamPowerFlash();
 
     draw_data = PackedByteArray();
 
@@ -372,7 +376,7 @@ bool SandSimulation::is_poisoned(int row, int col) {
             if (x == 0 && y == 0 || !in_bounds(row + y, col + x)) 
                 continue;
             int c = get_cell(row + y, col + x);
-            if (c == 10 || c == 21 || c == 22 || c == 35 || c == 44 || c == 59 || c == 84) 
+            if (c == 10 || c == 21 || c == 22 || c == 35 || c == 44 || c == 59 || c == 84 || c == 115) 
                 return true;
         }
     } 

@@ -14,7 +14,7 @@ public:
 
     void process(SandSimulation *sim, int row, int col) override {
         // Conductivity
-        if (sim->randf() < MELT && (sim->touch_count(row, col, 38) > 0 || sim->touch_count(row, col, 40) > 0)) {
+        if (sim->randf() < MELT && (sim->touch_count(row, col, 38) > 0 || sim->touch_count(row, col, 40) > 0 || sim->touch_count(row, col, 115) > 0)) {
             sim->set_cell(row, col, 38);
             return;
         }

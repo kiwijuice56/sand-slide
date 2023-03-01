@@ -15,13 +15,21 @@ public:
         } else {
             int rand_row = row + (sim->randf() < DOWN ? 1 : -1);
             int rand_col = col + (int) (sim->randf() * 3) - 1;
-            sim->set_cell(row, col, 0);
-            if (sim->touch_count(rand_row, rand_col, 39) <= 1) {
-                sim->grow(rand_row, rand_col, 0, 39);
-                sim->grow(rand_row, rand_col, 6, 39);
-                sim->grow(rand_row, rand_col, 22, 39);
+            for (int i = 0; i < 3; i++) {
+                if (!sim->in_bounds(row, col))
+                    return;
+                int rand_row = row + (sim->randf() < DOWN ? 1 : -1);
+                int rand_col = col + (int) (sim->randf() * 3) - 1;
+                sim->set_cell(row, col, 0);
+                if (sim->touch_count(rand_row, rand_col, 39) <= 1) {
+                    sim->grow(rand_row, rand_col, 0, 39);
+                    sim->grow(rand_row, rand_col, 6, 39);
+                    sim->grow(rand_row, rand_col, 22, 39);
+                }
+                sim->set_cell(row, col, 39);
+                row = rand_row;
+                col = rand_col;
             }
-            sim->set_cell(row, col, 39);
         }
     }
 
