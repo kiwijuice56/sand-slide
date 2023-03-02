@@ -7,11 +7,18 @@
 class LiquidPowder: public Element {
 public:
     const double FLAME = 1.0 / 18;
+    const double EXPLODE = 1.0 / 2;
 
     void process(SandSimulation *sim, int row, int col) override {
         // Burning
         if (sim->randf() < FLAME && sim->is_on_fire(row, col)) {
-            sim->set_cell(row, col, 9);
+            for (int y = -7; y <= 7; y++) {
+                for (int x = -7; x <= 7; x++) {
+                    if (sim->in_bounds(row + y, col + x) && x * x + y * y < 28.0) {
+                        sim->set_cell(row + y, col + x, sim->randf() < EXPLODE ? 66 : 9);
+                    }
+                }
+            }
             return;
         }
 

@@ -26,9 +26,9 @@ public:
         && sim->get_cell(row + 1, col) != 77  && sim->get_cell(row + 1, col) != 0 && sim->get_cell(row + 1, col) != 9 
         && sim->get_cell(row + 1, col) != 6 && sim->get_cell(row + 1, col) != 5 && sim->get_cell(row + 1, col) != 66
         && sim->get_cell(row + 1, col) != 67 && sim->get_cell(row + 1, col) != 68)) {
-            for (int y = -3; y <= 3; y++) {
-                for (int x = -3; x <= 3; x++) {
-                    if (sim->in_bounds(row + y, col + x) ) {
+            for (int y = -7; y <= 7; y++) {
+                for (int x = -7; x <= 7; x++) {
+                    if (sim->in_bounds(row + y, col + x) && x * x + y * y < 36.0) {
                         sim->set_cell(row + y, col + x, sim->randf() < EXPLODE ? 66 : 9);
                     }
                 }
