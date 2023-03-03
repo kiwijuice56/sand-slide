@@ -7,10 +7,10 @@ class SandSimulation;
 
 class InfoCableCharged: public Element {
 public:
-    const double LOSE_CHARGE = 1.0 / 16;
+    const double LOSE_CHARGE = 1.0 / 3;
 
     void process(SandSimulation *sim, int row, int col) override {
-        if (sim->randf() < LOSE_CHARGE && sim->touch_count(row, col, 102) + sim->touch_count(row, col, 103) < 8) {
+        if (sim->randf() < LOSE_CHARGE) {
             sim->set_cell(row, col, 102);
         }
     }

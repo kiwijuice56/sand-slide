@@ -8,7 +8,7 @@ class SandSimulation;
 class InfoCable: public Element {
 public:
     void process(SandSimulation *sim, int row, int col) override {
-        for (int i = 0; i < 7; i++) {
+        for (int i = 0; i < 16; i++) {
             int new_row = row + (sim->randf() < 0.435 ? 1 : -1);
             int new_col = col + (sim->randf() < 0.5 ? 1 : -1);
             if (sim->in_bounds(new_row, new_col) && sim->get_cell(new_row, new_col) == 103) {
