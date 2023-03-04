@@ -47,6 +47,10 @@ public:
     double get_acid_resistance() override {
         return 0.6;
     }
+
+    int get_state() override {
+        return 0;
+    }
 };
 
 #endif // POWDER_C_H

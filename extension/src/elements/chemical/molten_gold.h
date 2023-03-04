@@ -38,6 +38,10 @@ public:
     double get_acid_resistance() override {
         return 0.999;
     }
+
+    int get_state() override {
+        return 1;
+    }
 };
 
 #endif // MOLTEN_GOLD_H

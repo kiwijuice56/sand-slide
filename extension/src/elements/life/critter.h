@@ -53,6 +53,10 @@ public:
     double get_acid_resistance() override {
         return 0.5;
     }
+
+    int get_state() override {
+        return 0;
+    }
 };
 
 #endif // CRITTER_H

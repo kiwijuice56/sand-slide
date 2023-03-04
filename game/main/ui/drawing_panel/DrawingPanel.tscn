@@ -123,7 +123,7 @@
 
 [sub_resource type="ImageTexture" id="ImageTexture_y7mie"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_e6spe"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rrpmv"]
 shader = ExtResource("1_e6tsu")
 shader_parameter/width = 1000
 shader_parameter/height = 800
@@ -158,7 +158,7 @@ shader_parameter/metal_id_match = null
 shader_parameter/metal_color_a = null
 shader_parameter/metal_color_b = null
 
-[sub_resource type="ImageTexture" id="ImageTexture_4qm07"]
+[sub_resource type="ImageTexture" id="ImageTexture_dpt5g"]
 
 [sub_resource type="Environment" id="Environment_iakyf"]
 background_mode = 3
@@ -189,13 +189,13 @@ layer = -1
 
 [node name="Canvas" type="TextureRect" parent="CanvasLayer"]
 texture_filter = 1
-material = SubResource("ShaderMaterial_e6spe")
+material = SubResource("ShaderMaterial_rrpmv")
 custom_minimum_size = Vector2(0, 64)
 offset_right = 360.0
 offset_bottom = 273.0
 size_flags_vertical = 3
 size_flags_stretch_ratio = 2.0
-texture = SubResource("ImageTexture_4qm07")
+texture = SubResource("ImageTexture_dpt5g")
 expand_mode = 1
 script = ExtResource("2_5mtt1")
 element_materials = Array[Resource("res://main/element/types/element.gd")]([ExtResource("3_uo2we"), ExtResource("4_yjjxv"), ExtResource("5_k4gsm"), ExtResource("6_3ikmr"), ExtResource("7_pqx4y"), ExtResource("8_hbu6c"), ExtResource("9_81bbh"), ExtResource("10_6ndi0"), ExtResource("11_7nvf8"), ExtResource("12_8nld8"), ExtResource("13_ap2n3"), ExtResource("12_kih5o"), ExtResource("13_eyt0o"), ExtResource("14_uxrgh"), ExtResource("15_j24s0"), ExtResource("16_b8416"), ExtResource("17_oetvh"), ExtResource("18_v4vsr"), ExtResource("19_2c5hx"), ExtResource("20_35k11"), ExtResource("21_idh8w"), ExtResource("22_im3yx"), ExtResource("22_vgad0"), ExtResource("23_d4tom"), ExtResource("24_lrchy"), ExtResource("25_n1l71"), ExtResource("26_qad7q"), ExtResource("27_o4nup"), ExtResource("28_n0nga"), ExtResource("29_3isx6"), ExtResource("30_sepff"), ExtResource("31_othqd"), ExtResource("32_hjn4s"), ExtResource("33_dwkvh"), ExtResource("34_30s2k"), ExtResource("35_gx8ew"), ExtResource("36_epxjl"), ExtResource("37_oq0pw"), ExtResource("38_dqsx2"), ExtResource("39_xky7v"), ExtResource("40_a86o3"), ExtResource("41_1lpss"), ExtResource("42_wud1h"), ExtResource("43_g11he"), ExtResource("44_1d7qb"), ExtResource("45_66tc8"), ExtResource("46_ae8a8"), ExtResource("48_3ns1k"), ExtResource("49_g2d45"), ExtResource("48_i4f1s"), ExtResource("49_emx4k"), ExtResource("50_p07sc"), ExtResource("51_f7je1"), ExtResource("51_vesrl"), ExtResource("50_xqxka"), ExtResource("54_fklpi"), ExtResource("51_rat77"), ExtResource("56_07m18"), ExtResource("51_3m1vc"), ExtResource("47_roobc"), ExtResource("48_2v2y3"), ExtResource("49_qhb1k"), ExtResource("50_4oumb"), ExtResource("51_4fmon"), ExtResource("52_nm430"), ExtResource("53_sfbcj"), ExtResource("54_xm2vv"), ExtResource("55_ejvqt"), ExtResource("56_lxgh1"), ExtResource("57_7udw0"), ExtResource("58_fgx0v"), ExtResource("59_6g8l4"), ExtResource("60_dpoqc"), ExtResource("61_wt7r6"), ExtResource("62_dloi2"), ExtResource("63_bxdvm"), ExtResource("64_ihi5b"), ExtResource("65_af86i"), ExtResource("66_iloqe"), ExtResource("67_a24gw"), ExtResource("68_73wjv"), ExtResource("69_t5tfp"), ExtResource("70_larfa"), ExtResource("71_xx6bd"), ExtResource("72_53xyd"), ExtResource("73_x5b11"), ExtResource("74_b3d6x"), ExtResource("75_ho1ox"), ExtResource("76_j08mg"), ExtResource("77_26jx3"), ExtResource("78_mb54d"), ExtResource("79_3vd2n"), ExtResource("80_u2pu7"), ExtResource("81_6h85f"), ExtResource("82_r4a6c"), ExtResource("83_6vrum"), ExtResource("84_36klj"), ExtResource("85_kcdbk"), ExtResource("86_pk75v"), ExtResource("87_s41tk"), ExtResource("88_nx26v"), ExtResource("89_euses"), ExtResource("90_cxx7u"), ExtResource("91_8ecfm"), ExtResource("92_va6gm"), ExtResource("93_1alpt"), ExtResource("94_kp367"), ExtResource("95_62s0n"), ExtResource("96_6lqvm"), ExtResource("97_lucbn"), ExtResource("99_w5u2d"), ExtResource("98_he5lb"), ExtResource("99_ggonu"), ExtResource("101_ijiph"), ExtResource("100_4vrp4"), ExtResource("101_di3h5")])

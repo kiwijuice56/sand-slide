@@ -37,6 +37,10 @@ public:
     double get_acid_resistance() override {
         return 0.65;
     }
+
+    int get_state() override {
+        return 0;
+    }
 };
 
 #endif // EXPLOSIVE_H

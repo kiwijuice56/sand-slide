@@ -34,6 +34,9 @@ public:
             for (int x = col - 8; x <= col + 8; x++) {
                 if (sim->randf() >= GRAB || !sim->in_bounds(y, x) || sim->get_cell(y, x) == 29) 
                     continue;
+
+                if (sim->get_cell(y, x) == 81)
+                    sim->set_cell(y, x, 116);
                 
                 int dirRow = row - y < 0 ? -1 : 1;
                 int dirCol = col - x < 0 ? -1 : 1;
@@ -54,6 +57,10 @@ public:
 
     double get_acid_resistance() override {
         return 10.0;
+    }
+
+    int get_state() override {
+        return 0;
     }
 };
 

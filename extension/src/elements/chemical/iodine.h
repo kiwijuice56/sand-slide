@@ -8,9 +8,15 @@ public:
     const double POWDER = 1 / 1.02;
     const double DECAY = 1.0 / 800;
     const double MELT = 1.0 / 32;
+    const double MIX = 1.0 / 16;
 
     void process(SandSimulation *sim, int row, int col) override {
         if (sim->randf() >= POWDER) {
+            return;
+        }
+
+        if (sim->randf() < MIX && sim->touch_count(row, col, 71) > 0) {
+            sim->set_cell(row, col, 70);
             return;
         }
 
@@ -48,6 +54,10 @@ public:
 
     double get_acid_resistance() override {
         return 0.8;
+    }
+
+    int get_state() override {
+        return 0;
     }
 };
 

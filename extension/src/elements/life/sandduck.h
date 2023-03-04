@@ -36,6 +36,10 @@ public:
     double get_acid_resistance() override {
         return 0.8;
     }
+
+    int get_state() override {
+        return 0;
+    }
 };
 
 #endif // SAND_DUCK_H

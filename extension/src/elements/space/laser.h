@@ -13,9 +13,9 @@ public:
             return;
         }
         if (sim->randf() < EXPLODE && sim->in_bounds(row + 1, col) && sim->get_cell(row + 1, col) != 0 && sim->get_cell(row + 1, col) != 29 && sim->get_cell(row + 1, col) != 15) {
-            sim->set_cell(row + 1, col + 1, 9);
-            sim->set_cell(row + 1, col, 9);
-            sim->set_cell(row + 1, col - 1, 9);
+            sim->grow(row + 1, col + 1, -1, 9);
+            sim->grow(row + 1, col, -1, 9);
+            sim->grow(row + 1, col - 1, -1, 9);
         } else {
             sim->grow(row + 1, col, -1, 26);
             sim->grow(row + 2, col, -1, 26);
@@ -32,6 +32,10 @@ public:
 
     double get_acid_resistance() override {
         return 1.0;
+    }
+
+    int get_state() override {
+        return 0;
     }
 };
 

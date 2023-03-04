@@ -27,6 +27,10 @@ public:
     double get_acid_resistance() override {
         return 0.45;
     }
+
+    int get_state() override {
+        return 0;
+    }
 };
 
 #endif // SANDSTONE_H

@@ -31,6 +31,10 @@ public:
     double get_acid_resistance() override {
         return 0.05;
     }
+
+    int get_state() override {
+        return 2;
+    }
 };
 
 #endif // ACID_GAS_H

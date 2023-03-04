@@ -49,7 +49,7 @@ public:
 
         // Swap and delete
         if (sim->get_cell(new_row, new_col) == 0 || sim->randf() < EAT * (1.0 - sim->elements.at(sim->get_cell(new_row, new_col))->get_acid_resistance())) {
-            sim->move_and_swap(row, col, new_row, new_col);
+            sim->set_cell(new_row, new_col, sim->get_cell(row, col));
             sim->set_cell(row, col, sim->randf() < EMIT ? 22 : 0);
         }
 
@@ -67,6 +67,10 @@ public:
 
     double get_acid_resistance() override {
         return 1.0;
+    }
+
+    int get_state() override {
+        return 1;
     }
 };
 

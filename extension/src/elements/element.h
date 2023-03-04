@@ -14,6 +14,7 @@ public:
     virtual double get_density() = 0;
     virtual double get_explode_resistance() = 0;
     virtual double get_acid_resistance() = 0;
+    virtual int get_state() = 0;
 };
 
 #endif // ELEMENT_H

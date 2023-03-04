@@ -36,6 +36,10 @@ public:
     double get_acid_resistance() override {
         return 0.85;
     }
+
+    int get_state() override {
+        return 0;
+    }
 };
 
 #endif // FAIRY_H

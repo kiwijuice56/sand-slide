@@ -1,11 +1,11 @@
-#ifndef WORM_HOLE_H
-#define WORM_HOLE_H
+#ifndef PARADOX_H
+#define PARADOX_H
 
 class SandSimulation;
 
 #include "../element.h"
 
-class WormHole: public Element {
+class Paradox: public Element {
 public:
     const double GRAB = 1.0 / 32;
     const double PROCESS = 1.0 / 90;
@@ -19,7 +19,7 @@ public:
             for (int x = col - 1; x <= col + 1; x++) {
                 int c = std::min(sim->get_width() - 1, (int) (sim->randf() * sim->get_width()));
                 int r = std::min(sim->get_height() - 1, (int) (sim->randf() * sim->get_height()));
-                if (!sim->in_bounds(r, c) || !sim->in_bounds(y, x) || sim->get_cell(y, x) == 0 || sim->get_cell(y, x) == 81 || sim->get_cell(r, c) == 81)
+                if (!sim->in_bounds(r, c) || !sim->in_bounds(y, x))
                     continue;
 
                 int temp = sim->get_cell(y, x);
@@ -37,16 +37,14 @@ public:
         // Keep moving particles closer into the worm hole
         for (int y = row - 8; y <= row + 8; y++) {
             for (int x = col - 8; x <= col + 8; x++) {
-                if (sim->randf() >= GRAB || !sim->in_bounds(y, x) || sim->get_cell(y, x) == 81) 
+                if (sim->randf() >= GRAB || !sim->in_bounds(y, x)) 
                     continue;
-                if (sim->get_cell(y, x) == 29)
-                    sim->set_cell(y, x, 116);
                 
                 int dirRow = row - y < 0 ? -1 : 1;
                 int dirCol = col - x < 0 ? -1 : 1;
                 if (row == y) dirRow = 0;
                 if (col == x) dirCol = 0;
-                if (!sim->in_bounds(y + dirRow, x + dirCol) || sim->get_cell(y + dirRow, x + dirCol) == 81)
+                if (!sim->in_bounds(y + dirRow, x + dirCol))
                     return;
                 int temp = sim->get_cell(y, x);
                 sim->set_cell(y, x, sim->get_cell(y + dirRow, x + dirCol));
@@ -72,4 +70,4 @@ public:
     }
 };
 
-#endif // WORM_HOLE_H
+#endif // PARADOX_H

@@ -22,6 +22,11 @@ public:
             return;
         }
 
+        if (sim->randf() < WATER && sim->touch_count(row, col, 84) > 0) {
+            sim->set_cell(row, col, 70);
+            return;
+        }
+
         if (sim->randf() >= POWDER) {
             return;
         }
@@ -67,6 +72,10 @@ public:
 
     double get_acid_resistance() override {
         return 0.89;
+    }
+
+    int get_state() override {
+        return 0;
     }
 };
 

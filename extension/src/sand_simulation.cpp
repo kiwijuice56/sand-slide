@@ -116,6 +116,7 @@
 #include "elements/space/worm_hole.h"
 #include "elements/space/beam_power.h"
 #include "elements/space/beam_power_flash.h"
+#include "elements/space/paradox.h"
 
 #include <godot_cpp/core/class_db.hpp>
 
@@ -244,6 +245,7 @@ SandSimulation::SandSimulation() {
     elements.at(113) = new InfoAmplifierCharged();
     elements.at(114) = new BeamPower();
     elements.at(115) = new BeamPowerFlash();
+    elements.at(116) = new Paradox();
 
     draw_data = PackedByteArray();
 
@@ -298,9 +300,13 @@ void SandSimulation::move_and_swap(int row, int col, int row2, int col2) {
     if (!in_bounds(row, col) || !in_bounds(row2, col2)) 
         return;
 
-    if (elements.at(get_cell(row, col))->get_density() <= elements.at(get_cell(row2, col2))->get_density()) 
-        if (get_cell(row, col) != get_cell(row2, col2))
-            return;
+    if (elements.at(get_cell(row2, col2))->get_state() == 0)
+        return;
+
+    if (elements.at(get_cell(row, col))->get_state() != 0)
+        if (elements.at(get_cell(row, col))->get_density() <= elements.at(get_cell(row2, col2))->get_density()) 
+            if (get_cell(row, col) != get_cell(row2, col2))
+                return;
 
     int old = get_cell(row, col);
     set_cell(row, col, get_cell(row2, col2));
@@ -324,16 +330,16 @@ void SandSimulation::grow(int row, int col, int food, int replacer) {
 
 void SandSimulation::liquid_process(int row, int col, int fluidity) {
     for (int i = 0; i < fluidity; i++) {
-            int new_col = col + (randf() < 0.5 ? 1 : -1);
-            if (randf() < 1.0 / 32)
-                new_col = col;
-            int new_row = row + (is_swappable(row, col, row + 1, new_col) && randf() > 0.2 ? 1 : 0);
-            if (is_swappable(row, col, new_row, new_col) && (randf() < 0.3 || !is_swappable(row, col, new_row + 1, new_col))) {
-                move_and_swap(row, col, new_row, new_col);
-                row = new_row;
-                col = new_col;
-            }
+        int new_col = col + (randf() < 0.5 ? 1 : -1);
+        if (randf() < 1.0 / 32)
+            new_col = col;
+        int new_row = row + (is_swappable(row, col, row + 1, new_col) && randf() > 0.2 ? 1 : 0);
+        if (is_swappable(row, col, new_row, new_col) && (randf() < 0.3 || !is_swappable(row, col, new_row + 1, new_col))) {
+            move_and_swap(row, col, new_row, new_col);
+            row = new_row;
+            col = new_col;
         }
+    }
 }
 
 // Returns the amount of cells of `type` surrounding the given cell
@@ -418,7 +424,10 @@ bool SandSimulation::is_swappable(int row, int col, int row2, int col2) {
     if (!in_bounds(row, col) || !in_bounds(row2, col2)) 
         return false;
 
-    if (elements.at(get_cell(row, col))->get_density() <= elements.at(get_cell(row2, col2))->get_density()) 
+    if (elements.at(get_cell(row2, col2))->get_state() == 0)
+        return false;
+
+    if (elements.at(get_cell(row, col))->get_state() != 0 && elements.at(get_cell(row, col))->get_density() <= elements.at(get_cell(row2, col2))->get_density()) 
         return false;
 
     return true;

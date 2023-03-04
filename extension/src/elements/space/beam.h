@@ -33,6 +33,10 @@ public:
     double get_acid_resistance() override {
         return 1.0;
     }
+
+    int get_state() override {
+        return 0;
+    }
 };
 
 #endif // BEAM_H

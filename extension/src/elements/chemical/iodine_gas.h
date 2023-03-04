@@ -37,6 +37,10 @@ public:
     double get_acid_resistance() override {
         return 0.8;
     }
+
+    int get_state() override {
+        return 2;
+    }
 };
 
 #endif // IODINE_GAS_H

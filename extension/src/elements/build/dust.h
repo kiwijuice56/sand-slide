@@ -18,7 +18,7 @@ public:
             sim->move_and_swap(row, col, row - 2, col);
         }
 
-        if (sim->randf() > PROCESS || !sim->in_bounds(row + 1, col) || sim->get_cell(row + 1, col) != 0) 
+        if (sim->randf() > PROCESS || !sim->in_bounds(row + 1, col)) 
             return;
         int dir = (int) (sim->randf() * 3) - 1;
         if (dir != 0) 
@@ -37,6 +37,10 @@ public:
 
     double get_acid_resistance() override {
         return 0.05;
+    }
+
+    int get_state() override {
+        return 0;
     }
 };
 

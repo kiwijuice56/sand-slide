@@ -56,6 +56,10 @@ public:
     double get_acid_resistance() override {
         return 0.35;
     }
+
+    int get_state() override {
+        return 0;
+    }
 };
 
 #endif // FISH_LEFT_H

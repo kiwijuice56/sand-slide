@@ -43,6 +43,10 @@ public:
     double get_acid_resistance() override {
         return 0.99;
     }
+
+    int get_state() override {
+        return 0;
+    }
 };
 
 #endif // INFO_PISTON_DOWN_CHARGED_H

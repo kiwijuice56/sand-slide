@@ -33,6 +33,10 @@ public:
     double get_acid_resistance() override {
         return 0.1;
     }
+
+    int get_state() override {
+        return 0;
+    }
 };
 
 #endif // ICE_DUST_H

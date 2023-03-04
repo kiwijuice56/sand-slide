@@ -22,6 +22,10 @@ public:
     double get_acid_resistance() override {
         return 0.97;
     }
+
+    int get_state() override {
+        return 0;
+    }
 };
 
 #endif // OSMIUM_H

@@ -6,7 +6,7 @@
 class Air: public Element {
 public:
     const double DECAY = 1.0 / 300;
-    const double MOVE = 1.0 / 2;
+    const double MOVE = 1.0 / 1.09;
     const double FLAME = 1.0 / 16;
 
     void process(SandSimulation *sim, int row, int col) override {
@@ -22,7 +22,8 @@ public:
 
         if (sim->randf() < MOVE && sim->in_bounds(newRow, newCol) && 
         sim->randf() < 1.0 - sim->elements.at(sim->get_cell(newRow, newCol))->get_density() / 65.0) {
-            sim->move_and_swap(row, col, newRow, newCol);
+            sim->set_cell(row, col, sim->get_cell(newRow, newCol));
+            sim->set_cell(newRow, newCol, 28);
         } 
     }
 
@@ -36,6 +37,10 @@ public:
 
     double get_acid_resistance() override {
         return 0.1;
+    }
+
+    int get_state() override {
+        return 2;
     }
 };
 

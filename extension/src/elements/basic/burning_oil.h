@@ -40,6 +40,10 @@ public:
     double get_acid_resistance() override {
         return 0.6;
     }
+
+    int get_state() override {
+        return 1;
+    }
 };
 
 #endif // BURNING_OIL_H

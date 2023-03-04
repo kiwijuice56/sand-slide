@@ -61,6 +61,10 @@ public:
     double get_acid_resistance() override {
         return 0.05;
     }
+
+    int get_state() override {
+        return 0;
+    }
 };
 
 #endif // SEED_H

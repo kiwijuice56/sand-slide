@@ -35,6 +35,10 @@ public:
     double get_acid_resistance() override {
         return 0.0;
     }
+
+    int get_state() override {
+        return 2;
+    }
 };
 
 #endif // NUCLEAR_EXPLOSION_H

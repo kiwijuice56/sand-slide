@@ -39,6 +39,10 @@ public:
     double get_acid_resistance() override {
         return 0.95;
     }
+
+    int get_state() override {
+        return 0;
+    }
 };
 
 #endif // IRON_H

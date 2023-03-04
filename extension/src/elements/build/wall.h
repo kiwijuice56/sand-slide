@@ -22,6 +22,10 @@ public:
     double get_acid_resistance() override {
         return 9001.0;
     }
+
+    int get_state() override {
+        return 0;
+    }
 };
 
 #endif // WALL_H
