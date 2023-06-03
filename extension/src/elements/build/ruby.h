@@ -1,7 +1,7 @@
 #ifndef RUBY_H
 #define RUBY_H
 
-class SandSimulation;
+
 
 #include "../element.h"
 

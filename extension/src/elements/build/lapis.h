@@ -1,7 +1,7 @@
 #ifndef LAPIS_H
 #define LAPIS_H
 
-class SandSimulation;
+
 
 #include "../element.h"
 

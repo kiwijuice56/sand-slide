@@ -1,7 +1,7 @@
 #ifndef ROCK_H
 #define ROCK_H
 
-class SandSimulation;
+
 
 #include "../element.h"
 

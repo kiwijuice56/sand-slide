@@ -1,7 +1,7 @@
 #ifndef VOID_H
 #define VOID_H
 
-class SandSimulation;
+
 
 #include "../element.h"
 

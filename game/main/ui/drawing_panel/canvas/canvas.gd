@@ -20,12 +20,12 @@ func _initialize_elements() -> void:
 	material = ShaderMaterial.new()
 	material.shader = preload("res://main/ui/drawing_panel/canvas/element_painter.gdshader")
 	texture = ImageTexture.new()
-	element_materials = []
-	var dir: DirAccess = DirAccess.open("res://main/element/")
-	for file in dir.get_files():
-		if not file.contains(".tres"):
-			continue
-		element_materials.append(ResourceLoader.load("%s/%s" % [dir.get_current_dir(), file]))
+#	element_materials = []
+#	var dir: DirAccess = DirAccess.open("res://main/element/")
+#	for file in dir.get_files():
+#		if not file.contains(".tres"):
+#			continue
+#		element_materials.append(ResourceLoader.load("%s/%s" % [dir.get_current_dir(), file]))
 		
 	# First, we make arrays to keep track of where each element is located in the category arrays
 	var fluid_ids := []

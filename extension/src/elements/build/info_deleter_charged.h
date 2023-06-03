@@ -1,7 +1,7 @@
 #ifndef INFO_DELETER_CHARGED_H
 #define INFO_DELETER_CHARGED_H
 
-class SandSimulation;
+
 
 #include "../element.h"
 

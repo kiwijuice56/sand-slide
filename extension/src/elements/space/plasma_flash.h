@@ -1,7 +1,7 @@
 #ifndef PLASMA_FLASH_H
 #define PLASMA_FLASH_H
 
-class SandSimulation;
+
 
 #include "../element.h"
 

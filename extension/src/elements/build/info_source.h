@@ -1,7 +1,7 @@
 #ifndef INFO_SOURCE_H
 #define INFO_SOURCE_H
 
-class SandSimulation;
+
 
 #include "../element.h"
 

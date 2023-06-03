@@ -1,7 +1,7 @@
 #ifndef PARADOX_H
 #define PARADOX_H
 
-class SandSimulation;
+
 
 #include "../element.h"
 

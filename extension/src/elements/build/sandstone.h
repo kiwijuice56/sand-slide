@@ -1,7 +1,7 @@
 #ifndef SANDSTONE_H
 #define SANDSTONE_H
 
-class SandSimulation;
+
 
 #include "../element.h"
 

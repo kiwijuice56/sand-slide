@@ -69,8 +69,8 @@ void fragment() {
 	// IDs are the same as the ones given in ../extension/sand_simulation.cpp
 	
 	// PUVs scaled to pixels 
-	int pX = int(round(floor(UV.x * float(width) / float(px_scale))));
-	int pY = int(round(floor(UV.y * float(height) / float(px_scale))));
+	int pX = int(UV.x * floor(float(width) / float(px_scale)));
+	int pY = int(UV.y * floor(float(height) / float(px_scale)));
 	vec2 PUV = vec2(float(pX) / (float(width) / float(px_scale)), float(pY) / (float(height) / float(px_scale)));
 	
 	vec3 col = vec3(1.0);

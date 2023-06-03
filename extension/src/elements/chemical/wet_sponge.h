@@ -1,7 +1,7 @@
 #ifndef WET_SPONGE_H
 #define WET_SPONGE_H
 
-class SandSimulation;
+
 
 #include "../element.h"
 

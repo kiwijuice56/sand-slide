@@ -1,7 +1,7 @@
 #ifndef INFO_AMPLIFIER_H
 #define INFO_AMPLIFIER_H
 
-class SandSimulation;
+
 
 #include "../element.h"
 

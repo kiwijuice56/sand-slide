@@ -1,7 +1,7 @@
 #ifndef CRYSTAL_H
 #define CRYSTAL_H
 
-class SandSimulation;
+
 
 #include "../element.h"
 

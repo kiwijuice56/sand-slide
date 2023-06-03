@@ -1,7 +1,7 @@
 #ifndef MOLTEN_GLASS_H
 #define MOLTEN_GLASS_H
 
-class SandSimulation;
+
 
 #include "../element.h"
 

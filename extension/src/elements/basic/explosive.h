@@ -1,7 +1,7 @@
 #ifndef EXPLOSIVE_H
 #define EXPLOSIVE_H
 
-class SandSimulation;
+
 
 #include "../element.h"
 

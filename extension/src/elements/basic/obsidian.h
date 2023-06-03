@@ -1,7 +1,7 @@
 #ifndef OBSIDIAN_H
 #define OBSIDIAN_H
 
-class SandSimulation;
+
 
 #include "../element.h"
 

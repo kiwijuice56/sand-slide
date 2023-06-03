@@ -1,7 +1,7 @@
 #ifndef BLACK_HOLE_H
 #define BLACK_HOLE_H
 
-class SandSimulation;
+
 
 #include "../element.h"
 

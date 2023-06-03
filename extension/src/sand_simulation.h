@@ -2,10 +2,10 @@
 #define SAND_SIMULATION_CLASS_H
 
 #include <vector>
-#include <unordered_set>
 #include <godot_cpp/classes/ref.hpp>
+#include <godot_cpp/core/class_db.hpp>
 
-#include "elements/element.h"
+class Element;
 
 using namespace godot;
 
@@ -29,6 +29,7 @@ class SandSimulation : public RefCounted {
 
     // Pointers to an instance of each element to access class properties and methods
     std::vector<Element*> elements;
+
 
     std::vector<bool> visited;
 
@@ -75,8 +76,6 @@ public:
     int get_height();
     void resize(int new_width, int new_height);
     void set_chunk_size(int new_size);
-
-    void clean_up();
 };
 
 #endif // SAND_SIMULATION_CLASS_H

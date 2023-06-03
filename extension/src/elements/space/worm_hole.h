@@ -1,7 +1,7 @@
 #ifndef WORM_HOLE_H
 #define WORM_HOLE_H
 
-class SandSimulation;
+
 
 #include "../element.h"
 

@@ -1,7 +1,7 @@
 #ifndef IRON_H
 #define IRON_H
 
-class SandSimulation;
+
 
 #include "../element.h"
 

@@ -1,7 +1,7 @@
 #ifndef ICE_BOMB_H
 #define ICE_BOMB_H
 
-class SandSimulation;
+
 
 #include "../element.h"
 

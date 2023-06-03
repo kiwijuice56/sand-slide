@@ -1,7 +1,7 @@
 #ifndef OSMIUM_H
 #define OSMIUM_H
 
-class SandSimulation;
+
 
 #include "../element.h"
 

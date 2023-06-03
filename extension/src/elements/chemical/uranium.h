@@ -1,7 +1,7 @@
 #ifndef URANIUM_H
 #define URANIUM_H
 
-class SandSimulation;
+
 
 #include "../element.h"
 

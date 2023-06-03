@@ -1,8 +1,6 @@
 #ifndef BEAM_POWER_FLASH_H
 #define BEAM_POWER_FLASH_H
 
-class SandSimulation;
-
 #include "../element.h"
 
 class BeamPowerFlash: public Element {

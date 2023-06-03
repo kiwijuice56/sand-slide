@@ -1,7 +1,7 @@
 #ifndef INFO_DUST_H
 #define INFO_DUST_H
 
-class SandSimulation;
+
 
 #include "../element.h"
 

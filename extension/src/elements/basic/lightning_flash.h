@@ -1,7 +1,7 @@
 #ifndef LIGHTNING_FLASH_H
 #define LIGHTNING_FLASH_H
 
-class SandSimulation;
+
 
 #include "../element.h"
 

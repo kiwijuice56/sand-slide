@@ -1,7 +1,7 @@
 #ifndef WALL_H
 #define WALL_H
 
-class SandSimulation;
+
 
 #include "../element.h"
 

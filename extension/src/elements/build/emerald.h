@@ -1,7 +1,7 @@
 #ifndef EMERALD_H
 #define EMERALD_H
 
-class SandSimulation;
+
 
 #include "../element.h"
 

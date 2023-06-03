@@ -1,7 +1,7 @@
 #ifndef GLASS_H
 #define GLASS_H
 
-class SandSimulation;
+
 
 #include "../element.h"
 

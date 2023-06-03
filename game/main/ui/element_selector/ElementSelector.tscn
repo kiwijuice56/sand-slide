@@ -1595,7 +1595,7 @@ theme_override_font_sizes/font_size = 15
 theme_override_styles/normal = SubResource("StyleBoxFlat_edhlb")
 theme_override_styles/hover = SubResource("StyleBoxFlat_3a51b")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_mn42s")
-text = "amp ⯈"
+text = "amp"
 script = ExtResource("3_bfdgk")
 id = 112
 

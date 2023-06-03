@@ -1,7 +1,7 @@
 #ifndef KUIPER_H
 #define KUIPER_H
 
-class SandSimulation;
+
 
 #include "../element.h"
 

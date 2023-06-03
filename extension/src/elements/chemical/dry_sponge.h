@@ -1,7 +1,7 @@
 #ifndef DRY_SPONGE_H
 #define DRY_SPONGE_H
 
-class SandSimulation;
+
 
 #include "../element.h"
 

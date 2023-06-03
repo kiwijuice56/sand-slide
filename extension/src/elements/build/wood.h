@@ -1,7 +1,7 @@
 #ifndef WOOD_H
 #define WOOD_H
 
-class SandSimulation;
+
 
 #include "../element.h"
 

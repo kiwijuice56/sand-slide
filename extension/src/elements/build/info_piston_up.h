@@ -1,7 +1,7 @@
 #ifndef INFO_PISTON_UP_H
 #define INFO_PISTON_UP_H
 
-class SandSimulation;
+
 
 #include "../element.h"
 

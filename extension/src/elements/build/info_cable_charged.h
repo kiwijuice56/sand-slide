@@ -1,7 +1,7 @@
 #ifndef INFO_CABLE_CHARGED_H
 #define INFO_CABLE_CHARGED_H
 
-class SandSimulation;
+
 
 #include "../element.h"
 
