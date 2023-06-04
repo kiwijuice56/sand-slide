@@ -38,6 +38,14 @@ public:
     int get_state() override {
         return 2;
     }
+
+    int get_temperature() override {
+        return 0;
+    }
+
+    int get_toxicity() override {
+        return 0;
+    }
 };
 
 #endif // VAPOR_H

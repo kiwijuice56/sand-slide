@@ -30,16 +30,16 @@ class SandSimulation : public RefCounted {
     // Pointers to an instance of each element to access class properties and methods
     std::vector<Element*> elements;
 
-
+    // Marks what cells are visited to not process them multiple times in one frame
     std::vector<bool> visited;
 
-    // Contains the actual particles 
+    // Contains the identity of the particles on the grid
     std::vector<int> cells;
 
     // Contains the count of active particles in each chunk
     std::vector<int> chunks;
 
-    // Godot structure that is synced to `cells` for rendering
+    // Godot structure that is synced to `cells` for saving and loading
     PackedByteArray draw_data;
 
 protected:
@@ -51,11 +51,12 @@ public:
 
     void step(int iterations);
 
-    // Helper methods for elements
+    // Processing methods for elements
     void move_and_swap(int row, int col, int row2, int col2);
-   
     void grow(int row, int col, int food, int replacer);
     void liquid_process(int row, int col, int fluidity);
+
+    // State methods for elements
     int touch_count(int row, int col, int type);
     int cardinal_touch_count(int row, int col, int type);
     bool in_bounds(int row, int col);
@@ -63,19 +64,20 @@ public:
     bool is_on_fire(int row, int col);
     bool is_cold(int row, int col);
     bool is_swappable(int row, int col, int row2, int col2);
+
+    // Optimized RNG
     float randf();
 
+    // Interface methods
     int get_cell(int row, int col);
     void set_cell(int row, int col, int type);
     void draw_cell(int row, int col, int type);
     int get_chunk(int c);
-
-    PackedByteArray get_draw_data();
-
     int get_width();
     int get_height();
     void resize(int new_width, int new_height);
     void set_chunk_size(int new_size);
+    PackedByteArray get_draw_data();
 };
 
 #endif // SAND_SIMULATION_CLASS_H

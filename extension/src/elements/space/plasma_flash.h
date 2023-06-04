@@ -1,8 +1,6 @@
 #ifndef PLASMA_FLASH_H
 #define PLASMA_FLASH_H
 
-
-
 #include "../element.h"
 
 class PlasmaFlash: public Element {
@@ -41,6 +39,14 @@ public:
 
     int get_state() override {
         return 2;
+    }
+
+    int get_temperature() override {
+        return 1;
+    }
+
+    int get_toxicity() override {
+        return 0;
     }
 };
 

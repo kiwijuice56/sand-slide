@@ -31,6 +31,14 @@ public:
     int get_state() override {
         return 1;
     }
+
+    int get_temperature() override {
+        return -1;
+    }
+
+    int get_toxicity() override {
+        return 0;
+    }
 };
 
 #endif // CARBON_DIOXIDE_H

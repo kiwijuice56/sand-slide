@@ -26,27 +26,27 @@ void SandSimulation::step(int iterations) {
                 continue;
             for (int row = chunk_size - 1; row >= 0; row--) {
                 for (int col = 0; col < chunk_size; col++) {
-                    int rRow = (chunk / chunk_width) * chunk_size + row;
-                    int rCol = (chunk % chunk_width) * chunk_size + col;
-                    if (rRow >= height || rCol >= width)
+                    int r_row = (chunk / chunk_width) * chunk_size + row;
+                    int r_col = (chunk % chunk_width) * chunk_size + col;
+                    if (r_row >= height || r_col >= width)
                         continue;
-                    if (visited.at(rRow * width + rCol)) 
-                        visited.at(rRow * width + rCol) = false;
+                    if (visited.at(r_row * width + r_col)) 
+                        visited.at(r_row * width + r_col) = false;
                     else {
                         // Taps are the element offset by 128; get_cell() returns only the first few bits, so we can use this to spawn the element!
-                        if (cells.at(rRow * width + rCol) >= 128 && randf() < 1.0 / 16) {
-                            int x = cells.at(rRow * width + rCol) - 128;
-                            grow(rRow + 1, rCol, 0, x);
-                            grow(rRow + 1, rCol + 1, 0, x);
-                            grow(rRow + 1, rCol - 1, 0, x);
-                            grow(rRow - 1, rCol, 0, x);
-                            grow(rRow - 1, rCol + 1, 0, x);
-                            grow(rRow - 1, rCol - 1, 0, x);
-                            grow(rRow, rCol, 0, x);
-                            grow(rRow, rCol + 1, 0, x);
-                            grow(rRow, rCol - 1, 0, x);
+                        if (cells.at(r_row * width + r_col) >= 128 && randf() < 1.0 / 16) {
+                            int x = cells.at(r_row * width + r_col) - 128;
+                            grow(r_row + 1, r_col, 0, x);
+                            grow(r_row + 1, r_col + 1, 0, x);
+                            grow(r_row + 1, r_col - 1, 0, x);
+                            grow(r_row - 1, r_col, 0, x);
+                            grow(r_row - 1, r_col + 1, 0, x);
+                            grow(r_row - 1, r_col - 1, 0, x);
+                            grow(r_row, r_col, 0, x);
+                            grow(r_row, r_col + 1, 0, x);
+                            grow(r_row, r_col - 1, 0, x);
                         } else {
-                            elements.at(get_cell(rRow, rCol))->process(this, rRow, rCol);
+                            elements.at(get_cell(r_row, r_col))->process(this, r_row, r_col);
                         }
                     }
                 }
@@ -59,15 +59,12 @@ void SandSimulation::step(int iterations) {
 void SandSimulation::move_and_swap(int row, int col, int row2, int col2) {
     if (!in_bounds(row, col) || !in_bounds(row2, col2)) 
         return;
-
     if (elements.at(get_cell(row2, col2))->get_state() == 0)
         return;
-
     if (elements.at(get_cell(row, col))->get_state() != 0)
         if (elements.at(get_cell(row, col))->get_density() <= elements.at(get_cell(row2, col2))->get_density()) 
             if (get_cell(row, col) != get_cell(row2, col2))
                 return;
-
     int old = get_cell(row, col);
     set_cell(row, col, get_cell(row2, col2));
     set_cell(row2, col2, old);
@@ -80,7 +77,6 @@ void SandSimulation::grow(int row, int col, int food, int replacer) {
         return;
     if (food == -1) {
         // Since only explosions/lasers grow into all cells, we run a check for explosion resistance
-        // This should probably be inside the explosion element code, but this is more convenient
         if (randf() >= (1.0 - elements.at(get_cell(row, col))->get_explode_resistance())) 
             return;
     } else if (get_cell(row, col) != food) 
@@ -142,37 +138,33 @@ bool SandSimulation::is_poisoned(int row, int col) {
             if (x == 0 && y == 0 || !in_bounds(row + y, col + x)) 
                 continue;
             int c = get_cell(row + y, col + x);
-            if (c == 10 || c == 21 || c == 22 || c == 35 || c == 44 || c == 59 || c == 84 || c == 115) 
+            if (elements.at(get_cell(row + y, col + x))->get_toxicity() == 1) 
                 return true;
         }
     } 
     return false; 
 }
 
-// Check if a cell is touching any flame producing elements
+// Check if a cell is touching any hot elements
 bool SandSimulation::is_on_fire(int row, int col) {
     for (int y = -1; y <= 1; y++) {
         for (int x = -1; x <= 1; x++) {
             if (x == 0 && y == 0 || !in_bounds(row + y, col + x))
                 continue;
-            int c = get_cell(row + y, col + x);
-            if (
-                c == 24 || c == 5 || c == 9 || c == 20 || c == 26 || c == 34 || c == 37 || c == 38 || 
-                c == 40 || c == 46 || c == 48 || c == 50 || c == 52 || c == 61 || c == 66 || c == 67 || c == 68 || c == 69) 
+            if (elements.at(get_cell(row + y, col + x))->get_temperature() == 1) 
                 return true;
         }
     } 
     return false;
 }
 
-// Check if a cell is touching any flame producing elements
+// Check if a cell is touching any cold elements
 bool SandSimulation::is_cold(int row, int col) {
     for (int y = -1; y <= 1; y++) {
         for (int x = -1; x <= 1; x++) {
             if (x == 0 && y == 0 || !in_bounds(row + y, col + x))
                 continue;
-            int c = get_cell(row + y, col + x);
-            if (c == 87 || c == 88 || c == 89 || c == 90 || c == 91 || c == 92 || c == 96) 
+            if (elements.at(get_cell(row + y, col + x))->get_temperature() == -1) 
                 return true;
         }
     } 
