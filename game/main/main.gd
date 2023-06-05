@@ -65,7 +65,7 @@ func _on_mouse_pressed(start: Vector2, end: Vector2) -> void:
 				i += 1
 	draw_circle(end.x, end.y, int(brush_size / 2.0))
 
-func _process(_delta) -> void:
+func _process(_delta: float) -> void:
 	if draw_enabled:
 		sim.step(simulation_speed)
 		canvas.repaint(sim)

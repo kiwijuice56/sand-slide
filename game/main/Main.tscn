@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://djtha84eljhde" path="res://main/ui/_icons/help.png" id="9_hcxqy"]
 [ext_resource type="Texture2D" uid="uid://bsdea08owut0v" path="res://main/ui/_icons/settings.png" id="10_x6g80"]
 [ext_resource type="Texture2D" uid="uid://c4k2cs4ly1agb" path="res://main/ui/_icons/file.png" id="11_nf3sg"]
-[ext_resource type="PackedScene" uid="uid://6liggmbly3oa" path="res://main/ui/element_selector/ElementSelector.tscn" id="12_1ijq2"]
+[ext_resource type="PackedScene" path="res://main/ui/element_selector/ElementSelector.tscn" id="12_1ijq2"]
 [ext_resource type="PackedScene" uid="uid://dk6olyuqw7m7r" path="res://main/ui/fps_label/FpsLabel.tscn" id="13_kyq44"]
 [ext_resource type="PackedScene" path="res://main/ui/submenu/save/SaveFileMenu.tscn" id="14_73tcr"]
 [ext_resource type="PackedScene" uid="uid://bi1khomdif7xb" path="res://main/ui/submenu/settings/SettingsMenu.tscn" id="15_vwu6i"]
