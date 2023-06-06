@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://main/element_manager/element_material/types/gradient_color.gd" id="1_vquhf"]
+
+
+[resource]
+script = ExtResource("1_vquhf")
+color_a = Color(0.137255, 0.0509804, 0.2, 1)
+color_b = Color(0.619608, 0.0941176, 0.278431, 1)
+color_c = Color(0.960784, 0.584314, 0.0862745, 1)
+color_d = Color(1, 0.929412, 0.478431, 1)
+color_e = Color(1, 1, 1, 1)
+offset_1 = 0.2
+offset_2 = 0.5
+offset_3 = 0.7
+id = 40
+bloom = 0.0

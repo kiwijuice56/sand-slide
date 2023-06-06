@@ -1,0 +1,8 @@
+[gd_resource type="Resource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://main/element_manager/element_material/types/flat_color.gd" id="1_rct25"]
+
+[resource]
+script = ExtResource("1_rct25")
+color = Color(0.631373, 0.368627, 0.12549, 1)
+id = 18

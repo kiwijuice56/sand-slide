@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://main/element_manager/element_material/types/gradient_color.gd" id="1_efvee"]
+
+
+[resource]
+script = ExtResource("1_efvee")
+color_a = Color(0.113725, 0.192157, 0.588235, 1)
+color_b = Color(0.129412, 0.211765, 0.568627, 1)
+color_c = Color(0.309804, 0.572549, 0.890196, 1)
+color_d = Color(0.6, 0.952941, 1, 1)
+color_e = Color(1, 1, 1, 1)
+offset_1 = 0.1
+offset_2 = 0.4
+offset_3 = 0.7
+id = 92
+bloom = 0.0

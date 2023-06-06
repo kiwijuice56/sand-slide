@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://ggbp6fch244c"]
+[gd_scene load_steps=29 format=3 uid="uid://ggbp6fch244c"]
 
 [ext_resource type="Script" path="res://main/main.gd" id="1_2pidp"]
 [ext_resource type="Theme" uid="uid://co20v1mxv2dfm" path="res://main/ui/_theme/theme.tres" id="2_nb65v"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://bi1khomdif7xb" path="res://main/ui/submenu/settings/SettingsMenu.tscn" id="15_vwu6i"]
 [ext_resource type="PackedScene" uid="uid://bueyu0dk5xun4" path="res://main/ui/submenu/help/HelpMenu.tscn" id="16_qckww"]
 [ext_resource type="Script" path="res://main/painter/painter.gd" id="18_mer41"]
+[ext_resource type="Script" path="res://main/element_manager/element_manager.gd" id="18_mpubp"]
 [ext_resource type="Script" path="res://main/save_file/save_file_manager.gd" id="87_5tqe6"]
 [ext_resource type="Script" path="res://main/ui/element_selector/element_button.gd" id="107_ic066"]
 
@@ -218,6 +219,10 @@ layout_mode = 1
 [node name="SaveFileManager" type="Node" parent="."]
 unique_name_in_owner = true
 script = ExtResource("87_5tqe6")
+
+[node name="ElementManager" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("18_mpubp")
 
 [node name="Painter" type="Node" parent="."]
 unique_name_in_owner = true

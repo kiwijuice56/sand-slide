@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Metal" load_steps=2 format=3 uid="uid://bn0smmilffuoa"]
+
+[ext_resource type="Script" path="res://main/element_manager/element_material/types/metal.gd" id="1_pwtvr"]
+
+
+[resource]
+script = ExtResource("1_pwtvr")
+color_a = Color(1, 0.996078, 0.94902, 1)
+color_b = Color(1, 0.996078, 0.94902, 1)
+id = 111

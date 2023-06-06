@@ -1,0 +1,21 @@
+[gd_resource type="Resource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://main/element_manager/element_material/types/fluid.gd" id="1_3a3kf"]
+
+[resource]
+script = ExtResource("1_3a3kf")
+noise_texture = 0
+color_a = Color(0.223529, 0.466667, 0.482353, 1)
+color_b = Color(0.34902, 0.796078, 1, 1)
+color_c = Color(0.462745, 0.827451, 0.870588, 1)
+noise_scale = 5.0
+noise_speed = 2.0
+current_size = 64.0
+wave_cycle = 3.5
+contraction_size = 24.0
+wave_density = 3.0
+shimmer_speed = 16.0
+shimmer_density = 5.0
+shimmer_opacity = 0.7
+shimmer_cycle = 7.0
+id = 59

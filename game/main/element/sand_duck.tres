@@ -1,8 +1,0 @@
-[gd_resource type="Resource" load_steps=2 format=3]
-
-[ext_resource type="Script" path="res://main/element/types/flat_color.gd" id="1_cbbr2"]
-
-[resource]
-script = ExtResource("1_cbbr2")
-color = Color(0.988235, 0.737255, 0.384314, 1)
-id = 8

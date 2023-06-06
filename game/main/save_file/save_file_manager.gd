@@ -1,6 +1,7 @@
 extends Node
 class_name SaveFileManager
-# Helper class for managing all save files in user storage
+
+# Manages save files
 
 var files: Array[SaveFile] = []
 
@@ -45,7 +46,7 @@ func create_save_file(save_name: String) -> SaveFile:
 	file.date = date_string
 	file.version = ProjectSettings.get_setting("application/config/version")
 	
-	CommonReference.canvas.save_image("user://" + folder_name + "/img.png")
+	save_image("user://" + folder_name + "/img.png")
 	ResourceSaver.save(file, "user://" + folder_name + "/res.tres")
 	
 	update_files()

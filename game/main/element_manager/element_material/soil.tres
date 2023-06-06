@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="FlatColor" load_steps=2 format=3 uid="uid://dmyoog1rq4tkg"]
+
+[ext_resource type="Script" path="res://main/element_manager/element_material/types/flat_color.gd" id="1_gtpmi"]
+
+[resource]
+script = ExtResource("1_gtpmi")
+color = Color(0.501961, 0.156863, 0.121569, 1)
+id = 11
+noise_type = 2
+noise_pitch = 1.1

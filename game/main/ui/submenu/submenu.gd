@@ -1,6 +1,8 @@
 extends Control
 class_name Submenu
 
+# Base class for popup menus
+
 signal exited
 
 @export var anim: AnimationPlayer

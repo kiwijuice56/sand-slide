@@ -1,5 +1,6 @@
 extends Control
 class_name UI
+
 # Handles top level UI components and state
 
 @export var save_control: Submenu

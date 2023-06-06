@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://main/element_manager/element_material/types/gradient_color.gd" id="1_ia8ci"]
+
+
+[resource]
+script = ExtResource("1_ia8ci")
+color_a = Color(0.262745, 0.282353, 0.34902, 1)
+color_b = Color(0.145098, 0.133333, 0.239216, 1)
+color_c = Color(0.180392, 0.180392, 0.301961, 1)
+color_d = Color(0.243137, 0.254902, 0.34902, 1)
+color_e = Color(0.262745, 0.282353, 0.34902, 1)
+offset_1 = 0.3
+offset_2 = 0.7
+offset_3 = 0.9
+id = 58
+bloom = 0.0

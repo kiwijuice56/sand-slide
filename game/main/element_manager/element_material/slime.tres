@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="Fluid" load_steps=2 format=3 uid="uid://dve7o447446ql"]
+
+[ext_resource type="Script" path="res://main/element_manager/element_material/types/fluid.gd" id="1_gp400"]
+
+[resource]
+script = ExtResource("1_gp400")
+noise_texture = 0
+color_a = Color(0.368627, 0.329412, 0.741176, 1)
+color_b = Color(0.603922, 0.615686, 0.721569, 1)
+color_c = Color(0.117647, 0.0823529, 0.380392, 1)
+noise_scale = 5.0
+noise_speed = 16.0
+current_size = 64.0
+wave_cycle = 3.5
+contraction_size = 24.0
+wave_density = 3.0
+shimmer_speed = 32.0
+shimmer_density = 5.0
+shimmer_opacity = 0.7
+shimmer_cycle = 7.0
+id = 86

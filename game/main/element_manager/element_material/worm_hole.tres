@@ -1,0 +1,16 @@
+[gd_resource type="Resource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://main/element_manager/element_material/types/gradient_color.gd" id="1_r4jvn"]
+
+
+[resource]
+script = ExtResource("1_r4jvn")
+color_a = Color(1, 1, 1, 1)
+color_b = Color(0.396078, 0.862745, 0.988235, 1)
+color_c = Color(0.196078, 0.537255, 0.901961, 1)
+color_d = Color(0.133333, 0.215686, 0.74902, 1)
+color_e = Color(0, 0, 0, 1)
+offset_1 = 0.7
+offset_2 = 0.8
+offset_3 = 0.9
+id = 81

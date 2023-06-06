@@ -1,0 +1,16 @@
+[gd_resource type="Resource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://main/element_manager/element_material/types/gradient_color.gd" id="1_hmsyr"]
+
+
+[resource]
+script = ExtResource("1_hmsyr")
+color_a = Color(1, 1, 1, 1)
+color_b = Color(0.729412, 0.839216, 0.870588, 1)
+color_c = Color(0.87451, 0.960784, 0.968627, 1)
+color_d = Color(0.929412, 1, 1, 1)
+color_e = Color(1, 1, 1, 1)
+offset_1 = 0.2
+offset_2 = 0.4
+offset_3 = 0.6
+id = 85

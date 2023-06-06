@@ -1,0 +1,15 @@
+[gd_resource type="Resource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://main/element_manager/element_material/types/gradient_color.gd" id="1_inuc2"]
+
+[resource]
+script = ExtResource("1_inuc2")
+color_a = Color(0.490196, 0.192157, 0.364706, 1)
+color_b = Color(0.388235, 0.137255, 0.356863, 1)
+color_c = Color(0.301961, 0.101961, 0.309804, 1)
+color_d = Color(0.231373, 0.0705882, 0.25098, 1)
+color_e = Color(0.152941, 0.0313726, 0.188235, 1)
+offset_1 = 0.2
+offset_2 = 0.4
+offset_3 = 0.6
+id = 31

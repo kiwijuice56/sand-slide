@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="Fluid" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://main/element_manager/element_material/types/fluid.gd" id="1_ccqyd"]
+
+[resource]
+script = ExtResource("1_ccqyd")
+noise_texture = 1
+color_a = Color(0.0941176, 0.0862745, 0.145098, 1)
+color_b = Color(0.203922, 0.176471, 0.25098, 1)
+color_c = Color(0.792157, 0.780392, 0.85098, 1)
+noise_scale = 2.0
+noise_speed = 128.0
+current_size = 32.0
+wave_cycle = 1.0
+contraction_size = 48.0
+wave_density = 0.5
+shimmer_speed = 128.0
+shimmer_density = 1.5
+shimmer_opacity = 0.3
+shimmer_cycle = 5.0
+id = 82
+bloom = null
