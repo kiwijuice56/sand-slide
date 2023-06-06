@@ -3,7 +3,6 @@ class_name Submenu
 
 signal exited
 
-@export var simulation: Main
 @export var anim: AnimationPlayer
 @export var back_button: Button
 

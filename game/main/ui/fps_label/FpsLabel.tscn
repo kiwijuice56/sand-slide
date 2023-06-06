@@ -11,7 +11,6 @@ theme_override_constants/margin_top = 8
 metadata/_edit_use_anchors_ = true
 
 [node name="FPSLabel" type="Label" parent="."]
-visible = false
 layout_mode = 2
 size_flags_vertical = 1
 theme_override_font_sizes/font_size = 12

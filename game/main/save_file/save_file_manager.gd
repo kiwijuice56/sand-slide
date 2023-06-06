@@ -2,8 +2,6 @@ extends Node
 class_name SaveFileManager
 # Helper class for managing all save files in user storage
 
-@export var sim_holder: Node
-
 var files: Array[SaveFile] = []
 
 func _ready() -> void:
@@ -47,7 +45,7 @@ func create_save_file(save_name: String) -> SaveFile:
 	file.date = date_string
 	file.version = ProjectSettings.get_setting("application/config/version")
 	
-	sim_holder.save_image("user://" + folder_name + "/img.png")
+	CommonReference.canvas.save_image("user://" + folder_name + "/img.png")
 	ResourceSaver.save(file, "user://" + folder_name + "/res.tres")
 	
 	update_files()
@@ -57,7 +55,7 @@ func create_save_file(save_name: String) -> SaveFile:
 func overwrite_save_file(file: SaveFile) -> void:
 	var path: String = file.get_path()
 	var folder: String = path.substr(0, path.rfind("/") + 1)
-	sim_holder.save_image(folder + "/img.png")
+	save_image(folder + "/img.png")
 	file.version = ProjectSettings.get_setting("application/config/version")
 	ResourceSaver.save(file, path)
 	
@@ -66,7 +64,7 @@ func overwrite_save_file(file: SaveFile) -> void:
 func load_from_file(file: SaveFile) -> void:
 	var path: String = file.get_path()
 	var folder: String = path.substr(0, path.rfind("/") + 1)
-	sim_holder.load_image(folder + "/img.png")
+	load_image(folder + "/img.png")
 
 func delete_save_file(file: SaveFile) -> void:
 	var path: String = file.get_path()
@@ -78,3 +76,16 @@ func delete_save_file(file: SaveFile) -> void:
 	files.remove_at(files.find(file))
 	
 	update_files()
+
+func save_image(path: String) -> void:
+	CommonReference.canvas.texture.get_image().save_png(path)
+
+func load_image(path: String) -> void:
+	CommonReference.painter.clear()
+	var img: Image = Image.load_from_file(path)
+	for i in range(CommonReference.main.sim.get_height()):
+		for j in range(CommonReference.main.sim.get_width()):
+			if j >= img.get_width() or i >= img.get_height():
+				continue
+			CommonReference.main.sim.set_cell(i, j, int(255 * img.get_pixel(j, i).r))
+	CommonReference.canvas.repaint(CommonReference.main.sim)

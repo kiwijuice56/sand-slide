@@ -42,6 +42,8 @@ class SandSimulation : public RefCounted {
     // Godot structure that is synced to `cells` for saving and loading
     PackedByteArray draw_data;
 
+    Dictionary element_material_map;
+
 protected:
     static void _bind_methods();
 
@@ -77,6 +79,7 @@ public:
     int get_height();
     void resize(int new_width, int new_height);
     void set_chunk_size(int new_size);
+    void set_element_material_map(Dictionary dict);
     PackedByteArray get_data();
     PackedByteArray get_color_image();
 };

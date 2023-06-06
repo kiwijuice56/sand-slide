@@ -20,6 +20,11 @@ config/icon="res://icon.png"
 config/windows_native_icon="res://favicon.ico"
 config/version="3.0"
 
+[autoload]
+
+Settings="*res://main/settings.gd"
+CommonReference="*res://main/common_reference.gd"
+
 [debug]
 
 file_logging/enable_file_logging=true
@@ -76,7 +81,7 @@ limits/debugger/max_errors_per_second=1
 
 [rendering]
 
-renderer/rendering_method="mobile"
+renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
 textures/vram_compression/import_etc2_astc=true
 shader_compiler/shader_cache/strip_debug.release=false

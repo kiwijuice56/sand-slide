@@ -2,8 +2,6 @@ extends Control
 class_name UI
 # Handles top level UI components and state
 
-@export var simulation: Main
-
 @export var save_control: Submenu
 @export var settings_control: Submenu
 @export var help_control: Submenu
@@ -22,25 +20,25 @@ func _ready() -> void:
 	help_button.pressed.connect(_on_help_selected)
 	help_control.exited.connect(_on_help_control_exited)
 	
-	simulation.draw_enabled = true
+	CommonReference.main.active = true
 
 func _on_save_selected() -> void:
-	simulation.draw_enabled = false
+	CommonReference.main.active = false
 	save_control.enter()
 
 func _on_save_control_exited() -> void:
-	simulation.draw_enabled = true
+	CommonReference.main.active = true
 
 func _on_settings_selected() -> void:
-	simulation.draw_enabled = false
+	CommonReference.main.active = false
 	settings_control.enter()
 
 func _on_settings_control_exited() -> void:
-	simulation.draw_enabled = true
+	CommonReference.main.active = true
 
 func _on_help_selected() -> void:
-	simulation.draw_enabled = false
+	CommonReference.main.active = false
 	help_control.enter()
 
 func _on_help_control_exited() -> void:
-	simulation.draw_enabled = true
+	CommonReference.main.active = true
