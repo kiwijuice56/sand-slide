@@ -8,7 +8,6 @@ SandSimulation::SandSimulation() {
     AllElements::fill_elements(&elements);
 
     draw_data = PackedByteArray();
-
     draw_data.resize(width * height);
     draw_data.fill(0);
     visited.resize(width * height);
@@ -269,14 +268,15 @@ void SandSimulation::set_chunk_size(int new_size) {
 PackedByteArray SandSimulation::get_color_image() {
     for (int y = 0; y < height; y++) {
         for (int x = 0; x < width; x++) {
-            
+            int id = cells.at(y * width + x);
+            draw_data.set(y * width + x, graphics->get_color(id));
         }
     }
     return draw_data;
 }
 
-void SandSimulation::set_element_material_map(Dictionary dict) {
-    element_material_map = dict;
+void SandSimulation::set_graphics(Graphics* g) {
+    graphics = g;
 }
 
 void SandSimulation::_bind_methods() {
@@ -291,5 +291,5 @@ void SandSimulation::_bind_methods() {
     ClassDB::bind_method(D_METHOD("get_height"), &SandSimulation::get_height);
     ClassDB::bind_method(D_METHOD("resize"), &SandSimulation::resize);
     ClassDB::bind_method(D_METHOD("set_chunk_size"), &SandSimulation::set_chunk_size);
-    ClassDB::bind_method(D_METHOD("set_element_material_map"), &SandSimulation::set_element_material_map);
+    ClassDB::bind_method(D_METHOD("set_graphics"), &SandSimulation::set_graphics);
 }

@@ -1,5 +1,6 @@
 #include "register_types.h"
 #include "sand_simulation.h"
+#include "graphics.h"
 #include <gdextension_interface.h>
 #include <godot_cpp/core/class_db.hpp>
 #include <godot_cpp/core/defs.hpp>
@@ -12,6 +13,7 @@ void initialize_summator_types(ModuleInitializationLevel p_level) {
 		return;
 	}
 	ClassDB::register_class<SandSimulation>();
+	ClassDB::register_class<Graphics>();
 }
 
 void uninitialize_summator_types(ModuleInitializationLevel p_level) {

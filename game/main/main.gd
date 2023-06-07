@@ -5,6 +5,8 @@ class_name Main
 # interact with said object. Also runs the main processing of the simulation.
 
 var sim: SandSimulation
+var graphics: Graphics
+
 var active: bool = false
 
 func _ready() -> void:
@@ -12,6 +14,8 @@ func _ready() -> void:
 	# I haven't benchmarked extensively yet, but this chunk size has reasonable 
 	# performance.
 	sim.set_chunk_size(8)
+	
+	graphics = Graphics.new()
 	
 	await get_tree().get_root().ready
 	CommonReference.canvas.resized.connect(_on_window_resized)
