@@ -13,6 +13,8 @@ metadata/_edit_use_anchors_ = true
 [node name="FPSLabel" type="Label" parent="."]
 layout_mode = 2
 size_flags_vertical = 1
+theme_override_colors/font_outline_color = Color(0.345098, 0.345098, 0.345098, 1)
+theme_override_constants/outline_size = 4
 theme_override_font_sizes/font_size = 12
 text = "FPS 0"
 script = ExtResource("1_ghyna")

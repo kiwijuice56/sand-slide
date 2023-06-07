@@ -21,4 +21,4 @@ func initialize_element_material_map() -> void:
 	for mat in element_materials:
 		if mat is FlatColor:
 			flat_color[mat.id] = mat.color.to_rgba32()
-	CommonReference.main.graphics.initialize_flat_color(flat_color)
+	CommonReference.main.sim.initialize_flat_color(flat_color)

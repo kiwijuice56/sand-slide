@@ -127,7 +127,7 @@ public:
         // is called for each element type
 
         // The order in the vector is arbitrary, but it must match the list order in main.gd
-        elements->resize(128);
+        elements->resize(2048);
         elements->at(0) = new Void();
         elements->at(1) = new Sand();
         elements->at(2) = new Rock();

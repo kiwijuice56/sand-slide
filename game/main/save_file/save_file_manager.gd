@@ -65,7 +65,9 @@ func overwrite_save_file(file: SaveFile) -> void:
 func load_from_file(file: SaveFile) -> void:
 	var path: String = file.get_path()
 	var folder: String = path.substr(0, path.rfind("/") + 1)
-	load_image(folder + "/img.png")
+	var resource: SaveFile = ResourceLoader.load(folder + "/res.tres")
+	
+	load_image(folder + "/img.png", resource.version)
 
 func delete_save_file(file: SaveFile) -> void:
 	var path: String = file.get_path()
@@ -79,14 +81,33 @@ func delete_save_file(file: SaveFile) -> void:
 	update_files()
 
 func save_image(path: String) -> void:
-	CommonReference.canvas.texture.get_image().save_png(path)
+	var sim: SandSimulation = CommonReference.main.sim
+	
+	var image: Image = Image.create_from_data(sim.get_width(), sim.get_height(), false, Image.FORMAT_RGBA8, CommonReference.main.sim.get_data())
+	image.save_png(path)
 
-func load_image(path: String) -> void:
+func load_image(path: String, version: String) -> void:
+	var sim: SandSimulation = CommonReference.main.sim
+	
 	CommonReference.painter.clear()
-	var img: Image = Image.load_from_file(path)
-	for i in range(CommonReference.main.sim.get_height()):
-		for j in range(CommonReference.main.sim.get_width()):
-			if j >= img.get_width() or i >= img.get_height():
-				continue
-			CommonReference.main.sim.set_cell(i, j, int(255 * img.get_pixel(j, i).r))
-	CommonReference.canvas.repaint(CommonReference.main.sim)
+	if version.begins_with("4"):
+		var img: Image = Image.load_from_file(path)
+		for i in range(sim.get_height()):
+			for j in range(sim.get_width()):
+				if j >= img.get_width() or i >= img.get_height():
+					continue
+				CommonReference.main.sim.set_cell(i, j, img.get_pixel(j, i).to_rgba32())
+	else:
+		# Loading files before the limit increase
+		var img: Image = Image.load_from_file(path)
+		for i in range(CommonReference.main.sim.get_height()):
+			for j in range(CommonReference.main.sim.get_width()):
+				if j >= img.get_width() or i >= img.get_height():
+					continue
+				var id: int = int(255 * img.get_pixel(j, i).r)
+				# Taps now start from 4097
+				if id >= 128:
+					id -= 128
+					id += 4097
+				CommonReference.main.sim.set_cell(i, j, id)
+	CommonReference.canvas.repaint()

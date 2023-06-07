@@ -2,12 +2,12 @@
 #define SAND_SIMULATION_CLASS_H
 
 #include <vector>
+#include <unordered_map>
 #include <godot_cpp/classes/ref.hpp>
 #include <godot_cpp/core/class_db.hpp>
 
-#include "graphics.h"
-
 class Element;
+class Graphics;
 
 using namespace godot;
 
@@ -41,10 +41,9 @@ class SandSimulation : public RefCounted {
     // Contains the count of active particles in each chunk
     std::vector<int> chunks;
 
-    // Godot structure that is synced to `cells` for saving and loading
+    // Drawing information
     PackedByteArray draw_data;
-
-    Graphics* graphics;
+    std::unordered_map<int, uint32_t> flat_color;
 
 protected:
     static void _bind_methods();
@@ -81,8 +80,11 @@ public:
     int get_height();
     void resize(int new_width, int new_height);
     void set_chunk_size(int new_size);
-    void set_graphics(Graphics* graphics);
     PackedByteArray get_data();
+
+    // Graphics methods
+    uint32_t get_color(int id);
+    void initialize_flat_color(Dictionary dict);
     PackedByteArray get_color_image();
 };
 

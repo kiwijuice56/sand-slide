@@ -6,5 +6,3 @@
 script = ExtResource("1_7qftv")
 color = Color(0.980392, 0.537255, 0.176471, 1)
 id = 1
-noise_type = 2
-noise_pitch = 1.0

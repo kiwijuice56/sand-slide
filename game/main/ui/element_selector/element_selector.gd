@@ -29,7 +29,7 @@ func _ready():
 
 func _on_element_selected(button: ElementButton) -> void:
 	tap_button.button_pressed = false
-	CommonReference.painter.selected_element = button.id + (128 if tap_on else 0)
+	CommonReference.painter.selected_element = button.id + (4097 if tap_on else 0)
 	
 	unbolden_button(last_button)
 	bolden_button(button)
@@ -67,7 +67,7 @@ func _on_tap_selected() -> void:
 	else:
 		unbolden_button(tap_button)
 	
-	CommonReference.painter.selected_element += 128 if tap_on else -128
+	CommonReference.painter.selected_element += 4097 if tap_on else -4097
 
 func bolden_button(button: Button) -> void:
 	if is_instance_valid(button):

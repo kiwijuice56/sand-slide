@@ -49,7 +49,7 @@ func clear() -> void:
 		for j in range(sim.get_width()):
 			sim.draw_cell(i, j, 0)
 	# Ensures that the canvas is updated even in the pause menu
-	CommonReference.canvas.repaint(sim)
+	CommonReference.canvas.repaint()
 
 # A translation of Saideep Dicholkar's implementation of Bresenham's line algorithm
 # https://saideepdicholkar.blogspot.com/2017/04/bresenhams-line-algorithm-thick-line.html

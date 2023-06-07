@@ -2,14 +2,16 @@
 #include "elements/element.h"
 #include "elements/all_elements.h"
 
+#include <godot_cpp/variant/utility_functions.hpp>
+
 using namespace godot;
 
 SandSimulation::SandSimulation() {
     AllElements::fill_elements(&elements);
 
     draw_data = PackedByteArray();
-    draw_data.resize(width * height);
-    draw_data.fill(0);
+    draw_data.resize(width * height * 4);
+
     visited.resize(width * height);
     cells.resize(width * height);
     chunks.resize(chunk_width * chunk_height);
@@ -32,18 +34,13 @@ void SandSimulation::step(int iterations) {
                     if (visited.at(r_row * width + r_col)) 
                         visited.at(r_row * width + r_col) = false;
                     else {
-                        // Taps are the element offset by 128; get_cell() returns only the first few bits, so we can use this to spawn the element!
-                        if (cells.at(r_row * width + r_col) >= 128 && randf() < 1.0 / 16) {
-                            int x = cells.at(r_row * width + r_col) - 128;
-                            grow(r_row + 1, r_col, 0, x);
-                            grow(r_row + 1, r_col + 1, 0, x);
-                            grow(r_row + 1, r_col - 1, 0, x);
-                            grow(r_row - 1, r_col, 0, x);
-                            grow(r_row - 1, r_col + 1, 0, x);
-                            grow(r_row - 1, r_col - 1, 0, x);
-                            grow(r_row, r_col, 0, x);
-                            grow(r_row, r_col + 1, 0, x);
-                            grow(r_row, r_col - 1, 0, x);
+                        // Elements (including custom) are stored using numbers 0 - 4096
+                        // Taps share the ID of their spawn material, but offset by 4097
+                        if (cells.at(r_row * width + r_col) > 4096 && randf() < 1.0 / 16) {
+                            int x = cells.at(r_row * width + r_col) - 4097;
+                            // Grow in all 8 directions
+                            grow(r_row + 1, r_col, 0, x); grow(r_row + 1, r_col + 1, 0, x); grow(r_row + 1, r_col - 1, 0, x); grow(r_row - 1, r_col, 0, x); 
+                            grow(r_row - 1, r_col + 1, 0, x); grow(r_row - 1, r_col - 1, 0, x); grow(r_row, r_col + 1, 0, x); grow(r_row, r_col - 1, 0, x);
                         } else {
                             elements.at(get_cell(r_row, r_col))->process(this, r_row, r_col);
                         }
@@ -190,8 +187,11 @@ inline float SandSimulation::randf() {
 } 
 
 int SandSimulation::get_cell(int row, int col) {
-    if (cells.at(row * width + col) > 127)
+    // Taps should be mostly indestructible, so treat them as the wall element for processing
+    if (cells.at(row * width + col) > 4096) {
         return 15;
+    }
+
     return cells.at(row * width + col);
 }
 
@@ -203,7 +203,6 @@ void SandSimulation::set_cell(int row, int col, int type) {
     
     visited.at(row * width + col) = type != 0;
     cells.at(row * width + col) = type;
-    draw_data.set(row * width + col, type);
 }
 
 void SandSimulation::draw_cell(int row, int col, int type) {
@@ -214,10 +213,6 @@ void SandSimulation::draw_cell(int row, int col, int type) {
 
 int SandSimulation::get_chunk(int c) {
     return chunks.at(c);
-}
-
-PackedByteArray SandSimulation::get_data() {
-    return draw_data;
 }
 
 int SandSimulation::get_width() {
@@ -243,14 +238,12 @@ void SandSimulation::resize(int new_width, int new_height) {
     chunks.clear();
     chunks.resize(chunk_width * chunk_height);
 
-    draw_data.resize(new_width * new_height);
-    draw_data.fill(0);
+    draw_data.resize(new_width * new_height * 4);
 
     // Data has to be copied cell-by-cell since the dimensions of the vectors changed
     for (int row = height - 1, new_row = new_height - 1; row >= 0 && new_row >= 0; row--, new_row--) {
         for (int col = 0, new_col = 0; col < width && new_col < new_width; col++, new_col++) {
             cells.at(new_row * new_width + new_col) = temp.at(row * width + col);
-            draw_data.set(new_row * new_width + new_col, temp.at(row * width + col));
             if (cells.at(new_row * new_width + new_col) != 0) 
                 chunks.at((new_row / chunk_size) * chunk_width + (new_col / chunk_size))++;
         }
@@ -265,18 +258,56 @@ void SandSimulation::set_chunk_size(int new_size) {
     resize(width, height);
 }
 
+PackedByteArray SandSimulation::get_data() {
+    PackedByteArray data = PackedByteArray();
+    data.resize(width * height * 4);
+    for (int y = 0; y < height; y++) {
+        for (int x = 0; x < width; x++) {
+            int id = cells.at(y * width + x);
+            int idx = (y * width + x) * 4;
+            data.set(idx + 0, (id & 0xFF000000) >> 24);
+            data.set(idx + 1, (id & 0x00FF0000) >> 16);
+            data.set(idx + 2, (id & 0x0000FF00) >> 8);
+            data.set(idx + 3, (id & 0x000000FF) >> 0);
+        }
+    }
+    return data;
+}
+
+// Graphic methods
+
+void SandSimulation::initialize_flat_color(Dictionary dict) {
+    flat_color.clear();
+    
+    Array ids = dict.keys();
+    for (int i = 0; i < dict.size(); i++) {
+        int id = ids[i];
+        flat_color[id] = dict[id];
+    }
+}
+
+uint32_t SandSimulation::get_color(int id) {
+    if (flat_color.find(id) != flat_color.end()) {
+        return flat_color[id];
+    }
+
+    return 0xFFFFFFFF;
+}
+
 PackedByteArray SandSimulation::get_color_image() {
     for (int y = 0; y < height; y++) {
         for (int x = 0; x < width; x++) {
             int id = cells.at(y * width + x);
-            draw_data.set(y * width + x, graphics->get_color(id));
+            uint32_t col = get_color(id);
+            
+            int idx = (y * width + x) * 4;
+            draw_data.set(idx + 0, (col & 0xFF000000) >> 24);
+            draw_data.set(idx + 1, (col & 0x00FF0000) >> 16);
+            draw_data.set(idx + 2, (col & 0x0000FF00) >> 8);
+            draw_data.set(idx + 3, 0xFF);
         }
     }
     return draw_data;
-}
-
-void SandSimulation::set_graphics(Graphics* g) {
-    graphics = g;
 }
 
 void SandSimulation::_bind_methods() {
@@ -286,10 +317,10 @@ void SandSimulation::_bind_methods() {
     ClassDB::bind_method(D_METHOD("set_cell"), &SandSimulation::set_cell);
     ClassDB::bind_method(D_METHOD("draw_cell"), &SandSimulation::draw_cell);
     ClassDB::bind_method(D_METHOD("get_data"), &SandSimulation::get_data);
-    ClassDB::bind_method(D_METHOD("get_color_image"), &SandSimulation::get_color_image);
     ClassDB::bind_method(D_METHOD("get_width"), &SandSimulation::get_width);
     ClassDB::bind_method(D_METHOD("get_height"), &SandSimulation::get_height);
     ClassDB::bind_method(D_METHOD("resize"), &SandSimulation::resize);
     ClassDB::bind_method(D_METHOD("set_chunk_size"), &SandSimulation::set_chunk_size);
-    ClassDB::bind_method(D_METHOD("set_graphics"), &SandSimulation::set_graphics);
+    ClassDB::bind_method(D_METHOD("get_color_image"), &SandSimulation::get_color_image);
+    ClassDB::bind_method(D_METHOD("initialize_flat_color"), &SandSimulation::initialize_flat_color);
 }
