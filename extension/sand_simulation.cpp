@@ -286,9 +286,64 @@ void SandSimulation::initialize_flat_color(Dictionary dict) {
     }
 }
 
-uint32_t SandSimulation::get_color(int id) {
+void SandSimulation::initialize_gradient_color(Dictionary dict) {
+    gradient_color.clear();
+    
+    Array ids = dict.keys();
+    for (int i = 0; i < dict.size(); i++) {
+        int id = ids[i];
+        Gradient g;
+
+        Array arr = dict[id];
+
+        g.colors[0] = arr[0];
+        g.colors[1] = arr[1];
+        g.colors[2] = arr[2];
+        g.colors[3] = arr[3];
+        g.colors[4] = arr[4];
+
+        g.offsets[0] = arr[5];
+        g.offsets[1] = arr[6];
+        g.offsets[2] = arr[7];
+
+        gradient_color[id] = g;
+    }
+}
+
+uint32_t SandSimulation::lerp_color(uint32_t a, uint32_t b, double x) {
+    uint32_t re = uint32_t(double((a & 0xFF000000) >> 24) * (1.0 - x) + double((b & 0xFF000000) >> 24) * (x)) << 24;
+    uint32_t gr = uint32_t(double((a & 0x00FF0000) >> 16) * (1.0 - x) + double((b & 0x00FF0000) >> 16) * (x)) << 16;
+    uint32_t bl = uint32_t(double((a & 0x0000FF00) >> 8) * (1.0 - x) + double((b & 0x0000FF00) >> 8) * (x)) << 8;
+    return re | gr | bl | 0xFF;
+}
+
+// https://thebookofshaders.com/glossary/?search=smoothstep
+double SandSimulation::smooth_step(double edge0, double edge1, double x) {
+    // Scale, bias and saturate x to 0..1 range
+    x = (x - edge0) / (edge1 - edge0);
+    if (x < 0.0) x = 0.0;
+    if (x > 1.0) x = 1.0;
+    // Evaluate polynomial
+    return x * x * (3.0 - 2.0 * x);
+}
+
+uint32_t SandSimulation::get_color(int row, int col) {
+    int id = cells.at(row * width + col);
+
     if (flat_color.find(id) != flat_color.end()) {
         return flat_color[id];
+    }
+
+    if (gradient_color.find(id) != gradient_color.end()) {
+        Gradient g = gradient_color[id];
+        double x = double(touch_count(row, col, id)) / 8.0;
+
+        uint32_t out = lerp_color(g.colors[0], g.colors[1], smooth_step(0.0, g.offsets[0], x));
+        out = lerp_color(out, g.colors[2], smooth_step(g.offsets[0], g.offsets[1], x));
+        out = lerp_color(out, g.colors[3], smooth_step(g.offsets[1], g.offsets[2], x));
+        out = lerp_color(out, g.colors[4], smooth_step(g.offsets[2], 1.0, x));
+
+        return out;
     }
 
     return 0xFFFFFFFF;
@@ -297,8 +352,7 @@ uint32_t SandSimulation::get_color(int id) {
 PackedByteArray SandSimulation::get_color_image() {
     for (int y = 0; y < height; y++) {
         for (int x = 0; x < width; x++) {
-            int id = cells.at(y * width + x);
-            uint32_t col = get_color(id);
+            uint32_t col = get_color(y, x);
             
             int idx = (y * width + x) * 4;
             draw_data.set(idx + 0, (col & 0xFF000000) >> 24);
@@ -323,4 +377,5 @@ void SandSimulation::_bind_methods() {
     ClassDB::bind_method(D_METHOD("set_chunk_size"), &SandSimulation::set_chunk_size);
     ClassDB::bind_method(D_METHOD("get_color_image"), &SandSimulation::get_color_image);
     ClassDB::bind_method(D_METHOD("initialize_flat_color"), &SandSimulation::initialize_flat_color);
+    ClassDB::bind_method(D_METHOD("initialize_gradient_color"), &SandSimulation::initialize_gradient_color);
 }

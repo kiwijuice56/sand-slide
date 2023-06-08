@@ -11,6 +11,12 @@ class Graphics;
 
 using namespace godot;
 
+
+struct Gradient {
+    uint32_t colors[5];
+    double offsets[3];
+};
+
 // Contains grid cells and methods to process them
 
 class SandSimulation : public RefCounted {
@@ -43,7 +49,10 @@ class SandSimulation : public RefCounted {
 
     // Drawing information
     PackedByteArray draw_data;
+
     std::unordered_map<int, uint32_t> flat_color;
+
+    std::unordered_map<int, Gradient> gradient_color;
 
 protected:
     static void _bind_methods();
@@ -83,8 +92,12 @@ public:
     PackedByteArray get_data();
 
     // Graphics methods
-    uint32_t get_color(int id);
+    uint32_t lerp_color(uint32_t a, uint32_t b, double x);
+    double smooth_step(double edge0, double edge1, double x);
     void initialize_flat_color(Dictionary dict);
+    void initialize_gradient_color(Dictionary dict);
+
+    uint32_t get_color(int row, int col);
     PackedByteArray get_color_image();
 };
 

@@ -19,6 +19,23 @@ func initialize_element_material_map() -> void:
 	
 	var flat_color: Dictionary = {}
 	for mat in element_materials:
-		if mat is FlatColor:
-			flat_color[mat.id] = mat.color.to_rgba32()
+		if not mat is FlatColor:
+			continue
+		flat_color[mat.id] = mat.color.to_rgba32()
 	CommonReference.main.sim.initialize_flat_color(flat_color)
+	
+	var gradient_color: Dictionary = {}
+	for mat in element_materials:
+		if not mat is GradientColor:
+			continue
+		gradient_color[mat.id] = [
+			mat.color_a.to_rgba32(),
+			mat.color_b.to_rgba32(),
+			mat.color_c.to_rgba32(),
+			mat.color_d.to_rgba32(),
+			mat.color_e.to_rgba32(),
+			mat.offset_1,
+			mat.offset_2,
+			mat.offset_3
+		]
+	CommonReference.main.sim.initialize_gradient_color(gradient_color)
