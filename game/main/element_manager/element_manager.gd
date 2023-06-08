@@ -5,10 +5,10 @@ class_name ElementManager
 
 func _ready() -> void:
 	await get_tree().get_root().ready
-	initialize_element_material_map()
+	initialize_base_element_graphics()
 
 # Initialize the base elements
-func initialize_element_material_map() -> void:
+func initialize_base_element_graphics() -> void:
 	var element_materials: Array[Element] = []
 	var dir: DirAccess = DirAccess.open("res://main/element_manager/element_material")
 	for file in dir.get_files():
@@ -39,3 +39,12 @@ func initialize_element_material_map() -> void:
 			mat.offset_3
 		]
 	CommonReference.main.sim.initialize_gradient_color(gradient_color)
+	
+	var images: Array[Image] = [
+		load("res://main/element_manager/element_material/textures/water_noise.png").get_image(),
+		load("res://main/element_manager/element_material/textures/fire_noise.png").get_image(),
+		load("res://main/element_manager/element_material/textures/crystal.png").get_image(),
+	]
+	
+	print(images[0].get_format())
+	CommonReference.main.sim.initialize_textures(images)

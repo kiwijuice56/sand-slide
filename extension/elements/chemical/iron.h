@@ -1,8 +1,6 @@
 #ifndef IRON_H
 #define IRON_H
 
-
-
 #include "../element.h"
 
 class Iron: public Element {

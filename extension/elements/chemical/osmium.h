@@ -1,8 +1,6 @@
 #ifndef OSMIUM_H
 #define OSMIUM_H
 
-
-
 #include "../element.h"
 
 class Osmium: public Element {

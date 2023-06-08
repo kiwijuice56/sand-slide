@@ -276,6 +276,32 @@ PackedByteArray SandSimulation::get_data() {
 
 // Graphic methods
 
+void SandSimulation::initialize_textures(Array images) {
+    textures.resize(images.size());
+    for (int i = 0; i < images.size(); i++) {
+        Ref<Image> img = images[i];
+        PackedByteArray bytes = img->get_data();
+
+        GameTexture g;
+        g.width = img->get_width();
+        g.height = img->get_height();
+        g.pixels = new std::vector<uint32_t>();
+
+        g.pixels->resize(g.width * g.height);
+
+        for (int px = 0; px < g.width * g.height; px++) {
+            int idx = px * 4;
+            
+            uint32_t re = bytes[idx + 0] << 24;
+            uint32_t gr = bytes[idx + 1] << 16;
+            uint32_t bl = bytes[idx + 2] << 8;
+            g.pixels->at(px) = re | gr | bl | 0xFF;
+        }
+
+        textures.at(i) = g;
+    }
+}
+
 void SandSimulation::initialize_flat_color(Dictionary dict) {
     flat_color.clear();
     
@@ -327,6 +353,12 @@ double SandSimulation::smooth_step(double edge0, double edge1, double x) {
     return x * x * (3.0 - 2.0 * x);
 }
 
+uint32_t SandSimulation::sample_texture(GameTexture t, int x, int y) {
+    x %= t.width;
+    y %= t.height;
+    return t.pixels->at(y * t.width + x);
+}
+
 uint32_t SandSimulation::get_color(int row, int col) {
     int id = cells.at(row * width + col);
 
@@ -376,6 +408,8 @@ void SandSimulation::_bind_methods() {
     ClassDB::bind_method(D_METHOD("resize"), &SandSimulation::resize);
     ClassDB::bind_method(D_METHOD("set_chunk_size"), &SandSimulation::set_chunk_size);
     ClassDB::bind_method(D_METHOD("get_color_image"), &SandSimulation::get_color_image);
+
+    ClassDB::bind_method(D_METHOD("initialize_textures"), &SandSimulation::initialize_textures);
     ClassDB::bind_method(D_METHOD("initialize_flat_color"), &SandSimulation::initialize_flat_color);
     ClassDB::bind_method(D_METHOD("initialize_gradient_color"), &SandSimulation::initialize_gradient_color);
 }

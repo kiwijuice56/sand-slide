@@ -1,8 +1,6 @@
 #ifndef URANIUM_H
 #define URANIUM_H
 
-
-
 #include "../element.h"
 
 class Uranium: public Element {
