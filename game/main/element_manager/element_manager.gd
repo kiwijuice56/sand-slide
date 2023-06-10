@@ -40,6 +40,28 @@ func initialize_base_element_graphics() -> void:
 		]
 	CommonReference.main.sim.initialize_gradient_color(gradient_color)
 	
+	var fluid_color: Dictionary = {}
+	for mat in element_materials:
+		if not mat is Fluid:
+			continue
+		fluid_color[mat.id] = [
+			mat.color_a.to_rgba32(),
+			mat.color_b.to_rgba32(),
+			mat.color_c.to_rgba32(),
+			mat.noise_texture
+		]
+	CommonReference.main.sim.initialize_fluid_color(fluid_color)
+	
+	var metal_color: Dictionary = {}
+	for mat in element_materials:
+		if not mat is Metal:
+			continue
+		metal_color[mat.id] = [
+			mat.color_a.to_rgba32(),
+			mat.color_b.to_rgba32(),
+		]
+	CommonReference.main.sim.initialize_metal_color(metal_color)
+	
 	var images: Array[Image] = [
 		load("res://main/element_manager/element_material/textures/water_noise.png").get_image(),
 		load("res://main/element_manager/element_material/textures/fire_noise.png").get_image(),

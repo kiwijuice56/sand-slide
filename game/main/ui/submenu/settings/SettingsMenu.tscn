@@ -179,7 +179,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_e160y")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="SettingsContainer/PanelContainer"]
 layout_mode = 2
-theme_override_constants/separation = 4
+theme_override_constants/separation = 8
 
 [node name="Title" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer"]
 layout_mode = 2
@@ -187,110 +187,27 @@ theme_override_font_sizes/font_size = 32
 text = "Settings"
 horizontal_alignment = 1
 
-[node name="BrushContainer" type="VBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer"]
-custom_minimum_size = Vector2(0, 28)
+[node name="SizeContainer" type="HBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_constants/separation = 0
+theme_override_constants/separation = 16
 
-[node name="SizeSlider" type="HSlider" parent="SettingsContainer/PanelContainer/VBoxContainer/BrushContainer"]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 32)
+[node name="Title" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/SizeContainer"]
+custom_minimum_size = Vector2(60, 0)
 layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 10
-theme_override_styles/slider = SubResource("StyleBoxFlat_xw2ew")
-theme_override_styles/grabber_area = SubResource("StyleBoxFlat_27i0d")
-theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_420ld")
-min_value = 1.0
-max_value = 64.0
-value = 16.0
-tick_count = 8
-
-[node name="HBoxContainer" type="HBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/BrushContainer"]
-layout_mode = 2
-
-[node name="Left" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/BrushContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 1
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 12
-text = "Small"
-vertical_alignment = 1
-
-[node name="Title" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/BrushContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 6
+size_flags_horizontal = 0
 size_flags_vertical = 1
 theme_override_font_sizes/font_size = 16
-text = "Brush"
+text = "Brush "
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Right" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/BrushContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 1
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 12
-text = "Large"
-vertical_alignment = 1
-
-[node name="SpeedContainer" type="VBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/SizeContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 0
 
-[node name="SpeedSlider" type="HSlider" parent="SettingsContainer/PanelContainer/VBoxContainer/SpeedContainer"]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 32)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 10
-theme_override_styles/slider = SubResource("StyleBoxFlat_xw2ew")
-theme_override_styles/grabber_area = SubResource("StyleBoxFlat_27i0d")
-theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_420ld")
-max_value = 7.0
-value = 2.0
-tick_count = 8
-
-[node name="HBoxContainer" type="HBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/SpeedContainer"]
-layout_mode = 2
-
-[node name="Left" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/SpeedContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 1
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 12
-text = "Slow"
-vertical_alignment = 1
-
-[node name="Title" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/SpeedContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 6
-size_flags_vertical = 1
-theme_override_font_sizes/font_size = 16
-text = "Time"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Right" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/SpeedContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 1
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 12
-text = "Fast"
-vertical_alignment = 1
-
-[node name="ZoomContainer" type="VBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_constants/separation = 0
-
-[node name="ZoomSlider" type="HSlider" parent="SettingsContainer/PanelContainer/VBoxContainer/ZoomContainer"]
+[node name="SizeSlider" type="HSlider" parent="SettingsContainer/PanelContainer/VBoxContainer/SizeContainer/VBoxContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 32)
 layout_mode = 2
@@ -304,10 +221,120 @@ max_value = 7.0
 value = 3.0
 tick_count = 6
 
-[node name="HBoxContainer" type="HBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ZoomContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/SizeContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="Left" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/ZoomContainer/HBoxContainer"]
+[node name="Left" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/SizeContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 12
+text = "Small"
+vertical_alignment = 1
+
+[node name="Right" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/SizeContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 12
+text = "Large"
+vertical_alignment = 1
+
+[node name="SpeedContainer" type="HBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 16
+
+[node name="Title" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/SpeedContainer"]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 16
+text = "Time"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/SpeedContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+
+[node name="SpeedSlider" type="HSlider" parent="SettingsContainer/PanelContainer/VBoxContainer/SpeedContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 10
+theme_override_styles/slider = SubResource("StyleBoxFlat_xw2ew")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_27i0d")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_420ld")
+min_value = 2.0
+max_value = 7.0
+value = 3.0
+tick_count = 6
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/SpeedContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Left" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/SpeedContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 12
+text = "Slow"
+vertical_alignment = 1
+
+[node name="Right" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/SpeedContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 12
+text = "Fast"
+vertical_alignment = 1
+
+[node name="ZoomContainer" type="HBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 16
+
+[node name="Title" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/ZoomContainer"]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 16
+text = "Zoom"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ZoomContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+
+[node name="ZoomSlider" type="HSlider" parent="SettingsContainer/PanelContainer/VBoxContainer/ZoomContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 10
+theme_override_styles/slider = SubResource("StyleBoxFlat_xw2ew")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_27i0d")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_420ld")
+min_value = 2.0
+max_value = 7.0
+value = 3.0
+tick_count = 6
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ZoomContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Left" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/ZoomContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 1
@@ -316,25 +343,20 @@ theme_override_font_sizes/font_size = 12
 text = "Out"
 vertical_alignment = 1
 
-[node name="Title" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/ZoomContainer/HBoxContainer"]
+[node name="Right" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/ZoomContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 6
-size_flags_vertical = 1
-theme_override_font_sizes/font_size = 16
-text = "Zoom"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Right" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/ZoomContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
+size_flags_horizontal = 10
 size_flags_vertical = 1
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 12
-text = "In"
+text = "  In"
 vertical_alignment = 1
 
-[node name="BackgroundLabel" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer"]
+[node name="BackgroundContainer" type="VBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="BackgroundLabel" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/BackgroundContainer"]
 layout_mode = 2
 size_flags_vertical = 8
 theme_override_font_sizes/font_size = 16
@@ -342,7 +364,7 @@ text = "Background Color
 "
 horizontal_alignment = 1
 
-[node name="BackgroundPicker" type="ColorPicker" parent="SettingsContainer/PanelContainer/VBoxContainer"]
+[node name="BackgroundPicker" type="ColorPicker" parent="SettingsContainer/PanelContainer/VBoxContainer/BackgroundContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 0

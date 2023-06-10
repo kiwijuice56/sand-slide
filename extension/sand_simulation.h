@@ -19,6 +19,11 @@ struct Gradient {
     double offsets[3];
 };
 
+struct Fluid {
+    uint32_t colors[3];
+    int texture;
+};
+
 struct GameTexture {
     int width;
     int height;
@@ -60,9 +65,11 @@ class SandSimulation : public RefCounted {
     PackedByteArray draw_data;
     std::unordered_map<int, uint32_t> flat_color;
     std::unordered_map<int, Gradient> gradient_color;
+    std::unordered_map<int, Gradient> metal_color;
+    std::unordered_map<int, Fluid> fluid_color;
     std::vector<GameTexture> textures;
 
-    long long time;
+    long double time;
 
 protected:
     static void _bind_methods();
@@ -106,8 +113,11 @@ public:
     void initialize_textures(Array images);
     void initialize_flat_color(Dictionary dict);
     void initialize_gradient_color(Dictionary dict);
+    void initialize_fluid_color(Dictionary dict);
+    void initialize_metal_color(Dictionary dict);
 
     uint32_t lerp_color(uint32_t a, uint32_t b, double x);
+    uint32_t add_color(uint32_t a, uint32_t b);
     double smooth_step(double edge0, double edge1, double x);
     uint32_t sample_texture(GameTexture t, int x, int y, double offset_x, double offset_y);
 
