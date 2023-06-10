@@ -10,9 +10,9 @@
 [ext_resource type="Texture2D" uid="uid://djtha84eljhde" path="res://main/ui/_icons/help.png" id="9_hcxqy"]
 [ext_resource type="Texture2D" uid="uid://bsdea08owut0v" path="res://main/ui/_icons/settings.png" id="10_x6g80"]
 [ext_resource type="Texture2D" uid="uid://c4k2cs4ly1agb" path="res://main/ui/_icons/file.png" id="11_nf3sg"]
-[ext_resource type="PackedScene" path="res://main/ui/element_selector/ElementSelector.tscn" id="12_1ijq2"]
+[ext_resource type="PackedScene" uid="uid://danjqv04qm3f6" path="res://main/ui/element_selector/ElementSelector.tscn" id="12_1ijq2"]
 [ext_resource type="PackedScene" uid="uid://dk6olyuqw7m7r" path="res://main/ui/fps_label/FpsLabel.tscn" id="13_kyq44"]
-[ext_resource type="PackedScene" path="res://main/ui/submenu/save/SaveFileMenu.tscn" id="14_73tcr"]
+[ext_resource type="PackedScene" uid="uid://d13tht5j1qxqq" path="res://main/ui/submenu/save/SaveFileMenu.tscn" id="14_73tcr"]
 [ext_resource type="PackedScene" uid="uid://bi1khomdif7xb" path="res://main/ui/submenu/settings/SettingsMenu.tscn" id="15_vwu6i"]
 [ext_resource type="PackedScene" uid="uid://bueyu0dk5xun4" path="res://main/ui/submenu/help/HelpMenu.tscn" id="16_qckww"]
 [ext_resource type="Script" path="res://main/painter/painter.gd" id="18_mer41"]
@@ -124,7 +124,6 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_pfsh7")
 
 [node name="MarginBottonPanel" type="MarginContainer" parent="UI/VSplitContainer/BottomPanel"]
 layout_mode = 2
-size_flags_vertical = 3
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 12
 theme_override_constants/margin_right = 8
@@ -136,7 +135,7 @@ theme_override_constants/separation = 14
 
 [node name="ButtonRow" type="HBoxContainer" parent="UI/VSplitContainer/BottomPanel/MarginBottonPanel/VBoxContainer"]
 layout_mode = 2
-size_flags_vertical = 4
+size_flags_vertical = 0
 theme_override_constants/separation = 8
 
 [node name="Eraser" type="Button" parent="UI/VSplitContainer/BottomPanel/MarginBottonPanel/VBoxContainer/ButtonRow"]
@@ -198,6 +197,7 @@ icon = ExtResource("11_nf3sg")
 icon_alignment = 1
 
 [node name="ElementSelector" parent="UI/VSplitContainer/BottomPanel/MarginBottonPanel/VBoxContainer" node_paths=PackedStringArray("simulation", "eraser_button", "tap_button") instance=ExtResource("12_1ijq2")]
+custom_minimum_size = Vector2(0, 128)
 layout_mode = 2
 simulation = NodePath("../../../../../..")
 eraser_button = NodePath("../ButtonRow/Eraser")

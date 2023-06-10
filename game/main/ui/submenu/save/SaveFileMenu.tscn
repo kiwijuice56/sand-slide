@@ -1,8 +1,8 @@
-[gd_scene load_steps=14 format=3]
+[gd_scene load_steps=15 format=3 uid="uid://d13tht5j1qxqq"]
 
 [ext_resource type="Theme" uid="uid://co20v1mxv2dfm" path="res://main/ui/_theme/theme.tres" id="1_vtqwt"]
 [ext_resource type="Script" path="res://main/ui/submenu/save/save_file_menu.gd" id="2_djbua"]
-[ext_resource type="PackedScene" path="res://main/ui/submenu/save/save_file_panel/SaveFilePanel.tscn" id="3_v1i8r"]
+[ext_resource type="PackedScene" uid="uid://3k2xt0kc4klb" path="res://main/ui/submenu/save/save_file_panel/SaveFilePanel.tscn" id="3_v1i8r"]
 [ext_resource type="FontFile" uid="uid://b8lxwo5dkwrs4" path="res://main/ui/_theme/font/Poppins-Regular.ttf" id="4_0qhiq"]
 [ext_resource type="Texture2D" uid="uid://skg5bmd8m812" path="res://main/ui/_icons/close.png" id="5_3a25r"]
 
@@ -40,6 +40,9 @@ corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
 expand_margin_top = 6.0
 expand_margin_bottom = 6.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r1ibo"]
+content_margin_right = 4.0
 
 [sub_resource type="Animation" id="Animation_swdin"]
 length = 0.001
@@ -131,7 +134,7 @@ _data = {
 "exit": SubResource("Animation_obmfd")
 }
 
-[node name="SaveFileMenu" type="Control" node_paths=PackedStringArray("save_file_manager", "simulation", "anim", "back_button")]
+[node name="SaveFileMenu" type="Control" node_paths=PackedStringArray("save_file_manager", "anim", "back_button")]
 visible = false
 modulate = Color(1, 1, 1, 0)
 layout_mode = 3
@@ -144,7 +147,6 @@ theme = ExtResource("1_vtqwt")
 script = ExtResource("2_djbua")
 save_file_manager = NodePath("")
 save_file_panel = ExtResource("3_v1i8r")
-simulation = NodePath("")
 anim = NodePath("AnimationPlayer")
 back_button = NodePath("SaveContainer/PanelContainer/Back")
 
@@ -200,6 +202,7 @@ placeholder_text = "Type new file name.."
 layout_mode = 2
 size_flags_vertical = 3
 mouse_filter = 0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_r1ibo")
 
 [node name="SaveFileContainer" type="VBoxContainer" parent="SaveContainer/PanelContainer/VBoxContainer/ScrollContainer"]
 unique_name_in_owner = true

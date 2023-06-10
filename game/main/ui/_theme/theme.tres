@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=6 format=3 uid="uid://co20v1mxv2dfm"]
+[gd_resource type="Theme" load_steps=8 format=3 uid="uid://co20v1mxv2dfm"]
 
 [ext_resource type="FontFile" uid="uid://b8lxwo5dkwrs4" path="res://main/ui/_theme/font/Poppins-Regular.ttf" id="1_p73bs"]
 
@@ -30,9 +30,28 @@ corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xyiyu"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6vkpo"]
+content_margin_left = 24.0
+bg_color = Color(0.180392, 0.180392, 0.219608, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
 [resource]
 default_font = ExtResource("1_p73bs")
 Button/styles/disabled = SubResource("StyleBoxFlat_m6j87")
 Button/styles/hover = SubResource("StyleBoxFlat_4csg6")
 Button/styles/normal = SubResource("StyleBoxFlat_er738")
 Button/styles/pressed = SubResource("StyleBoxFlat_jp40q")
+VScrollBar/styles/grabber = SubResource("StyleBoxFlat_xyiyu")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_xyiyu")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_xyiyu")
+VScrollBar/styles/scroll = SubResource("StyleBoxFlat_6vkpo")

@@ -6,6 +6,18 @@
 
 using namespace godot;
 
+template<typename T>
+inline T cos(T x) noexcept {
+    constexpr T tp = 1./(2.*M_PI);
+    x *= tp;
+    x -= T(.25) + std::floor(x + T(.25));
+    x *= T(16.) * (std::abs(x) - T(.5));
+    #if EXTRA_PRECISION
+    x += T(.225) * x * (std::abs(x) - T(1.));
+    #endif
+    return x;
+}
+
 SandSimulation::SandSimulation() {
     AllElements::fill_elements(&elements);
 
@@ -21,6 +33,7 @@ SandSimulation::~SandSimulation() {}
 
 // Run the simulation `iterations` times
 void SandSimulation::step(int iterations) {
+    time++;
     for (int i = 0; i < iterations; i++) {
         for (int chunk = chunks.size() - 1; chunk >= 0; chunk--) {
             if (chunks.at(chunk) == 0)
@@ -353,14 +366,19 @@ double SandSimulation::smooth_step(double edge0, double edge1, double x) {
     return x * x * (3.0 - 2.0 * x);
 }
 
-uint32_t SandSimulation::sample_texture(GameTexture t, int x, int y) {
-    x %= t.width;
-    y %= t.height;
+uint32_t SandSimulation::sample_texture(GameTexture t, int x, int y, double offset_x, double offset_y) {
+    x = abs(int(x + offset_x * t.width) % t.width);
+    y = abs(int(y + offset_y * t.height) % t.height);
     return t.pixels->at(y * t.width + x);
 }
 
 uint32_t SandSimulation::get_color(int row, int col) {
     int id = cells.at(row * width + col);
+
+    if (id == 1) {
+        double offset_x = cos(double(time) / 64.0) / 24.0;
+        return sample_texture(textures.at(0), col, row, offset_x, 0.0);
+    }
 
     if (flat_color.find(id) != flat_color.end()) {
         return flat_color[id];

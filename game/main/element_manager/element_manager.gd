@@ -45,6 +45,4 @@ func initialize_base_element_graphics() -> void:
 		load("res://main/element_manager/element_material/textures/fire_noise.png").get_image(),
 		load("res://main/element_manager/element_material/textures/crystal.png").get_image(),
 	]
-	
-	print(images[0].get_format())
 	CommonReference.main.sim.initialize_textures(images)

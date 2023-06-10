@@ -22,10 +22,10 @@ func _ready():
 			button.button_down.connect(_on_element_selected.bind(button))
 			for style in ["normal", "pressed", "hover", "disabled"]:
 				if not button.get("theme_override_styles/" + style) == null:
-					button.get("theme_override_styles/" + style).corner_radius_top_left = 4 if i == 0 else 0
-					button.get("theme_override_styles/" + style).corner_radius_bottom_left = 4 if i == 8 else 0
-					button.get("theme_override_styles/" + style).corner_radius_top_right = 4 if i == 3 else 0
-					button.get("theme_override_styles/" + style).corner_radius_bottom_right = 4 if i == 11 else 0
+					button.get("theme_override_styles/" + style).corner_radius_top_left = 0
+					button.get("theme_override_styles/" + style).corner_radius_bottom_left = 0
+					button.get("theme_override_styles/" + style).corner_radius_top_right = 0
+					button.get("theme_override_styles/" + style).corner_radius_bottom_right = 0
 
 func _on_element_selected(button: ElementButton) -> void:
 	tap_button.button_pressed = false

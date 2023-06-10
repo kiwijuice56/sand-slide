@@ -138,7 +138,7 @@ _data = {
 "exit": SubResource("Animation_obmfd")
 }
 
-[node name="SettingsMenu" type="Control" node_paths=PackedStringArray("simulation", "anim", "back_button")]
+[node name="SettingsMenu" type="Control" node_paths=PackedStringArray("anim", "back_button")]
 visible = false
 modulate = Color(1, 1, 1, 0)
 layout_mode = 3
@@ -149,7 +149,6 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_f12ql")
 script = ExtResource("2_1g5bn")
-simulation = NodePath("")
 anim = NodePath("AnimationPlayer")
 back_button = NodePath("SettingsContainer/PanelContainer/Back")
 
@@ -300,10 +299,10 @@ size_flags_vertical = 10
 theme_override_styles/slider = SubResource("StyleBoxFlat_xw2ew")
 theme_override_styles/grabber_area = SubResource("StyleBoxFlat_27i0d")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_420ld")
-min_value = 1.0
-max_value = 8.0
+min_value = 2.0
+max_value = 7.0
 value = 3.0
-tick_count = 8
+tick_count = 6
 
 [node name="HBoxContainer" type="HBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ZoomContainer"]
 layout_mode = 2

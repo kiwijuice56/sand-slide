@@ -56,11 +56,13 @@ class SandSimulation : public RefCounted {
     // Contains the count of active particles in each chunk
     std::vector<int> chunks;
 
-    // Drawing information
+    // Drawing state
     PackedByteArray draw_data;
     std::unordered_map<int, uint32_t> flat_color;
     std::unordered_map<int, Gradient> gradient_color;
     std::vector<GameTexture> textures;
+
+    long long time;
 
 protected:
     static void _bind_methods();
@@ -107,7 +109,7 @@ public:
 
     uint32_t lerp_color(uint32_t a, uint32_t b, double x);
     double smooth_step(double edge0, double edge1, double x);
-    uint32_t sample_texture(GameTexture t, int x, int y);
+    uint32_t sample_texture(GameTexture t, int x, int y, double offset_x, double offset_y);
 
     uint32_t get_color(int row, int col);
     PackedByteArray get_color_image();
