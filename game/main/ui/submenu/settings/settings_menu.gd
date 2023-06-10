@@ -13,7 +13,7 @@ func _ready() -> void:
 	%SpeedSlider.value_changed.connect(_on_speed_changed)
 	%ZoomSlider.value_changed.connect(_on_zoom_changed)
 	%ClearButton.pressed.connect(CommonReference.painter.clear)
-	# %BackgroundPicker.color_changed.connect(simulation.canvas.set_background_color)
+	%BackgroundPicker.color_changed.connect(CommonReference.element_manager.set_background_color)
 
 func _on_size_changed(new_brush_size: int) -> void:
 	Settings.brush_size = new_brush_size

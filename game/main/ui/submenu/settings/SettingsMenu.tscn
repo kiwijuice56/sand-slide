@@ -370,6 +370,7 @@ layout_mode = 2
 size_flags_vertical = 0
 color = Color(0.145098, 0.172549, 0.34902, 1)
 edit_alpha = false
+deferred_mode = true
 can_add_swatches = false
 sampler_visible = false
 color_modes_visible = false
