@@ -18,6 +18,7 @@ func update_files() -> void:
 		var res: SaveFile = ResourceLoader.load("%s/%s/res.tres" % [dir.get_current_dir(), folder])
 		var img_file: FileAccess = FileAccess.open("%s/%s/img.png" % [dir.get_current_dir(), folder], FileAccess.READ)
 		res.size = img_file.get_length()
+		res.thumbnail = load_thumbnail("%s/%s/thumbnail.png" % [dir.get_current_dir(), folder], res.version)
 		
 		files.append(res)
 
@@ -47,6 +48,7 @@ func create_save_file(save_name: String) -> SaveFile:
 	file.version = ProjectSettings.get_setting("application/config/version")
 	
 	save_image("user://" + folder_name + "/img.png")
+	save_thumbnail("user://" + folder_name + "/thumbnail.png")
 	ResourceSaver.save(file, "user://" + folder_name + "/res.tres")
 	
 	update_files()
@@ -57,6 +59,7 @@ func overwrite_save_file(file: SaveFile) -> void:
 	var path: String = file.get_path()
 	var folder: String = path.substr(0, path.rfind("/") + 1)
 	save_image(folder + "/img.png")
+	save_thumbnail(folder + "/thumbnail.png")
 	file.version = ProjectSettings.get_setting("application/config/version")
 	ResourceSaver.save(file, path)
 	
@@ -75,6 +78,7 @@ func delete_save_file(file: SaveFile) -> void:
 	var dir: DirAccess = DirAccess.open(folder)
 	dir.remove(path)
 	dir.remove(folder + "img.png")
+	dir.remove(folder + "thumbnail.png")
 	dir.remove("")
 	files.remove_at(files.find(file))
 	
@@ -84,6 +88,12 @@ func save_image(path: String) -> void:
 	var sim: SandSimulation = CommonReference.main.sim
 	
 	var image: Image = Image.create_from_data(sim.get_width(), sim.get_height(), false, Image.FORMAT_RGBA8, CommonReference.main.sim.get_data())
+	image.save_png(path)
+
+func save_thumbnail(path: String) -> void:
+	var sim: SandSimulation = CommonReference.main.sim
+	
+	var image: Image = Image.create_from_data(sim.get_width(), sim.get_height(), false, Image.FORMAT_RGBA8, CommonReference.main.sim.get_color_image())
 	image.save_png(path)
 
 func load_image(path: String, version: String) -> void:
@@ -111,3 +121,9 @@ func load_image(path: String, version: String) -> void:
 					id += 4097
 				CommonReference.main.sim.set_cell(i, j, id)
 	CommonReference.canvas.repaint()
+
+func load_thumbnail(path: String, version: String) -> Resource:
+	if version.begins_with("4"):
+		var img: Image = Image.load_from_file(path)
+		return img
+	return Image.new()

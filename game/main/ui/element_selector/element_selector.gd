@@ -13,12 +13,11 @@ var tap_on := false
 var gem_idx: int = 0
 var algae_idx: int = 0
 
-func _ready():
+func _ready() -> void:
 	eraser_button.button_down.connect(_on_eraser_selected)
 	tap_button.pressed.connect(_on_tap_selected)
 	for scroll_container in get_children():
 		for button in scroll_container.get_child(0).get_children():
-			var i: int = button.get_index()
 			button.button_down.connect(_on_element_selected.bind(button))
 			for style in ["normal", "pressed", "hover", "disabled"]:
 				if not button.get("theme_override_styles/" + style) == null:

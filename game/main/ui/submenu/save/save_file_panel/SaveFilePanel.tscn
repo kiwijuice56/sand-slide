@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://3k2xt0kc4klb"]
+[gd_scene load_steps=8 format=3 uid="uid://3k2xt0kc4klb"]
 
 [ext_resource type="Theme" uid="uid://co20v1mxv2dfm" path="res://main/ui/_theme/theme.tres" id="1_1uvf0"]
 [ext_resource type="Script" path="res://main/ui/submenu/save/save_file_panel/save_file_panel.gd" id="1_ftssb"]
+[ext_resource type="Texture2D" uid="uid://c14hj2g0s66ys" path="res://icon.png" id="3_5l22y"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wwijs"]
 bg_color = Color(0.168627, 0.168627, 0.196078, 1)
@@ -35,20 +36,20 @@ corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
-[node name="SaveFilePanel" type="PanelContainer" node_paths=PackedStringArray("name_label", "date_label", "size_label")]
-anchors_preset = 15
+[node name="SaveFilePanel" type="PanelContainer" node_paths=PackedStringArray("name_label", "date_label", "size_label", "thumbnail")]
+anchors_preset = 10
 anchor_right = 1.0
-anchor_bottom = 1.0
+offset_bottom = 102.0
 grow_horizontal = 2
-grow_vertical = 2
 size_flags_vertical = 0
 mouse_filter = 2
 theme = ExtResource("1_1uvf0")
 theme_override_styles/panel = SubResource("StyleBoxFlat_wwijs")
 script = ExtResource("1_ftssb")
-name_label = NodePath("MarginContainer/VBoxContainer/FileName")
-date_label = NodePath("MarginContainer/VBoxContainer/FileDate")
-size_label = NodePath("MarginContainer/VBoxContainer/FileSize")
+name_label = NodePath("MarginContainer/HBoxContainer/VBoxContainer/FileName")
+date_label = NodePath("MarginContainer/HBoxContainer/VBoxContainer/FileDate")
+size_label = NodePath("MarginContainer/HBoxContainer/VBoxContainer/FileSize")
+thumbnail = NodePath("MarginContainer/HBoxContainer/Thumbnail")
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 2
@@ -67,24 +68,37 @@ theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 mouse_filter = 2
 
-[node name="FileName" type="Label" parent="MarginContainer/VBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+
+[node name="FileName" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 16
 text = "Save file 01"
 text_overrun_behavior = 3
 
-[node name="FileDate" type="Label" parent="MarginContainer/VBoxContainer"]
+[node name="FileDate" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.556863, 0.556863, 0.556863, 1)
 theme_override_font_sizes/font_size = 16
 text = "YYYY/MM/DD/HH"
 
-[node name="FileSize" type="Label" parent="MarginContainer/VBoxContainer"]
+[node name="FileSize" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.556863, 0.556863, 0.556863, 1)
 theme_override_font_sizes/font_size = 16
 text = "2 MB"
+
+[node name="Thumbnail" type="TextureRect" parent="MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(86, 86)
+layout_mode = 2
+size_flags_horizontal = 8
+mouse_filter = 2
+texture = ExtResource("3_5l22y")
+expand_mode = 1

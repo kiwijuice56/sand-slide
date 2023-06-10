@@ -5,3 +5,4 @@ class_name SaveFile
 @export var date: String
 @export var version: String
 @export var size: int
+@export var thumbnail: Image
