@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="FlatColor" load_steps=2 format=3 uid="uid://dcbndhs0wnpyh"]
+
+[ext_resource type="Script" path="res://main/element_manager/element_material/types/flat_color.gd" id="1_xvvwf"]
+
+[resource]
+script = ExtResource("1_xvvwf")
+color = Color(0.721569, 0.564706, 1, 1)
+id = 123

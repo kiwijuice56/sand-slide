@@ -1,4 +1,4 @@
-[gd_scene load_steps=202 format=3 uid="uid://danjqv04qm3f6"]
+[gd_scene load_steps=205 format=3 uid="uid://danjqv04qm3f6"]
 
 [ext_resource type="Script" path="res://main/ui/element_selector/element_selector.gd" id="1_fxkbl"]
 [ext_resource type="Material" uid="uid://c5qvq03ayjd60" path="res://main/ui/element_selector/selected.tres" id="2_30e0c"]
@@ -731,6 +731,27 @@ corner_radius_bottom_left = 4
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c0d0v"]
 bg_color = Color(0.435294, 0.831373, 0.223529, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_blonl"]
+bg_color = Color(0.980392, 0.635294, 0.803922, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1ffqp"]
+bg_color = Color(0.980392, 0.752941, 0.823529, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ym7ic"]
+bg_color = Color(0.858824, 0.447059, 0.764706, 1)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
@@ -2004,9 +2025,30 @@ theme_override_font_sizes/font_size = 15
 theme_override_styles/normal = SubResource("StyleBoxFlat_gelso")
 theme_override_styles/hover = SubResource("StyleBoxFlat_3k3lf")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_c0d0v")
-text = "seed"
+text = "grass seed"
 script = ExtResource("3_bfdgk")
 id = 12
+
+[node name="FlowerSeed" type="Button" parent="Basic/Basic"]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 0
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxFlat_blonl")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1ffqp")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ym7ic")
+text = "flower seed"
+script = ExtResource("3_bfdgk")
+id = 119
 
 [node name="Virus" type="Button" parent="Basic/Basic"]
 custom_minimum_size = Vector2(0, 48)

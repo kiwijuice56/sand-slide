@@ -121,6 +121,13 @@
 #include "elements/space/glitch.h"
 #include "elements/basic/white_sand.h"
 #include "elements/basic/blood.h"
+#include "elements/life/flower_seed.h"
+#include "elements/life/germ_flower_seed.h"
+#include "elements/life/flower_stem.h"
+#include "elements/life/flower_core.h"
+#include "elements/life/flower_petal_a.h"
+#include "elements/life/flower_petal_b.h"
+#include "elements/life/flower_petal_c.h"
 
 class AllElements {
 public:
@@ -250,6 +257,13 @@ public:
         elements->at(116) = new Paradox();
         elements->at(117) = new Glitch();
         elements->at(118) = new Blood();
+        elements->at(119) = new FlowerSeed();
+        elements->at(120) = new GerminatedFlowerSeed();
+        elements->at(121) = new FlowerStem();
+        elements->at(122) = new FlowerCore();
+        elements->at(123) = new FlowerPetalA();
+        elements->at(124) = new FlowerPetalB();
+        elements->at(125) = new FlowerPetalC();
     }
 };
 
