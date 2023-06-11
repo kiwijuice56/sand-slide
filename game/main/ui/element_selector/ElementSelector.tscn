@@ -1,4 +1,4 @@
-[gd_scene load_steps=208 format=3 uid="uid://danjqv04qm3f6"]
+[gd_scene load_steps=214 format=3 uid="uid://danjqv04qm3f6"]
 
 [ext_resource type="Script" path="res://main/ui/element_selector/element_selector.gd" id="1_fxkbl"]
 [ext_resource type="Material" uid="uid://c5qvq03ayjd60" path="res://main/ui/element_selector/selected.tres" id="2_30e0c"]
@@ -1198,6 +1198,27 @@ corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b05qc"]
+bg_color = Color(0.345098, 0.247059, 0.552941, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dp2d2"]
+bg_color = Color(0.52549, 0.360784, 0.611765, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uyggr"]
+bg_color = Color(0.160784, 0.137255, 0.458824, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m0trg"]
 bg_color = Color(0.678431, 0.521569, 0.870588, 1)
 corner_radius_top_left = 4
@@ -1256,6 +1277,27 @@ corner_radius_bottom_left = 4
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2hlke"]
 bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_crjli"]
+bg_color = Color(0.0784314, 0.0156863, 0.345098, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6gyis"]
+bg_color = Color(0.227451, 0.423529, 0.741176, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oos11"]
+bg_color = Color(0.105882, 0.0784314, 0.639216, 1)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
@@ -2514,6 +2556,27 @@ text = "bolt storm"
 script = ExtResource("3_bfdgk")
 id = 39
 
+[node name="JavelinRain" type="Button" parent="Basic/Basic"]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 0
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxFlat_b05qc")
+theme_override_styles/hover = SubResource("StyleBoxFlat_dp2d2")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_uyggr")
+text = "javelin rain"
+script = ExtResource("3_bfdgk")
+id = 128
+
 [node name="Powder" type="Button" parent="Basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
@@ -2576,6 +2639,27 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_2hlke")
 text = "strange"
 script = ExtResource("3_bfdgk")
 id = 74
+
+[node name="Spiral" type="Button" parent="Basic/Basic"]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 0
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxFlat_crjli")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6gyis")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_oos11")
+text = "magatsuhi"
+script = ExtResource("3_bfdgk")
+id = 129
 
 [node name="Neptune" type="Button" parent="Basic/Basic"]
 custom_minimum_size = Vector2(0, 48)

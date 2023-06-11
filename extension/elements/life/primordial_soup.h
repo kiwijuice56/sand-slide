@@ -27,10 +27,10 @@ public:
 
         // Conductivity 
         if (random < MELT && (sim->cardinal_touch_count(row, col, 38) > 0 || sim->cardinal_touch_count(row, col, 40) > 0 || sim->cardinal_touch_count(row, col, 115) > 0)) {
-            sim->grow(row + 1, col, 3, 38);
-            sim->grow(row - 1, col, 3, 38);
-            sim->grow(row, col - 1, 3, 38);
-            sim->grow(row, col + 1, 3, 38);
+            sim->grow(row + 1, col, 127, 38);
+            sim->grow(row - 1, col, 127, 38);
+            sim->grow(row, col - 1, 127, 38);
+            sim->grow(row, col + 1, 127, 38);
             return;
         }
 

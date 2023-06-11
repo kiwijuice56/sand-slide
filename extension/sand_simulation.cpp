@@ -321,7 +321,7 @@ void SandSimulation::initialize_textures(Array images) {
 
 void SandSimulation::initialize_flat_color(Dictionary dict) {
     flat_color.clear();
-    flat_color.resize(4096);
+    flat_color.resize(4097);
     Array ids = dict.keys();
     for (int i = 0; i < dict.size(); i++) {
         int id = ids[i];
@@ -335,7 +335,7 @@ void SandSimulation::initialize_flat_color(Dictionary dict) {
 
 void SandSimulation::initialize_gradient_color(Dictionary dict) {
     gradient_color.clear();
-    gradient_color.resize(4096);
+    gradient_color.resize(4097);
 
     Array ids = dict.keys();
     for (int i = 0; i < dict.size(); i++) {
@@ -360,7 +360,7 @@ void SandSimulation::initialize_gradient_color(Dictionary dict) {
 
 void SandSimulation::initialize_metal_color(Dictionary dict) {
     metal_color.clear();
-    metal_color.resize(4096);
+    metal_color.resize(4097);
     
     Array ids = dict.keys();
     for (int i = 0; i < dict.size(); i++) {
@@ -379,7 +379,7 @@ void SandSimulation::initialize_metal_color(Dictionary dict) {
 
 void SandSimulation::initialize_fluid_color(Dictionary dict) {
     fluid_color.clear();
-    fluid_color.resize(4096);
+    fluid_color.resize(4097);
     
     Array ids = dict.keys();
     for (int i = 0; i < dict.size(); i++) {
@@ -437,6 +437,9 @@ uint32_t SandSimulation::sample_texture(int texture, int x, int y, double offset
 
 uint32_t SandSimulation::get_color(int row, int col) {
     int id = cells.at(row * width + col);
+    if (id > 4096) {
+        return 0xFFFFFFFF;
+    }
 
     // Special visual effects
     if (id == 117) {
@@ -500,6 +503,7 @@ uint32_t SandSimulation::get_color(int row, int col) {
 
     if (metal_color[id].init) {
         Gradient g = metal_color[id];
+        
         return lerp_color(g.colors[0], g.colors[1], row / double(height));
     }
 

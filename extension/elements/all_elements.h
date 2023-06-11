@@ -119,6 +119,7 @@
 #include "elements/space/beam_power_flash.h"
 #include "elements/space/paradox.h"
 #include "elements/space/glitch.h"
+#include "elements/space/javelin_rain.h"
 #include "elements/basic/white_sand.h"
 #include "elements/life/blood.h"
 #include "elements/life/algae_water.h"
@@ -130,6 +131,7 @@
 #include "elements/life/flower_petal_b.h"
 #include "elements/life/flower_petal_c.h"
 #include "elements/life/primordial_soup.h"
+#include "elements/space/spiral.h"
 
 class AllElements {
 public:
@@ -268,6 +270,8 @@ public:
         elements->at(125) = new FlowerPetalC();
         elements->at(126) = new AlgaeWater();
         elements->at(127) = new PrimordialSoup(); 
+        elements->at(128) = new JavelinRain(); 
+        elements->at(129) = new Spiral(); 
     }
 };
 
