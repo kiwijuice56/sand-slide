@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="Fluid" load_steps=2 format=3 uid="uid://4483t3ul8m2b"]
+
+[ext_resource type="Script" path="res://main/element_manager/element_material/types/fluid.gd" id="1_hl56r"]
+
+[resource]
+script = ExtResource("1_hl56r")
+noise_texture = 0
+color_a = Color(0.431373, 0.0156863, 0, 1)
+color_b = Color(0.72549, 0.054902, 0.152941, 1)
+color_c = Color(0.34902, 0.00392157, 0.0901961, 1)
+noise_scale = 0.5
+noise_speed = 15.0
+current_size = 16.0
+wave_cycle = 2.5
+contraction_size = 16.0
+wave_density = 1.2
+shimmer_speed = 24.0
+shimmer_density = 1.5
+shimmer_opacity = 0.9
+shimmer_cycle = 2.0
+id = 118

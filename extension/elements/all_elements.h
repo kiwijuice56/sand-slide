@@ -119,6 +119,8 @@
 #include "elements/space/beam_power_flash.h"
 #include "elements/space/paradox.h"
 #include "elements/space/glitch.h"
+#include "elements/basic/white_sand.h"
+#include "elements/basic/blood.h"
 
 class AllElements {
 public:
@@ -227,7 +229,7 @@ public:
         elements->at(95) = new Nanobot();
         elements->at(96) = new CarbonDioxide();
         elements->at(97) = new Sandstone();
-        elements->at(98) = new Sandstone(); 
+        elements->at(98) = new WhiteSand(); 
         elements->at(99) = new DrySponge();
         elements->at(100) = new WetSponge();
         elements->at(101) = new Virus();
@@ -247,6 +249,7 @@ public:
         elements->at(115) = new BeamPowerFlash();
         elements->at(116) = new Paradox();
         elements->at(117) = new Glitch();
+        elements->at(118) = new Blood();
     }
 };
 

@@ -57,7 +57,6 @@ func initialize_base_element_graphics() -> void:
 			mat.noise_texture
 		]
 	CommonReference.main.sim.initialize_fluid_color(fluid_color)
-	
 	var metal_color: Dictionary = {}
 	for mat in element_materials:
 		if not mat is Metal:
