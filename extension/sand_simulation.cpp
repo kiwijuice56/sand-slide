@@ -430,6 +430,10 @@ uint32_t SandSimulation::sample_texture(GameTexture t, int x, int y, double offs
 uint32_t SandSimulation::get_color(int row, int col) {
     int id = cells.at(row * width + col);
 
+    if (id == 117) {
+        return uint32_t(randf() * 0xFFFFFF) << 8;
+    }
+
     if (fluid_color.find(id) != fluid_color.end()) {
 
         double seed = 851845.120381 * id;

@@ -118,6 +118,7 @@
 #include "elements/space/beam_power.h"
 #include "elements/space/beam_power_flash.h"
 #include "elements/space/paradox.h"
+#include "elements/space/glitch.h"
 
 class AllElements {
 public:
@@ -226,7 +227,7 @@ public:
         elements->at(95) = new Nanobot();
         elements->at(96) = new CarbonDioxide();
         elements->at(97) = new Sandstone();
-        elements->at(98) = new Osmium(); // Not included in game
+        elements->at(98) = new Sandstone(); 
         elements->at(99) = new DrySponge();
         elements->at(100) = new WetSponge();
         elements->at(101) = new Virus();
@@ -245,6 +246,7 @@ public:
         elements->at(114) = new BeamPower();
         elements->at(115) = new BeamPowerFlash();
         elements->at(116) = new Paradox();
+        elements->at(117) = new Glitch();
     }
 };
 

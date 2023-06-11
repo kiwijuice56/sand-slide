@@ -217,8 +217,8 @@ theme_override_styles/slider = SubResource("StyleBoxFlat_xw2ew")
 theme_override_styles/grabber_area = SubResource("StyleBoxFlat_27i0d")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_420ld")
 min_value = 2.0
-max_value = 7.0
-value = 3.0
+max_value = 48.0
+value = 16.0
 tick_count = 6
 
 [node name="HBoxContainer" type="HBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/SizeContainer/VBoxContainer"]
@@ -271,10 +271,9 @@ size_flags_vertical = 10
 theme_override_styles/slider = SubResource("StyleBoxFlat_xw2ew")
 theme_override_styles/grabber_area = SubResource("StyleBoxFlat_27i0d")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_420ld")
-min_value = 2.0
-max_value = 7.0
+max_value = 8.0
 value = 3.0
-tick_count = 6
+tick_count = 5
 
 [node name="HBoxContainer" type="HBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/SpeedContainer/VBoxContainer"]
 layout_mode = 2

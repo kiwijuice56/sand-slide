@@ -18,6 +18,8 @@ func _ready() -> void:
 	tap_button.pressed.connect(_on_tap_selected)
 	for scroll_container in get_children():
 		for button in scroll_container.get_child(0).get_children():
+			if not button is Button:
+				continue
 			button.button_down.connect(_on_element_selected.bind(button))
 			for style in ["normal", "pressed", "hover", "disabled"]:
 				if not button.get("theme_override_styles/" + style) == null:

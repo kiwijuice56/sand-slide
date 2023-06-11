@@ -111,7 +111,7 @@ _data = {
 "exit": SubResource("Animation_obmfd")
 }
 
-[node name="HelpMenu" type="Control" node_paths=PackedStringArray("simulation", "anim", "back_button")]
+[node name="HelpMenu" type="Control" node_paths=PackedStringArray("anim", "back_button")]
 visible = false
 modulate = Color(1, 1, 1, 0)
 layout_mode = 3
@@ -122,7 +122,6 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_rrple")
 script = ExtResource("2_1h5h1")
-simulation = NodePath("")
 anim = NodePath("AnimationPlayer")
 back_button = NodePath("HelpContainer/PanelContainer/Back")
 
@@ -192,7 +191,7 @@ horizontal_alignment = 1
 [node name="RichTextLabel" type="RichTextLabel" parent="HelpContainer/PanelContainer/VBoxContainer/SaveContainer"]
 layout_mode = 2
 theme_override_font_sizes/normal_font_size = 12
-text = "In the file menu, tap the text box to name a new file and press enter. The created file will keep your game perfectly in tact! After a file is saved, you can tap on it to overwrite, load, or delete it."
+text = "In the file menu, tap the text box to name a new file and press enter. The created file will keep your game perfectly intact! After a file is saved, you can tap on it to overwrite, load, or delete it."
 fit_content = true
 
 [node name="AttributionContainer" type="VBoxContainer" parent="HelpContainer/PanelContainer/VBoxContainer"]
