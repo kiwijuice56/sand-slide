@@ -12,7 +12,7 @@ func _ready() -> void:
 	sim = SandSimulation.new()
 	# I haven't benchmarked extensively yet, but this chunk size has reasonable 
 	# performance.
-	sim.set_chunk_size(8)
+	sim.set_chunk_size(16)
 	
 	await get_tree().get_root().ready
 	CommonReference.canvas.resized.connect(_on_window_resized)

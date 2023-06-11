@@ -6,12 +6,17 @@
 
 using namespace godot;
 
-// Fast but inaccurate cosine for graphics
+// Faster versions of math functions for graphics 
+
+int fast_floor(double x) noexcept {
+    return (int) x - (x < (int) x); // as dgobbi above, needs less than for floor
+}
+
 template<typename T>
-inline T cos(T x) noexcept {
-    constexpr T tp = 1./(2.*M_PI);
+inline T fast_cos(T x) noexcept {
+    constexpr T tp = 1./(2.0 * 3.14159265);
     x *= tp;
-    x -= T(.25) + std::floor(x + T(.25));
+    x -= T(.25) + fast_floor(x + T(.25));
     x *= T(16.) * (std::abs(x) - T(.5));
     return x;
 }
@@ -70,8 +75,7 @@ void SandSimulation::move_and_swap(int row, int col, int row2, int col2) {
         return;
     if (elements.at(get_cell(row, col))->get_state() != 0)
         if (elements.at(get_cell(row, col))->get_density() <= elements.at(get_cell(row2, col2))->get_density()) 
-            if (get_cell(row, col) != get_cell(row2, col2))
-                return;
+            return;
     int old = get_cell(row, col);
     set_cell(row, col, get_cell(row2, col2));
     set_cell(row2, col2, old);
@@ -93,11 +97,13 @@ void SandSimulation::grow(int row, int col, int food, int replacer) {
 
 void SandSimulation::liquid_process(int row, int col, int fluidity) {
     for (int i = 0; i < fluidity; i++) {
-        int new_col = col + (randf() < 0.5 ? 1 : -1);
-        if (randf() < 1.0 / 32)
+        double random = randf();
+        int new_col = col + (random < (0.5 + 1.0 / 32) ? 1 : -1);
+        if (random < 1.0 / 32)
             new_col = col;
-        int new_row = row + (is_swappable(row, col, row + 1, new_col) && randf() > 0.2 ? 1 : 0);
-        if (is_swappable(row, col, new_row, new_col) && (randf() < 0.3 || !is_swappable(row, col, new_row + 1, new_col))) {
+        
+        int new_row = row + (is_swappable(row, col, row + 1, new_col) ? 1 : 0);
+        if (is_swappable(row, col, new_row, new_col) && (randf() < 0.6 || !is_swappable(row, col, new_row + 1, new_col))) {
             move_and_swap(row, col, new_row, new_col);
             row = new_row;
             col = new_col;
@@ -287,6 +293,8 @@ PackedByteArray SandSimulation::get_data() {
 
 // Graphic methods
 
+// Load all textures into an array of 32-bit integers
+// Textures must be in the RGBA format
 void SandSimulation::initialize_textures(Array images) {
     textures.resize(images.size());
     for (int i = 0; i < images.size(); i++) {
@@ -302,34 +310,38 @@ void SandSimulation::initialize_textures(Array images) {
 
         for (int px = 0; px < g.width * g.height; px++) {
             int idx = px * 4;
-            
             uint32_t re = bytes[idx + 0] << 24;
             uint32_t gr = bytes[idx + 1] << 16;
             uint32_t bl = bytes[idx + 2] << 8;
             g.pixels->at(px) = re | gr | bl | 0xFF;
         }
-
         textures.at(i) = g;
     }
 }
 
 void SandSimulation::initialize_flat_color(Dictionary dict) {
     flat_color.clear();
-    
+    flat_color.resize(4096);
     Array ids = dict.keys();
     for (int i = 0; i < dict.size(); i++) {
         int id = ids[i];
-        flat_color[id] = dict[id];
+        Flat f;
+        f.init = true;
+
+        f.color = dict[id];
+        flat_color[id] = f;
     }
 }
 
 void SandSimulation::initialize_gradient_color(Dictionary dict) {
     gradient_color.clear();
-    
+    gradient_color.resize(4096);
+
     Array ids = dict.keys();
     for (int i = 0; i < dict.size(); i++) {
         int id = ids[i];
         Gradient g;
+        g.init = true;
 
         Array arr = dict[id];
 
@@ -338,7 +350,6 @@ void SandSimulation::initialize_gradient_color(Dictionary dict) {
         g.colors[2] = arr[2];
         g.colors[3] = arr[3];
         g.colors[4] = arr[4];
-
         g.offsets[0] = arr[5];
         g.offsets[1] = arr[6];
         g.offsets[2] = arr[7];
@@ -349,11 +360,13 @@ void SandSimulation::initialize_gradient_color(Dictionary dict) {
 
 void SandSimulation::initialize_metal_color(Dictionary dict) {
     metal_color.clear();
+    metal_color.resize(4096);
     
     Array ids = dict.keys();
     for (int i = 0; i < dict.size(); i++) {
         int id = ids[i];
         Gradient g;
+        g.init = true;
 
         Array arr = dict[id];
 
@@ -366,18 +379,19 @@ void SandSimulation::initialize_metal_color(Dictionary dict) {
 
 void SandSimulation::initialize_fluid_color(Dictionary dict) {
     fluid_color.clear();
+    fluid_color.resize(4096);
     
     Array ids = dict.keys();
     for (int i = 0; i < dict.size(); i++) {
         int id = ids[i];
         Fluid f;
+        f.init = true;
 
         Array arr = dict[id];
 
         f.colors[0] = arr[0];
         f.colors[1] = arr[1];
         f.colors[2] = arr[2];
-
         f.texture = arr[3];
 
         fluid_color[id] = f;
@@ -385,23 +399,20 @@ void SandSimulation::initialize_fluid_color(Dictionary dict) {
 }
 
 uint32_t SandSimulation::lerp_color(uint32_t a, uint32_t b, double x) {
-    uint32_t re = uint32_t(double((a & 0xFF000000) >> 24) * (1.0 - x) + double((b & 0xFF000000) >> 24) * (x)) << 24;
-    uint32_t gr = uint32_t(double((a & 0x00FF0000) >> 16) * (1.0 - x) + double((b & 0x00FF0000) >> 16) * (x)) << 16;
-    uint32_t bl = uint32_t(double((a & 0x0000FF00) >> 8) * (1.0 - x) + double((b & 0x0000FF00) >> 8) * (x)) << 8;
-    return re | gr | bl | 0xFF;
+    uint32_t re = uint32_t(((a & 0xFF000000) >> 24) * (1.0 - x) + ((b & 0xFF000000) >> 24) * (x)) << 24;
+    uint32_t gr = uint32_t(((a & 0x00FF0000) >> 16) * (1.0 - x) + ((b & 0x00FF0000) >> 16) * (x)) << 16;
+    uint32_t bl = uint32_t(((a & 0x0000FF00) >> 8) * (1.0 - x) + ((b & 0x0000FF00) >> 8) * (x)) << 8;
+    return re | gr | bl;
 }
 
 uint32_t SandSimulation::add_color(uint32_t a, uint32_t b) {
     uint32_t re = (((a & 0xFF000000) >> 24) + ((b & 0xFF000000) >> 24));
     if (re > 255) re = 255;
-
     uint32_t gr = (((a & 0x00FF0000) >> 16) + ((b & 0x00FF0000) >> 16));
     if (gr > 255) gr = 255;
-
     uint32_t bl = (((a & 0x0000FF00) >> 8) + ((b & 0x0000FF00) >> 8));
     if (bl > 255) bl = 255;
-
-    return (re << 24) | (gr << 16) | (bl << 8) | 0xFF;
+    return (re << 24) | (gr << 16) | (bl << 8);
 }
 
 // https://thebookofshaders.com/glossary/?search=smoothstep
@@ -414,17 +425,14 @@ double SandSimulation::smooth_step(double edge0, double edge1, double x) {
     return x * x * (3.0 - 2.0 * x);
 }
 
-uint32_t SandSimulation::sample_texture(GameTexture t, int x, int y, double offset_x, double offset_y) {
+uint32_t SandSimulation::sample_texture(int texture, int x, int y, double offset_x, double offset_y) {
+    GameTexture t = textures.at(texture);
     int samp_x = int(x + offset_x * t.width) % t.width;
     int samp_y = int(y + offset_y * t.height) % t.height;
-    if (samp_x < 0) 
-        samp_x += t.width;
-    if (samp_y < 0) 
-        samp_y += t.height;
+    if (samp_x < 0) samp_x += t.width;
+    if (samp_y < 0) samp_y += t.height;
 
-    uint32_t main_color = t.pixels->at(samp_y * t.width + samp_x);
-
-    return main_color;
+    return t.pixels->at(samp_y * t.width + samp_x);
 }
 
 uint32_t SandSimulation::get_color(int row, int col) {
@@ -435,49 +443,48 @@ uint32_t SandSimulation::get_color(int row, int col) {
         return uint32_t(randf() * 0xFFFFFF) << 8;
     }
 
-    if (fluid_color.find(id) != fluid_color.end()) {
-        double seed = 851845.120381 * id;
-        seed -= floor(seed);
+    if (fluid_color[id].init) {
+        double seed = 3.1203811357 * id;
+        seed -= int(seed);
         Fluid f = fluid_color[id];
 
-        double u_x = col / double(width);
-        double u_y = row / double(height);
+        // Basic motion
+        double offset_x = seed + fast_cos(seed + time * 9.0) * 0.1;
+        double offset_y = seed + fast_cos(seed + 1.0 + time * 11.0) * 0.1;
 
-        // basic motion
-        double offset_x = seed + 0.25 + cos(seed + time * 9.0) * 0.1;
-        double offset_y = seed + 0.25 + cos(seed + 1.0 + time * 11.0) * 0.1;
+        // Wavey effect
+        offset_x += fast_cos(seed + time + 8.0 * row / height) * 0.015;
 
-        // wavey effect
-        offset_x += cos(seed + 0.6 * time + 8.0 * u_y) * 0.01;
+        uint32_t base_color = sample_texture(f.texture, col, row, offset_x, offset_y);
+        base_color = lerp_color(f.colors[0], f.colors[1], ((base_color & 0xFF000000) >> 24) / 255.0);
 
-        uint32_t base_color = sample_texture(textures.at(f.texture), col, row, offset_x, offset_y);
-        double strength = ((base_color & 0xFF000000) >> 24) / 255.0;
-        base_color = lerp_color(f.colors[0], f.colors[1], strength);
+        // Repeat with slight changes for the highlight
 
-        // repeat with slight changes for the highlight
+         // Basic motion
+        offset_x = seed + 0.75 + fast_cos(seed + time * 14.0) * 0.06;
 
-         // basic motion
-        offset_x = seed + 0.75 + cos(seed + time * 14.0) * 0.06;
-        offset_y = seed + 0.75 + cos(seed + 0.8 + time * 12.0) * 0.06;
+        // Wavey effect
+        offset_x += fast_cos(seed + 0.6 * time + 15.0 * row / height) * 0.023;
 
-        // wavey effect
-        offset_x += cos(seed + 0.6 * time + 15.0 * u_y) * 0.02;
+        uint32_t highlight = sample_texture(f.texture, col, row, offset_x, offset_y);
+        highlight = lerp_color(highlight, 0, 0.35 + fast_cos(seed * time * 5.0) * 0.3);
 
-        uint32_t highlight = sample_texture(textures.at(f.texture), col, row, offset_x, offset_y);
-        highlight = lerp_color(highlight, 0, 0.35 + cos(seed * time * 5.0) * 0.3);
+        uint32_t color = add_color(base_color, highlight);
 
-        double x = double(touch_count(row, col, id)) / 8.0;
-
-        return lerp_color(add_color(base_color, highlight), f.colors[2], 1.0 - x);
+        double x = touch_count(row, col, id) / 8.0;
+        if (x < 1.0)
+            return lerp_color(color, f.colors[2], 1.0 - x);
+        else
+            return color;
     }
 
-    if (flat_color.find(id) != flat_color.end()) {
-        return flat_color[id];
+    if (flat_color[id].init) {
+        return flat_color[id].color;
     }
 
-    if (gradient_color.find(id) != gradient_color.end()) {
+    if (gradient_color[id].init) {
         Gradient g = gradient_color[id];
-        double x = double(touch_count(row, col, id)) / 8.0;
+        double x = touch_count(row, col, id) / 8.0;
 
         uint32_t out = lerp_color(g.colors[0], g.colors[1], smooth_step(0.0, g.offsets[0], x));
         out = lerp_color(out, g.colors[2], smooth_step(g.offsets[0], g.offsets[1], x));
@@ -487,12 +494,9 @@ uint32_t SandSimulation::get_color(int row, int col) {
         return out;
     }
 
-    if (metal_color.find(id) != metal_color.end()) {
+    if (metal_color[id].init) {
         Gradient g = metal_color[id];
-        double x = double(touch_count(row, col, id)) / 8.0;
-        double u_y = row / double(height);
-
-        return lerp_color(g.colors[0], g.colors[1], u_y);
+        return lerp_color(g.colors[0], g.colors[1], row / double(height));
     }
 
     return 0xFFFFFFFF;
