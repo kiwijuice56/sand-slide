@@ -1,4 +1,4 @@
-[gd_scene load_steps=205 format=3 uid="uid://danjqv04qm3f6"]
+[gd_scene load_steps=208 format=3 uid="uid://danjqv04qm3f6"]
 
 [ext_resource type="Script" path="res://main/ui/element_selector/element_selector.gd" id="1_fxkbl"]
 [ext_resource type="Material" uid="uid://c5qvq03ayjd60" path="res://main/ui/element_selector/selected.tres" id="2_30e0c"]
@@ -778,22 +778,22 @@ corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e8k14"]
-bg_color = Color(0, 0.639216, 0.545098, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kspit"]
+bg_color = Color(0.788235, 0.494118, 0.368627, 1)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8kwuy"]
-bg_color = Color(0.0705882, 0.780392, 0.568627, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8u1o6"]
+bg_color = Color(0.85098, 0.607843, 0.509804, 1)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2omdr"]
-bg_color = Color(0, 0.360784, 0.439216, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vx4qe"]
+bg_color = Color(0.501961, 0.0196078, 0.0745098, 1)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
@@ -815,6 +815,27 @@ corner_radius_bottom_left = 4
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5ncxp"]
 bg_color = Color(0.501961, 0.0196078, 0.0745098, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e8k14"]
+bg_color = Color(0, 0.639216, 0.545098, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8kwuy"]
+bg_color = Color(0.0705882, 0.780392, 0.568627, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2omdr"]
+bg_color = Color(0, 0.360784, 0.439216, 1)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
@@ -2029,7 +2050,7 @@ text = "grass seed"
 script = ExtResource("3_bfdgk")
 id = 12
 
-[node name="FlowerSeed" type="Button" parent="Basic/Basic"]
+[node name="Flower Seed" type="Button" parent="Basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -2071,7 +2092,7 @@ text = "virus"
 script = ExtResource("3_bfdgk")
 id = 101
 
-[node name="Acid" type="Button" parent="Basic/Basic"]
+[node name="Primordial Soup" type="Button" parent="Basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -2085,12 +2106,12 @@ theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 15
-theme_override_styles/normal = SubResource("StyleBoxFlat_e8k14")
-theme_override_styles/hover = SubResource("StyleBoxFlat_8kwuy")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_2omdr")
-text = "acid"
+theme_override_styles/normal = SubResource("StyleBoxFlat_kspit")
+theme_override_styles/hover = SubResource("StyleBoxFlat_8u1o6")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_vx4qe")
+text = "primordial"
 script = ExtResource("3_bfdgk")
-id = 21
+id = 127
 
 [node name="Blood" type="Button" parent="Basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
@@ -2112,6 +2133,27 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_5ncxp")
 text = "blood"
 script = ExtResource("3_bfdgk")
 id = 118
+
+[node name="Acid" type="Button" parent="Basic/Basic"]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 0
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxFlat_e8k14")
+theme_override_styles/hover = SubResource("StyleBoxFlat_8kwuy")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2omdr")
+text = "acid"
+script = ExtResource("3_bfdgk")
+id = 21
 
 [node name="Sponge" type="Button" parent="Basic/Basic"]
 custom_minimum_size = Vector2(0, 48)

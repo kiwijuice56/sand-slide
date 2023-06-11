@@ -1,9 +1,9 @@
-[gd_resource type="Resource" script_class="FlatColor" load_steps=2 format=3]
+[gd_resource type="Resource" script_class="Metal" load_steps=2 format=3 uid="uid://bkwo2jv5p3gvj"]
 
-[ext_resource type="Script" path="res://main/element_manager/element_material/types/flat_color.gd" id="1_8xu60"]
+[ext_resource type="Script" path="res://main/element_manager/element_material/types/metal.gd" id="1_bmhbf"]
 
 [resource]
-script = ExtResource("1_8xu60")
-color = Color(1, 0.65098, 0.843137, 1)
+script = ExtResource("1_bmhbf")
+color_a = Color(1, 0.741176, 0.839216, 1)
+color_b = Color(0.839216, 0.388235, 0.796078, 1)
 id = 23
-bloom = 0.0

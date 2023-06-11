@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="Fluid" load_steps=2 format=3 uid="uid://jdeo84ua3ikm"]
+
+[ext_resource type="Script" path="res://main/element_manager/element_material/types/fluid.gd" id="1_p0cvo"]
+
+[resource]
+script = ExtResource("1_p0cvo")
+noise_texture = 0
+color_a = Color(0.211765, 0.611765, 0.176471, 1)
+color_b = Color(0.0862745, 0.509804, 0.172549, 1)
+color_c = Color(0.0823529, 0.4, 0.203922, 1)
+noise_scale = 2.0
+noise_speed = 4.0
+current_size = 24.0
+wave_cycle = 3.0
+contraction_size = 16.0
+wave_density = 2.0
+shimmer_speed = 24.0
+shimmer_density = 1.5
+shimmer_opacity = 0.6
+shimmer_cycle = 1.8
+id = 126

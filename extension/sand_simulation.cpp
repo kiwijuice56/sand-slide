@@ -448,6 +448,10 @@ uint32_t SandSimulation::get_color(int row, int col) {
         seed -= int(seed);
         Fluid f = fluid_color[id];
 
+        if (id == 127) {
+            f.colors[0] = lerp_color(0x4396e800, 0x62eb4d00, 0.5 + fast_cos(time * 24.0) * 0.5);
+        }
+
         // Basic motion
         double offset_x = seed + fast_cos(seed + time * 9.0) * 0.1;
         double offset_y = seed + fast_cos(seed + 1.0 + time * 11.0) * 0.1;

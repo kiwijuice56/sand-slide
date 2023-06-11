@@ -8,9 +8,10 @@
 class AlgaeGreen: public Element {
 public:
     const double GROWTH = 1.0 / 1024;
-    const double DEATH = 1.0 / 6000;
+    const double DEATH = 1.0 / 4098;
     const double FLAME = 1.0 / 48;
     const double BAD_ENVIRONMENT = 1.0 / 16;
+    const double ALGAE_WATER = 1.0 / 16;
 
     void process(SandSimulation *sim, int row, int col) override {  
         // Catch on fire
@@ -27,6 +28,10 @@ public:
 
         // Randomly decay to keep populations smaller
         if (sim->randf() < DEATH) {
+            if (sim->randf() < ALGAE_WATER) {
+                sim->set_cell(row, col, 126);
+                return;
+            }
             sim->set_cell(row, col, sim->touch_count(row, col, 71) > sim->touch_count(row, col, 3) ? 71 : 3);
         } 
         

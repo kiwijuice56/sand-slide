@@ -120,7 +120,8 @@
 #include "elements/space/paradox.h"
 #include "elements/space/glitch.h"
 #include "elements/basic/white_sand.h"
-#include "elements/basic/blood.h"
+#include "elements/life/blood.h"
+#include "elements/life/algae_water.h"
 #include "elements/life/flower_seed.h"
 #include "elements/life/germ_flower_seed.h"
 #include "elements/life/flower_stem.h"
@@ -128,6 +129,7 @@
 #include "elements/life/flower_petal_a.h"
 #include "elements/life/flower_petal_b.h"
 #include "elements/life/flower_petal_c.h"
+#include "elements/life/primordial_soup.h"
 
 class AllElements {
 public:
@@ -264,6 +266,8 @@ public:
         elements->at(123) = new FlowerPetalA();
         elements->at(124) = new FlowerPetalB();
         elements->at(125) = new FlowerPetalC();
+        elements->at(126) = new AlgaeWater();
+        elements->at(127) = new PrimordialSoup(); 
     }
 };
 

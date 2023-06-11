@@ -7,10 +7,11 @@
 // The three different varities (green, red, and brown) have no functional differences
 class AlgaeBrown: public Element {
 public:
-    const double GROWTH = 1.0 / 2048;
-    const double DEATH = 1.0 / 6000;
+    const double GROWTH = 1.0 / 512;
+    const double DEATH = 1.0 / 2048;
     const double FLAME = 1.0 / 48;
     const double BAD_ENVIRONMENT = 1.0 / 16;
+    const double ALGAE_WATER = 1.0 / 24;
 
     void process(SandSimulation *sim, int row, int col) override {  
         // Catch on fire
@@ -27,6 +28,10 @@ public:
 
         // Randomly decay to keep populations smaller
         if (sim->randf() < DEATH) {
+            if (sim->randf() < ALGAE_WATER) {
+                sim->set_cell(row, col, 126);
+                return;
+            }
             sim->set_cell(row, col, sim->touch_count(row, col, 71) > sim->touch_count(row, col, 3) ? 71 : 3);
         } 
         

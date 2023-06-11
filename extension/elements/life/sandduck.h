@@ -11,7 +11,7 @@ public:
     const double AIR = 1.0 / 16;
 
     void process(SandSimulation *sim, int row, int col) override {
-        if (sim->randf() < AIR && sim->touch_count(row, col, 1) == 0) {
+        if (sim->randf() < AIR && sim->touch_count(row, col, 1) + sim->touch_count(row, col, 98) == 0) {
             sim->set_cell(row, col, 0);
         } else if (sim->touch_count(row, col, 8) > 1 || sim->randf() < DEATH) {
             sim->set_cell(row, col, 1);
@@ -20,6 +20,10 @@ public:
             sim->grow(row - (sim->randf() < 0.5 ? 1 : 2), col, 1, 8);
             sim->grow(row, col - (sim->randf() < 0.5 ? 1 : 2), 1, 8);
             sim->grow(row, col + (sim->randf() < 0.5 ? 1 : 2), 1, 8);
+            sim->grow(row + (sim->randf() < 0.5 ? 1 : 2), col, 98, 8);
+            sim->grow(row - (sim->randf() < 0.5 ? 1 : 2), col, 98, 8);
+            sim->grow(row, col - (sim->randf() < 0.5 ? 1 : 2), 98, 8);
+            sim->grow(row, col + (sim->randf() < 0.5 ? 1 : 2), 98, 8);
         } else if (sim->randf() < POISON && sim->is_poisoned(row, col)) {
             sim->set_cell(row, col, 16);
         }
