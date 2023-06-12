@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bi1khomdif7xb"]
+[gd_scene load_steps=15 format=3 uid="uid://bi1khomdif7xb"]
 
 [ext_resource type="Theme" uid="uid://co20v1mxv2dfm" path="res://main/ui/_theme/theme.tres" id="1_f12ql"]
 [ext_resource type="Script" path="res://main/ui/submenu/settings/settings_menu.gd" id="2_1g5bn"]
@@ -47,6 +47,9 @@ corner_radius_bottom_right = 6
 corner_radius_bottom_left = 6
 expand_margin_top = 5.0
 expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5rheo"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [sub_resource type="Animation" id="Animation_swdin"]
 length = 0.001
@@ -199,7 +202,6 @@ size_flags_horizontal = 0
 size_flags_vertical = 1
 theme_override_font_sizes/font_size = 16
 text = "Brush "
-horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/SizeContainer"]
@@ -254,7 +256,6 @@ size_flags_horizontal = 0
 size_flags_vertical = 1
 theme_override_font_sizes/font_size = 16
 text = "Time"
-horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/SpeedContainer"]
@@ -308,7 +309,6 @@ size_flags_horizontal = 0
 size_flags_vertical = 1
 theme_override_font_sizes/font_size = 16
 text = "Zoom"
-horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ZoomContainer"]
@@ -350,6 +350,28 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 12
 text = "  In"
 vertical_alignment = 1
+
+[node name="CheckContainer" type="HBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/CheckContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 16
+text = "Performance mode"
+
+[node name="CheckButton" type="CheckButton" parent="SettingsContainer/PanelContainer/VBoxContainer/CheckContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_5rheo")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_5rheo")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_5rheo")
+theme_override_styles/hover = SubResource("StyleBoxFlat_5rheo")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_5rheo")
+theme_override_styles/focus = SubResource("StyleBoxFlat_5rheo")
 
 [node name="BackgroundContainer" type="VBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer"]
 layout_mode = 2

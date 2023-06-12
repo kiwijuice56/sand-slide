@@ -8,8 +8,8 @@ using namespace godot;
 
 // Faster versions of math functions for graphics 
 
-int fast_floor(double x) noexcept {
-    return (int) x - (x < (int) x); // as dgobbi above, needs less than for floor
+inline int fast_floor(double x) noexcept {
+    return (int) x - (x < (int) x);
 }
 
 template<typename T>
@@ -25,7 +25,7 @@ SandSimulation::SandSimulation() {
     AllElements::fill_elements(&elements);
 
     draw_data = PackedByteArray();
-    draw_data.resize(width * height * 4);
+    draw_data.resize(width * height * 3);
 
     visited.resize(width * height);
     cells.resize(width * height);
@@ -208,7 +208,6 @@ int SandSimulation::get_cell(int row, int col) {
     if (cells.at(row * width + col) > 4096) {
         return 15;
     }
-
     return cells.at(row * width + col);
 }
 
@@ -255,7 +254,7 @@ void SandSimulation::resize(int new_width, int new_height) {
     chunks.clear();
     chunks.resize(chunk_width * chunk_height);
 
-    draw_data.resize(new_width * new_height * 4);
+    draw_data.resize(new_width * new_height * 3);
 
     // Data has to be copied cell-by-cell since the dimensions of the vectors changed
     for (int row = height - 1, new_row = new_height - 1; row >= 0 && new_row >= 0; row--, new_row--) {
@@ -277,7 +276,7 @@ void SandSimulation::set_chunk_size(int new_size) {
 
 PackedByteArray SandSimulation::get_data() {
     PackedByteArray data = PackedByteArray();
-    data.resize(width * height * 4);
+    data.resize(width * height * 3);
     for (int y = 0; y < height; y++) {
         for (int x = 0; x < width; x++) {
             int id = cells.at(y * width + x);
@@ -294,7 +293,7 @@ PackedByteArray SandSimulation::get_data() {
 // Graphic methods
 
 // Load all textures into an array of 32-bit integers
-// Textures must be in the RGBA format
+// Textures must be in the RGB format, alpha is not considered
 void SandSimulation::initialize_textures(Array images) {
     textures.resize(images.size());
     for (int i = 0; i < images.size(); i++) {
@@ -310,10 +309,10 @@ void SandSimulation::initialize_textures(Array images) {
 
         for (int px = 0; px < g.width * g.height; px++) {
             int idx = px * 4;
-            uint32_t re = bytes[idx + 0] << 24;
-            uint32_t gr = bytes[idx + 1] << 16;
-            uint32_t bl = bytes[idx + 2] << 8;
-            g.pixels->at(px) = re | gr | bl | 0xFF;
+            uint32_t re = bytes[idx + 0] << 16;
+            uint32_t gr = bytes[idx + 1] << 8;
+            uint32_t bl = bytes[idx + 2] << 0;
+            g.pixels->at(px) = re | gr | bl;
         }
         textures.at(i) = g;
     }
@@ -328,7 +327,7 @@ void SandSimulation::initialize_flat_color(Dictionary dict) {
         Flat f;
         f.init = true;
 
-        f.color = dict[id];
+        f.color = int(dict[id]) >> 8;
         flat_color[id] = f;
     }
 }
@@ -345,11 +344,11 @@ void SandSimulation::initialize_gradient_color(Dictionary dict) {
 
         Array arr = dict[id];
 
-        g.colors[0] = arr[0];
-        g.colors[1] = arr[1];
-        g.colors[2] = arr[2];
-        g.colors[3] = arr[3];
-        g.colors[4] = arr[4];
+        g.colors[0] = int(arr[0]) >> 8;
+        g.colors[1] = int(arr[1]) >> 8;
+        g.colors[2] = int(arr[2]) >> 8;
+        g.colors[3] = int(arr[3]) >> 8;
+        g.colors[4] = int(arr[4]) >> 8;
         g.offsets[0] = arr[5];
         g.offsets[1] = arr[6];
         g.offsets[2] = arr[7];
@@ -370,8 +369,8 @@ void SandSimulation::initialize_metal_color(Dictionary dict) {
 
         Array arr = dict[id];
 
-        g.colors[0] = arr[0];
-        g.colors[1] = arr[1];
+        g.colors[0] = int(arr[0]) >> 8;;
+        g.colors[1] = int(arr[1]) >> 8;;
 
         metal_color[id] = g;
     }
@@ -389,9 +388,9 @@ void SandSimulation::initialize_fluid_color(Dictionary dict) {
 
         Array arr = dict[id];
 
-        f.colors[0] = arr[0];
-        f.colors[1] = arr[1];
-        f.colors[2] = arr[2];
+        f.colors[0] = int(arr[0]) >> 8;
+        f.colors[1] = int(arr[1]) >> 8;
+        f.colors[2] = int(arr[2]) >> 8;
         f.texture = arr[3];
 
         fluid_color[id] = f;
@@ -399,20 +398,20 @@ void SandSimulation::initialize_fluid_color(Dictionary dict) {
 }
 
 uint32_t SandSimulation::lerp_color(uint32_t a, uint32_t b, double x) {
-    uint32_t re = uint32_t(((a & 0xFF000000) >> 24) * (1.0 - x) + ((b & 0xFF000000) >> 24) * (x)) << 24;
-    uint32_t gr = uint32_t(((a & 0x00FF0000) >> 16) * (1.0 - x) + ((b & 0x00FF0000) >> 16) * (x)) << 16;
-    uint32_t bl = uint32_t(((a & 0x0000FF00) >> 8) * (1.0 - x) + ((b & 0x0000FF00) >> 8) * (x)) << 8;
+    uint32_t re = uint32_t(((a & 0xFF0000) >> 16) * (1.0 - x) + ((b & 0xFF0000) >> 16) * x) << 16;
+    uint32_t gr = uint32_t(((a & 0x00FF00) >> 8) * (1.0 - x) + ((b & 0x00FF00) >> 8) * x) << 8;
+    uint32_t bl = uint32_t((a & 0x0000FF) * (1.0 - x) + (b & 0x0000FF) * x);
     return re | gr | bl;
 }
 
 uint32_t SandSimulation::add_color(uint32_t a, uint32_t b) {
-    uint32_t re = (((a & 0xFF000000) >> 24) + ((b & 0xFF000000) >> 24));
+    uint32_t re = (((a & 0xFF0000) >> 16) + ((b & 0xFF0000) >> 16));
     if (re > 255) re = 255;
-    uint32_t gr = (((a & 0x00FF0000) >> 16) + ((b & 0x00FF0000) >> 16));
+    uint32_t gr = (((a & 0x00FF00) >> 8) + ((b & 0x00FF00) >> 8));
     if (gr > 255) gr = 255;
-    uint32_t bl = (((a & 0x0000FF00) >> 8) + ((b & 0x0000FF00) >> 8));
+    uint32_t bl = ((a & 0x0000FF) + (b & 0x0000FF));
     if (bl > 255) bl = 255;
-    return (re << 24) | (gr << 16) | (bl << 8);
+    return (re << 16) | (gr << 8) | bl;
 }
 
 // https://thebookofshaders.com/glossary/?search=smoothstep
@@ -435,10 +434,10 @@ uint32_t SandSimulation::sample_texture(int texture, int x, int y, double offset
     return t.pixels->at(samp_y * t.width + samp_x);
 }
 
-uint32_t SandSimulation::get_color(int row, int col) {
+uint32_t SandSimulation::get_color(int row, int col, bool flat_mode) {
     int id = cells.at(row * width + col);
     if (id > 4096) {
-        return 0xFFFFFFFF;
+        return 0xFFFFFF;
     }
 
     // Special visual effects
@@ -450,9 +449,11 @@ uint32_t SandSimulation::get_color(int row, int col) {
         double seed = 3.1203811357 * id;
         seed -= int(seed);
         Fluid f = fluid_color[id];
+        if (flat_mode)
+            return f.colors[0];
 
         if (id == 127) {
-            f.colors[0] = lerp_color(0x4396e800, 0x62eb4d00, 0.5 + fast_cos(time * 24.0) * 0.5);
+            f.colors[0] = lerp_color(0x4396e8, 0x62eb4d, 0.5 + fast_cos(time * 24.0) * 0.5);
         }
 
         // Basic motion
@@ -463,7 +464,7 @@ uint32_t SandSimulation::get_color(int row, int col) {
         offset_x += fast_cos(seed + time + 8.0 * row / height) * 0.015;
 
         uint32_t base_color = sample_texture(f.texture, col, row, offset_x, offset_y);
-        base_color = lerp_color(f.colors[0], f.colors[1], ((base_color & 0xFF000000) >> 24) / 255.0);
+        base_color = lerp_color(f.colors[0], f.colors[1], ((base_color & 0xFF0000) >> 16) / 255.0);
 
         // Repeat with slight changes for the highlight
 
@@ -491,6 +492,9 @@ uint32_t SandSimulation::get_color(int row, int col) {
 
     if (gradient_color[id].init) {
         Gradient g = gradient_color[id];
+        if (flat_mode)
+            return g.colors[2];
+
         double x = touch_count(row, col, id) / 8.0;
 
         uint32_t out = lerp_color(g.colors[0], g.colors[1], smooth_step(0.0, g.offsets[0], x));
@@ -503,23 +507,24 @@ uint32_t SandSimulation::get_color(int row, int col) {
 
     if (metal_color[id].init) {
         Gradient g = metal_color[id];
-        
+        if (flat_mode)
+            return g.colors[0];
+
         return lerp_color(g.colors[0], g.colors[1], row / double(height));
     }
 
-    return 0xFFFFFFFF;
+    return 0xFFFFFF;
 }
 
-PackedByteArray SandSimulation::get_color_image() {
+PackedByteArray SandSimulation::get_color_image(bool flat_mode) {
     for (int y = 0; y < height; y++) {
         for (int x = 0; x < width; x++) {
-            uint32_t col = get_color(y, x);
+            uint32_t col = get_color(y, x, flat_mode);
             
-            int idx = (y * width + x) * 4;
-            draw_data.set(idx + 0, (col & 0xFF000000) >> 24);
-            draw_data.set(idx + 1, (col & 0x00FF0000) >> 16);
-            draw_data.set(idx + 2, (col & 0x0000FF00) >> 8);
-            draw_data.set(idx + 3, 0xFF);
+            int idx = (y * width + x) * 3;
+            draw_data.set(idx, (col & 0xFF0000) >> 16);
+            draw_data.set(idx + 1, (col & 0x00FF00) >> 8);
+            draw_data.set(idx + 2, col & 0x0000FF);
         }
     }
     return draw_data;

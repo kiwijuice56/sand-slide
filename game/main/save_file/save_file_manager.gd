@@ -93,7 +93,7 @@ func save_image(path: String) -> void:
 func save_thumbnail(path: String) -> void:
 	var sim: SandSimulation = CommonReference.main.sim
 	
-	var image: Image = Image.create_from_data(sim.get_width(), sim.get_height(), false, Image.FORMAT_RGBA8, CommonReference.main.sim.get_color_image())
+	var image: Image = Image.create_from_data(sim.get_width(), sim.get_height(), false, Image.FORMAT_RGBA8, CommonReference.main.sim.get_color_image(false))
 	image.save_png(path)
 
 func load_image(path: String, version: String) -> void:

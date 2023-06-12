@@ -31,8 +31,8 @@ file_logging/enable_file_logging=true
 
 [display]
 
-window/size/viewport_width=360
-window/size/viewport_height=640
+window/size/viewport_width=380
+window/size/viewport_height=680
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 window/handheld/orientation=1

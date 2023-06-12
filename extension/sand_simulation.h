@@ -127,8 +127,8 @@ public:
     double smooth_step(double edge0, double edge1, double x);
     uint32_t sample_texture(int t, int x, int y, double offset_x, double offset_y);
 
-    uint32_t get_color(int row, int col);
-    PackedByteArray get_color_image();
+    uint32_t get_color(int row, int col, bool flat);
+    PackedByteArray get_color_image(bool flat);
 };
 
 #endif // SAND_SIMULATION_CLASS_H
