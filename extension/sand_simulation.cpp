@@ -39,26 +39,29 @@ void SandSimulation::step(int iterations) {
     time += 0.001;
     for (int i = 0; i < iterations; i++) {
         for (int chunk = chunks.size() - 1; chunk >= 0; chunk--) {
-            if (chunks.at(chunk) == 0)
+            if (chunks[chunk] == 0) {
                 continue;
+            }
             for (int row = chunk_size - 1; row >= 0; row--) {
                 for (int col = 0; col < chunk_size; col++) {
                     int r_row = (chunk / chunk_width) * chunk_size + row;
                     int r_col = (chunk % chunk_width) * chunk_size + col;
-                    if (r_row >= height || r_col >= width)
+                    if (r_row >= height || r_col >= width) {
                         continue;
-                    if (visited.at(r_row * width + r_col)) 
-                        visited.at(r_row * width + r_col) = false;
-                    else {
+                    }
+                    
+                    if (visited[r_row * width + r_col]) {
+                        visited[r_row * width + r_col] = false;
+                    } else {
                         // Elements (including custom) are stored using numbers 0 - 4096
                         // Taps share the ID of their spawn material, but offset by 4097
-                        if (cells.at(r_row * width + r_col) > 4096 && randf() < 1.0 / 16) {
-                            int x = cells.at(r_row * width + r_col) - 4097;
+                        if (cells[r_row * width + r_col] > 4096 && randf() < 1.0 / 16) {
+                            int x = cells[r_row * width + r_col] - 4097;
                             // Grow in all 8 directions
                             grow(r_row + 1, r_col, 0, x); grow(r_row + 1, r_col + 1, 0, x); grow(r_row + 1, r_col - 1, 0, x); grow(r_row - 1, r_col, 0, x); 
                             grow(r_row - 1, r_col + 1, 0, x); grow(r_row - 1, r_col - 1, 0, x); grow(r_row, r_col + 1, 0, x); grow(r_row, r_col - 1, 0, x);
                         } else {
-                            elements.at(get_cell(r_row, r_col))->process(this, r_row, r_col);
+                            elements[get_cell(r_row, r_col)]->process(this, r_row, r_col);
                         }
                     }
                 }
@@ -71,10 +74,10 @@ void SandSimulation::step(int iterations) {
 void SandSimulation::move_and_swap(int row, int col, int row2, int col2) {
     if (!in_bounds(row, col) || !in_bounds(row2, col2)) 
         return;
-    if (elements.at(get_cell(row2, col2))->get_state() == 0)
+    if (elements[get_cell(row2, col2)]->get_state() == 0)
         return;
-    if (elements.at(get_cell(row, col))->get_state() != 0)
-        if (elements.at(get_cell(row, col))->get_density() <= elements.at(get_cell(row2, col2))->get_density()) 
+    if (elements[get_cell(row, col)]->get_state() != 0)
+        if (elements[get_cell(row, col)]->get_density() <= elements[get_cell(row2, col2)]->get_density()) 
             return;
     int old = get_cell(row, col);
     set_cell(row, col, get_cell(row2, col2));
@@ -88,7 +91,7 @@ void SandSimulation::grow(int row, int col, int food, int replacer) {
         return;
     if (food == -1) {
         // Since only explosions/lasers grow into all cells, we run a check for explosion resistance
-        if (randf() >= (1.0 - elements.at(get_cell(row, col))->get_explode_resistance())) 
+        if (randf() >= (1.0 - elements[get_cell(row, col)]->get_explode_resistance())) 
             return;
     } else if (get_cell(row, col) != food) 
         return;
@@ -151,7 +154,7 @@ bool SandSimulation::is_poisoned(int row, int col) {
             if (x == 0 && y == 0 || !in_bounds(row + y, col + x)) 
                 continue;
             int c = get_cell(row + y, col + x);
-            if (elements.at(get_cell(row + y, col + x))->get_toxicity() == 1) 
+            if (elements[get_cell(row + y, col + x)]->get_toxicity() == 1) 
                 return true;
         }
     } 
@@ -164,7 +167,7 @@ bool SandSimulation::is_on_fire(int row, int col) {
         for (int x = -1; x <= 1; x++) {
             if (x == 0 && y == 0 || !in_bounds(row + y, col + x))
                 continue;
-            if (elements.at(get_cell(row + y, col + x))->get_temperature() == 1) 
+            if (elements[get_cell(row + y, col + x)]->get_temperature() == 1) 
                 return true;
         }
     } 
@@ -177,7 +180,7 @@ bool SandSimulation::is_cold(int row, int col) {
         for (int x = -1; x <= 1; x++) {
             if (x == 0 && y == 0 || !in_bounds(row + y, col + x))
                 continue;
-            if (elements.at(get_cell(row + y, col + x))->get_temperature() == -1) 
+            if (elements[get_cell(row + y, col + x)]->get_temperature() == -1) 
                 return true;
         }
     } 
@@ -189,10 +192,10 @@ bool SandSimulation::is_swappable(int row, int col, int row2, int col2) {
     if (!in_bounds(row, col) || !in_bounds(row2, col2)) 
         return false;
 
-    if (elements.at(get_cell(row2, col2))->get_state() == 0)
+    if (elements[get_cell(row2, col2)]->get_state() == 0)
         return false;
 
-    if (elements.at(get_cell(row, col))->get_state() != 0 && elements.at(get_cell(row, col))->get_density() <= elements.at(get_cell(row2, col2))->get_density()) 
+    if (elements[get_cell(row, col)]->get_state() != 0 && elements[get_cell(row, col)]->get_density() <= elements[get_cell(row2, col2)]->get_density()) 
         return false;
 
     return true;
@@ -205,30 +208,30 @@ inline float SandSimulation::randf() {
 
 int SandSimulation::get_cell(int row, int col) {
     // Taps should be mostly indestructible, so treat them as the wall element for processing
-    if (cells.at(row * width + col) > 4096) {
+    if (cells[row * width + col] > 4096) {
         return 15;
     }
-    return cells.at(row * width + col);
+    return cells[row * width + col];
 }
 
 void SandSimulation::set_cell(int row, int col, int type) {
-    if (cells.at(row * width + col) == 0 && type != 0) 
-        chunks.at((row / chunk_size) * chunk_width + (col / chunk_size))++;
-    else if (cells.at(row * width + col) != 0 && type == 0) 
-        chunks.at((row / chunk_size) * chunk_width + (col / chunk_size))--;
+    if (cells[row * width + col] == 0 && type != 0) 
+        chunks[(row / chunk_size) * chunk_width + (col / chunk_size)]++;
+    else if (cells[row * width + col] != 0 && type == 0) 
+        chunks[(row / chunk_size) * chunk_width + (col / chunk_size)]--;
     
-    visited.at(row * width + col) = type != 0;
-    cells.at(row * width + col) = type;
+    visited[row * width + col] = type != 0;
+    cells[row * width + col] = type;
 }
 
 void SandSimulation::draw_cell(int row, int col, int type) {
     set_cell(row, col, type);
-    visited.at(row * width + col) = false;
+    visited[row * width + col] = false;
 }
 
 
 int SandSimulation::get_chunk(int c) {
-    return chunks.at(c);
+    return chunks[c];
 }
 
 int SandSimulation::get_width() {
@@ -259,9 +262,9 @@ void SandSimulation::resize(int new_width, int new_height) {
     // Data has to be copied cell-by-cell since the dimensions of the vectors changed
     for (int row = height - 1, new_row = new_height - 1; row >= 0 && new_row >= 0; row--, new_row--) {
         for (int col = 0, new_col = 0; col < width && new_col < new_width; col++, new_col++) {
-            cells.at(new_row * new_width + new_col) = temp.at(row * width + col);
-            if (cells.at(new_row * new_width + new_col) != 0) 
-                chunks.at((new_row / chunk_size) * chunk_width + (new_col / chunk_size))++;
+            cells[new_row * new_width + new_col] = temp[row * width + col];
+            if (cells[new_row * new_width + new_col] != 0) 
+                chunks[(new_row / chunk_size) * chunk_width + (new_col / chunk_size)]++;
         }
     }
 
@@ -279,7 +282,7 @@ PackedByteArray SandSimulation::get_data() {
     data.resize(width * height * 3);
     for (int y = 0; y < height; y++) {
         for (int x = 0; x < width; x++) {
-            int id = cells.at(y * width + x);
+            int id = cells[y * width + x];
             int idx = (y * width + x) * 4;
             data.set(idx + 0, (id & 0xFF000000) >> 24);
             data.set(idx + 1, (id & 0x00FF0000) >> 16);
@@ -303,18 +306,16 @@ void SandSimulation::initialize_textures(Array images) {
         GameTexture g;
         g.width = img->get_width();
         g.height = img->get_height();
-        g.pixels = new std::vector<uint32_t>();
-
-        g.pixels->resize(g.width * g.height);
+        g.pixels = new uint32_t[g.width * g.height]{ 0 };
 
         for (int px = 0; px < g.width * g.height; px++) {
             int idx = px * 4;
             uint32_t re = bytes[idx + 0] << 16;
             uint32_t gr = bytes[idx + 1] << 8;
             uint32_t bl = bytes[idx + 2] << 0;
-            g.pixels->at(px) = re | gr | bl;
+            g.pixels[px] = re | gr | bl;
         }
-        textures.at(i) = g;
+        textures[i] = g;
     }
 }
 
@@ -425,65 +426,32 @@ double SandSimulation::smooth_step(double edge0, double edge1, double x) {
 }
 
 uint32_t SandSimulation::sample_texture(int texture, int x, int y, double offset_x, double offset_y) {
-    GameTexture t = textures.at(texture);
+    GameTexture t = textures[texture];
     int samp_x = int(x + offset_x * t.width) % t.width;
     int samp_y = int(y + offset_y * t.height) % t.height;
     if (samp_x < 0) samp_x += t.width;
     if (samp_y < 0) samp_y += t.height;
 
-    return t.pixels->at(samp_y * t.width + samp_x);
+    return t.pixels[samp_y * t.width + samp_x];
 }
 
 uint32_t SandSimulation::get_color(int row, int col, bool flat_mode) {
-    int id = cells.at(row * width + col);
-    if (id > 4096) {
-        return 0xFFFFFF;
-    }
-
-    // Special visual effects
-    if (id == 117) {
-        return uint32_t(randf() * 0xFFFFFF) << 8;
-    }
+    int id = cells[row * width + col];
 
     if (fluid_color[id].init) {
-        double seed = 3.1203811357 * id;
-        seed -= int(seed);
         Fluid f = fluid_color[id];
-        if (flat_mode)
-            return f.colors[0];
 
         if (id == 127) {
             f.colors[0] = lerp_color(0x4396e8, 0x62eb4d, 0.5 + fast_cos(time * 24.0) * 0.5);
         }
-
-        // Basic motion
-        double offset_x = seed + fast_cos(seed + time * 9.0) * 0.1;
-        double offset_y = seed + fast_cos(seed + 1.0 + time * 11.0) * 0.1;
-
-        // Wavey effect
-        offset_x += fast_cos(seed + time + 8.0 * row / height) * 0.015;
-
-        uint32_t base_color = sample_texture(f.texture, col, row, offset_x, offset_y);
-        base_color = lerp_color(f.colors[0], f.colors[1], ((base_color & 0xFF0000) >> 16) / 255.0);
-
-        // Repeat with slight changes for the highlight
-
-         // Basic motion
-        offset_x = seed + 0.75 + fast_cos(seed + time * 14.0) * 0.06;
-
-        // Wavey effect
-        offset_x += fast_cos(seed + 0.6 * time + 15.0 * row / height) * 0.023;
-
-        uint32_t highlight = sample_texture(f.texture, col, row, offset_x, offset_y);
-        highlight = lerp_color(highlight, 0, 0.35 + fast_cos(seed * time * 5.0) * 0.3);
-
-        uint32_t color = add_color(base_color, highlight);
+        
+        if (flat_mode) {
+            return lerp_color(f.colors[0], f.colors[1], 0.5);
+        }
 
         double x = touch_count(row, col, id) / 8.0;
-        if (x < 1.0)
-            return lerp_color(color, f.colors[2], 1.0 - x);
-        else
-            return color;
+        uint32_t base_color = lerp_color(f.colors[1], f.colors[0], row / double(height));
+        return lerp_color(base_color, f.colors[2], 1.0 - x);
     }
 
     if (flat_color[id].init) {
@@ -492,9 +460,9 @@ uint32_t SandSimulation::get_color(int row, int col, bool flat_mode) {
 
     if (gradient_color[id].init) {
         Gradient g = gradient_color[id];
-        if (flat_mode)
-            return g.colors[2];
-
+        if (flat_mode) {
+            return lerp_color(g.colors[0], g.colors[4], 0.5);
+        }
         double x = touch_count(row, col, id) / 8.0;
 
         uint32_t out = lerp_color(g.colors[0], g.colors[1], smooth_step(0.0, g.offsets[0], x));
@@ -507,10 +475,21 @@ uint32_t SandSimulation::get_color(int row, int col, bool flat_mode) {
 
     if (metal_color[id].init) {
         Gradient g = metal_color[id];
-        if (flat_mode)
-            return g.colors[0];
+        if (flat_mode) {
+            return lerp_color(g.colors[0], g.colors[1], 0.5);
+        }
 
         return lerp_color(g.colors[0], g.colors[1], row / double(height));
+    }
+
+    // Special visual effects
+    if (id > 4096) {
+        return 0xFFFFFF;
+    }
+
+    
+    if (id == 117) {
+        return uint32_t(randf() * 0xFFFFFF) << 8;
     }
 
     return 0xFFFFFF;

@@ -34,7 +34,7 @@ struct GameTexture {
     int width;
     int height;
 
-    std::vector<uint32_t> *pixels;
+    uint32_t *pixels;
 };
 
 // Contains grid cells and methods to process them

@@ -28,3 +28,4 @@ func _on_zoom_changed(new_zoom: int) -> void:
 
 func _on_mode_changed(pressed: bool) -> void:
 	Settings.flat_mode = pressed
+	CommonReference.canvas.repaint()
