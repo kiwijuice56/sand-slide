@@ -452,9 +452,13 @@ uint32_t SandSimulation::get_color(int row, int col, bool flat_mode) {
         return 0xFFFFFF;
     }
 
-    
     if (id == 117) {
         return uint32_t(randf() * 0xFFFFFF) << 8;
+    }
+
+    if (id == 131) {
+        double x = (touch_count(row, col, 131) + touch_count(row, col, 0)) / 8.0;
+        return lerp_color(0xFFFFFF, flat_color[0].color, x);
     }
 
     return 0xFFFFFF;

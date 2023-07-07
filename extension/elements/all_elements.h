@@ -133,6 +133,7 @@
 #include "elements/life/primordial_soup.h"
 #include "elements/space/spiral.h"
 #include "elements/life/turtle.h"
+#include "elements/build/invisirock.h"
 
 class AllElements {
 public:
@@ -274,6 +275,7 @@ public:
         elements->at(128) = new JavelinRain(); 
         elements->at(129) = new Spiral(); 
         elements->at(130) = new Turtle(); 
+        elements->at(131) = new Invisirock(); 
     }
 };
 
