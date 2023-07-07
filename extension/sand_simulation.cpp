@@ -279,7 +279,7 @@ void SandSimulation::set_chunk_size(int new_size) {
 
 PackedByteArray SandSimulation::get_data() {
     PackedByteArray data = PackedByteArray();
-    data.resize(width * height * 3);
+    data.resize(width * height * 4);
     for (int y = 0; y < height; y++) {
         for (int x = 0; x < width; x++) {
             int id = cells[y * width + x];
