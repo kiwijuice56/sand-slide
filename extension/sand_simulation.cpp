@@ -295,30 +295,6 @@ PackedByteArray SandSimulation::get_data() {
 
 // Graphic methods
 
-// Load all textures into an array of 32-bit integers
-// Textures must be in the RGB format, alpha is not considered
-void SandSimulation::initialize_textures(Array images) {
-    textures.resize(images.size());
-    for (int i = 0; i < images.size(); i++) {
-        Ref<Image> img = images[i];
-        PackedByteArray bytes = img->get_data();
-
-        GameTexture g;
-        g.width = img->get_width();
-        g.height = img->get_height();
-        g.pixels = new uint32_t[g.width * g.height]{ 0 };
-
-        for (int px = 0; px < g.width * g.height; px++) {
-            int idx = px * 4;
-            uint32_t re = bytes[idx + 0] << 16;
-            uint32_t gr = bytes[idx + 1] << 8;
-            uint32_t bl = bytes[idx + 2] << 0;
-            g.pixels[px] = re | gr | bl;
-        }
-        textures[i] = g;
-    }
-}
-
 void SandSimulation::initialize_flat_color(Dictionary dict) {
     flat_color.clear();
     flat_color.resize(4097);
@@ -384,7 +360,7 @@ void SandSimulation::initialize_fluid_color(Dictionary dict) {
     Array ids = dict.keys();
     for (int i = 0; i < dict.size(); i++) {
         int id = ids[i];
-        Fluid f;
+        Gradient f;
         f.init = true;
 
         Array arr = dict[id];
@@ -392,7 +368,6 @@ void SandSimulation::initialize_fluid_color(Dictionary dict) {
         f.colors[0] = int(arr[0]) >> 8;
         f.colors[1] = int(arr[1]) >> 8;
         f.colors[2] = int(arr[2]) >> 8;
-        f.texture = arr[3];
 
         fluid_color[id] = f;
     }
@@ -425,26 +400,16 @@ double SandSimulation::smooth_step(double edge0, double edge1, double x) {
     return x * x * (3.0 - 2.0 * x);
 }
 
-uint32_t SandSimulation::sample_texture(int texture, int x, int y, double offset_x, double offset_y) {
-    GameTexture t = textures[texture];
-    int samp_x = int(x + offset_x * t.width) % t.width;
-    int samp_y = int(y + offset_y * t.height) % t.height;
-    if (samp_x < 0) samp_x += t.width;
-    if (samp_y < 0) samp_y += t.height;
-
-    return t.pixels[samp_y * t.width + samp_x];
-}
-
 uint32_t SandSimulation::get_color(int row, int col, bool flat_mode) {
     int id = cells[row * width + col];
 
     if (fluid_color[id].init) {
-        Fluid f = fluid_color[id];
+        Gradient f = fluid_color[id];
 
         if (id == 127) {
             f.colors[0] = lerp_color(0x4396e8, 0x62eb4d, 0.5 + fast_cos(time * 24.0) * 0.5);
         }
-        
+
         if (flat_mode) {
             return lerp_color(f.colors[0], f.colors[1], 0.5);
         }
@@ -522,7 +487,6 @@ void SandSimulation::_bind_methods() {
     ClassDB::bind_method(D_METHOD("set_chunk_size"), &SandSimulation::set_chunk_size);
     ClassDB::bind_method(D_METHOD("get_color_image"), &SandSimulation::get_color_image);
 
-    ClassDB::bind_method(D_METHOD("initialize_textures"), &SandSimulation::initialize_textures);
     ClassDB::bind_method(D_METHOD("initialize_flat_color"), &SandSimulation::initialize_flat_color);
     ClassDB::bind_method(D_METHOD("initialize_gradient_color"), &SandSimulation::initialize_gradient_color);
     ClassDB::bind_method(D_METHOD("initialize_fluid_color"), &SandSimulation::initialize_fluid_color);

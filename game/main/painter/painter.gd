@@ -25,9 +25,9 @@ func _ready() -> void:
 	await get_tree().get_root().ready
 	sim = CommonReference.main.sim
 	
-	for i in [3, 5, 20, 21, 24, 28, 30, 37, 39, 41, 44, 47, 66]:
+	for i in [3, 5, 20, 21, 24, 28, 30, 37, 39, 41, 44, 47, 66, 118, 127]:
 		is_fluid[i] = true
-	for i in [1, 11, 12, 16, 42, 4, 8, 23, 31, 32, 33, 49, 63, 64, 45, 70, 72, 75, 85, 95, 98, 119, 128]:
+	for i in [1, 11, 12, 16, 42, 4, 8, 23, 31, 32, 33, 49, 63, 64, 45, 70, 72, 75, 85, 95, 98, 119, 128, 130]:
 		is_powder[i] = true
 	mouse_pressed.connect(_on_mouse_pressed)
 

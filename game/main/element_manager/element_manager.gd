@@ -54,7 +54,6 @@ func initialize_base_element_graphics() -> void:
 			mat.color_a.to_rgba32(),
 			mat.color_b.to_rgba32(),
 			mat.color_c.to_rgba32(),
-			mat.noise_texture
 		]
 	CommonReference.main.sim.initialize_fluid_color(fluid_color)
 	var metal_color: Dictionary = {}
@@ -66,13 +65,6 @@ func initialize_base_element_graphics() -> void:
 			mat.color_b.to_rgba32(),
 		]
 	CommonReference.main.sim.initialize_metal_color(metal_color)
-	
-	var images: Array[Image] = [
-		load("res://main/element_manager/element_material/textures/water_noise.png").get_image(),
-		load("res://main/element_manager/element_material/textures/fire_noise.png").get_image(),
-		load("res://main/element_manager/element_material/textures/crystal.png").get_image(),
-	]
-	CommonReference.main.sim.initialize_textures(images)
 
 func set_background_color(color: Color) -> void:
 	element_map[0].color = color

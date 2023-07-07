@@ -19,22 +19,9 @@ struct Gradient {
     bool init = false;
 };
 
-struct Fluid {
-    uint32_t colors[3];
-    int texture;
-    bool init = false;
-};
-
 struct Flat {
     uint32_t color;
     bool init = false;
-};
-
-struct GameTexture {
-    int width;
-    int height;
-
-    uint32_t *pixels;
 };
 
 // Contains grid cells and methods to process them
@@ -72,8 +59,7 @@ class SandSimulation : public RefCounted {
     std::vector<Flat> flat_color;
     std::vector<Gradient> gradient_color;
     std::vector<Gradient> metal_color;
-    std::vector<Fluid> fluid_color;
-    std::vector<GameTexture> textures;
+    std::vector<Gradient> fluid_color;
 
     long double time;
 
@@ -115,8 +101,7 @@ public:
     PackedByteArray get_data();
 
     // Graphics methods
-    
-    void initialize_textures(Array images);
+
     void initialize_flat_color(Dictionary dict);
     void initialize_gradient_color(Dictionary dict);
     void initialize_fluid_color(Dictionary dict);
@@ -125,7 +110,6 @@ public:
     uint32_t lerp_color(uint32_t a, uint32_t b, double x);
     uint32_t add_color(uint32_t a, uint32_t b);
     double smooth_step(double edge0, double edge1, double x);
-    uint32_t sample_texture(int t, int x, int y, double offset_x, double offset_y);
 
     uint32_t get_color(int row, int col, bool flat);
     PackedByteArray get_color_image(bool flat);

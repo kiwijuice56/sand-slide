@@ -1,4 +1,4 @@
-[gd_scene load_steps=214 format=3 uid="uid://danjqv04qm3f6"]
+[gd_scene load_steps=217 format=3 uid="uid://danjqv04qm3f6"]
 
 [ext_resource type="Script" path="res://main/ui/element_selector/element_selector.gd" id="1_fxkbl"]
 [ext_resource type="Material" uid="uid://c5qvq03ayjd60" path="res://main/ui/element_selector/selected.tres" id="2_30e0c"]
@@ -563,6 +563,27 @@ corner_radius_bottom_left = 4
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cgna5"]
 bg_color = Color(0.231373, 0.0745098, 0.290196, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ily5p"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c6kv2"]
+bg_color = Color(0.690196, 0.690196, 0.690196, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ai7wm"]
+bg_color = Color(0.490196, 0.490196, 0.490196, 1)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
@@ -1925,6 +1946,27 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_cgna5")
 text = "urchin"
 script = ExtResource("3_bfdgk")
 id = 31
+
+[node name="Turtle" type="Button" parent="Basic/Basic"]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 0
+mouse_filter = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxFlat_ily5p")
+theme_override_styles/hover = SubResource("StyleBoxFlat_c6kv2")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ai7wm")
+text = "turtle"
+script = ExtResource("3_bfdgk")
+id = 130
 
 [node name="Sand Duck" type="Button" parent="Basic/Basic"]
 custom_minimum_size = Vector2(0, 48)

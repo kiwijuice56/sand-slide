@@ -18,7 +18,7 @@ public:
             return;
         }
         
-        double time = (32 * sim->time + 3.0 * (double(row) / sim->get_height()));
+        double time = (1024 * sim->time + 3.0 * (double(row) / sim->get_height()));
         double section = time - int(time);
         if (section < 0.125) {
             sim->move_and_swap(row, col, row + 1, col + 1); return;

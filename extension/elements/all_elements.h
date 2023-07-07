@@ -132,6 +132,7 @@
 #include "elements/life/flower_petal_c.h"
 #include "elements/life/primordial_soup.h"
 #include "elements/space/spiral.h"
+#include "elements/life/turtle.h"
 
 class AllElements {
 public:
@@ -272,6 +273,7 @@ public:
         elements->at(127) = new PrimordialSoup(); 
         elements->at(128) = new JavelinRain(); 
         elements->at(129) = new Spiral(); 
+        elements->at(130) = new Turtle(); 
     }
 };
 
