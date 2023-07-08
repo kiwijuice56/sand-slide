@@ -8,7 +8,8 @@
 content_margin_left = 8.0
 content_margin_right = 8.0
 bg_color = Color(0.313726, 0.313726, 0.360784, 1)
-border_width_top = 2
+border_width_top = 3
+border_color = Color(1, 1, 1, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nsxwl"]
 content_margin_left = 8.0
@@ -2851,11 +2852,13 @@ layout_mode = 2
 [node name="Custom" type="GridContainer" parent="???"]
 custom_minimum_size = Vector2(0, 70)
 layout_mode = 2
+size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/h_separation = 0
 theme_override_constants/v_separation = 0
-columns = 3
 
 [node name="Label" type="Label" parent="???/Custom"]
 layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
 text = "Coming soon!"
