@@ -402,6 +402,10 @@ double SandSimulation::smooth_step(double edge0, double edge1, double x) {
 
 uint32_t SandSimulation::get_color(int row, int col, bool flat_mode) {
     int id = cells[row * width + col];
+    
+    if (id > 4096) {
+        return 0xFFFFFF;
+    }
 
     if (fluid_color[id].init) {
         Gradient f = fluid_color[id];
@@ -445,11 +449,6 @@ uint32_t SandSimulation::get_color(int row, int col, bool flat_mode) {
         }
 
         return lerp_color(g.colors[0], g.colors[1], row / double(height));
-    }
-
-    // Special visual effects
-    if (id > 4096) {
-        return 0xFFFFFF;
     }
 
     if (id == 117) {
