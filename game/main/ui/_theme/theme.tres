@@ -2,28 +2,28 @@
 
 [ext_resource type="FontFile" uid="uid://b8lxwo5dkwrs4" path="res://main/ui/_theme/font/Poppins-Regular.ttf" id="1_p73bs"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m6j87"]
-bg_color = Color(0.184314, 0.184314, 0.211765, 0.2)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dsk6v"]
+bg_color = Color(0.223529, 0.215686, 0.278431, 0.321569)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4csg6"]
-bg_color = Color(0.32549, 0.321569, 0.341176, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_11w6c"]
+bg_color = Color(0.4, 0.4, 0.45098, 1)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_er738"]
-bg_color = Color(0.266667, 0.266667, 0.294118, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xa765"]
+bg_color = Color(0.313726, 0.313726, 0.360784, 1)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jp40q"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_us5ki"]
 bg_color = Color(0.188235, 0.188235, 0.239216, 1)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
@@ -39,7 +39,7 @@ corner_radius_bottom_left = 6
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6vkpo"]
 content_margin_left = 24.0
-bg_color = Color(0.180392, 0.180392, 0.219608, 1)
+bg_color = Color(0.223529, 0.215686, 0.278431, 1)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
@@ -47,10 +47,10 @@ corner_radius_bottom_left = 4
 
 [resource]
 default_font = ExtResource("1_p73bs")
-Button/styles/disabled = SubResource("StyleBoxFlat_m6j87")
-Button/styles/hover = SubResource("StyleBoxFlat_4csg6")
-Button/styles/normal = SubResource("StyleBoxFlat_er738")
-Button/styles/pressed = SubResource("StyleBoxFlat_jp40q")
+Button/styles/disabled = SubResource("StyleBoxFlat_dsk6v")
+Button/styles/hover = SubResource("StyleBoxFlat_11w6c")
+Button/styles/normal = SubResource("StyleBoxFlat_xa765")
+Button/styles/pressed = SubResource("StyleBoxFlat_us5ki")
 VScrollBar/styles/grabber = SubResource("StyleBoxFlat_xyiyu")
 VScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_xyiyu")
 VScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_xyiyu")

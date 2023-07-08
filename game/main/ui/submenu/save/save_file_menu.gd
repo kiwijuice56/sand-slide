@@ -8,6 +8,8 @@ class_name SaveFileMenu
 var selected_panel: SaveFilePanel
 
 func _ready() -> void:
+	visible = false
+	modulate.a = 0
 	super._ready()
 	
 	%SaveFileButton.pressed.connect(_on_save_selected)

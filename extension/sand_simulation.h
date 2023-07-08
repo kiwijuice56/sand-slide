@@ -61,7 +61,7 @@ class SandSimulation : public RefCounted {
     std::vector<Gradient> metal_color;
     std::vector<Gradient> fluid_color;
 
-    long double time;
+    long double time = 0;
 
 protected:
     static void _bind_methods();

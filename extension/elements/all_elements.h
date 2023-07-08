@@ -134,6 +134,7 @@
 #include "elements/space/spiral.h"
 #include "elements/life/turtle.h"
 #include "elements/build/invisirock.h"
+#include "elements/life/metal_slime.h"
 
 class AllElements {
 public:
@@ -276,6 +277,7 @@ public:
         elements->at(129) = new Spiral(); 
         elements->at(130) = new Turtle(); 
         elements->at(131) = new Invisirock(); 
+        elements->at(132) = new MetalSlime(); 
     }
 };
 

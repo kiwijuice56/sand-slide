@@ -20,4 +20,5 @@ text = "FPS 0"
 script = ExtResource("1_ghyna")
 
 [node name="Timer" type="Timer" parent="FPSLabel"]
+wait_time = 0.1
 autostart = true

@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://c14hj2g0s66ys" path="res://icon.png" id="3_5l22y"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wwijs"]
-bg_color = Color(0.168627, 0.168627, 0.196078, 1)
+bg_color = Color(0.223529, 0.215686, 0.278431, 1)
 corner_radius_top_left = 8
 corner_radius_top_right = 8
 corner_radius_bottom_right = 8
@@ -14,19 +14,19 @@ corner_radius_bottom_left = 8
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_faecs"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wn5pg"]
-bg_color = Color(1, 1, 1, 0.0745098)
+bg_color = Color(1, 1, 1, 0.109804)
 border_width_left = 4
 border_width_top = 4
 border_width_right = 4
 border_width_bottom = 4
-border_color = Color(1, 1, 1, 0.137255)
+border_color = Color(1, 1, 1, 0.172549)
 corner_radius_top_left = 8
 corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_slap3"]
-bg_color = Color(0.32549, 0.32549, 0.360784, 1)
+bg_color = Color(0.360784, 0.360784, 0.419608, 1)
 border_width_left = 4
 border_width_top = 4
 border_width_right = 4
@@ -76,6 +76,7 @@ mouse_filter = 2
 layout_mode = 2
 size_flags_horizontal = 3
 mouse_filter = 2
+theme_override_constants/separation = 0
 
 [node name="FileName" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
@@ -85,13 +86,13 @@ text_overrun_behavior = 3
 
 [node name="FileDate" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.556863, 0.556863, 0.556863, 1)
+theme_override_colors/font_color = Color(0.6461, 0.65675, 0.71, 1)
 theme_override_font_sizes/font_size = 16
 text = "YYYY/MM/DD/HH"
 
 [node name="FileSize" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.556863, 0.556863, 0.556863, 1)
+theme_override_colors/font_color = Color(0.6461, 0.65675, 0.71, 1)
 theme_override_font_sizes/font_size = 16
 text = "2 MB"
 

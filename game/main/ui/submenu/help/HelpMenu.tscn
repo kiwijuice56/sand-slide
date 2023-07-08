@@ -15,7 +15,7 @@ content_margin_left = 12.0
 content_margin_top = 16.0
 content_margin_right = 12.0
 content_margin_bottom = 24.0
-bg_color = Color(0.403922, 0.403922, 0.431373, 0.921569)
+bg_color = Color(0.509804, 0.517647, 0.560784, 0.937255)
 corner_radius_top_left = 12
 corner_radius_top_right = 12
 corner_radius_bottom_right = 12
@@ -174,7 +174,7 @@ horizontal_alignment = 1
 [node name="RichTextLabel" type="RichTextLabel" parent="HelpContainer/PanelContainer/VBoxContainer/WhatContainer"]
 layout_mode = 2
 theme_override_font_sizes/normal_font_size = 12
-text = "This is an interactive particle game! Experiment with elements, express yourself, or just mess around. This is purely a passion project; No data is collected from users and there are no ads/microtransactions. You can find the source code on the sand slide github (https://github.com/kiwijuice56/sand-slide). Enjoy!"
+text = "Sand Slide is an interactive particle game! Experiment with elements, express yourself, or just mess around. This is purely a passion project; No data is collected from users and there are no ads/purchases. You can find the source code on the github repository (https://github.com/kiwijuice56/sand-slide). Have fun!"
 fit_content = true
 
 [node name="SaveContainer" type="VBoxContainer" parent="HelpContainer/PanelContainer/VBoxContainer"]

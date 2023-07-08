@@ -402,7 +402,7 @@ double SandSimulation::smooth_step(double edge0, double edge1, double x) {
 
 uint32_t SandSimulation::get_color(int row, int col, bool flat_mode) {
     int id = cells[row * width + col];
-    
+
     if (id > 4096) {
         return 0xFFFFFF;
     }

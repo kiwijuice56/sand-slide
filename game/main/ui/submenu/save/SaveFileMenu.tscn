@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://d13tht5j1qxqq"]
+[gd_scene load_steps=16 format=3 uid="uid://d13tht5j1qxqq"]
 
 [ext_resource type="Theme" uid="uid://co20v1mxv2dfm" path="res://main/ui/_theme/theme.tres" id="1_vtqwt"]
 [ext_resource type="Script" path="res://main/ui/submenu/save/save_file_menu.gd" id="2_djbua"]
@@ -15,7 +15,7 @@ content_margin_left = 12.0
 content_margin_top = 16.0
 content_margin_right = 12.0
 content_margin_bottom = 24.0
-bg_color = Color(0.403922, 0.403922, 0.431373, 0.921569)
+bg_color = Color(0.509804, 0.517647, 0.560784, 0.937255)
 corner_radius_top_left = 12
 corner_radius_top_right = 12
 corner_radius_bottom_right = 12
@@ -23,7 +23,7 @@ corner_radius_bottom_left = 12
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dh3by"]
 content_margin_left = 3.0
-bg_color = Color(0.164706, 0.164706, 0.188235, 1)
+bg_color = Color(0.313726, 0.313726, 0.360784, 1)
 corner_radius_top_left = 3
 corner_radius_top_right = 3
 corner_radius_bottom_right = 3
@@ -31,15 +31,26 @@ corner_radius_bottom_left = 3
 expand_margin_top = 6.0
 expand_margin_bottom = 6.0
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ybdfi"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4hoky"]
 content_margin_left = 3.0
-bg_color = Color(0.266667, 0.266667, 0.298039, 1)
+bg_color = Color(0.247059, 0.247059, 0.301961, 1)
 corner_radius_top_left = 3
 corner_radius_top_right = 3
 corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
 expand_margin_top = 6.0
 expand_margin_bottom = 6.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3xv66"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(0.313726, 0.313726, 0.360784, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r1ibo"]
 content_margin_right = 4.0
@@ -195,16 +206,21 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 16
 theme_override_styles/normal = SubResource("StyleBoxFlat_dh3by")
-theme_override_styles/focus = SubResource("StyleBoxFlat_ybdfi")
+theme_override_styles/focus = SubResource("StyleBoxFlat_4hoky")
 placeholder_text = "Type new file name.."
 
-[node name="ScrollContainer" type="ScrollContainer" parent="SaveContainer/PanelContainer/VBoxContainer"]
+[node name="PanelContainer" type="PanelContainer" parent="SaveContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_3xv66")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="SaveContainer/PanelContainer/VBoxContainer/PanelContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 mouse_filter = 0
 theme_override_styles/panel = SubResource("StyleBoxEmpty_r1ibo")
 
-[node name="SaveFileContainer" type="VBoxContainer" parent="SaveContainer/PanelContainer/VBoxContainer/ScrollContainer"]
+[node name="SaveFileContainer" type="VBoxContainer" parent="SaveContainer/PanelContainer/VBoxContainer/PanelContainer/ScrollContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3

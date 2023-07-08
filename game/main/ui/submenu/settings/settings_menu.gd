@@ -5,6 +5,8 @@ class_name SettingsMenu
 var selected_panel: SaveFilePanel
 
 func _ready() -> void:
+	visible = false
+	modulate.a = 0
 	await get_tree().get_root().ready
 	disable_components()
 	
@@ -14,6 +16,7 @@ func _ready() -> void:
 	%ZoomSlider.value_changed.connect(_on_zoom_changed)
 	%ClearButton.pressed.connect(CommonReference.painter.clear)
 	%CheckButton.toggled.connect(_on_mode_changed)
+	%FpsButton.toggled.connect(_on_fps_changed)
 	%BackgroundPicker.color_changed.connect(CommonReference.element_manager.set_background_color)
 
 func _on_size_changed(new_brush_size: int) -> void:
@@ -29,3 +32,6 @@ func _on_zoom_changed(new_zoom: int) -> void:
 func _on_mode_changed(pressed: bool) -> void:
 	Settings.flat_mode = pressed
 	CommonReference.canvas.repaint()
+
+func _on_fps_changed(pressed: bool) -> void:
+	Settings.fps = pressed

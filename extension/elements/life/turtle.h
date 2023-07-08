@@ -26,7 +26,12 @@ public:
             } else {
                 new_row += dir;
             }
-            if (!sim->in_bounds(new_row, new_col) || !(sim->get_cell(new_row, new_col) == 0 || 
+            
+            if (!sim->in_bounds(new_row, new_col)) {
+                return;
+            }
+
+            if (!(sim->get_cell(new_row, new_col) == 0 || 
             sim->randf() < CARVE && ( 
             sim->get_cell(new_row, new_col) == 79 ||
             sim->get_cell(new_row, new_col) == 51 ||

@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bi1khomdif7xb"]
+[gd_scene load_steps=18 format=3 uid="uid://bi1khomdif7xb"]
 
 [ext_resource type="Theme" uid="uid://co20v1mxv2dfm" path="res://main/ui/_theme/theme.tres" id="1_f12ql"]
 [ext_resource type="Script" path="res://main/ui/submenu/settings/settings_menu.gd" id="2_1g5bn"]
@@ -14,14 +14,14 @@ content_margin_left = 12.0
 content_margin_top = 16.0
 content_margin_right = 12.0
 content_margin_bottom = 24.0
-bg_color = Color(0.403922, 0.403922, 0.431373, 0.921569)
+bg_color = Color(0.509804, 0.517647, 0.560784, 0.937255)
 corner_radius_top_left = 12
 corner_radius_top_right = 12
 corner_radius_bottom_right = 12
 corner_radius_bottom_left = 12
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xw2ew"]
-bg_color = Color(0.266667, 0.266667, 0.294118, 1)
+bg_color = Color(0.313726, 0.313726, 0.360784, 1)
 border_color = Color(0.921569, 0.921569, 0.921569, 1)
 corner_radius_top_left = 6
 corner_radius_top_right = 6
@@ -50,6 +50,27 @@ expand_margin_bottom = 5.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5rheo"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xa765"]
+bg_color = Color(0.313726, 0.313726, 0.360784, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_11w6c"]
+bg_color = Color(0.4, 0.4, 0.45098, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_us5ki"]
+bg_color = Color(0.188235, 0.188235, 0.239216, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
 
 [sub_resource type="Animation" id="Animation_swdin"]
 length = 0.001
@@ -164,7 +185,8 @@ grow_vertical = 2
 color = Color(0, 0, 0, 0.556863)
 
 [node name="SettingsContainer" type="MarginContainer" parent="."]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
@@ -182,7 +204,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_e160y")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="SettingsContainer/PanelContainer"]
 layout_mode = 2
-theme_override_constants/separation = 8
+theme_override_constants/separation = 6
 
 [node name="Title" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer"]
 layout_mode = 2
@@ -220,8 +242,9 @@ theme_override_styles/grabber_area = SubResource("StyleBoxFlat_27i0d")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_420ld")
 min_value = 2.0
 max_value = 48.0
-value = 16.0
-tick_count = 6
+step = 8.0
+value = 18.0
+tick_count = 7
 
 [node name="HBoxContainer" type="HBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/SizeContainer/VBoxContainer"]
 layout_mode = 2
@@ -274,7 +297,7 @@ theme_override_styles/grabber_area = SubResource("StyleBoxFlat_27i0d")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_420ld")
 max_value = 8.0
 value = 3.0
-tick_count = 5
+tick_count = 9
 
 [node name="HBoxContainer" type="HBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/SpeedContainer/VBoxContainer"]
 layout_mode = 2
@@ -373,6 +396,28 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_5rheo")
 theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_5rheo")
 theme_override_styles/focus = SubResource("StyleBoxFlat_5rheo")
 
+[node name="FpsContainer" type="HBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/FpsContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 16
+text = "Show frames per second"
+
+[node name="FpsButton" type="CheckButton" parent="SettingsContainer/PanelContainer/VBoxContainer/FpsContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_5rheo")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_5rheo")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_5rheo")
+theme_override_styles/hover = SubResource("StyleBoxFlat_5rheo")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_5rheo")
+theme_override_styles/focus = SubResource("StyleBoxFlat_5rheo")
+
 [node name="BackgroundContainer" type="VBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/separation = 0
@@ -389,9 +434,10 @@ horizontal_alignment = 1
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 0
-color = Color(0.137255, 0.254902, 0.458824, 1)
+color = Color(0.207843, 0.360784, 0.588235, 1)
 edit_alpha = false
 deferred_mode = true
+picker_shape = 1
 can_add_swatches = false
 sampler_visible = false
 color_modes_visible = false
@@ -406,6 +452,9 @@ layout_mode = 2
 size_flags_vertical = 0
 focus_mode = 0
 theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_xa765")
+theme_override_styles/hover = SubResource("StyleBoxFlat_11w6c")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_us5ki")
 text = "Clear Canvas"
 
 [node name="Back" type="Button" parent="SettingsContainer/PanelContainer"]
@@ -414,6 +463,9 @@ layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 0
 focus_mode = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_xa765")
+theme_override_styles/hover = SubResource("StyleBoxFlat_11w6c")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_us5ki")
 icon = ExtResource("4_rvddf")
 icon_alignment = 1
 

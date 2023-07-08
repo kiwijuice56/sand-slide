@@ -9,6 +9,8 @@ signal exited
 @export var back_button: Button
 
 func _ready() -> void:
+	visible = false
+	modulate.a = 0
 	disable_components()
 	back_button.pressed.connect(_on_back_selected)
 
