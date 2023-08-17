@@ -31,7 +31,7 @@ file_logging/enable_file_logging=true
 
 [display]
 
-window/size/viewport_width=380
+window/size/viewport_width=400
 window/size/viewport_height=700
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"

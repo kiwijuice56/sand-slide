@@ -1,0 +1,522 @@
+[gd_scene load_steps=20 format=3 uid="uid://bqwqmevgndrm0"]
+
+[ext_resource type="Theme" uid="uid://co20v1mxv2dfm" path="res://main/ui/_theme/theme.tres" id="1_gu8tf"]
+[ext_resource type="Script" path="res://main/ui/submenu/element_editor/element_editor_menu.gd" id="2_ae0hb"]
+[ext_resource type="FontFile" uid="uid://b8lxwo5dkwrs4" path="res://main/ui/_theme/font/Poppins-Regular.ttf" id="3_gc23u"]
+[ext_resource type="Texture2D" uid="uid://skg5bmd8m812" path="res://main/ui/_icons/close.png" id="4_8lnwy"]
+
+[sub_resource type="Theme" id="Theme_n7xkt"]
+default_font = ExtResource("3_gc23u")
+default_font_size = 24
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e160y"]
+content_margin_left = 12.0
+content_margin_top = 16.0
+content_margin_right = 12.0
+content_margin_bottom = 24.0
+bg_color = Color(0.509804, 0.517647, 0.560784, 0.937255)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xa765"]
+bg_color = Color(0.313726, 0.313726, 0.360784, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_11w6c"]
+bg_color = Color(0.4, 0.4, 0.45098, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_us5ki"]
+bg_color = Color(0.188235, 0.188235, 0.239216, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hcor6"]
+content_margin_right = 8.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oid3n"]
+content_margin_left = 3.0
+bg_color = Color(0.313726, 0.313726, 0.360784, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_37g2l"]
+content_margin_left = 3.0
+bg_color = Color(0.247059, 0.247059, 0.301961, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_70ulr"]
+bg_color = Color(0.313726, 0.313726, 0.360784, 1)
+border_color = Color(0.921569, 0.921569, 0.921569, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+expand_margin_top = 4.0
+expand_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o5yxv"]
+bg_color = Color(0.764706, 0.764706, 0.788235, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+expand_margin_top = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5uj0p"]
+bg_color = Color(0.898039, 0.898039, 0.909804, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+expand_margin_top = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="Animation" id="Animation_swdin"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_ho8so"]
+resource_name = "enter"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_obmfd"]
+resource_name = "exit"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.3),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_01f6e"]
+_data = {
+"RESET": SubResource("Animation_swdin"),
+"enter": SubResource("Animation_ho8so"),
+"exit": SubResource("Animation_obmfd")
+}
+
+[node name="ElementEditorMenu" type="Control" node_paths=PackedStringArray("anim", "back_button")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_gu8tf")
+script = ExtResource("2_ae0hb")
+anim = NodePath("AnimationPlayer")
+back_button = NodePath("SettingsContainer/PanelContainer/VBoxContainer/HBoxContainer/Back")
+
+[node name="Cover" type="ColorRect" parent="."]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.556863)
+
+[node name="SettingsContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = SubResource("Theme_n7xkt")
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="PanelContainer" type="PanelContainer" parent="SettingsContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_e160y")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SettingsContainer/PanelContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_font_sizes/font_size = 32
+text = "Element Editor"
+
+[node name="Back" type="Button" parent="SettingsContainer/PanelContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+focus_mode = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_xa765")
+theme_override_styles/hover = SubResource("StyleBoxFlat_11w6c")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_us5ki")
+icon = ExtResource("4_8lnwy")
+icon_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="SettingsContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_hcor6")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 8
+
+[node name="ApperanceLabel" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = "Appearance"
+horizontal_alignment = 1
+
+[node name="NameGrouping" type="HBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Label" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/NameGrouping"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "name"
+
+[node name="LineEdit" type="LineEdit" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/NameGrouping"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_oid3n")
+theme_override_styles/focus = SubResource("StyleBoxFlat_37g2l")
+placeholder_text = "my_elem"
+
+[node name="ColorStyleGrouping" type="HBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Label" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/ColorStyleGrouping"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "style"
+
+[node name="OptionButton" type="OptionButton" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/ColorStyleGrouping"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+theme_override_constants/outline_size = 0
+item_count = 2
+selected = 0
+popup/item_0/text = "single color"
+popup/item_0/id = 0
+popup/item_1/text = "fancy color"
+popup/item_1/id = 1
+
+[node name="FlatColorGrouping" type="HBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Label" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/FlatColorGrouping"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "color"
+
+[node name="FlatColor" type="ColorPickerButton" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/FlatColorGrouping" groups=["color_picker"]]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+color = Color(0.243137, 0.352941, 1, 1)
+edit_alpha = false
+
+[node name="FancyColorGrouping" type="VBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="BaseColor" type="HBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/FancyColorGrouping"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/FancyColorGrouping/BaseColor"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "base color 1"
+
+[node name="BaseColor1" type="ColorPickerButton" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/FancyColorGrouping/BaseColor" groups=["color_picker"]]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+color = Color(0.243137, 0.352941, 1, 1)
+edit_alpha = false
+
+[node name="BaseColor2" type="HBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/FancyColorGrouping"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/FancyColorGrouping/BaseColor2"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "base color 2"
+
+[node name="BaseColor2" type="ColorPickerButton" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/FancyColorGrouping/BaseColor2" groups=["color_picker"]]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+color = Color(0.243137, 0.352941, 1, 1)
+edit_alpha = false
+
+[node name="OutlineColor" type="HBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/FancyColorGrouping"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/FancyColorGrouping/OutlineColor"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "outline color"
+
+[node name="OutlineColor" type="ColorPickerButton" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/FancyColorGrouping/OutlineColor" groups=["color_picker"]]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+color = Color(0.243137, 0.352941, 1, 1)
+edit_alpha = false
+
+[node name="BehaviorLabel" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = "Behavior"
+horizontal_alignment = 1
+
+[node name="StateGrouping" type="HBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/StateGrouping"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "state"
+
+[node name="OptionButton" type="OptionButton" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/StateGrouping"]
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+item_count = 4
+selected = 1
+popup/item_0/text = "powder"
+popup/item_0/id = 0
+popup/item_1/text = "solid"
+popup/item_1/id = 1
+popup/item_2/text = "liquid"
+popup/item_2/id = 2
+popup/item_3/text = "gas"
+popup/item_3/id = 3
+
+[node name="DensityGrouping" type="HBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Label" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/DensityGrouping"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "density"
+
+[node name="Density" type="HSlider" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/DensityGrouping"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_styles/slider = SubResource("StyleBoxFlat_70ulr")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_o5yxv")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_5uj0p")
+max_value = 1.0
+step = 0.01
+value = 0.5
+tick_count = 4
+
+[node name="ConductivityGrouping" type="HBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Label" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/ConductivityGrouping"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "conductivity"
+
+[node name="HSlider" type="HSlider" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/ConductivityGrouping"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_styles/slider = SubResource("StyleBoxFlat_70ulr")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_o5yxv")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_5uj0p")
+max_value = 1.0
+step = 0.01
+tick_count = 4
+
+[node name="TemperatureGrouping" type="HBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Label" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/TemperatureGrouping"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "temperature"
+
+[node name="HSlider" type="HSlider" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/TemperatureGrouping"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_styles/slider = SubResource("StyleBoxFlat_70ulr")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_o5yxv")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_5uj0p")
+max_value = 1.0
+step = 0.01
+tick_count = 4
+
+[node name="FlammabilityGrouping" type="HBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Label" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/FlammabilityGrouping"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "flammability"
+
+[node name="HSlider" type="HSlider" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/FlammabilityGrouping"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_styles/slider = SubResource("StyleBoxFlat_70ulr")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_o5yxv")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_5uj0p")
+max_value = 1.0
+step = 0.01
+tick_count = 4
+
+[node name="FlammabilityGrouping2" type="HBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Label" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/FlammabilityGrouping2"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "reactivity"
+
+[node name="HSlider" type="HSlider" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/FlammabilityGrouping2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_styles/slider = SubResource("StyleBoxFlat_70ulr")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_o5yxv")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_5uj0p")
+max_value = 1.0
+step = 0.01
+tick_count = 4
+
+[node name="FlammabilityGrouping3" type="HBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Label" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/FlammabilityGrouping3"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "durability"
+
+[node name="HSlider" type="HSlider" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/FlammabilityGrouping3"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_styles/slider = SubResource("StyleBoxFlat_70ulr")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_o5yxv")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_5uj0p")
+max_value = 1.0
+step = 0.01
+tick_count = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+speed_scale = 2.0
+libraries = {
+"": SubResource("AnimationLibrary_01f6e")
+}

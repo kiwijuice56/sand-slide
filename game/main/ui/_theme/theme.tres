@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=8 format=3 uid="uid://co20v1mxv2dfm"]
+[gd_resource type="Theme" load_steps=9 format=3 uid="uid://co20v1mxv2dfm"]
 
 [ext_resource type="FontFile" uid="uid://b8lxwo5dkwrs4" path="res://main/ui/_theme/font/Poppins-Regular.ttf" id="1_p73bs"]
 
@@ -30,6 +30,18 @@ corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jpob4"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.313726, 0.313726, 0.360784, 1)
+border_color = Color(0.313726, 0.313726, 0.360784, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xyiyu"]
 bg_color = Color(1, 1, 1, 1)
 corner_radius_top_left = 6
@@ -51,6 +63,12 @@ Button/styles/disabled = SubResource("StyleBoxFlat_dsk6v")
 Button/styles/hover = SubResource("StyleBoxFlat_11w6c")
 Button/styles/normal = SubResource("StyleBoxFlat_xa765")
 Button/styles/pressed = SubResource("StyleBoxFlat_us5ki")
+CheckBox/styles/hover = SubResource("StyleBoxFlat_11w6c")
+CheckBox/styles/normal = SubResource("StyleBoxFlat_xa765")
+CheckBox/styles/pressed = SubResource("StyleBoxFlat_us5ki")
+MenuButton/styles/hover = SubResource("StyleBoxFlat_11w6c")
+PopupMenu/styles/hover = SubResource("StyleBoxFlat_11w6c")
+PopupMenu/styles/panel = SubResource("StyleBoxFlat_jpob4")
 VScrollBar/styles/grabber = SubResource("StyleBoxFlat_xyiyu")
 VScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_xyiyu")
 VScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_xyiyu")
