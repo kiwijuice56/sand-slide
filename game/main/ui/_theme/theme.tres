@@ -1,5 +1,6 @@
-[gd_resource type="Theme" load_steps=9 format=3 uid="uid://co20v1mxv2dfm"]
+[gd_resource type="Theme" load_steps=10 format=3 uid="uid://co20v1mxv2dfm"]
 
+[ext_resource type="Texture2D" uid="uid://l1h1lwsmjxdv" path="res://main/ui/_icons/icon_circle.png" id="1_mvg4m"]
 [ext_resource type="FontFile" uid="uid://b8lxwo5dkwrs4" path="res://main/ui/_theme/font/Poppins-Regular.ttf" id="1_p73bs"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dsk6v"]
@@ -67,6 +68,7 @@ CheckBox/styles/hover = SubResource("StyleBoxFlat_11w6c")
 CheckBox/styles/normal = SubResource("StyleBoxFlat_xa765")
 CheckBox/styles/pressed = SubResource("StyleBoxFlat_us5ki")
 MenuButton/styles/hover = SubResource("StyleBoxFlat_11w6c")
+PopupMenu/icons/radio_unchecked = ExtResource("1_mvg4m")
 PopupMenu/styles/hover = SubResource("StyleBoxFlat_11w6c")
 PopupMenu/styles/panel = SubResource("StyleBoxFlat_jpob4")
 VScrollBar/styles/grabber = SubResource("StyleBoxFlat_xyiyu")

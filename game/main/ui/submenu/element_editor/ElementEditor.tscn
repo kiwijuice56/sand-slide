@@ -251,7 +251,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/separation = 8
 
-[node name="ApperanceLabel" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="AppearanceLabel" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
 text = "Appearance"
 horizontal_alignment = 1
@@ -265,7 +265,8 @@ layout_mode = 2
 size_flags_horizontal = 3
 text = "name"
 
-[node name="LineEdit" type="LineEdit" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/NameGrouping"]
+[node name="Name" type="LineEdit" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/NameGrouping"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/normal = SubResource("StyleBoxFlat_oid3n")
@@ -281,7 +282,8 @@ layout_mode = 2
 size_flags_horizontal = 3
 text = "style"
 
-[node name="OptionButton" type="OptionButton" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/ColorStyleGrouping"]
+[node name="Style" type="OptionButton" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/ColorStyleGrouping"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -302,9 +304,9 @@ theme_override_constants/separation = 8
 [node name="Label" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/FlatColorGrouping"]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "color"
+text = "base color"
 
-[node name="FlatColor" type="ColorPickerButton" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/FlatColorGrouping" groups=["color_picker"]]
+[node name="ColorA" type="ColorPickerButton" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/FlatColorGrouping" groups=["color_picker"]]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
@@ -317,22 +319,6 @@ unique_name_in_owner = true
 layout_mode = 2
 theme_override_constants/separation = 8
 
-[node name="BaseColor" type="HBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/FancyColorGrouping"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/FancyColorGrouping/BaseColor"]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "base color 1"
-
-[node name="BaseColor1" type="ColorPickerButton" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/FancyColorGrouping/BaseColor" groups=["color_picker"]]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 3
-focus_mode = 0
-color = Color(0.243137, 0.352941, 1, 1)
-edit_alpha = false
-
 [node name="BaseColor2" type="HBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/FancyColorGrouping"]
 layout_mode = 2
 
@@ -341,7 +327,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 text = "base color 2"
 
-[node name="BaseColor2" type="ColorPickerButton" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/FancyColorGrouping/BaseColor2" groups=["color_picker"]]
+[node name="ColorB" type="ColorPickerButton" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/FancyColorGrouping/BaseColor2" groups=["color_picker"]]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
@@ -357,7 +343,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 text = "outline color"
 
-[node name="OutlineColor" type="ColorPickerButton" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/FancyColorGrouping/OutlineColor" groups=["color_picker"]]
+[node name="ColorC" type="ColorPickerButton" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/FancyColorGrouping/OutlineColor" groups=["color_picker"]]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
@@ -378,7 +364,8 @@ layout_mode = 2
 size_flags_horizontal = 3
 text = "state"
 
-[node name="OptionButton" type="OptionButton" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/StateGrouping"]
+[node name="State" type="OptionButton" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/StateGrouping"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 focus_mode = 0
@@ -415,6 +402,28 @@ step = 0.01
 value = 0.5
 tick_count = 4
 
+[node name="ViscosityGrouping" type="HBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Label" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/ViscosityGrouping"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "viscosity"
+
+[node name="Viscosity" type="HSlider" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/ViscosityGrouping"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_styles/slider = SubResource("StyleBoxFlat_70ulr")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_o5yxv")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_5uj0p")
+max_value = 1.0
+step = 0.01
+value = 0.5
+tick_count = 4
+
 [node name="ConductivityGrouping" type="HBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
@@ -424,7 +433,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 text = "conductivity"
 
-[node name="HSlider" type="HSlider" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/ConductivityGrouping"]
+[node name="Conductivity" type="HSlider" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/ConductivityGrouping"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
@@ -444,7 +453,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 text = "temperature"
 
-[node name="HSlider" type="HSlider" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/TemperatureGrouping"]
+[node name="Temperature" type="HSlider" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/TemperatureGrouping"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
@@ -453,7 +462,8 @@ theme_override_styles/grabber_area = SubResource("StyleBoxFlat_o5yxv")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_5uj0p")
 max_value = 1.0
 step = 0.01
-tick_count = 4
+value = 0.5
+tick_count = 3
 
 [node name="FlammabilityGrouping" type="HBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
 unique_name_in_owner = true
@@ -464,7 +474,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 text = "flammability"
 
-[node name="HSlider" type="HSlider" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/FlammabilityGrouping"]
+[node name="Flammability" type="HSlider" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/FlammabilityGrouping"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
@@ -475,16 +485,16 @@ max_value = 1.0
 step = 0.01
 tick_count = 4
 
-[node name="FlammabilityGrouping2" type="HBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="ReactivityGrouping" type="HBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="Label" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/FlammabilityGrouping2"]
+[node name="Label" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/ReactivityGrouping"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "reactivity"
 
-[node name="HSlider" type="HSlider" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/FlammabilityGrouping2"]
+[node name="Reactivity" type="HSlider" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/ReactivityGrouping"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
@@ -493,18 +503,19 @@ theme_override_styles/grabber_area = SubResource("StyleBoxFlat_o5yxv")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_5uj0p")
 max_value = 1.0
 step = 0.01
+value = 0.75
 tick_count = 4
 
-[node name="FlammabilityGrouping3" type="HBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="DurabilityGrouping" type="HBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="Label" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/FlammabilityGrouping3"]
+[node name="Label" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/DurabilityGrouping"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "durability"
 
-[node name="HSlider" type="HSlider" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/FlammabilityGrouping3"]
+[node name="Durability" type="HSlider" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/DurabilityGrouping"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
@@ -513,6 +524,7 @@ theme_override_styles/grabber_area = SubResource("StyleBoxFlat_o5yxv")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_5uj0p")
 max_value = 1.0
 step = 0.01
+value = 0.25
 tick_count = 4
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
