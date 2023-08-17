@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://ggbp6fch244c"]
+[gd_scene load_steps=30 format=3 uid="uid://ggbp6fch244c"]
 
 [ext_resource type="Script" path="res://main/main.gd" id="1_2pidp"]
 [ext_resource type="Theme" uid="uid://co20v1mxv2dfm" path="res://main/ui/_theme/theme.tres" id="2_nb65v"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://d13tht5j1qxqq" path="res://main/ui/submenu/save/SaveFileMenu.tscn" id="14_73tcr"]
 [ext_resource type="PackedScene" uid="uid://bi1khomdif7xb" path="res://main/ui/submenu/settings/SettingsMenu.tscn" id="15_vwu6i"]
 [ext_resource type="PackedScene" uid="uid://bueyu0dk5xun4" path="res://main/ui/submenu/help/HelpMenu.tscn" id="16_qckww"]
+[ext_resource type="PackedScene" uid="uid://bqwqmevgndrm0" path="res://main/ui/submenu/element_editor/ElementEditor.tscn" id="17_tcj48"]
 [ext_resource type="Script" path="res://main/painter/painter.gd" id="18_mer41"]
 [ext_resource type="Script" path="res://main/element_manager/element_manager.gd" id="18_mpubp"]
 [ext_resource type="Script" path="res://main/save_file/save_file_manager.gd" id="87_5tqe6"]
@@ -214,6 +215,11 @@ save_file_manager = NodePath("../../SaveFileManager")
 layout_mode = 1
 
 [node name="HelpMenu" parent="UI" instance=ExtResource("16_qckww")]
+layout_mode = 1
+
+[node name="ElementEditorMenu" parent="UI" instance=ExtResource("17_tcj48")]
+visible = false
+modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 
 [node name="SaveFileManager" type="Node" parent="."]

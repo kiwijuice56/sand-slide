@@ -5,8 +5,8 @@ class_name ElementEditorMenu
 var current: CustomElement
 
 func _ready() -> void:
-	#visible = false
-	#modulate.a = 0.0
+	visible = false
+	modulate.a = 0.0
 	for node in get_tree().get_nodes_in_group("color_picker"):
 		var color_picker_button: ColorPickerButton = node as ColorPickerButton
 		var color_picker: ColorPicker = color_picker_button.get_picker()

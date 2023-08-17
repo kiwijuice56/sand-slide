@@ -5,6 +5,7 @@ class_name ElementManager
 
 var element_materials: Array[Element]
 var element_map: Dictionary
+var custom_elements: Array[CustomElement]
 
 func _ready() -> void:
 	await get_tree().get_root().ready
