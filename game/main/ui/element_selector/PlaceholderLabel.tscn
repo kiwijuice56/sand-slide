@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://bpvw3u6tgjhrg"]
+
+[node name="PlaceholderLabel" type="Label"]
+size_flags_horizontal = 3
+size_flags_vertical = 3

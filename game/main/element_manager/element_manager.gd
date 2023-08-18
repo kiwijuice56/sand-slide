@@ -5,9 +5,11 @@ class_name ElementManager
 
 var element_materials: Array[Element]
 var element_map: Dictionary
-var custom_elements: Array[CustomElement]
+var custom_element_map: Dictionary
 
 func _ready() -> void:
+	Settings.background_updated.connect(set_background_color)
+	
 	await get_tree().get_root().ready
 	
 	element_materials = []
@@ -21,6 +23,20 @@ func _ready() -> void:
 		element_map[mat.id] = mat
 	
 	initialize_base_element_graphics()
+	
+	# Load custom element data
+	custom_element_map = {}
+	dir = DirAccess.open("user://")
+	for file in dir.get_files():
+		if not file.ends_with(".tres"):
+			continue
+		var resource: Resource = ResourceLoader.load("user://" + file)
+		if not resource is CustomElement:
+			continue
+		var custom_element: CustomElement = resource as CustomElement
+		custom_element_map[custom_element.id] = custom_element
+	
+	set_background_color(Settings.bg_color)
 
 # Initialize the base elements
 func initialize_base_element_graphics() -> void:

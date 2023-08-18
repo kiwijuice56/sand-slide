@@ -179,6 +179,8 @@ _data = {
 }
 
 [node name="ElementEditorMenu" type="Control" node_paths=PackedStringArray("anim", "back_button")]
+visible = false
+modulate = Color(1, 1, 1, 0)
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

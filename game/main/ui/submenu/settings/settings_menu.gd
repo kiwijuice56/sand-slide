@@ -17,7 +17,14 @@ func _ready() -> void:
 	%ClearButton.pressed.connect(CommonReference.painter.clear)
 	%CheckButton.toggled.connect(_on_mode_changed)
 	%FpsButton.toggled.connect(_on_fps_changed)
-	%BackgroundPicker.color_changed.connect(CommonReference.element_manager.set_background_color)
+	%BackgroundPicker.color_changed.connect(_on_bg_color_changed)
+	
+	%SizeSlider.value = Settings.brush_size
+	%SpeedSlider.value = Settings.simulation_speed
+	%ZoomSlider.value = Settings.px_scale
+	%CheckButton.set_pressed_no_signal(Settings.flat_mode)
+	%FpsButton.set_pressed_no_signal(Settings.fps)
+	%BackgroundPicker.color = Settings.bg_color
 
 func _on_size_changed(new_brush_size: int) -> void:
 	Settings.brush_size = new_brush_size
@@ -35,3 +42,10 @@ func _on_mode_changed(pressed: bool) -> void:
 
 func _on_fps_changed(pressed: bool) -> void:
 	Settings.fps = pressed
+
+func _on_bg_color_changed(col: Color) -> void:
+	Settings.bg_color = col
+
+func exit() -> void:
+	super.exit()
+	Settings.save_settings()
