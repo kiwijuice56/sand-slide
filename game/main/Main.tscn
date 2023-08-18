@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://ggbp6fch244c"]
+[gd_scene load_steps=31 format=3 uid="uid://ggbp6fch244c"]
 
 [ext_resource type="Script" path="res://main/main.gd" id="1_2pidp"]
 [ext_resource type="Theme" uid="uid://co20v1mxv2dfm" path="res://main/ui/_theme/theme.tres" id="2_nb65v"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://main/ui/canvas/canvas.gd" id="5_7sl3f"]
 [ext_resource type="Texture2D" uid="uid://frfosxi3v3fq" path="res://main/ui/_icons/eraser.png" id="6_k1fvi"]
 [ext_resource type="Texture2D" uid="uid://5l1d3c5tr7nj" path="res://main/ui/_icons/tap.png" id="8_g0v0t"]
+[ext_resource type="Texture2D" uid="uid://cpkynolj0wx14" path="res://main/ui/_icons/edit.png" id="9_1ns3c"]
 [ext_resource type="Texture2D" uid="uid://djtha84eljhde" path="res://main/ui/_icons/help.png" id="9_hcxqy"]
 [ext_resource type="Texture2D" uid="uid://bsdea08owut0v" path="res://main/ui/_icons/settings.png" id="10_x6g80"]
 [ext_resource type="Texture2D" uid="uid://c4k2cs4ly1agb" path="res://main/ui/_icons/file.png" id="11_nf3sg"]
@@ -75,7 +76,7 @@ corner_radius_bottom_left = 4
 script = ExtResource("1_2pidp")
 metadata/_edit_vertical_guides_ = []
 
-[node name="UI" type="Control" parent="." node_paths=PackedStringArray("save_control", "settings_control", "help_control", "save_button", "settings_button", "help_button")]
+[node name="UI" type="Control" parent="." node_paths=PackedStringArray("save_control", "settings_control", "help_control", "edit_control", "save_button", "settings_button", "help_button", "edit_button")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -87,9 +88,11 @@ script = ExtResource("3_a1qq2")
 save_control = NodePath("SaveFileMenu")
 settings_control = NodePath("SettingsMenu")
 help_control = NodePath("HelpMenu")
+edit_control = NodePath("ElementEditorMenu")
 save_button = NodePath("VSplitContainer/BottomPanel/MarginBottonPanel/VBoxContainer/ButtonRow/File")
 settings_button = NodePath("VSplitContainer/BottomPanel/MarginBottonPanel/VBoxContainer/ButtonRow/Settings")
 help_button = NodePath("VSplitContainer/BottomPanel/MarginBottonPanel/VBoxContainer/ButtonRow/Help")
+edit_button = NodePath("VSplitContainer/BottomPanel/MarginBottonPanel/VBoxContainer/ButtonRow/Edit")
 
 [node name="VSplitContainer" type="VSplitContainer" parent="UI"]
 layout_mode = 0
@@ -163,6 +166,20 @@ theme_override_styles/focus = SubResource("StyleBoxFlat_dha6b")
 icon = ExtResource("8_g0v0t")
 icon_alignment = 1
 
+[node name="Edit" type="Button" parent="UI/VSplitContainer/BottomPanel/MarginBottonPanel/VBoxContainer/ButtonRow"]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+size_flags_horizontal = 2
+focus_mode = 0
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxFlat_7pq0y")
+theme_override_styles/hover = SubResource("StyleBoxFlat_dha6b")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_3h7k3")
+icon = ExtResource("9_1ns3c")
+icon_alignment = 1
+
 [node name="Help" type="Button" parent="UI/VSplitContainer/BottomPanel/MarginBottonPanel/VBoxContainer/ButtonRow"]
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
@@ -198,6 +215,7 @@ icon = ExtResource("11_nf3sg")
 icon_alignment = 1
 
 [node name="ElementSelector" parent="UI/VSplitContainer/BottomPanel/MarginBottonPanel/VBoxContainer" node_paths=PackedStringArray("simulation", "eraser_button", "tap_button") instance=ExtResource("12_1ijq2")]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 128)
 layout_mode = 2
 simulation = NodePath("../../../../../..")

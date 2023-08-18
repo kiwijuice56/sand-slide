@@ -5,6 +5,7 @@ class_name ElementEditorMenu
 var current: CustomElement
 
 func _ready() -> void:
+	super._ready()
 	visible = false
 	modulate.a = 0.0
 	for node in get_tree().get_nodes_in_group("color_picker"):
@@ -47,7 +48,7 @@ func initialize() -> void:
 	%Viscosity.value = current.viscosity
 	%Conductivity.value = current.conductivity
 	%Flammability.value = current.flammability
-	%Reacivity.value = current.reactivity
+	%Reactivity.value = current.reactivity
 	%Durability.value = current.durability
 	
 	_on_state_selected(%State.selected)
@@ -59,10 +60,14 @@ func save_changes() -> void:
 	current.color_a = %ColorA.color 
 	current.color_b = %ColorB.color
 	current.color_c = %ColorC.color
+	if current.style == 0:
+		current.color_b = current.color_a
+		current.color_c = current.color_a
+	
 	current.state = %State.selected 
 	current.density = %Density.value 
 	current.viscosity = %Viscosity.value
 	current.conductivity = %Conductivity.value
 	current.flammability = %Flammability.value
-	current.reactivity = %Reacivity.value
+	current.reactivity = %Reactivity.value
 	current.durability = %Durability.value

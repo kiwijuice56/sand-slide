@@ -13,6 +13,8 @@ var tap_on: bool = false
 @export var last_button: Button
 @export var selected_material: ShaderMaterial
 
+@onready var edit_button: Button = get_tree().get_root().get_node("Main").get_node("%Edit")
+
 var gem_idx: int = 0
 var algae_idx: int = 0
 
@@ -31,7 +33,6 @@ func _ready() -> void:
 				button.get("theme_override_styles/" + style).corner_radius_top_right = 0
 				button.get("theme_override_styles/" + style).corner_radius_bottom_right = 0
 	
-	
 	await get_tree().get_root().ready
 	
 	update_custom_elements()
@@ -41,6 +42,9 @@ func _on_new_element_created() -> void:
 	update_custom_elements()
 
 func initialize_buttons() -> void:
+	var id: int = -1
+	if last_button is ElementButton:
+		id = last_button.id
 	if not eraser_button.button_down.is_connected(_on_eraser_selected):
 		eraser_button.button_down.connect(_on_eraser_selected)
 	if not tap_button.button_down.is_connected(_on_tap_selected):
@@ -52,6 +56,9 @@ func initialize_buttons() -> void:
 			continue
 		if not button.button_down.is_connected(_on_element_selected):
 			button.button_down.connect(_on_element_selected.bind(button))
+		if button.id == id:
+			last_button = button
+			bolden_button(button)
 
 func update_custom_elements() -> void:
 	for child in %Custom.get_children():
@@ -71,10 +78,13 @@ func update_custom_elements() -> void:
 	initialize_buttons()
 
 func _on_element_selected(button: ElementButton) -> void:
+	edit_button.visible = button.id >= 2048
+	
 	tap_button.button_pressed = false
 	CommonReference.painter.selected_element = button.id + (4097 if tap_on else 0)
 	
-	unbolden_button(last_button)
+	if is_instance_valid(last_button):
+		unbolden_button(last_button)
 	bolden_button(button)
 	last_button = button
 	
@@ -89,11 +99,14 @@ func _on_element_selected(button: ElementButton) -> void:
 		gem_idx = (gem_idx + 1) % 4
 
 func _on_eraser_selected() -> void:
+	edit_button.visible = false
+	
 	if last_button == eraser_button:
 		return
 	
 	bolden_button(eraser_button)
-	unbolden_button(last_button)
+	if is_instance_valid(last_button):
+		unbolden_button(last_button)
 	unbolden_button(tap_button)
 	tap_on = false
 	last_button = eraser_button
