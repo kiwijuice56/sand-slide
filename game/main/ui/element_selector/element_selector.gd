@@ -2,11 +2,14 @@ extends TabContainer
 class_name ElementSelector
 # Handles element selection in the UI
 
+const ELEMENT_BUTTON: PackedScene = preload("res://main/ui/element_selector/CustomElementButton.tscn")
+const PLACEHOLDER_LABEL: PackedScene = preload("res://main/ui/element_selector/PlaceholderLabel.tscn")
+
 @export var simulation: Main
 @export var eraser_button: Button
 @export var tap_button: Button
 
-var tap_on := false
+var tap_on: bool = false
 @export var last_button: Button
 @export var selected_material: ShaderMaterial
 
@@ -16,20 +19,45 @@ var algae_idx: int = 0
 func _ready() -> void:
 	eraser_button.button_down.connect(_on_eraser_selected)
 	tap_button.pressed.connect(_on_tap_selected)
-	for scroll_container in get_children():
-		for button in scroll_container.get_child(0).get_children():
-			if not button is Button:
-				continue
-			button.button_down.connect(_on_element_selected.bind(button))
-			# This is a remnant of a past decision to round the corners of some buttons
-			# It would be a lot of work to reset it on ALL of the button styles, so 
-			# for now it is OK to set it in the script
-			for style in ["normal", "pressed", "hover", "disabled"]:
-				if not button.get("theme_override_styles/" + style) == null:
-					button.get("theme_override_styles/" + style).corner_radius_top_left = 0
-					button.get("theme_override_styles/" + style).corner_radius_bottom_left = 0
-					button.get("theme_override_styles/" + style).corner_radius_top_right = 0
-					button.get("theme_override_styles/" + style).corner_radius_bottom_right = 0
+	for button in $Basic/Basic.get_children():
+		if not button is Button:
+			continue
+		button.button_down.connect(_on_element_selected.bind(button))
+		# This is a remnant of a past decision to round the corners of some buttons
+		# It would be a lot of work to reset it on ALL of the button styles, so 
+		# for now it is OK to set it in the script
+		for style in ["normal", "pressed", "hover", "disabled"]:
+			if not button.get("theme_override_styles/" + style) == null:
+				button.get("theme_override_styles/" + style).corner_radius_top_left = 0
+				button.get("theme_override_styles/" + style).corner_radius_bottom_left = 0
+				button.get("theme_override_styles/" + style).corner_radius_top_right = 0
+				button.get("theme_override_styles/" + style).corner_radius_bottom_right = 0
+	
+	%CreateNewButton.button_down.connect(_on_new_element_created)
+	
+	await get_tree().get_root().ready
+	
+	update_custom_elements()
+
+func _on_new_element_created() -> void:
+	CommonReference.element_manager.create_new_element()
+	update_custom_elements()
+
+func update_custom_elements() -> void:
+	for child in %Custom.get_children():
+		if child.name != "CreateNewButton":
+			%Custom.remove_child(child)
+			child.queue_free()
+	for element_id in Settings.custom_element_ordering:
+		var custom_element: CustomElement = CommonReference.element_manager.custom_element_map[element_id]
+		var new_button: CustomElementButton = ELEMENT_BUTTON.instantiate()
+		new_button.initialize(custom_element)
+		%Custom.add_child(new_button)
+	# Fill up the space
+	%Custom.move_child(%Custom.get_node("CreateNewButton"), -1)
+	for i in range(10 - %Custom.get_child_count()):
+		var label: Label = PLACEHOLDER_LABEL.instantiate()
+		%Custom.add_child(label)
 
 func _on_element_selected(button: ElementButton) -> void:
 	tap_button.button_pressed = false

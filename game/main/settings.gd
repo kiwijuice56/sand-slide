@@ -8,7 +8,7 @@ var simulation_speed: int = 3
 var flat_mode: bool = false
 var fps: bool = false
 var custom_element_ordering: Array[int]
-var bg_color: Color:
+var bg_color: Color = Color("#355c96"):
 	set(val):
 		bg_color = val
 		background_updated.emit(val)
