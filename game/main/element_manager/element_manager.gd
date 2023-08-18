@@ -128,10 +128,10 @@ func create_new_element() -> void:
 	new_element.reactivity = randf()
 	new_element.durability = randf()
 	new_element.power = randf()
-	new_element.explosive = randf() < 0.5
-	new_element.alive = randf() < 0.5
-	new_element.toxic = randf() < 0.5
-	new_element.evaporable = randf() < 0.5
+	new_element.explosive = randf() < 0.3
+	new_element.alive = randf() < 0.3
+	new_element.toxic = randf() < 0.3
+	new_element.evaporable = randf() < 0.3
 	
 	custom_element_map[id] = new_element
 	Settings.custom_element_ordering.append(id)

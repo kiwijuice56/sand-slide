@@ -1,9 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://bueyu0dk5xun4"]
+[gd_scene load_steps=11 format=3 uid="uid://bueyu0dk5xun4"]
 
 [ext_resource type="Theme" uid="uid://co20v1mxv2dfm" path="res://main/ui/_theme/theme.tres" id="1_rrple"]
 [ext_resource type="Script" path="res://main/ui/submenu/submenu.gd" id="2_1h5h1"]
 [ext_resource type="FontFile" uid="uid://b8lxwo5dkwrs4" path="res://main/ui/_theme/font/Poppins-Regular.ttf" id="3_q8qyd"]
-[ext_resource type="Script" path="res://main/ui/submenu/help/hyperlink.gd" id="4_eo6pc"]
 [ext_resource type="Texture2D" uid="uid://skg5bmd8m812" path="res://main/ui/_icons/close.png" id="5_lqood"]
 
 [sub_resource type="Theme" id="Theme_n7xkt"]
@@ -123,7 +122,7 @@ grow_vertical = 2
 theme = ExtResource("1_rrple")
 script = ExtResource("2_1h5h1")
 anim = NodePath("AnimationPlayer")
-back_button = NodePath("HelpContainer/PanelContainer/Back")
+back_button = NodePath("HelpContainer/PanelContainer/VBoxContainer/HBoxContainer/Back")
 
 [node name="HelpCover" type="ColorRect" parent="."]
 layout_mode = 0
@@ -152,81 +151,18 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_e160y")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HelpContainer/PanelContainer"]
 layout_mode = 2
-theme_override_constants/separation = 14
 
-[node name="Title" type="Label" parent="HelpContainer/PanelContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="HelpContainer/PanelContainer/VBoxContainer"]
 layout_mode = 2
+
+[node name="Title" type="Label" parent="HelpContainer/PanelContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 32
 text = "Help"
 horizontal_alignment = 1
 
-[node name="WhatContainer" type="VBoxContainer" parent="HelpContainer/PanelContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 0
-theme_override_constants/separation = 3
-
-[node name="Title" type="Label" parent="HelpContainer/PanelContainer/VBoxContainer/WhatContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 16
-text = "What Is Sand Slide?"
-horizontal_alignment = 1
-
-[node name="RichTextLabel" type="RichTextLabel" parent="HelpContainer/PanelContainer/VBoxContainer/WhatContainer"]
-layout_mode = 2
-theme_override_font_sizes/normal_font_size = 12
-text = "Sand Slide is an interactive particle game! Experiment with elements, express yourself, or just mess around. This is purely a passion project; No data is collected from users and there are no ads/purchases. You can find the source code on the github repository (https://github.com/kiwijuice56/sand-slide). Have fun!"
-fit_content = true
-
-[node name="SaveContainer" type="VBoxContainer" parent="HelpContainer/PanelContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 0
-theme_override_constants/separation = 3
-
-[node name="Title" type="Label" parent="HelpContainer/PanelContainer/VBoxContainer/SaveContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 16
-text = "How Does Saving Work?"
-horizontal_alignment = 1
-
-[node name="RichTextLabel" type="RichTextLabel" parent="HelpContainer/PanelContainer/VBoxContainer/SaveContainer"]
-layout_mode = 2
-theme_override_font_sizes/normal_font_size = 12
-text = "In the file menu, tap the text box to name a new file and press enter. The created file will keep your game perfectly intact! After a file is saved, you can tap on it to overwrite, load, or delete it."
-fit_content = true
-
-[node name="AttributionContainer" type="VBoxContainer" parent="HelpContainer/PanelContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 0
-theme_override_constants/separation = 3
-
-[node name="Title" type="Label" parent="HelpContainer/PanelContainer/VBoxContainer/AttributionContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 16
-text = "Attribution"
-horizontal_alignment = 1
-
-[node name="RichTextLabel" type="RichTextLabel" parent="HelpContainer/PanelContainer/VBoxContainer/AttributionContainer"]
-layout_mode = 2
-theme_override_font_sizes/normal_font_size = 12
-text = "Many of the elements in sand slide are inspired by other falling sand games, including Sand:Box by SmellyMoo and Sandspiel by Max Bittker. Check these games out too!
-
-"
-fit_content = true
-
-[node name="HyperLinks" type="RichTextLabel" parent="HelpContainer/PanelContainer/VBoxContainer/AttributionContainer"]
-layout_mode = 2
-size_flags_vertical = 0
-theme_override_font_sizes/normal_font_size = 12
-theme_override_font_sizes/bold_font_size = 12
-theme_override_font_sizes/italics_font_size = 12
-theme_override_font_sizes/bold_italics_font_size = 12
-theme_override_font_sizes/mono_font_size = 12
-bbcode_enabled = true
-text = "[url=\"https://icons8.com/icon/67287/plumbing\"]Plumbing[/url], [url=\"https://icons8.com/icon/78855/eraser\"]eraser[/url], [url=\"https://icons8.com/icon/77782/file\"]file[/url], [url=\"https://icons8.com/icon/60006/support\"]support[/url], and [url=\"https://icons8.com/icon/71200/close\"]close[/url] icons by [url=\"https://icons8.com/\"]Icons8[/url]. "
-fit_content = true
-script = ExtResource("4_eo6pc")
-
-[node name="Back" type="Button" parent="HelpContainer/PanelContainer"]
+[node name="Back" type="Button" parent="HelpContainer/PanelContainer/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 size_flags_horizontal = 8
@@ -234,6 +170,82 @@ size_flags_vertical = 0
 focus_mode = 0
 icon = ExtResource("5_lqood")
 icon_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="HelpContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+vertical_scroll_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HelpContainer/PanelContainer/VBoxContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 14
+
+[node name="WhatContainer" type="VBoxContainer" parent="HelpContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/separation = 3
+
+[node name="Title" type="Label" parent="HelpContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/WhatContainer"]
+layout_mode = 2
+text = "About"
+horizontal_alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="HelpContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/WhatContainer"]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 16
+text = "Sand Slide is an interactive particle game! Experiment with elements, express yourself, or just mess around. This is purely a passion project; No data is collected from users and there are no ads/purchases. You can find the source code on the github repository (https://github.com/kiwijuice56/sand-slide). Have fun!"
+fit_content = true
+
+[node name="SaveContainer" type="VBoxContainer" parent="HelpContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/separation = 3
+
+[node name="Title" type="Label" parent="HelpContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/SaveContainer"]
+layout_mode = 2
+text = "Save Files"
+horizontal_alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="HelpContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/SaveContainer"]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 16
+text = "In the file menu, tap the text box to name a new file and press enter. The created file will keep your game perfectly intact! After a file is saved, you can tap on it to overwrite, load, or delete it."
+fit_content = true
+
+[node name="ElementContainer" type="VBoxContainer" parent="HelpContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/separation = 3
+
+[node name="Title" type="Label" parent="HelpContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/ElementContainer"]
+layout_mode = 2
+text = "Custom Elements"
+horizontal_alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="HelpContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/ElementContainer"]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 16
+text = "In the custom elements tab, you can create your own elements! Pressing the \"create new\" button will generate a new, random element. Select that element and then press the edit/pencil icon to open the edit menu. Your elements are saved when you close the game. There are countless options, so mess around and learn what they do! "
+fit_content = true
+
+[node name="AttributionContainer" type="VBoxContainer" parent="HelpContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/separation = 3
+
+[node name="Title" type="Label" parent="HelpContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/AttributionContainer"]
+layout_mode = 2
+text = "Attribution"
+horizontal_alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="HelpContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/AttributionContainer"]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 16
+text = "Many of the elements in sand slide are inspired by other falling sand games, including Sand:Box by SmellyMoo and Sandspiel by Max Bittker. Check these games out too! Game icons created by Icons8.
+
+"
+fit_content = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 speed_scale = 2.0

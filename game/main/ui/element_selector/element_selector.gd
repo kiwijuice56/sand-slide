@@ -20,7 +20,7 @@ var algae_idx: int = 0
 
 func _ready() -> void:
 	initialize_buttons()
-	for button in $Basic/Basic.get_children():
+	for button in $basic/Basic.get_children():
 		if not button is ElementButton:
 			continue
 		# This is a remnant of a past decision to round the corners of some buttons
@@ -43,7 +43,7 @@ func _on_new_element_created() -> void:
 
 func initialize_buttons() -> void:
 	var id: int = -1
-	if last_button is ElementButton:
+	if is_instance_valid(last_button) and last_button is ElementButton:
 		id = last_button.id
 	if not eraser_button.button_down.is_connected(_on_eraser_selected):
 		eraser_button.button_down.connect(_on_eraser_selected)
@@ -51,14 +51,19 @@ func initialize_buttons() -> void:
 		tap_button.button_down.connect(_on_tap_selected)
 	if not %CreateNewButton.button_down.is_connected(_on_new_element_created):
 		%CreateNewButton.button_down.connect(_on_new_element_created)
-	for button in $Basic/Basic.get_children() + %Custom.get_children():
+	
+	var last_updated: bool = false
+	for button in $basic/Basic.get_children() + %Custom.get_children():
 		if not button is ElementButton:
 			continue
 		if not button.button_down.is_connected(_on_element_selected):
 			button.button_down.connect(_on_element_selected.bind(button))
 		if button.id == id:
+			last_updated = true
 			last_button = button
 			bolden_button(button)
+	if not last_updated:
+		_on_eraser_selected()
 
 func update_custom_elements() -> void:
 	for child in %Custom.get_children():

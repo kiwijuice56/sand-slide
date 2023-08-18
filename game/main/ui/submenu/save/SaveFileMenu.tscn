@@ -207,7 +207,7 @@ size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 16
 theme_override_styles/normal = SubResource("StyleBoxFlat_dh3by")
 theme_override_styles/focus = SubResource("StyleBoxFlat_4hoky")
-placeholder_text = "Type new file name.."
+placeholder_text = "new file name..."
 
 [node name="PanelContainer" type="PanelContainer" parent="SaveContainer/PanelContainer/VBoxContainer"]
 layout_mode = 2
@@ -238,7 +238,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 focus_mode = 0
 theme_override_font_sizes/font_size = 16
-text = "Save"
+text = "save"
 
 [node name="LoadFileButton" type="Button" parent="SaveContainer/PanelContainer/VBoxContainer/OptionContainer"]
 unique_name_in_owner = true
@@ -247,7 +247,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 focus_mode = 0
 theme_override_font_sizes/font_size = 16
-text = "Load"
+text = "load"
 
 [node name="DeleteFileButton" type="Button" parent="SaveContainer/PanelContainer/VBoxContainer/OptionContainer"]
 unique_name_in_owner = true
@@ -256,7 +256,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 focus_mode = 0
 theme_override_font_sizes/font_size = 16
-text = "Delete"
+text = "delete"
 
 [node name="Back" type="Button" parent="SaveContainer/PanelContainer"]
 custom_minimum_size = Vector2(50, 50)

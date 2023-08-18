@@ -92,12 +92,15 @@ public:
         } else if (state == 4) {
             float power = my_sim->custom_elements[custom_id].power;
 
-            if (sim->randf() < (1.0 - power) / 10.0 && sim->in_bounds(row - 1, col) && sim->get_cell(row - 1, col) != custom_id) {
+            if (sim->randf() < 1.0 / 4 && sim->in_bounds(row - 1, col) && sim->get_cell(row - 1, col) != custom_id) {
                 sim->set_cell(row, col, 6);
                 return;
             } else {
-                sim->grow(row + 1, col, -1, custom_id);
-                sim->grow(row + 2, col, -1, custom_id);
+                if (power >= 0.0) sim->grow(row + 1, col, -1, custom_id);
+                if (power >= 0.2) sim->grow(row + 2, col, -1, custom_id);
+                if (power >= 0.5) sim->grow(row + 3, col, -1, custom_id);
+                if (power >= 0.8) sim->grow(row + 4, col, -1, custom_id);
+                if (power >= 0.9) sim->grow(row + 5, col, -1, custom_id);
             }
         }
     }

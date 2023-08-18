@@ -8,16 +8,17 @@ func _ready() -> void:
 	super._ready()
 	visible = false
 	modulate.a = 0.0
-	for node in get_tree().get_nodes_in_group("color_picker"):
-		var color_picker_button: ColorPickerButton = node as ColorPickerButton
-		var color_picker: ColorPicker = color_picker_button.get_picker()
-		color_picker.sampler_visible = false
-		color_picker.color_modes_visible = false
-		color_picker.sliders_visible = false
-		color_picker.hex_visible = false
-		color_picker.presets_visible = false
 	%Style.item_selected.connect(_on_style_selected)
 	%State.item_selected.connect(_on_state_selected)
+	%DeleteButton.pressed.connect(_on_element_deleted)
+
+func _on_element_deleted() -> void:
+	var dir: DirAccess = DirAccess.open("user://")
+	dir.remove(str(current.id) + current.display_name + ".tres")
+	
+	CommonReference.element_manager.custom_element_map.erase(current.id)
+	Settings.custom_element_ordering.remove_at(Settings.custom_element_ordering.find(current.id))
+	exit()
 
 func _on_style_selected(idx: int) -> void:
 	match idx:
@@ -49,6 +50,7 @@ func initialize() -> void:
 	%Density.value = current.density
 	%Viscosity.value = current.viscosity
 	%Conductivity.value = current.conductivity
+	%Temperature.value = current.temperature
 	%Flammability.value = current.flammability
 	%Reactivity.value = current.reactivity
 	%Durability.value = current.durability
@@ -75,6 +77,7 @@ func save_changes() -> void:
 	current.density = %Density.value 
 	current.viscosity = %Viscosity.value
 	current.conductivity = %Conductivity.value
+	current.temperature = %Temperature.value 
 	current.flammability = %Flammability.value
 	current.reactivity = %Reactivity.value
 	current.durability = %Durability.value

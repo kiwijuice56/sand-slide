@@ -1433,14 +1433,14 @@ theme_override_styles/tab_selected = SubResource("StyleBoxFlat_bcf5e")
 theme_override_styles/tab_unselected = SubResource("StyleBoxFlat_nsxwl")
 theme_override_styles/panel = SubResource("StyleBoxFlat_b3p2f")
 script = ExtResource("1_fxkbl")
-last_button = NodePath("Basic/Basic/Sand")
+last_button = NodePath("basic/Basic/Sand")
 selected_material = ExtResource("2_30e0c")
 
-[node name="Basic" type="ScrollContainer" parent="."]
+[node name="basic" type="ScrollContainer" parent="."]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_hj7t3")
 
-[node name="Basic" type="GridContainer" parent="Basic"]
+[node name="Basic" type="GridContainer" parent="basic"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -1448,7 +1448,7 @@ theme_override_constants/h_separation = 0
 theme_override_constants/v_separation = 0
 columns = 3
 
-[node name="Sand" type="Button" parent="Basic/Basic"]
+[node name="Sand" type="Button" parent="basic/Basic"]
 material = ExtResource("2_30e0c")
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
@@ -1469,7 +1469,7 @@ text = "sand"
 script = ExtResource("3_bfdgk")
 id = 1
 
-[node name="Water" type="Button" parent="Basic/Basic"]
+[node name="Water" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -1485,7 +1485,7 @@ text = "water"
 script = ExtResource("3_bfdgk")
 id = 3
 
-[node name="Fire" type="Button" parent="Basic/Basic"]
+[node name="Fire" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -1501,7 +1501,7 @@ text = "fire"
 script = ExtResource("3_bfdgk")
 id = 5
 
-[node name="Oil" type="Button" parent="Basic/Basic"]
+[node name="Oil" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -1517,7 +1517,7 @@ text = "oil"
 script = ExtResource("3_bfdgk")
 id = 30
 
-[node name="Rock" type="Button" parent="Basic/Basic"]
+[node name="Rock" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -1533,7 +1533,7 @@ text = "rock"
 script = ExtResource("3_bfdgk")
 id = 2
 
-[node name="Ice" type="Button" parent="Basic/Basic"]
+[node name="Ice" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -1549,7 +1549,7 @@ text = "ice"
 script = ExtResource("3_bfdgk")
 id = 19
 
-[node name="Lava" type="Button" parent="Basic/Basic"]
+[node name="Lava" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -1565,7 +1565,7 @@ text = "lava"
 script = ExtResource("3_bfdgk")
 id = 20
 
-[node name="Lightning" type="Button" parent="Basic/Basic"]
+[node name="Lightning" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -1586,7 +1586,7 @@ text = "lightning"
 script = ExtResource("3_bfdgk")
 id = 37
 
-[node name="Air" type="Button" parent="Basic/Basic"]
+[node name="Air" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -1602,7 +1602,7 @@ text = "air"
 script = ExtResource("3_bfdgk")
 id = 28
 
-[node name="Snow" type="Button" parent="Basic/Basic"]
+[node name="Snow" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -1622,7 +1622,7 @@ text = "snow"
 script = ExtResource("3_bfdgk")
 id = 85
 
-[node name="Lead Azide" type="Button" parent="Basic/Basic"]
+[node name="Lead Azide" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -1643,7 +1643,7 @@ text = "explosive"
 script = ExtResource("3_bfdgk")
 id = 10
 
-[node name="Hurricane" type="Button" parent="Basic/Basic"]
+[node name="Hurricane" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -1659,7 +1659,7 @@ text = "storm"
 script = ExtResource("3_bfdgk")
 id = 41
 
-[node name="Wall" type="Button" parent="Basic/Basic"]
+[node name="Wall" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -1674,7 +1674,7 @@ text = "wall"
 script = ExtResource("3_bfdgk")
 id = 15
 
-[node name="Wood" type="Button" parent="Basic/Basic"]
+[node name="Wood" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -1689,7 +1689,7 @@ text = "wood"
 script = ExtResource("3_bfdgk")
 id = 18
 
-[node name="Sandstone" type="Button" parent="Basic/Basic"]
+[node name="Sandstone" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -1704,7 +1704,7 @@ text = "sandstone"
 script = ExtResource("3_bfdgk")
 id = 97
 
-[node name="White Sand" type="Button" parent="Basic/Basic"]
+[node name="White Sand" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -1725,7 +1725,7 @@ text = "white sand"
 script = ExtResource("3_bfdgk")
 id = 98
 
-[node name="Soil" type="Button" parent="Basic/Basic"]
+[node name="Soil" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -1740,7 +1740,7 @@ text = "soil"
 script = ExtResource("3_bfdgk")
 id = 11
 
-[node name="Dust" type="Button" parent="Basic/Basic"]
+[node name="Dust" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -1755,7 +1755,7 @@ text = "dust"
 script = ExtResource("3_bfdgk")
 id = 16
 
-[node name="Glass" type="Button" parent="Basic/Basic"]
+[node name="Glass" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -1774,7 +1774,7 @@ text = "glass"
 script = ExtResource("3_bfdgk")
 id = 25
 
-[node name="Crystal" type="Button" parent="Basic/Basic"]
+[node name="Crystal" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -1794,7 +1794,7 @@ text = "gem"
 script = ExtResource("3_bfdgk")
 id = 27
 
-[node name="InfoSource" type="Button" parent="Basic/Basic"]
+[node name="InfoSource" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -1814,7 +1814,7 @@ text = "source"
 script = ExtResource("3_bfdgk")
 id = 104
 
-[node name="InfoCable" type="Button" parent="Basic/Basic"]
+[node name="InfoCable" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -1829,7 +1829,7 @@ text = "cable"
 script = ExtResource("3_bfdgk")
 id = 102
 
-[node name="InfoDeleter" type="Button" parent="Basic/Basic"]
+[node name="InfoDeleter" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -1844,7 +1844,7 @@ text = "deleter"
 script = ExtResource("3_bfdgk")
 id = 107
 
-[node name="InfoAmp" type="Button" parent="Basic/Basic"]
+[node name="InfoAmp" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -1859,7 +1859,7 @@ text = "amp"
 script = ExtResource("3_bfdgk")
 id = 112
 
-[node name="InfoPiston" type="Button" parent="Basic/Basic"]
+[node name="InfoPiston" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -1874,7 +1874,7 @@ text = "piston ▼"
 script = ExtResource("3_bfdgk")
 id = 105
 
-[node name="InfoPistonUp" type="Button" parent="Basic/Basic"]
+[node name="InfoPistonUp" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -1889,7 +1889,7 @@ text = "piston ▲"
 script = ExtResource("3_bfdgk")
 id = 106
 
-[node name="Polliwog" type="Button" parent="Basic/Basic"]
+[node name="Polliwog" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -1910,7 +1910,7 @@ text = "polliwog"
 script = ExtResource("3_bfdgk")
 id = 4
 
-[node name="Algae" type="Button" parent="Basic/Basic"]
+[node name="Algae" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -1926,7 +1926,7 @@ text = "algae"
 script = ExtResource("3_bfdgk")
 id = 7
 
-[node name="Fish" type="Button" parent="Basic/Basic"]
+[node name="Fish" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -1947,7 +1947,7 @@ text = "salt fish"
 script = ExtResource("3_bfdgk")
 id = 72
 
-[node name="Urchin" type="Button" parent="Basic/Basic"]
+[node name="Urchin" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -1968,7 +1968,7 @@ text = "urchin"
 script = ExtResource("3_bfdgk")
 id = 31
 
-[node name="Sand Duck" type="Button" parent="Basic/Basic"]
+[node name="Sand Duck" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -1990,7 +1990,7 @@ text = "sand duck"
 script = ExtResource("3_bfdgk")
 id = 8
 
-[node name="Penguin" type="Button" parent="Basic/Basic"]
+[node name="Penguin" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -2012,7 +2012,7 @@ text = "penguin"
 script = ExtResource("3_bfdgk")
 id = 49
 
-[node name="Nanobot" type="Button" parent="Basic/Basic"]
+[node name="Nanobot" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -2034,7 +2034,7 @@ text = "nanobot"
 script = ExtResource("3_bfdgk")
 id = 95
 
-[node name="Turtle" type="Button" parent="Basic/Basic"]
+[node name="Turtle" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -2055,7 +2055,7 @@ text = "turtle"
 script = ExtResource("3_bfdgk")
 id = 130
 
-[node name="Critter" type="Button" parent="Basic/Basic"]
+[node name="Critter" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -2076,7 +2076,7 @@ text = "critter"
 script = ExtResource("3_bfdgk")
 id = 33
 
-[node name="Fairy" type="Button" parent="Basic/Basic"]
+[node name="Fairy" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -2097,7 +2097,7 @@ text = "fairy"
 script = ExtResource("3_bfdgk")
 id = 23
 
-[node name="Dragon" type="Button" parent="Basic/Basic"]
+[node name="Dragon" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -2118,7 +2118,7 @@ text = "dragon"
 script = ExtResource("3_bfdgk")
 id = 32
 
-[node name="Slime" type="Button" parent="Basic/Basic"]
+[node name="Slime" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -2134,7 +2134,7 @@ text = "slime"
 script = ExtResource("3_bfdgk")
 id = 86
 
-[node name="MetalSlime" type="Button" parent="Basic/Basic"]
+[node name="MetalSlime" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -2155,7 +2155,7 @@ text = "metal slime"
 script = ExtResource("3_bfdgk")
 id = 132
 
-[node name="Seed" type="Button" parent="Basic/Basic"]
+[node name="Seed" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -2176,7 +2176,7 @@ text = "grass seed"
 script = ExtResource("3_bfdgk")
 id = 12
 
-[node name="Flower Seed" type="Button" parent="Basic/Basic"]
+[node name="Flower Seed" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -2197,7 +2197,7 @@ text = "flower seed"
 script = ExtResource("3_bfdgk")
 id = 119
 
-[node name="Virus" type="Button" parent="Basic/Basic"]
+[node name="Virus" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -2218,7 +2218,7 @@ text = "virus"
 script = ExtResource("3_bfdgk")
 id = 101
 
-[node name="Primordial Soup" type="Button" parent="Basic/Basic"]
+[node name="Primordial Soup" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -2239,7 +2239,7 @@ text = "primordial"
 script = ExtResource("3_bfdgk")
 id = 127
 
-[node name="Blood" type="Button" parent="Basic/Basic"]
+[node name="Blood" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -2260,7 +2260,7 @@ text = "blood"
 script = ExtResource("3_bfdgk")
 id = 118
 
-[node name="Acid" type="Button" parent="Basic/Basic"]
+[node name="Acid" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -2281,7 +2281,7 @@ text = "acid"
 script = ExtResource("3_bfdgk")
 id = 21
 
-[node name="Sponge" type="Button" parent="Basic/Basic"]
+[node name="Sponge" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -2302,7 +2302,7 @@ text = "sponge"
 script = ExtResource("3_bfdgk")
 id = 99
 
-[node name="Blue Fire" type="Button" parent="Basic/Basic"]
+[node name="Blue Fire" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -2324,7 +2324,7 @@ text = "cyan fire"
 script = ExtResource("3_bfdgk")
 id = 24
 
-[node name="DryIce" type="Button" parent="Basic/Basic"]
+[node name="DryIce" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -2345,7 +2345,7 @@ text = "dry ice"
 script = ExtResource("3_bfdgk")
 id = 93
 
-[node name="Salt" type="Button" parent="Basic/Basic"]
+[node name="Salt" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -2366,7 +2366,7 @@ text = "salt"
 script = ExtResource("3_bfdgk")
 id = 70
 
-[node name="Hydrogen" type="Button" parent="Basic/Basic"]
+[node name="Hydrogen" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -2387,7 +2387,7 @@ text = "hydrogen"
 script = ExtResource("3_bfdgk")
 id = 47
 
-[node name="Potassium" type="Button" parent="Basic/Basic"]
+[node name="Potassium" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -2408,7 +2408,7 @@ text = "potassium"
 script = ExtResource("3_bfdgk")
 id = 45
 
-[node name="Iron" type="Button" parent="Basic/Basic"]
+[node name="Iron" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -2429,7 +2429,7 @@ text = "iron"
 script = ExtResource("3_bfdgk")
 id = 17
 
-[node name="Iodine" type="Button" parent="Basic/Basic"]
+[node name="Iodine" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -2450,7 +2450,7 @@ text = "iodine"
 script = ExtResource("3_bfdgk")
 id = 82
 
-[node name="Gold" type="Button" parent="Basic/Basic"]
+[node name="Gold" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -2471,7 +2471,7 @@ text = "gold"
 script = ExtResource("3_bfdgk")
 id = 51
 
-[node name="Mercury" type="Button" parent="Basic/Basic"]
+[node name="Mercury" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -2492,7 +2492,7 @@ text = "mercury"
 script = ExtResource("3_bfdgk")
 id = 44
 
-[node name="Uranium" type="Button" parent="Basic/Basic"]
+[node name="Uranium" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -2513,7 +2513,7 @@ text = "uranium"
 script = ExtResource("3_bfdgk")
 id = 35
 
-[node name="Invisirock" type="Button" parent="Basic/Basic"]
+[node name="Invisirock" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -2529,7 +2529,7 @@ text = "invisirock"
 script = ExtResource("3_bfdgk")
 id = 131
 
-[node name="Laser" type="Button" parent="Basic/Basic"]
+[node name="Laser" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -2550,7 +2550,7 @@ text = "laser"
 script = ExtResource("3_bfdgk")
 id = 26
 
-[node name="Beam" type="Button" parent="Basic/Basic"]
+[node name="Beam" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -2571,7 +2571,7 @@ text = "freikugel"
 script = ExtResource("3_bfdgk")
 id = 94
 
-[node name="Neutron" type="Button" parent="Basic/Basic"]
+[node name="Neutron" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -2592,7 +2592,7 @@ text = "quasar"
 script = ExtResource("3_bfdgk")
 id = 36
 
-[node name="Meteor" type="Button" parent="Basic/Basic"]
+[node name="Meteor" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -2613,7 +2613,7 @@ text = "meteor"
 script = ExtResource("3_bfdgk")
 id = 75
 
-[node name="Sun" type="Button" parent="Basic/Basic"]
+[node name="Sun" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -2635,7 +2635,7 @@ text = "sun"
 script = ExtResource("3_bfdgk")
 id = 66
 
-[node name="Electron" type="Button" parent="Basic/Basic"]
+[node name="Electron" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -2656,7 +2656,7 @@ text = "bolt storm"
 script = ExtResource("3_bfdgk")
 id = 39
 
-[node name="JavelinRain" type="Button" parent="Basic/Basic"]
+[node name="JavelinRain" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -2677,7 +2677,7 @@ text = "javelin rain"
 script = ExtResource("3_bfdgk")
 id = 128
 
-[node name="Powder" type="Button" parent="Basic/Basic"]
+[node name="Powder" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -2698,7 +2698,7 @@ text = "stardust"
 script = ExtResource("3_bfdgk")
 id = 42
 
-[node name="Kuiper" type="Button" parent="Basic/Basic"]
+[node name="Kuiper" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -2719,7 +2719,7 @@ text = "kuiper"
 script = ExtResource("3_bfdgk")
 id = 65
 
-[node name="Strange" type="Button" parent="Basic/Basic"]
+[node name="Strange" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -2740,7 +2740,7 @@ text = "strange"
 script = ExtResource("3_bfdgk")
 id = 74
 
-[node name="Spiral" type="Button" parent="Basic/Basic"]
+[node name="Spiral" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -2761,7 +2761,7 @@ text = "magatsuhi"
 script = ExtResource("3_bfdgk")
 id = 129
 
-[node name="Neptune" type="Button" parent="Basic/Basic"]
+[node name="Neptune" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -2782,7 +2782,7 @@ text = "neptune"
 script = ExtResource("3_bfdgk")
 id = 87
 
-[node name="Black Hole" type="Button" parent="Basic/Basic"]
+[node name="Black Hole" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -2803,7 +2803,7 @@ text = "void"
 script = ExtResource("3_bfdgk")
 id = 29
 
-[node name="Worm Hole" type="Button" parent="Basic/Basic"]
+[node name="Worm Hole" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -2824,7 +2824,7 @@ text = "worm"
 script = ExtResource("3_bfdgk")
 id = 81
 
-[node name="Glitch" type="Button" parent="Basic/Basic"]
+[node name="Glitch" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -2845,11 +2845,11 @@ text = "glitch"
 script = ExtResource("3_bfdgk")
 id = 117
 
-[node name="Custom" type="ScrollContainer" parent="."]
+[node name="custom" type="ScrollContainer" parent="."]
 visible = false
 layout_mode = 2
 
-[node name="Custom" type="GridContainer" parent="Custom"]
+[node name="Custom" type="GridContainer" parent="custom"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 70)
 layout_mode = 2
@@ -2859,7 +2859,8 @@ theme_override_constants/h_separation = 0
 theme_override_constants/v_separation = 0
 columns = 3
 
-[node name="CreateNewButton" parent="Custom/Custom" instance=ExtResource("4_2lukd")]
+[node name="CreateNewButton" parent="custom/Custom" instance=ExtResource("4_2lukd")]
 unique_name_in_owner = true
 layout_mode = 2
 text = "create new"
+script = null

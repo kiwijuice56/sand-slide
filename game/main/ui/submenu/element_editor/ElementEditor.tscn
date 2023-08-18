@@ -246,7 +246,7 @@ icon_alignment = 1
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxEmpty_hcor6")
-scroll_vertical = 100
+vertical_scroll_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer"]
 layout_mode = 2
@@ -299,59 +299,83 @@ popup/item_0/id = 0
 popup/item_1/text = "fancy color"
 popup/item_1/id = 1
 
-[node name="FlatColorGrouping" type="HBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="FlatColorGrouping" type="VBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 
 [node name="Label" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/FlatColorGrouping"]
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_horizontal = 4
 text = "base color"
 
-[node name="ColorA" type="ColorPickerButton" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/FlatColorGrouping" groups=["color_picker"]]
+[node name="ColorA" type="ColorPicker" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/FlatColorGrouping"]
 unique_name_in_owner = true
 layout_mode = 2
-size_flags_horizontal = 3
-focus_mode = 0
-color = Color(0.243137, 0.352941, 1, 1)
+mouse_filter = 0
+theme_override_constants/sv_width = 0
+theme_override_constants/sv_height = 175
 edit_alpha = false
+color_mode = 1
+deferred_mode = true
+can_add_swatches = false
+sampler_visible = false
+color_modes_visible = false
+sliders_visible = false
+hex_visible = false
+presets_visible = false
 
 [node name="FancyColorGrouping" type="VBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_constants/separation = 8
 
-[node name="BaseColor2" type="HBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/FancyColorGrouping"]
+[node name="BaseColor2" type="VBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/FancyColorGrouping"]
 layout_mode = 2
 
 [node name="Label" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/FancyColorGrouping/BaseColor2"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "base color 2"
+horizontal_alignment = 1
 
-[node name="ColorB" type="ColorPickerButton" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/FancyColorGrouping/BaseColor2" groups=["color_picker"]]
+[node name="ColorB" type="ColorPicker" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/FancyColorGrouping/BaseColor2"]
 unique_name_in_owner = true
 layout_mode = 2
-size_flags_horizontal = 3
-focus_mode = 0
-color = Color(0.243137, 0.352941, 1, 1)
+mouse_filter = 0
+theme_override_constants/sv_height = 175
 edit_alpha = false
+color_mode = 1
+deferred_mode = true
+can_add_swatches = false
+sampler_visible = false
+color_modes_visible = false
+sliders_visible = false
+hex_visible = false
+presets_visible = false
 
-[node name="OutlineColor" type="HBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/FancyColorGrouping"]
+[node name="OutlineColor" type="VBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/FancyColorGrouping"]
 layout_mode = 2
 
 [node name="Label" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/FancyColorGrouping/OutlineColor"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "outline color"
+horizontal_alignment = 1
 
-[node name="ColorC" type="ColorPickerButton" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/FancyColorGrouping/OutlineColor" groups=["color_picker"]]
+[node name="ColorC" type="ColorPicker" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/FancyColorGrouping/OutlineColor"]
 unique_name_in_owner = true
 layout_mode = 2
-size_flags_horizontal = 3
-focus_mode = 0
-color = Color(0.243137, 0.352941, 1, 1)
+mouse_filter = 0
+theme_override_constants/sv_height = 175
 edit_alpha = false
+color_mode = 1
+deferred_mode = true
+can_add_swatches = false
+sampler_visible = false
+color_modes_visible = false
+sliders_visible = false
+hex_visible = false
+presets_visible = false
 
 [node name="BehaviorLabel" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
@@ -570,6 +594,7 @@ text = "explosive"
 [node name="Explosive" type="CheckButton" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/ExplosiveGrouping"]
 unique_name_in_owner = true
 layout_mode = 2
+focus_mode = 0
 flat = true
 
 [node name="EvaporableGrouping" type="HBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
@@ -584,6 +609,7 @@ text = "evaporable"
 [node name="Evaporable" type="CheckButton" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/EvaporableGrouping"]
 unique_name_in_owner = true
 layout_mode = 2
+focus_mode = 0
 flat = true
 
 [node name="AliveGrouping" type="HBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
@@ -598,6 +624,7 @@ text = "alive"
 [node name="Alive" type="CheckButton" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/AliveGrouping"]
 unique_name_in_owner = true
 layout_mode = 2
+focus_mode = 0
 flat = true
 
 [node name="PoisonousGrouping" type="HBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
@@ -612,7 +639,14 @@ text = "poisonous"
 [node name="Toxic" type="CheckButton" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/PoisonousGrouping"]
 unique_name_in_owner = true
 layout_mode = 2
+focus_mode = 0
 flat = true
+
+[node name="DeleteButton" type="Button" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+focus_mode = 0
+text = "delete element"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 speed_scale = 2.0

@@ -40,6 +40,7 @@ func _on_edit_control_exited() -> void:
 	CommonReference.main.active = true
 	edit_control.save_changes()
 	%ElementSelector.update_custom_elements()
+	Settings.save_settings()
 	CommonReference.element_manager.save_elements()
 	CommonReference.element_manager.initialize_custom_elements()
 
