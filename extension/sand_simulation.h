@@ -37,6 +37,12 @@ struct CustomElement {
     float flammability;
     float reactivity;
     float durability;
+    float power;
+
+    bool explosive;
+    bool evaporable;
+    bool alive;
+    bool toxic;
 
     bool init = false;
 };

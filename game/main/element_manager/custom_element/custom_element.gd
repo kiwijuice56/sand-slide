@@ -17,3 +17,9 @@ extends Resource
 @export var flammability: float = 0.0
 @export var reactivity: float = 0.5
 @export var durability: float = 0.5
+@export var power: float = 0.5
+
+@export var explosive: bool = false
+@export var evaporable: bool = false
+@export var alive: bool = false
+@export var toxic: bool = false

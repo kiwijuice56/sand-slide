@@ -127,6 +127,11 @@ func create_new_element() -> void:
 	new_element.flammability = randf()
 	new_element.reactivity = randf()
 	new_element.durability = randf()
+	new_element.power = randf()
+	new_element.explosive = randf() < 0.5
+	new_element.alive = randf() < 0.5
+	new_element.toxic = randf() < 0.5
+	new_element.evaporable = randf() < 0.5
 	
 	custom_element_map[id] = new_element
 	Settings.custom_element_ordering.append(id)
@@ -151,6 +156,11 @@ func initialize_custom_elements() -> void:
 		pass_dict[custom_element.id].append(custom_element.flammability)
 		pass_dict[custom_element.id].append(custom_element.reactivity)
 		pass_dict[custom_element.id].append(custom_element.durability)
+		pass_dict[custom_element.id].append(custom_element.power)
+		pass_dict[custom_element.id].append(custom_element.explosive)
+		pass_dict[custom_element.id].append(custom_element.evaporable)
+		pass_dict[custom_element.id].append(custom_element.alive)
+		pass_dict[custom_element.id].append(custom_element.toxic)
 		
 	CommonReference.main.sim.initialize_custom_elements(pass_dict)
 	initialize_element_graphics()

@@ -27,11 +27,13 @@ func _on_style_selected(idx: int) -> void:
 			%FancyColorGrouping.visible = true
 
 func _on_state_selected(idx: int) -> void:
+	%PowerGrouping.visible = false
+	%ViscosityGrouping.visible = false
 	match idx:
 		2:
 			%ViscosityGrouping.visible = true
-		_:
-			%ViscosityGrouping.visible = false
+		4:
+			%PowerGrouping.visible = true
 
 func edit_element(element: CustomElement) -> void:
 	current = element
@@ -50,6 +52,11 @@ func initialize() -> void:
 	%Flammability.value = current.flammability
 	%Reactivity.value = current.reactivity
 	%Durability.value = current.durability
+	%Power.value = current.power
+	%Explosive.button_pressed = current.explosive
+	%Alive.button_pressed = current.alive
+	%Toxic.button_pressed = current.toxic
+	%Evaporable.button_pressed = current.evaporable
 	
 	_on_state_selected(%State.selected)
 	_on_style_selected(%Style.selected)
@@ -71,3 +78,8 @@ func save_changes() -> void:
 	current.flammability = %Flammability.value
 	current.reactivity = %Reactivity.value
 	current.durability = %Durability.value
+	current.power = %Power.value
+	current.explosive = %Explosive.button_pressed
+	current.alive = %Alive.button_pressed
+	current.toxic = %Toxic.button_pressed
+	current.evaporable = %Evaporable.button_pressed

@@ -246,6 +246,7 @@ icon_alignment = 1
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxEmpty_hcor6")
+scroll_vertical = 100
 
 [node name="VBoxContainer" type="VBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer"]
 layout_mode = 2
@@ -370,7 +371,7 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 focus_mode = 0
-item_count = 4
+item_count = 5
 selected = 1
 popup/item_0/text = "powder"
 popup/item_0/id = 0
@@ -380,6 +381,8 @@ popup/item_2/text = "liquid"
 popup/item_2/id = 2
 popup/item_3/text = "gas"
 popup/item_3/id = 3
+popup/item_4/text = "laser"
+popup/item_4/id = 4
 
 [node name="DensityGrouping" type="HBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
 unique_name_in_owner = true
@@ -413,6 +416,28 @@ size_flags_horizontal = 3
 text = "viscosity"
 
 [node name="Viscosity" type="HSlider" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/ViscosityGrouping"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_styles/slider = SubResource("StyleBoxFlat_70ulr")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_o5yxv")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_5uj0p")
+max_value = 1.0
+step = 0.01
+value = 0.5
+tick_count = 4
+
+[node name="PowerGrouping" type="HBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Label" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/PowerGrouping"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "power"
+
+[node name="Power" type="HSlider" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/PowerGrouping"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
@@ -532,6 +557,62 @@ max_value = 1.0
 step = 0.01
 value = 0.25
 tick_count = 4
+
+[node name="ExplosiveGrouping" type="HBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Label" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/ExplosiveGrouping"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "explosive"
+
+[node name="Explosive" type="CheckButton" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/ExplosiveGrouping"]
+unique_name_in_owner = true
+layout_mode = 2
+flat = true
+
+[node name="EvaporableGrouping" type="HBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Label" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/EvaporableGrouping"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "evaporable"
+
+[node name="Evaporable" type="CheckButton" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/EvaporableGrouping"]
+unique_name_in_owner = true
+layout_mode = 2
+flat = true
+
+[node name="AliveGrouping" type="HBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Label" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/AliveGrouping"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "alive"
+
+[node name="Alive" type="CheckButton" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/AliveGrouping"]
+unique_name_in_owner = true
+layout_mode = 2
+flat = true
+
+[node name="PoisonousGrouping" type="HBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Label" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/PoisonousGrouping"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "poisonous"
+
+[node name="Toxic" type="CheckButton" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/PoisonousGrouping"]
+unique_name_in_owner = true
+layout_mode = 2
+flat = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 speed_scale = 2.0

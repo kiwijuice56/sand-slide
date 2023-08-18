@@ -503,6 +503,11 @@ void SandSimulation::initialize_custom_elements(Dictionary dict) {
         f.flammability = float(arr[5]);
         f.reactivity = float(arr[6]);
         f.durability = float(arr[7]);
+        f.power = float(arr[8]);
+        f.explosive = bool(arr[9]);
+        f.evaporable = bool(arr[10]);
+        f.alive = bool(arr[11]);
+        f.toxic = bool(arr[12]);
 
         custom_elements[id] = f;
     }
