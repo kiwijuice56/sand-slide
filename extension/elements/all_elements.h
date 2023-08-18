@@ -135,6 +135,7 @@
 #include "elements/life/turtle.h"
 #include "elements/build/invisirock.h"
 #include "elements/life/metal_slime.h"
+#include "elements/custom_element.h"
 
 class AllElements {
 public:
@@ -144,7 +145,7 @@ public:
         // is called for each element type
 
         // The order in the vector is arbitrary, but it must match the list order in main.gd
-        elements->resize(2048);
+        elements->resize(4097);
         elements->at(0) = new Void();
         elements->at(1) = new Sand();
         elements->at(2) = new Rock();
@@ -278,6 +279,11 @@ public:
         elements->at(130) = new Turtle(); 
         elements->at(131) = new Invisirock(); 
         elements->at(132) = new MetalSlime(); 
+
+
+        for (int i = 2048; i <= 4096; i++) {
+            elements->at(i) = new CustomElementParticle(); 
+        }  
     }
 };
 

@@ -97,7 +97,7 @@ func _ready() -> void:
 	
 	await get_tree().get_root().ready
 	
-	initialize_base_element_graphics()
+	initialize_custom_elements()
 	set_background_color(Settings.bg_color)
 
 func create_new_element() -> void:
@@ -131,20 +131,37 @@ func create_new_element() -> void:
 	custom_element_map[id] = new_element
 	Settings.custom_element_ordering.append(id)
 	Settings.save_settings()
+	initialize_custom_elements()
 	save_elements()
 
 func save_elements() -> void:
 	for element in custom_element_map.values():
 		ResourceSaver.save(element, "user://" + str(element.id) + element.display_name + ".tres")
 
-func initialize_base_element_graphics() -> void:
+func initialize_custom_elements() -> void:
+	var pass_dict: Dictionary = {}
+	for element in custom_element_map.values():
+		var custom_element: CustomElement = element
+		pass_dict[custom_element.id] = []
+		pass_dict[custom_element.id].append(custom_element.state)
+		pass_dict[custom_element.id].append(custom_element.density)
+		pass_dict[custom_element.id].append(custom_element.viscosity)
+		pass_dict[custom_element.id].append(custom_element.conductivity)
+		pass_dict[custom_element.id].append(custom_element.temperature)
+		pass_dict[custom_element.id].append(custom_element.flammability)
+		pass_dict[custom_element.id].append(custom_element.reactivity)
+		pass_dict[custom_element.id].append(custom_element.durability)
+		
+	CommonReference.main.sim.initialize_custom_elements(pass_dict)
+	initialize_element_graphics()
+
+func initialize_element_graphics() -> void:
 	var flat_color: Dictionary = {}
 	for mat in element_materials:
 		if not mat is FlatColor:
 			continue
 		flat_color[mat.id] = mat.color.to_rgba32()
 	CommonReference.main.sim.initialize_flat_color(flat_color)
-	
 	var gradient_color: Dictionary = {}
 	for mat in element_materials:
 		if not mat is GradientColor:
@@ -170,6 +187,12 @@ func initialize_base_element_graphics() -> void:
 			mat.color_b.to_rgba32(),
 			mat.color_c.to_rgba32(),
 		]
+	for element in custom_element_map.values():
+		fluid_color[element.id] = [
+			element.color_a.to_rgba32(),
+			element.color_b.to_rgba32(),
+			element.color_c.to_rgba32(),
+		]
 	CommonReference.main.sim.initialize_fluid_color(fluid_color)
 	var metal_color: Dictionary = {}
 	for mat in element_materials:
@@ -183,5 +206,5 @@ func initialize_base_element_graphics() -> void:
 
 func set_background_color(color: Color) -> void:
 	element_map[0].color = color
-	initialize_base_element_graphics()
+	initialize_element_graphics()
 	CommonReference.canvas.repaint()

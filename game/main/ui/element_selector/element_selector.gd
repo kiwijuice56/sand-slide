@@ -17,12 +17,10 @@ var gem_idx: int = 0
 var algae_idx: int = 0
 
 func _ready() -> void:
-	eraser_button.button_down.connect(_on_eraser_selected)
-	tap_button.pressed.connect(_on_tap_selected)
+	initialize_buttons()
 	for button in $Basic/Basic.get_children():
-		if not button is Button:
+		if not button is ElementButton:
 			continue
-		button.button_down.connect(_on_element_selected.bind(button))
 		# This is a remnant of a past decision to round the corners of some buttons
 		# It would be a lot of work to reset it on ALL of the button styles, so 
 		# for now it is OK to set it in the script
@@ -33,7 +31,6 @@ func _ready() -> void:
 				button.get("theme_override_styles/" + style).corner_radius_top_right = 0
 				button.get("theme_override_styles/" + style).corner_radius_bottom_right = 0
 	
-	%CreateNewButton.button_down.connect(_on_new_element_created)
 	
 	await get_tree().get_root().ready
 	
@@ -42,6 +39,19 @@ func _ready() -> void:
 func _on_new_element_created() -> void:
 	CommonReference.element_manager.create_new_element()
 	update_custom_elements()
+
+func initialize_buttons() -> void:
+	if not eraser_button.button_down.is_connected(_on_eraser_selected):
+		eraser_button.button_down.connect(_on_eraser_selected)
+	if not tap_button.button_down.is_connected(_on_tap_selected):
+		tap_button.button_down.connect(_on_tap_selected)
+	if not %CreateNewButton.button_down.is_connected(_on_new_element_created):
+		%CreateNewButton.button_down.connect(_on_new_element_created)
+	for button in $Basic/Basic.get_children() + %Custom.get_children():
+		if not button is ElementButton:
+			continue
+		if not button.button_down.is_connected(_on_element_selected):
+			button.button_down.connect(_on_element_selected.bind(button))
 
 func update_custom_elements() -> void:
 	for child in %Custom.get_children():
@@ -58,6 +68,7 @@ func update_custom_elements() -> void:
 	for i in range(10 - %Custom.get_child_count()):
 		var label: Label = PLACEHOLDER_LABEL.instantiate()
 		%Custom.add_child(label)
+	initialize_buttons()
 
 func _on_element_selected(button: ElementButton) -> void:
 	tap_button.button_pressed = false

@@ -9,6 +9,9 @@ class SandSimulation;
 
 class Element {
 public:
+    SandSimulation *my_sim;
+    int custom_id = 0;
+
     virtual void process(SandSimulation *sim, int row, int col) = 0;
     
     // Needs to be a method as other elements may need this property for calculations

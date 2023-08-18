@@ -23,6 +23,10 @@ inline T fast_cos(T x) noexcept {
 
 SandSimulation::SandSimulation() {
     AllElements::fill_elements(&elements);
+    for (int i = 2048; i <= 4096; i++) {
+        elements[i]->my_sim = this;
+        elements[i]->custom_id = i;
+    }  
 
     draw_data = PackedByteArray();
     draw_data.resize(width * height * 3);
@@ -117,6 +121,7 @@ void SandSimulation::liquid_process(int row, int col, int fluidity) {
 // Returns the amount of cells of `type` surrounding the given cell
 int SandSimulation::touch_count(int row, int col, int type) {
     int touches = 0;
+
     for (int y = -1; y <= 1; y++) {
         for (int x = -1; x <= 1; x++) {
             if (x == 0 && y == 0 || !in_bounds(row + y, col + x)) 
@@ -132,6 +137,7 @@ int SandSimulation::touch_count(int row, int col, int type) {
 // immediate four closest cells
 int SandSimulation::cardinal_touch_count(int row, int col, int type) {
     int touches = 0;
+
     if (in_bounds(row - 1, col) && get_cell(row - 1, col) == type)
         touches++;
     if (in_bounds(row + 1, col) && get_cell(row + 1, col) == type)
@@ -154,6 +160,7 @@ bool SandSimulation::is_poisoned(int row, int col) {
             if (x == 0 && y == 0 || !in_bounds(row + y, col + x)) 
                 continue;
             int c = get_cell(row + y, col + x);
+            
             if (elements[get_cell(row + y, col + x)]->get_toxicity() == 1) 
                 return true;
         }
@@ -228,7 +235,6 @@ void SandSimulation::draw_cell(int row, int col, int type) {
     set_cell(row, col, type);
     visited[row * width + col] = false;
 }
-
 
 int SandSimulation::get_chunk(int c) {
     return chunks[c];
@@ -477,6 +483,31 @@ PackedByteArray SandSimulation::get_color_image(bool flat_mode) {
     return draw_data;
 }
 
+void SandSimulation::initialize_custom_elements(Dictionary dict) {
+    custom_elements.clear();
+    custom_elements.resize(4097);
+    
+    Array ids = dict.keys();
+    for (int i = 0; i < dict.size(); i++) {
+        int id = ids[i];
+        CustomElement f;
+        f.init = true;
+
+        Array arr = dict[id];
+
+        f.state = int(arr[0]);
+        f.density = float(arr[1]);
+        f.viscosity = float(arr[2]);
+        f.conductivity = float(arr[3]);
+        f.temperature = float(arr[4]);
+        f.flammability = float(arr[5]);
+        f.reactivity = float(arr[6]);
+        f.durability = float(arr[7]);
+
+        custom_elements[id] = f;
+    }
+}
+
 void SandSimulation::_bind_methods() {
     ClassDB::bind_method(D_METHOD("step"), &SandSimulation::step);
     ClassDB::bind_method(D_METHOD("in_bounds"), &SandSimulation::in_bounds);
@@ -489,6 +520,8 @@ void SandSimulation::_bind_methods() {
     ClassDB::bind_method(D_METHOD("resize"), &SandSimulation::resize);
     ClassDB::bind_method(D_METHOD("set_chunk_size"), &SandSimulation::set_chunk_size);
     ClassDB::bind_method(D_METHOD("get_color_image"), &SandSimulation::get_color_image);
+
+    ClassDB::bind_method(D_METHOD("initialize_custom_elements"), &SandSimulation::initialize_custom_elements);
 
     ClassDB::bind_method(D_METHOD("initialize_flat_color"), &SandSimulation::initialize_flat_color);
     ClassDB::bind_method(D_METHOD("initialize_gradient_color"), &SandSimulation::initialize_gradient_color);

@@ -24,6 +24,23 @@ struct Flat {
     bool init = false;
 };
 
+struct CustomElement {
+    uint32_t color_a;
+    uint32_t color_b;
+    uint32_t color_c;
+    
+    int state;
+    float density;
+    float viscosity;
+    float conductivity;
+    float temperature;
+    float flammability;
+    float reactivity;
+    float durability;
+
+    bool init = false;
+};
+
 // Contains grid cells and methods to process them
 
 class SandSimulation : public RefCounted {
@@ -60,6 +77,9 @@ class SandSimulation : public RefCounted {
     std::vector<Gradient> gradient_color;
     std::vector<Gradient> metal_color;
     std::vector<Gradient> fluid_color;
+
+    std::vector<CustomElement> custom_elements;
+    int current_id;
 
     long double time = 0;
 
@@ -99,6 +119,8 @@ public:
     void resize(int new_width, int new_height);
     void set_chunk_size(int new_size);
     PackedByteArray get_data();
+
+    void initialize_custom_elements(Dictionary dict);
 
     // Graphics methods
 

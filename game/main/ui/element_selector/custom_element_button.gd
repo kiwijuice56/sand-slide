@@ -1,10 +1,11 @@
 class_name CustomElementButton
-extends Button
+extends ElementButton
 
 var custom_element: CustomElement 
 
 func initialize(element: CustomElement) -> void:
 	custom_element = element
+	id = element.id
 	
 	text = element.display_name
 	

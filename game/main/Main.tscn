@@ -218,8 +218,6 @@ layout_mode = 1
 layout_mode = 1
 
 [node name="ElementEditorMenu" parent="UI" instance=ExtResource("17_tcj48")]
-visible = false
-modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 
 [node name="SaveFileManager" type="Node" parent="."]
