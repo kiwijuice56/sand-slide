@@ -43,6 +43,9 @@ struct CustomElement {
     bool evaporable;
     bool alive;
     bool toxic;
+    bool attractive;
+    bool infectious;
+    bool soluble;
 
     bool init = false;
 };

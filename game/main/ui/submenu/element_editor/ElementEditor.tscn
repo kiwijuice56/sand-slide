@@ -253,6 +253,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_e160y")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="SettingsContainer/PanelContainer"]
 layout_mode = 2
+theme_override_constants/separation = 8
 
 [node name="HBoxContainer" type="HBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer"]
 layout_mode = 2
@@ -279,7 +280,6 @@ icon_alignment = 1
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxEmpty_hcor6")
-scroll_vertical = 387
 vertical_scroll_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer"]
@@ -739,16 +739,31 @@ size_flags_horizontal = 10
 theme_override_font_sizes/font_size = 12
 text = "sturdy"
 
-[node name="ExplosiveGrouping" type="HBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="AliveGrouping" type="HBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="Label" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/ExplosiveGrouping"]
+[node name="Label" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/AliveGrouping"]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "explosive"
+text = "alive"
 
-[node name="Explosive" type="CheckButton" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/ExplosiveGrouping"]
+[node name="Alive" type="CheckButton" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/AliveGrouping"]
+unique_name_in_owner = true
+layout_mode = 2
+focus_mode = 0
+flat = true
+
+[node name="AttractiveGrouping" type="HBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Label" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/AttractiveGrouping"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "attractive"
+
+[node name="Attractive" type="CheckButton" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/AttractiveGrouping"]
 unique_name_in_owner = true
 layout_mode = 2
 focus_mode = 0
@@ -769,16 +784,31 @@ layout_mode = 2
 focus_mode = 0
 flat = true
 
-[node name="AliveGrouping" type="HBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="ExplosiveGrouping" type="HBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="Label" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/AliveGrouping"]
+[node name="Label" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/ExplosiveGrouping"]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "alive"
+text = "explosive"
 
-[node name="Alive" type="CheckButton" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/AliveGrouping"]
+[node name="Explosive" type="CheckButton" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/ExplosiveGrouping"]
+unique_name_in_owner = true
+layout_mode = 2
+focus_mode = 0
+flat = true
+
+[node name="InfectiousGrouping" type="HBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Label" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/InfectiousGrouping"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "infectious"
+
+[node name="Infectious" type="CheckButton" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/InfectiousGrouping"]
 unique_name_in_owner = true
 layout_mode = 2
 focus_mode = 0
@@ -794,6 +824,21 @@ size_flags_horizontal = 3
 text = "poisonous"
 
 [node name="Toxic" type="CheckButton" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/PoisonousGrouping"]
+unique_name_in_owner = true
+layout_mode = 2
+focus_mode = 0
+flat = true
+
+[node name="SolubleGrouping" type="HBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Label" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/SolubleGrouping"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "soluble"
+
+[node name="Soluble" type="CheckButton" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/SolubleGrouping"]
 unique_name_in_owner = true
 layout_mode = 2
 focus_mode = 0

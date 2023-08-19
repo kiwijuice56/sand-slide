@@ -23,3 +23,6 @@ extends Resource
 @export var evaporable: bool = false
 @export var alive: bool = false
 @export var toxic: bool = false
+@export var attractive: bool = false
+@export var infectious: bool = false
+@export var soluble: bool = false

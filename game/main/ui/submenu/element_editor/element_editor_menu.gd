@@ -74,6 +74,9 @@ func initialize() -> void:
 	%Alive.button_pressed = current.alive
 	%Toxic.button_pressed = current.toxic
 	%Evaporable.button_pressed = current.evaporable
+	%Attractive.button_pressed = current.attractive
+	%Soluble.button_pressed = current.soluble
+	%Infectious.button_pressed = current.infectious
 	
 	_on_state_selected(%State.selected)
 	_on_style_selected(%Style.selected)
@@ -101,3 +104,6 @@ func save_changes() -> void:
 	current.alive = %Alive.button_pressed
 	current.toxic = %Toxic.button_pressed
 	current.evaporable = %Evaporable.button_pressed
+	current.attractive = %Attractive.button_pressed 
+	current.soluble = %Soluble.button_pressed 
+	current.infectious = %Infectious.button_pressed 

@@ -25,6 +25,18 @@ func _ready() -> void:
 	%CheckButton.set_pressed_no_signal(Settings.flat_mode)
 	%FpsButton.set_pressed_no_signal(Settings.fps)
 	%BackgroundPicker.color = Settings.bg_color
+	
+	%BackgroundPicker.child_entered_tree.connect(_on_picker_created)
+
+func _on_picker_created(child: Node) -> void:
+	var color_picker: ColorPicker = child.get_child(1, true)
+	color_picker.get_child(4, true).get_child(1, true).get_child(2, true).virtual_keyboard_enabled = false
+	color_picker.sampler_visible = false
+	color_picker.color_modes_visible = false
+	color_picker.sliders_visible = false
+	color_picker.hex_visible = false
+	color_picker.presets_visible = false
+	DisplayServer.virtual_keyboard_hide()
 
 func _on_size_changed(new_brush_size: int) -> void:
 	Settings.brush_size = new_brush_size

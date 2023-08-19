@@ -12,6 +12,47 @@ public:
     const double GROWTH = 1.0 / 512;
 
     void process(SandSimulation *sim, int row, int col) override {
+        float reactivity = my_sim->custom_elements[custom_id].reactivity;
+
+        // attractive
+        if (my_sim->custom_elements[custom_id].attractive) {
+            // If no space around it, it's in the interior
+            if (sim->touch_count(row, col, custom_id) >= 6) { 
+                return;
+            }
+
+            // Keep moving particles closer 
+            for (int y = row - 8; y <= row + 8; y++) {
+                for (int x = col - 8; x <= col + 8; x++) {
+                    if (sim->randf() >= reactivity * reactivity || !sim->in_bounds(y, x) || sim->get_cell(y, x) == custom_id) 
+                        continue;
+                    
+                    int dirRow = row - y < 0 ? -1 : 1;
+                    int dirCol = col - x < 0 ? -1 : 1;
+                    if (row == y) dirRow = 0;
+                    if (col == x) dirCol = 0;
+                    sim->move_and_swap(y, x, y + dirRow, x + dirCol);
+                }
+            }
+        }
+
+        // infectious
+        if (my_sim->custom_elements[custom_id].infectious && sim->randf() < reactivity * reactivity * reactivity) {
+            for (int i = -1; i <= 1; i++) {
+                for (int j = -1; j <= 1; j++) {
+                    if (sim->in_bounds(row + i, col + j) && sim->get_cell(row + i, col + j) != 0) {
+                        sim->set_cell(row + i, col + j, custom_id);
+                    }
+                }
+            }
+        }
+
+        // soluble
+        if (my_sim->custom_elements[custom_id].soluble && sim->randf() < reactivity * reactivity * reactivity && sim->touch_count(row, col, 3) > 0) {
+            sim->set_cell(row, col, 3);
+            return;
+        }
+
         // electricity
         float conductivity = my_sim->custom_elements[custom_id].conductivity;
         if (sim->randf() < (conductivity * conductivity) && (sim->cardinal_touch_count(row, col, 38) > 0 || sim->cardinal_touch_count(row, col, 40) > 0 || sim->cardinal_touch_count(row, col, 115) > 0)) {
@@ -24,7 +65,7 @@ public:
 
         // fires
         float flammability = my_sim->custom_elements[custom_id].flammability;
-        if (sim->randf() < (flammability * flammability * flammability) && sim->is_on_fire(row, col)) {
+        if (flammability > 0.2 && sim->randf() < (flammability * flammability * flammability) && sim->is_on_fire(row, col)) {
             sim->set_cell(row, col, 5);
             return;
         }
@@ -106,7 +147,7 @@ public:
     }
 
     double get_density() override {
-        return 256 * my_sim->custom_elements[custom_id].density;
+        return 128 * my_sim->custom_elements[custom_id].density;
     }
 
     double get_explode_resistance() override {
