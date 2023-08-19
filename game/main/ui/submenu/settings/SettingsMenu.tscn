@@ -282,7 +282,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 1
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 12
-text = "Small"
+text = "small"
 vertical_alignment = 1
 
 [node name="Right" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/SizeContainer/VBoxContainer/HBoxContainer"]
@@ -291,7 +291,7 @@ size_flags_horizontal = 10
 size_flags_vertical = 1
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 12
-text = "Large"
+text = "large"
 vertical_alignment = 1
 
 [node name="SpeedContainer" type="HBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
@@ -334,7 +334,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 1
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 12
-text = "Slow"
+text = "slow"
 vertical_alignment = 1
 
 [node name="Right" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/SpeedContainer/VBoxContainer/HBoxContainer"]
@@ -343,7 +343,7 @@ size_flags_horizontal = 10
 size_flags_vertical = 1
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 12
-text = "Fast"
+text = "fast"
 vertical_alignment = 1
 
 [node name="ZoomContainer" type="HBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
@@ -387,7 +387,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 1
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 12
-text = "Out"
+text = "out"
 vertical_alignment = 1
 
 [node name="Right" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/ZoomContainer/VBoxContainer/HBoxContainer"]
@@ -396,7 +396,7 @@ size_flags_horizontal = 10
 size_flags_vertical = 1
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 12
-text = "  In"
+text = "in"
 vertical_alignment = 1
 
 [node name="CheckContainer" type="HBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer"]

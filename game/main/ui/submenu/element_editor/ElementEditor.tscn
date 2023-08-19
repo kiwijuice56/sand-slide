@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://bqwqmevgndrm0"]
+[gd_scene load_steps=23 format=3 uid="uid://bqwqmevgndrm0"]
 
 [ext_resource type="Theme" uid="uid://co20v1mxv2dfm" path="res://main/ui/_theme/theme.tres" id="1_gu8tf"]
 [ext_resource type="Script" path="res://main/ui/submenu/element_editor/element_editor_menu.gd" id="2_ae0hb"]
@@ -55,6 +55,39 @@ corner_radius_bottom_left = 4
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_37g2l"]
 content_margin_left = 3.0
 bg_color = Color(0.247059, 0.247059, 0.301961, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cu37i"]
+content_margin_left = 4.0
+content_margin_top = 2.0
+content_margin_right = 0.0
+content_margin_bottom = 2.0
+bg_color = Color(0.313726, 0.313726, 0.360784, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y3pxx"]
+content_margin_left = 4.0
+content_margin_top = 2.0
+content_margin_right = 0.0
+content_margin_bottom = 2.0
+bg_color = Color(0.454902, 0.462745, 0.501961, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hm12v"]
+content_margin_left = 4.0
+content_margin_top = 2.0
+content_margin_right = 0.0
+content_margin_bottom = 2.0
+bg_color = Color(0.223529, 0.215686, 0.278431, 1)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
@@ -246,6 +279,7 @@ icon_alignment = 1
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxEmpty_hcor6")
+scroll_vertical = 387
 vertical_scroll_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer"]
@@ -292,90 +326,66 @@ layout_mode = 2
 size_flags_horizontal = 3
 focus_mode = 0
 theme_override_constants/outline_size = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_cu37i")
+theme_override_styles/hover = SubResource("StyleBoxFlat_y3pxx")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hm12v")
 item_count = 2
 selected = 0
-popup/item_0/text = "single color"
+popup/item_0/text = "flat color"
 popup/item_0/id = 0
 popup/item_1/text = "fancy color"
 popup/item_1/id = 1
 
-[node name="FlatColorGrouping" type="VBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="FlatColorGrouping" type="HBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 
 [node name="Label" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/FlatColorGrouping"]
 layout_mode = 2
-size_flags_horizontal = 4
+size_flags_horizontal = 3
 text = "base color"
 
-[node name="ColorA" type="ColorPicker" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/FlatColorGrouping"]
+[node name="ColorA" type="ColorPickerButton" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/FlatColorGrouping" groups=["color_picker"]]
 unique_name_in_owner = true
 layout_mode = 2
-mouse_filter = 0
-theme_override_constants/sv_width = 0
-theme_override_constants/sv_height = 175
+size_flags_horizontal = 3
+focus_mode = 0
 edit_alpha = false
-color_mode = 1
-deferred_mode = true
-can_add_swatches = false
-sampler_visible = false
-color_modes_visible = false
-sliders_visible = false
-hex_visible = false
-presets_visible = false
 
 [node name="FancyColorGrouping" type="VBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_constants/separation = 8
 
-[node name="BaseColor2" type="VBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/FancyColorGrouping"]
+[node name="BaseColor2" type="HBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/FancyColorGrouping"]
 layout_mode = 2
 
 [node name="Label" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/FancyColorGrouping/BaseColor2"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "base color 2"
-horizontal_alignment = 1
 
-[node name="ColorB" type="ColorPicker" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/FancyColorGrouping/BaseColor2"]
+[node name="ColorB" type="ColorPickerButton" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/FancyColorGrouping/BaseColor2" groups=["color_picker"]]
 unique_name_in_owner = true
 layout_mode = 2
-mouse_filter = 0
-theme_override_constants/sv_height = 175
+size_flags_horizontal = 3
+focus_mode = 0
 edit_alpha = false
-color_mode = 1
-deferred_mode = true
-can_add_swatches = false
-sampler_visible = false
-color_modes_visible = false
-sliders_visible = false
-hex_visible = false
-presets_visible = false
 
-[node name="OutlineColor" type="VBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/FancyColorGrouping"]
+[node name="OutlineColor" type="HBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/FancyColorGrouping"]
 layout_mode = 2
 
 [node name="Label" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/FancyColorGrouping/OutlineColor"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "outline color"
-horizontal_alignment = 1
 
-[node name="ColorC" type="ColorPicker" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/FancyColorGrouping/OutlineColor"]
+[node name="ColorC" type="ColorPickerButton" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/FancyColorGrouping/OutlineColor" groups=["color_picker"]]
 unique_name_in_owner = true
 layout_mode = 2
-mouse_filter = 0
-theme_override_constants/sv_height = 175
+size_flags_horizontal = 3
+focus_mode = 0
 edit_alpha = false
-color_mode = 1
-deferred_mode = true
-can_add_swatches = false
-sampler_visible = false
-color_modes_visible = false
-sliders_visible = false
-hex_visible = false
-presets_visible = false
 
 [node name="BehaviorLabel" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
@@ -395,6 +405,9 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 focus_mode = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_cu37i")
+theme_override_styles/hover = SubResource("StyleBoxFlat_y3pxx")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hm12v")
 item_count = 5
 selected = 1
 popup/item_0/text = "powder"
@@ -417,7 +430,11 @@ layout_mode = 2
 size_flags_horizontal = 3
 text = "density"
 
-[node name="Density" type="HSlider" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/DensityGrouping"]
+[node name="VBoxContainer" type="VBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/DensityGrouping"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Density" type="HSlider" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/DensityGrouping/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
@@ -429,6 +446,20 @@ max_value = 1.0
 step = 0.01
 value = 0.5
 tick_count = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/DensityGrouping/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/DensityGrouping/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "light"
+
+[node name="Label2" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/DensityGrouping/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_font_sizes/font_size = 12
+text = "dense"
 
 [node name="ViscosityGrouping" type="HBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
 unique_name_in_owner = true
@@ -439,7 +470,11 @@ layout_mode = 2
 size_flags_horizontal = 3
 text = "viscosity"
 
-[node name="Viscosity" type="HSlider" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/ViscosityGrouping"]
+[node name="VBoxContainer" type="VBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/ViscosityGrouping"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Viscosity" type="HSlider" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/ViscosityGrouping/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
@@ -451,6 +486,20 @@ max_value = 1.0
 step = 0.01
 value = 0.5
 tick_count = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/ViscosityGrouping/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/ViscosityGrouping/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "fluid"
+
+[node name="Label2" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/ViscosityGrouping/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_font_sizes/font_size = 12
+text = "thick"
 
 [node name="PowerGrouping" type="HBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
 unique_name_in_owner = true
@@ -461,7 +510,11 @@ layout_mode = 2
 size_flags_horizontal = 3
 text = "power"
 
-[node name="Power" type="HSlider" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/PowerGrouping"]
+[node name="VBoxContainer" type="VBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/PowerGrouping"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Power" type="HSlider" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/PowerGrouping/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
@@ -473,6 +526,20 @@ max_value = 1.0
 step = 0.01
 value = 0.5
 tick_count = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/PowerGrouping/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/PowerGrouping/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "weak"
+
+[node name="Label2" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/PowerGrouping/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_font_sizes/font_size = 12
+text = "strong"
 
 [node name="ConductivityGrouping" type="HBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
 unique_name_in_owner = true
@@ -483,7 +550,11 @@ layout_mode = 2
 size_flags_horizontal = 3
 text = "conductivity"
 
-[node name="Conductivity" type="HSlider" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/ConductivityGrouping"]
+[node name="VBoxContainer2" type="VBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/ConductivityGrouping"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Conductivity" type="HSlider" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/ConductivityGrouping/VBoxContainer2"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
@@ -494,6 +565,20 @@ theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_5uj0p")
 max_value = 1.0
 step = 0.01
 tick_count = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/ConductivityGrouping/VBoxContainer2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/ConductivityGrouping/VBoxContainer2/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "insulator"
+
+[node name="Label2" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/ConductivityGrouping/VBoxContainer2/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_font_sizes/font_size = 12
+text = "conductor"
 
 [node name="TemperatureGrouping" type="HBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
 unique_name_in_owner = true
@@ -504,7 +589,11 @@ layout_mode = 2
 size_flags_horizontal = 3
 text = "temperature"
 
-[node name="Temperature" type="HSlider" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/TemperatureGrouping"]
+[node name="VBoxContainer3" type="VBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/TemperatureGrouping"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Temperature" type="HSlider" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/TemperatureGrouping/VBoxContainer3"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
@@ -515,7 +604,21 @@ theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_5uj0p")
 max_value = 1.0
 step = 0.01
 value = 0.5
-tick_count = 3
+tick_count = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/TemperatureGrouping/VBoxContainer3"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/TemperatureGrouping/VBoxContainer3/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "cold"
+
+[node name="Label2" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/TemperatureGrouping/VBoxContainer3/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_font_sizes/font_size = 12
+text = "hot"
 
 [node name="FlammabilityGrouping" type="HBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
 unique_name_in_owner = true
@@ -526,7 +629,11 @@ layout_mode = 2
 size_flags_horizontal = 3
 text = "flammability"
 
-[node name="Flammability" type="HSlider" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/FlammabilityGrouping"]
+[node name="VBoxContainer4" type="VBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/FlammabilityGrouping"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Flammability" type="HSlider" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/FlammabilityGrouping/VBoxContainer4"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
@@ -538,6 +645,20 @@ max_value = 1.0
 step = 0.01
 tick_count = 4
 
+[node name="HBoxContainer" type="HBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/FlammabilityGrouping/VBoxContainer4"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/FlammabilityGrouping/VBoxContainer4/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "stable"
+
+[node name="Label2" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/FlammabilityGrouping/VBoxContainer4/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_font_sizes/font_size = 12
+text = "volatile"
+
 [node name="ReactivityGrouping" type="HBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
@@ -547,7 +668,11 @@ layout_mode = 2
 size_flags_horizontal = 3
 text = "reactivity"
 
-[node name="Reactivity" type="HSlider" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/ReactivityGrouping"]
+[node name="VBoxContainer5" type="VBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/ReactivityGrouping"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Reactivity" type="HSlider" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/ReactivityGrouping/VBoxContainer5"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
@@ -560,6 +685,20 @@ step = 0.01
 value = 0.75
 tick_count = 4
 
+[node name="HBoxContainer" type="HBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/ReactivityGrouping/VBoxContainer5"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/ReactivityGrouping/VBoxContainer5/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "inert"
+
+[node name="Label2" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/ReactivityGrouping/VBoxContainer5/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_font_sizes/font_size = 12
+text = "reactive"
+
 [node name="DurabilityGrouping" type="HBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
@@ -569,7 +708,11 @@ layout_mode = 2
 size_flags_horizontal = 3
 text = "durability"
 
-[node name="Durability" type="HSlider" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/DurabilityGrouping"]
+[node name="VBoxContainer6" type="VBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/DurabilityGrouping"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Durability" type="HSlider" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/DurabilityGrouping/VBoxContainer6"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
@@ -581,6 +724,20 @@ max_value = 1.0
 step = 0.01
 value = 0.25
 tick_count = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/DurabilityGrouping/VBoxContainer6"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/DurabilityGrouping/VBoxContainer6/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "fragile"
+
+[node name="Label2" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/DurabilityGrouping/VBoxContainer6/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_font_sizes/font_size = 12
+text = "sturdy"
 
 [node name="ExplosiveGrouping" type="HBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
 unique_name_in_owner = true

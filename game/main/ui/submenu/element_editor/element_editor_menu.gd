@@ -11,6 +11,21 @@ func _ready() -> void:
 	%Style.item_selected.connect(_on_style_selected)
 	%State.item_selected.connect(_on_state_selected)
 	%DeleteButton.pressed.connect(_on_element_deleted)
+	
+	%ColorA.child_entered_tree.connect(_on_picker_created)
+	%ColorB.child_entered_tree.connect(_on_picker_created)
+	%ColorC.child_entered_tree.connect(_on_picker_created)
+
+func _on_picker_created(child: Node) -> void:
+	
+	var color_picker: ColorPicker = child.get_child(1, true)
+	color_picker.get_child(4, true).get_child(1, true).get_child(2, true).virtual_keyboard_enabled = false
+	color_picker.sampler_visible = false
+	color_picker.color_modes_visible = false
+	color_picker.sliders_visible = false
+	color_picker.hex_visible = false
+	color_picker.presets_visible = false
+	DisplayServer.virtual_keyboard_hide()
 
 func _on_element_deleted() -> void:
 	var dir: DirAccess = DirAccess.open("user://")

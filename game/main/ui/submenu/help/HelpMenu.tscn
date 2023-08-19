@@ -194,7 +194,7 @@ horizontal_alignment = 1
 [node name="RichTextLabel" type="RichTextLabel" parent="HelpContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/WhatContainer"]
 layout_mode = 2
 theme_override_font_sizes/normal_font_size = 16
-text = "Sand Slide is an interactive particle game! Experiment with elements, express yourself, or just mess around. This is purely a passion project; No data is collected from users and there are no ads/purchases. You can find the source code on the github repository (https://github.com/kiwijuice56/sand-slide). Have fun!"
+text = "Sand Slide is an interactive, physics-based particle game! Experiment with elements, express yourself, or just mess around. This is purely a passion project; No data is collected from users and there are no ads/purchases. You can find the source code on the github repository (https://github.com/kiwijuice56/sand-slide). Have fun!"
 fit_content = true
 
 [node name="SaveContainer" type="VBoxContainer" parent="HelpContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
@@ -226,7 +226,7 @@ horizontal_alignment = 1
 [node name="RichTextLabel" type="RichTextLabel" parent="HelpContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/ElementContainer"]
 layout_mode = 2
 theme_override_font_sizes/normal_font_size = 16
-text = "In the custom elements tab, you can create your own elements! Pressing the \"create new\" button will generate a new, random element. Select that element and then press the edit/pencil icon to open the edit menu. Your elements are saved when you close the game. There are countless options, so mess around and learn what they do! "
+text = "In the custom elements tab, you can create your own elements! Pressing the \"create new\" button will generate a new, random element. Select that element and then press the pencil icon to open the edit menu. Your elements are saved when you close the game. There are countless options, so mess around and learn what they do! "
 fit_content = true
 
 [node name="AttributionContainer" type="VBoxContainer" parent="HelpContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
@@ -242,7 +242,7 @@ horizontal_alignment = 1
 [node name="RichTextLabel" type="RichTextLabel" parent="HelpContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/AttributionContainer"]
 layout_mode = 2
 theme_override_font_sizes/normal_font_size = 16
-text = "Many of the elements in sand slide are inspired by other falling sand games, including Sand:Box by SmellyMoo and Sandspiel by Max Bittker. Check these games out too! Game icons created by Icons8.
+text = "Many of the elements in Sand Slide are inspired by other falling sand games, including Sand:Box by SmellyMoo and Sandspiel by Max Bittker. Check these games out too! Game icons created by Icons8.
 
 "
 fit_content = true

@@ -118,7 +118,8 @@ public:
     }
 
     int get_state() override {
-        return my_sim->custom_elements[custom_id].state;
+        // only real difference is between solid and liquid... works fine :3
+        return (my_sim->custom_elements[custom_id].state <= 1 ? 0 : 1);
     }
 
     int get_temperature() override {

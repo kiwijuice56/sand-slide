@@ -63,7 +63,7 @@ func initialize_buttons() -> void:
 			last_button = button
 			bolden_button(button)
 	if not last_updated:
-		_on_eraser_selected()
+		CommonReference.painter.selected_element = 0
 
 func update_custom_elements() -> void:
 	for child in %Custom.get_children():
