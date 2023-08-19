@@ -63,6 +63,7 @@ func initialize_buttons() -> void:
 			last_button = button
 			bolden_button(button)
 	if not last_updated:
+		edit_button.visible = false
 		CommonReference.painter.selected_element = 0
 
 func update_custom_elements() -> void:
