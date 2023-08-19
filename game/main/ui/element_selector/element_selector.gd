@@ -78,7 +78,7 @@ func update_custom_elements() -> void:
 		%Custom.add_child(new_button)
 	# Fill up the space
 	%Custom.move_child(%Custom.get_node("CreateNewButton"), -1)
-	for i in range(10 - %Custom.get_child_count()):
+	for i in range(24 - %Custom.get_child_count()):
 		var label: Label = PLACEHOLDER_LABEL.instantiate()
 		%Custom.add_child(label)
 	initialize_buttons()

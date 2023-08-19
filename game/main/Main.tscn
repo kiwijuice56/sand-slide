@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://ggbp6fch244c"]
+[gd_scene load_steps=32 format=3 uid="uid://ggbp6fch244c"]
 
 [ext_resource type="Script" path="res://main/main.gd" id="1_2pidp"]
 [ext_resource type="Theme" uid="uid://co20v1mxv2dfm" path="res://main/ui/_theme/theme.tres" id="2_nb65v"]
@@ -23,6 +23,13 @@
 [ext_resource type="Script" path="res://main/ui/element_selector/element_button.gd" id="107_ic066"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rhx1h"]
+
+[sub_resource type="Environment" id="Environment_3kqod"]
+background_mode = 3
+background_canvas_max_layer = -1
+glow_enabled = true
+glow_strength = 1.25
+glow_bloom = 0.3
 
 [sub_resource type="ImageTexture" id="ImageTexture_y2are"]
 
@@ -111,11 +118,22 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxEmpty_rhx1h")
 
-[node name="Canvas" type="TextureRect" parent="UI/VSplitContainer/DrawingPanel"]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="UI/VSplitContainer/DrawingPanel"]
+environment = SubResource("Environment_3kqod")
+
+[node name="SizeCopy" type="TextureRect" parent="UI/VSplitContainer/DrawingPanel"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="UI/VSplitContainer/DrawingPanel"]
+layer = -1
+
+[node name="Canvas" type="TextureRect" parent="UI/VSplitContainer/DrawingPanel/CanvasLayer"]
 unique_name_in_owner = true
 texture_filter = 1
 custom_minimum_size = Vector2(0, 64)
-layout_mode = 2
+offset_right = 1152.0
+offset_bottom = 357.0
 size_flags_stretch_ratio = 2.0
 texture = SubResource("ImageTexture_y2are")
 expand_mode = 1
