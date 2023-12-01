@@ -136,6 +136,9 @@
 #include "elements/build/invisirock.h"
 #include "elements/life/metal_slime.h"
 #include "elements/custom_element.h"
+#include "elements/chemical/silver.h"
+#include "elements/chemical/molten_silver.h"
+#include "elements/chemical/lead.h"
 
 class AllElements {
 public:
@@ -279,7 +282,9 @@ public:
         elements->at(130) = new Turtle(); 
         elements->at(131) = new Invisirock(); 
         elements->at(132) = new MetalSlime(); 
-
+        elements->at(133) = new Silver(); 
+        elements->at(134) = new MoltenSilver(); 
+        elements->at(135) = new Lead(); 
 
         for (int i = 2048; i <= 4096; i++) {
             elements->at(i) = new CustomElementParticle(); 
