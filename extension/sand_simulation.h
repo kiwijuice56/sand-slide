@@ -55,6 +55,10 @@ struct CustomElement {
 class SandSimulation : public RefCounted {
     GDCLASS(SandSimulation, RefCounted);
 
+protected:
+    static void _bind_methods();
+
+public:
     unsigned int g_seed = 1234;
 
     // Screen dimensions
@@ -92,10 +96,6 @@ class SandSimulation : public RefCounted {
 
     long double time = 0;
 
-protected:
-    static void _bind_methods();
-
-public:
     SandSimulation();
     ~SandSimulation();
 
