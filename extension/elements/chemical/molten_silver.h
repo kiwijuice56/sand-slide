@@ -11,6 +11,7 @@ public:
     const double DOWN = 1.0 / 1.5;
     const double COOL = 1.0 / 128;
     const double REG_COOL = 1.0 / 1900;
+    const double EXPLODE = 1.0 / 2;
 
     void process(SandSimulation *sim, int row, int col) override {
         // Conductivity
@@ -22,6 +23,8 @@ public:
         if (sim->randf() < COOL && (sim->is_cold(row, col) || sim->touch_count(row, col, 0) > 0) || sim->randf() < REG_COOL) {
             sim->set_cell(row, col, 133);
             return;
+        } else if (sim->randf() < EXPLODE && sim->touch_count(row, col, 23) + sim->touch_count(row, col, 32) > 0) {
+            sim->set_cell(row, col, 9);
         }
 
         sim->liquid_process(row, col, 3); 

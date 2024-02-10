@@ -30,6 +30,8 @@ file_logging/enable_file_logging=true
 
 [display]
 
+window/size/viewport_width=400
+window/size/viewport_height=700
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 window/handheld/orientation=1
@@ -86,3 +88,4 @@ environment/ssao/quality=1
 environment/ssil/quality=1
 environment/glow/upscale_mode=0
 environment/defaults/default_clear_color=Color(0.454902, 0.462745, 0.501961, 1)
+viewport/hdr_2d=true

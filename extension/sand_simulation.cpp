@@ -78,6 +78,9 @@ void SandSimulation::step(int iterations) {
 void SandSimulation::move_and_swap(int row, int col, int row2, int col2) {
     if (!in_bounds(row, col) || !in_bounds(row2, col2)) 
         return;
+    if (get_cell(row, col) == 15 || get_cell(row2, col2) == 15) {
+        return;
+    }
     if (elements[get_cell(row2, col2)]->get_state() == 0)
         return;
     if (elements[get_cell(row, col)]->get_state() != 0)
@@ -93,6 +96,7 @@ void SandSimulation::move_and_swap(int row, int col, int row2, int col2) {
 void SandSimulation::grow(int row, int col, int food, int replacer) {
     if (!in_bounds(row, col)) 
         return;
+
     if (food == -1) {
         // Since only explosions/lasers grow into all cells, we run a check for explosion resistance
         if (randf() >= (1.0 - elements[get_cell(row, col)]->get_explode_resistance())) 
@@ -221,7 +225,11 @@ int SandSimulation::get_cell(int row, int col) {
     return cells[row * width + col];
 }
 
-void SandSimulation::set_cell(int row, int col, int type) {
+void SandSimulation::set_cell(int row, int col, int type) { 
+    if (get_cell(row, col) == 15 && type != 0) {
+        return;
+    }
+
     if (cells[row * width + col] == 0 && type != 0) 
         chunks[(row / chunk_size) * chunk_width + (col / chunk_size)]++;
     else if (cells[row * width + col] != 0 && type == 0) 

@@ -139,6 +139,7 @@
 #include "elements/chemical/silver.h"
 #include "elements/chemical/molten_silver.h"
 #include "elements/chemical/lead.h"
+#include "elements/chemical/base.h"
 
 class AllElements {
 public:
@@ -285,6 +286,7 @@ public:
         elements->at(133) = new Silver(); 
         elements->at(134) = new MoltenSilver(); 
         elements->at(135) = new Lead(); 
+        elements->at(136) = new Base(); 
 
         for (int i = 2048; i <= 4096; i++) {
             elements->at(i) = new CustomElementParticle(); 

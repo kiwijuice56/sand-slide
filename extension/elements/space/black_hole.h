@@ -17,7 +17,7 @@ public:
         // Absorb anything in immediate proximity if not a black hole
         for (int y = row - 1; y <= row + 1; y++) {
             for (int x = col - 1; x <= col + 1; x++) { 
-                if (sim->in_bounds(y, x) && sim->get_cell(y, x) != 29) { 
+                if (sim->in_bounds(y, x) && sim->get_cell(y, x) != 29 && sim->get_cell(y, x) != 15) { 
                     sim->set_cell(y, x, 0);
                 }
             }

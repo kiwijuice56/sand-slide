@@ -21,6 +21,9 @@ public:
                 int r = std::min(sim->get_height() - 1, (int) (sim->randf() * sim->get_height()));
                 if (!sim->in_bounds(r, c) || !sim->in_bounds(y, x) || sim->get_cell(y, x) == 0 || sim->get_cell(y, x) == 81 || sim->get_cell(r, c) == 81)
                     continue;
+                
+                if (sim->get_cell(r, c) == 15 || sim->get_cell(y, x) == 15)
+                    continue;
 
                 int temp = sim->get_cell(y, x);
                 sim->set_cell(y, x, sim->get_cell(r, c));
@@ -37,7 +40,7 @@ public:
         // Keep moving particles closer into the worm hole
         for (int y = row - 8; y <= row + 8; y++) {
             for (int x = col - 8; x <= col + 8; x++) {
-                if (sim->randf() >= GRAB || !sim->in_bounds(y, x) || sim->get_cell(y, x) == 81) 
+                if (sim->randf() >= GRAB || !sim->in_bounds(y, x) || sim->get_cell(y, x) == 81 || sim->get_cell(y, x) == 15) 
                     continue;
                 if (sim->get_cell(y, x) == 29)
                     sim->set_cell(y, x, 116);
@@ -46,7 +49,7 @@ public:
                 int dirCol = col - x < 0 ? -1 : 1;
                 if (row == y) dirRow = 0;
                 if (col == x) dirCol = 0;
-                if (!sim->in_bounds(y + dirRow, x + dirCol) || sim->get_cell(y + dirRow, x + dirCol) == 81)
+                if (!sim->in_bounds(y + dirRow, x + dirCol) || sim->get_cell(y + dirRow, x + dirCol) == 81 || sim->get_cell(y + dirRow, x + dirCol) == 15)
                     return;
                 int temp = sim->get_cell(y, x);
                 sim->set_cell(y, x, sim->get_cell(y + dirRow, x + dirCol));

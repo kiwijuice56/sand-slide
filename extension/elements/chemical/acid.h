@@ -9,10 +9,11 @@ public:
     const double DECAY = 1.0 / 2048;
     const double EVAPORATE = 1.0 / 64;
     const double EAT = 1.0 / 16;
-    const double MIX = 1.0 / 4;
     const double EMIT = 1.0 / 64;
     const double DOWN = 1.0 / 1.2;
     const double DOWN_BLOCK = 1.0 / 16;
+    const double MIX = 1.0 / 2;
+    const double REACT = 1.0 / 2;
 
     void process(SandSimulation *sim, int row, int col) override {
         // Decay
@@ -55,6 +56,15 @@ public:
 
         if (sim->randf() < EMIT) 
             sim->grow(row - 1, col, 0, 22);
+
+        if (sim->randf() < MIX && sim->touch_count(row, col, 136) > 0) {
+            sim->set_cell(row, col, 3);
+        }
+
+        if (sim->randf() < REACT && sim->touch_count(row, col, 17) + sim->touch_count(row, col, 51) + sim->touch_count(row, col, 133) + sim->touch_count(row, col, 135) + sim->touch_count(row, col, 45) + sim->touch_count(row, col, 35) > 0) {
+            sim->set_cell(row, col, 70);
+            sim->grow(row - 1, col, -1, 47);
+        }
     }
 
     double get_density() override {

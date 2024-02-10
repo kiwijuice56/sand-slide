@@ -21,6 +21,8 @@ public:
                 int r = std::min(sim->get_height() - 1, (int) (sim->randf() * sim->get_height()));
                 if (!sim->in_bounds(r, c) || !sim->in_bounds(y, x))
                     continue;
+                if (sim->get_cell(r, c) == 15 || sim->get_cell(y, x) == 15)
+                    return;
 
                 int temp = sim->get_cell(y, x);
                 sim->set_cell(y, x, sim->get_cell(r, c));
@@ -45,6 +47,8 @@ public:
                 if (row == y) dirRow = 0;
                 if (col == x) dirCol = 0;
                 if (!sim->in_bounds(y + dirRow, x + dirCol))
+                    return;
+                if (sim->get_cell(y + dirRow, x + dirCol) == 15 || sim->get_cell(y, x) == 15)
                     return;
                 int temp = sim->get_cell(y, x);
                 sim->set_cell(y, x, sim->get_cell(y + dirRow, x + dirCol));

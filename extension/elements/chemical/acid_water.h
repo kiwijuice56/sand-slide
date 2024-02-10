@@ -12,6 +12,7 @@ public:
     const double EMIT = 1.0 / 64;
     const double DOWN = 1.0 / 1.2;
     const double DOWN_BLOCK = 1.0 / 16;
+    const double MIX = 1.0 / 4;
 
     void process(SandSimulation *sim, int row, int col) override {
         // Decay
@@ -51,6 +52,10 @@ public:
         } else if (sim->get_cell(new_row, new_col) == 0 || sim->randf() < EAT * (1.0 - sim->elements.at(sim->get_cell(new_row, new_col))->get_acid_resistance())) {
             sim->set_cell(new_row, new_col, sim->get_cell(row, col));
             sim->set_cell(row, col, sim->randf() < EMIT ? 22 : 0);
+        }
+
+        if (sim->randf() < MIX && sim->touch_count(row, col, 136) > 0) {
+            sim->set_cell(row, col, 3);
         }
 
         if (sim->randf() < EMIT) 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=221 format=3 uid="uid://danjqv04qm3f6"]
+[gd_scene load_steps=224 format=3 uid="uid://danjqv04qm3f6"]
 
 [ext_resource type="Script" path="res://main/ui/element_selector/element_selector.gd" id="1_fxkbl"]
 [ext_resource type="Material" uid="uid://c5qvq03ayjd60" path="res://main/ui/element_selector/selected.tres" id="2_30e0c"]
@@ -884,6 +884,27 @@ corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dqtsi"]
+bg_color = Color(0.72549, 0.741176, 0.988235, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_klptu"]
+bg_color = Color(0.862745, 0.870588, 0.988235, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4cehg"]
+bg_color = Color(0.643137, 0.603922, 0.839216, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7jmtd"]
 bg_color = Color(0.980392, 0.568627, 0.882353, 1)
 corner_radius_top_left = 4
@@ -1446,7 +1467,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/h_separation = 0
 theme_override_constants/v_separation = 0
-columns = 6
+columns = 3
 
 [node name="Sand" type="Button" parent="basic/Basic"]
 material = ExtResource("2_30e0c")
@@ -2280,6 +2301,27 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_2omdr")
 text = "acid"
 script = ExtResource("3_bfdgk")
 id = 21
+
+[node name="Ammonia" type="Button" parent="basic/Basic"]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 0
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxFlat_dqtsi")
+theme_override_styles/hover = SubResource("StyleBoxFlat_klptu")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_4cehg")
+text = "ammonia"
+script = ExtResource("3_bfdgk")
+id = 136
 
 [node name="Sponge" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)

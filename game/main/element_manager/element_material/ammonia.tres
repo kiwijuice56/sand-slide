@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Fluid" load_steps=2 format=3 uid="uid://53yu1rar0b4p"]
+
+[ext_resource type="Script" path="res://main/element_manager/element_material/types/fluid.gd" id="1_hybin"]
+
+[resource]
+script = ExtResource("1_hybin")
+color_a = Color(0.901961, 0.905882, 0.988235, 1)
+color_b = Color(0.654902, 0.729412, 0.960784, 1)
+color_c = Color(0.513726, 0.427451, 0.631373, 1)
+id = 136
