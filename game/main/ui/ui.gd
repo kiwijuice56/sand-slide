@@ -13,6 +13,8 @@ class_name UI
 @export var help_button: Button
 @export var edit_button: Button
 
+var player
+
 func _ready() -> void:
 	save_button.pressed.connect(_on_save_selected)
 	save_control.exited.connect(_on_save_control_exited)
@@ -27,6 +29,25 @@ func _ready() -> void:
 	edit_control.exited.connect(_on_edit_control_exited)
 	
 	CommonReference.main.active = true
+	
+	var c = get_children()
+	player = AudioStreamPlayer.new()
+	add_child(player)
+	player.stream = preload("res://main/ui/zapsplat_multimedia_button_click_bright_002_92099.mp3")
+	player.volume_db = -9
+	while len(c) > 0:
+		var x = c.pop_back()
+		if x is Button:
+			x.action_mode = BaseButton.ACTION_MODE_BUTTON_PRESS
+			x.button_down.connect(_on_button_down)
+		if  x is TabBar:
+			x.tab_clicked.connect(_on_button_down)
+		c.append_array(x.get_children(true))
+
+
+func _on_button_down(_x=0):
+	player.pitch_scale = 1.0 + 0.2 * randf() - 0.1
+	player.playing = true
 
 func _on_edit_selected() -> void:
 	CommonReference.main.active = false

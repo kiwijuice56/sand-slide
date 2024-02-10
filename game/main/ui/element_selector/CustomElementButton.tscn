@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://gewwsdlro3pf"]
+[gd_scene load_steps=6 format=3 uid="uid://gewwsdlro3pf"]
 
 [ext_resource type="Script" path="res://main/ui/element_selector/custom_element_button.gd" id="1_ulqyq"]
+[ext_resource type="AudioStream" uid="uid://cpeuhkn4xf3e3" path="res://main/ui/zapsplat_multimedia_button_click_bright_002_92099.mp3" id="2_exh2m"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h58hc"]
 bg_color = Color(0.462745, 0.462745, 0.529412, 1)
@@ -31,3 +32,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_6qckx")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_b5e6n")
 text = "???"
 script = ExtResource("1_ulqyq")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_exh2m")
+volume_db = -9.0

@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://3k2xt0kc4klb"]
+[gd_scene load_steps=9 format=3 uid="uid://3k2xt0kc4klb"]
 
 [ext_resource type="Theme" uid="uid://co20v1mxv2dfm" path="res://main/ui/_theme/theme.tres" id="1_1uvf0"]
 [ext_resource type="Script" path="res://main/ui/submenu/save/save_file_panel/save_file_panel.gd" id="1_ftssb"]
-[ext_resource type="Texture2D" uid="uid://c14hj2g0s66ys" path="res://icon.png" id="3_5l22y"]
+[ext_resource type="Texture2D" uid="uid://b58s8a6c6gamx" path="res://icon.png" id="3_5l22y"]
+[ext_resource type="AudioStream" uid="uid://cpeuhkn4xf3e3" path="res://main/ui/zapsplat_multimedia_button_click_bright_002_92099.mp3" id="4_kp2fo"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wwijs"]
 bg_color = Color(0.223529, 0.215686, 0.278431, 1)
@@ -103,3 +104,7 @@ size_flags_horizontal = 8
 mouse_filter = 2
 texture = ExtResource("3_5l22y")
 expand_mode = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_kp2fo")
+volume_db = -9.0

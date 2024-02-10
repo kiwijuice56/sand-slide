@@ -15,6 +15,7 @@ func _ready() -> void:
 
 func _on_pressed() -> void:
 	selected.emit()
+	$AudioStreamPlayer.play()
 
 func initialize(new_file: SaveFile) -> void:
 	file = new_file

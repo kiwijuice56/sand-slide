@@ -25,10 +25,13 @@ func initialize(element: CustomElement) -> void:
 	new_style.bg_color = element.color_a.darkened(.35)
 	
 	
-	
 	if element.color_a.v > 0.75:
 		set("theme_override_colors/font_color", Color("#000000"))
 		set("theme_override_colors/font_pressed_color", Color("#000000"))
 		set("theme_override_colors/font_hover_color", Color("#000000"))
 		set("theme_override_colors/font_focus_color", Color("#000000"))
 		set("theme_override_colors/font_hover_pressed_color", Color("#000000"))
+
+func _on_button_down():
+	super._on_button_down()
+	$AudioStreamPlayer.play()

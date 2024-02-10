@@ -246,7 +246,6 @@ save_file_manager = NodePath("../../../SaveFileManager")
 layout_mode = 1
 
 [node name="HelpMenu" parent="CanvasLayer/UI" instance=ExtResource("16_qckww")]
-visible = false
 layout_mode = 1
 
 [node name="ElementEditorMenu" parent="CanvasLayer/UI" instance=ExtResource("17_tcj48")]

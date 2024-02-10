@@ -410,6 +410,7 @@ theme_override_styles/disabled = SubResource("StyleBoxFlat_5rheo")
 theme_override_styles/hover = SubResource("StyleBoxFlat_5rheo")
 theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_5rheo")
 theme_override_styles/focus = SubResource("StyleBoxFlat_5rheo")
+action_mode = 0
 
 [node name="FpsContainer" type="HBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
@@ -431,6 +432,7 @@ theme_override_styles/disabled = SubResource("StyleBoxFlat_5rheo")
 theme_override_styles/hover = SubResource("StyleBoxFlat_5rheo")
 theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_5rheo")
 theme_override_styles/focus = SubResource("StyleBoxFlat_5rheo")
+action_mode = 0
 
 [node name="BackgroundContainer" type="HBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
