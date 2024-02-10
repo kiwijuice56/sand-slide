@@ -146,5 +146,7 @@ func draw_pixel(row: float, col: float) -> void:
 		selected_element = [42, 63, 64][randi() % 3]
 	if selected_element in [75, 76, 77]:
 		selected_element = [75, 76, 77][randi() % 3]
+	if selected_element in [137, 138, 139]:
+		selected_element = [137, 138, 139][randi() % 3]
 	
 	sim.draw_cell(y, x, selected_element)

@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="GradientColor" load_steps=2 format=3 uid="uid://b1lqoepnpxebl"]
+
+[ext_resource type="Script" path="res://main/element_manager/element_material/types/gradient_color.gd" id="1_yk7wv"]
+
+[resource]
+script = ExtResource("1_yk7wv")
+color_a = Color(1, 1, 1, 1)
+color_b = Color(1, 1, 1, 1)
+color_c = Color(1, 1, 1, 1)
+color_d = Color(1, 1, 1, 1)
+color_e = Color(1, 1, 1, 1)
+offset_1 = 0.1
+offset_2 = 0.4
+offset_3 = 0.6
+id = 140

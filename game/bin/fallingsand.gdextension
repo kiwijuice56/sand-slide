@@ -17,4 +17,4 @@ linux.debug.arm64 = "res://bin/fallingsand/libgdfallingsand.linux.template_debug
 linux.release.arm64 = "res://bin/fallingsand/libgdfallingsand.linux.template_release.arm64.so"
 linux.debug.rv64 = "res://bin/fallingsand/libgdfallingsand.linux.template_debug.rv64.so"
 linux.release.rv64 = "res://bin/fallingsand/libgdfallingsand.linux.template_release.rv64.so"
-android.arm64-v8a = "res://bin/fallingsand/libgdfallingsand.android.template_release.arm64.so"
+android.arm64-v8a = "res://bin/fallingsand/libgdfallingsand.android.template_debug.arm64.so"

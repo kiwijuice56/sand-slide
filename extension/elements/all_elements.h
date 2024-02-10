@@ -140,6 +140,15 @@
 #include "elements/chemical/molten_silver.h"
 #include "elements/chemical/lead.h"
 #include "elements/chemical/base.h"
+#include "elements/space/draco_meteor_a.h"
+#include "elements/space/draco_meteor_b.h"
+#include "elements/space/draco_meteor_c.h"
+#include "elements/space/firework_d.h"
+#include "elements/space/firework_e.h"
+#include "elements/space/firework_f.h"
+#include "elements/space/firework_trail_d.h"
+#include "elements/space/firework_trail_e.h"
+#include "elements/space/firework_trail_f.h"
 
 class AllElements {
 public:
@@ -210,7 +219,7 @@ public:
         elements->at(57) = new Obsidian();
         elements->at(58) = new Vapor();
         elements->at(59) = new AcidWater();
-        elements->at(60) = new OxidizedPotassium();
+        elements->at(60) = new OxidizedPotassium();  
         elements->at(61) = new BurningPotassium();
         elements->at(62) = new Rust();
         elements->at(63) = new PowderB();
@@ -287,6 +296,15 @@ public:
         elements->at(134) = new MoltenSilver(); 
         elements->at(135) = new Lead(); 
         elements->at(136) = new Base(); 
+        elements->at(137) = new DracoMeteorA();
+        elements->at(138) = new DracoMeteorB();
+        elements->at(139) = new DracoMeteorC();
+        elements->at(140) = new FireworkD();
+        elements->at(141) = new FireworkE();
+        elements->at(142) = new FireworkF();
+        elements->at(143) = new FireworkTrailD();
+        elements->at(144) = new FireworkTrailE();
+        elements->at(145) = new FireworkTrailF();
 
         for (int i = 2048; i <= 4096; i++) {
             elements->at(i) = new CustomElementParticle(); 

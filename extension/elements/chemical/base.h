@@ -38,15 +38,11 @@ public:
         // Swap and delete
         if (sim->get_cell(new_row, new_col) == 0 || sim->randf() < EAT * (1.0 - sim->elements.at(sim->get_cell(new_row, new_col))->get_acid_resistance())) {
             sim->set_cell(new_row, new_col, sim->get_cell(row, col));
+            sim->set_cell(row, col, sim->randf() < EMIT ? 22 : 0);
         }
 
         if (sim->randf() < MIX && sim->touch_count(row, col, 21) + sim->touch_count(row, col, 59) > 0) {
             sim->set_cell(row, col, 3);
-        }
-
-        if (sim->randf() < REACT && sim->touch_count(row, col, 17) + sim->touch_count(row, col, 51) + sim->touch_count(row, col, 133) + sim->touch_count(row, col, 135) + sim->touch_count(row, col, 45) + sim->touch_count(row, col, 35) > 0) {
-            sim->set_cell(row, col, 70);
-            sim->grow(row - 1, col, -1, 47);
         }
     }
 

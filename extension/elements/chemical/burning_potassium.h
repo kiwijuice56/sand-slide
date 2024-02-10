@@ -10,6 +10,7 @@ public:
     const double BURN = 1.0 / 48;
     const double POWDER = 1 / 1.025;
     const double WATER = 1 / 32.0;
+    const double REACT = 1.0 / 256;
 
     void process(SandSimulation *sim, int row, int col) override {
         if (sim->randf() < PLASMA && (sim->touch_count(row, col, 38) > 0 || sim->touch_count(row, col, 40) > 0)) {
@@ -62,6 +63,10 @@ public:
             sim->move_and_swap(row, col, row + 1, col - 1);
         } else if (bot_right) {
             sim->move_and_swap(row, col, row + 1, col + 1);
+        }
+
+        if (sim->randf() < REACT && sim->touch_count(row, col, 136) > 0) {
+            sim->set_cell(row, col, 70);
         }
     }
 

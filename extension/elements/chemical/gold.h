@@ -8,6 +8,8 @@ public:
     const double PLASMA = 1.0 / 8;
     const double MELT = 1.0 / 32;
     const double EXPLODE = 1.0 / 90;
+    const double REACT = 1.0 / 256;
+
     void process(SandSimulation *sim, int row, int col) override {
         if (sim->randf() < PLASMA && (sim->touch_count(row, col, 38) > 0 || sim->touch_count(row, col, 40) > 0 || sim->touch_count(row, col, 115) > 0)) {
             sim->grow(row + 1, col, 51, 38);
@@ -17,6 +19,10 @@ public:
             return;
         } else if (sim -> randf() < MELT && (sim->touch_count(row, col, 20) + sim->touch_count(row, col, 24) > 0)) {
             sim->set_cell(row, col, 52);
+        }
+
+        if (sim->randf() < REACT && sim->touch_count(row, col, 136) > 0) {
+            sim->set_cell(row, col, 70);
         }
     }
 

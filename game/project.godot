@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="sandslide"
-config/version="4.1"
+config/version="4.2"
 run/main_scene="res://main/Main.tscn"
 config/features=PackedStringArray("4.2")
 run/max_fps=60
@@ -81,11 +81,9 @@ limits/debugger/max_errors_per_second=1
 [rendering]
 
 renderer/rendering_method="mobile"
-renderer/rendering_method.mobile="gl_compatibility"
 textures/vram_compression/import_etc2_astc=true
 shader_compiler/shader_cache/strip_debug.release=false
-environment/ssao/quality=1
-environment/ssil/quality=1
-environment/glow/upscale_mode=0
+shading/overrides/force_vertex_shading.mobile=false
+shading/overrides/force_lambert_over_burley.mobile=false
 environment/defaults/default_clear_color=Color(0.454902, 0.462745, 0.501961, 1)
 viewport/hdr_2d=true

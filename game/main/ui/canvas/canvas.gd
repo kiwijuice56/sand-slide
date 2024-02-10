@@ -5,6 +5,7 @@ class_name Canvas
 
 func _ready() -> void:
 	%SizeCopy.resized.connect(_on_resized)
+	texture = ImageTexture.create_from_image(Image.create(128, 128, false, Image.FORMAT_RGB8))
 
 func _on_resized() -> void:
 	size = %SizeCopy.size

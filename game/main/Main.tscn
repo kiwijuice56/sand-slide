@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://ggbp6fch244c"]
+[gd_scene load_steps=30 format=3 uid="uid://ggbp6fch244c"]
 
 [ext_resource type="Script" path="res://main/main.gd" id="1_2pidp"]
 [ext_resource type="Theme" uid="uid://co20v1mxv2dfm" path="res://main/ui/_theme/theme.tres" id="2_nb65v"]
@@ -23,15 +23,6 @@
 [ext_resource type="Script" path="res://main/ui/element_selector/element_button.gd" id="107_ic066"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rhx1h"]
-
-[sub_resource type="Environment" id="Environment_3kqod"]
-background_mode = 3
-background_canvas_max_layer = -1
-glow_enabled = true
-glow_strength = 1.15
-glow_bloom = 0.2
-
-[sub_resource type="ImageTexture" id="ImageTexture_y2are"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pfsh7"]
 bg_color = Color(0.509804, 0.517647, 0.560784, 1)
@@ -83,7 +74,20 @@ corner_radius_bottom_left = 4
 script = ExtResource("1_2pidp")
 metadata/_edit_vertical_guides_ = []
 
-[node name="UI" type="Control" parent="." node_paths=PackedStringArray("save_control", "settings_control", "help_control", "edit_control", "save_button", "settings_button", "help_button", "edit_button")]
+[node name="Canvas" type="TextureRect" parent="."]
+unique_name_in_owner = true
+texture_filter = 1
+custom_minimum_size = Vector2(0, 64)
+offset_right = 1152.0
+offset_bottom = 357.0
+size_flags_stretch_ratio = 2.0
+expand_mode = 1
+script = ExtResource("5_7sl3f")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 5
+
+[node name="UI" type="Control" parent="CanvasLayer" node_paths=PackedStringArray("save_control", "settings_control", "help_control", "edit_control", "save_button", "settings_button", "help_button", "edit_button")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -101,7 +105,7 @@ settings_button = NodePath("VSplitContainer/BottomPanel/MarginBottonPanel/VBoxCo
 help_button = NodePath("VSplitContainer/BottomPanel/MarginBottonPanel/VBoxContainer/ButtonRow/Help")
 edit_button = NodePath("VSplitContainer/BottomPanel/MarginBottonPanel/VBoxContainer/ButtonRow/Edit")
 
-[node name="VSplitContainer" type="VSplitContainer" parent="UI"]
+[node name="VSplitContainer" type="VSplitContainer" parent="CanvasLayer/UI"]
 layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -113,54 +117,37 @@ theme_override_constants/autohide = 0
 theme_override_icons/grabber = ExtResource("4_23e8q")
 split_offset = 48
 
-[node name="DrawingPanel" type="PanelContainer" parent="UI/VSplitContainer"]
+[node name="DrawingPanel" type="PanelContainer" parent="CanvasLayer/UI/VSplitContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxEmpty_rhx1h")
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="UI/VSplitContainer/DrawingPanel"]
-environment = SubResource("Environment_3kqod")
-
-[node name="SizeCopy" type="TextureRect" parent="UI/VSplitContainer/DrawingPanel"]
+[node name="SizeCopy" type="TextureRect" parent="CanvasLayer/UI/VSplitContainer/DrawingPanel"]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="CanvasLayer" type="CanvasLayer" parent="UI/VSplitContainer/DrawingPanel"]
-layer = -1
-
-[node name="Canvas" type="TextureRect" parent="UI/VSplitContainer/DrawingPanel/CanvasLayer"]
-unique_name_in_owner = true
-texture_filter = 1
-custom_minimum_size = Vector2(0, 64)
-offset_right = 1152.0
-offset_bottom = 357.0
-size_flags_stretch_ratio = 2.0
-texture = SubResource("ImageTexture_y2are")
-expand_mode = 1
-script = ExtResource("5_7sl3f")
-
-[node name="BottomPanel" type="PanelContainer" parent="UI/VSplitContainer"]
+[node name="BottomPanel" type="PanelContainer" parent="CanvasLayer/UI/VSplitContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_pfsh7")
 
-[node name="MarginBottonPanel" type="MarginContainer" parent="UI/VSplitContainer/BottomPanel"]
+[node name="MarginBottonPanel" type="MarginContainer" parent="CanvasLayer/UI/VSplitContainer/BottomPanel"]
 layout_mode = 2
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 12
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 16
 
-[node name="VBoxContainer" type="VBoxContainer" parent="UI/VSplitContainer/BottomPanel/MarginBottonPanel"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/UI/VSplitContainer/BottomPanel/MarginBottonPanel"]
 layout_mode = 2
 theme_override_constants/separation = 14
 
-[node name="ButtonRow" type="HBoxContainer" parent="UI/VSplitContainer/BottomPanel/MarginBottonPanel/VBoxContainer"]
+[node name="ButtonRow" type="HBoxContainer" parent="CanvasLayer/UI/VSplitContainer/BottomPanel/MarginBottonPanel/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 0
 theme_override_constants/separation = 8
 
-[node name="Eraser" type="Button" parent="UI/VSplitContainer/BottomPanel/MarginBottonPanel/VBoxContainer/ButtonRow"]
+[node name="Eraser" type="Button" parent="CanvasLayer/UI/VSplitContainer/BottomPanel/MarginBottonPanel/VBoxContainer/ButtonRow"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 focus_mode = 0
@@ -172,7 +159,7 @@ icon = ExtResource("6_k1fvi")
 icon_alignment = 1
 script = ExtResource("107_ic066")
 
-[node name="Tap" type="Button" parent="UI/VSplitContainer/BottomPanel/MarginBottonPanel/VBoxContainer/ButtonRow"]
+[node name="Tap" type="Button" parent="CanvasLayer/UI/VSplitContainer/BottomPanel/MarginBottonPanel/VBoxContainer/ButtonRow"]
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 focus_mode = 0
@@ -184,7 +171,7 @@ theme_override_styles/focus = SubResource("StyleBoxFlat_dha6b")
 icon = ExtResource("8_g0v0t")
 icon_alignment = 1
 
-[node name="Edit" type="Button" parent="UI/VSplitContainer/BottomPanel/MarginBottonPanel/VBoxContainer/ButtonRow"]
+[node name="Edit" type="Button" parent="CanvasLayer/UI/VSplitContainer/BottomPanel/MarginBottonPanel/VBoxContainer/ButtonRow"]
 unique_name_in_owner = true
 visible = false
 custom_minimum_size = Vector2(50, 0)
@@ -198,7 +185,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_3h7k3")
 icon = ExtResource("9_1ns3c")
 icon_alignment = 1
 
-[node name="Help" type="Button" parent="UI/VSplitContainer/BottomPanel/MarginBottonPanel/VBoxContainer/ButtonRow"]
+[node name="Help" type="Button" parent="CanvasLayer/UI/VSplitContainer/BottomPanel/MarginBottonPanel/VBoxContainer/ButtonRow"]
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 size_flags_horizontal = 10
@@ -210,7 +197,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_3h7k3")
 icon = ExtResource("9_hcxqy")
 icon_alignment = 1
 
-[node name="Settings" type="Button" parent="UI/VSplitContainer/BottomPanel/MarginBottonPanel/VBoxContainer/ButtonRow"]
+[node name="Settings" type="Button" parent="CanvasLayer/UI/VSplitContainer/BottomPanel/MarginBottonPanel/VBoxContainer/ButtonRow"]
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 focus_mode = 0
@@ -221,7 +208,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_3h7k3")
 icon = ExtResource("10_x6g80")
 icon_alignment = 1
 
-[node name="File" type="Button" parent="UI/VSplitContainer/BottomPanel/MarginBottonPanel/VBoxContainer/ButtonRow"]
+[node name="File" type="Button" parent="CanvasLayer/UI/VSplitContainer/BottomPanel/MarginBottonPanel/VBoxContainer/ButtonRow"]
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 focus_mode = 0
@@ -232,28 +219,29 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_3h7k3")
 icon = ExtResource("11_nf3sg")
 icon_alignment = 1
 
-[node name="ElementSelector" parent="UI/VSplitContainer/BottomPanel/MarginBottonPanel/VBoxContainer" node_paths=PackedStringArray("simulation", "eraser_button", "tap_button") instance=ExtResource("12_1ijq2")]
+[node name="ElementSelector" parent="CanvasLayer/UI/VSplitContainer/BottomPanel/MarginBottonPanel/VBoxContainer" node_paths=PackedStringArray("simulation", "eraser_button", "tap_button") instance=ExtResource("12_1ijq2")]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 128)
 layout_mode = 2
-simulation = NodePath("../../../../../..")
+simulation = NodePath("../../../../../../..")
 eraser_button = NodePath("../ButtonRow/Eraser")
 tap_button = NodePath("../ButtonRow/Tap")
 
-[node name="FpsLabel" parent="UI" instance=ExtResource("13_kyq44")]
+[node name="FpsLabel" parent="CanvasLayer/UI" instance=ExtResource("13_kyq44")]
+unique_name_in_owner = true
 layout_mode = 0
 
-[node name="SaveFileMenu" parent="UI" node_paths=PackedStringArray("save_file_manager") instance=ExtResource("14_73tcr")]
+[node name="SaveFileMenu" parent="CanvasLayer/UI" node_paths=PackedStringArray("save_file_manager") instance=ExtResource("14_73tcr")]
 layout_mode = 1
-save_file_manager = NodePath("../../SaveFileManager")
+save_file_manager = NodePath("../../../SaveFileManager")
 
-[node name="SettingsMenu" parent="UI" instance=ExtResource("15_vwu6i")]
-layout_mode = 1
-
-[node name="HelpMenu" parent="UI" instance=ExtResource("16_qckww")]
+[node name="SettingsMenu" parent="CanvasLayer/UI" instance=ExtResource("15_vwu6i")]
 layout_mode = 1
 
-[node name="ElementEditorMenu" parent="UI" instance=ExtResource("17_tcj48")]
+[node name="HelpMenu" parent="CanvasLayer/UI" instance=ExtResource("16_qckww")]
+layout_mode = 1
+
+[node name="ElementEditorMenu" parent="CanvasLayer/UI" instance=ExtResource("17_tcj48")]
 layout_mode = 1
 
 [node name="SaveFileManager" type="Node" parent="."]

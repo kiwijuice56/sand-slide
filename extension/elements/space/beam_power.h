@@ -18,13 +18,17 @@ public:
                     return;
                 int rand_row = row - (sim->randf() < DOWN ? 1 : -1);
                 int rand_col = col + (int) (sim->randf() * 3) - 1;
-                sim->set_cell(row, col, 0);
+                if (sim->get_cell(row, col) != 15) {
+                    sim->set_cell(row, col, 0);
+                }
                 if (sim->touch_count(rand_row, rand_col, 114) <= 1) {
                     sim->grow(rand_row, rand_col, 0, 114);
                     sim->grow(rand_row, rand_col, 6, 114);
                     sim->grow(rand_row, rand_col, 22, 114);
                 }
-                sim->set_cell(row, col, 114);
+                if (sim->get_cell(row, col) != 15) {
+                    sim->set_cell(row, col, 114);
+                }
                 row = rand_row;
                 col = rand_col;
             }
