@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://ggbp6fch244c"]
+[gd_scene load_steps=36 format=3 uid="uid://ggbp6fch244c"]
 
 [ext_resource type="Script" path="res://main/main.gd" id="1_2pidp"]
 [ext_resource type="Theme" uid="uid://co20v1mxv2dfm" path="res://main/ui/_theme/theme.tres" id="2_nb65v"]
@@ -19,6 +19,8 @@
 [ext_resource type="PackedScene" uid="uid://bqwqmevgndrm0" path="res://main/ui/submenu/element_editor/ElementEditor.tscn" id="17_tcj48"]
 [ext_resource type="Script" path="res://main/painter/painter.gd" id="18_mer41"]
 [ext_resource type="Script" path="res://main/element_manager/element_manager.gd" id="18_mpubp"]
+[ext_resource type="Texture2D" uid="uid://cwrw6b4hfr57h" path="res://main/ui/_icons/icon_circle2.png" id="19_nbax8"]
+[ext_resource type="Script" path="res://main/ui/element_selector/element_select_info.gd" id="19_ys0g5"]
 [ext_resource type="Script" path="res://main/save_file/save_file_manager.gd" id="87_5tqe6"]
 [ext_resource type="Script" path="res://main/ui/element_selector/element_button.gd" id="107_ic066"]
 
@@ -69,6 +71,58 @@ corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
+
+[sub_resource type="Animation" id="Animation_sr1iu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_cw08x"]
+resource_name = "hide"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_o0jo7"]
+resource_name = "show"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gocti"]
+_data = {
+"RESET": SubResource("Animation_sr1iu"),
+"hide": SubResource("Animation_cw08x"),
+"show": SubResource("Animation_o0jo7")
+}
 
 [node name="Main" type="Node"]
 script = ExtResource("1_2pidp")
@@ -235,17 +289,78 @@ tap_button = NodePath("../ButtonRow/Tap")
 
 [node name="FpsLabel" parent="CanvasLayer/UI" instance=ExtResource("13_kyq44")]
 unique_name_in_owner = true
+visible = false
 layout_mode = 0
+
+[node name="SelectInfo" type="MarginContainer" parent="CanvasLayer/UI"]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+offset_right = 223.0
+offset_bottom = 62.0
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+script = ExtResource("19_ys0g5")
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/UI/SelectInfo"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/UI/SelectInfo/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/UI/SelectInfo/PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/UI/SelectInfo/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="ElementColor" type="TextureRect" parent="CanvasLayer/UI/SelectInfo/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+texture = ExtResource("19_nbax8")
+stretch_mode = 3
+
+[node name="ElementName" type="Label" parent="CanvasLayer/UI/SelectInfo/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "lightning"
+
+[node name="ElementInfo" type="Label" parent="CanvasLayer/UI/SelectInfo/PanelContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "dangerous! dfdsfdsfsdfsdf"
+autowrap_mode = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/UI/SelectInfo"]
+libraries = {
+"": SubResource("AnimationLibrary_gocti")
+}
+speed_scale = 6.0
+
+[node name="Timer" type="Timer" parent="CanvasLayer/UI/SelectInfo"]
+wait_time = 5.0
+one_shot = true
 
 [node name="SaveFileMenu" parent="CanvasLayer/UI" node_paths=PackedStringArray("save_file_manager") instance=ExtResource("14_73tcr")]
 visible = false
+modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 save_file_manager = NodePath("../../../SaveFileManager")
 
 [node name="SettingsMenu" parent="CanvasLayer/UI" instance=ExtResource("15_vwu6i")]
+visible = false
+modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 
 [node name="HelpMenu" parent="CanvasLayer/UI" instance=ExtResource("16_qckww")]
+visible = false
+modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 
 [node name="ElementEditorMenu" parent="CanvasLayer/UI" instance=ExtResource("17_tcj48")]

@@ -84,6 +84,7 @@ func update_custom_elements() -> void:
 	initialize_buttons()
 
 func _on_element_selected(button: ElementButton) -> void:
+	get_tree().get_root().get_node("Main").get_node("%SelectInfo").show_element(button.text, button.description, button.get("theme_override_styles/normal").bg_color)
 	edit_button.visible = button.id >= 2048
 	
 	tap_button.button_pressed = false

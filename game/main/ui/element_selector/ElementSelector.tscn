@@ -1529,6 +1529,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_457eu")
 text = "sand"
 script = ExtResource("3_bfdgk")
 id = 1
+description = "A fine, powdery substance. Try turning it into glass with heat!"
 
 [node name="Water" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
@@ -1545,6 +1546,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_msh0k")
 text = "water"
 script = ExtResource("3_bfdgk")
 id = 3
+description = "The universal solvent. Reacts with lots of elements."
 
 [node name="Fire" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
@@ -1561,6 +1563,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_ddylc")
 text = "fire"
 script = ExtResource("3_bfdgk")
 id = 5
+description = "Hot and dangerous!"
 
 [node name="Oil" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
@@ -1577,6 +1580,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_gxiyd")
 text = "oil"
 script = ExtResource("3_bfdgk")
 id = 30
+description = "A flammable and low density fluid."
 
 [node name="Rock" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
@@ -1593,6 +1597,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_s867d")
 text = "rock"
 script = ExtResource("3_bfdgk")
 id = 2
+description = "A strong (but not indestructible) material."
 
 [node name="Ice" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
@@ -1609,6 +1614,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_2xunh")
 text = "ice"
 script = ExtResource("3_bfdgk")
 id = 19
+description = "Frozen water."
 
 [node name="Lava" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
@@ -1625,6 +1631,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_bs4ox")
 text = "lava"
 script = ExtResource("3_bfdgk")
 id = 20
+description = "Rock heated until melting hot."
 
 [node name="Lightning" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
@@ -1646,6 +1653,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_qegqj")
 text = "lightning"
 script = ExtResource("3_bfdgk")
 id = 37
+description = "Shocking electricity! Use carefully around metals and other conductive elements."
 
 [node name="Air" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
@@ -1662,6 +1670,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_dcp2l")
 text = "air"
 script = ExtResource("3_bfdgk")
 id = 28
+description = "Strong gusts of wind that can mix up other elements."
 
 [node name="Snow" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
@@ -1682,6 +1691,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_asumw")
 text = "snow"
 script = ExtResource("3_bfdgk")
 id = 85
+description = "A fluffier version of ice."
 
 [node name="Lead Azide" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
@@ -1703,6 +1713,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_78bka")
 text = "explosive"
 script = ExtResource("3_bfdgk")
 id = 10
+description = "Explodes when in contact with heat. "
 
 [node name="Hurricane" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
@@ -1719,6 +1730,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_geoh2")
 text = "storm"
 script = ExtResource("3_bfdgk")
 id = 41
+description = "Clouds that spawn water and lightning."
 
 [node name="Wall" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
@@ -1734,6 +1746,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_p08fi")
 text = "wall"
 script = ExtResource("3_bfdgk")
 id = 15
+description = "An indestructible material!"
 
 [node name="Wood" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
@@ -1749,6 +1762,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_hgsbg")
 text = "wood"
 script = ExtResource("3_bfdgk")
 id = 18
+description = "A weak, flammable material."
 
 [node name="Sandstone" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
@@ -1764,6 +1778,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_ndqgh")
 text = "sandstone"
 script = ExtResource("3_bfdgk")
 id = 97
+description = "Compact sand."
 
 [node name="White Sand" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
@@ -1785,6 +1800,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_r14rl")
 text = "white sand"
 script = ExtResource("3_bfdgk")
 id = 98
+description = "Just like the other sand!"
 
 [node name="Soil" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
@@ -1800,6 +1816,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_2sydf")
 text = "soil"
 script = ExtResource("3_bfdgk")
 id = 11
+description = "Behaves similarly to sand, but essential for plant life."
 
 [node name="Dust" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
@@ -1815,6 +1832,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_ojktv")
 text = "dust"
 script = ExtResource("3_bfdgk")
 id = 16
+description = "Fine, flammable particles."
 
 [node name="Glass" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
@@ -1834,6 +1852,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_fwrmq")
 text = "glass"
 script = ExtResource("3_bfdgk")
 id = 25
+description = "A brittle and shiny material."
 
 [node name="Crystal" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
@@ -1854,6 +1873,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_2po0a")
 text = "gem"
 script = ExtResource("3_bfdgk")
 id = 27
+description = "Shiny gems! Click the button again to switch colors."
 
 [node name="InfoSource" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
@@ -1874,6 +1894,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_kn14a")
 text = "source"
 script = ExtResource("3_bfdgk")
 id = 104
+description = "Circuitry component. Generates power."
 
 [node name="InfoCable" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
@@ -1889,6 +1910,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_vf74h")
 text = "cable"
 script = ExtResource("3_bfdgk")
 id = 102
+description = "Circuitry component. Acts as a \"wire\" material to transmit power from sources to other components."
 
 [node name="InfoDeleter" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
@@ -1904,6 +1926,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_61qt4")
 text = "deleter"
 script = ExtResource("3_bfdgk")
 id = 107
+description = "Circuitry component. Deletes surrounding matter when powered up."
 
 [node name="InfoAmp" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
@@ -1919,6 +1942,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_mn42s")
 text = "amp"
 script = ExtResource("3_bfdgk")
 id = 112
+description = "Circuitry component. Transmits an amplified signal to the right when powered up from the left."
 
 [node name="InfoPiston" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
@@ -1934,6 +1958,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_cdxbo")
 text = "piston ▼"
 script = ExtResource("3_bfdgk")
 id = 105
+description = "Circuitry component. Pushes matter downwards when powered up."
 
 [node name="InfoPistonUp" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
@@ -1949,6 +1974,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_dl1a2")
 text = "piston ▲"
 script = ExtResource("3_bfdgk")
 id = 106
+description = "Circuitry component. Pushes matter upwards when powered up."
 
 [node name="Polliwog" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
@@ -1970,6 +1996,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_5dx7s")
 text = "polliwog"
 script = ExtResource("3_bfdgk")
 id = 4
+description = "Cute baby frogs!"
 
 [node name="Algae" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
@@ -1986,6 +2013,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_fvw5r")
 text = "algae"
 script = ExtResource("3_bfdgk")
 id = 7
+description = "Microscopic pond organisms."
 
 [node name="Fish" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
@@ -2004,9 +2032,10 @@ theme_override_font_sizes/font_size = 15
 theme_override_styles/normal = SubResource("StyleBoxFlat_n4ht6")
 theme_override_styles/hover = SubResource("StyleBoxFlat_uogm4")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_7cwls")
-text = "salt fish"
+text = "fish"
 script = ExtResource("3_bfdgk")
 id = 72
+description = "Friendly fishies! Only survive in salt water."
 
 [node name="Urchin" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
@@ -2028,6 +2057,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_cgna5")
 text = "urchin"
 script = ExtResource("3_bfdgk")
 id = 31
+description = "Spiky urchins that can live in both salt and fresh water."
 
 [node name="Sand Duck" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
@@ -2050,6 +2080,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_qcn7j")
 text = "sand duck"
 script = ExtResource("3_bfdgk")
 id = 8
+description = "Ducklings who live in sand piles."
 
 [node name="Penguin" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
@@ -2072,6 +2103,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_7fhgi")
 text = "penguin"
 script = ExtResource("3_bfdgk")
 id = 49
+description = "Little birds that live in ice."
 
 [node name="Nanobot" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
@@ -2094,6 +2126,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_nhtpl")
 text = "nanobot"
 script = ExtResource("3_bfdgk")
 id = 95
+description = "Destructive robots in both the land and skies! Shoots lasers at fantasy creatures."
 
 [node name="Turtle" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
@@ -2115,6 +2148,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_ai7wm")
 text = "turtle"
 script = ExtResource("3_bfdgk")
 id = 130
+description = "The graphics turtle from Python programming. "
 
 [node name="Critter" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
@@ -2136,6 +2170,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_k4dtp")
 text = "critter"
 script = ExtResource("3_bfdgk")
 id = 33
+description = "Peculiar creatures that bounce around."
 
 [node name="Fairy" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
@@ -2157,6 +2192,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_q4tn0")
 text = "fairy"
 script = ExtResource("3_bfdgk")
 id = 23
+description = "Flying pixies!"
 
 [node name="Dragon" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
@@ -2178,6 +2214,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_yof68")
 text = "dragon"
 script = ExtResource("3_bfdgk")
 id = 32
+description = "Fire-breathing dragons that coil up in the sky."
 
 [node name="Slime" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
@@ -2194,6 +2231,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_be0xq")
 text = "slime"
 script = ExtResource("3_bfdgk")
 id = 86
+description = "A mold-like creature that grows along surfaces. "
 
 [node name="MetalSlime" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
@@ -2215,6 +2253,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_fihf2")
 text = "metal slime"
 script = ExtResource("3_bfdgk")
 id = 132
+description = "An immortal slime creature."
 
 [node name="Seed" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
@@ -2236,6 +2275,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_c0d0v")
 text = "grass seed"
 script = ExtResource("3_bfdgk")
 id = 12
+description = "Grows into grass when surrounded by water and soil."
 
 [node name="Flower Seed" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
@@ -2257,6 +2297,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_ym7ic")
 text = "flower seed"
 script = ExtResource("3_bfdgk")
 id = 119
+description = "Grows into flowers when surrounded by water and soil."
 
 [node name="Virus" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
@@ -2278,6 +2319,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_nxdon")
 text = "virus"
 script = ExtResource("3_bfdgk")
 id = 101
+description = "Infects other life."
 
 [node name="Primordial Soup" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
@@ -2299,6 +2341,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_vx4qe")
 text = "primordial"
 script = ExtResource("3_bfdgk")
 id = 127
+description = "A mysterious fluid that spawns life randomly."
 
 [node name="Blood" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
@@ -2320,6 +2363,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_5ncxp")
 text = "blood"
 script = ExtResource("3_bfdgk")
 id = 118
+description = "Don't worry, nothing was harmed in the acquisition of this element!"
 
 [node name="Acid" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
@@ -2341,6 +2385,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_2omdr")
 text = "acid"
 script = ExtResource("3_bfdgk")
 id = 21
+description = "A reactive solution that dissolves many other elements."
 
 [node name="Ammonia" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
@@ -2362,6 +2407,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_4cehg")
 text = "ammonia"
 script = ExtResource("3_bfdgk")
 id = 136
+description = "A basic solution that neutralizes acid."
 
 [node name="Sponge" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
@@ -2383,6 +2429,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_72jwj")
 text = "sponge"
 script = ExtResource("3_bfdgk")
 id = 99
+description = "Absorbs water and releases it when heated."
 
 [node name="Blue Fire" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
@@ -2405,6 +2452,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_rurje")
 text = "cyan fire"
 script = ExtResource("3_bfdgk")
 id = 24
+description = "Very hot and dangerous!"
 
 [node name="DryIce" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
@@ -2426,6 +2474,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_igoo4")
 text = "dry ice"
 script = ExtResource("3_bfdgk")
 id = 93
+description = "Solid carbon dioxide. Use carefully around water."
 
 [node name="Salt" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
@@ -2447,6 +2496,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_8fyet")
 text = "salt"
 script = ExtResource("3_bfdgk")
 id = 70
+description = "Table salt. Dissolves in water."
 
 [node name="Hydrogen" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
@@ -2468,6 +2518,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_yhxmn")
 text = "hydrogen"
 script = ExtResource("3_bfdgk")
 id = 47
+description = "An explosive gas of hydrogen atoms."
 
 [node name="Potassium" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
@@ -2489,6 +2540,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_g8gy2")
 text = "potassium"
 script = ExtResource("3_bfdgk")
 id = 45
+description = "Pure potassium metal. Quickly oxidizes when exposed to air. Reacts violently with water."
 
 [node name="Iron" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
@@ -2510,6 +2562,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_ciday")
 text = "iron"
 script = ExtResource("3_bfdgk")
 id = 17
+description = "A dull but conductive element. Rusts in the presence of water."
 
 [node name="Silver" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
@@ -2531,6 +2584,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_7m6xm")
 text = "silver"
 script = ExtResource("3_bfdgk")
 id = 133
+description = "Another metallic element. "
 
 [node name="Iodine" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
@@ -2552,6 +2606,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_e1r6v")
 text = "iodine"
 script = ExtResource("3_bfdgk")
 id = 82
+description = "Pure iodine. Dissolves in water and readily sublimates."
 
 [node name="Gold" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
@@ -2573,6 +2628,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_ot0nh")
 text = "gold"
 script = ExtResource("3_bfdgk")
 id = 51
+description = "A very conductive and shiny metal."
 
 [node name="Mercury" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
@@ -2594,6 +2650,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_fihf2")
 text = "mercury"
 script = ExtResource("3_bfdgk")
 id = 44
+description = "Pure mercury in liquid form. Very dense and dangerous to life."
 
 [node name="Uranium" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
@@ -2615,6 +2672,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_j4bb3")
 text = "uranium"
 script = ExtResource("3_bfdgk")
 id = 35
+description = "An element that can cause nuclear explosions."
 
 [node name="Invisirock" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
@@ -2631,6 +2689,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_g5yfh")
 text = "invisirock"
 script = ExtResource("3_bfdgk")
 id = 131
+description = "A material that is (almost) invisible."
 
 [node name="Laser" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
@@ -2652,6 +2711,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_4pg2j")
 text = "laser"
 script = ExtResource("3_bfdgk")
 id = 26
+description = "A powerful and explosive beam."
 
 [node name="Beam" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
@@ -2673,6 +2733,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_0j1pm")
 text = "freikugel"
 script = ExtResource("3_bfdgk")
 id = 94
+description = "An even more powerful and explosive beam."
 
 [node name="Neutron" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
@@ -2694,6 +2755,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_gxlw2")
 text = "quasar"
 script = ExtResource("3_bfdgk")
 id = 36
+description = "The strongest explosive beam."
 
 [node name="Meteor" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
@@ -2715,6 +2777,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_0gdwx")
 text = "meteor"
 script = ExtResource("3_bfdgk")
 id = 75
+description = "A destructive meteor shower."
 
 [node name="Sun" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
@@ -2737,6 +2800,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_qejgw")
 text = "sun"
 script = ExtResource("3_bfdgk")
 id = 66
+description = "Energy taken from the core of our sun."
 
 [node name="Electron" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
@@ -2758,6 +2822,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_nhb3t")
 text = "bolt storm"
 script = ExtResource("3_bfdgk")
 id = 39
+description = "A much power powerful version of lightning."
 
 [node name="Tempest" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
@@ -2774,6 +2839,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_8ltob")
 text = "tempest"
 script = ExtResource("3_bfdgk")
 id = 146
+description = "A much power powerful version of air."
 
 [node name="JavelinRain" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
@@ -2795,6 +2861,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_uyggr")
 text = "javelin rain"
 script = ExtResource("3_bfdgk")
 id = 128
+description = "A super quick energy beam."
 
 [node name="God\'sHand" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
@@ -2816,6 +2883,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_q0yb6")
 text = "god's hand"
 script = ExtResource("3_bfdgk")
 id = 137
+description = "???"
 
 [node name="Powder" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
@@ -2837,6 +2905,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_sgko8")
 text = "stardust"
 script = ExtResource("3_bfdgk")
 id = 42
+description = "An odd powder that dissolves in water to form explosive fluid."
 
 [node name="Kuiper" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
@@ -2858,6 +2927,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_eroe7")
 text = "kuiper"
 script = ExtResource("3_bfdgk")
 id = 65
+description = "Ice taken from the Kuiper belt of our solar system. Freezes entire bodies of water. "
 
 [node name="Strange" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
@@ -2879,6 +2949,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_2hlke")
 text = "strange"
 script = ExtResource("3_bfdgk")
 id = 74
+description = "Strange matter that forms an endless chain reaction."
 
 [node name="Spiral" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
@@ -2900,6 +2971,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_oos11")
 text = "magatsuhi"
 script = ExtResource("3_bfdgk")
 id = 129
+description = "A ghostly element."
 
 [node name="Neptune" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
@@ -2921,6 +2993,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_aq34r")
 text = "neptune"
 script = ExtResource("3_bfdgk")
 id = 87
+description = "An endless ice storm taken from Neptune."
 
 [node name="Black Hole" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
@@ -2942,6 +3015,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_jbbp0")
 text = "void"
 script = ExtResource("3_bfdgk")
 id = 29
+description = "Summons a black hole."
 
 [node name="Worm Hole" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
@@ -2963,6 +3037,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_qyi51")
 text = "worm"
 script = ExtResource("3_bfdgk")
 id = 81
+description = "Summons a worm hole, teleporting matter around the entire sandbox. "
 
 [node name="Glitch" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
@@ -2984,6 +3059,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_g6tb4")
 text = "glitch"
 script = ExtResource("3_bfdgk")
 id = 117
+description = "???"
 
 [node name="custom" type="ScrollContainer" parent="."]
 visible = false
