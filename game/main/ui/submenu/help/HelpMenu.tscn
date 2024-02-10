@@ -111,8 +111,6 @@ _data = {
 }
 
 [node name="HelpMenu" type="Control" node_paths=PackedStringArray("anim", "back_button")]
-visible = false
-modulate = Color(1, 1, 1, 0)
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -133,16 +131,17 @@ grow_vertical = 2
 color = Color(0, 0, 0, 0.556863)
 
 [node name="HelpContainer" type="MarginContainer" parent="."]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 theme = SubResource("Theme_n7xkt")
-theme_override_constants/margin_left = 128
+theme_override_constants/margin_left = 16
 theme_override_constants/margin_top = 16
-theme_override_constants/margin_right = 128
+theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 16
 
 [node name="PanelContainer" type="PanelContainer" parent="HelpContainer"]
@@ -248,7 +247,7 @@ text = "Many of the elements in Sand Slide are inspired by other falling sand ga
 fit_content = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-speed_scale = 2.0
 libraries = {
 "": SubResource("AnimationLibrary_01f6e")
 }
+speed_scale = 2.0

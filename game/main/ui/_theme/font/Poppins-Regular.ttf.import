@@ -14,8 +14,8 @@ dest_files=["res://.godot/imported/Poppins-Regular.ttf-f5dbde34aa3a0e0edf7eae71e
 
 Rendering=null
 antialiasing=1
-generate_mipmaps=false
-multichannel_signed_distance_field=false
+generate_mipmaps=true
+multichannel_signed_distance_field=true
 msdf_pixel_range=8
 msdf_size=48
 allow_system_fallback=true
@@ -27,7 +27,13 @@ Fallbacks=null
 fallbacks=[]
 Compress=null
 compress=true
-preload=[]
+preload=[{
+"chars": [],
+"glyphs": [],
+"name": "New Configuration",
+"size": Vector2i(16, 0),
+"variation_embolden": 0.0
+}]
 language_support={}
 script_support={}
 opentype_features={}

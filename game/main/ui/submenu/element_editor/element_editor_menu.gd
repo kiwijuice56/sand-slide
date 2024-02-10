@@ -15,11 +15,19 @@ func _ready() -> void:
 	%ColorA.child_entered_tree.connect(_on_picker_created)
 	%ColorB.child_entered_tree.connect(_on_picker_created)
 	%ColorC.child_entered_tree.connect(_on_picker_created)
+	
+	%State.get_popup().transparent_bg = true
+	%Style.get_popup().transparent_bg = true
+	%State.get_popup().transparent_bg = true
 
 func _on_picker_created(child: Node) -> void:
-	
 	var color_picker: ColorPicker = child.get_child(1, true)
-	color_picker.get_child(4, true).get_child(1, true).get_child(2, true).virtual_keyboard_enabled = false
+	var c = color_picker.get_children(true)
+	while len(c) > 0:
+		var x = c.pop_back()
+		if "virtual_keyboard_enabled" in x:
+			x.virtual_keyboard_enabled = false
+		c.append_array(x.get_children(true))
 	color_picker.sampler_visible = false
 	color_picker.color_modes_visible = false
 	color_picker.sliders_visible = false

@@ -1,21 +1,9 @@
-[gd_scene load_steps=230 format=3 uid="uid://danjqv04qm3f6"]
+[gd_scene load_steps=228 format=3 uid="uid://danjqv04qm3f6"]
 
 [ext_resource type="Script" path="res://main/ui/element_selector/element_selector.gd" id="1_fxkbl"]
 [ext_resource type="Material" uid="uid://c5qvq03ayjd60" path="res://main/ui/element_selector/selected.tres" id="2_30e0c"]
 [ext_resource type="Script" path="res://main/ui/element_selector/element_button.gd" id="3_bfdgk"]
 [ext_resource type="PackedScene" uid="uid://gewwsdlro3pf" path="res://main/ui/element_selector/CustomElementButton.tscn" id="4_2lukd"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bcf5e"]
-content_margin_left = 8.0
-content_margin_right = 8.0
-bg_color = Color(0.313726, 0.313726, 0.360784, 1)
-border_width_top = 3
-border_color = Color(1, 1, 1, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nsxwl"]
-content_margin_left = 8.0
-content_margin_right = 8.0
-bg_color = Color(0.223529, 0.215686, 0.278431, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b3p2f"]
 bg_color = Color(0.313726, 0.313726, 0.360784, 1)
@@ -1492,8 +1480,6 @@ corner_radius_bottom_left = 4
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 16
-theme_override_styles/tab_selected = SubResource("StyleBoxFlat_bcf5e")
-theme_override_styles/tab_unselected = SubResource("StyleBoxFlat_nsxwl")
 theme_override_styles/panel = SubResource("StyleBoxFlat_b3p2f")
 script = ExtResource("1_fxkbl")
 last_button = NodePath("basic/Basic/Sand")
@@ -2984,7 +2970,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/h_separation = 0
 theme_override_constants/v_separation = 0
-columns = 6
+columns = 3
 
 [node name="CreateNewButton" parent="custom/Custom" instance=ExtResource("4_2lukd")]
 unique_name_in_owner = true

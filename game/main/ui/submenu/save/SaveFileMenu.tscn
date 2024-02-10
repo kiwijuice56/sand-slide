@@ -145,9 +145,7 @@ _data = {
 "exit": SubResource("Animation_obmfd")
 }
 
-[node name="SaveFileMenu" type="Control" node_paths=PackedStringArray("save_file_manager", "anim", "back_button")]
-visible = false
-modulate = Color(1, 1, 1, 0)
+[node name="SaveFileMenu" type="Control" node_paths=PackedStringArray("anim", "back_button")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -156,7 +154,6 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_vtqwt")
 script = ExtResource("2_djbua")
-save_file_manager = NodePath("")
 save_file_panel = ExtResource("3_v1i8r")
 anim = NodePath("AnimationPlayer")
 back_button = NodePath("SaveContainer/PanelContainer/Back")
@@ -178,13 +175,12 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 theme = SubResource("Theme_n7xkt")
-theme_override_constants/margin_left = 128
+theme_override_constants/margin_left = 16
 theme_override_constants/margin_top = 16
-theme_override_constants/margin_right = 128
+theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 16
 
 [node name="PanelContainer" type="PanelContainer" parent="SaveContainer"]
-custom_minimum_size = Vector2(320, 0)
 layout_mode = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_e160y")
@@ -268,7 +264,7 @@ icon = ExtResource("5_3a25r")
 icon_alignment = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-speed_scale = 2.0
 libraries = {
 "": SubResource("AnimationLibrary_01f6e")
 }
+speed_scale = 2.0

@@ -148,7 +148,8 @@ size_flags_vertical = 0
 theme_override_constants/separation = 8
 
 [node name="Eraser" type="Button" parent="CanvasLayer/UI/VSplitContainer/BottomPanel/MarginBottonPanel/VBoxContainer/ButtonRow"]
-custom_minimum_size = Vector2(50, 50)
+texture_filter = 6
+custom_minimum_size = Vector2(42, 42)
 layout_mode = 2
 focus_mode = 0
 theme_override_font_sizes/font_size = 18
@@ -160,7 +161,8 @@ icon_alignment = 1
 script = ExtResource("107_ic066")
 
 [node name="Tap" type="Button" parent="CanvasLayer/UI/VSplitContainer/BottomPanel/MarginBottonPanel/VBoxContainer/ButtonRow"]
-custom_minimum_size = Vector2(50, 0)
+texture_filter = 6
+custom_minimum_size = Vector2(42, 42)
 layout_mode = 2
 focus_mode = 0
 theme_override_font_sizes/font_size = 18
@@ -174,7 +176,8 @@ icon_alignment = 1
 [node name="Edit" type="Button" parent="CanvasLayer/UI/VSplitContainer/BottomPanel/MarginBottonPanel/VBoxContainer/ButtonRow"]
 unique_name_in_owner = true
 visible = false
-custom_minimum_size = Vector2(50, 0)
+texture_filter = 6
+custom_minimum_size = Vector2(42, 42)
 layout_mode = 2
 size_flags_horizontal = 2
 focus_mode = 0
@@ -186,7 +189,8 @@ icon = ExtResource("9_1ns3c")
 icon_alignment = 1
 
 [node name="Help" type="Button" parent="CanvasLayer/UI/VSplitContainer/BottomPanel/MarginBottonPanel/VBoxContainer/ButtonRow"]
-custom_minimum_size = Vector2(50, 0)
+texture_filter = 6
+custom_minimum_size = Vector2(42, 42)
 layout_mode = 2
 size_flags_horizontal = 10
 focus_mode = 0
@@ -198,7 +202,8 @@ icon = ExtResource("9_hcxqy")
 icon_alignment = 1
 
 [node name="Settings" type="Button" parent="CanvasLayer/UI/VSplitContainer/BottomPanel/MarginBottonPanel/VBoxContainer/ButtonRow"]
-custom_minimum_size = Vector2(50, 0)
+texture_filter = 6
+custom_minimum_size = Vector2(42, 42)
 layout_mode = 2
 focus_mode = 0
 theme_override_font_sizes/font_size = 18
@@ -209,7 +214,8 @@ icon = ExtResource("10_x6g80")
 icon_alignment = 1
 
 [node name="File" type="Button" parent="CanvasLayer/UI/VSplitContainer/BottomPanel/MarginBottonPanel/VBoxContainer/ButtonRow"]
-custom_minimum_size = Vector2(50, 0)
+texture_filter = 6
+custom_minimum_size = Vector2(42, 42)
 layout_mode = 2
 focus_mode = 0
 theme_override_font_sizes/font_size = 18
@@ -232,6 +238,7 @@ unique_name_in_owner = true
 layout_mode = 0
 
 [node name="SaveFileMenu" parent="CanvasLayer/UI" node_paths=PackedStringArray("save_file_manager") instance=ExtResource("14_73tcr")]
+visible = false
 layout_mode = 1
 save_file_manager = NodePath("../../../SaveFileManager")
 
@@ -239,9 +246,11 @@ save_file_manager = NodePath("../../../SaveFileManager")
 layout_mode = 1
 
 [node name="HelpMenu" parent="CanvasLayer/UI" instance=ExtResource("16_qckww")]
+visible = false
 layout_mode = 1
 
 [node name="ElementEditorMenu" parent="CanvasLayer/UI" instance=ExtResource("17_tcj48")]
+visible = false
 layout_mode = 1
 
 [node name="SaveFileManager" type="Node" parent="."]

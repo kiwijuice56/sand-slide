@@ -166,8 +166,6 @@ _data = {
 }
 
 [node name="SettingsMenu" type="Control" node_paths=PackedStringArray("anim", "back_button")]
-visible = false
-modulate = Color(1, 1, 1, 0)
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -196,9 +194,9 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 theme = SubResource("Theme_n7xkt")
-theme_override_constants/margin_left = 128
+theme_override_constants/margin_left = 16
 theme_override_constants/margin_top = 16
-theme_override_constants/margin_right = 128
+theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 16
 
 [node name="PanelContainer" type="PanelContainer" parent="SettingsContainer"]
@@ -270,7 +268,6 @@ min_value = 2.0
 max_value = 48.0
 step = 8.0
 value = 18.0
-tick_count = 7
 
 [node name="HBoxContainer" type="HBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/SizeContainer/VBoxContainer"]
 layout_mode = 2
@@ -320,7 +317,6 @@ theme_override_styles/grabber_area = SubResource("StyleBoxFlat_27i0d")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_420ld")
 max_value = 8.0
 value = 3.0
-tick_count = 9
 
 [node name="HBoxContainer" type="HBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/SpeedContainer/VBoxContainer"]
 layout_mode = 2
@@ -371,7 +367,6 @@ theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_420ld")
 min_value = 2.0
 max_value = 7.0
 value = 3.0
-tick_count = 6
 
 [node name="HBoxContainer" type="HBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/ZoomContainer/VBoxContainer"]
 layout_mode = 2
@@ -464,7 +459,7 @@ focus_mode = 0
 text = "clear canvas"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-speed_scale = 2.0
 libraries = {
 "": SubResource("AnimationLibrary_01f6e")
 }
+speed_scale = 2.0

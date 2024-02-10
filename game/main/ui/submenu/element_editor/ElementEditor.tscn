@@ -154,7 +154,7 @@ length = 0.3
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".")
+tracks/0/path = NodePath(".:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -166,7 +166,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath(".")
+tracks/1/path = NodePath(".:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -182,7 +182,7 @@ length = 0.3
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".")
+tracks/0/path = NodePath(".:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -194,7 +194,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath(".")
+tracks/1/path = NodePath(".:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -212,8 +212,6 @@ _data = {
 }
 
 [node name="ElementEditorMenu" type="Control" node_paths=PackedStringArray("anim", "back_button")]
-visible = false
-modulate = Color(1, 1, 1, 0)
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -242,9 +240,9 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 theme = SubResource("Theme_n7xkt")
-theme_override_constants/margin_left = 128
+theme_override_constants/margin_left = 16
 theme_override_constants/margin_top = 16
-theme_override_constants/margin_right = 128
+theme_override_constants/margin_right = 15
 theme_override_constants/margin_bottom = 16
 
 [node name="PanelContainer" type="PanelContainer" parent="SettingsContainer"]
@@ -445,7 +443,6 @@ theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_5uj0p")
 max_value = 1.0
 step = 0.01
 value = 0.5
-tick_count = 4
 
 [node name="HBoxContainer" type="HBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/DensityGrouping/VBoxContainer"]
 layout_mode = 2
@@ -485,7 +482,6 @@ theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_5uj0p")
 max_value = 1.0
 step = 0.01
 value = 0.5
-tick_count = 4
 
 [node name="HBoxContainer" type="HBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/ViscosityGrouping/VBoxContainer"]
 layout_mode = 2
@@ -525,7 +521,6 @@ theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_5uj0p")
 max_value = 1.0
 step = 0.01
 value = 0.5
-tick_count = 4
 
 [node name="HBoxContainer" type="HBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/PowerGrouping/VBoxContainer"]
 layout_mode = 2
@@ -564,7 +559,6 @@ theme_override_styles/grabber_area = SubResource("StyleBoxFlat_o5yxv")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_5uj0p")
 max_value = 1.0
 step = 0.01
-tick_count = 4
 
 [node name="HBoxContainer" type="HBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/ConductivityGrouping/VBoxContainer2"]
 layout_mode = 2
@@ -604,7 +598,6 @@ theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_5uj0p")
 max_value = 1.0
 step = 0.01
 value = 0.5
-tick_count = 4
 
 [node name="HBoxContainer" type="HBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/TemperatureGrouping/VBoxContainer3"]
 layout_mode = 2
@@ -643,7 +636,6 @@ theme_override_styles/grabber_area = SubResource("StyleBoxFlat_o5yxv")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_5uj0p")
 max_value = 1.0
 step = 0.01
-tick_count = 4
 
 [node name="HBoxContainer" type="HBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/FlammabilityGrouping/VBoxContainer4"]
 layout_mode = 2
@@ -683,7 +675,6 @@ theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_5uj0p")
 max_value = 1.0
 step = 0.01
 value = 0.75
-tick_count = 4
 
 [node name="HBoxContainer" type="HBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/ReactivityGrouping/VBoxContainer5"]
 layout_mode = 2
@@ -723,7 +714,6 @@ theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_5uj0p")
 max_value = 1.0
 step = 0.01
 value = 0.25
-tick_count = 4
 
 [node name="HBoxContainer" type="HBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/DurabilityGrouping/VBoxContainer6"]
 layout_mode = 2
