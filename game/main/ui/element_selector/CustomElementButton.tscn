@@ -32,6 +32,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_6qckx")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_b5e6n")
 text = "???"
 script = ExtResource("1_ulqyq")
+description = "You made this element! Edit its properties with the pencil button."
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_exh2m")

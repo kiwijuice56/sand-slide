@@ -390,6 +390,7 @@ text = "in"
 vertical_alignment = 1
 
 [node name="CheckContainer" type="HBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 
 [node name="Label" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/CheckContainer"]
@@ -413,6 +414,7 @@ theme_override_styles/focus = SubResource("StyleBoxFlat_5rheo")
 action_mode = 0
 
 [node name="FpsContainer" type="HBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 
 [node name="Label" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/FpsContainer"]

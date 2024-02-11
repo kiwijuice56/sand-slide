@@ -151,6 +151,8 @@
 #include "elements/space/firework_trail_f.h"
 #include "elements/basic/tempest.h"
 #include "elements/basic/tempest_up.h"
+#include "elements/basic/mine.h"
+#include "elements/basic/megido.h"
 
 class AllElements {
 public:
@@ -309,6 +311,8 @@ public:
         elements->at(145) = new FireworkTrailF();
         elements->at(146) = new Tempest();
         elements->at(147) = new TempestUp();
+        elements->at(148) = new Mine();
+        elements->at(149) = new Megido();
 
         for (int i = 2048; i <= 4096; i++) {
             elements->at(i) = new CustomElementParticle(); 
