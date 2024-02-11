@@ -34,7 +34,7 @@ func _ready() -> void:
 				button.get("theme_override_styles/" + style).corner_radius_bottom_right = 0
 	
 	await get_tree().get_root().ready
-	
+	print($basic/Basic.get_child_count())
 	update_custom_elements()
 
 func _on_new_element_created() -> void:

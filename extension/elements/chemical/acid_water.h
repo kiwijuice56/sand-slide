@@ -21,6 +21,11 @@ public:
             return;
         }
 
+        if (sim->is_cold(row, col)) {
+            sim->set_cell(row, col, 154);
+            return; 
+        }
+
         // Evaporate into acid gas
         if (sim->randf() < EVAPORATE && sim->is_on_fire(row, col)) {
             sim->set_cell(row, col, sim->randf() < 0.5 ? 22 : 58);

@@ -117,6 +117,7 @@ public:
 
     // Optimized RNG
     float randf();
+    float randf_loc(int row, int col);
 
     // Interface methods
     int get_cell(int row, int col);

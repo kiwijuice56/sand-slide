@@ -1,4 +1,4 @@
-[gd_scene load_steps=237 format=3 uid="uid://danjqv04qm3f6"]
+[gd_scene load_steps=246 format=3 uid="uid://danjqv04qm3f6"]
 
 [ext_resource type="Script" path="res://main/ui/element_selector/element_selector.gd" id="1_fxkbl"]
 [ext_resource type="Material" uid="uid://c5qvq03ayjd60" path="res://main/ui/element_selector/selected.tres" id="2_30e0c"]
@@ -354,6 +354,48 @@ corner_radius_bottom_left = 4
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2po0a"]
 bg_color = Color(0.682353, 0.560784, 0.890196, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8e5fn"]
+bg_color = Color(1, 0.407843, 0.541176, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l6h06"]
+bg_color = Color(1, 0.584314, 0.509804, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3xbfd"]
+bg_color = Color(0.819608, 0.278431, 0.596078, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o4xoi"]
+bg_color = Color(0.890196, 0.239216, 0.521569, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hpdlf"]
+bg_color = Color(1, 0.419608, 0.478431, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_635m2"]
+bg_color = Color(0.788235, 0.164706, 0.54902, 1)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
@@ -816,6 +858,27 @@ corner_radius_bottom_left = 4
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nxdon"]
 bg_color = Color(0.192157, 0.164706, 0.419608, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k8ir3"]
+bg_color = Color(0.27451, 0.156863, 0.388235, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v2lrl"]
+bg_color = Color(0.458824, 0.247059, 0.396078, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_te32f"]
+bg_color = Color(0.227451, 0.0901961, 0.309804, 1)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
@@ -1621,7 +1684,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_s867d")
 text = "rock"
 script = ExtResource("3_bfdgk")
 id = 2
-description = "A sturdy material."
+description = "A sturdy material. Can be weathered and melted."
 
 [node name="Ice" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
@@ -1638,7 +1701,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_2xunh")
 text = "ice"
 script = ExtResource("3_bfdgk")
 id = 19
-description = "Frozen water that slowly grows."
+description = "Frozen water. Slowly expands in crystal patterns when placed in water."
 
 [node name="Lava" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
@@ -1655,7 +1718,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_bs4ox")
 text = "lava"
 script = ExtResource("3_bfdgk")
 id = 20
-description = "Rock heated until melting hot."
+description = "Molten rock. Can be cooled into obsidian."
 
 [node name="Lightning" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
@@ -1677,7 +1740,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_qegqj")
 text = "lightning"
 script = ExtResource("3_bfdgk")
 id = 37
-description = "Shocking electricity! Use carefully around metals and other conductive elements."
+description = "Shocking electricity! Use carefully around metals and other conductive materials."
 
 [node name="Air" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
@@ -1754,7 +1817,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_ovw7u")
 text = "mine"
 script = ExtResource("3_bfdgk")
 id = 148
-description = "A very sensitive explosive!"
+description = "Explodes when in contact with anything that is not solid. Very sensitive!"
 
 [node name="Hurricane" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
@@ -1819,7 +1882,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_ndqgh")
 text = "sandstone"
 script = ExtResource("3_bfdgk")
 id = 97
-description = "Sand compacted into a rock."
+description = "Sand compacted into a rock. Can be weathered back into sand."
 
 [node name="White Sand" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
@@ -1915,6 +1978,48 @@ text = "gem"
 script = ExtResource("3_bfdgk")
 id = 27
 description = "Shiny gems! Click the button again to switch colors."
+
+[node name="Marbles" type="Button" parent="basic/Basic"]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+mouse_filter = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxFlat_8e5fn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_l6h06")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_3xbfd")
+text = "marbles"
+script = ExtResource("3_bfdgk")
+id = 151
+description = "A lot of tiny glass marbles! So pretty..."
+
+[node name="Quartz" type="Button" parent="basic/Basic"]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+mouse_filter = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxFlat_o4xoi")
+theme_override_styles/hover = SubResource("StyleBoxFlat_hpdlf")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_635m2")
+text = "quartz"
+script = ExtResource("3_bfdgk")
+id = 152
+description = "This isn't real quartz, its just lots of marbles put through a hydraulic press."
 
 [node name="InfoSource" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
@@ -2037,7 +2142,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_5dx7s")
 text = "polliwog"
 script = ExtResource("3_bfdgk")
 id = 4
-description = "Cute baby frogs!"
+description = "Cute baby frogs. Require water to live. Mortal enemy of the fairies!"
 
 [node name="Algae" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
@@ -2294,7 +2399,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_fihf2")
 text = "metal slime"
 script = ExtResource("3_bfdgk")
 id = 132
-description = "An immortal slime creature."
+description = "An immortal slime creature. Likes eating electricity."
 
 [node name="Seed" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
@@ -2360,7 +2465,29 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_nxdon")
 text = "virus"
 script = ExtResource("3_bfdgk")
 id = 101
-description = "Infects other life."
+description = "Infects all other life, but cannot survive on its own."
+
+[node name="Alien" type="Button" parent="basic/Basic"]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 0
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxFlat_k8ir3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_v2lrl")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_te32f")
+text = "alien"
+script = ExtResource("3_bfdgk")
+id = 150
+description = "Colonizes the entire galaxy!"
 
 [node name="Primordial Soup" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
@@ -2580,7 +2707,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_g8gy2")
 text = "potassium"
 script = ExtResource("3_bfdgk")
 id = 45
-description = "Elemental potassium metal. Quickly oxidizes when exposed to air. Reacts violently with water."
+description = "Elemental potassium. Quickly oxidizes when exposed to air. Reacts violently with water. Slightly flammable."
 
 [node name="Iron" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
@@ -2624,7 +2751,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_7m6xm")
 text = "silver"
 script = ExtResource("3_bfdgk")
 id = 133
-description = "Another metallic element. "
+description = "Another metallic element. Can be melted."
 
 [node name="Iodine" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
@@ -2668,7 +2795,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_ot0nh")
 text = "gold"
 script = ExtResource("3_bfdgk")
 id = 51
-description = "A very conductive and shiny metal."
+description = "A very conductive and shiny metal. Can be melted."
 
 [node name="Mercury" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
@@ -2751,7 +2878,29 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_4pg2j")
 text = "laser"
 script = ExtResource("3_bfdgk")
 id = 26
-description = "A powerful and explosive beam."
+description = "A powerful beam of energy."
+
+[node name="FreezeRay" type="Button" parent="basic/Basic"]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 0
+mouse_filter = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxFlat_5u0yn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_tim5j")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_4pg2j")
+text = "freeze ray"
+script = ExtResource("3_bfdgk")
+id = 153
+description = "Freezes anything in its path!"
 
 [node name="Neutron" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
@@ -2773,7 +2922,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_gxlw2")
 text = "quasar"
 script = ExtResource("3_bfdgk")
 id = 36
-description = "A galactic outburst."
+description = "A galactic outburst! Causes nuclear explosions."
 
 [node name="JavelinRain" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
@@ -2795,7 +2944,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_uyggr")
 text = "gamma rays"
 script = ExtResource("3_bfdgk")
 id = 128
-description = "A fragmented energy beam."
+description = "A fragmented energy beam of gamma particles."
 
 [node name="Meteor" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)

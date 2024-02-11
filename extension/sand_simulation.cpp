@@ -217,6 +217,13 @@ inline float SandSimulation::randf() {
     return ((g_seed>>16) & 0x7FFF) / (double) 0x7FFF; 
 } 
 
+inline float SandSimulation::randf_loc(int row, int col) { 
+    int n_seed = (214013 * row + 2531011 * col +  row * col * 234152); 
+    n_seed = ((214012313 * n_seed + 2521331011) >> 22) << 22; 
+    n_seed = (114062313 * n_seed + 253101411);
+    return ((n_seed>>16) & 0x7FFF) / (double) 0x7FFF; 
+} 
+
 int SandSimulation::get_cell(int row, int col) {
     // Taps should be mostly indestructible, so treat them as the wall element for processing
     if (cells[row * width + col] > 4096) {
@@ -472,6 +479,20 @@ uint32_t SandSimulation::get_color(int row, int col, bool flat_mode) {
     if (id == 131) {
         double x = (touch_count(row, col, 131) + touch_count(row, col, 0)) / 8.0;
         return lerp_color(0xFFFFFF, flat_color[0].color, x);
+    }
+
+    if (id == 151 || id == 152) {
+        double x = 2.0 * (time - fast_floor(time)) + randf_loc(row, col) * 0.06 + 0.006 * touch_count(row, col, id);
+        x = x - fast_floor(x);
+
+        uint32_t out = lerp_color(0xba52ff, 0xff5297, smooth_step(0.0, 1.0/6, x));
+        out = lerp_color(out, 0xffba52, smooth_step(1.0/6, 2.0/6, x));
+        out = lerp_color(out, 0x97ff52, smooth_step(2.0/6, 3.0/6, x));
+        out = lerp_color(out, 0x52ffba, smooth_step(3.0/6, 4.0/6, x));
+        out = lerp_color(out, 0x52ffba, smooth_step(4.0/6, 5.0/6, x));
+        out = lerp_color(out, 0xba52ff, smooth_step(5.0/6, 6.0/6, x));
+
+        return out;
     }
 
     return 0xFFFFFF;

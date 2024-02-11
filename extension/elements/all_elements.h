@@ -153,6 +153,12 @@
 #include "elements/basic/tempest_up.h"
 #include "elements/basic/mine.h"
 #include "elements/basic/megido.h"
+#include "elements/life/alien.h"
+#include "elements/basic/sprinkles.h"
+#include "elements/basic/quartz.h"
+#include "elements/space/freeze_ray.h"
+#include "elements/chemical/frozen_acid.h"
+#include "elements/chemical/frozen_ammonia.h"
 
 class AllElements {
 public:
@@ -313,6 +319,12 @@ public:
         elements->at(147) = new TempestUp();
         elements->at(148) = new Mine();
         elements->at(149) = new Megido();
+        elements->at(150) = new Alien();
+        elements->at(151) = new Sprinkles();
+        elements->at(152) = new Quartz();
+        elements->at(153) = new FreezeRay();
+        elements->at(154) = new FrozenAcid();
+        elements->at(155) = new FrozenAmmonia();
 
         for (int i = 2048; i <= 4096; i++) {
             elements->at(i) = new CustomElementParticle(); 

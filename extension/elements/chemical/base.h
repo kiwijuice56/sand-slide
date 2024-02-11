@@ -21,6 +21,11 @@ public:
             return;
         }
 
+        if (sim->is_cold(row, col)) {
+            sim->set_cell(row, col, 155);
+            return; 
+        }
+
         sim->liquid_process(row, col, 2); 
 
         bool blocked = !sim->in_bounds(row + 1, col) || sim->get_cell(row + 1, col) == 3;
