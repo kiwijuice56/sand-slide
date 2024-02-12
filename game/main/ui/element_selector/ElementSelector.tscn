@@ -1,4 +1,4 @@
-[gd_scene load_steps=246 format=3 uid="uid://danjqv04qm3f6"]
+[gd_scene load_steps=261 format=3 uid="uid://danjqv04qm3f6"]
 
 [ext_resource type="Script" path="res://main/ui/element_selector/element_selector.gd" id="1_fxkbl"]
 [ext_resource type="Material" uid="uid://c5qvq03ayjd60" path="res://main/ui/element_selector/selected.tres" id="2_30e0c"]
@@ -274,6 +274,20 @@ corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m52fi"]
+bg_color = Color(0.980392, 0.545098, 0.243137, 1)
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bbjex"]
+bg_color = Color(1, 0.65098, 0.25098, 1)
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o375j"]
+bg_color = Color(0.839216, 0.364706, 0.0941176, 1)
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 4
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8bfmg"]
 bg_color = Color(0.529412, 0.180392, 0.141176, 1)
@@ -758,6 +772,27 @@ corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gj6g2"]
+bg_color = Color(0.458824, 0.313726, 0.235294, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rolib"]
+bg_color = Color(0.568627, 0.447059, 0.337255, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aykbh"]
+bg_color = Color(0.419608, 0.188235, 0.211765, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w2m4y"]
 bg_color = Color(0.541176, 0.537255, 0.878431, 1)
 corner_radius_top_left = 4
@@ -858,6 +893,27 @@ corner_radius_bottom_left = 4
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nxdon"]
 bg_color = Color(0.192157, 0.164706, 0.419608, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x8kug"]
+bg_color = Color(0.427451, 0.917647, 0.854902, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_64bj3"]
+bg_color = Color(0.564706, 0.988235, 0.835294, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_drcbu"]
+bg_color = Color(0.266667, 0.811765, 0.858824, 1)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
@@ -1240,6 +1296,27 @@ corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kbrc8"]
+bg_color = Color(0.560784, 0.815686, 1, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p41rl"]
+bg_color = Color(0.690196, 0.905882, 1, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bv7qp"]
+bg_color = Color(0.376471, 0.47451, 0.858824, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rwxnb"]
 bg_color = Color(0.560784, 1, 0.917647, 1)
 corner_radius_top_left = 4
@@ -1298,6 +1375,27 @@ corner_radius_bottom_left = 4
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0gdwx"]
 bg_color = Color(0.380392, 0.00784314, 0.32549, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3adqy"]
+bg_color = Color(0.168627, 0.0745098, 0.341176, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bekb4"]
+bg_color = Color(0.427451, 0.133333, 0.478431, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ul1km"]
+bg_color = Color(0.0509804, 0.0235294, 0.239216, 1)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
@@ -1906,6 +2004,27 @@ script = ExtResource("3_bfdgk")
 id = 98
 description = "Just like the other sand!"
 
+[node name="QuickSand" type="Button" parent="basic/Basic"]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 0
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxFlat_m52fi")
+theme_override_styles/hover = SubResource("StyleBoxFlat_bbjex")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_o375j")
+text = "quick sand"
+script = ExtResource("3_bfdgk")
+id = 156
+description = "Slowly absorbs anything placed on top of it."
+
 [node name="Soil" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
@@ -2362,6 +2481,28 @@ script = ExtResource("3_bfdgk")
 id = 32
 description = "Fire-breathing dragons that coil up in the sky."
 
+[node name="Mutant" type="Button" parent="basic/Basic"]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 0
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxFlat_gj6g2")
+theme_override_styles/hover = SubResource("StyleBoxFlat_rolib")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_aykbh")
+text = "mutant"
+script = ExtResource("3_bfdgk")
+id = 158
+description = "A poor creature that attacks all other life."
+
 [node name="Slime" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
@@ -2466,6 +2607,28 @@ text = "virus"
 script = ExtResource("3_bfdgk")
 id = 101
 description = "Infects all other life, but cannot survive on its own."
+
+[node name="Joy" type="Button" parent="basic/Basic"]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 0
+mouse_filter = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxFlat_x8kug")
+theme_override_styles/hover = SubResource("StyleBoxFlat_64bj3")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_drcbu")
+text = "joy"
+script = ExtResource("3_bfdgk")
+id = 159
+description = "An odd chemical that can transform life into mutants."
 
 [node name="Alien" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
@@ -2841,6 +3004,28 @@ script = ExtResource("3_bfdgk")
 id = 35
 description = "An element that can cause nuclear explosions."
 
+[node name="Thermostat" type="Button" parent="basic/Basic"]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 0
+mouse_filter = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxFlat_5yi4k")
+theme_override_styles/hover = SubResource("StyleBoxFlat_uaxqt")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_7m6xm")
+text = "thermostat"
+script = ExtResource("3_bfdgk")
+id = 160
+description = "Cycles between hot and cold."
+
 [node name="Invisirock" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
@@ -2894,9 +3079,9 @@ theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 15
-theme_override_styles/normal = SubResource("StyleBoxFlat_5u0yn")
-theme_override_styles/hover = SubResource("StyleBoxFlat_tim5j")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_4pg2j")
+theme_override_styles/normal = SubResource("StyleBoxFlat_kbrc8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_p41rl")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_bv7qp")
 text = "freeze ray"
 script = ExtResource("3_bfdgk")
 id = 153
@@ -2944,7 +3129,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_uyggr")
 text = "gamma rays"
 script = ExtResource("3_bfdgk")
 id = 128
-description = "A fragmented energy beam of gamma particles."
+description = "A fragmented energy beam made of gamma particles."
 
 [node name="Meteor" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
@@ -2967,6 +3152,28 @@ text = "meteor"
 script = ExtResource("3_bfdgk")
 id = 75
 description = "A destructive meteor shower."
+
+[node name="Rocket" type="Button" parent="basic/Basic"]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 0
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxFlat_3adqy")
+theme_override_styles/hover = SubResource("StyleBoxFlat_bekb4")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ul1km")
+text = "rocket"
+script = ExtResource("3_bfdgk")
+id = 157
+description = "Tons of missles that soar into the skies. Do not use indoors!"
 
 [node name="Sun" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)

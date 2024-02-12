@@ -23,7 +23,10 @@ inline T fast_cos(T x) noexcept {
 
 SandSimulation::SandSimulation() {
     AllElements::fill_elements(&elements);
-    for (int i = 2048; i <= 4096; i++) {
+    for (int i = 0; i <= 4096; i++) {
+        if (i > 160 && i < 2048) {
+            continue;
+        }
         elements[i]->my_sim = this;
         elements[i]->custom_id = i;
     }  
@@ -493,6 +496,15 @@ uint32_t SandSimulation::get_color(int row, int col, bool flat_mode) {
         out = lerp_color(out, 0xba52ff, smooth_step(5.0/6, 6.0/6, x));
 
         return out;
+    }
+
+    if (id == 160) {
+        double x = time - fast_floor(time);
+        if (x < 1.0 / 2) {
+            return 0xf786c0;
+        } else  {
+            return 0x86f7f4;
+        }
     }
 
     return 0xFFFFFF;

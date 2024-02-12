@@ -159,6 +159,11 @@
 #include "elements/space/freeze_ray.h"
 #include "elements/chemical/frozen_acid.h"
 #include "elements/chemical/frozen_ammonia.h"
+#include "elements/space/quick_sand.h"
+#include "elements/space/rocket.h"
+#include "elements/life/mutant.h"
+#include "elements/basic/joy.h"
+#include "elements/chemical/thermostat.h"
 
 class AllElements {
 public:
@@ -325,6 +330,12 @@ public:
         elements->at(153) = new FreezeRay();
         elements->at(154) = new FrozenAcid();
         elements->at(155) = new FrozenAmmonia();
+        elements->at(156) = new QuickSand();
+        elements->at(157) = new Rocket();
+        elements->at(158) = new Mutant();
+        elements->at(159) = new Joy();
+        elements->at(160) = new Thermostat();
+
 
         for (int i = 2048; i <= 4096; i++) {
             elements->at(i) = new CustomElementParticle(); 
