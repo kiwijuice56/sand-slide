@@ -1,4 +1,4 @@
-[gd_scene load_steps=261 format=3 uid="uid://danjqv04qm3f6"]
+[gd_scene load_steps=267 format=3 uid="uid://danjqv04qm3f6"]
 
 [ext_resource type="Script" path="res://main/ui/element_selector/element_selector.gd" id="1_fxkbl"]
 [ext_resource type="Material" uid="uid://c5qvq03ayjd60" path="res://main/ui/element_selector/selected.tres" id="2_30e0c"]
@@ -919,6 +919,27 @@ corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yrsqq"]
+bg_color = Color(0.439216, 0.831373, 0.545098, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_efgc6"]
+bg_color = Color(0.556863, 1, 0.54902, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_krofu"]
+bg_color = Color(0.298039, 0.678431, 0.509804, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k8ir3"]
 bg_color = Color(0.27451, 0.156863, 0.388235, 1)
 corner_radius_top_left = 4
@@ -1040,6 +1061,27 @@ corner_radius_bottom_left = 4
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4cehg"]
 bg_color = Color(0.643137, 0.603922, 0.839216, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tr26r"]
+bg_color = Color(0.878431, 0.682353, 0.388235, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5acmf"]
+bg_color = Color(0.968627, 0.847059, 0.486275, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i0qp6"]
+bg_color = Color(0.768627, 0.364706, 0.262745, 1)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
@@ -2630,6 +2672,28 @@ script = ExtResource("3_bfdgk")
 id = 159
 description = "An odd chemical that can transform life into mutants."
 
+[node name="Mint" type="Button" parent="basic/Basic"]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 0
+mouse_filter = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxFlat_yrsqq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_efgc6")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_krofu")
+text = "mint"
+script = ExtResource("3_bfdgk")
+id = 162
+description = "A tasty plant substance that is both hot and cold!"
+
 [node name="Alien" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
@@ -2761,6 +2825,28 @@ text = "ammonia"
 script = ExtResource("3_bfdgk")
 id = 136
 description = "A basic solution that neutralizes acid."
+
+[node name="Paraffin" type="Button" parent="basic/Basic"]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 0
+mouse_filter = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxFlat_tr26r")
+theme_override_styles/hover = SubResource("StyleBoxFlat_5acmf")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_i0qp6")
+text = "paraffin"
+script = ExtResource("3_bfdgk")
+id = 161
+description = "A very explosive oil!"
 
 [node name="Sponge" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)

@@ -164,6 +164,8 @@
 #include "elements/life/mutant.h"
 #include "elements/basic/joy.h"
 #include "elements/chemical/thermostat.h"
+#include "elements/space/paraffin.h"
+#include "elements/basic/peppermint.h"
 
 class AllElements {
 public:
@@ -335,6 +337,8 @@ public:
         elements->at(158) = new Mutant();
         elements->at(159) = new Joy();
         elements->at(160) = new Thermostat();
+        elements->at(161) = new Paraffin();  
+        elements->at(162) = new Mint();  
 
 
         for (int i = 2048; i <= 4096; i++) {
