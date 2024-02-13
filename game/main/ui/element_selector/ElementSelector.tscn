@@ -1,4 +1,4 @@
-[gd_scene load_steps=267 format=3 uid="uid://danjqv04qm3f6"]
+[gd_scene load_steps=273 format=3 uid="uid://danjqv04qm3f6"]
 
 [ext_resource type="Script" path="res://main/ui/element_selector/element_selector.gd" id="1_fxkbl"]
 [ext_resource type="Material" uid="uid://c5qvq03ayjd60" path="res://main/ui/element_selector/selected.tres" id="2_30e0c"]
@@ -178,27 +178,6 @@ bg_color = Color(0.831373, 0.756863, 0.756863, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_78bka"]
 bg_color = Color(0.701961, 0.419608, 0.54902, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q6a40"]
-bg_color = Color(0.298039, 0.309804, 0.490196, 1)
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qcidr"]
-bg_color = Color(0.419608, 0.388235, 0.560784, 1)
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_geoh2"]
-bg_color = Color(0.203922, 0.168627, 0.258824, 1)
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g0e01"]
 bg_color = Color(0.709804, 0.376471, 0.168627, 1)
@@ -655,6 +634,27 @@ corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xqr61"]
+bg_color = Color(0.858824, 0.807843, 0.337255, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ce3nn"]
+bg_color = Color(1, 0.964706, 0.580392, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hxnru"]
+bg_color = Color(0.470588, 0.768627, 0.223529, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w2m4y"]
 bg_color = Color(0.541176, 0.537255, 0.878431, 1)
 corner_radius_top_left = 4
@@ -823,6 +823,27 @@ corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q6a40"]
+bg_color = Color(0.298039, 0.309804, 0.490196, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qcidr"]
+bg_color = Color(0.419608, 0.388235, 0.560784, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_geoh2"]
+bg_color = Color(0.203922, 0.168627, 0.258824, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yrsqq"]
 bg_color = Color(0.439216, 0.831373, 0.545098, 1)
 corner_radius_top_left = 4
@@ -944,6 +965,27 @@ corner_radius_bottom_left = 4
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i0qp6"]
 bg_color = Color(0.768627, 0.364706, 0.262745, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_37ia3"]
+bg_color = Color(0.639216, 0.419608, 0.94902, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a6y16"]
+bg_color = Color(0.87451, 0.529412, 1, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1jxa2"]
+bg_color = Color(0.360784, 0.247059, 0.819608, 1)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
@@ -1958,23 +2000,6 @@ script = ExtResource("3_bfdgk")
 id = 10
 description = "Explodes when in contact with heat. "
 
-[node name="Hurricane" type="Button" parent="basic/Basic"]
-custom_minimum_size = Vector2(0, 48)
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-focus_mode = 0
-mouse_filter = 1
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 15
-theme_override_styles/normal = SubResource("StyleBoxFlat_q6a40")
-theme_override_styles/hover = SubResource("StyleBoxFlat_qcidr")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_geoh2")
-text = "storm"
-script = ExtResource("3_bfdgk")
-id = 41
-description = "Clouds that spawn water and lightning."
-
 [node name="Wood" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
@@ -2426,6 +2451,28 @@ script = ExtResource("3_bfdgk")
 id = 32
 description = "Fire-breathing dragons that coil up in the sky."
 
+[node name="Medusa" type="Button" parent="basic/Basic"]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 0
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxFlat_xqr61")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ce3nn")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hxnru")
+text = "medusa"
+script = ExtResource("3_bfdgk")
+id = 164
+description = "Evil snakes that can turn life into stone."
+
 [node name="Slime" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
@@ -2598,6 +2645,23 @@ script = ExtResource("3_bfdgk")
 id = 127
 description = "A mysterious fluid that spawns life randomly."
 
+[node name="Hurricane" type="Button" parent="basic/Basic"]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 0
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxFlat_q6a40")
+theme_override_styles/hover = SubResource("StyleBoxFlat_qcidr")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_geoh2")
+text = "storm"
+script = ExtResource("3_bfdgk")
+id = 41
+description = "Clouds that spawn water and lightning."
+
 [node name="Mint" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
@@ -2729,6 +2793,28 @@ text = "paraffin"
 script = ExtResource("3_bfdgk")
 id = 161
 description = "A very explosive oil!"
+
+[node name="Potion" type="Button" parent="basic/Basic"]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 0
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxFlat_37ia3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_a6y16")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_1jxa2")
+text = "potion"
+script = ExtResource("3_bfdgk")
+id = 163
+description = "A mysterious fluid with many random properties."
 
 [node name="Sponge" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)

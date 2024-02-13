@@ -24,7 +24,7 @@ inline T fast_cos(T x) noexcept {
 SandSimulation::SandSimulation() {
     AllElements::fill_elements(&elements);
     for (int i = 0; i <= 4096; i++) {
-        if (i > 162 && i < 2048) {
+        if (i > 163 && i < 2048) {
             continue;
         }
         elements[i]->my_sim = this;

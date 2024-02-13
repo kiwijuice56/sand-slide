@@ -166,6 +166,10 @@
 #include "elements/chemical/thermostat.h"
 #include "elements/space/paraffin.h"
 #include "elements/basic/peppermint.h"
+#include "elements/basic/potion.h"
+#include "elements/life/medusa.h"
+#include "elements/space/stone_ray.h"
+#include "elements/space/stone_trail.h"
 
 class AllElements {
 public:
@@ -339,6 +343,10 @@ public:
         elements->at(160) = new Thermostat();
         elements->at(161) = new Paraffin();  
         elements->at(162) = new Mint();  
+        elements->at(163) = new Potion();  
+        elements->at(164) = new Medusa();  
+        elements->at(165) = new StoneRay();  
+        elements->at(166) = new StoneTrail();  
 
 
         for (int i = 2048; i <= 4096; i++) {

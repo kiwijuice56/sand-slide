@@ -23,7 +23,7 @@ public:
             return;
         } 
 
-        if (sim->in_bounds(row + 1, col) && (sim->get_cell(row + 1, col) == 23 || sim->get_cell(row + 1, col) == 32 || sim->get_cell(row + 1, col) == 101)) {
+        if (sim->in_bounds(row + 1, col) && (sim->get_cell(row + 1, col) == 23 || sim->get_cell(row + 1, col) == 32 || sim->get_cell(row + 1, col) == 101 || sim->get_cell(row + 1, col) == 158 || sim->get_cell(row + 1, col) == 164 || sim->get_cell(row + 1, col) == 129)) {
             sim->grow(row + 1, col, -1, 94);
         }
 
