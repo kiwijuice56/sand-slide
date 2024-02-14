@@ -171,6 +171,11 @@
 #include "elements/space/stone_ray.h"
 #include "elements/space/stone_trail.h"
 #include "elements/life/black_slime.h"
+#include "elements/life/mushroom_core.h"
+#include "elements/life/mushroom_stem.h"
+#include "elements/life/mushroom_shell_a.h"
+#include "elements/life/mushroom_shell_b.h"
+#include "elements/life/mushroom_shell_c.h"
 
 class AllElements {
 public:
@@ -349,6 +354,11 @@ public:
         elements->at(165) = new StoneRay();  
         elements->at(166) = new StoneTrail();  
         elements->at(167) = new BlackSlime();  
+        elements->at(168) = new MushroomCore();  
+        elements->at(169) = new MushroomStem();  
+        elements->at(170) = new MushroomShellA();
+        elements->at(171) = new MushroomShellB();  
+        elements->at(172) = new MushroomShellC();    
 
 
         for (int i = 2048; i <= 4096; i++) {

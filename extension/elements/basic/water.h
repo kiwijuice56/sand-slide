@@ -5,7 +5,7 @@
 
 class Water: public Element {
 public:
-    const double ABSORB = 1.0 / 4098;
+    const double ABSORB = 1.0 / 2048;
     const double MELT = 1.0 / 128;
     const double EVAPORATION = 1.0 / 64;
     const double MIX = 1.0 / 32;
@@ -15,7 +15,7 @@ public:
         double random = sim->randf();
 
         // Absorption into plants
-        if (random < ABSORB && sim->cardinal_touch_count(row, col, 14) > 0) {
+        if (random < ABSORB && (sim->cardinal_touch_count(row, col, 14) +  sim->cardinal_touch_count(row, col, 169)) > 0) {
             sim->set_cell(row, col, 0);
             return;
         }

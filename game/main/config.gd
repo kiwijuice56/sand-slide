@@ -8,3 +8,4 @@ extends Resource
 @export var fps: bool = false
 @export var custom_element_ordering: Array[int]
 @export var bg_color: Color
+@export var sound_on: bool = true

@@ -22,11 +22,13 @@ func _ready() -> void:
 	%SizeSlider.value = Settings.brush_size
 	%SpeedSlider.value = Settings.simulation_speed
 	%ZoomSlider.value = Settings.px_scale
-	%CheckButton.set_pressed_no_signal(Settings.flat_mode)
+	%CheckButton.set_pressed_no_signal(Settings.sound_on)
 	%FpsButton.set_pressed_no_signal(Settings.fps)
 	%BackgroundPicker.color = Settings.bg_color
 	
 	%BackgroundPicker.child_entered_tree.connect(_on_picker_created)
+	
+	AudioServer.set_bus_mute(AudioServer.get_bus_index("Master"), not Settings.sound_on)
 
 func _on_picker_created(child: Node) -> void:
 	var color_picker: ColorPicker = child.get_child(1, true)
@@ -54,8 +56,8 @@ func _on_zoom_changed(new_zoom: int) -> void:
 	CommonReference.canvas.resized.emit()
 
 func _on_mode_changed(pressed: bool) -> void:
-	Settings.flat_mode = pressed
-	CommonReference.canvas.repaint()
+	Settings.sound_on = not Settings.sound_on
+	AudioServer.set_bus_mute(AudioServer.get_bus_index("Master"), not Settings.sound_on)
 
 func _on_fps_changed(pressed: bool) -> void:
 	Settings.fps = pressed

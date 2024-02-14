@@ -390,14 +390,13 @@ text = "in"
 vertical_alignment = 1
 
 [node name="CheckContainer" type="HBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
-visible = false
 layout_mode = 2
 
 [node name="Label" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/CheckContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-text = "flat graphics"
+text = "sound"
 
 [node name="CheckButton" type="CheckButton" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/CheckContainer"]
 unique_name_in_owner = true
@@ -411,6 +410,7 @@ theme_override_styles/disabled = SubResource("StyleBoxFlat_5rheo")
 theme_override_styles/hover = SubResource("StyleBoxFlat_5rheo")
 theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_5rheo")
 theme_override_styles/focus = SubResource("StyleBoxFlat_5rheo")
+button_pressed = true
 action_mode = 0
 
 [node name="FpsContainer" type="HBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
