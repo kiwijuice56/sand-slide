@@ -1,4 +1,4 @@
-[gd_scene load_steps=273 format=3 uid="uid://danjqv04qm3f6"]
+[gd_scene load_steps=276 format=3 uid="uid://danjqv04qm3f6"]
 
 [ext_resource type="Script" path="res://main/ui/element_selector/element_selector.gd" id="1_fxkbl"]
 [ext_resource type="Material" uid="uid://c5qvq03ayjd60" path="res://main/ui/element_selector/selected.tres" id="2_30e0c"]
@@ -671,6 +671,27 @@ corner_radius_bottom_left = 4
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_be0xq"]
 bg_color = Color(0.439216, 0.388235, 0.811765, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_csf0a"]
+bg_color = Color(0.0784314, 0.0666667, 0.121569, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yvm6g"]
+bg_color = Color(0.0823529, 0.0666667, 0.121569, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g4qn7"]
+bg_color = Color(0, 0, 0, 1)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
@@ -2175,12 +2196,12 @@ layout_mode = 2
 size_flags_horizontal = 3
 focus_mode = 0
 mouse_filter = 1
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 15
 theme_override_styles/normal = SubResource("StyleBoxFlat_o4xoi")
 theme_override_styles/hover = SubResource("StyleBoxFlat_hpdlf")
@@ -2489,6 +2510,23 @@ text = "slime"
 script = ExtResource("3_bfdgk")
 id = 86
 description = "A mold-like creature that grows along surfaces. "
+
+[node name="BlackSlime" type="Button" parent="basic/Basic"]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 0
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxFlat_csf0a")
+theme_override_styles/hover = SubResource("StyleBoxFlat_yvm6g")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_g4qn7")
+text = "black slime"
+script = ExtResource("3_bfdgk")
+id = 167
+description = "A faster and more intelligent species of slime."
 
 [node name="MetalSlime" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)
@@ -3650,6 +3688,7 @@ description = "???"
 [node name="custom" type="ScrollContainer" parent="."]
 visible = false
 layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_hj7t3")
 vertical_scroll_mode = 2
 
 [node name="Custom" type="GridContainer" parent="custom"]

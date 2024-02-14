@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Fluid" load_steps=2 format=3 uid="uid://b4aob4dtjabmo"]
+
+[ext_resource type="Script" path="res://main/element_manager/element_material/types/fluid.gd" id="1_cjtb4"]
+
+[resource]
+script = ExtResource("1_cjtb4")
+color_a = Color(0, 0, 0, 1)
+color_b = Color(0.121569, 0.0941176, 0.215686, 1)
+color_c = Color(0.219608, 0.137255, 0.345098, 1)
+id = 167

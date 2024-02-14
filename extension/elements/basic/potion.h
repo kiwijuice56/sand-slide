@@ -51,7 +51,7 @@ public:
         if (!sim->in_bounds(row, col))
             return false;
         int x = sim->get_cell(row, col);
-        return x == 4 || x == 7 || x == 8 || x == 12 || x == 13 || x == 14 || x == 23 || x == 31 
+        return x == 4 || x == 7 || x == 8 || x == 12 || x == 13 || x == 14 || x == 23 || x == 31 || x == 167
         || x == 32 || x == 33 || x == 49 || x == 54 || x == 55 || x == 72 || x == 73 || x == 86 || x == 164 || x == 158;
     }
 

@@ -102,7 +102,7 @@ corner_radius_bottom_right = 6
 corner_radius_bottom_left = 6
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6vkpo"]
-content_margin_left = 24.0
+content_margin_left = 32.0
 bg_color = Color(0.223529, 0.215686, 0.278431, 1)
 corner_radius_top_left = 4
 corner_radius_top_right = 4

@@ -170,6 +170,7 @@
 #include "elements/life/medusa.h"
 #include "elements/space/stone_ray.h"
 #include "elements/space/stone_trail.h"
+#include "elements/life/black_slime.h"
 
 class AllElements {
 public:
@@ -347,6 +348,7 @@ public:
         elements->at(164) = new Medusa();  
         elements->at(165) = new StoneRay();  
         elements->at(166) = new StoneTrail();  
+        elements->at(167) = new BlackSlime();  
 
 
         for (int i = 2048; i <= 4096; i++) {
