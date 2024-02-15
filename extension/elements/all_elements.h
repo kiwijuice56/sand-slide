@@ -176,6 +176,8 @@
 #include "elements/life/mushroom_shell_a.h"
 #include "elements/life/mushroom_shell_b.h"
 #include "elements/life/mushroom_shell_c.h"
+#include "elements/basic/bedrock.h"
+#include "elements/space/missile.h"
 
 class AllElements {
 public:
@@ -359,6 +361,8 @@ public:
         elements->at(170) = new MushroomShellA();
         elements->at(171) = new MushroomShellB();  
         elements->at(172) = new MushroomShellC();    
+        elements->at(173) = new Bedrock();  
+        elements->at(174) = new Missile();  
 
 
         for (int i = 2048; i <= 4096; i++) {
