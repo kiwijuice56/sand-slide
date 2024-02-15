@@ -205,6 +205,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_e160y")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="SettingsContainer/PanelContainer"]
 layout_mode = 2
+theme_override_constants/separation = 16
 
 [node name="HBoxContainer" type="HBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer"]
 layout_mode = 2
@@ -232,12 +233,12 @@ icon_alignment = 1
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxEmpty_i7y7c")
-vertical_scroll_mode = 2
+vertical_scroll_mode = 0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_constants/separation = 8
+theme_override_constants/separation = 11
 
 [node name="SizeContainer" type="HBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
@@ -249,6 +250,7 @@ custom_minimum_size = Vector2(90, 0)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 1
+theme_override_font_sizes/font_size = 21
 text = "brush"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/SizeContainer"]
@@ -300,6 +302,7 @@ custom_minimum_size = Vector2(90, 0)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 1
+theme_override_font_sizes/font_size = 21
 text = "time"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/SpeedContainer"]
@@ -349,6 +352,7 @@ custom_minimum_size = Vector2(90, 0)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 1
+theme_override_font_sizes/font_size = 21
 text = "zoom"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/ZoomContainer"]
@@ -396,6 +400,7 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 21
 text = "sound"
 
 [node name="CheckButton" type="CheckButton" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/CheckContainer"]
@@ -444,8 +449,8 @@ theme_override_constants/separation = 0
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 8
-text = "bg color
-"
+theme_override_font_sizes/font_size = 21
+text = "clear color"
 
 [node name="BackgroundPicker" type="ColorPickerButton" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/BackgroundContainer"]
 unique_name_in_owner = true
@@ -453,6 +458,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 focus_mode = 0
 color = Color(0.207843, 0.360784, 0.588235, 1)
+edit_alpha = false
 
 [node name="ClearButton" type="Button" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
 unique_name_in_owner = true
@@ -460,7 +466,7 @@ custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_vertical = 0
 focus_mode = 0
-text = "clear canvas"
+text = "clear screen"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
