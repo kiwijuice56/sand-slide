@@ -1,4 +1,4 @@
-[gd_scene load_steps=289 format=3 uid="uid://danjqv04qm3f6"]
+[gd_scene load_steps=292 format=3 uid="uid://danjqv04qm3f6"]
 
 [ext_resource type="Theme" uid="uid://co20v1mxv2dfm" path="res://main/ui/_theme/theme.tres" id="1_c5upu"]
 [ext_resource type="Script" path="res://main/ui/element_selector/element_selector.gd" id="1_fxkbl"]
@@ -425,6 +425,15 @@ bg_color = Color(0.568627, 0.447059, 0.337255, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aykbh"]
 bg_color = Color(0.419608, 0.188235, 0.211765, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p00hi"]
+bg_color = Color(1, 0.94902, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5rqoh"]
+bg_color = Color(1, 0.992157, 0.560784, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fkrxu"]
+bg_color = Color(0.670588, 0.392157, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_crjli"]
 bg_color = Color(0.0784314, 0.0156863, 0.345098, 1)
@@ -1771,6 +1780,28 @@ text = "mutant"
 script = ExtResource("3_bfdgk")
 id = 158
 description = "A poor creature that attacks all other life."
+
+[node name="Glaggler" type="Button" parent="basic/Basic"]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 0
+mouse_filter = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxFlat_p00hi")
+theme_override_styles/hover = SubResource("StyleBoxFlat_5rqoh")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_fkrxu")
+text = "glaggler"
+script = ExtResource("3_bfdgk")
+id = 175
+description = "Unpredictable, intelligent, and reclusive. Can only manifest itself for a brief moment."
 
 [node name="Spiral" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)

@@ -46,14 +46,14 @@ func create_new_element() -> void:
 	var new_element: CustomElement = CustomElement.new()
 	new_element.id = id
 	new_element.display_name = RandomName.NAMES.pick_random()
-	new_element.color_a = Color.from_hsv(randf(), randf(), randf())
+	new_element.color_a = Color.from_hsv(randf(), randf() * 0.5 + 0.5, randf() * 0.5 + 0.5)
 	if randf() < 0.5:
 		new_element.style = 0
 		new_element.color_b = new_element.color_a
 		new_element.color_c = new_element.color_a
 	else:
 		new_element.style = 1
-		new_element.color_b = Color.from_hsv(randf(), randf(), randf())
+		new_element.color_b = Color.from_hsv(randf(), randf() * 0.5 + 0.5, randf() * 0.5 + 0.5)
 		new_element.color_c = Color.from_hsv(randf(), randf(), randf())
 	new_element.state = randi() % 4
 	new_element.density = randf()

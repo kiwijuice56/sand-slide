@@ -178,6 +178,9 @@
 #include "elements/life/mushroom_shell_c.h"
 #include "elements/basic/bedrock.h"
 #include "elements/space/missile.h"
+#include "elements/basic/glaggler_seed.h"
+#include "elements/basic/glaggler_eye.h"
+#include "elements/basic/glaggler_face.h"
 
 class AllElements {
 public:
@@ -363,6 +366,9 @@ public:
         elements->at(172) = new MushroomShellC();    
         elements->at(173) = new Bedrock();  
         elements->at(174) = new Missile();  
+        elements->at(175) = new GlagglerSeed(); 
+        elements->at(176) = new GlagglerEye(); 
+        elements->at(177) = new GlagglerFace(); 
 
 
         for (int i = 2048; i <= 4096; i++) {

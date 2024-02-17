@@ -9,6 +9,7 @@ class_name Painter
 # be registered in the Godot class database.
 var is_powder: Dictionary = {}
 var is_fluid: Dictionary = {}
+var is_super_powder: Dictionary = {}
 
 # Reference to the simulation from Main for less verbose access
 var sim: SandSimulation
@@ -29,6 +30,8 @@ func _ready() -> void:
 		is_fluid[i] = true
 	for i in [1, 11, 12, 16, 42, 4, 8, 23, 31, 32, 33, 49, 63, 64, 45, 70, 72, 75, 85, 95, 98, 119, 128, 130, 162, 159, 157, 164, 168, 174]:
 		is_powder[i] = true
+	for i in [175]:
+		is_super_powder[i] = true
 	mouse_pressed.connect(_on_mouse_pressed)
 
 func _process(_delta: float) -> void:
@@ -127,6 +130,8 @@ func draw_circle(x: float, y: float, radius: float) -> void:
 func draw_pixel(row: float, col: float) -> void:
 	# Powders must have some random noise in order to prevent stacking behavior
 	if selected_element in is_powder and randf() > 0.1:
+		return
+	if selected_element in is_super_powder and randf() > 0.01:
 		return
 	
 	var y: int = roundi(row)
