@@ -48,6 +48,13 @@ struct CustomElement {
     bool soluble;
 
     bool init = false;
+
+    int reactant_1;
+    int reactant_2;
+    int reactant_3;
+    int product_1;
+    int product_2;
+    int product_3;
 };
 
 // Contains grid cells and methods to process them
@@ -126,7 +133,7 @@ public:
     int get_chunk(int c);
     int get_width();
     int get_height();
-    void resize(int new_width, int new_height);
+    void resize(int new_width, int new_height); 
     void set_chunk_size(int new_size);
     PackedByteArray get_data();
 

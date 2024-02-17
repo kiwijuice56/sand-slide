@@ -552,6 +552,13 @@ void SandSimulation::initialize_custom_elements(Dictionary dict) {
         f.attractive = bool(arr[13]);
         f.infectious = bool(arr[14]);
         f.soluble = bool(arr[15]);
+        f.reactant_1 = int(arr[16]);
+        f.product_1 = int(arr[17]);
+        f.reactant_2 = int(arr[18]);
+        f.product_2 = int(arr[19]);
+        f.reactant_3 = int(arr[20]);
+        f.product_3 = int(arr[21]);
+
 
         custom_elements[id] = f;
     }

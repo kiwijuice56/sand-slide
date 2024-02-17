@@ -14,6 +14,38 @@ public:
     void process(SandSimulation *sim, int row, int col) override {
         float reactivity = my_sim->custom_elements[custom_id].reactivity;
 
+        // tranformations 
+        if (sim->randf() < reactivity * reactivity * reactivity * reactivity) {
+            for (int y = row - 3; y <= row + 3; y++) {
+                for (int x = col - 3; x <= col + 3; x++) {
+                    if (sim->in_bounds(y, x) && sim->get_cell(y, x) == my_sim->custom_elements[custom_id].reactant_1) {
+                        int p = my_sim->custom_elements[custom_id].product_1;
+                        if (p == -1) {
+                            p = 0;
+                        }
+                        sim->set_cell(row, col, p);
+                        return;
+                    }    
+                    if (sim->in_bounds(y, x) && sim->get_cell(y, x) == my_sim->custom_elements[custom_id].reactant_2) {
+                        int p = my_sim->custom_elements[custom_id].product_2;
+                        if (p == -1) {
+                            p = 0;
+                        }
+                        sim->set_cell(row, col, p);
+                        return;
+                    } 
+                    if (sim->in_bounds(y, x) && sim->get_cell(y, x) == my_sim->custom_elements[custom_id].reactant_3) {
+                        int p = my_sim->custom_elements[custom_id].product_3;
+                        if (p == -1) {
+                            p = 0;
+                        }
+                        sim->set_cell(row, col, p);
+                        return;
+                    }             
+                }
+            }
+        }
+
         // attractive
         if (my_sim->custom_elements[custom_id].attractive) {
             // If no space around it, it's in the interior

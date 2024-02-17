@@ -72,6 +72,15 @@ func create_new_element() -> void:
 	new_element.soluble = randf() < 0.4
 	new_element.infectious = randf() < 0.2
 	
+	var possible_rand: Array = [
+		1, 15, 3, 5, 30, 2, 19, 20, 23, 164, 16, 87, 65, 26, 51, 44, 
+		82, 133, 17, 45, 70, 163, 162, 158, 132, 33, 11, 21, 136
+	]
+	new_element.reactant_1 = possible_rand.pick_random()
+	new_element.product_1 = possible_rand.pick_random()
+	new_element.reactant_2 = possible_rand.pick_random()
+	new_element.product_2 = possible_rand.pick_random()
+	
 	custom_element_map[id] = new_element
 	Settings.custom_element_ordering.append(id)
 	Settings.save_settings()
@@ -103,6 +112,12 @@ func initialize_custom_elements() -> void:
 		pass_dict[custom_element.id].append(custom_element.attractive)
 		pass_dict[custom_element.id].append(custom_element.infectious)
 		pass_dict[custom_element.id].append(custom_element.soluble)
+		pass_dict[custom_element.id].append(custom_element.reactant_1)
+		pass_dict[custom_element.id].append(custom_element.product_1)
+		pass_dict[custom_element.id].append(custom_element.reactant_2)
+		pass_dict[custom_element.id].append(custom_element.product_2)
+		pass_dict[custom_element.id].append(custom_element.reactant_3)
+		pass_dict[custom_element.id].append(custom_element.product_3)
 		
 	CommonReference.main.sim.initialize_custom_elements(pass_dict)
 	initialize_element_graphics()
