@@ -6,6 +6,10 @@ var current_id: int = -1
 
 func initialize():
 	if current_id >= 2048:
+		if not current_id in CommonReference.element_manager.custom_element_map:
+			current_id = -1
+	
+	if current_id >= 2048:
 		var custom_element: CustomElement = CommonReference.element_manager.custom_element_map[current_id]
 		initialize_with_custom(custom_element)
 	else:
