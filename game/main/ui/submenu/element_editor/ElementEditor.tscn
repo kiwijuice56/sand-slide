@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://bqwqmevgndrm0"]
+[gd_scene load_steps=30 format=3 uid="uid://bqwqmevgndrm0"]
 
 [ext_resource type="Theme" uid="uid://co20v1mxv2dfm" path="res://main/ui/_theme/theme.tres" id="1_gu8tf"]
 [ext_resource type="Script" path="res://main/ui/submenu/element_editor/element_editor_menu.gd" id="2_ae0hb"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://skg5bmd8m812" path="res://main/ui/_icons/close.png" id="4_8lnwy"]
 [ext_resource type="PackedScene" uid="uid://dw3yr1ktgbep0" path="res://main/ui/element_selector/ElementPickerButton.tscn" id="5_d2qg0"]
 [ext_resource type="PackedScene" uid="uid://gewwsdlro3pf" path="res://main/ui/element_selector/CustomElementButton.tscn" id="5_ywxro"]
+[ext_resource type="PackedScene" uid="uid://danjqv04qm3f6" path="res://main/ui/element_selector/ElementSelector.tscn" id="7_jk2v0"]
 
 [sub_resource type="Theme" id="Theme_n7xkt"]
 default_font = ExtResource("3_gc23u")
@@ -211,6 +212,96 @@ _data = {
 "RESET": SubResource("Animation_swdin"),
 "enter": SubResource("Animation_ho8so"),
 "exit": SubResource("Animation_obmfd")
+}
+
+[sub_resource type="Animation" id="Animation_qkwxt"]
+resource_name = "in"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ElementPickerContainer:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ElementPickerContainer:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_e7emq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ElementPickerContainer:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ElementPickerContainer:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_laavc"]
+resource_name = "out"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ElementPickerContainer:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.3),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ElementPickerContainer:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_msgfr"]
+_data = {
+"RESET": SubResource("Animation_e7emq"),
+"in": SubResource("Animation_qkwxt"),
+"out": SubResource("Animation_laavc")
 }
 
 [node name="ElementEditorMenu" type="Control" node_paths=PackedStringArray("anim", "back_button")]
@@ -881,8 +972,9 @@ size_flags_horizontal = 2
 theme_override_font_sizes/font_size = 21
 text = "if touching:"
 
-[node name="CustomElementButton" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/TouchRule1/If" instance=ExtResource("5_d2qg0")]
+[node name="CustomElementButton" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/TouchRule1/If" node_paths=PackedStringArray("element_picker") instance=ExtResource("5_d2qg0")]
 layout_mode = 2
+element_picker = NodePath("../../../../../../../../ElementPickerContainer/ElementSelector")
 
 [node name="Then" type="HBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/TouchRule1"]
 layout_mode = 2
@@ -969,5 +1061,32 @@ text = "delete element"
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_01f6e")
+}
+speed_scale = 2.0
+
+[node name="ElementPickerContainer" type="MarginContainer" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 0
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="ElementSelector" parent="ElementPickerContainer" instance=ExtResource("7_jk2v0")]
+layout_mode = 2
+tabs_visible = false
+simple = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ElementPickerContainer/ElementSelector"]
+root_node = NodePath("../../..")
+libraries = {
+"": SubResource("AnimationLibrary_msgfr")
 }
 speed_scale = 2.0

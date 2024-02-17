@@ -20,7 +20,7 @@ var algae_idx: int = 0
 
 signal button_pressed(id: int)
 
-var simple: bool = false
+@export var simple: bool = false
 
 func _ready() -> void:
 	initialize_buttons()
@@ -28,7 +28,18 @@ func _ready() -> void:
 	update_custom_elements()
 
 func pick_simple() -> int:
+	update_custom_elements()
+	for button in $custom/Custom.get_children():
+		if not button is ElementButton:
+			continue
+		$custom/Custom.remove_child(button)
+		$basic/Basic.add_child(button)
+	
+	$AnimationPlayer.play("in")
+	await $AnimationPlayer.animation_finished
+	
 	var id: int = await button_pressed
+	$AnimationPlayer.play("out")
 	return id
 
 func _on_new_element_created() -> void:
@@ -66,6 +77,11 @@ func update_custom_elements() -> void:
 		if child.name != "CreateNewButton":
 			%Custom.remove_child(child)
 			child.queue_free()
+	if simple:
+		for child in %Basic.get_children():
+			if child.id >= 2048:
+				%Basic.remove_child(child)
+				child.queue_free()
 	for element_id in Settings.custom_element_ordering:
 		var custom_element: CustomElement = CommonReference.element_manager.custom_element_map[element_id]
 		var new_button: CustomElementButton = ELEMENT_BUTTON.instantiate()

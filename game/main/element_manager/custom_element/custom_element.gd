@@ -26,3 +26,13 @@ extends Resource
 @export var attractive: bool = false
 @export var infectious: bool = false
 @export var soluble: bool = false
+
+@export var reactant_1: int = -1
+@export var product_1: int = -1
+
+@export var reactant_2: int = -1
+@export var product_2: int = -1
+
+@export var reactant_3: int = -1
+@export var product_3: int = -1
+
