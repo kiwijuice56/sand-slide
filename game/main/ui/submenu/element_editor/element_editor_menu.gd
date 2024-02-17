@@ -64,6 +64,7 @@ func edit_element(element: CustomElement) -> void:
 	initialize()
 
 func initialize() -> void:
+	%ScrollContainer.scroll_vertical = 0
 	%Name.text = current.display_name
 	%Style.selected = current.style
 	%ColorA.color = current.color_a
@@ -85,6 +86,18 @@ func initialize() -> void:
 	%Attractive.button_pressed = current.attractive
 	%Soluble.button_pressed = current.soluble
 	%Infectious.button_pressed = current.infectious
+	%Reactant1.current_id = current.reactant_1
+	%Reactant1.initialize()
+	%Product1.current_id = current.product_1
+	%Product1.initialize()
+	%Reactant2.current_id = current.reactant_2
+	%Reactant2.initialize()
+	%Product2.current_id = current.product_2
+	%Product2.initialize()
+	%Reactant3.current_id = current.reactant_3
+	%Reactant3.initialize()
+	%Product3.current_id = current.product_3
+	%Product3.initialize()
 	
 	_on_state_selected(%State.selected)
 	_on_style_selected(%Style.selected)
@@ -115,3 +128,10 @@ func save_changes() -> void:
 	current.attractive = %Attractive.button_pressed 
 	current.soluble = %Soluble.button_pressed 
 	current.infectious = %Infectious.button_pressed 
+	
+	current.reactant_1 = %Reactant1.current_id 
+	current.product_1 = %Product1.current_id
+	current.reactant_2 = %Reactant2.current_id
+	current.product_2 = %Product2.current_id
+	current.reactant_3 = %Reactant3.current_id 
+	current.product_3 = %Product3.current_id 

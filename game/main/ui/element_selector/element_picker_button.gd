@@ -5,14 +5,11 @@ extends ElementButton
 var current_id: int = -1
 
 func initialize():
-	if current_id == -1:
-		pass
+	if current_id >= 2048:
+		var custom_element: CustomElement = CommonReference.element_manager.custom_element_map[current_id]
+		initialize_with_custom(custom_element)
 	else:
-		if current_id >= 2048:
-			var custom_element: CustomElement = CommonReference.element_manager.custom_element_map[current_id]
-			initialize_with_custom(custom_element)
-		else:
-			initialize_with_basic(current_id)
+		initialize_with_basic(current_id)
 
 func initialize_with_custom(element: CustomElement) -> void:
 	text = element.display_name.substr(0, 10)
@@ -57,5 +54,5 @@ func initialize_with_basic(id: int) -> void:
 
 
 func _on_button_down():
-	current_id = await element_picker.pick_simple()
+	current_id = await element_picker.pick_simple(current_id)
 	initialize()

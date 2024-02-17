@@ -20,20 +20,33 @@ var algae_idx: int = 0
 
 signal button_pressed(id: int)
 
+var ext_id: int = -1
+
 @export var simple: bool = false
 
 func _ready() -> void:
+	if simple:
+		last_button = null
 	initialize_buttons()
+	if not simple:
+		$basic/Basic/None.queue_free()
+	
 	await get_tree().get_root().ready
 	update_custom_elements()
 
-func pick_simple() -> int:
+func pick_simple(current_id: int) -> int:
+	last_button = null
+	ext_id = current_id
 	update_custom_elements()
 	for button in $custom/Custom.get_children():
 		if not button is ElementButton:
 			continue
 		$custom/Custom.remove_child(button)
 		$basic/Basic.add_child(button)
+	for button in $basic/Basic.get_children():
+		unbolden_button(button)
+		if (button.id == current_id):
+			bolden_button(button)
 	
 	$AnimationPlayer.play("in")
 	await $AnimationPlayer.animation_finished
@@ -47,7 +60,7 @@ func _on_new_element_created() -> void:
 	update_custom_elements()
 
 func initialize_buttons() -> void:
-	var id: int = -1
+	var id: int = -1 if not simple else ext_id
 	if is_instance_valid(last_button) and last_button is ElementButton:
 		id = last_button.id
 	if is_instance_valid(eraser_button) and not eraser_button.button_down.is_connected(_on_eraser_selected):
@@ -56,7 +69,6 @@ func initialize_buttons() -> void:
 		tap_button.button_down.connect(_on_tap_selected)
 	if not %CreateNewButton.button_down.is_connected(_on_new_element_created):
 		%CreateNewButton.button_down.connect(_on_new_element_created)
-	
 	var last_updated: bool = false
 	for button in $basic/Basic.get_children() + %Custom.get_children():
 		if not button is ElementButton:

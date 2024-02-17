@@ -1,4 +1,4 @@
-[gd_scene load_steps=286 format=3 uid="uid://danjqv04qm3f6"]
+[gd_scene load_steps=289 format=3 uid="uid://danjqv04qm3f6"]
 
 [ext_resource type="Theme" uid="uid://co20v1mxv2dfm" path="res://main/ui/_theme/theme.tres" id="1_c5upu"]
 [ext_resource type="Script" path="res://main/ui/element_selector/element_selector.gd" id="1_fxkbl"]
@@ -19,6 +19,17 @@ expand_margin_bottom = 4.0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hj7t3"]
 content_margin_right = 4.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rmduj"]
+bg_color = Color(0.00784314, 0.00784314, 0.00784314, 1)
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ht186"]
+bg_color = Color(0.168627, 0.168627, 0.168627, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qb0ij"]
+bg_color = Color(0.239216, 0.239216, 0.239216, 1)
+border_color = Color(1, 1, 1, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_520gh"]
 bg_color = Color(0.980392, 0.545098, 0.243137, 1)
@@ -905,8 +916,28 @@ theme_override_constants/h_separation = 0
 theme_override_constants/v_separation = 0
 columns = 3
 
+[node name="None" type="Button" parent="basic/Basic"]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 0
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxFlat_rmduj")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ht186")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_qb0ij")
+text = "none"
+script = ExtResource("3_bfdgk")
+id = -1
+description = "Empty space"
+
 [node name="Sand" type="Button" parent="basic/Basic"]
-material = ExtResource("2_30e0c")
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3

@@ -1,11 +1,10 @@
-[gd_scene load_steps=30 format=3 uid="uid://bqwqmevgndrm0"]
+[gd_scene load_steps=29 format=3 uid="uid://bqwqmevgndrm0"]
 
 [ext_resource type="Theme" uid="uid://co20v1mxv2dfm" path="res://main/ui/_theme/theme.tres" id="1_gu8tf"]
 [ext_resource type="Script" path="res://main/ui/submenu/element_editor/element_editor_menu.gd" id="2_ae0hb"]
 [ext_resource type="FontFile" uid="uid://b8lxwo5dkwrs4" path="res://main/ui/_theme/font/Poppins-Regular.ttf" id="3_gc23u"]
 [ext_resource type="Texture2D" uid="uid://skg5bmd8m812" path="res://main/ui/_icons/close.png" id="4_8lnwy"]
 [ext_resource type="PackedScene" uid="uid://dw3yr1ktgbep0" path="res://main/ui/element_selector/ElementPickerButton.tscn" id="5_d2qg0"]
-[ext_resource type="PackedScene" uid="uid://gewwsdlro3pf" path="res://main/ui/element_selector/CustomElementButton.tscn" id="5_ywxro"]
 [ext_resource type="PackedScene" uid="uid://danjqv04qm3f6" path="res://main/ui/element_selector/ElementSelector.tscn" id="7_jk2v0"]
 
 [sub_resource type="Theme" id="Theme_n7xkt"]
@@ -214,6 +213,33 @@ _data = {
 "exit": SubResource("Animation_obmfd")
 }
 
+[sub_resource type="Animation" id="Animation_e7emq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ElementPickerContainer:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ElementPickerContainer:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
 [sub_resource type="Animation" id="Animation_qkwxt"]
 resource_name = "in"
 length = 0.3
@@ -240,33 +266,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_e7emq"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ElementPickerContainer:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("ElementPickerContainer:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_laavc"]
@@ -368,10 +367,11 @@ icon = ExtResource("4_8lnwy")
 icon_alignment = 1
 
 [node name="ScrollContainer" type="ScrollContainer" parent="SettingsContainer/PanelContainer/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxEmpty_hcor6")
-scroll_vertical = 100
+scroll_vertical = 707
 vertical_scroll_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer"]
@@ -972,7 +972,8 @@ size_flags_horizontal = 2
 theme_override_font_sizes/font_size = 21
 text = "if touching:"
 
-[node name="CustomElementButton" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/TouchRule1/If" node_paths=PackedStringArray("element_picker") instance=ExtResource("5_d2qg0")]
+[node name="Reactant1" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/TouchRule1/If" node_paths=PackedStringArray("element_picker") instance=ExtResource("5_d2qg0")]
+unique_name_in_owner = true
 layout_mode = 2
 element_picker = NodePath("../../../../../../../../ElementPickerContainer/ElementSelector")
 
@@ -985,9 +986,10 @@ size_flags_horizontal = 2
 theme_override_font_sizes/font_size = 21
 text = "turn into:"
 
-[node name="CustomElementButton" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/TouchRule1/Then" instance=ExtResource("5_ywxro")]
+[node name="Product1" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/TouchRule1/Then" node_paths=PackedStringArray("element_picker") instance=ExtResource("5_d2qg0")]
+unique_name_in_owner = true
 layout_mode = 2
-text = "sand"
+element_picker = NodePath("../../../../../../../../ElementPickerContainer/ElementSelector")
 
 [node name="TouchRule2" type="VBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
 unique_name_in_owner = true
@@ -1003,9 +1005,10 @@ size_flags_horizontal = 2
 theme_override_font_sizes/font_size = 21
 text = "if touching:"
 
-[node name="CustomElementButton" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/TouchRule2/If" instance=ExtResource("5_ywxro")]
+[node name="Reactant2" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/TouchRule2/If" node_paths=PackedStringArray("element_picker") instance=ExtResource("5_d2qg0")]
+unique_name_in_owner = true
 layout_mode = 2
-text = "sand"
+element_picker = NodePath("../../../../../../../../ElementPickerContainer/ElementSelector")
 
 [node name="Then" type="HBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/TouchRule2"]
 layout_mode = 2
@@ -1016,9 +1019,10 @@ size_flags_horizontal = 2
 theme_override_font_sizes/font_size = 21
 text = "turn into:"
 
-[node name="CustomElementButton" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/TouchRule2/Then" instance=ExtResource("5_ywxro")]
+[node name="Product2" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/TouchRule2/Then" node_paths=PackedStringArray("element_picker") instance=ExtResource("5_d2qg0")]
+unique_name_in_owner = true
 layout_mode = 2
-text = "sand"
+element_picker = NodePath("../../../../../../../../ElementPickerContainer/ElementSelector")
 
 [node name="TouchRule3" type="VBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
 unique_name_in_owner = true
@@ -1034,9 +1038,10 @@ size_flags_horizontal = 2
 theme_override_font_sizes/font_size = 21
 text = "if touching:"
 
-[node name="CustomElementButton" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/TouchRule3/If" instance=ExtResource("5_ywxro")]
+[node name="Reactant3" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/TouchRule3/If" node_paths=PackedStringArray("element_picker") instance=ExtResource("5_d2qg0")]
+unique_name_in_owner = true
 layout_mode = 2
-text = "sand"
+element_picker = NodePath("../../../../../../../../ElementPickerContainer/ElementSelector")
 
 [node name="Then" type="HBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/TouchRule3"]
 layout_mode = 2
@@ -1047,9 +1052,10 @@ size_flags_horizontal = 2
 theme_override_font_sizes/font_size = 21
 text = "turn into:"
 
-[node name="CustomElementButton" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/TouchRule3/Then" instance=ExtResource("5_ywxro")]
+[node name="Product3" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/TouchRule3/Then" node_paths=PackedStringArray("element_picker") instance=ExtResource("5_d2qg0")]
+unique_name_in_owner = true
 layout_mode = 2
-text = "sand"
+element_picker = NodePath("../../../../../../../../ElementPickerContainer/ElementSelector")
 
 [node name="DeleteButton" type="Button" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
 unique_name_in_owner = true
