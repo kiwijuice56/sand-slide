@@ -1,9 +1,11 @@
-[gd_scene load_steps=23 format=3 uid="uid://bqwqmevgndrm0"]
+[gd_scene load_steps=25 format=3 uid="uid://bqwqmevgndrm0"]
 
 [ext_resource type="Theme" uid="uid://co20v1mxv2dfm" path="res://main/ui/_theme/theme.tres" id="1_gu8tf"]
 [ext_resource type="Script" path="res://main/ui/submenu/element_editor/element_editor_menu.gd" id="2_ae0hb"]
 [ext_resource type="FontFile" uid="uid://b8lxwo5dkwrs4" path="res://main/ui/_theme/font/Poppins-Regular.ttf" id="3_gc23u"]
 [ext_resource type="Texture2D" uid="uid://skg5bmd8m812" path="res://main/ui/_icons/close.png" id="4_8lnwy"]
+[ext_resource type="PackedScene" uid="uid://dw3yr1ktgbep0" path="res://main/ui/element_selector/ElementPickerButton.tscn" id="5_d2qg0"]
+[ext_resource type="PackedScene" uid="uid://gewwsdlro3pf" path="res://main/ui/element_selector/CustomElementButton.tscn" id="5_ywxro"]
 
 [sub_resource type="Theme" id="Theme_n7xkt"]
 default_font = ExtResource("3_gc23u")
@@ -42,7 +44,7 @@ corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hcor6"]
-content_margin_right = 8.0
+content_margin_right = 12.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oid3n"]
 content_margin_left = 3.0
@@ -278,13 +280,14 @@ icon_alignment = 1
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxEmpty_hcor6")
+scroll_vertical = 100
 vertical_scroll_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_constants/separation = 11
+theme_override_constants/separation = 14
 
 [node name="AppearanceLabel" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
@@ -858,10 +861,109 @@ layout_mode = 2
 focus_mode = 0
 flat = true
 
+[node name="TransformationLabel" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = "Transformation
+"
+horizontal_alignment = 1
+
+[node name="TouchRule1" type="VBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="If" type="HBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/TouchRule1"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/TouchRule1/If"]
+layout_mode = 2
+size_flags_horizontal = 2
+theme_override_font_sizes/font_size = 21
+text = "if touching:"
+
+[node name="CustomElementButton" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/TouchRule1/If" instance=ExtResource("5_d2qg0")]
+layout_mode = 2
+
+[node name="Then" type="HBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/TouchRule1"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/TouchRule1/Then"]
+layout_mode = 2
+size_flags_horizontal = 2
+theme_override_font_sizes/font_size = 21
+text = "turn into:"
+
+[node name="CustomElementButton" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/TouchRule1/Then" instance=ExtResource("5_ywxro")]
+layout_mode = 2
+text = "sand"
+
+[node name="TouchRule2" type="VBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="If" type="HBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/TouchRule2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/TouchRule2/If"]
+layout_mode = 2
+size_flags_horizontal = 2
+theme_override_font_sizes/font_size = 21
+text = "if touching:"
+
+[node name="CustomElementButton" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/TouchRule2/If" instance=ExtResource("5_ywxro")]
+layout_mode = 2
+text = "sand"
+
+[node name="Then" type="HBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/TouchRule2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/TouchRule2/Then"]
+layout_mode = 2
+size_flags_horizontal = 2
+theme_override_font_sizes/font_size = 21
+text = "turn into:"
+
+[node name="CustomElementButton" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/TouchRule2/Then" instance=ExtResource("5_ywxro")]
+layout_mode = 2
+text = "sand"
+
+[node name="TouchRule3" type="VBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="If" type="HBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/TouchRule3"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/TouchRule3/If"]
+layout_mode = 2
+size_flags_horizontal = 2
+theme_override_font_sizes/font_size = 21
+text = "if touching:"
+
+[node name="CustomElementButton" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/TouchRule3/If" instance=ExtResource("5_ywxro")]
+layout_mode = 2
+text = "sand"
+
+[node name="Then" type="HBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/TouchRule3"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/TouchRule3/Then"]
+layout_mode = 2
+size_flags_horizontal = 2
+theme_override_font_sizes/font_size = 21
+text = "turn into:"
+
+[node name="CustomElementButton" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/TouchRule3/Then" instance=ExtResource("5_ywxro")]
+layout_mode = 2
+text = "sand"
+
 [node name="DeleteButton" type="Button" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 focus_mode = 0
+theme_override_font_sizes/font_size = 21
 text = "delete element"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

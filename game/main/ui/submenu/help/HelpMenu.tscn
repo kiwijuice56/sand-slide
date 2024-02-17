@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bueyu0dk5xun4"]
+[gd_scene load_steps=16 format=3 uid="uid://bueyu0dk5xun4"]
 
 [ext_resource type="Theme" uid="uid://co20v1mxv2dfm" path="res://main/ui/_theme/theme.tres" id="1_rrple"]
 [ext_resource type="Script" path="res://main/ui/submenu/submenu.gd" id="2_1h5h1"]
@@ -10,7 +10,7 @@ default_font = ExtResource("3_q8qyd")
 default_font_size = 24
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e160y"]
-content_margin_left = 12.0
+content_margin_left = 16.0
 content_margin_top = 16.0
 content_margin_right = 12.0
 content_margin_bottom = 24.0
@@ -19,6 +19,9 @@ corner_radius_top_left = 12
 corner_radius_top_right = 12
 corner_radius_bottom_right = 12
 corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fncyw"]
+content_margin_right = 12.0
 
 [sub_resource type="FontVariation" id="FontVariation_wkdgf"]
 base_font = ExtResource("3_q8qyd")
@@ -127,6 +130,8 @@ _data = {
 }
 
 [node name="HelpMenu" type="Control" node_paths=PackedStringArray("anim", "back_button")]
+visible = false
+modulate = Color(1, 1, 1, 0)
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -189,6 +194,7 @@ icon_alignment = 1
 [node name="ScrollContainer" type="ScrollContainer" parent="HelpContainer/PanelContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_fncyw")
 vertical_scroll_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HelpContainer/PanelContainer/VBoxContainer/ScrollContainer"]
@@ -209,8 +215,8 @@ horizontal_alignment = 1
 [node name="RichTextLabel" type="RichTextLabel" parent="HelpContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/WhatContainer"]
 layout_mode = 2
 theme_override_fonts/normal_font = SubResource("FontVariation_wkdgf")
-theme_override_font_sizes/normal_font_size = 16
-text = "Sand Slide is a creative and interactive particle game! You can experiment, express yourself, or just mess around. This is purely a passion project; No data is collected from users and there are no ads/purchases. Have fun!"
+theme_override_font_sizes/normal_font_size = 18
+text = "Sand Slide is a creative and interactive sandbox game! You can experiment, express yourself, or just mess around. This is purely a passion project; No data is collected from users and there are no ads or purchases. Have fun! "
 fit_content = true
 
 [node name="SaveContainer" type="VBoxContainer" parent="HelpContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
@@ -226,8 +232,8 @@ horizontal_alignment = 1
 [node name="RichTextLabel" type="RichTextLabel" parent="HelpContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/SaveContainer"]
 layout_mode = 2
 theme_override_fonts/normal_font = SubResource("FontVariation_idlcm")
-theme_override_font_sizes/normal_font_size = 16
-text = "In the file menu, tap the text box to name a new file and press enter. The created file will keep your game perfectly intact! After a file is saved, you can tap on it to overwrite, load, or delete it."
+theme_override_font_sizes/normal_font_size = 18
+text = "In the file menu, tap the text box to name a new file and then press enter. The created file will keep your canvas perfectly intact! After a file is saved, you can tap on it to overwrite, load, or delete it."
 fit_content = true
 
 [node name="ElementContainer" type="VBoxContainer" parent="HelpContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
@@ -243,7 +249,7 @@ horizontal_alignment = 1
 [node name="RichTextLabel" type="RichTextLabel" parent="HelpContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/ElementContainer"]
 layout_mode = 2
 theme_override_fonts/normal_font = SubResource("FontVariation_d5dah")
-theme_override_font_sizes/normal_font_size = 16
+theme_override_font_sizes/normal_font_size = 18
 text = "In the custom elements tab, you can create your own elements! Pressing the \"create new\" button will generate a new, random element. Select that element and then press the pencil icon to open the edit menu. Your elements are saved when you close the game. There are countless options, so mess around and learn what they do! "
 fit_content = true
 
@@ -261,10 +267,8 @@ horizontal_alignment = 1
 [node name="RichTextLabel" type="RichTextLabel" parent="HelpContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/AttributionContainer"]
 layout_mode = 2
 theme_override_fonts/normal_font = SubResource("FontVariation_2ru6u")
-theme_override_font_sizes/normal_font_size = 16
-text = "Many of the elements in Sand Slide are inspired by other falling sand games, including Sand:Box by SmellyMoo and Sandspiel by Max Bittker. Check these games out too! Game icons created by Icons8. Sound effects created by ZapSplat.
-
-"
+theme_override_font_sizes/normal_font_size = 18
+text = "Many of the elements in Sand Slide are inspired by other falling sand games, including Sand:Box by SmellyMoo and Sandspiel by Max Bittker. Check these games out too! Game icons created by Icons8. Sound effects created by ZapSplat."
 fit_content = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

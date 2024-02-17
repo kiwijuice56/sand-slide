@@ -166,6 +166,8 @@ _data = {
 }
 
 [node name="SettingsMenu" type="Control" node_paths=PackedStringArray("anim", "back_button")]
+visible = false
+modulate = Color(1, 1, 1, 0)
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -466,6 +468,7 @@ custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_vertical = 0
 focus_mode = 0
+theme_override_font_sizes/font_size = 21
 text = "clear screen"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

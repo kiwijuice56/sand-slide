@@ -18,6 +18,10 @@ var tap_on: bool = false
 var gem_idx: int = 0
 var algae_idx: int = 0
 
+signal button_pressed(id: int)
+
+var simple: bool = false
+
 func _ready() -> void:
 	initialize_buttons()
 	for button in $basic/Basic.get_children():
@@ -34,8 +38,11 @@ func _ready() -> void:
 				button.get("theme_override_styles/" + style).corner_radius_bottom_right = 0
 	
 	await get_tree().get_root().ready
-	print($basic/Basic.get_child_count())
 	update_custom_elements()
+
+func pick_simple() -> int:
+	var id: int = await button_pressed
+	return id
 
 func _on_new_element_created() -> void:
 	CommonReference.element_manager.create_new_element()
@@ -45,9 +52,9 @@ func initialize_buttons() -> void:
 	var id: int = -1
 	if is_instance_valid(last_button) and last_button is ElementButton:
 		id = last_button.id
-	if not eraser_button.button_down.is_connected(_on_eraser_selected):
+	if is_instance_valid(eraser_button) and not eraser_button.button_down.is_connected(_on_eraser_selected):
 		eraser_button.button_down.connect(_on_eraser_selected)
-	if not tap_button.button_down.is_connected(_on_tap_selected):
+	if  is_instance_valid(tap_button) and not tap_button.button_down.is_connected(_on_tap_selected):
 		tap_button.button_down.connect(_on_tap_selected)
 	if not %CreateNewButton.button_down.is_connected(_on_new_element_created):
 		%CreateNewButton.button_down.connect(_on_new_element_created)
@@ -56,13 +63,14 @@ func initialize_buttons() -> void:
 	for button in $basic/Basic.get_children() + %Custom.get_children():
 		if not button is ElementButton:
 			continue
+		button.simple = simple
 		if not button.button_down.is_connected(_on_element_selected):
 			button.button_down.connect(_on_element_selected.bind(button))
 		if button.id == id:
 			last_updated = true
 			last_button = button
 			bolden_button(button)
-	if not last_updated:
+	if not last_updated and not simple:
 		edit_button.visible = false
 		CommonReference.painter.selected_element = 0
 
@@ -84,6 +92,9 @@ func update_custom_elements() -> void:
 	initialize_buttons()
 
 func _on_element_selected(button: ElementButton) -> void:
+	button_pressed.emit(button.id)
+	if simple:
+		return
 	get_tree().get_root().get_node("Main").get_node("%SelectInfo").show_element(button.text, button.description, button.get("theme_override_styles/normal").bg_color)
 	edit_button.visible = button.id >= 2048
 	
@@ -100,7 +111,7 @@ func _on_element_selected(button: ElementButton) -> void:
 		CommonReference.painter.selected_element = [7, 54, 55][algae_idx]
 		algae_idx = (algae_idx + 1) % 3
 	
-	# Algae can be different colors!
+	# Gem can be different colors!
 	if CommonReference.painter.selected_element == 27:
 		CommonReference.painter.selected_element = [27, 78, 79, 80][gem_idx]
 		gem_idx = (gem_idx + 1) % 4

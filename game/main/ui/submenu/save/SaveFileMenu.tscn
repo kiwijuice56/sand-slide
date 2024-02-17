@@ -53,7 +53,7 @@ corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r1ibo"]
-content_margin_right = 4.0
+content_margin_right = 12.0
 
 [sub_resource type="Animation" id="Animation_swdin"]
 length = 0.001
@@ -200,7 +200,7 @@ text = "Save Files"
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_font_sizes/font_size = 16
+theme_override_font_sizes/font_size = 21
 theme_override_styles/normal = SubResource("StyleBoxFlat_dh3by")
 theme_override_styles/focus = SubResource("StyleBoxFlat_4hoky")
 placeholder_text = "new file name..."
@@ -233,7 +233,7 @@ custom_minimum_size = Vector2(0, 32)
 layout_mode = 2
 size_flags_horizontal = 3
 focus_mode = 0
-theme_override_font_sizes/font_size = 16
+theme_override_font_sizes/font_size = 21
 text = "save"
 
 [node name="LoadFileButton" type="Button" parent="SaveContainer/PanelContainer/VBoxContainer/OptionContainer"]
@@ -242,7 +242,7 @@ custom_minimum_size = Vector2(0, 32)
 layout_mode = 2
 size_flags_horizontal = 3
 focus_mode = 0
-theme_override_font_sizes/font_size = 16
+theme_override_font_sizes/font_size = 21
 text = "load"
 
 [node name="DeleteFileButton" type="Button" parent="SaveContainer/PanelContainer/VBoxContainer/OptionContainer"]
@@ -251,7 +251,7 @@ custom_minimum_size = Vector2(0, 32)
 layout_mode = 2
 size_flags_horizontal = 3
 focus_mode = 0
-theme_override_font_sizes/font_size = 16
+theme_override_font_sizes/font_size = 21
 text = "delete"
 
 [node name="Back" type="Button" parent="SaveContainer/PanelContainer"]

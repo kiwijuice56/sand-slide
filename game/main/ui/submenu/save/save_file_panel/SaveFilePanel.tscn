@@ -81,20 +81,20 @@ theme_override_constants/separation = 0
 
 [node name="FileName" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 16
+theme_override_font_sizes/font_size = 21
 text = "Save file 01"
 text_overrun_behavior = 3
 
 [node name="FileDate" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.6461, 0.65675, 0.71, 1)
-theme_override_font_sizes/font_size = 16
+theme_override_colors/font_color = Color(0.498039, 0.505882, 0.541176, 1)
+theme_override_font_sizes/font_size = 15
 text = "YYYY/MM/DD/HH"
 
 [node name="FileSize" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.6461, 0.65675, 0.71, 1)
-theme_override_font_sizes/font_size = 16
+theme_override_colors/font_color = Color(0.498039, 0.505882, 0.541176, 1)
+theme_override_font_sizes/font_size = 15
 text = "2 MB"
 
 [node name="Thumbnail" type="TextureRect" parent="MarginContainer/HBoxContainer"]

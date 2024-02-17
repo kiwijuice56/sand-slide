@@ -1,0 +1,43 @@
+[gd_scene load_steps=7 format=3 uid="uid://dw3yr1ktgbep0"]
+
+[ext_resource type="Script" path="res://main/ui/element_selector/element_picker_button.gd" id="1_2cs23"]
+[ext_resource type="AudioStream" uid="uid://cpeuhkn4xf3e3" path="res://main/ui/zapsplat_multimedia_button_click_bright_002_92099.mp3" id="2_fedtv"]
+[ext_resource type="PackedScene" uid="uid://danjqv04qm3f6" path="res://main/ui/element_selector/ElementSelector.tscn" id="2_loo8b"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h58hc"]
+bg_color = Color(0.462745, 0.462745, 0.529412, 1)
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6qckx"]
+bg_color = Color(0.556863, 0.556863, 0.639216, 1)
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b5e6n"]
+bg_color = Color(0.356863, 0.356863, 0.411765, 1)
+border_color = Color(1, 1, 1, 1)
+
+[node name="ElementPickerButton" type="Button"]
+custom_minimum_size = Vector2(0, 48)
+offset_right = 117.0
+offset_bottom = 48.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 0
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxFlat_h58hc")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6qckx")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_b5e6n")
+text = "???"
+script = ExtResource("1_2cs23")
+element_picker = ExtResource("2_loo8b")
+description = "You made this element! Edit its properties with the pencil button."
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_fedtv")
+volume_db = -9.0

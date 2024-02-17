@@ -5,6 +5,7 @@ extends Button
 @export_multiline var description: String = ""
 
 var player
+var simple: bool = false
 
 func _ready() -> void:
 	player = AudioStreamPlayer.new()
@@ -14,7 +15,7 @@ func _ready() -> void:
 	button_down.connect(_on_button_down)
 
 func _on_button_down():
-	if id == 0:
+	if id == 0 or simple:
 		return
 	player.pitch_scale = 1.0 + 0.2 * randf() - 0.1
 	player.playing = true

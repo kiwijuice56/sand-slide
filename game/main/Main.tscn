@@ -354,13 +354,9 @@ layout_mode = 1
 save_file_manager = NodePath("../../../SaveFileManager")
 
 [node name="SettingsMenu" parent="CanvasLayer/UI" instance=ExtResource("15_vwu6i")]
-visible = false
-modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 
 [node name="HelpMenu" parent="CanvasLayer/UI" instance=ExtResource("16_qckww")]
-visible = false
-modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 
 [node name="ElementEditorMenu" parent="CanvasLayer/UI" instance=ExtResource("17_tcj48")]
