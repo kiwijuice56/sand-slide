@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://ggbp6fch244c"]
+[gd_scene load_steps=37 format=3 uid="uid://ggbp6fch244c"]
 
 [ext_resource type="Script" path="res://main/main.gd" id="1_2pidp"]
 [ext_resource type="Theme" uid="uid://co20v1mxv2dfm" path="res://main/ui/_theme/theme.tres" id="2_nb65v"]
@@ -123,6 +123,10 @@ _data = {
 "hide": SubResource("Animation_cw08x"),
 "show": SubResource("Animation_o0jo7")
 }
+
+[sub_resource type="Environment" id="Environment_6bfny"]
+glow_enabled = true
+glow_strength = 1.1
 
 [node name="Main" type="Node"]
 script = ExtResource("1_2pidp")
@@ -374,3 +378,6 @@ script = ExtResource("18_mpubp")
 [node name="Painter" type="Node" parent="."]
 unique_name_in_owner = true
 script = ExtResource("18_mer41")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_6bfny")

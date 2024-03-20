@@ -9,11 +9,11 @@ A falling sand game made with Godot 4.0's GDextension feature. The full game can
 The project was initialized using a GDExtension template, [GDSummator.](https://github.com/paddy-exe/GDExtensionSummator).
 
 The simulation logic is implemented in C++ as a GDextension (in `extension`) that gets compiled into a binary file (in `game\bin`). 
-The user interface was created in a Godot 4.0.3 project (in `game`).
+The user interface was created in a Godot 4.2.beta project (in `game`).
 
 ## Set Up
 1. Clone the sand-slide repository
-2. In a command prompt, navigate to the `godot-cpp` folder and run `scons` (add `target=template_release` for exported projects, or `platform=...` for other devices). You only need to do this the first time you initialize the repository. Note that the `MD` flag in `godot-cpp\tools\targets.py` will prevent the game from running on Windows devices without Visual Studio installed. You can change all instances of `MD` to `MT` to fix this. If you recieve an `Access Denied` error, make sure that the project is not open in another window while compiling.
+2. In a command prompt, navigate to the `godot-cpp` folder and run `scons` (add `target=template_release` for exported projects, or `platform=...` for other devices). You only need to do this the first time you initialize the repository. 
 3. You are now ready to make changes to the project!
 
 ## Compiling Changes

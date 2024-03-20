@@ -30,6 +30,7 @@ func _ready() -> void:
 	initialize_buttons()
 	if not simple:
 		$basic/Basic/None.queue_free()
+		print(len($basic/Basic.get_children()))
 	
 	await get_tree().get_root().ready
 	update_custom_elements()
