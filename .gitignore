@@ -19,6 +19,7 @@ release/*
 *.dll
 *.exp
 *.lib
+*.dblite
 
 # export files
 *.apk
