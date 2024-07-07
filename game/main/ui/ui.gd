@@ -39,7 +39,10 @@ func _ready() -> void:
 		var x = c.pop_back()
 		if x is Button:
 			x.action_mode = BaseButton.ACTION_MODE_BUTTON_PRESS
-			x.button_down.connect(_on_button_down)
+			if x is ElementButton:
+				x.pressed_long.connect(_on_button_down)
+			else:
+				x.button_down.connect(_on_button_down)
 		if  x is TabBar:
 			x.tab_clicked.connect(_on_button_down)
 		c.append_array(x.get_children(true))

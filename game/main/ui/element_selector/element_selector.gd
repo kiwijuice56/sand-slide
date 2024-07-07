@@ -75,8 +75,8 @@ func initialize_buttons() -> void:
 		if not button is ElementButton:
 			continue
 		button.simple = simple
-		if not button.button_down.is_connected(_on_element_selected):
-			button.button_down.connect(_on_element_selected.bind(button))
+		if not button.pressed_long.is_connected(_on_element_selected):
+			button.pressed_long.connect(_on_element_selected.bind(button))
 		if button.id == id:
 			last_updated = true
 			last_button = button

@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/Poppins-Regular.ttf-f5dbde34aa3a0e0edf7eae71e
 [params]
 
 Rendering=null
-antialiasing=1
+antialiasing=0
 generate_mipmaps=true
 multichannel_signed_distance_field=true
 msdf_pixel_range=8
