@@ -1779,7 +1779,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_aykbh")
 text = "mutant"
 script = ExtResource("3_bfdgk")
 id = 158
-description = "A poor creature that attacks all other life."
+description = "A dismal creature that attacks all other life."
 
 [node name="Glaggler" type="Button" parent="basic/Basic"]
 custom_minimum_size = Vector2(0, 48)

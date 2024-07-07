@@ -1,13 +1,19 @@
+# internal folders
 build/*
 .godot/
 .vscode/*
 godot-cpp/*
 game/android/*
-game/out/*
-out/*
-game/sandslide.apk
-*.mdp
 android_project/*
-game/main/2023-01-02 19-35-12.mp4
-*.cfg
 release/*
+
+# private export files
+*.cfg
+
+# binaries
+*.o
+*.obj
+*.os
+
+# export files
+*.apk
