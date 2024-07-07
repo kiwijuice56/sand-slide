@@ -60,64 +60,14 @@ func _on_mouse_pressed(start: Vector2, end: Vector2) -> void:
 	if not CommonReference.main.active:
 		return
 	if start.distance_to(end) > Settings.brush_size / 2.0:
-		if abs(end.y - start.y) / abs(end.x - start.x) < 1:
-			var wy: float = Settings.brush_size * sqrt(pow(end.x - start.x, 2) +
-			pow(end.y - start.y, 2)) / (2 * abs(end.x - start.x))
-			
-			var i: int = 0
-			
-			if is_equal_approx(end.x, start.x):
-				wy = 0
-			
-			while i < wy:
-				draw_line(start.x, start.y - i, end.x, end.y - i)
-				draw_line(start.x, start.y + i, end.x, end.y + i)
-				i += 1
-		else:
-			var wx: float = Settings.brush_size * sqrt(pow(end.x - start.x, 2) + 
-			pow(end.y - start.y, 2)) / (2 * abs(end.y - start.y))
-			
-			var i: int = 0
-		
-			if is_equal_approx(end.y, start.y):
-				wx = 0
-			
-			while i < wx:
-				draw_line(start.x - i, start.y, end.x - i, end.y)
-				draw_line(start.x + i, start.y, end.x + i, end.y)
-				i += 1
+		var point: Vector2 = start
+		var move_dir: Vector2 = (end - start).normalized()
+		var step: float = Settings.brush_size / 4.0
+		while point.distance_to(end) > step:
+			draw_circle(point.x, point.y, int(Settings.brush_size / 2.0))
+			point += move_dir * step
 	# Drawing a circle at the end makes the lines rounded
 	draw_circle(end.x, end.y, int(Settings.brush_size / 2.0))
-
-# Helper method of the Bresenham's Line Algorithm
-func draw_line(x1: float, y1: float, x2: float, y2: float) -> void:
-	var xi: float = 1 if x1 < x2 else -1
-	var yi: float = 1 if y1 < y2 else -1
-	var x: float = x1
-	var y: float = y1
-	var dx: float = abs(x2 - x1)
-	var dy: float = abs(y2 - y1)
-	draw_pixel(y, x)
-	if dx >= dy:
-		var e: float = 2 * dy - dx
-		while (xi < 0 and x > x2) or (xi > 0 and x < x2):
-			if e < 0:
-				e += 2 * dy
-			else:
-				e += 2 * (dy - dx)
-				y += yi
-			x += xi
-			draw_pixel(y, x)
-	else:
-		var e: float = 2 * dx - dy
-		while (yi < 0 and y > y2) or (yi > 0 and y < y2):
-			if e < 0:
-				e += 2 * dx
-			else:
-				e += 2 * (dx - dy)
-				x += xi
-			y += yi
-			draw_pixel(y, x)
 
 func draw_circle(x: float, y: float, radius: float) -> void:
 	if not sim.in_bounds(roundi(y), roundi(x)):

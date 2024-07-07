@@ -36,6 +36,14 @@ window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 window/handheld/orientation=1
 
+[file_customization]
+
+folder_colors={
+"res://android/": "gray",
+"res://bin/": "green",
+"res://main/": "yellow"
+}
+
 [input]
 
 ui_left={
