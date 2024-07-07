@@ -55,7 +55,7 @@ func _on_zoom_changed(new_zoom: int) -> void:
 	Settings.px_scale = new_zoom
 	CommonReference.canvas.resized.emit()
 
-func _on_mode_changed(pressed: bool) -> void:
+func _on_mode_changed(_pressed: bool) -> void:
 	Settings.sound_on = not Settings.sound_on
 	AudioServer.set_bus_mute(AudioServer.get_bus_index("Master"), not Settings.sound_on)
 

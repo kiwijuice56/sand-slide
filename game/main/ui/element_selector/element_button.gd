@@ -15,7 +15,7 @@ signal pressed_long
 func _ready() -> void:
 	player = AudioStreamPlayer.new()
 	add_child(player)
-	player.stream = preload("res://main/ui/sound_ex_machina_Notification_Accept.mp3")
+	player.stream = preload("res://main/ui/notification_accept_sound.mp3")
 	player.volume_db = -9
 	
 	button_down.connect(_on_button_down)

@@ -33,7 +33,7 @@ func _ready() -> void:
 	var c = get_children()
 	player = AudioStreamPlayer.new()
 	add_child(player)
-	player.stream = preload("res://main/ui/zapsplat_multimedia_button_click_bright_002_92099.mp3")
+	player.stream = preload("res://main/ui/button_click_sound.mp3")
 	player.volume_db = -9
 	while len(c) > 0:
 		var x = c.pop_back()
