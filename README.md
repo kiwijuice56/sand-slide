@@ -5,14 +5,17 @@ A falling sand game made with Godot 4's GDextension feature. The full game can b
 The simulation logic is implemented in C++ as a GDextension (in `extension`) that gets compiled into a binary file (in `game\bin`).
 The user interface was created in a Godot 4.2.2 project (in `game`).
 
-## Set Up
-1. Clone the sand-slide repository
-2. In a command prompt, navigate to the `godot-cpp` folder and run `scons` (add `target=template_release` for exported projects, or `platform=...` for other devices). You only need to do this the first time you initialize the repository.
-3. You are now ready to make changes to the project!
+## Compiling for Windows
+If coding on Windows, no dependencies or installations are required to build the `.dll` binaries.
 
-## Compiling Changes
-To compile any changes, navigate to the root of the project and run `scons`.
-The binaries inside of `game\bin` will update and the changes can be observed once the project is reloaded.
+```
+cd sand-slide
+scons
+```
+
+## Compiling For Other Platforms
+Compilation for other platforms is essentially the same as on Windows, but it will sometimes require you to install other dependencies.
+The [official Godot documentation] on building for target platforms has all of the necessary information to compile `sand-slide` on other platforms.
 
 ## Creating New Elements
 Each element is a class within `extension\elements` that inherits the `Element` class.
@@ -51,11 +54,11 @@ In the Godot project, create a new `ElementButton` within the `ElementSelector` 
 ## Save Files
 The game allows you to manage save files. Files are stored in `user:\\`, or `%APPDATA%\Godot\app_userdata\sandslide` on Windows. Each folder corresponds to a save file and contains a Godot resource and an image. The luminosity value of each pixel in the texture represents its ID, allowing you to edit the file in an external program and load it back into the game.
 
+The game also saves custom elements as Godot resources (`*.tres`) in the same folder as save files.
+
 ## Attribution
 [Plumbing](https://icons8.com/icon/67287/plumbing), [eraser](https://icons8.com/icon/78855/eraser),
 [file](https://icons8.com/icon/77782/file), [support](https://icons8.com/icon/60006/support), [help](https://icons8.com/icon/59807/help) and
 [exit](https://icons8.com/icon/71200/close) icons by [Icons8](https://icons8.com/).
-
-Implementation of Bresenham's Line Algorithm by [Saideep Dicholkar](https://saideepdicholkar.blogspot.com/2017/04/bresenhams-line-algorithm-thick-line.html)
 
 GDExtension Starter Project by [paddy-exe](https://github.com/paddy-exe/GDExtensionSummator)
