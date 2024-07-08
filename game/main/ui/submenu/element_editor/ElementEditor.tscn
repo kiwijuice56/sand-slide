@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://bqwqmevgndrm0"]
+[gd_scene load_steps=26 format=3 uid="uid://bqwqmevgndrm0"]
 
 [ext_resource type="Theme" uid="uid://co20v1mxv2dfm" path="res://main/ui/_theme/theme.tres" id="1_gu8tf"]
 [ext_resource type="Script" path="res://main/ui/submenu/element_editor/element_editor_menu.gd" id="2_ae0hb"]
@@ -21,27 +21,6 @@ corner_radius_top_left = 12
 corner_radius_top_right = 12
 corner_radius_bottom_right = 12
 corner_radius_bottom_left = 12
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_11w6c"]
-bg_color = Color(0.4, 0.4, 0.45098, 1)
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_us5ki"]
-bg_color = Color(0.188235, 0.188235, 0.239216, 1)
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xa765"]
-bg_color = Color(0.313726, 0.313726, 0.360784, 1)
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hcor6"]
 
@@ -200,18 +179,6 @@ tracks/0/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0.3),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_01f6e"]
 _data = {
@@ -355,9 +322,6 @@ layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 0
 focus_mode = 0
-theme_override_styles/hover = SubResource("StyleBoxFlat_11w6c")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_us5ki")
-theme_override_styles/normal = SubResource("StyleBoxFlat_xa765")
 icon = ExtResource("4_8lnwy")
 icon_alignment = 1
 

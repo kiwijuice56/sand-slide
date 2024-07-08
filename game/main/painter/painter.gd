@@ -16,6 +16,7 @@ var sim: SandSimulation
 
 # State variables
 var press_released: bool = true
+var next_release_invalid: bool = false
 var selected_element: int = 1
 var start_draw: Vector2
 var end_draw: Vector2
@@ -35,9 +36,15 @@ func _ready() -> void:
 	mouse_pressed.connect(_on_mouse_pressed)
 
 func _process(_delta: float) -> void:
+	if not CommonReference.main.active:
+		next_release_invalid = true
+		press_released = true
+		return
+	
 	if Input.is_action_just_released("screen_press"):
 		press_released = true
-	elif Input.is_action_pressed("screen_press"):
+		next_release_invalid = false
+	elif not next_release_invalid and Input.is_action_pressed("screen_press"):
 		if press_released:
 			start_draw = get_viewport().get_mouse_position() / Settings.px_scale
 			press_released = false
@@ -54,11 +61,7 @@ func clear() -> void:
 	# Ensures that the canvas is updated even in the pause menu
 	CommonReference.canvas.repaint()
 
-# A translation of Saideep Dicholkar's implementation of Bresenham's line algorithm
-# https://saideepdicholkar.blogspot.com/2017/04/bresenhams-line-algorithm-thick-line.html
 func _on_mouse_pressed(start: Vector2, end: Vector2) -> void:
-	if not CommonReference.main.active:
-		return
 	if start.distance_to(end) > Settings.brush_size / 2.0:
 		var point: Vector2 = start
 		var move_dir: Vector2 = (end - start).normalized()

@@ -33,8 +33,9 @@ func enter() -> void:
 	enable_components()
 
 func exit() -> void:
+	exited.emit.call_deferred()
 	disable_components()
 	anim.play("exit")
 	await anim.animation_finished
 	visible = false
-	exited.emit()
+	
