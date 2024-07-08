@@ -20,6 +20,7 @@ func _ready() -> void:
 
 func _on_save_selected() -> void:
 	deselect_panel()
+	%SavePlayer.play()
 	save_file_manager.overwrite_save_file(selected_panel.file)
 	refresh_panels()
 
@@ -37,12 +38,14 @@ func _on_file_selected(panel: SaveFilePanel) -> void:
 
 func _on_delete_selected() -> void:
 	deselect_panel()
+	%DeletePlayer.play()
 	save_file_manager.delete_save_file(selected_panel.file)
 	refresh_panels()
 
 func _on_text_submitted(text: String) -> void:
 	deselect_panel()
 	save_file_manager.create_save_file(text)
+	%SavePlayer.play()
 	%FileLabelEdit.text = ""
 	%FileLabelEdit.release_focus()
 	refresh_panels()

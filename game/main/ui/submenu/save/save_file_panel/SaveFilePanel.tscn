@@ -1,8 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://3k2xt0kc4klb"]
+[gd_scene load_steps=15 format=3 uid="uid://3k2xt0kc4klb"]
 
 [ext_resource type="Theme" uid="uid://co20v1mxv2dfm" path="res://main/ui/_theme/theme.tres" id="1_1uvf0"]
 [ext_resource type="Script" path="res://main/ui/submenu/save/save_file_panel/save_file_panel.gd" id="1_ftssb"]
 [ext_resource type="Texture2D" uid="uid://b58s8a6c6gamx" path="res://icon.png" id="3_5l22y"]
+[ext_resource type="Shader" path="res://main/ui/submenu/save/save_file_panel/rounded_corner.gdshader" id="3_awtac"]
 [ext_resource type="AudioStream" uid="uid://cpeuhkn4xf3e3" path="res://main/ui/button_click_sound.mp3" id="4_kp2fo"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wwijs"]
@@ -36,6 +37,11 @@ corner_radius_top_left = 8
 corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0xwty"]
+shader = ExtResource("3_awtac")
+shader_parameter/radius = 1.0
+shader_parameter/square_scale = 0.1
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_61jks"]
 bg_color = Color(0.313726, 0.313726, 0.360784, 1)
@@ -151,6 +157,7 @@ theme_override_font_sizes/font_size = 15
 text = "2 MB"
 
 [node name="Thumbnail" type="TextureRect" parent="MarginContainer/HBoxContainer"]
+material = SubResource("ShaderMaterial_0xwty")
 custom_minimum_size = Vector2(86, 86)
 layout_mode = 2
 size_flags_horizontal = 8
@@ -168,6 +175,7 @@ theme_override_constants/separation = 8
 unique_name_in_owner = true
 custom_minimum_size = Vector2(84, 0)
 layout_mode = 2
+focus_mode = 0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 21
 theme_override_styles/normal = SubResource("StyleBoxFlat_61jks")
@@ -179,6 +187,7 @@ text = "save"
 unique_name_in_owner = true
 custom_minimum_size = Vector2(84, 0)
 layout_mode = 2
+focus_mode = 0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 21
 theme_override_styles/normal = SubResource("StyleBoxFlat_61jks")
@@ -190,6 +199,7 @@ text = "load"
 unique_name_in_owner = true
 custom_minimum_size = Vector2(84, 0)
 layout_mode = 2
+focus_mode = 0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 21
 theme_override_styles/normal = SubResource("StyleBoxFlat_61jks")

@@ -21,12 +21,15 @@ func _ready() -> void:
 	%ButtonContainer.visible = false
 
 func _on_saved() -> void:
+	$AudioStreamPlayer.play()
 	saved.emit()
 
 func _on_deleted() -> void:
+	$AudioStreamPlayer.play()
 	deleted.emit()
 
 func _on_loaded() -> void:
+	$AudioStreamPlayer.play()
 	loaded.emit()
 
 func _on_pressed() -> void:
