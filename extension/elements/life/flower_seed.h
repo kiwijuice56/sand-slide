@@ -1,5 +1,5 @@
-#ifndef FLOWER_SEED_H
-#define FLOWER_SEED_H
+#pragma once
+
 
 #include "../element.h"
 
@@ -20,7 +20,7 @@ public:
             sim->set_cell(row, col, 5);
             return;
         }
-        
+
         if (sim->randf() < POISON && sim->is_poisoned(row, col)) {
             sim->set_cell(row, col, 16);
             return;
@@ -30,12 +30,12 @@ public:
         if (sim->randf() < DECAY) {
             sim->set_cell(row, col, 11);
             return;
-        } 
-        
+        }
+
         if (sim->randf() < GERMINATE && sim->touch_count(row, col, 3) > 0) {
             sim->set_cell(row, col, sim->randf() < GRASS ? 13 : 120);
             return;
-        } 
+        }
 
         bool bot_left = sim->is_swappable(row, col, row + 1, col - 1);
         bool bot = sim->is_swappable(row, col, row + 1, col);
@@ -76,4 +76,3 @@ public:
     }
 };
 
-#endif // FLOWER_SEED_H

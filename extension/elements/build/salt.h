@@ -1,5 +1,5 @@
-#ifndef SALT_H
-#define SALT_H
+#pragma once
+
 
 #include "../element.h"
 
@@ -7,7 +7,7 @@ class Salt: public Element {
 public:
     const double POWDER = 1 / 1.02;
     const double MIX = 1.0 / 4;
-    
+
     void process(SandSimulation *sim, int row, int col) override {
         if (sim->randf() >= POWDER) {
             return;
@@ -16,7 +16,7 @@ public:
         if (sim->randf() < MIX && sim->touch_count(row, col, 3)) {
             sim->set_cell(row, col, 71);
         }
-        
+
         bool bot_left = sim->is_swappable(row, col, row + 1, col - 1);
         bool bot = sim->is_swappable(row, col, row + 1, col);
         bool bot_right = sim->is_swappable(row, col, row + 1, col + 1);
@@ -56,4 +56,3 @@ public:
     }
 };
 
-#endif // SALT_H

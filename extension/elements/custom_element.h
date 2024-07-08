@@ -1,5 +1,5 @@
-#ifndef CUSTOM_ELEMENT_H
-#define CUSTOM_ELEMENT_H
+#pragma once
+
 
 #include "element.h"
 
@@ -14,7 +14,7 @@ public:
     void process(SandSimulation *sim, int row, int col) override {
         float reactivity = my_sim->custom_elements[custom_id].reactivity;
 
-        // tranformations 
+        // tranformations
         if (sim->randf() < reactivity * reactivity * reactivity * reactivity) {
             for (int y = row - 3; y <= row + 3; y++) {
                 for (int x = col - 3; x <= col + 3; x++) {
@@ -25,7 +25,7 @@ public:
                         }
                         sim->set_cell(row, col, p);
                         return;
-                    }    
+                    }
                     if (sim->in_bounds(y, x) && sim->get_cell(y, x) == my_sim->custom_elements[custom_id].reactant_2) {
                         int p = my_sim->custom_elements[custom_id].product_2;
                         if (p == -1) {
@@ -33,7 +33,7 @@ public:
                         }
                         sim->set_cell(row, col, p);
                         return;
-                    } 
+                    }
                     if (sim->in_bounds(y, x) && sim->get_cell(y, x) == my_sim->custom_elements[custom_id].reactant_3) {
                         int p = my_sim->custom_elements[custom_id].product_3;
                         if (p == -1) {
@@ -41,7 +41,7 @@ public:
                         }
                         sim->set_cell(row, col, p);
                         return;
-                    }             
+                    }
                 }
             }
         }
@@ -49,16 +49,16 @@ public:
         // attractive
         if (my_sim->custom_elements[custom_id].attractive) {
             // If no space around it, it's in the interior
-            if (sim->touch_count(row, col, custom_id) >= 6) { 
+            if (sim->touch_count(row, col, custom_id) >= 6) {
                 return;
             }
 
-            // Keep moving particles closer 
+            // Keep moving particles closer
             for (int y = row - 8; y <= row + 8; y++) {
                 for (int x = col - 8; x <= col + 8; x++) {
-                    if (sim->randf() >= reactivity * reactivity || !sim->in_bounds(y, x) || sim->get_cell(y, x) == custom_id) 
+                    if (sim->randf() >= reactivity * reactivity || !sim->in_bounds(y, x) || sim->get_cell(y, x) == custom_id)
                         continue;
-                    
+
                     int dirRow = row - y < 0 ? -1 : 1;
                     int dirCol = col - x < 0 ? -1 : 1;
                     if (row == y) dirRow = 0;
@@ -154,7 +154,7 @@ public:
             // :p
         } else if (state == 2) {
             float viscosity = my_sim->custom_elements[custom_id].viscosity;
-            sim->liquid_process(row, col, int(4.0 - (viscosity * 3.0)));   
+            sim->liquid_process(row, col, int(4.0 - (viscosity * 3.0)));
         } else if (state == 3) {
             bool blocked = !sim->in_bounds(row - 1, col) || sim->get_cell(row - 1, col) == 6;
             if (sim->randf() < (blocked ? UP_BLOCK : UP)) {
@@ -209,4 +209,3 @@ public:
     }
 };
 
-#endif // CUSTOM_ELEMENT_H

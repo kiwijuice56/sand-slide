@@ -1,5 +1,5 @@
-#ifndef PLASMA_FLASH_H
-#define PLASMA_FLASH_H
+#pragma once
+
 
 #include "../element.h"
 
@@ -16,7 +16,7 @@ public:
         if (sim->randf() >= FALL) {
             return;
         }
-        
+
         int dir = (int) (sim->randf() * 3) - 1;
         if (dir != 0) {
             sim->move_and_swap(row, col, row, col + dir);
@@ -50,4 +50,3 @@ public:
     }
 };
 
-#endif // PLASMA_FLASH_H

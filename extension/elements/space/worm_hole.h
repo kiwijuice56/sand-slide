@@ -1,5 +1,5 @@
-#ifndef WORM_HOLE_H
-#define WORM_HOLE_H
+#pragma once
+
 
 
 
@@ -21,7 +21,7 @@ public:
                 int r = std::min(sim->get_height() - 1, (int) (sim->randf() * sim->get_height()));
                 if (!sim->in_bounds(r, c) || !sim->in_bounds(y, x) || sim->get_cell(y, x) == 0 || sim->get_cell(y, x) == 81 || sim->get_cell(r, c) == 81)
                     continue;
-                
+
                 if (sim->get_cell(r, c) == 15 || sim->get_cell(y, x) == 15)
                     continue;
 
@@ -31,20 +31,20 @@ public:
             }
         }
 
-        // If the worm hole has no space around it after absorbing all 4 directions, 
+        // If the worm hole has no space around it after absorbing all 4 directions,
         // it is in the middle of the worm hole and doesn't need to keep processing
-        if (sim->cardinal_touch_count(row, col, 0) == 0) { 
+        if (sim->cardinal_touch_count(row, col, 0) == 0) {
             return;
         }
 
         // Keep moving particles closer into the worm hole
         for (int y = row - 8; y <= row + 8; y++) {
             for (int x = col - 8; x <= col + 8; x++) {
-                if (sim->randf() >= GRAB || !sim->in_bounds(y, x) || sim->get_cell(y, x) == 81 || sim->get_cell(y, x) == 15) 
+                if (sim->randf() >= GRAB || !sim->in_bounds(y, x) || sim->get_cell(y, x) == 81 || sim->get_cell(y, x) == 15)
                     continue;
                 if (sim->get_cell(y, x) == 29)
                     sim->set_cell(y, x, 116);
-                
+
                 int dirRow = row - y < 0 ? -1 : 1;
                 int dirCol = col - x < 0 ? -1 : 1;
                 if (row == y) dirRow = 0;
@@ -83,4 +83,3 @@ public:
     }
 };
 
-#endif // WORM_HOLE_H

@@ -1,5 +1,5 @@
-#ifndef LIGHTNING_FLASH_H
-#define LIGHTNING_FLASH_H
+#pragma once
+
 
 
 
@@ -50,4 +50,3 @@ public:
     }
 };
 
-#endif // LIGHTNING_FLASH_H

@@ -1,5 +1,5 @@
-#ifndef INFO_AMPLIFIER_H
-#define INFO_AMPLIFIER_H
+#pragma once
+
 
 
 
@@ -48,4 +48,3 @@ public:
     }
 };
 
-#endif // INFO_AMPLIFIER_H

@@ -1,5 +1,5 @@
-#ifndef ALIEN_H
-#define ALIEN_H
+#pragma once
+
 
 #include "../element.h"
 
@@ -40,4 +40,3 @@ public:
     }
 };
 
-#endif // ALIEN_H

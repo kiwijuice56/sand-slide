@@ -1,5 +1,5 @@
-#ifndef TURTLE_H
-#define TURTLE_H
+#pragma once
+
 
 #include "../element.h"
 
@@ -26,13 +26,13 @@ public:
             } else {
                 new_row += dir;
             }
-            
+
             if (!sim->in_bounds(new_row, new_col)) {
                 return;
             }
 
-            if (!(sim->get_cell(new_row, new_col) == 0 || 
-            sim->randf() < CARVE && ( 
+            if (!(sim->get_cell(new_row, new_col) == 0 ||
+            sim->randf() < CARVE && (
             sim->get_cell(new_row, new_col) == 79 ||
             sim->get_cell(new_row, new_col) == 51 ||
             sim->get_cell(new_row, new_col) == 80 ||
@@ -44,7 +44,7 @@ public:
             sim->set_cell(row, col, COLOR[int(sim->time * 32) % 5]);
             sim->set_cell(new_row, new_col, 130);
         }
-        
+
     }
 
     double get_density() override {
@@ -72,4 +72,3 @@ public:
     }
 };
 
-#endif // TURTLE_H

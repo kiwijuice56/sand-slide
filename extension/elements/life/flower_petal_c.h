@@ -1,5 +1,5 @@
-#ifndef FLOWER_PETAL_C_H
-#define FLOWER_PETAL_C_H
+#pragma once
+
 
 #include "../element.h"
 
@@ -44,4 +44,3 @@ public:
     }
 };
 
-#endif // FLOWER_PETAL_C_H

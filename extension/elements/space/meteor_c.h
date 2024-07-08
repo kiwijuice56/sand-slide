@@ -1,5 +1,5 @@
-#ifndef METEOR_C_H
-#define METEOR_C_H
+#pragma once
+
 
 #include "../element.h"
 
@@ -21,9 +21,9 @@ public:
 
         // Very long winded way of not allowing meteors to explode when touching meteor products
         if (sim->randf() < EXPLODE && (
-        !sim->in_bounds(row + 1, col) 
-        || sim->get_cell(row + 1, col) != 69 && sim->get_cell(row + 1, col) != 75 && sim->get_cell(row + 1, col) != 76 
-        && sim->get_cell(row + 1, col) != 77  && sim->get_cell(row + 1, col) != 0 && sim->get_cell(row + 1, col) != 9 
+        !sim->in_bounds(row + 1, col)
+        || sim->get_cell(row + 1, col) != 69 && sim->get_cell(row + 1, col) != 75 && sim->get_cell(row + 1, col) != 76
+        && sim->get_cell(row + 1, col) != 77  && sim->get_cell(row + 1, col) != 0 && sim->get_cell(row + 1, col) != 9
         && sim->get_cell(row + 1, col) != 6 && sim->get_cell(row + 1, col) != 5 && sim->get_cell(row + 1, col) != 66
         && sim->get_cell(row + 1, col) != 67 && sim->get_cell(row + 1, col) != 68)) {
             for (int y = -7; y <= 7; y++) {
@@ -68,4 +68,3 @@ public:
     }
 };
 
-#endif // METEOR_C_H

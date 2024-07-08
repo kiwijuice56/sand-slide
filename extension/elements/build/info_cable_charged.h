@@ -1,5 +1,5 @@
-#ifndef INFO_CABLE_CHARGED_H
-#define INFO_CABLE_CHARGED_H
+#pragma once
+
 
 
 
@@ -40,4 +40,3 @@ public:
     }
 };
 
-#endif // INFO_CABLE_CHARGED_H

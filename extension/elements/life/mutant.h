@@ -1,5 +1,5 @@
-#ifndef MUTANT_H
-#define MUTANT_H
+#pragma once
+
 
 #include "../element.h"
 #include <stdlib.h>
@@ -18,7 +18,7 @@ public:
         } else if (sim->randf() < POISON && sim->is_poisoned(row, col)) {
             sim->set_cell(row, col, 16);
             return;
-        } 
+        }
 
         for (int i = -1; i <= 1; i++) {
             for (int j = -1; j <= 1; j++) {
@@ -42,9 +42,9 @@ public:
             return;
         }
         int dir = (int) (sim->randf() * 3) - 1;
-        if (dir != 0) { 
+        if (dir != 0) {
             sim->move_and_swap(row, col, row, col + dir);
-        } else { 
+        } else {
             sim->move_and_swap(row, col, row + 1, col);
         }
     }
@@ -53,7 +53,7 @@ public:
         if (!sim->in_bounds(row, col))
             return false;
         int x = sim->get_cell(row, col);
-        return x == 4 || x == 7 || x == 8 || x == 12 || x == 13 || x == 14 || x == 23 || x == 31 
+        return x == 4 || x == 7 || x == 8 || x == 12 || x == 13 || x == 14 || x == 23 || x == 31
         || x == 32 || x == 33 || x == 49 || x == 54 || x == 55 || x == 72 || x == 73 || x == 86;
     }
 
@@ -82,4 +82,3 @@ public:
     }
 };
 
-#endif // MUTANT_H

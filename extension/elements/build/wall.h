@@ -1,5 +1,5 @@
-#ifndef WALL_H
-#define WALL_H
+#pragma once
+
 
 
 
@@ -8,7 +8,7 @@
 class Wall: public Element {
 public:
     void process(SandSimulation *sim, int row, int col) override {
-        
+
     }
 
     double get_density() override {
@@ -36,4 +36,3 @@ public:
     }
 };
 
-#endif // WALL_H

@@ -1,5 +1,5 @@
-#ifndef FIREWORK_TRAIL_E_H
-#define FIREWORK_TRAIL_E_H
+#pragma once
+
 
 #include "../element.h"
 
@@ -47,4 +47,3 @@ public:
     }
 };
 
-#endif // FIREWORK_TRAIL_E_H

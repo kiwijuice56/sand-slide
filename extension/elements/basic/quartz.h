@@ -1,5 +1,5 @@
-#ifndef QUARTZ_H
-#define QUARTZ_H
+#pragma once
+
 
 #include "../element.h"
 
@@ -33,4 +33,3 @@ public:
     }
 };
 
-#endif // QUARTZ_H

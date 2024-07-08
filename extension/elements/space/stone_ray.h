@@ -1,5 +1,5 @@
-#ifndef STONE_RAY_H
-#define STONE_RAY_H
+#pragma once
+
 
 #include "../element.h"
 
@@ -16,7 +16,7 @@ public:
             sim->set_cell(row, col, 0);
             return;
         }
-        
+
         if (sim->randf() < TRAIL) {
             sim->grow(row + 1, col, 0, 166);
         }
@@ -47,7 +47,7 @@ public:
         if (!sim->in_bounds(row, col))
             return false;
         int x = sim->get_cell(row, col);
-        return x == 4 || x == 7 || x == 8 || x == 12 || x == 13 || x == 14 || x == 23 || x == 31 
+        return x == 4 || x == 7 || x == 8 || x == 12 || x == 13 || x == 14 || x == 23 || x == 31
         || x == 32 || x == 33 || x == 49 || x == 54 || x == 55 || x == 72 || x == 73 || x == 86 || x == 158 || x == 150 || x == 167;
     }
 
@@ -77,4 +77,3 @@ public:
     }
 };
 
-#endif // STONE_RAY_H

@@ -1,5 +1,5 @@
-#ifndef METAL_SLIME_H
-#define METAL_SLIME_H
+#pragma once
+
 
 #include "../element.h"
 #include <stdlib.h>
@@ -79,4 +79,3 @@ public:
     }
 };
 
-#endif // METAL_SLIME_H

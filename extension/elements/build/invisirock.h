@@ -1,12 +1,12 @@
-#ifndef INVISIROCK_H
-#define INVISIROCK_H
+#pragma once
+
 
 #include "../element.h"
 
 class Invisirock: public Element {
 public:
     void process(SandSimulation *sim, int row, int col) override {
-        
+
     }
 
     double get_density() override {
@@ -34,4 +34,3 @@ public:
     }
 };
 
-#endif // INVISIROCK_H

@@ -1,5 +1,5 @@
-#ifndef FISH_LEFT_H
-#define FISH_LEFT_H
+#pragma once
+
 
 #include "../element.h"
 
@@ -70,4 +70,3 @@ public:
     }
 };
 
-#endif // FISH_LEFT_H

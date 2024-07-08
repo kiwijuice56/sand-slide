@@ -1,5 +1,5 @@
-#ifndef ACID_GAS_H
-#define ACID_GAS_H
+#pragma once
+
 
 #include "../element.h"
 
@@ -13,7 +13,7 @@ public:
         }
 
         int dir = (int) (sim->randf() * 3) - 1;
-        if (dir != 0) { 
+        if (dir != 0) {
             sim->move_and_swap(row, col, row, col + dir);
         } else {
             sim->move_and_swap(row, col, row - 1, col);
@@ -45,4 +45,3 @@ public:
     }
 };
 
-#endif // ACID_GAS_H

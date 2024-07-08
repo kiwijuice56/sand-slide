@@ -1,5 +1,5 @@
-#ifndef MINE_H
-#define MINE_H
+#pragma once
+
 
 #include "../element.h"
 
@@ -56,4 +56,3 @@ public:
     }
 };
 
-#endif // MINE_H

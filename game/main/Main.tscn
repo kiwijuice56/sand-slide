@@ -130,7 +130,7 @@ background_mode = 3
 glow_enabled = true
 glow_intensity = 1.3
 glow_strength = 1.1
-glow_bloom = 0.41
+glow_bloom = 0.3
 glow_hdr_threshold = 0.8
 
 [node name="Main" type="Node"]
@@ -288,13 +288,14 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_7pq0y")
 icon = ExtResource("11_nf3sg")
 icon_alignment = 1
 
-[node name="ElementSelector" parent="CanvasLayer/UI/VSplitContainer/BottomPanel/MarginBottonPanel/VBoxContainer" node_paths=PackedStringArray("simulation", "eraser_button", "tap_button") instance=ExtResource("12_1ijq2")]
+[node name="ElementSelector" parent="CanvasLayer/UI/VSplitContainer/BottomPanel/MarginBottonPanel/VBoxContainer" node_paths=PackedStringArray("simulation", "eraser_button", "tap_button", "last_button") instance=ExtResource("12_1ijq2")]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 128)
 layout_mode = 2
 simulation = NodePath("../../../../../../..")
 eraser_button = NodePath("../ButtonRow/Eraser")
 tap_button = NodePath("../ButtonRow/Tap")
+last_button = NodePath("basic/MarginContainer/Basic/Sand")
 
 [node name="FpsLabel" parent="CanvasLayer/UI" instance=ExtResource("13_kyq44")]
 unique_name_in_owner = true
@@ -356,19 +357,27 @@ speed_scale = 6.0
 wait_time = 5.0
 one_shot = true
 
-[node name="SaveFileMenu" parent="CanvasLayer/UI" node_paths=PackedStringArray("save_file_manager") instance=ExtResource("14_73tcr")]
+[node name="SaveFileMenu" parent="CanvasLayer/UI" node_paths=PackedStringArray("save_file_manager", "anim", "back_button") instance=ExtResource("14_73tcr")]
 layout_mode = 1
 save_file_manager = NodePath("../../../SaveFileManager")
+anim = NodePath("AnimationPlayer")
+back_button = NodePath("SaveContainer/PanelContainer/Back")
 
-[node name="SettingsMenu" parent="CanvasLayer/UI" instance=ExtResource("15_vwu6i")]
+[node name="SettingsMenu" parent="CanvasLayer/UI" node_paths=PackedStringArray("anim", "back_button") instance=ExtResource("15_vwu6i")]
 layout_mode = 1
+anim = NodePath("AnimationPlayer")
+back_button = NodePath("SettingsContainer/PanelContainer/VBoxContainer/HBoxContainer/Back")
 
-[node name="HelpMenu" parent="CanvasLayer/UI" instance=ExtResource("16_qckww")]
+[node name="HelpMenu" parent="CanvasLayer/UI" node_paths=PackedStringArray("anim", "back_button") instance=ExtResource("16_qckww")]
 layout_mode = 1
+anim = NodePath("AnimationPlayer")
+back_button = NodePath("HelpContainer/PanelContainer/VBoxContainer/HBoxContainer/Back")
 
-[node name="ElementEditorMenu" parent="CanvasLayer/UI" instance=ExtResource("17_tcj48")]
+[node name="ElementEditorMenu" parent="CanvasLayer/UI" node_paths=PackedStringArray("anim", "back_button") instance=ExtResource("17_tcj48")]
 visible = false
 layout_mode = 1
+anim = NodePath("AnimationPlayer")
+back_button = NodePath("SettingsContainer/PanelContainer/VBoxContainer/HBoxContainer/Back")
 
 [node name="SaveFileManager" type="Node" parent="."]
 unique_name_in_owner = true

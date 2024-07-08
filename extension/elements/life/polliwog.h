@@ -1,5 +1,5 @@
-#ifndef POLLIWOG_H
-#define POLLIWOG_H
+#pragma once
+
 
 #include "../element.h"
 
@@ -11,7 +11,7 @@ public:
     const double BAD_ENVIRONMENT = 1.0 / 16;
     const double AIR_DEATH = 1.0 / 16;
     const double EAT = 1.0 / 128;
-    
+
     void process(SandSimulation *sim, int row, int col) override {
         if (sim->randf() < AIR_DEATH && sim->touch_count(row, col, 3) == 0) {
             sim->set_cell(row, col, 0);
@@ -59,4 +59,3 @@ public:
     }
 };
 
-#endif // POLLIWOG_H

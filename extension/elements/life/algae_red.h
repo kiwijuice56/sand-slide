@@ -1,5 +1,5 @@
-#ifndef ALGAE_RED_H
-#define ALGAE_RED_H
+#pragma once
+
 
 #include "../element.h"
 
@@ -13,7 +13,7 @@ public:
     const double BAD_ENVIRONMENT = 1.0 / 16;
     const double ALGAE_WATER = 1.0 / 64;
 
-    void process(SandSimulation *sim, int row, int col) override {  
+    void process(SandSimulation *sim, int row, int col) override {
         // Catch on fire
         if (sim->randf() < FLAME && sim->is_on_fire(row, col)) {
             sim->set_cell(row, col, 5);
@@ -32,9 +32,9 @@ public:
                 return;
             }
             sim->set_cell(row, col, sim->touch_count(row, col, 71) > sim->touch_count(row, col, 3) ? 71 : 3);
-        } 
-        
-        if (sim->randf() < BAD_ENVIRONMENT && (sim->is_poisoned(row, col) || sim->is_cold(row, col))) { 
+        }
+
+        if (sim->randf() < BAD_ENVIRONMENT && (sim->is_poisoned(row, col) || sim->is_cold(row, col))) {
             sim->set_cell(row, col, 16);
         }
     }
@@ -64,4 +64,3 @@ public:
     }
 };
 
-#endif // ALGAE_RED_H

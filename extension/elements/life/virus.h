@@ -1,5 +1,5 @@
-#ifndef VIRUS_H
-#define VIRUS_H
+#pragma once
+
 
 #include "../element.h"
 
@@ -19,9 +19,9 @@ public:
         }
 
         // Adding a limit slows the infection down
-        if (sim->randf() > PROCESS) 
+        if (sim->randf() > PROCESS)
             return;
-        
+
         for (int i = -1; i <= 1; i++) {
             for (int j = -1; j <= 1; j++) {
                 if (can_infect(sim, row + i, col + j)) {
@@ -41,7 +41,7 @@ public:
         if (!sim->in_bounds(row, col))
             return false;
         int x = sim->get_cell(row, col);
-        return x == 4 || x == 7 || x == 8 || x == 12 || x == 13 || x == 14 || x == 23 || x == 31 
+        return x == 4 || x == 7 || x == 8 || x == 12 || x == 13 || x == 14 || x == 23 || x == 31
         || x == 32 || x == 33 || x == 49 || x == 54 || x == 55 || x == 72 || x == 73 || x == 86 || x == 164 || x == 158 || x == 150 || x == 167;
     }
 
@@ -71,4 +71,3 @@ public:
     }
 };
 
-#endif // VIRUS_H

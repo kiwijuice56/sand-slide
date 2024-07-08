@@ -1,5 +1,5 @@
-#ifndef FIREWORK_C_H
-#define FIREWORK_C_H
+#pragma once
+
 
 #include "../element.h"
 
@@ -15,12 +15,12 @@ public:
         if (sim->randf() < FRAG) {
             sim->set_cell(row, col, sim->randf() < 0.5 ? 66 : 67);
         }
-        
+
         if (sim->randf() < DECAY) {
             sim->set_cell(row, col, 0);
             return;
         }
-        
+
         if (sim->randf() < TRAIL) {
             sim->grow(row + 1, col, 0, 69);
         }
@@ -61,4 +61,3 @@ public:
     }
 };
 
-#endif // FIREWORK_C_H

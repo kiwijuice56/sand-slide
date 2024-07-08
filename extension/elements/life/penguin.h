@@ -1,5 +1,5 @@
-#ifndef PENGUIN_H
-#define PENGUIN_H
+#pragma once
+
 
 #include "../element.h"
 
@@ -55,4 +55,3 @@ public:
     }
 };
 
-#endif // PENGUIN_H

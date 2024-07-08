@@ -1,5 +1,5 @@
-#ifndef INFO_DELETER_CHARGED_H
-#define INFO_DELETER_CHARGED_H
+#pragma once
+
 
 
 
@@ -61,4 +61,3 @@ public:
     }
 };
 
-#endif // INFO_DELETER_CHARGED_H

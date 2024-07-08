@@ -1,5 +1,5 @@
-#ifndef ROCKET_H
-#define ROCKET_H
+#pragma once
+
 
 #include "../element.h"
 
@@ -20,12 +20,12 @@ public:
         }
         // Very long winded way of not allowing meteors to explode when touching meteor products
         if (sim->randf() < EXPLODE && (
-        !sim->in_bounds(row - 1, col) 
-        || sim->get_cell(row - 1, col) != 69 && sim->get_cell(row - 1, col) != 157 
-        && sim->get_cell(row - 1, col) != 0 && sim->get_cell(row - 1, col) != 9 
+        !sim->in_bounds(row - 1, col)
+        || sim->get_cell(row - 1, col) != 69 && sim->get_cell(row - 1, col) != 157
+        && sim->get_cell(row - 1, col) != 0 && sim->get_cell(row - 1, col) != 9
         && sim->get_cell(row - 1, col) != 6 && sim->get_cell(row - 1, col) != 5 && sim->get_cell(row - 1, col) != 66
         && sim->get_cell(row - 1, col) != 67 && sim->get_cell(row - 1, col) != 68)) {
-            for (int y = -9; y <= 9; y++) { 
+            for (int y = -9; y <= 9; y++) {
                 for (int x = -9; x <= 9; x++) {
                     if (sim->in_bounds(row + y, col + x) && x * x + y * y < 81.0) {
                         sim->set_cell(row + y, col + x, sim->randf() < EXPLODE ? 66 : 9);
@@ -38,7 +38,7 @@ public:
         if (sim->randf() < HORIZONTAL) {
             if (sim->randf() < 0.5)
             sim->move_and_swap(row, col, row - 1, col - 1);
-            else 
+            else
              sim->move_and_swap(row, col, row - 1, col + 1);
         } else {
             sim->move_and_swap(row, col, row - 1, col);
@@ -70,4 +70,3 @@ public:
     }
 };
 
-#endif // ROCKET_H

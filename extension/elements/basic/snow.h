@@ -1,5 +1,5 @@
-#ifndef SNOW_H
-#define SNOW_H
+#pragma once
+
 
 #include "../element.h"
 
@@ -55,4 +55,3 @@ public:
     }
 };
 
-#endif // SNOW_H

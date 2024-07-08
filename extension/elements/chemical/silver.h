@@ -1,5 +1,5 @@
-#ifndef SILVER_H
-#define SILVER_H
+#pragma once
+
 
 #include "../element.h"
 
@@ -52,4 +52,3 @@ public:
     }
 };
 
-#endif // SILVER_H

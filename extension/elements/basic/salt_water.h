@@ -1,5 +1,5 @@
-#ifndef SALT_WATER_H
-#define SALT_WATER_H
+#pragma once
+
 
 #include "../element.h"
 #include <stdlib.h>
@@ -13,7 +13,7 @@ public:
     const double FREEZE = 1.0 / 4;
 
     void process(SandSimulation *sim, int row, int col) override {
-        // Conductivity 
+        // Conductivity
         if (sim->randf() < MELT && (sim->touch_count(row, col, 38) > 0 || sim->touch_count(row, col, 40) > 0 || sim->touch_count(row, col, 115) > 0)) {
             sim->grow(row + 1, col, 71, 38);
             sim->grow(row - 1, col, 71, 38);
@@ -43,7 +43,7 @@ public:
             return;
         }
 
-        sim->liquid_process(row, col, 2);    
+        sim->liquid_process(row, col, 2);
     }
 
     double get_density() override {
@@ -71,4 +71,3 @@ public:
     }
 };
 
-#endif // SALT_WATER_H

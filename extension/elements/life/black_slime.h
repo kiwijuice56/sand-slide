@@ -1,5 +1,5 @@
-#ifndef BLACK_SLIME_H
-#define BLACK_SLIME_H
+#pragma once
+
 
 #include "../element.h"
 #include <stdlib.h>
@@ -16,7 +16,7 @@ public:
         if (sim->randf() < FLAME && sim->is_on_fire(row, col)) {
             sim->set_cell(row, col, 6);
             return;
-        } 
+        }
 
         float x = sim->time - fast_floor(sim->time);
         if (x < 0.5) {
@@ -31,7 +31,7 @@ public:
     }
 
     double get_density() override {
-        return 4.0; 
+        return 4.0;
     }
 
     double get_explode_resistance() override {
@@ -55,9 +55,8 @@ public:
         return 0;
     }
 
-    int get_toxicity() override { 
+    int get_toxicity() override {
         return 1;
     }
 };
 
-#endif // BLACK_SLIME_H

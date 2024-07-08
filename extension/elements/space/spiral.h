@@ -1,5 +1,5 @@
-#ifndef SPIRAL_H
-#define SPIRAL_H
+#pragma once
+
 
 #include "../element.h"
 
@@ -17,7 +17,7 @@ public:
         if (sim->randf() < PAUSE) {
             return;
         }
-        
+
         double time = sim->randf() * 0.2 + (512 * sim->time + 0.5 * (double(row) / sim->get_height()) + 0.5 * (double(col) / sim->get_width()));
         double section = time - int(time);
         if (section < 0.125) {
@@ -69,4 +69,3 @@ public:
     }
 };
 
-#endif // SPIRAL_H

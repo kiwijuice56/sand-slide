@@ -1,5 +1,5 @@
-#ifndef CLOUD_H
-#define CLOUD_H
+#pragma once
+
 
 #include "../element.h"
 
@@ -64,4 +64,3 @@ public:
     }
 };
 
-#endif // CLOUD_H

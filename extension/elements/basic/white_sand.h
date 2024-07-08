@@ -1,5 +1,5 @@
-#ifndef WHITE_SAND_H
-#define WHITE_SAND_H
+#pragma once
+
 
 #include "../element.h"
 
@@ -54,4 +54,3 @@ public:
     }
 };
 
-#endif // WHITE_SAND_H

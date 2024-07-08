@@ -1,5 +1,5 @@
-#ifndef AIR_H
-#define AIR_H
+#pragma once
+
 
 #include "../element.h"
 
@@ -20,11 +20,11 @@ public:
         int newRow = row + (int) (sim->randf() * 3) - 1;
         int newCol = col + (int) (sim->randf() * 3) - 1;
 
-        if (sim->randf() < MOVE && sim->in_bounds(newRow, newCol) && 
+        if (sim->randf() < MOVE && sim->in_bounds(newRow, newCol) &&
         sim->randf() < 1.0 - sim->elements.at(sim->get_cell(newRow, newCol))->get_density() / 65.0) {
             sim->set_cell(row, col, sim->get_cell(newRow, newCol));
             sim->set_cell(newRow, newCol, 28);
-        } 
+        }
     }
 
     double get_density() override {
@@ -52,4 +52,3 @@ public:
     }
 };
 
-#endif // AIR_H

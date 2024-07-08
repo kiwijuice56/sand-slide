@@ -1,5 +1,5 @@
-#ifndef INFO_PISTON_DOWN_H
-#define INFO_PISTON_DOWN_H
+#pragma once
+
 
 
 
@@ -48,4 +48,3 @@ public:
     }
 };
 
-#endif // INFO_PISTON_DOWN_H

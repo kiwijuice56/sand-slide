@@ -1,5 +1,5 @@
-#ifndef FLOWER_CORE_H
-#define FLOWER_CORE_H
+#pragma once
+
 
 #include "../element.h"
 
@@ -66,4 +66,3 @@ public:
     }
 };
 
-#endif // FLOWER_CORE_H

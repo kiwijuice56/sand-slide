@@ -1,5 +1,5 @@
-#ifndef FREEZE_RAY_H
-#define FREEZE_RAY_H
+#pragma once
+
 
 #include "../element.h"
 
@@ -46,4 +46,3 @@ public:
     }
 };
 
-#endif // FREEZE_RAY_H

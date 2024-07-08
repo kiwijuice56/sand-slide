@@ -1,5 +1,5 @@
-#ifndef VAPOR_H
-#define VAPOR_H
+#pragma once
+
 
 #include "../element.h"
 
@@ -48,4 +48,3 @@ public:
     }
 };
 
-#endif // VAPOR_H

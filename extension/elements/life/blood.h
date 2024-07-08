@@ -1,5 +1,5 @@
-#ifndef BLOOD_H
-#define BLOOD_H
+#pragma once
+
 
 #include "../element.h"
 
@@ -11,7 +11,7 @@ public:
     const double MIX = 1.0 / 4;
 
     void process(SandSimulation *sim, int row, int col) override {
-        // Conductivity 
+        // Conductivity
         if (sim->randf() < MELT && (sim->touch_count(row, col, 38) > 0 || sim->touch_count(row, col, 40) > 0 || sim->touch_count(row, col, 115) > 0)) {
             sim->grow(row + 1, col, 3, 38);
             sim->grow(row - 1, col, 3, 38);
@@ -32,7 +32,7 @@ public:
             return;
         }
 
-        sim->liquid_process(row, col, 1);    
+        sim->liquid_process(row, col, 1);
     }
 
     double get_density() override {
@@ -60,4 +60,3 @@ public:
     }
 };
 
-#endif // BLOOD_H

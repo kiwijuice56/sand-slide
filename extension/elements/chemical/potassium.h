@@ -1,5 +1,5 @@
-#ifndef POTASSIUM_H
-#define POTASSIUM_H
+#pragma once
+
 
 #include "../element.h"
 
@@ -40,7 +40,7 @@ public:
         if (sim->randf() < FLAME && sim->is_on_fire(row, col)) {
             sim->set_cell(row, col, 61);
         }
-        
+
         // Make mini flashes of explosions in a square grid
         if (sim->randf() < WATER && sim->touch_count(row, col, 3) + sim->touch_count(row, col, 71) > 0) {
             for (int y = -5; y <= 5; y++) {
@@ -54,7 +54,7 @@ public:
                 }
             }
         }
-        
+
         bool bot_left = sim->is_swappable(row, col, row + 1, col - 1);
         bool bot = sim->is_swappable(row, col, row + 1, col);
         bool bot_right = sim->is_swappable(row, col, row + 1, col + 1);
@@ -98,4 +98,3 @@ public:
     }
 };
 
-#endif // POTASSIUM_H

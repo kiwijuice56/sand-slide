@@ -1,5 +1,5 @@
-#ifndef ROCK_H
-#define ROCK_H
+#pragma once
+
 
 #include "../element.h"
 
@@ -41,4 +41,3 @@ public:
     }
 };
 
-#endif // ROCK_H

@@ -1,5 +1,5 @@
-#ifndef INFO_SOURCE_H
-#define INFO_SOURCE_H
+#pragma once
+
 
 
 
@@ -37,4 +37,3 @@ public:
     }
 };
 
-#endif // INFO_SOURCE_H

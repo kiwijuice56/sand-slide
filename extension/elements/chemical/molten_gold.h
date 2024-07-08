@@ -1,5 +1,5 @@
-#ifndef MOLTEN_GOLD_H
-#define MOLTEN_GOLD_H
+#pragma once
+
 
 #include "../element.h"
 #include <stdlib.h>
@@ -24,7 +24,7 @@ public:
             return;
         }
 
-        sim->liquid_process(row, col, 3); 
+        sim->liquid_process(row, col, 3);
     }
 
     double get_density() override {
@@ -52,4 +52,3 @@ public:
     }
 };
 
-#endif // MOLTEN_GOLD_H

@@ -1,5 +1,5 @@
-#ifndef VOID_H
-#define VOID_H
+#pragma once
+
 
 
 
@@ -8,7 +8,7 @@
 class Void: public Element {
 public:
     void process(SandSimulation *sim, int row, int col) override {
-        
+
     }
 
     double get_density() override {
@@ -36,4 +36,3 @@ public:
     }
 };
 
-#endif // VOID_H

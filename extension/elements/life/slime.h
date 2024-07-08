@@ -1,5 +1,5 @@
-#ifndef SLIME_H
-#define SLIME_H
+#pragma once
+
 
 #include "../element.h"
 #include <stdlib.h>
@@ -16,7 +16,7 @@ public:
         if (sim->randf() < FLAME && sim->is_on_fire(row, col)) {
             sim->set_cell(row, col, 6);
             return;
-        } 
+        }
 
         if (sim->randf() >= GROW) {
             return;
@@ -82,4 +82,3 @@ public:
     }
 };
 
-#endif // SLIME_H

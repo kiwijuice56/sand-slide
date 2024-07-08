@@ -1,5 +1,5 @@
-#ifndef BEDROCK_H
-#define BEDROCK_H
+#pragma once
+
 
 #include "../element.h"
 
@@ -17,7 +17,7 @@ public:
     }
 
     double get_density() override {
-        return 32.0; 
+        return 32.0;
     }
 
     double get_explode_resistance() override {
@@ -41,4 +41,3 @@ public:
     }
 };
 
-#endif // BEDROCK_H

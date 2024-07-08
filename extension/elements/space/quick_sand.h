@@ -1,5 +1,5 @@
-#ifndef QUICK_SAND_H
-#define QUICK_SAND_H
+#pragma once
+
 
 #include "../element.h"
 
@@ -32,23 +32,23 @@ public:
         }
         // Absorb anything in immediate proximity if not a black hole
         for (int y = row - 1; y <= row; y++) {
-            for (int x = col - 1; x <= col + 1; x++) { 
-                if (sim->in_bounds(y, x) && sim->get_cell(y, x) != 156 && sim->get_cell(y, x) != 15) { 
+            for (int x = col - 1; x <= col + 1; x++) {
+                if (sim->in_bounds(y, x) && sim->get_cell(y, x) != 156 && sim->get_cell(y, x) != 15) {
                     sim->set_cell(y, x, 0);
                 }
             }
         }
 
-        // If the black hole has no space around it after absorbing all 4 directions, 
+        // If the black hole has no space around it after absorbing all 4 directions,
         // it is in the middle of the black hole and doesn't need to keep processing
-        if (sim->cardinal_touch_count(row, col, 0) == 0) { 
+        if (sim->cardinal_touch_count(row, col, 0) == 0) {
             return;
         }
 
         // Keep moving particles closer into the black hole
         for (int y = row - 4; y <= row + 4; y++) {
             for (int x = col - 4; x <= col + 4; x++) {
-                if (sim->randf() >= GRAB || !sim->in_bounds(y, x) || sim->get_cell(y, x) == 156) 
+                if (sim->randf() >= GRAB || !sim->in_bounds(y, x) || sim->get_cell(y, x) == 156)
                     continue;
 
                 int dirRow = row - y < 0 ? -1 : 1;
@@ -85,4 +85,3 @@ public:
     }
 };
 
-#endif // QUICK_SAND_H

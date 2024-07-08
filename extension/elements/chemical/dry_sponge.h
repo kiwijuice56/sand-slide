@@ -1,5 +1,5 @@
-#ifndef DRY_SPONGE_H
-#define DRY_SPONGE_H
+#pragma once
+
 
 
 
@@ -30,12 +30,12 @@ public:
             return;
         }
 
-        if (sim->randf() >= PROCESS) 
+        if (sim->randf() >= PROCESS)
             return;
-        
+
         for (int y = row - 3; y <= row + 3; y++) {
-            for (int x = col - 3; x <= col + 3; x++) { 
-                if (sim->randf() < EAT && (sim->in_bounds(y, x) && (sim->get_cell(y, x) == 3 || sim->get_cell(y, x) == 59 || sim->get_cell(y, x) == 71))) { 
+            for (int x = col - 3; x <= col + 3; x++) {
+                if (sim->randf() < EAT && (sim->in_bounds(y, x) && (sim->get_cell(y, x) == 3 || sim->get_cell(y, x) == 59 || sim->get_cell(y, x) == 71))) {
                     sim->set_cell(y, x, 0);
                     if (sim->randf() < WETTEN) {
                         sim->set_cell(row, col, 100);
@@ -45,14 +45,14 @@ public:
             }
         }
 
-        if (sim->cardinal_touch_count(row, col, 0) == 0) 
+        if (sim->cardinal_touch_count(row, col, 0) == 0)
             return;
-        
+
         for (int y = row - 6; y <= row + 6; y++) {
             for (int x = col - 6; x <= col + 6; x++) {
-                if (sim->randf() >= GRAB || !(sim->in_bounds(y, x) && (sim->get_cell(y, x) == 3 || sim->get_cell(y, x) == 59 || sim->get_cell(y, x) == 71))) 
+                if (sim->randf() >= GRAB || !(sim->in_bounds(y, x) && (sim->get_cell(y, x) == 3 || sim->get_cell(y, x) == 59 || sim->get_cell(y, x) == 71)))
                     continue;
-                
+
                 int dirRow = row - y < 0 ? -1 : 1;
                 int dirCol = col - x < 0 ? -1 : 1;
                 if (row == y) dirRow = 0;
@@ -87,4 +87,3 @@ public:
     }
 };
 
-#endif // DRY_SPONGE_H

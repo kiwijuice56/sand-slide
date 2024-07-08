@@ -1,5 +1,5 @@
-#ifndef URANIUM_H
-#define URANIUM_H
+#pragma once
+
 
 #include "../element.h"
 
@@ -39,4 +39,3 @@ public:
     }
 };
 
-#endif // URANIUM_H

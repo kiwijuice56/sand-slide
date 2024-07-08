@@ -1,5 +1,5 @@
-#ifndef SMOKE_H
-#define SMOKE_H
+#pragma once
+
 
 #include "../element.h"
 
@@ -33,7 +33,7 @@ public:
     double get_acid_resistance() override {
         return 0.1;
     }
-    
+
     int get_state() override {
         return 2;
     }
@@ -47,4 +47,3 @@ public:
     }
 };
 
-#endif // SMOKE_H

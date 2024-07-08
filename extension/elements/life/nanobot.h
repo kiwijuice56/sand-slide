@@ -1,5 +1,5 @@
-#ifndef NANOBOT_H
-#define NANOBOT_H
+#pragma once
+
 
 #include "../element.h"
 
@@ -21,7 +21,7 @@ public:
 
         if (sim->randf() >= PROCESS || sim->is_cold(row, col)) {
             return;
-        } 
+        }
 
         if (sim->in_bounds(row + 1, col) && (sim->get_cell(row + 1, col) == 23 || sim->get_cell(row + 1, col) == 32 || sim->get_cell(row + 1, col) == 101 || sim->get_cell(row + 1, col) == 158 || sim->get_cell(row + 1, col) == 164 || sim->get_cell(row + 1, col) == 129)) {
             sim->grow(row + 1, col, -1, 94);
@@ -37,7 +37,7 @@ public:
                 sim->move_and_swap(row, col, row - 1, col + 1); return;
             } else if (sim->is_swappable(row, col, row - 1, col)) {
                 sim->move_and_swap(row, col, row - 1, col); return;
-            }   
+            }
         }
 
         // Is there a ceiling?
@@ -50,7 +50,7 @@ public:
                 sim->move_and_swap(row, col, row + 1, col - 1); return;
             } else if (sim->is_swappable(row, col, row + 1, col)) {
                 sim->move_and_swap(row, col, row + 1, col); return;
-            }   
+            }
         }
 
         // Is there a wall on the right?
@@ -103,4 +103,3 @@ public:
     }
 };
 
-#endif // NANOBOT_H

@@ -1,5 +1,5 @@
-#ifndef JAVELIN_RAIN_H
-#define JAVELIN_RAIN_H
+#pragma once
+
 
 #include "../element.h"
 
@@ -45,4 +45,3 @@ public:
     }
 };
 
-#endif // JAVELIN_RAIN_H

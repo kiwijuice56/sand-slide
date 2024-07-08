@@ -1,5 +1,5 @@
-#ifndef NEUTRON_BEAM_H
-#define NEUTRON_BEAM_H
+#pragma once
+
 
 #include "../element.h"
 
@@ -12,7 +12,7 @@ public:
             sim->set_cell(row, col, 22);
             return;
         }
-        
+
         if (sim->randf() < EXPLODE && sim->in_bounds(row + 1, col) && sim->get_cell(row + 1, col) != 0 && sim->get_cell(row + 1, col) != 29 && sim->get_cell(row + 1, col) != 15) {
             sim->grow(row + 1, col + 1, -1, 34);
             sim->grow(row + 1, col, -1, 34);
@@ -48,4 +48,3 @@ public:
     }
 };
 
-#endif // NEUTRON_BEAM_H

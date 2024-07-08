@@ -1,5 +1,5 @@
-#ifndef MUSHROOM_SHELL_A
-#define MUSHROOM_SHELL_A
+#pragma once
+
 
 #include "../element.h"
 
@@ -44,4 +44,3 @@ public:
     }
 };
 
-#endif // MUSHROOM_SHELL_A

@@ -1,5 +1,5 @@
-#ifndef MEDUSA_H
-#define MEDUSA_H
+#pragma once
+
 
 #include "../element.h"
 
@@ -28,7 +28,7 @@ public:
                 case 1: sim->grow(row, col + 1, 0, 164); sim->grow(row, col - 1, 0, 164); break;
             }
         }
-        
+
     }
 
     double get_density() override {
@@ -56,4 +56,3 @@ public:
     }
 };
 
-#endif // MEDUSA_H

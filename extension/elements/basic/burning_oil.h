@@ -1,5 +1,5 @@
-#ifndef BURNING_OIL_H
-#define BURNING_OIL_H
+#pragma once
+
 
 #include "../element.h"
 #include <stdlib.h>
@@ -26,7 +26,7 @@ public:
             sim->set_cell(row, col, 30);
             return;
         }
-        sim->liquid_process(row, col, 6); 
+        sim->liquid_process(row, col, 6);
     }
 
     double get_density() override {
@@ -54,4 +54,3 @@ public:
     }
 };
 
-#endif // BURNING_OIL_H

@@ -1,5 +1,5 @@
-#ifndef IODINE_LIQUID_H
-#define IODINE_LIQUID_H
+#pragma once
+
 
 #include "../element.h"
 #include <stdlib.h>
@@ -18,7 +18,7 @@ public:
             return;
         }
 
-        sim->liquid_process(row, col, 4); 
+        sim->liquid_process(row, col, 4);
     }
 
     double get_density() override {
@@ -46,4 +46,3 @@ public:
     }
 };
 
-#endif // IODINE_LIQUID_H

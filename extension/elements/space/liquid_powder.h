@@ -1,5 +1,5 @@
-#ifndef LIQUID_POWDER_H
-#define LIQUID_POWDER_H
+#pragma once
+
 
 #include "../element.h"
 #include <stdlib.h>
@@ -50,4 +50,3 @@ public:
     }
 };
 
-#endif // LIQUID_POWDER_H

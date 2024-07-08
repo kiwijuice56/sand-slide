@@ -1,5 +1,5 @@
-#ifndef POWDER_C_H
-#define POWDER_C_H
+#pragma once
+
 
 #include "../element.h"
 
@@ -61,4 +61,3 @@ public:
     }
 };
 
-#endif // POWDER_C_H

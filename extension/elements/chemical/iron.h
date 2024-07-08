@@ -1,5 +1,5 @@
-#ifndef IRON_H
-#define IRON_H
+#pragma once
+
 
 #include "../element.h"
 
@@ -54,4 +54,3 @@ public:
     }
 };
 
-#endif // IRON_H

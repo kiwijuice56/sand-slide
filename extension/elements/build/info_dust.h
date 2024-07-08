@@ -1,5 +1,5 @@
-#ifndef INFO_DUST_H
-#define INFO_DUST_H
+#pragma once
+
 
 
 
@@ -41,4 +41,3 @@ public:
     }
 };
 
-#endif // INFO_DUST_H

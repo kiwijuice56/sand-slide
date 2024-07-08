@@ -1,5 +1,5 @@
-#ifndef PRIMORDIAL_SOUP_H
-#define PRIMORDIAL_SOUP_H
+#pragma once
+
 
 #include "../element.h"
 
@@ -8,7 +8,7 @@ public:
     const double SPAWN = 0.00001;
     const double MELT = 1.0 / 8;
     const double EVAPORATION = 1.0 / 16;
-    
+
     void process(SandSimulation *sim, int row, int col) override {
         double random = sim->randf();
 
@@ -25,7 +25,7 @@ public:
             return;
         }
 
-        // Conductivity 
+        // Conductivity
         if (random < MELT && (sim->cardinal_touch_count(row, col, 38) > 0 || sim->cardinal_touch_count(row, col, 40) > 0 || sim->cardinal_touch_count(row, col, 115) > 0)) {
             sim->grow(row + 1, col, 127, 38);
             sim->grow(row - 1, col, 127, 38);
@@ -34,7 +34,7 @@ public:
             return;
         }
 
-        sim->liquid_process(row, col, 2);    
+        sim->liquid_process(row, col, 2);
     }
 
     double get_density() override {
@@ -62,4 +62,3 @@ public:
     }
 };
 
-#endif // PRIMORDIAL_SOUP_H

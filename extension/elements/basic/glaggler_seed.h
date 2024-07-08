@@ -1,5 +1,5 @@
-#ifndef GLAGGLER_SEED_H
-#define GLAGGLER_SEED_H
+#pragma once
+
 
 #include "../element.h"
 
@@ -85,4 +85,3 @@ public:
     }
 };
 
-#endif // GLAGGLER_SEED_H

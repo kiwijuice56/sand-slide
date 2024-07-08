@@ -1,5 +1,5 @@
-#ifndef ALGAE_WATER_H
-#define ALGAE_WATER_H
+#pragma once
+
 
 #include "../element.h"
 
@@ -20,7 +20,7 @@ public:
             return;
         }
 
-        // Conductivity 
+        // Conductivity
         if (random < MELT && (sim->cardinal_touch_count(row, col, 38) > 0 || sim->cardinal_touch_count(row, col, 40) > 0 || sim->cardinal_touch_count(row, col, 115) > 0)) {
             sim->grow(row + 1, col, 3, 38);
             sim->grow(row - 1, col, 3, 38);
@@ -51,7 +51,7 @@ public:
             return;
         }
 
-        sim->liquid_process(row, col, 2);    
+        sim->liquid_process(row, col, 2);
     }
 
     double get_density() override {
@@ -79,4 +79,3 @@ public:
     }
 };
 
-#endif // ALGAE_WATER_H

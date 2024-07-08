@@ -1,5 +1,5 @@
-#ifndef MUSHROOM_STEM_H
-#define MUSHROOM_STEM_H
+#pragma once
+
 
 #include "../element.h"
 
@@ -82,4 +82,3 @@ public:
     }
 };
 
-#endif // MUSHROOM_STEM_H

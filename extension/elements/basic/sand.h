@@ -1,5 +1,5 @@
-#ifndef SAND_H
-#define SAND_H
+#pragma once
+
 
 #include "../element.h"
 
@@ -54,4 +54,3 @@ public:
     }
 };
 
-#endif // SAND_H

@@ -1,5 +1,5 @@
-#ifndef JOY_H
-#define JOY_H
+#pragma once
+
 
 #include "../element.h"
 
@@ -77,4 +77,3 @@ public:
     }
 };
 
-#endif // JOY_H

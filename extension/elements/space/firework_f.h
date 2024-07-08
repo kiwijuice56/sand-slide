@@ -1,5 +1,5 @@
-#ifndef FIREWORK_F_H
-#define FIREWORK_F_H
+#pragma once
+
 
 #include "../element.h"
 
@@ -20,7 +20,7 @@ public:
             sim->set_cell(row, col, 0);
             return;
         }
-        
+
         if (sim->randf() < TRAIL) {
             sim->grow(row + 1, col, 0, 145);
         }
@@ -61,4 +61,3 @@ public:
     }
 };
 
-#endif // FIREWORK_F_H

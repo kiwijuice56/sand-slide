@@ -1,5 +1,5 @@
-#ifndef ICE_DUST_H
-#define ICE_DUST_H
+#pragma once
+
 
 #include "../element.h"
 
@@ -47,4 +47,3 @@ public:
     }
 };
 
-#endif // ICE_DUST_H

@@ -1,5 +1,5 @@
-#ifndef DUST_H
-#define DUST_H
+#pragma once
+
 
 #include "../element.h"
 #include <stdlib.h>
@@ -18,12 +18,12 @@ public:
             sim->move_and_swap(row, col, row - 2, col);
         }
 
-        if (sim->randf() > PROCESS || !sim->in_bounds(row + 1, col)) 
+        if (sim->randf() > PROCESS || !sim->in_bounds(row + 1, col))
             return;
         int dir = (int) (sim->randf() * 3) - 1;
-        if (dir != 0) 
+        if (dir != 0)
             sim->move_and_swap(row, col, row, col + dir);
-        else 
+        else
             sim->move_and_swap(row, col, row + 1, col);
     }
 
@@ -52,4 +52,3 @@ public:
     }
 };
 
-#endif // DUST_H

@@ -1,5 +1,5 @@
-#ifndef GRASS_H
-#define GRASS_H
+#pragma once
+
 
 #include "../element.h"
 
@@ -63,4 +63,3 @@ public:
     }
 };
 
-#endif // GRASS_H

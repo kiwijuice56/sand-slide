@@ -1,5 +1,5 @@
-#ifndef FLOWER_STEM_H
-#define FLOWER_STEM_H
+#pragma once
+
 
 #include "../element.h"
 
@@ -30,7 +30,7 @@ public:
             sim->grow(row - 1, col, 13, 121);
             sim->grow(row - 1, col, 119, 121); // Flower things
             sim->grow(row - 1, col, 120, 121);
-        } else if (sim->randf() < FLOWER && sim->in_bounds(row - 1, col)  && 
+        } else if (sim->randf() < FLOWER && sim->in_bounds(row - 1, col)  &&
         !(sim->get_cell(row - 1, col) >= 119 && sim->get_cell(row - 1, col) <= 125)) {
             sim->set_cell(row, col, 122);
         }
@@ -61,4 +61,3 @@ public:
     }
 };
 
-#endif // FLOWER_STEM_H

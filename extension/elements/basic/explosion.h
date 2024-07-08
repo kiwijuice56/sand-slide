@@ -1,5 +1,5 @@
-#ifndef EXPLOSION_H
-#define EXPLOSION_H
+#pragma once
+
 
 #include "../element.h"
 
@@ -52,4 +52,3 @@ public:
     }
 };
 
-#endif // EXPLOSION_H

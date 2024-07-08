@@ -1,5 +1,5 @@
-#ifndef ICE_BOMB_H
-#define ICE_BOMB_H
+#pragma once
+
 
 
 
@@ -42,7 +42,7 @@ public:
                     }
                 }
             }
-            
+
         }
     }
 
@@ -71,4 +71,3 @@ public:
     }
 };
 
-#endif // ICE_BOMB_H

@@ -1,5 +1,5 @@
-#ifndef INFO_PISTON_DOWN_CHARGED_H
-#define INFO_PISTON_DOWN_CHARGED_H
+#pragma once
+
 
 
 
@@ -57,4 +57,3 @@ public:
     }
 };
 
-#endif // INFO_PISTON_DOWN_CHARGED_H

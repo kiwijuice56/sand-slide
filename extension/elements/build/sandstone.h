@@ -1,5 +1,5 @@
-#ifndef SANDSTONE_H
-#define SANDSTONE_H
+#pragma once
+
 
 
 
@@ -13,7 +13,7 @@ public:
     void process(SandSimulation *sim, int row, int col) override {
         if (sim->randf() < WEATHER && sim->touch_count(row, col, 3) + sim->touch_count(row, col, 71) > 0) {
             sim->set_cell(row, col, 1);
-        } 
+        }
     }
 
     double get_density() override {
@@ -41,4 +41,3 @@ public:
     }
 };
 
-#endif // SANDSTONE_H

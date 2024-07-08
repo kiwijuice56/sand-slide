@@ -1,5 +1,5 @@
-#ifndef ICEWORK_C_H
-#define ICEWORK_C_H
+#pragma once
+
 
 #include "../element.h"
 
@@ -20,7 +20,7 @@ public:
             sim->set_cell(row, col, 0);
             return;
         }
-        
+
         if (sim->randf() < TRAIL) {
             sim->grow(row + 1, col, 0, 85);
         }
@@ -61,4 +61,3 @@ public:
     }
 };
 
-#endif // ICEWORK_C_H

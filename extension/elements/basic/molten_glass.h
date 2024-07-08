@@ -1,5 +1,5 @@
-#ifndef MOLTEN_GLASS_H
-#define MOLTEN_GLASS_H
+#pragma once
+
 
 
 
@@ -14,7 +14,7 @@ public:
             sim->set_cell(row, col, 25);
             return;
         }
-        
+
         if (sim->randf() < SPREAD) {
             sim->grow(row + 1, col, 1, 53);
             sim->grow(row - 1, col, 1, 53);
@@ -52,4 +52,3 @@ public:
     }
 };
 
-#endif // MOLTEN_GLASS_H

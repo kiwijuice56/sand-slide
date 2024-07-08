@@ -1,5 +1,5 @@
-#ifndef BEAM_POWER_FLASH_H
-#define BEAM_POWER_FLASH_H
+#pragma once
+
 
 #include "../element.h"
 
@@ -48,4 +48,3 @@ public:
     }
 };
 
-#endif // BEAM_POWER_FLASH_H

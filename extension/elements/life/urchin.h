@@ -1,5 +1,5 @@
-#ifndef URCHIN_H
-#define URCHIN_H
+#pragma once
+
 
 #include "../element.h"
 
@@ -62,4 +62,3 @@ public:
     }
 };
 
-#endif // URCHIN_H

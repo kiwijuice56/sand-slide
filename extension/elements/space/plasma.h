@@ -1,5 +1,5 @@
-#ifndef PLASMA_H
-#define PLASMA_H
+#pragma once
+
 
 #include "../element.h"
 
@@ -8,7 +8,7 @@ public:
     const double DOWN = 1 / 1.20;
 
     void process(SandSimulation *sim, int row, int col) override {
-        int n_count = sim->touch_count(row, col, 0) + sim->touch_count(row, col, 39) + 
+        int n_count = sim->touch_count(row, col, 0) + sim->touch_count(row, col, 39) +
         sim->touch_count(row, col, 6) + sim->touch_count(row, col, 22);
         if (n_count <= 6) {
             sim->set_cell(row, col, 40);
@@ -62,4 +62,3 @@ public:
     }
 };
 
-#endif // PLASMA_H

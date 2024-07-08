@@ -1,5 +1,5 @@
-#ifndef MEGIDO_H
-#define MEGIDO_H
+#pragma once
+
 
 #include "../element.h"
 
@@ -8,16 +8,16 @@ public:
     float FIREWORK = 1.0 / 16;
     float REACT = 1.0 / 4;
     void process(SandSimulation *sim, int row, int col) override {
-        if (sim->touch_count(row, col, 149) >= 4) { 
+        if (sim->touch_count(row, col, 149) >= 4) {
             return;
         }
 
         if (sim->randf() < REACT) {
             for (int y = row - 5; y <= row + 5; y++) {
                 for (int x = col - 5; x <= col + 5; x++) {
-                    if (sim->randf() >= REACT || !sim->in_bounds(y, x) || sim->get_cell(y, x) == 149) 
+                    if (sim->randf() >= REACT || !sim->in_bounds(y, x) || sim->get_cell(y, x) == 149)
                         continue;
-                    
+
                     int dirRow = row - y < 0 ? -1 : 1;
                     int dirCol = col - x < 0 ? -1 : 1;
                     if (row == y) dirRow = 0;
@@ -26,7 +26,7 @@ public:
                 }
             }
         }
-        
+
         if (sim->randf() < REACT) {
             for (int i = -1; i <= 1; i++) {
                 for (int j = -1; j <= 1; j++) {
@@ -81,4 +81,3 @@ public:
     }
 };
 
-#endif // MEGIDO_H

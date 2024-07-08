@@ -1,5 +1,5 @@
-#ifndef OIL_H
-#define OIL_H
+#pragma once
+
 
 #include "../element.h"
 #include <stdlib.h>
@@ -15,7 +15,7 @@ public:
             return;
         }
 
-        sim->liquid_process(row, col, 3); 
+        sim->liquid_process(row, col, 3);
     }
 
     double get_density() override {
@@ -43,4 +43,3 @@ public:
     }
 };
 
-#endif // OIL_H

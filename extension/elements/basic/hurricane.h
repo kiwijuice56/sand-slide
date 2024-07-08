@@ -1,5 +1,5 @@
-#ifndef HURRICANE_H
-#define HURRICANE_H
+#pragma once
+
 
 #include "../element.h"
 
@@ -7,7 +7,7 @@ class Hurricane: public Element {
 public:
     const double DECAY = 1.0 / 500;
     const double THUNDER = 0.25;
-    const double RAIN = 0.65; 
+    const double RAIN = 0.65;
     const double UP = 0.65;
     const double PRECIPITATE = 1.0 / 48;
     const double GROW = 1.0 / 128;
@@ -23,7 +23,7 @@ public:
             else
                 sim->set_cell(row, col, 0);
         }
-        
+
         int newRow = row;
         int newCol = col + (int) (sim->randf() * 3) - 1;
         if (sim->randf() < UP) {
@@ -68,4 +68,3 @@ public:
     }
 };
 
-#endif // HURRICANE_H

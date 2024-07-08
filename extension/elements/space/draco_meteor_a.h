@@ -1,5 +1,5 @@
-#ifndef DRACO_METEOR_H
-#define DRACO_METEOR_H
+#pragma once
+
 
 #include "../element.h"
 
@@ -17,9 +17,9 @@ public:
 
         // Very long winded way of not allowing meteors to explode when touching meteor products
         if (sim->randf() < EXPLODE && (
-        !sim->in_bounds(row + 1, col) 
-        || sim->get_cell(row + 1, col) != 69 && sim->get_cell(row + 1, col) != 137 && sim->get_cell(row + 1, col) != 138 
-        && sim->get_cell(row + 1, col) != 139  && sim->get_cell(row + 1, col) != 0 && sim->get_cell(row + 1, col) != 9 
+        !sim->in_bounds(row + 1, col)
+        || sim->get_cell(row + 1, col) != 69 && sim->get_cell(row + 1, col) != 137 && sim->get_cell(row + 1, col) != 138
+        && sim->get_cell(row + 1, col) != 139  && sim->get_cell(row + 1, col) != 0 && sim->get_cell(row + 1, col) != 9
         && sim->get_cell(row + 1, col) != 46  && sim->get_cell(row + 1, col) != 5  && sim->get_cell(row + 1, col) != 47  && sim->get_cell(row + 1, col) != 48
         && sim->get_cell(row + 1, col) != 6 && sim->get_cell(row + 1, col) != 24 && sim->get_cell(row + 1, col) != 140
         && sim->get_cell(row + 1, col) != 141 && sim->get_cell(row + 1, col) != 142 && sim->get_cell(row + 1, col) != 143
@@ -66,4 +66,3 @@ public:
     }
 };
 
-#endif // DRACO_METEOR_H

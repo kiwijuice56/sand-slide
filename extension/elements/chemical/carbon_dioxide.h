@@ -1,5 +1,5 @@
-#ifndef CARBON_DIOXIDE_H
-#define CARBON_DIOXIDE_H
+#pragma once
+
 
 #include "../element.h"
 #include <stdlib.h>
@@ -13,7 +13,7 @@ public:
             sim->set_cell(row, col, 0);
             return;
         }
-        sim->liquid_process(row, col, 2);    
+        sim->liquid_process(row, col, 2);
     }
 
     double get_density() override {
@@ -41,4 +41,3 @@ public:
     }
 };
 
-#endif // CARBON_DIOXIDE_H

@@ -1,5 +1,5 @@
-#ifndef LAVA_H
-#define LAVA_H
+#pragma once
+
 
 #include "../element.h"
 #include <stdlib.h>
@@ -53,4 +53,3 @@ public:
     }
 };
 
-#endif // LAVA_H

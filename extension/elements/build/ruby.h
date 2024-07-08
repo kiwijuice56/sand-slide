@@ -1,5 +1,5 @@
-#ifndef RUBY_H
-#define RUBY_H
+#pragma once
+
 
 
 
@@ -54,4 +54,3 @@ public:
     }
 };
 
-#endif // RUBY_H

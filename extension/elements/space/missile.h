@@ -1,5 +1,5 @@
-#ifndef MISSILE_H
-#define MISSILE_H
+#pragma once
+
 
 #include "../element.h"
 
@@ -19,11 +19,11 @@ public:
         }
         // Very long winded way of not allowing meteors to explode when touching meteor products
         if (sim->randf() < EXPLODE) {
-            int x = sim->touch_count(row, col, 69) + sim->touch_count(row, col, 174) + sim->touch_count(row, col, 0) + 
+            int x = sim->touch_count(row, col, 69) + sim->touch_count(row, col, 174) + sim->touch_count(row, col, 0) +
             sim->touch_count(row, col, 69) + sim->touch_count(row, col, 6) + sim->touch_count(row, col, 5) + sim->touch_count(row, col, 66) +
             sim->touch_count(row, col, 9) + sim->touch_count(row, col, 68) + sim->touch_count(row, col, 67);
             if (x < 8) {
-                for (int y = -9; y <= 9; y++) { 
+                for (int y = -9; y <= 9; y++) {
                     for (int x = -9; x <= 9; x++) {
                         if (sim->in_bounds(row + y, col + x) && x * x + y * y < 81.0) {
                             sim->set_cell(row + y, col + x, sim->randf() < EXPLODE ? 66 : 9);
@@ -37,7 +37,7 @@ public:
         float closest_dist = 1000;
         int dir_x = 0;
         int dir_y = -1;
-        for (int y = -32; y <= 32; y++) { 
+        for (int y = -32; y <= 32; y++) {
             for (int x = -32; x <= 32; x++) {
                 if (sim->in_bounds(row + y, col + x) && can_target(sim, row + y, col + x)) {
                     float dist = y * y + x * x;
@@ -56,7 +56,7 @@ public:
         if (!sim->in_bounds(row, col))
             return false;
         int x = sim->get_cell(row, col);
-        return x == 4 || x == 7 || x == 8 || x == 12 || x == 13 || x == 14 || x == 23 || x == 31 
+        return x == 4 || x == 7 || x == 8 || x == 12 || x == 13 || x == 14 || x == 23 || x == 31
         || x == 32 || x == 33 || x == 49 || x == 54 || x == 55 || x == 72 || x == 73 || x == 86 || x == 164 || x == 158 || x == 150 || x == 167;
     }
 
@@ -85,4 +85,3 @@ public:
     }
 };
 
-#endif // MISSILE_H

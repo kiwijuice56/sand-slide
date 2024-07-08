@@ -1,5 +1,5 @@
-#ifndef SPRINKLES_H
-#define SPRINKLES_H
+#pragma once
+
 
 #include "../element.h"
 
@@ -50,4 +50,3 @@ public:
     }
 };
 
-#endif // SPRINKLES_H

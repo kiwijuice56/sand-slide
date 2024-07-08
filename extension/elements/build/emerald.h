@@ -1,5 +1,5 @@
-#ifndef EMERALD_H
-#define EMERALD_H
+#pragma once
+
 
 
 
@@ -49,4 +49,3 @@ public:
     }
 };
 
-#endif // EMERALD_H

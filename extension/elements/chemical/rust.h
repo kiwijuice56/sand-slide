@@ -1,5 +1,5 @@
-#ifndef RUST_H
-#define RUST_H
+#pragma once
+
 
 #include "../element.h"
 
@@ -38,4 +38,3 @@ public:
     }
 };
 
-#endif // RUST_H

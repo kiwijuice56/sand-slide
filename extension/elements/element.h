@@ -1,5 +1,5 @@
-#ifndef ELEMENT_H
-#define ELEMENT_H
+#pragma once
+
 
 // Base class for all elements
 
@@ -13,7 +13,7 @@ public:
     int custom_id = 0;
 
     virtual void process(SandSimulation *sim, int row, int col) = 0;
-    
+
     // Needs to be a method as other elements may need this property for calculations
     virtual double get_density() = 0;
     virtual double get_explode_resistance() = 0;
@@ -23,4 +23,3 @@ public:
     virtual int get_state() = 0;
 };
 
-#endif // ELEMENT_H

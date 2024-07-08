@@ -1,5 +1,5 @@
-#ifndef BURNING_POTASSIUM_H
-#define BURNING_POTASSIUM_H
+#pragma once
+
 
 #include "../element.h"
 
@@ -39,7 +39,7 @@ public:
             sim->grow(row - 1, col, 0, 5);
             return;
         }
-        
+
         if (sim->randf() < WATER && sim->touch_count(row, col, 3) + sim->touch_count(row, col, 71) > 0) {
             for (int y = -7; y <= 7; y++) {
                 for (int x = -7; x <= 7; x++) {
@@ -95,4 +95,3 @@ public:
     }
 };
 
-#endif // BURNING_POTASSIUM_H

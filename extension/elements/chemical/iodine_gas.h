@@ -1,5 +1,5 @@
-#ifndef IODINE_GAS_H
-#define IODINE_GAS_H
+#pragma once
+
 
 #include "../element.h"
 
@@ -51,4 +51,3 @@ public:
     }
 };
 
-#endif // IODINE_GAS_H

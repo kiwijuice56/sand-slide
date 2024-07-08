@@ -1,5 +1,5 @@
-#ifndef BEAM_H
-#define BEAM_H
+#pragma once
+
 
 #include "../element.h"
 
@@ -47,4 +47,3 @@ public:
     }
 };
 
-#endif // BEAM_H

@@ -1,5 +1,5 @@
-#ifndef GLITCH_H
-#define GLITCH_H
+#pragma once
+
 
 #include "../element.h"
 
@@ -24,7 +24,7 @@ public:
             sim->grow(row - 1, col, -1, 117);
             sim->grow(row, col - 1, -1, 117);
         }
-        
+
     }
 
     double get_density() override {
@@ -52,4 +52,3 @@ public:
     }
 };
 
-#endif // GLITCH_H

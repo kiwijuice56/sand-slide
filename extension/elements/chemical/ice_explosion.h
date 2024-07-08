@@ -1,5 +1,5 @@
-#ifndef ICE_EXPLOSION_H
-#define ICE_EXPLOSION_H
+#pragma once
+
 
 #include "../element.h"
 
@@ -52,4 +52,3 @@ public:
     }
 };
 
-#endif // ICE_EXPLOSION_H

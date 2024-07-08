@@ -1,5 +1,5 @@
-#ifndef INFO_DELETER_H
-#define INFO_DELETER_H
+#pragma once
+
 
 
 
@@ -51,4 +51,3 @@ public:
     }
 };
 
-#endif // INFO_DELETER_H

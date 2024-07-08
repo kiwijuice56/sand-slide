@@ -1,5 +1,5 @@
-#ifndef LAPIS_H
-#define LAPIS_H
+#pragma once
+
 
 
 
@@ -54,4 +54,3 @@ public:
     }
 };
 
-#endif // LAPIS_H

@@ -1,5 +1,5 @@
-#ifndef POTION_H
-#define POTION_H
+#pragma once
+
 
 #include "../element.h"
 
@@ -19,7 +19,7 @@ public:
             return;
         }
 
-        // Conductivity 
+        // Conductivity
         if (random < MELT && (sim->cardinal_touch_count(row, col, 38) > 0 || sim->cardinal_touch_count(row, col, 40) > 0 || sim->cardinal_touch_count(row, col, 115) > 0)) {
             sim->grow(row + 1, col, 163, 38);
             sim->grow(row - 1, col, 163, 38);
@@ -37,7 +37,7 @@ public:
             }
         }
 
-        sim->liquid_process(row, col, 2);    
+        sim->liquid_process(row, col, 2);
     }
 
     double get_density() override {
@@ -46,7 +46,7 @@ public:
         }
         return my_sim->randf() * 64;
     }
- 
+
     bool can_infect(SandSimulation *sim, int row, int col) {
         if (!sim->in_bounds(row, col))
             return false;
@@ -76,4 +76,3 @@ public:
     }
 };
 
-#endif // POTION_H

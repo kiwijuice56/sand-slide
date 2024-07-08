@@ -1,5 +1,5 @@
-#ifndef MERCURY_H
-#define MERCURY_H
+#pragma once
+
 
 #include "../element.h"
 #include <stdlib.h>
@@ -17,7 +17,7 @@ public:
             return;
         }
 
-        sim->liquid_process(row, col, 4); 
+        sim->liquid_process(row, col, 4);
     }
 
     double get_density() override {
@@ -45,4 +45,3 @@ public:
     }
 };
 
-#endif // MERCURY_H

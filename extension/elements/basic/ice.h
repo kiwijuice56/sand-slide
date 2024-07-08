@@ -1,5 +1,5 @@
-#ifndef ICE_H
-#define ICE_H
+#pragma once
+
 
 #include "../element.h"
 
@@ -57,4 +57,3 @@ public:
     }
 };
 
-#endif // ICE_H

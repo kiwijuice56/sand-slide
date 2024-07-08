@@ -1,5 +1,5 @@
-#ifndef ALL_ELEMENTS_H
-#define ALL_ELEMENTS_H
+#pragma once
+
 
 #include "elements/basic/air.h"
 #include "elements/basic/burning_oil.h"
@@ -251,7 +251,7 @@ public:
         elements->at(57) = new Obsidian();
         elements->at(58) = new Vapor();
         elements->at(59) = new AcidWater();
-        elements->at(60) = new OxidizedPotassium();  
+        elements->at(60) = new OxidizedPotassium();
         elements->at(61) = new BurningPotassium();
         elements->at(62) = new Rust();
         elements->at(63) = new PowderB();
@@ -289,7 +289,7 @@ public:
         elements->at(95) = new Nanobot();
         elements->at(96) = new CarbonDioxide();
         elements->at(97) = new Sandstone();
-        elements->at(98) = new WhiteSand(); 
+        elements->at(98) = new WhiteSand();
         elements->at(99) = new DrySponge();
         elements->at(100) = new WetSponge();
         elements->at(101) = new Virus();
@@ -318,16 +318,16 @@ public:
         elements->at(124) = new FlowerPetalB();
         elements->at(125) = new FlowerPetalC();
         elements->at(126) = new AlgaeWater();
-        elements->at(127) = new PrimordialSoup(); 
-        elements->at(128) = new JavelinRain(); 
-        elements->at(129) = new Spiral(); 
-        elements->at(130) = new Turtle(); 
-        elements->at(131) = new Invisirock(); 
-        elements->at(132) = new MetalSlime(); 
-        elements->at(133) = new Silver(); 
-        elements->at(134) = new MoltenSilver(); 
-        elements->at(135) = new Lead(); 
-        elements->at(136) = new Base(); 
+        elements->at(127) = new PrimordialSoup();
+        elements->at(128) = new JavelinRain();
+        elements->at(129) = new Spiral();
+        elements->at(130) = new Turtle();
+        elements->at(131) = new Invisirock();
+        elements->at(132) = new MetalSlime();
+        elements->at(133) = new Silver();
+        elements->at(134) = new MoltenSilver();
+        elements->at(135) = new Lead();
+        elements->at(136) = new Base();
         elements->at(137) = new DracoMeteorA();
         elements->at(138) = new DracoMeteorB();
         elements->at(139) = new DracoMeteorC();
@@ -352,29 +352,28 @@ public:
         elements->at(158) = new Mutant();
         elements->at(159) = new Joy();
         elements->at(160) = new Thermostat();
-        elements->at(161) = new Paraffin();  
-        elements->at(162) = new Mint();  
-        elements->at(163) = new Potion();  
-        elements->at(164) = new Medusa();  
-        elements->at(165) = new StoneRay();  
-        elements->at(166) = new StoneTrail();  
-        elements->at(167) = new BlackSlime();  
-        elements->at(168) = new MushroomCore();  
-        elements->at(169) = new MushroomStem();  
+        elements->at(161) = new Paraffin();
+        elements->at(162) = new Mint();
+        elements->at(163) = new Potion();
+        elements->at(164) = new Medusa();
+        elements->at(165) = new StoneRay();
+        elements->at(166) = new StoneTrail();
+        elements->at(167) = new BlackSlime();
+        elements->at(168) = new MushroomCore();
+        elements->at(169) = new MushroomStem();
         elements->at(170) = new MushroomShellA();
-        elements->at(171) = new MushroomShellB();  
-        elements->at(172) = new MushroomShellC();    
-        elements->at(173) = new Bedrock();  
-        elements->at(174) = new Missile();  
-        elements->at(175) = new GlagglerSeed(); 
-        elements->at(176) = new GlagglerEye(); 
-        elements->at(177) = new GlagglerFace(); 
+        elements->at(171) = new MushroomShellB();
+        elements->at(172) = new MushroomShellC();
+        elements->at(173) = new Bedrock();
+        elements->at(174) = new Missile();
+        elements->at(175) = new GlagglerSeed();
+        elements->at(176) = new GlagglerEye();
+        elements->at(177) = new GlagglerFace();
 
 
         for (int i = 2048; i <= 4096; i++) {
-            elements->at(i) = new CustomElementParticle(); 
-        }  
+            elements->at(i) = new CustomElementParticle();
+        }
     }
 };
 
-#endif // ALL_ELEMENTS_H

@@ -1,5 +1,5 @@
-#ifndef GLAGGLER_FACE
-#define GLAGGLER_FACE
+#pragma once
+
 
 #include "../element.h"
 
@@ -10,7 +10,7 @@ public:
     void process(SandSimulation *sim, int row, int col) override {
         if (sim->randf() < DECAY) {
             sim->set_cell(row, col, 9);
-        } 
+        }
     }
 
     double get_density() override {
@@ -38,4 +38,3 @@ public:
     }
 };
 
-#endif // GLAGGLER_FACE

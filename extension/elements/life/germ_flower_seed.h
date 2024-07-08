@@ -1,5 +1,5 @@
-#ifndef GERMINATED_FLOWER_SEED_H
-#define GERMINATED_FLOWER_SEED_H
+#pragma once
+
 
 #include "../element.h"
 
@@ -26,7 +26,7 @@ public:
         // Turn into a flower
         if (sim->randf() < GROW && sim->touch_count(row, col, 11) > 0) {
             sim->set_cell(row, col, 121);
-        } 
+        }
 
         bool bot_left = sim->is_swappable(row, col, row + 1, col - 1);
         bool bot = sim->is_swappable(row, col, row + 1, col);
@@ -67,4 +67,3 @@ public:
     }
 };
 
-#endif // GERMINATED_FLOWER_SEED_H

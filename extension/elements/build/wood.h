@@ -1,5 +1,5 @@
-#ifndef WOOD_H
-#define WOOD_H
+#pragma once
+
 
 
 
@@ -41,4 +41,3 @@ public:
     }
 };
 
-#endif // WOOD_H

@@ -1,5 +1,5 @@
-#ifndef NUCLEAR_EXPLOSION_H
-#define NUCLEAR_EXPLOSION_H
+#pragma once
+
 
 #include "../element.h"
 
@@ -49,4 +49,3 @@ public:
     }
 };
 
-#endif // NUCLEAR_EXPLOSION_H

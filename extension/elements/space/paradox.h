@@ -1,5 +1,5 @@
-#ifndef PARADOX_H
-#define PARADOX_H
+#pragma once
+
 
 
 
@@ -30,18 +30,18 @@ public:
             }
         }
 
-        // If the worm hole has no space around it after absorbing all 4 directions, 
+        // If the worm hole has no space around it after absorbing all 4 directions,
         // it is in the middle of the worm hole and doesn't need to keep processing
-        if (sim->cardinal_touch_count(row, col, 0) == 0) { 
+        if (sim->cardinal_touch_count(row, col, 0) == 0) {
             return;
         }
 
         // Keep moving particles closer into the worm hole
         for (int y = row - 8; y <= row + 8; y++) {
             for (int x = col - 8; x <= col + 8; x++) {
-                if (sim->randf() >= GRAB || !sim->in_bounds(y, x)) 
+                if (sim->randf() >= GRAB || !sim->in_bounds(y, x))
                     continue;
-                
+
                 int dirRow = row - y < 0 ? -1 : 1;
                 int dirCol = col - x < 0 ? -1 : 1;
                 if (row == y) dirRow = 0;
@@ -82,4 +82,3 @@ public:
     }
 };
 
-#endif // PARADOX_H

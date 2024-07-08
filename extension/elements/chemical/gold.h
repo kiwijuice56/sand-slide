@@ -1,5 +1,5 @@
-#ifndef GOLD_H
-#define GOLD_H
+#pragma once
+
 
 #include "../element.h"
 
@@ -51,4 +51,3 @@ public:
     }
 };
 
-#endif // GOLD_H

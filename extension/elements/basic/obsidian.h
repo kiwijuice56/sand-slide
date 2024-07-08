@@ -1,5 +1,5 @@
-#ifndef OBSIDIAN_H
-#define OBSIDIAN_H
+#pragma once
+
 
 
 
@@ -40,4 +40,3 @@ public:
     }
 };
 
-#endif // OBSIDIAN_H

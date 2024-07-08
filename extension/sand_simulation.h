@@ -1,5 +1,5 @@
-#ifndef SAND_SIMULATION_CLASS_H
-#define SAND_SIMULATION_CLASS_H
+#pragma once
+
 
 #include <vector>
 #include <godot_cpp/classes/ref.hpp>
@@ -28,7 +28,7 @@ struct CustomElement {
     uint32_t color_a;
     uint32_t color_b;
     uint32_t color_c;
-    
+
     int state;
     float density;
     float viscosity;
@@ -133,7 +133,7 @@ public:
     int get_chunk(int c);
     int get_width();
     int get_height();
-    void resize(int new_width, int new_height); 
+    void resize(int new_width, int new_height);
     void set_chunk_size(int new_size);
     PackedByteArray get_data();
 
@@ -154,4 +154,3 @@ public:
     PackedByteArray get_color_image(bool flat);
 };
 
-#endif // SAND_SIMULATION_CLASS_H

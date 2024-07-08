@@ -1,5 +1,5 @@
-#ifndef HYDROGEN_EXPLOSION_H
-#define HYDROGEN_EXPLOSION_H
+#pragma once
+
 
 #include "../element.h"
 
@@ -53,4 +53,3 @@ public:
     }
 };
 
-#endif // HYDROGEN_EXPLOSION_H

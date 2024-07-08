@@ -1,5 +1,5 @@
-#ifndef THERMOSTAT_H
-#define THERMOSTAT_H
+#pragma once
+
 
 #include "../element.h"
 
@@ -42,4 +42,3 @@ public:
     }
 };
 
-#endif // THERMOSTAT_H

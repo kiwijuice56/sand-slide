@@ -1,5 +1,5 @@
-#ifndef PARAFFIN_H
-#define PARAFFIN_H
+#pragma once
+
 
 #include "../element.h"
 #include <stdlib.h>
@@ -49,4 +49,3 @@ public:
     }
 };
 
-#endif // PARAFFIN_H

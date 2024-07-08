@@ -1,5 +1,5 @@
-#ifndef GLASS_H
-#define GLASS_H
+#pragma once
+
 
 
 
@@ -8,7 +8,7 @@
 class Glass: public Element {
 public:
     void process(SandSimulation *sim, int row, int col) override {
-        
+
     }
 
     double get_density() override {
@@ -36,4 +36,3 @@ public:
     }
 };
 
-#endif // GLASS_H

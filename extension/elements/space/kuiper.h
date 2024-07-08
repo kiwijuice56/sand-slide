@@ -1,5 +1,5 @@
-#ifndef KUIPER_H
-#define KUIPER_H
+#pragma once
+
 
 
 
@@ -69,4 +69,3 @@ public:
     }
 };
 
-#endif // KUIPER_H

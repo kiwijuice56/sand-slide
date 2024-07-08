@@ -1,5 +1,5 @@
-#ifndef ACID_WATER_H
-#define ACID_WATER_H
+#pragma once
+
 
 #include "../element.h"
 
@@ -23,7 +23,7 @@ public:
 
         if (sim->is_cold(row, col)) {
             sim->set_cell(row, col, 154);
-            return; 
+            return;
         }
 
         // Evaporate into acid gas
@@ -32,21 +32,21 @@ public:
             return;
         }
 
-        sim->liquid_process(row, col, 1); 
+        sim->liquid_process(row, col, 1);
 
         bool blocked = !sim->in_bounds(row + 1, col) || sim->get_cell(row + 1, col) == 3;
         int new_row = row, new_col = col;
 
-        if (sim->randf() < (blocked ? DOWN_BLOCK : DOWN)) 
+        if (sim->randf() < (blocked ? DOWN_BLOCK : DOWN))
             new_row += (sim->touch_count(row, col, 3) + sim->touch_count(row, col, 59) + sim->touch_count(row, col, 21) > 0 ? -1 : 1);
-        else 
+        else
             new_col += sim->randf() < 0.5 ? 1 : -1;
 
         // Ensure that the swallowed cell is in bounds and not acid
         if (!sim->in_bounds(new_row, new_col) || sim->get_cell(new_row, new_col) == 59) {
             return;
         }
-        
+
         // Stop it from jumping around in the air
         if (sim->get_cell(new_row, new_col) == 0 && new_row < row) {
             return;
@@ -63,7 +63,7 @@ public:
             sim->set_cell(row, col, 3);
         }
 
-        if (sim->randf() < EMIT) 
+        if (sim->randf() < EMIT)
             sim->grow(row - 1, col, 0, 22);
     }
 
@@ -92,4 +92,3 @@ public:
     }
 };
 
-#endif // ACID_WATER_H

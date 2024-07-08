@@ -1,5 +1,5 @@
-#ifndef LEAD_H
-#define LEAD_H
+#pragma once
+
 
 #include "../element.h"
 
@@ -48,4 +48,3 @@ public:
     }
 };
 
-#endif // LEAD_H

@@ -1,5 +1,5 @@
-#ifndef HYDROGEN_H
-#define HYDROGEN_H
+#pragma once
+
 
 #include "../element.h"
 
@@ -51,4 +51,3 @@ public:
     }
 };
 
-#endif // HYDROGEN_H

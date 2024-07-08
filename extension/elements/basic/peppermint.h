@@ -1,5 +1,5 @@
-#ifndef MINT_H
-#define MINT_H
+#pragma once
+
 
 #include "../element.h"
 
@@ -47,4 +47,3 @@ public:
     }
 };
 
-#endif // MINT_H

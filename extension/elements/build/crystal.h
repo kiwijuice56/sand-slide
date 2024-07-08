@@ -1,5 +1,5 @@
-#ifndef CRYSTAL_H
-#define CRYSTAL_H
+#pragma once
+
 
 
 
@@ -49,4 +49,3 @@ public:
     }
 };
 
-#endif // CRYSTAL_H

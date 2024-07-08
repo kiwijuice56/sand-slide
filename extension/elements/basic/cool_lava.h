@@ -1,5 +1,5 @@
-#ifndef COOL_LAVA_H
-#define COOL_LAVA_H
+#pragma once
+
 
 #include "../element.h"
 #include <stdlib.h>
@@ -51,4 +51,3 @@ public:
     }
 };
 
-#endif // COOL_LAVA_H

@@ -1,5 +1,5 @@
-#ifndef WET_SPONGE_H
-#define WET_SPONGE_H
+#pragma once
+
 
 
 
@@ -19,7 +19,7 @@ public:
                 }
             }
         }
-        
+
     }
 
     double get_density() override {
@@ -47,4 +47,3 @@ public:
     }
 };
 
-#endif // WET_SPONGE_H

@@ -1,5 +1,5 @@
-#ifndef FROZEN_AMMONIA_H
-#define FROZEN_AMMONIA_H
+#pragma once
+
 
 #include "../element.h"
 
@@ -17,7 +17,7 @@ public:
 
         if (sim->randf() >= GROW) {
             return;
-        } 
+        }
 
         // We need to empty this cell for ice branching checks
         sim->set_cell(row, col, 0);
@@ -55,4 +55,3 @@ public:
     }
 };
 
-#endif // FROZEN_AMMONIA_H

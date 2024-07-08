@@ -1,12 +1,12 @@
-#ifndef OSMIUM_H
-#define OSMIUM_H
+#pragma once
+
 
 #include "../element.h"
 
 class Osmium: public Element {
 public:
     void process(SandSimulation *sim, int row, int col) override {
-        
+
     }
 
     double get_density() override {
@@ -34,4 +34,3 @@ public:
     }
 };
 
-#endif // OSMIUM_H

@@ -1,5 +1,5 @@
-#ifndef EXPLOSIVE_H
-#define EXPLOSIVE_H
+#pragma once
+
 
 
 
@@ -51,4 +51,3 @@ public:
     }
 };
 
-#endif // EXPLOSIVE_H

@@ -1,5 +1,5 @@
-#ifndef SOIL_H
-#define SOIL_H
+#pragma once
+
 
 #include "../element.h"
 
@@ -49,4 +49,3 @@ public:
     }
 };
 
-#endif // SOIL_H

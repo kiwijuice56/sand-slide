@@ -1,5 +1,5 @@
-#ifndef P_EXPLOSION_H
-#define P_EXPLOSION_H
+#pragma once
+
 
 #include "../element.h"
 
@@ -50,4 +50,3 @@ public:
     }
 };
 
-#endif // P_EXPLOSION_H

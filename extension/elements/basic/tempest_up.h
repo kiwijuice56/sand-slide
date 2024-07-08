@@ -1,5 +1,5 @@
-#ifndef TEMPEST_UP_H
-#define TEMPEST_UP_H
+#pragma once
+
 
 #include "../element.h"
 
@@ -26,7 +26,7 @@ public:
         if (sim->in_bounds(newRow, newCol) && (sim->get_cell(newRow, newCol) == 146 || sim->randf() < 1.0 - sim->elements.at(sim->get_cell(newRow, newCol))->get_density() / 800.0)) {
             sim->set_cell(row, col, sim->get_cell(newRow, newCol));
             sim->set_cell(newRow, newCol, 147);
-        } 
+        }
     }
 
     double get_density() override {
@@ -54,4 +54,3 @@ public:
     }
 };
 
-#endif // TEMPEST_UP_H

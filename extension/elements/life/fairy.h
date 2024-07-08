@@ -1,5 +1,5 @@
-#ifndef FAIRY_H
-#define FAIRY_H
+#pragma once
+
 
 #include "../element.h"
 
@@ -50,4 +50,3 @@ public:
     }
 };
 
-#endif // FAIRY_H

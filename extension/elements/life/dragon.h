@@ -1,5 +1,5 @@
-#ifndef DRAGON_H
-#define DRAGON_H
+#pragma once
+
 
 #include "../element.h"
 
@@ -28,7 +28,7 @@ public:
                 case 1: sim->grow(row, col + 1, 0, 32); sim->grow(row, col - 1, 0, 32); break;
             }
         }
-        
+
     }
 
     double get_density() override {
@@ -56,4 +56,3 @@ public:
     }
 };
 
-#endif // DRAGON_H

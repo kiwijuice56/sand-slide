@@ -1,5 +1,5 @@
-#ifndef MOLTEN_SILVER_H
-#define MOLTEN_SILVER_H
+#pragma once
+
 
 #include "../element.h"
 #include <stdlib.h>
@@ -27,7 +27,7 @@ public:
             sim->set_cell(row, col, 9);
         }
 
-        sim->liquid_process(row, col, 3); 
+        sim->liquid_process(row, col, 3);
     }
 
     double get_density() override {
@@ -55,4 +55,3 @@ public:
     }
 };
 
-#endif // MOLTEN_SILVER_H

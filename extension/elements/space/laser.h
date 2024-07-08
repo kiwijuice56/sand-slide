@@ -1,5 +1,5 @@
-#ifndef LASER_H
-#define LASER_H
+#pragma once
+
 
 #include "../element.h"
 
@@ -47,4 +47,3 @@ public:
     }
 };
 
-#endif // LASER_H
