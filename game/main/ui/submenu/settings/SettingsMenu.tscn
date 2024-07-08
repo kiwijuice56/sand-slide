@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bi1khomdif7xb"]
+[gd_scene load_steps=16 format=3 uid="uid://bi1khomdif7xb"]
 
 [ext_resource type="Theme" uid="uid://co20v1mxv2dfm" path="res://main/ui/_theme/theme.tres" id="1_f12ql"]
 [ext_resource type="Script" path="res://main/ui/submenu/settings/settings_menu.gd" id="2_1g5bn"]
@@ -19,27 +19,6 @@ corner_radius_top_left = 12
 corner_radius_top_right = 12
 corner_radius_bottom_right = 12
 corner_radius_bottom_left = 12
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_11w6c"]
-bg_color = Color(0.4, 0.4, 0.45098, 1)
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_us5ki"]
-bg_color = Color(0.188235, 0.188235, 0.239216, 1)
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xa765"]
-bg_color = Color(0.313726, 0.313726, 0.360784, 1)
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i7y7c"]
 content_margin_right = 8.0
@@ -213,9 +192,6 @@ layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 0
 focus_mode = 0
-theme_override_styles/hover = SubResource("StyleBoxFlat_11w6c")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_us5ki")
-theme_override_styles/normal = SubResource("StyleBoxFlat_xa765")
 icon = ExtResource("4_rvddf")
 icon_alignment = 1
 

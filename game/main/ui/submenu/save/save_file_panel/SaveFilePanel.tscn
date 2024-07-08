@@ -12,6 +12,7 @@ corner_radius_top_left = 8
 corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
+anti_aliasing = false
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_slap3"]
 bg_color = Color(0.360784, 0.360784, 0.419608, 1)
