@@ -19,11 +19,7 @@ func initialize(element: CustomElement) -> void:
 	set("theme_override_styles/hover", new_style)
 	new_style.bg_color = element.color_a.lightened(.35)
 	
-	style = get("theme_override_styles/pressed")
-	new_style = style.duplicate()
-	set("theme_override_styles/pressed", new_style)
-	new_style.bg_color = element.color_a.darkened(.35)
-	
+	set("theme_override_styles/pressed", get("theme_override_styles/normal"))
 	
 	if element.color_a.v > 0.75:
 		set("theme_override_colors/font_color", Color("#000000"))
@@ -33,5 +29,17 @@ func initialize(element: CustomElement) -> void:
 		set("theme_override_colors/font_hover_pressed_color", Color("#000000"))
 
 func _on_button_down():
-	super._on_button_down()
+	was_pressed = true
+	await get_tree().create_timer(0.2).timeout
+	was_pressed = false
+
+func _on_button_up() -> void:
+	if not was_pressed:
+		return
+	pressed_long.emit()
 	$AudioStreamPlayer.play()
+	
+	if id == 0 or simple:
+		return
+	player.pitch_scale = 1.0 + 0.2 * randf() - 0.1
+	player.playing = true
