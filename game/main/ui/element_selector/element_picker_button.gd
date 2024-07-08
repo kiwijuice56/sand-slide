@@ -42,7 +42,7 @@ func initialize_with_custom(element: CustomElement) -> void:
 
 func initialize_with_basic(id: int) -> void:
 	var button: Button = null
-	for other_button in element_picker.get_node("basic/Basic").get_children():
+	for other_button in element_picker.get_node("%Basic").get_children():
 		if other_button.id == id:
 			button = other_button
 	text = button.text

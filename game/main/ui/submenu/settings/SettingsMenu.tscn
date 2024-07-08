@@ -20,13 +20,6 @@ corner_radius_top_right = 12
 corner_radius_bottom_right = 12
 corner_radius_bottom_left = 12
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xa765"]
-bg_color = Color(0.313726, 0.313726, 0.360784, 1)
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_11w6c"]
 bg_color = Color(0.4, 0.4, 0.45098, 1)
 corner_radius_top_left = 4
@@ -36,6 +29,13 @@ corner_radius_bottom_left = 4
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_us5ki"]
 bg_color = Color(0.188235, 0.188235, 0.239216, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xa765"]
+bg_color = Color(0.313726, 0.313726, 0.360784, 1)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
@@ -225,9 +225,9 @@ layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 0
 focus_mode = 0
-theme_override_styles/normal = SubResource("StyleBoxFlat_xa765")
 theme_override_styles/hover = SubResource("StyleBoxFlat_11w6c")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_us5ki")
+theme_override_styles/normal = SubResource("StyleBoxFlat_xa765")
 icon = ExtResource("4_rvddf")
 icon_alignment = 1
 
@@ -411,12 +411,12 @@ layout_mode = 2
 size_flags_horizontal = 10
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 16
-theme_override_styles/normal = SubResource("StyleBoxFlat_5rheo")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_5rheo")
-theme_override_styles/disabled = SubResource("StyleBoxFlat_5rheo")
-theme_override_styles/hover = SubResource("StyleBoxFlat_5rheo")
-theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_5rheo")
 theme_override_styles/focus = SubResource("StyleBoxFlat_5rheo")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_5rheo")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_5rheo")
+theme_override_styles/hover = SubResource("StyleBoxFlat_5rheo")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_5rheo")
+theme_override_styles/normal = SubResource("StyleBoxFlat_5rheo")
 button_pressed = true
 action_mode = 0
 
@@ -435,12 +435,12 @@ layout_mode = 2
 size_flags_horizontal = 10
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 16
-theme_override_styles/normal = SubResource("StyleBoxFlat_5rheo")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_5rheo")
-theme_override_styles/disabled = SubResource("StyleBoxFlat_5rheo")
-theme_override_styles/hover = SubResource("StyleBoxFlat_5rheo")
-theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_5rheo")
 theme_override_styles/focus = SubResource("StyleBoxFlat_5rheo")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_5rheo")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_5rheo")
+theme_override_styles/hover = SubResource("StyleBoxFlat_5rheo")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_5rheo")
+theme_override_styles/normal = SubResource("StyleBoxFlat_5rheo")
 action_mode = 0
 
 [node name="BackgroundContainer" type="HBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer"]

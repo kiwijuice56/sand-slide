@@ -5,7 +5,7 @@ build/*
 godot-cpp/*
 game/android/*
 android_project/*
-release/*
+game/release/*
 
 # private export files
 *.cfg

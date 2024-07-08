@@ -15,8 +15,6 @@ void fragment() {
     float d;
     float a;
     
-    COLOR = texture(TEXTURE, UV);
-    
     if (UV.x < square_scale && UV.y > scax) {
         dx = square_scale - UV.x;
         dy = scax - UV.y;

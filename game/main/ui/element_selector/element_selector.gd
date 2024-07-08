@@ -29,8 +29,8 @@ func _ready() -> void:
 		last_button = null
 	initialize_buttons()
 	if not simple:
-		$basic/Basic/None.queue_free()
-		print(len($basic/Basic.get_children()))
+		%Basic/None.queue_free()
+		print(len(%Basic.get_children()))
 	
 	await get_tree().get_root().ready
 	update_custom_elements()
@@ -39,12 +39,12 @@ func pick_simple(current_id: int) -> int:
 	last_button = null
 	ext_id = current_id
 	update_custom_elements()
-	for button in $custom/Custom.get_children():
+	for button in %Custom.get_children():
 		if not button is ElementButton:
 			continue
-		$custom/Custom.remove_child(button)
-		$basic/Basic.add_child(button)
-	for button in $basic/Basic.get_children():
+		%Custom.remove_child(button)
+		%Basic.add_child(button)
+	for button in %Basic.get_children():
 		unbolden_button(button)
 		if (button.id == current_id):
 			bolden_button(button)
@@ -71,7 +71,7 @@ func initialize_buttons() -> void:
 	if not %CreateNewButton.button_down.is_connected(_on_new_element_created):
 		%CreateNewButton.button_down.connect(_on_new_element_created)
 	var last_updated: bool = false
-	for button in $basic/Basic.get_children() + %Custom.get_children():
+	for button in %Basic.get_children() + %Custom.get_children():
 		if not button is ElementButton:
 			continue
 		button.simple = simple
