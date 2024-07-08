@@ -31,7 +31,7 @@ func _ready() -> void:
 		last_button = null
 	initialize_buttons()
 	if not simple:
-		%Basic/None.queue_free()	
+		%Basic/None.queue_free()
 	await get_tree().get_root().ready
 	update_custom_elements()
 
@@ -69,10 +69,10 @@ func initialize_buttons() -> void:
 	var id: int = -1 if not simple else ext_id
 	if is_instance_valid(last_button) and last_button is ElementButton:
 		id = last_button.id
-	if is_instance_valid(eraser_button) and not eraser_button.button_down.is_connected(_on_eraser_selected):
-		eraser_button.button_down.connect(_on_eraser_selected)
-	if  is_instance_valid(tap_button) and not tap_button.button_down.is_connected(_on_tap_selected):
-		tap_button.button_down.connect(_on_tap_selected)
+	if is_instance_valid(eraser_button) and not eraser_button.pressed.is_connected(_on_eraser_selected):
+		eraser_button.pressed.connect(_on_eraser_selected)
+	if  is_instance_valid(tap_button) and not tap_button.pressed.is_connected(_on_tap_selected):
+		tap_button.pressed.connect(_on_tap_selected)
 	if not %CreateNewButton.button_down.is_connected(_on_new_element_created):
 		%CreateNewButton.button_down.connect(_on_new_element_created)
 	var last_updated: bool = false

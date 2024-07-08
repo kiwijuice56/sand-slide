@@ -15,14 +15,6 @@ corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 anti_aliasing = false
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_11w6c"]
-bg_color = Color(0.4, 0.4, 0.45098, 1)
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
-anti_aliasing = false
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xa765"]
 bg_color = Color(0.313726, 0.313726, 0.360784, 1)
 corner_radius_top_left = 4
@@ -33,6 +25,14 @@ anti_aliasing = false
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_us5ki"]
 bg_color = Color(0.188235, 0.188235, 0.239216, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_11w6c"]
+bg_color = Color(0.4, 0.4, 0.45098, 1)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
@@ -133,7 +133,7 @@ anti_aliasing = false
 [resource]
 default_font = ExtResource("1_p73bs")
 Button/styles/disabled = SubResource("StyleBoxFlat_dsk6v")
-Button/styles/hover = SubResource("StyleBoxFlat_11w6c")
+Button/styles/hover = SubResource("StyleBoxFlat_xa765")
 Button/styles/normal = SubResource("StyleBoxFlat_xa765")
 Button/styles/pressed = SubResource("StyleBoxFlat_us5ki")
 CheckBox/icons/checked = ExtResource("1_q36yb")
@@ -170,7 +170,7 @@ TabBar/styles/tab_selected = SubResource("StyleBoxFlat_en2fd")
 TabBar/styles/tab_unselected = SubResource("StyleBoxFlat_swmfl")
 TabContainer/styles/tab_disabled = SubResource("StyleBoxFlat_51o40")
 TabContainer/styles/tab_focus = SubResource("StyleBoxFlat_tp6yl")
-TabContainer/styles/tab_hovered = SubResource("StyleBoxFlat_tp6yl")
+TabContainer/styles/tab_hovered = SubResource("StyleBoxFlat_ryi16")
 TabContainer/styles/tab_selected = SubResource("StyleBoxFlat_ryi16")
 TabContainer/styles/tab_unselected = SubResource("StyleBoxFlat_cuddc")
 VScrollBar/styles/grabber = SubResource("StyleBoxFlat_xyiyu")

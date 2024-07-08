@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://3k2xt0kc4klb"]
+[gd_scene load_steps=11 format=3 uid="uid://3k2xt0kc4klb"]
 
 [ext_resource type="Theme" uid="uid://co20v1mxv2dfm" path="res://main/ui/_theme/theme.tres" id="1_1uvf0"]
 [ext_resource type="Script" path="res://main/ui/submenu/save/save_file_panel/save_file_panel.gd" id="1_ftssb"]
@@ -27,35 +27,10 @@ corner_radius_bottom_left = 8
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_faecs"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wn5pg"]
-bg_color = Color(1, 1, 1, 0.109804)
-border_width_left = 4
-border_width_top = 4
-border_width_right = 4
-border_width_bottom = 4
-border_color = Color(1, 1, 1, 0.172549)
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0xwty"]
 shader = ExtResource("3_awtac")
 shader_parameter/radius = 1.0
 shader_parameter/square_scale = 0.1
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qt7y7"]
-bg_color = Color(0.462831, 0.46296, 0.521316, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0.702815, 0.703263, 0.752713, 1)
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
-anti_aliasing = false
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_61jks"]
 bg_color = Color(0.313726, 0.313726, 0.360784, 1)
@@ -64,32 +39,6 @@ border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
 border_color = Color(0.56021, 0.560483, 0.619759, 1)
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
-anti_aliasing = false
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dqyib"]
-bg_color = Color(0.462831, 0.46296, 0.521316, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0.702815, 0.703263, 0.752713, 1)
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
-anti_aliasing = false
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pf3u8"]
-bg_color = Color(0.462831, 0.46296, 0.521316, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0.702815, 0.703263, 0.752713, 1)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
@@ -116,7 +65,7 @@ layout_mode = 2
 mouse_filter = 1
 theme_override_styles/focus = SubResource("StyleBoxFlat_slap3")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_faecs")
-theme_override_styles/hover = SubResource("StyleBoxFlat_wn5pg")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_faecs")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_slap3")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_faecs")
 
@@ -179,7 +128,7 @@ layout_mode = 2
 focus_mode = 0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 21
-theme_override_styles/hover = SubResource("StyleBoxFlat_qt7y7")
+theme_override_styles/hover = SubResource("StyleBoxFlat_61jks")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_61jks")
 theme_override_styles/normal = SubResource("StyleBoxFlat_61jks")
 text = "save"
@@ -191,7 +140,7 @@ layout_mode = 2
 focus_mode = 0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 21
-theme_override_styles/hover = SubResource("StyleBoxFlat_dqyib")
+theme_override_styles/hover = SubResource("StyleBoxFlat_61jks")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_61jks")
 theme_override_styles/normal = SubResource("StyleBoxFlat_61jks")
 text = "load"
@@ -203,7 +152,7 @@ layout_mode = 2
 focus_mode = 0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 21
-theme_override_styles/hover = SubResource("StyleBoxFlat_pf3u8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_61jks")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_61jks")
 theme_override_styles/normal = SubResource("StyleBoxFlat_61jks")
 text = "trash"

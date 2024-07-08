@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://ggbp6fch244c"]
+[gd_scene load_steps=35 format=3 uid="uid://ggbp6fch244c"]
 
 [ext_resource type="Script" path="res://main/main.gd" id="1_2pidp"]
 [ext_resource type="Theme" uid="uid://co20v1mxv2dfm" path="res://main/ui/_theme/theme.tres" id="2_nb65v"]
@@ -30,30 +30,6 @@
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pfsh7"]
 bg_color = Color(0.509804, 0.517647, 0.560784, 1)
 expand_margin_top = 30.0
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4csg6"]
-bg_color = Color(0.4, 0.4, 0.45098, 1)
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
-anti_aliasing = false
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jp40q"]
-bg_color = Color(0.188235, 0.188235, 0.239216, 1)
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
-anti_aliasing = false
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_er738"]
-bg_color = Color(0.313726, 0.313726, 0.360784, 1)
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
-anti_aliasing = false
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dha6b"]
 bg_color = Color(0.4, 0.4, 0.45098, 1)
@@ -205,7 +181,7 @@ layout_mode = 2
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 12
 theme_override_constants/margin_right = 8
-theme_override_constants/margin_bottom = 16
+theme_override_constants/margin_bottom = 8
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/UI/VSplitContainer/BottomPanel/MarginBottonPanel"]
 layout_mode = 2
@@ -222,9 +198,6 @@ custom_minimum_size = Vector2(42, 42)
 layout_mode = 2
 focus_mode = 0
 theme_override_font_sizes/font_size = 18
-theme_override_styles/hover = SubResource("StyleBoxFlat_4csg6")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_jp40q")
-theme_override_styles/normal = SubResource("StyleBoxFlat_er738")
 icon = ExtResource("6_k1fvi")
 icon_alignment = 1
 script = ExtResource("107_ic066")
@@ -235,10 +208,6 @@ custom_minimum_size = Vector2(42, 42)
 layout_mode = 2
 focus_mode = 0
 theme_override_font_sizes/font_size = 18
-theme_override_styles/focus = SubResource("StyleBoxFlat_dha6b")
-theme_override_styles/hover = SubResource("StyleBoxFlat_dha6b")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_3h7k3")
-theme_override_styles/normal = SubResource("StyleBoxFlat_7pq0y")
 icon = ExtResource("8_g0v0t")
 icon_alignment = 1
 
@@ -264,9 +233,6 @@ layout_mode = 2
 size_flags_horizontal = 10
 focus_mode = 0
 theme_override_font_sizes/font_size = 18
-theme_override_styles/hover = SubResource("StyleBoxFlat_dha6b")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_3h7k3")
-theme_override_styles/normal = SubResource("StyleBoxFlat_7pq0y")
 icon = ExtResource("9_hcxqy")
 icon_alignment = 1
 
@@ -276,9 +242,6 @@ custom_minimum_size = Vector2(42, 42)
 layout_mode = 2
 focus_mode = 0
 theme_override_font_sizes/font_size = 18
-theme_override_styles/hover = SubResource("StyleBoxFlat_dha6b")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_3h7k3")
-theme_override_styles/normal = SubResource("StyleBoxFlat_7pq0y")
 icon = ExtResource("10_x6g80")
 icon_alignment = 1
 
@@ -288,9 +251,6 @@ custom_minimum_size = Vector2(42, 42)
 layout_mode = 2
 focus_mode = 0
 theme_override_font_sizes/font_size = 18
-theme_override_styles/hover = SubResource("StyleBoxFlat_dha6b")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_3h7k3")
-theme_override_styles/normal = SubResource("StyleBoxFlat_7pq0y")
 icon = ExtResource("11_nf3sg")
 icon_alignment = 1
 
@@ -298,6 +258,7 @@ icon_alignment = 1
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 128)
 layout_mode = 2
+tab_focus_mode = 0
 simulation = NodePath("../../../../../../..")
 eraser_button = NodePath("../ButtonRow/Eraser")
 tap_button = NodePath("../ButtonRow/Tap")

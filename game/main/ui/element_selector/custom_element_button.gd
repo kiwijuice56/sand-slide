@@ -12,14 +12,9 @@ func initialize(element: CustomElement) -> void:
 	var style: StyleBoxFlat = get("theme_override_styles/normal")
 	var new_style: StyleBoxFlat = style.duplicate()
 	set("theme_override_styles/normal", new_style)
-	new_style.bg_color = element.color_a
-	
-	style = get("theme_override_styles/hover")
-	new_style = style.duplicate()
-	set("theme_override_styles/hover", new_style)
-	new_style.bg_color = element.color_a.lightened(.35)
-	
+	set("theme_override_styles/hover", get("theme_override_styles/normal"))
 	set("theme_override_styles/pressed", get("theme_override_styles/normal"))
+	new_style.bg_color = element.color_a
 	
 	if element.color_a.v > 0.75:
 		set("theme_override_colors/font_color", Color("#000000"))

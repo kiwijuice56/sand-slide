@@ -42,7 +42,10 @@ func _ready() -> void:
 			if x is ElementButton:
 				x.pressed_long.connect(_on_button_down)
 			else:
-				x.button_down.connect(_on_button_down)
+				x.pressed.connect(_on_button_down)
+			x.set("theme_override_styles/pressed", x.get("theme_override_styles/normal"))
+			x.set("theme_override_styles/hover", x.get("theme_override_styles/normal"))
+			x.set("action_mode", BaseButton.ActionMode.ACTION_MODE_BUTTON_RELEASE)
 		if  x is TabBar:
 			x.tab_clicked.connect(_on_button_down)
 		c.append_array(x.get_children(true))
