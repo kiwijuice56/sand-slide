@@ -8,10 +8,26 @@ class_name SaveFilePanel
 
 var file: SaveFile
 
-signal selected()
+signal saved
+signal loaded
+signal deleted
+signal selected
 
 func _ready() -> void:
 	$Button.button_down.connect(_on_pressed)
+	%Save.pressed.connect(_on_saved)
+	%Delete.pressed.connect(_on_deleted)
+	%Load.pressed.connect(_on_loaded)
+	%ButtonContainer.visible = false
+
+func _on_saved() -> void:
+	saved.emit()
+
+func _on_deleted() -> void:
+	deleted.emit()
+
+func _on_loaded() -> void:
+	loaded.emit()
 
 func _on_pressed() -> void:
 	selected.emit()

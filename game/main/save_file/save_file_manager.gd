@@ -45,6 +45,7 @@ func create_save_file(save_name: String) -> SaveFile:
 	var file = SaveFile.new()
 	file.save_name = save_name
 	file.date = date_string
+	file.time_created = int(Time.get_unix_time_from_system())
 	file.version = ProjectSettings.get_setting("application/config/version")
 	
 	save_image("user://" + folder_name + "/img.png")

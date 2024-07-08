@@ -146,6 +146,8 @@ _data = {
 }
 
 [node name="SaveFileMenu" type="Control" node_paths=PackedStringArray("anim", "back_button")]
+visible = false
+modulate = Color(1, 1, 1, 0)
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -203,7 +205,7 @@ size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 21
 theme_override_styles/normal = SubResource("StyleBoxFlat_dh3by")
 theme_override_styles/focus = SubResource("StyleBoxFlat_4hoky")
-placeholder_text = "new file name..."
+placeholder_text = "create new file..."
 
 [node name="PanelContainer" type="PanelContainer" parent="SaveContainer/PanelContainer/VBoxContainer"]
 layout_mode = 2
@@ -224,6 +226,7 @@ mouse_filter = 2
 theme_override_constants/separation = 8
 
 [node name="OptionContainer" type="HBoxContainer" parent="SaveContainer/PanelContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 theme_override_constants/separation = 8
 
