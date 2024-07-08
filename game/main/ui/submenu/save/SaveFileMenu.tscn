@@ -23,9 +23,9 @@ corner_radius_top_right = 12
 corner_radius_bottom_right = 12
 corner_radius_bottom_left = 12
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dh3by"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4hoky"]
 content_margin_left = 3.0
-bg_color = Color(0.313726, 0.313726, 0.360784, 1)
+bg_color = Color(0.247059, 0.247059, 0.301961, 1)
 corner_radius_top_left = 3
 corner_radius_top_right = 3
 corner_radius_bottom_right = 3
@@ -33,9 +33,9 @@ corner_radius_bottom_left = 3
 expand_margin_top = 6.0
 expand_margin_bottom = 6.0
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4hoky"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dh3by"]
 content_margin_left = 3.0
-bg_color = Color(0.247059, 0.247059, 0.301961, 1)
+bg_color = Color(0.313726, 0.313726, 0.360784, 1)
 corner_radius_top_left = 3
 corner_radius_top_right = 3
 corner_radius_bottom_right = 3
@@ -127,18 +127,6 @@ tracks/0/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0.3),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_01f6e"]
 _data = {
@@ -150,12 +138,10 @@ _data = {
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_1lfs6"]
 streams_count = 1
 stream_0/stream = ExtResource("6_1x0p7")
-stream_0/weight = 1.0
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_nsldi"]
 streams_count = 1
 stream_0/stream = ExtResource("7_ao1vs")
-stream_0/weight = 1.0
 
 [node name="SaveFileMenu" type="Control" node_paths=PackedStringArray("anim", "back_button")]
 visible = false
@@ -216,8 +202,8 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 21
-theme_override_styles/normal = SubResource("StyleBoxFlat_dh3by")
 theme_override_styles/focus = SubResource("StyleBoxFlat_4hoky")
+theme_override_styles/normal = SubResource("StyleBoxFlat_dh3by")
 placeholder_text = "create new file..."
 
 [node name="PanelContainer" type="PanelContainer" parent="SaveContainer/PanelContainer/VBoxContainer"]

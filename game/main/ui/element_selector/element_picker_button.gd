@@ -57,6 +57,7 @@ func initialize_with_basic(id: int) -> void:
 	set("theme_override_colors/font_hover_pressed_color",  button.get("theme_override_colors/font_color"))
 
 
-func _on_button_down():
-	current_id = await element_picker.pick_simple(current_id)
+func _on_button_down() -> void:
+	element_picker.pick_simple(current_id)
+	current_id = await element_picker.element_selected
 	initialize()

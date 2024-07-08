@@ -17,6 +17,10 @@ func _ready() -> void:
 func _on_back_selected() -> void:
 	exit()
 
+func _notification(notif) -> void:
+	if notif == NOTIFICATION_WM_GO_BACK_REQUEST:
+		_on_back_selected()
+
 func enable_components() -> void:
 	back_button.disabled = false 
 
@@ -32,4 +36,5 @@ func exit() -> void:
 	disable_components()
 	anim.play("exit")
 	await anim.animation_finished
+	visible = false
 	exited.emit()

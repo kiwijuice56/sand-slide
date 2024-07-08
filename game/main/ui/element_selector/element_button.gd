@@ -22,6 +22,8 @@ func _ready() -> void:
 	button_up.connect(_on_button_up)
 	
 	set("theme_override_styles/pressed", get("theme_override_styles/normal"))
+	set("theme_override_styles/hover", get("theme_override_styles/normal"))
+
 
 func _on_button_down():
 	was_pressed = true

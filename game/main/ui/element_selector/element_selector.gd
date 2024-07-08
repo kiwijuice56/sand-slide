@@ -22,6 +22,8 @@ signal button_pressed(id: int)
 
 var ext_id: int = -1
 
+signal element_selected(id: int)
+
 @export var simple: bool = false
 
 func _ready() -> void:
@@ -29,9 +31,7 @@ func _ready() -> void:
 		last_button = null
 	initialize_buttons()
 	if not simple:
-		%Basic/None.queue_free()
-		print(len(%Basic.get_children()))
-	
+		%Basic/None.queue_free()	
 	await get_tree().get_root().ready
 	update_custom_elements()
 
@@ -53,7 +53,12 @@ func pick_simple(current_id: int) -> int:
 	await $AnimationPlayer.animation_finished
 	
 	var id: int = await button_pressed
+	element_selected.emit(id)
+	
 	$AnimationPlayer.play("out")
+	await $AnimationPlayer.animation_finished
+	get_parent().visible = false
+	
 	return id
 
 func _on_new_element_created() -> void:
