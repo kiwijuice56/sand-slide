@@ -15,6 +15,7 @@ dest_files=["res://.godot/imported/Poppins-Regular.ttf-f5dbde34aa3a0e0edf7eae71e
 Rendering=null
 antialiasing=0
 generate_mipmaps=true
+disable_embedded_bitmaps=true
 multichannel_signed_distance_field=true
 msdf_pixel_range=8
 msdf_size=48

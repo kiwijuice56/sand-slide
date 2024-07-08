@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://ggbp6fch244c"]
+[gd_scene load_steps=38 format=3 uid="uid://ggbp6fch244c"]
 
 [ext_resource type="Script" path="res://main/main.gd" id="1_2pidp"]
 [ext_resource type="Theme" uid="uid://co20v1mxv2dfm" path="res://main/ui/_theme/theme.tres" id="2_nb65v"]
@@ -21,6 +21,7 @@
 [ext_resource type="Script" path="res://main/element_manager/element_manager.gd" id="18_mpubp"]
 [ext_resource type="Texture2D" uid="uid://cwrw6b4hfr57h" path="res://main/ui/_icons/icon_circle2.png" id="19_nbax8"]
 [ext_resource type="Script" path="res://main/ui/element_selector/element_select_info.gd" id="19_ys0g5"]
+[ext_resource type="Script" path="res://main/world_environment.gd" id="24_vnhd0"]
 [ext_resource type="Script" path="res://main/save_file/save_file_manager.gd" id="87_5tqe6"]
 [ext_resource type="Script" path="res://main/ui/element_selector/element_button.gd" id="107_ic066"]
 
@@ -29,13 +30,6 @@
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pfsh7"]
 bg_color = Color(0.509804, 0.517647, 0.560784, 1)
 expand_margin_top = 30.0
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_er738"]
-bg_color = Color(0.313726, 0.313726, 0.360784, 1)
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4csg6"]
 bg_color = Color(0.4, 0.4, 0.45098, 1)
@@ -51,7 +45,7 @@ corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7pq0y"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_er738"]
 bg_color = Color(0.313726, 0.313726, 0.360784, 1)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
@@ -67,6 +61,13 @@ corner_radius_bottom_left = 4
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3h7k3"]
 bg_color = Color(0.188235, 0.188235, 0.239216, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7pq0y"]
+bg_color = Color(0.313726, 0.313726, 0.360784, 1)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
@@ -125,8 +126,13 @@ _data = {
 }
 
 [sub_resource type="Environment" id="Environment_6bfny"]
+background_mode = 3
 glow_enabled = true
+glow_intensity = 1.2
 glow_strength = 1.1
+glow_bloom = 0.3
+glow_hdr_threshold = 0.8
+glow_hdr_scale = 3.61
 
 [node name="Main" type="Node"]
 script = ExtResource("1_2pidp")
@@ -211,9 +217,9 @@ custom_minimum_size = Vector2(42, 42)
 layout_mode = 2
 focus_mode = 0
 theme_override_font_sizes/font_size = 18
-theme_override_styles/normal = SubResource("StyleBoxFlat_er738")
 theme_override_styles/hover = SubResource("StyleBoxFlat_4csg6")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_jp40q")
+theme_override_styles/normal = SubResource("StyleBoxFlat_er738")
 icon = ExtResource("6_k1fvi")
 icon_alignment = 1
 script = ExtResource("107_ic066")
@@ -224,10 +230,10 @@ custom_minimum_size = Vector2(42, 42)
 layout_mode = 2
 focus_mode = 0
 theme_override_font_sizes/font_size = 18
-theme_override_styles/normal = SubResource("StyleBoxFlat_7pq0y")
+theme_override_styles/focus = SubResource("StyleBoxFlat_dha6b")
 theme_override_styles/hover = SubResource("StyleBoxFlat_dha6b")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_3h7k3")
-theme_override_styles/focus = SubResource("StyleBoxFlat_dha6b")
+theme_override_styles/normal = SubResource("StyleBoxFlat_7pq0y")
 icon = ExtResource("8_g0v0t")
 icon_alignment = 1
 
@@ -240,9 +246,9 @@ layout_mode = 2
 size_flags_horizontal = 2
 focus_mode = 0
 theme_override_font_sizes/font_size = 18
-theme_override_styles/normal = SubResource("StyleBoxFlat_7pq0y")
 theme_override_styles/hover = SubResource("StyleBoxFlat_dha6b")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_3h7k3")
+theme_override_styles/normal = SubResource("StyleBoxFlat_7pq0y")
 icon = ExtResource("9_1ns3c")
 icon_alignment = 1
 
@@ -253,9 +259,9 @@ layout_mode = 2
 size_flags_horizontal = 10
 focus_mode = 0
 theme_override_font_sizes/font_size = 18
-theme_override_styles/normal = SubResource("StyleBoxFlat_7pq0y")
 theme_override_styles/hover = SubResource("StyleBoxFlat_dha6b")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_3h7k3")
+theme_override_styles/normal = SubResource("StyleBoxFlat_7pq0y")
 icon = ExtResource("9_hcxqy")
 icon_alignment = 1
 
@@ -265,9 +271,9 @@ custom_minimum_size = Vector2(42, 42)
 layout_mode = 2
 focus_mode = 0
 theme_override_font_sizes/font_size = 18
-theme_override_styles/normal = SubResource("StyleBoxFlat_7pq0y")
 theme_override_styles/hover = SubResource("StyleBoxFlat_dha6b")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_3h7k3")
+theme_override_styles/normal = SubResource("StyleBoxFlat_7pq0y")
 icon = ExtResource("10_x6g80")
 icon_alignment = 1
 
@@ -277,9 +283,9 @@ custom_minimum_size = Vector2(42, 42)
 layout_mode = 2
 focus_mode = 0
 theme_override_font_sizes/font_size = 18
-theme_override_styles/normal = SubResource("StyleBoxFlat_7pq0y")
 theme_override_styles/hover = SubResource("StyleBoxFlat_dha6b")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_3h7k3")
+theme_override_styles/normal = SubResource("StyleBoxFlat_7pq0y")
 icon = ExtResource("11_nf3sg")
 icon_alignment = 1
 
@@ -287,6 +293,7 @@ icon_alignment = 1
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 128)
 layout_mode = 2
+current_tab = 0
 simulation = NodePath("../../../../../../..")
 eraser_button = NodePath("../ButtonRow/Eraser")
 tap_button = NodePath("../ButtonRow/Tap")
@@ -352,8 +359,6 @@ wait_time = 5.0
 one_shot = true
 
 [node name="SaveFileMenu" parent="CanvasLayer/UI" node_paths=PackedStringArray("save_file_manager") instance=ExtResource("14_73tcr")]
-visible = false
-modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 save_file_manager = NodePath("../../../SaveFileManager")
 
@@ -381,3 +386,4 @@ script = ExtResource("18_mer41")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_6bfny")
+script = ExtResource("24_vnhd0")

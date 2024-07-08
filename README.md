@@ -3,7 +3,7 @@ A falling sand game made with Godot 4's GDextension feature. The full game can b
 
 ## Project Structure
 The simulation logic is implemented in C++ as a GDextension (in `extension`) that gets compiled into a binary file (in `game\bin`).
-The user interface was created in a Godot 4.2.2 project (in `game`).
+The user interface was created in a Godot 4.3 project (in `game`).
 
 ## Compiling for Windows
 If coding on Windows, no dependencies or installations are required to build the `.dll` binaries.
