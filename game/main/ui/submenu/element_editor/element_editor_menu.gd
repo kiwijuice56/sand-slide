@@ -135,3 +135,11 @@ func save_changes() -> void:
 	current.product_2 = %Product2.current_id
 	current.reactant_3 = %Reactant3.current_id 
 	current.product_3 = %Product3.current_id 
+
+func notify(notif) -> void:
+	if notif == NOTIFICATION_WM_GO_BACK_REQUEST:
+		if %ElementPickerContainer.visible:
+			print("!")
+			%ElementSelector.button_pressed.emit(%ElementSelector.ext_id)
+		else:
+			_on_back_selected()

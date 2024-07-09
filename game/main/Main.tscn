@@ -88,7 +88,7 @@ background_mode = 3
 glow_enabled = true
 glow_intensity = 1.3
 glow_strength = 1.1
-glow_bloom = 0.3
+glow_bloom = 0.35
 glow_hdr_threshold = 0.8
 
 [node name="Main" type="Node"]

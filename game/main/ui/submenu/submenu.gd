@@ -18,7 +18,10 @@ func _on_back_selected() -> void:
 	exit()
 
 func _notification(notif) -> void:
-	if notif == NOTIFICATION_WM_GO_BACK_REQUEST:
+	notify(notif)
+
+func notify(notif) -> void:
+	if visible and notif == NOTIFICATION_WM_GO_BACK_REQUEST:
 		_on_back_selected()
 
 func enable_components() -> void:
