@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bi1khomdif7xb"]
+[gd_scene load_steps=18 format=3 uid="uid://bi1khomdif7xb"]
 
 [ext_resource type="Theme" uid="uid://co20v1mxv2dfm" path="res://main/ui/_theme/theme.tres" id="1_f12ql"]
 [ext_resource type="Script" path="res://main/ui/submenu/settings/settings_menu.gd" id="2_1g5bn"]
@@ -32,6 +32,7 @@ corner_radius_bottom_right = 6
 corner_radius_bottom_left = 6
 expand_margin_top = 4.0
 expand_margin_bottom = 4.0
+anti_aliasing = false
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_27i0d"]
 bg_color = Color(0.764706, 0.764706, 0.788235, 1)
@@ -41,6 +42,7 @@ corner_radius_bottom_right = 6
 corner_radius_bottom_left = 6
 expand_margin_top = 5.0
 expand_margin_bottom = 5.0
+anti_aliasing = false
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_420ld"]
 bg_color = Color(0.898039, 0.898039, 0.909804, 1)
@@ -50,9 +52,27 @@ corner_radius_bottom_right = 6
 corner_radius_bottom_left = 6
 expand_margin_top = 5.0
 expand_margin_bottom = 5.0
+anti_aliasing = false
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5rheo"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_odjbe"]
+bg_color = Color(0.4, 0.088, 0.1088, 1)
+border_width_bottom = 4
+border_color = Color(0.28, 0.0476, 0.125067, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_os8ri"]
+bg_color = Color(0.278431, 0.0470588, 0.12549, 1)
+border_color = Color(0.28, 0.0476, 0.125067, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
 
 [sub_resource type="Animation" id="Animation_swdin"]
 length = 0.001
@@ -229,6 +249,7 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 10
+focus_mode = 0
 theme_override_styles/slider = SubResource("StyleBoxFlat_xw2ew")
 theme_override_styles/grabber_area = SubResource("StyleBoxFlat_27i0d")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_420ld")
@@ -281,6 +302,7 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 10
+focus_mode = 0
 theme_override_styles/slider = SubResource("StyleBoxFlat_xw2ew")
 theme_override_styles/grabber_area = SubResource("StyleBoxFlat_27i0d")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_420ld")
@@ -331,6 +353,7 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 10
+focus_mode = 0
 theme_override_styles/slider = SubResource("StyleBoxFlat_xw2ew")
 theme_override_styles/grabber_area = SubResource("StyleBoxFlat_27i0d")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_420ld")
@@ -433,6 +456,9 @@ layout_mode = 2
 size_flags_vertical = 0
 focus_mode = 0
 theme_override_font_sizes/font_size = 21
+theme_override_styles/hover = SubResource("StyleBoxFlat_odjbe")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_os8ri")
+theme_override_styles/normal = SubResource("StyleBoxFlat_odjbe")
 text = "clear screen"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

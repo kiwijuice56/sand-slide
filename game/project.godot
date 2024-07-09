@@ -45,6 +45,10 @@ folder_colors={
 "res://main/": "yellow"
 }
 
+[global_group]
+
+keep_style=""
+
 [input]
 
 ui_left={
