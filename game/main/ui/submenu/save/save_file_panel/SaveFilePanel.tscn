@@ -27,32 +27,26 @@ corner_radius_bottom_left = 8
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_faecs"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_njwah"]
+bg_color = Color(0.264381, 0.255525, 0.326614, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.4098, 0.399532, 0.494373, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+anti_aliasing = false
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0xwty"]
 shader = ExtResource("3_awtac")
 shader_parameter/radius = 1.0
 shader_parameter/square_scale = 0.1
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_61jks"]
-bg_color = Color(0.313726, 0.313726, 0.360784, 1)
-border_width_bottom = 4
-border_color = Color(0.187626, 0.180723, 0.235823, 1)
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
-anti_aliasing = false
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4rilo"]
-bg_color = Color(0.188235, 0.180392, 0.235294, 1)
-border_color = Color(0.151841, 0.145909, 0.193175, 1)
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
-anti_aliasing = false
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7aktq"]
-bg_color = Color(0.4, 0.088, 0.1088, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_03kmu"]
+bg_color = Color(0.572188, 0.143981, 0.171929, 1)
 border_width_bottom = 4
 border_color = Color(0.28, 0.0476, 0.125067, 1)
 corner_radius_top_left = 4
@@ -62,6 +56,15 @@ corner_radius_bottom_left = 4
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wrnao"]
 bg_color = Color(0.278431, 0.0470588, 0.12549, 1)
+border_color = Color(0.28, 0.0476, 0.125067, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7aktq"]
+bg_color = Color(0.4, 0.088, 0.1088, 1)
+border_width_bottom = 4
 border_color = Color(0.28, 0.0476, 0.125067, 1)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
@@ -88,7 +91,7 @@ layout_mode = 2
 mouse_filter = 1
 theme_override_styles/focus = SubResource("StyleBoxFlat_slap3")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_faecs")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_faecs")
+theme_override_styles/hover = SubResource("StyleBoxFlat_njwah")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_slap3")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_faecs")
 
@@ -155,9 +158,6 @@ theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 21
-theme_override_styles/hover = SubResource("StyleBoxFlat_61jks")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_4rilo")
-theme_override_styles/normal = SubResource("StyleBoxFlat_61jks")
 text = "save"
 
 [node name="Load" type="Button" parent="MarginContainer/ButtonContainer" groups=["keep_style"]]
@@ -171,9 +171,6 @@ theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 21
-theme_override_styles/hover = SubResource("StyleBoxFlat_61jks")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_4rilo")
-theme_override_styles/normal = SubResource("StyleBoxFlat_61jks")
 text = "load"
 
 [node name="Delete" type="Button" parent="MarginContainer/ButtonContainer" groups=["keep_style"]]
@@ -187,7 +184,7 @@ theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 21
-theme_override_styles/hover = SubResource("StyleBoxFlat_7aktq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_03kmu")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_wrnao")
 theme_override_styles/normal = SubResource("StyleBoxFlat_7aktq")
 text = "trash"

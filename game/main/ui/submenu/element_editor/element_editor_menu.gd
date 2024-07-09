@@ -103,7 +103,7 @@ func initialize() -> void:
 	_on_style_selected(%Style.selected)
 
 func save_changes() -> void:
-	current.display_name =  %Name.text
+	current.display_name = %Name.text
 	current.style = %Style.selected
 	current.color_a = %ColorA.color 
 	current.color_b = %ColorB.color
@@ -139,7 +139,6 @@ func save_changes() -> void:
 func notify(notif) -> void:
 	if notif == NOTIFICATION_WM_GO_BACK_REQUEST:
 		if %ElementPickerContainer.visible:
-			print("!")
 			%ElementSelector.button_pressed.emit(%ElementSelector.ext_id)
-		else:
+		elif visible:
 			_on_back_selected()

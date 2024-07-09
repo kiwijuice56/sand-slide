@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=27 format=3 uid="uid://co20v1mxv2dfm"]
+[gd_resource type="Theme" load_steps=28 format=3 uid="uid://co20v1mxv2dfm"]
 
 [ext_resource type="Texture2D" uid="uid://cm0u56vk6gqu3" path="res://main/ui/_icons/toggle1.png" id="1_coee0"]
 [ext_resource type="Texture2D" uid="uid://l1h1lwsmjxdv" path="res://main/ui/_icons/icon_circle.png" id="1_mvg4m"]
@@ -10,6 +10,16 @@
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dsk6v"]
 bg_color = Color(0.223529, 0.215686, 0.278431, 0.321569)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nnfuc"]
+bg_color = Color(0.416687, 0.416761, 0.472713, 1)
+border_width_bottom = 4
+border_color = Color(0.223529, 0.215686, 0.278431, 1)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
@@ -136,7 +146,7 @@ anti_aliasing = false
 [resource]
 default_font = ExtResource("1_p73bs")
 Button/styles/disabled = SubResource("StyleBoxFlat_dsk6v")
-Button/styles/hover = SubResource("StyleBoxFlat_xa765")
+Button/styles/hover = SubResource("StyleBoxFlat_nnfuc")
 Button/styles/normal = SubResource("StyleBoxFlat_xa765")
 Button/styles/pressed = SubResource("StyleBoxFlat_us5ki")
 CheckBox/icons/checked = ExtResource("1_q36yb")
