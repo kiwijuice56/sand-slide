@@ -57,17 +57,17 @@ anti_aliasing = false
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5rheo"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_odjbe"]
-bg_color = Color(0.4, 0.088, 0.1088, 1)
-border_width_bottom = 4
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_os8ri"]
+bg_color = Color(0.278431, 0.0470588, 0.12549, 1)
 border_color = Color(0.28, 0.0476, 0.125067, 1)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_os8ri"]
-bg_color = Color(0.278431, 0.0470588, 0.12549, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_odjbe"]
+bg_color = Color(0.4, 0.088, 0.1088, 1)
+border_width_bottom = 4
 border_color = Color(0.28, 0.0476, 0.125067, 1)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
@@ -449,13 +449,14 @@ focus_mode = 0
 color = Color(0.207843, 0.360784, 0.588235, 1)
 edit_alpha = false
 
-[node name="ClearButton" type="Button" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="ClearButton" type="Button" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer" groups=["keep_style"]]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_vertical = 0
 focus_mode = 0
 theme_override_font_sizes/font_size = 21
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_os8ri")
 theme_override_styles/hover = SubResource("StyleBoxFlat_odjbe")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_os8ri")
 theme_override_styles/normal = SubResource("StyleBoxFlat_odjbe")

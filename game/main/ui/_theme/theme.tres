@@ -145,6 +145,7 @@ anti_aliasing = false
 
 [resource]
 default_font = ExtResource("1_p73bs")
+Button/colors/font_color = Color(1, 1, 1, 1)
 Button/styles/disabled = SubResource("StyleBoxFlat_dsk6v")
 Button/styles/hover = SubResource("StyleBoxFlat_nnfuc")
 Button/styles/normal = SubResource("StyleBoxFlat_xa765")
