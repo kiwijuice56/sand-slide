@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dk6olyuqw7m7r"]
 
-[ext_resource type="Script" path="res://main/ui/fps_label/fps_label.gd" id="1_ghyna"]
+[ext_resource type="Script" uid="uid://bmjnai43ovbs2" path="res://main/ui/fps_label/fps_label.gd" id="1_ghyna"]
 
 [node name="FPSLabelContainer" type="MarginContainer"]
 offset_right = 360.0

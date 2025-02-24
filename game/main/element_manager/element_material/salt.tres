@@ -1,6 +1,6 @@
-[gd_resource type="Resource" load_steps=2 format=3]
+[gd_resource type="Resource" script_class="FlatColor" load_steps=2 format=3 uid="uid://c0onxslx2ng3"]
 
-[ext_resource type="Script" path="res://main/element_manager/element_material/types/flat_color.gd" id="1_7qftv"]
+[ext_resource type="Script" uid="uid://b14hafy4egree" path="res://main/element_manager/element_material/types/flat_color.gd" id="1_7qftv"]
 
 [resource]
 script = ExtResource("1_7qftv")
