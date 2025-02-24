@@ -313,9 +313,9 @@ grow_vertical = 2
 mouse_filter = 2
 theme = SubResource("Theme_n7xkt")
 theme_override_constants/margin_left = 16
-theme_override_constants/margin_top = 16
-theme_override_constants/margin_right = 15
-theme_override_constants/margin_bottom = 16
+theme_override_constants/margin_top = 48
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 48
 
 [node name="PanelContainer" type="PanelContainer" parent="SettingsContainer"]
 layout_mode = 2

@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="sandslide"
-config/version="4.3"
+config/version="4.6"
 run/main_scene="res://main/Main.tscn"
 config/quit_on_go_back=false
 config/features=PackedStringArray("4.3")
