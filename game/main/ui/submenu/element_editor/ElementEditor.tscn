@@ -1,7 +1,7 @@
 [gd_scene load_steps=29 format=3 uid="uid://bqwqmevgndrm0"]
 
 [ext_resource type="Theme" uid="uid://co20v1mxv2dfm" path="res://main/ui/_theme/theme.tres" id="1_gu8tf"]
-[ext_resource type="Script" uid="uid://c1rj03sib0op7" path="res://main/ui/submenu/element_editor/element_editor_menu.gd" id="2_ae0hb"]
+[ext_resource type="Script" path="res://main/ui/submenu/element_editor/element_editor_menu.gd" id="2_ae0hb"]
 [ext_resource type="FontFile" uid="uid://b8lxwo5dkwrs4" path="res://main/ui/_theme/font/Poppins-Regular.ttf" id="3_gc23u"]
 [ext_resource type="Texture2D" uid="uid://skg5bmd8m812" path="res://main/ui/_icons/close.png" id="4_8lnwy"]
 [ext_resource type="Texture2D" uid="uid://c27djxlyp41fw" path="res://main/ui/empty_big.png" id="5_a6efk"]
@@ -17,12 +17,11 @@ content_margin_left = 12.0
 content_margin_top = 16.0
 content_margin_right = 12.0
 content_margin_bottom = 24.0
-bg_color = Color(0.172347, 0.1564, 0.23, 0.94902)
-border_color = Color(1, 1, 1, 1)
-corner_radius_top_left = 16
-corner_radius_top_right = 16
-corner_radius_bottom_right = 16
-corner_radius_bottom_left = 16
+bg_color = Color(0.509804, 0.517647, 0.560784, 0.937255)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hcor6"]
 
@@ -201,9 +200,9 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_01f6e"]
 _data = {
-&"RESET": SubResource("Animation_swdin"),
-&"enter": SubResource("Animation_ho8so"),
-&"exit": SubResource("Animation_obmfd")
+"RESET": SubResource("Animation_swdin"),
+"enter": SubResource("Animation_ho8so"),
+"exit": SubResource("Animation_obmfd")
 }
 
 [sub_resource type="Animation" id="Animation_e7emq"]
@@ -279,9 +278,9 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_msgfr"]
 _data = {
-&"RESET": SubResource("Animation_e7emq"),
-&"in": SubResource("Animation_qkwxt"),
-&"out": SubResource("Animation_laavc")
+"RESET": SubResource("Animation_e7emq"),
+"in": SubResource("Animation_qkwxt"),
+"out": SubResource("Animation_laavc")
 }
 
 [node name="ElementEditorMenu" type="Control" node_paths=PackedStringArray("anim", "back_button")]
@@ -313,10 +312,10 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 theme = SubResource("Theme_n7xkt")
-theme_override_constants/margin_left = 32
-theme_override_constants/margin_top = 80
-theme_override_constants/margin_right = 32
-theme_override_constants/margin_bottom = 80
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 48
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 48
 
 [node name="PanelContainer" type="PanelContainer" parent="SettingsContainer"]
 layout_mode = 2
@@ -362,7 +361,7 @@ theme_override_constants/margin_right = 12
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_constants/separation = 16
+theme_override_constants/separation = 14
 
 [node name="AppearanceLabel" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -396,6 +395,7 @@ theme_override_constants/separation = 8
 [node name="Label" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/ColorStyleGrouping"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 21
 text = "style"
 
 [node name="Style" type="OptionButton" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/ColorStyleGrouping"]
@@ -406,9 +406,9 @@ focus_mode = 0
 theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 0
 theme_override_font_sizes/font_size = 21
 theme_override_styles/hover = SubResource("StyleBoxFlat_y3pxx")
@@ -418,7 +418,6 @@ selected = 0
 fit_to_longest_item = false
 item_count = 2
 popup/item_0/text = "flat"
-popup/item_0/id = 0
 popup/item_1/text = "fancy"
 popup/item_1/id = 1
 
@@ -429,6 +428,7 @@ layout_mode = 2
 [node name="Label" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/FlatColorGrouping"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 21
 text = "base color"
 
 [node name="ColorA" type="ColorPickerButton" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/FlatColorGrouping" groups=["color_picker"]]
@@ -449,6 +449,7 @@ layout_mode = 2
 [node name="Label" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/FancyColorGrouping/BaseColor2"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 21
 text = "base color 2"
 
 [node name="ColorB" type="ColorPickerButton" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/FancyColorGrouping/BaseColor2" groups=["color_picker"]]
@@ -464,6 +465,7 @@ layout_mode = 2
 [node name="Label" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/FancyColorGrouping/OutlineColor"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 21
 text = "outline color"
 
 [node name="ColorC" type="ColorPickerButton" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/FancyColorGrouping/OutlineColor" groups=["color_picker"]]
@@ -475,8 +477,7 @@ edit_alpha = false
 
 [node name="BehaviorLabel" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "
-Behavior"
+text = "Behavior"
 horizontal_alignment = 1
 
 [node name="StateGrouping" type="HBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
@@ -485,6 +486,7 @@ layout_mode = 2
 [node name="Label" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/StateGrouping"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 21
 text = "state"
 
 [node name="State" type="OptionButton" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/StateGrouping"]
@@ -495,9 +497,9 @@ focus_mode = 0
 theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 21
 theme_override_styles/hover = SubResource("StyleBoxFlat_y3pxx")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_hm12v")
@@ -505,7 +507,6 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_cu37i")
 selected = 1
 item_count = 5
 popup/item_0/text = "powder"
-popup/item_0/id = 0
 popup/item_1/text = "solid"
 popup/item_1/id = 1
 popup/item_2/text = "liquid"
@@ -522,6 +523,7 @@ layout_mode = 2
 [node name="Label" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/DensityGrouping"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 21
 text = "density"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/DensityGrouping"]
@@ -565,6 +567,7 @@ layout_mode = 2
 [node name="Label" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/ViscosityGrouping"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 21
 text = "viscosity"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/ViscosityGrouping"]
@@ -607,6 +610,7 @@ layout_mode = 2
 [node name="Label" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/PowerGrouping"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 21
 text = "power"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/PowerGrouping"]
@@ -649,6 +653,7 @@ layout_mode = 2
 [node name="Label" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/ConductivityGrouping"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 21
 text = "conductivity"
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/ConductivityGrouping"]
@@ -690,6 +695,7 @@ layout_mode = 2
 [node name="Label" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/TemperatureGrouping"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 21
 text = "temperature"
 
 [node name="VBoxContainer3" type="VBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/TemperatureGrouping"]
@@ -732,6 +738,7 @@ layout_mode = 2
 [node name="Label" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/FlammabilityGrouping"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 21
 text = "flammability"
 
 [node name="VBoxContainer4" type="VBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/FlammabilityGrouping"]
@@ -773,6 +780,7 @@ layout_mode = 2
 [node name="Label" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/ReactivityGrouping"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 21
 text = "reactivity"
 
 [node name="VBoxContainer5" type="VBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/ReactivityGrouping"]
@@ -815,6 +823,7 @@ layout_mode = 2
 [node name="Label" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/DurabilityGrouping"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 21
 text = "durability"
 
 [node name="VBoxContainer6" type="VBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/DurabilityGrouping"]
@@ -857,6 +866,7 @@ layout_mode = 2
 [node name="Label" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/AliveGrouping"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 21
 text = "alive"
 
 [node name="Alive" type="CheckButton" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/AliveGrouping"]
@@ -872,6 +882,7 @@ layout_mode = 2
 [node name="Label" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/AttractiveGrouping"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 21
 text = "attractive"
 
 [node name="Attractive" type="CheckButton" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/AttractiveGrouping"]
@@ -887,6 +898,7 @@ layout_mode = 2
 [node name="Label" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/EvaporableGrouping"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 21
 text = "evaporable"
 
 [node name="Evaporable" type="CheckButton" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/EvaporableGrouping"]
@@ -902,6 +914,7 @@ layout_mode = 2
 [node name="Label" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/ExplosiveGrouping"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 21
 text = "explosive"
 
 [node name="Explosive" type="CheckButton" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/ExplosiveGrouping"]
@@ -917,6 +930,7 @@ layout_mode = 2
 [node name="Label" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/InfectiousGrouping"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 21
 text = "infectious"
 
 [node name="Infectious" type="CheckButton" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/InfectiousGrouping"]
@@ -932,6 +946,7 @@ layout_mode = 2
 [node name="Label" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/PoisonousGrouping"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 21
 text = "poisonous"
 
 [node name="Toxic" type="CheckButton" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/PoisonousGrouping"]
@@ -947,6 +962,7 @@ layout_mode = 2
 [node name="Label" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/SolubleGrouping"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 21
 text = "soluble"
 
 [node name="Soluble" type="CheckButton" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/SolubleGrouping"]
@@ -957,8 +973,8 @@ flat = true
 
 [node name="TransformationLabel" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "
-Transformation"
+text = "Transformation
+"
 horizontal_alignment = 1
 
 [node name="TouchRule1" type="VBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer"]
@@ -972,6 +988,7 @@ layout_mode = 2
 [node name="Label" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/TouchRule1/If"]
 layout_mode = 2
 size_flags_horizontal = 2
+theme_override_font_sizes/font_size = 21
 text = "if touching:"
 
 [node name="Reactant1" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/TouchRule1/If" node_paths=PackedStringArray("element_picker") instance=ExtResource("5_d2qg0")]
@@ -985,6 +1002,7 @@ layout_mode = 2
 [node name="Label" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/TouchRule1/Then"]
 layout_mode = 2
 size_flags_horizontal = 2
+theme_override_font_sizes/font_size = 21
 text = "turn into:"
 
 [node name="Product1" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/TouchRule1/Then" node_paths=PackedStringArray("element_picker") instance=ExtResource("5_d2qg0")]
@@ -1003,6 +1021,7 @@ layout_mode = 2
 [node name="Label" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/TouchRule2/If"]
 layout_mode = 2
 size_flags_horizontal = 2
+theme_override_font_sizes/font_size = 21
 text = "if touching:"
 
 [node name="Reactant2" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/TouchRule2/If" node_paths=PackedStringArray("element_picker") instance=ExtResource("5_d2qg0")]
@@ -1016,6 +1035,7 @@ layout_mode = 2
 [node name="Label" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/TouchRule2/Then"]
 layout_mode = 2
 size_flags_horizontal = 2
+theme_override_font_sizes/font_size = 21
 text = "turn into:"
 
 [node name="Product2" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/TouchRule2/Then" node_paths=PackedStringArray("element_picker") instance=ExtResource("5_d2qg0")]
@@ -1034,6 +1054,7 @@ layout_mode = 2
 [node name="Label" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/TouchRule3/If"]
 layout_mode = 2
 size_flags_horizontal = 2
+theme_override_font_sizes/font_size = 21
 text = "if touching:"
 
 [node name="Reactant3" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/TouchRule3/If" node_paths=PackedStringArray("element_picker") instance=ExtResource("5_d2qg0")]
@@ -1047,6 +1068,7 @@ layout_mode = 2
 [node name="Label" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/TouchRule3/Then"]
 layout_mode = 2
 size_flags_horizontal = 2
+theme_override_font_sizes/font_size = 21
 text = "turn into:"
 
 [node name="Product3" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/MarginContainer/VBoxContainer/TouchRule3/Then" node_paths=PackedStringArray("element_picker") instance=ExtResource("5_d2qg0")]
@@ -1060,9 +1082,9 @@ layout_mode = 2
 focus_mode = 0
 theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 21
 theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_pfoya")
 theme_override_styles/hover = SubResource("StyleBoxFlat_o53s1")
@@ -1073,7 +1095,7 @@ text = "delete element"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-&"": SubResource("AnimationLibrary_01f6e")
+"": SubResource("AnimationLibrary_01f6e")
 }
 speed_scale = 2.0
 
@@ -1101,6 +1123,6 @@ simple = true
 [node name="AnimationPlayer" type="AnimationPlayer" parent="ElementPickerContainer/ElementSelector"]
 root_node = NodePath("../../..")
 libraries = {
-&"": SubResource("AnimationLibrary_msgfr")
+"": SubResource("AnimationLibrary_msgfr")
 }
 speed_scale = 2.0

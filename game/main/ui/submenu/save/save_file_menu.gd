@@ -71,7 +71,6 @@ func date_comparison(a: SaveFilePanel, b: SaveFilePanel) -> bool:
 	return a.file.time_created > b.file.time_created 
 
 func refresh_panels() -> void:
-	%NoDataLabel.visible = len(save_file_manager.files) == 0
 	var new_panels: Array[SaveFilePanel] = []
 	for file in save_file_manager.files:
 		var panel: SaveFilePanel = save_file_panel.instantiate()

@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://dw3yr1ktgbep0"]
 
-[ext_resource type="Script" uid="uid://cdaerhe5du0fc" path="res://main/ui/element_selector/element_picker_button.gd" id="1_2cs23"]
+[ext_resource type="Script" path="res://main/ui/element_selector/element_picker_button.gd" id="1_2cs23"]
 [ext_resource type="AudioStream" uid="uid://cpeuhkn4xf3e3" path="res://main/ui/button_click_sound.mp3" id="2_1daq5"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6qckx"]
@@ -16,13 +16,14 @@ bg_color = Color(0.462745, 0.462745, 0.529412, 1)
 border_color = Color(1, 1, 1, 1)
 
 [node name="ElementPickerButton" type="Button"]
-custom_minimum_size = Vector2(0, 72)
+custom_minimum_size = Vector2(0, 48)
 offset_right = 117.0
 offset_bottom = 48.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
 mouse_filter = 1
+theme_override_font_sizes/font_size = 15
 theme_override_styles/hover = SubResource("StyleBoxFlat_6qckx")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_b5e6n")
 theme_override_styles/normal = SubResource("StyleBoxFlat_h58hc")

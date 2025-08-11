@@ -1,23 +1,19 @@
-[gd_scene load_steps=293 format=3 uid="uid://danjqv04qm3f6"]
+[gd_scene load_steps=292 format=3 uid="uid://danjqv04qm3f6"]
 
 [ext_resource type="Theme" uid="uid://co20v1mxv2dfm" path="res://main/ui/_theme/theme.tres" id="1_c5upu"]
-[ext_resource type="Script" uid="uid://x7bdxmdfp7wy" path="res://main/ui/element_selector/element_selector.gd" id="1_fxkbl"]
+[ext_resource type="Script" path="res://main/ui/element_selector/element_selector.gd" id="1_fxkbl"]
 [ext_resource type="Material" uid="uid://c5qvq03ayjd60" path="res://main/ui/element_selector/selected.tres" id="2_30e0c"]
-[ext_resource type="Script" uid="uid://c14tfb5rq6ctm" path="res://main/ui/element_selector/element_button.gd" id="3_bfdgk"]
+[ext_resource type="Script" path="res://main/ui/element_selector/element_button.gd" id="3_bfdgk"]
 [ext_resource type="PackedScene" uid="uid://gewwsdlro3pf" path="res://main/ui/element_selector/CustomElementButton.tscn" id="4_2lukd"]
-[ext_resource type="Texture2D" uid="uid://yggyv5ahtme7" path="res://main/ui/_icons/plus.png" id="6_bruhs"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b3p2f"]
-content_margin_left = 2.0
-content_margin_right = 2.0
-content_margin_bottom = 2.0
-bg_color = Color(0.203, 0.1876, 0.28, 1)
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
+bg_color = Color(0.313726, 0.313726, 0.360784, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
 expand_margin_left = 4.0
-expand_margin_top = 6.0
+expand_margin_top = 4.0
 expand_margin_right = 4.0
 expand_margin_bottom = 4.0
 anti_aliasing = false
@@ -910,6 +906,7 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = ExtResource("1_c5upu")
+theme_override_font_sizes/font_size = 16
 theme_override_styles/panel = SubResource("StyleBoxFlat_b3p2f")
 current_tab = 0
 script = ExtResource("1_fxkbl")
@@ -937,7 +934,7 @@ theme_override_constants/v_separation = 0
 columns = 3
 
 [node name="None" type="Button" parent="basic/MarginContainer/Basic"]
-custom_minimum_size = Vector2(0, 72)
+custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -945,9 +942,10 @@ focus_mode = 0
 mouse_filter = 1
 theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 15
 theme_override_styles/hover = SubResource("StyleBoxFlat_ht186")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_qb0ij")
 theme_override_styles/normal = SubResource("StyleBoxFlat_rmduj")
@@ -957,7 +955,7 @@ id = -1
 description = "Empty space"
 
 [node name="Sand" type="Button" parent="basic/MarginContainer/Basic"]
-custom_minimum_size = Vector2(0, 72)
+custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -965,9 +963,10 @@ focus_mode = 0
 mouse_filter = 1
 theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 15
 theme_override_styles/hover = SubResource("StyleBoxFlat_7xfm4")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_457eu")
 theme_override_styles/normal = SubResource("StyleBoxFlat_520gh")
@@ -977,12 +976,13 @@ id = 1
 description = "A fine, powdery substance. Try turning it into glass with heat!"
 
 [node name="Wall" type="Button" parent="basic/MarginContainer/Basic"]
-custom_minimum_size = Vector2(0, 72)
+custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
 focus_mode = 0
 mouse_filter = 1
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 15
 theme_override_styles/hover = SubResource("StyleBoxFlat_dbe73")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_p08fi")
 theme_override_styles/normal = SubResource("StyleBoxFlat_m4nap")
@@ -992,13 +992,14 @@ id = 15
 description = "An indestructible material."
 
 [node name="Water" type="Button" parent="basic/MarginContainer/Basic"]
-custom_minimum_size = Vector2(0, 72)
+custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
 mouse_filter = 1
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 15
 theme_override_styles/hover = SubResource("StyleBoxFlat_nnycb")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_msh0k")
 theme_override_styles/normal = SubResource("StyleBoxFlat_x28qr")
@@ -1008,13 +1009,14 @@ id = 3
 description = "The universal solvent. Reacts with lots of substances and supports life."
 
 [node name="Fire" type="Button" parent="basic/MarginContainer/Basic"]
-custom_minimum_size = Vector2(0, 72)
+custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
 mouse_filter = 1
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 15
 theme_override_styles/hover = SubResource("StyleBoxFlat_cdwbg")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_ddylc")
 theme_override_styles/normal = SubResource("StyleBoxFlat_8ntsk")
@@ -1024,13 +1026,14 @@ id = 5
 description = "Hot and dangerous! Capable of melting and burning many other substances."
 
 [node name="Oil" type="Button" parent="basic/MarginContainer/Basic"]
-custom_minimum_size = Vector2(0, 72)
+custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
 mouse_filter = 1
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 15
 theme_override_styles/hover = SubResource("StyleBoxFlat_yes4h")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_gxiyd")
 theme_override_styles/normal = SubResource("StyleBoxFlat_q8fr1")
@@ -1040,13 +1043,14 @@ id = 30
 description = "A flammable and low density fluid."
 
 [node name="Rock" type="Button" parent="basic/MarginContainer/Basic"]
-custom_minimum_size = Vector2(0, 72)
+custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
 mouse_filter = 1
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 15
 theme_override_styles/hover = SubResource("StyleBoxFlat_eypt1")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_s867d")
 theme_override_styles/normal = SubResource("StyleBoxFlat_aei81")
@@ -1056,13 +1060,14 @@ id = 2
 description = "A sturdy material. Can be weathered and melted."
 
 [node name="Ice" type="Button" parent="basic/MarginContainer/Basic"]
-custom_minimum_size = Vector2(0, 72)
+custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
 mouse_filter = 1
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 15
 theme_override_styles/hover = SubResource("StyleBoxFlat_j3hob")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_2xunh")
 theme_override_styles/normal = SubResource("StyleBoxFlat_5vg7v")
@@ -1072,13 +1077,14 @@ id = 19
 description = "Frozen water. Slowly expands in crystal patterns when placed in water."
 
 [node name="Lava" type="Button" parent="basic/MarginContainer/Basic"]
-custom_minimum_size = Vector2(0, 72)
+custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
 mouse_filter = 1
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 15
 theme_override_styles/hover = SubResource("StyleBoxFlat_cdwbg")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_bs4ox")
 theme_override_styles/normal = SubResource("StyleBoxFlat_i8lwk")
@@ -1088,7 +1094,7 @@ id = 20
 description = "Molten rock. Can be cooled into obsidian."
 
 [node name="Lightning" type="Button" parent="basic/MarginContainer/Basic"]
-custom_minimum_size = Vector2(0, 72)
+custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -1097,9 +1103,10 @@ mouse_filter = 1
 theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
 theme_override_styles/hover = SubResource("StyleBoxFlat_p37fq")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_qegqj")
 theme_override_styles/normal = SubResource("StyleBoxFlat_t7g8i")
@@ -1109,13 +1116,14 @@ id = 37
 description = "Shocking electricity! Use carefully around metals and other conductive materials."
 
 [node name="Air" type="Button" parent="basic/MarginContainer/Basic"]
-custom_minimum_size = Vector2(0, 72)
+custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
 mouse_filter = 1
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 15
 theme_override_styles/hover = SubResource("StyleBoxFlat_6hhhi")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_dcp2l")
 theme_override_styles/normal = SubResource("StyleBoxFlat_qss3a")
@@ -1125,7 +1133,7 @@ id = 28
 description = "Strong gusts of wind that can mix up other substances."
 
 [node name="Snow" type="Button" parent="basic/MarginContainer/Basic"]
-custom_minimum_size = Vector2(0, 72)
+custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -1133,9 +1141,10 @@ focus_mode = 0
 mouse_filter = 1
 theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 15
 theme_override_styles/hover = SubResource("StyleBoxFlat_pmg6p")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_asumw")
 theme_override_styles/normal = SubResource("StyleBoxFlat_rkkx7")
@@ -1145,7 +1154,7 @@ id = 85
 description = "A fluffier version of ice."
 
 [node name="Lead Azide" type="Button" parent="basic/MarginContainer/Basic"]
-custom_minimum_size = Vector2(0, 72)
+custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -1154,9 +1163,10 @@ mouse_filter = 1
 theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 15
 theme_override_styles/hover = SubResource("StyleBoxFlat_3xqsb")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_78bka")
 theme_override_styles/normal = SubResource("StyleBoxFlat_cmgkr")
@@ -1166,12 +1176,13 @@ id = 10
 description = "Explodes when in contact with heat. "
 
 [node name="Wood" type="Button" parent="basic/MarginContainer/Basic"]
-custom_minimum_size = Vector2(0, 72)
+custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
 focus_mode = 0
 mouse_filter = 1
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 15
 theme_override_styles/hover = SubResource("StyleBoxFlat_ctj8m")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_hgsbg")
 theme_override_styles/normal = SubResource("StyleBoxFlat_g0e01")
@@ -1181,13 +1192,14 @@ id = 18
 description = "A weak, flammable material."
 
 [node name="Bedrock" type="Button" parent="basic/MarginContainer/Basic"]
-custom_minimum_size = Vector2(0, 72)
+custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
 mouse_filter = 1
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 15
 theme_override_styles/hover = SubResource("StyleBoxFlat_vhhh3")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_f6qga")
 theme_override_styles/normal = SubResource("StyleBoxFlat_dkeoi")
@@ -1197,12 +1209,13 @@ id = 173
 description = "Extra sturdy rock. Can be weathered and melted."
 
 [node name="Sandstone" type="Button" parent="basic/MarginContainer/Basic"]
-custom_minimum_size = Vector2(0, 72)
+custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
 focus_mode = 0
 mouse_filter = 1
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 15
 theme_override_styles/hover = SubResource("StyleBoxFlat_ak16i")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_ndqgh")
 theme_override_styles/normal = SubResource("StyleBoxFlat_7mvdv")
@@ -1212,7 +1225,7 @@ id = 97
 description = "Sand compacted into a rock. Can be weathered back into sand."
 
 [node name="White Sand" type="Button" parent="basic/MarginContainer/Basic"]
-custom_minimum_size = Vector2(0, 72)
+custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
 focus_mode = 0
@@ -1220,10 +1233,11 @@ mouse_filter = 1
 theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
 theme_override_styles/hover = SubResource("StyleBoxFlat_ke2ae")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_r14rl")
 theme_override_styles/normal = SubResource("StyleBoxFlat_1gm8j")
@@ -1233,7 +1247,7 @@ id = 98
 description = "Just like the other sand!"
 
 [node name="QuickSand" type="Button" parent="basic/MarginContainer/Basic"]
-custom_minimum_size = Vector2(0, 72)
+custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -1241,9 +1255,10 @@ focus_mode = 0
 mouse_filter = 1
 theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 15
 theme_override_styles/hover = SubResource("StyleBoxFlat_bbjex")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_o375j")
 theme_override_styles/normal = SubResource("StyleBoxFlat_m52fi")
@@ -1253,12 +1268,13 @@ id = 156
 description = "Slowly absorbs anything placed on top of it."
 
 [node name="Soil" type="Button" parent="basic/MarginContainer/Basic"]
-custom_minimum_size = Vector2(0, 72)
+custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
 focus_mode = 0
 mouse_filter = 1
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 15
 theme_override_styles/hover = SubResource("StyleBoxFlat_tcxuo")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_2sydf")
 theme_override_styles/normal = SubResource("StyleBoxFlat_8bfmg")
@@ -1268,12 +1284,13 @@ id = 11
 description = "Behaves similarly to sand, but essential for plant life."
 
 [node name="Dust" type="Button" parent="basic/MarginContainer/Basic"]
-custom_minimum_size = Vector2(0, 72)
+custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
 focus_mode = 0
 mouse_filter = 1
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 15
 theme_override_styles/hover = SubResource("StyleBoxFlat_dhkpo")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_ojktv")
 theme_override_styles/normal = SubResource("StyleBoxFlat_pt5xu")
@@ -1283,16 +1300,17 @@ id = 16
 description = "Fine, flammable particles."
 
 [node name="Glass" type="Button" parent="basic/MarginContainer/Basic"]
-custom_minimum_size = Vector2(0, 72)
+custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
 focus_mode = 0
 mouse_filter = 1
 theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 15
 theme_override_styles/hover = SubResource("StyleBoxFlat_klcww")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_fwrmq")
 theme_override_styles/normal = SubResource("StyleBoxFlat_6q3l8")
@@ -1302,7 +1320,7 @@ id = 25
 description = "A brittle and shiny material."
 
 [node name="Crystal" type="Button" parent="basic/MarginContainer/Basic"]
-custom_minimum_size = Vector2(0, 72)
+custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
 focus_mode = 0
@@ -1310,9 +1328,10 @@ mouse_filter = 1
 theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
 theme_override_styles/hover = SubResource("StyleBoxFlat_rg3j8")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_2po0a")
 theme_override_styles/normal = SubResource("StyleBoxFlat_s5fxl")
@@ -1322,7 +1341,7 @@ id = 27
 description = "Shiny gems! Click the button again to switch colors."
 
 [node name="Marbles" type="Button" parent="basic/MarginContainer/Basic"]
-custom_minimum_size = Vector2(0, 72)
+custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
 focus_mode = 0
@@ -1330,9 +1349,10 @@ mouse_filter = 1
 theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
 theme_override_styles/hover = SubResource("StyleBoxFlat_l6h06")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_3xbfd")
 theme_override_styles/normal = SubResource("StyleBoxFlat_8e5fn")
@@ -1342,7 +1362,7 @@ id = 151
 description = "A lot of tiny glass marbles! So pretty..."
 
 [node name="Quartz" type="Button" parent="basic/MarginContainer/Basic"]
-custom_minimum_size = Vector2(0, 72)
+custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
 focus_mode = 0
@@ -1350,9 +1370,10 @@ mouse_filter = 1
 theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 15
 theme_override_styles/hover = SubResource("StyleBoxFlat_hpdlf")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_635m2")
 theme_override_styles/normal = SubResource("StyleBoxFlat_o4xoi")
@@ -1362,13 +1383,14 @@ id = 152
 description = "This isn't real quartz, its just lots of marbles put through a hydraulic press."
 
 [node name="Algae" type="Button" parent="basic/MarginContainer/Basic"]
-custom_minimum_size = Vector2(0, 72)
+custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
 mouse_filter = 1
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 15
 theme_override_styles/hover = SubResource("StyleBoxFlat_00oaa")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_fvw5r")
 theme_override_styles/normal = SubResource("StyleBoxFlat_6cxqo")
@@ -1378,7 +1400,7 @@ id = 7
 description = "Microscopic pond organisms. Click the button again to switch colors."
 
 [node name="Seed" type="Button" parent="basic/MarginContainer/Basic"]
-custom_minimum_size = Vector2(0, 72)
+custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -1387,9 +1409,10 @@ mouse_filter = 1
 theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 15
 theme_override_styles/hover = SubResource("StyleBoxFlat_3k3lf")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_c0d0v")
 theme_override_styles/normal = SubResource("StyleBoxFlat_gelso")
@@ -1399,7 +1422,7 @@ id = 12
 description = "Grows into grass when surrounded by water and soil."
 
 [node name="Flower Seed" type="Button" parent="basic/MarginContainer/Basic"]
-custom_minimum_size = Vector2(0, 72)
+custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -1408,9 +1431,10 @@ mouse_filter = 1
 theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 15
 theme_override_styles/hover = SubResource("StyleBoxFlat_1ffqp")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_ym7ic")
 theme_override_styles/normal = SubResource("StyleBoxFlat_blonl")
@@ -1420,7 +1444,7 @@ id = 119
 description = "Grows into flowers when surrounded by water and soil."
 
 [node name="Mushroom" type="Button" parent="basic/MarginContainer/Basic"]
-custom_minimum_size = Vector2(0, 72)
+custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -1429,9 +1453,10 @@ mouse_filter = 1
 theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 15
 theme_override_styles/hover = SubResource("StyleBoxFlat_aqg2i")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_tmhel")
 theme_override_styles/normal = SubResource("StyleBoxFlat_sjoj5")
@@ -1441,7 +1466,7 @@ id = 168
 description = "Grows into mushrooms when surrounded by water and soil."
 
 [node name="Polliwog" type="Button" parent="basic/MarginContainer/Basic"]
-custom_minimum_size = Vector2(0, 72)
+custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -1450,9 +1475,10 @@ mouse_filter = 1
 theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 15
 theme_override_styles/hover = SubResource("StyleBoxFlat_d7bg4")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_5dx7s")
 theme_override_styles/normal = SubResource("StyleBoxFlat_tc47p")
@@ -1462,7 +1488,7 @@ id = 4
 description = "Cute baby frogs. Require water to live. Mortal enemy of the fairies!"
 
 [node name="Fish" type="Button" parent="basic/MarginContainer/Basic"]
-custom_minimum_size = Vector2(0, 72)
+custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -1471,9 +1497,10 @@ mouse_filter = 1
 theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 15
 theme_override_styles/hover = SubResource("StyleBoxFlat_uogm4")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_7cwls")
 theme_override_styles/normal = SubResource("StyleBoxFlat_n4ht6")
@@ -1483,7 +1510,7 @@ id = 72
 description = "Friendly fishies! Only survive in salt water."
 
 [node name="Urchin" type="Button" parent="basic/MarginContainer/Basic"]
-custom_minimum_size = Vector2(0, 72)
+custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -1492,9 +1519,10 @@ mouse_filter = 1
 theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 15
 theme_override_styles/hover = SubResource("StyleBoxFlat_kn2ji")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_cgna5")
 theme_override_styles/normal = SubResource("StyleBoxFlat_oitsm")
@@ -1504,7 +1532,7 @@ id = 31
 description = "Spiky urchins that can live in both salt and fresh water."
 
 [node name="Turtle" type="Button" parent="basic/MarginContainer/Basic"]
-custom_minimum_size = Vector2(0, 72)
+custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -1513,9 +1541,10 @@ mouse_filter = 1
 theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
 theme_override_styles/hover = SubResource("StyleBoxFlat_c6kv2")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_ai7wm")
 theme_override_styles/normal = SubResource("StyleBoxFlat_ily5p")
@@ -1525,7 +1554,7 @@ id = 130
 description = "The graphics turtle from Python programming. "
 
 [node name="Sand Duck" type="Button" parent="basic/MarginContainer/Basic"]
-custom_minimum_size = Vector2(0, 72)
+custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -1534,10 +1563,11 @@ mouse_filter = 1
 theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 15
 theme_override_styles/hover = SubResource("StyleBoxFlat_666fg")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_qcn7j")
 theme_override_styles/normal = SubResource("StyleBoxFlat_u5maq")
@@ -1547,7 +1577,7 @@ id = 8
 description = "Ducklings who live in sand piles."
 
 [node name="Penguin" type="Button" parent="basic/MarginContainer/Basic"]
-custom_minimum_size = Vector2(0, 72)
+custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -1556,10 +1586,11 @@ mouse_filter = 1
 theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 15
 theme_override_styles/hover = SubResource("StyleBoxFlat_7w8j0")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_7fhgi")
 theme_override_styles/normal = SubResource("StyleBoxFlat_pqqll")
@@ -1569,7 +1600,7 @@ id = 49
 description = "Little birds that live in ice."
 
 [node name="Critter" type="Button" parent="basic/MarginContainer/Basic"]
-custom_minimum_size = Vector2(0, 72)
+custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -1578,9 +1609,10 @@ mouse_filter = 1
 theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 15
 theme_override_styles/hover = SubResource("StyleBoxFlat_6yxdd")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_k4dtp")
 theme_override_styles/normal = SubResource("StyleBoxFlat_vfdwq")
@@ -1590,7 +1622,7 @@ id = 33
 description = "Peculiar creatures that bounce around."
 
 [node name="Fairy" type="Button" parent="basic/MarginContainer/Basic"]
-custom_minimum_size = Vector2(0, 72)
+custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -1599,9 +1631,10 @@ mouse_filter = 1
 theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 15
 theme_override_styles/hover = SubResource("StyleBoxFlat_pxyux")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_q4tn0")
 theme_override_styles/normal = SubResource("StyleBoxFlat_61msw")
@@ -1611,7 +1644,7 @@ id = 23
 description = "Flying pixies!"
 
 [node name="Dragon" type="Button" parent="basic/MarginContainer/Basic"]
-custom_minimum_size = Vector2(0, 72)
+custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -1620,9 +1653,10 @@ mouse_filter = 1
 theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 15
 theme_override_styles/hover = SubResource("StyleBoxFlat_xaxu6")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_yof68")
 theme_override_styles/normal = SubResource("StyleBoxFlat_aux0l")
@@ -1632,7 +1666,7 @@ id = 32
 description = "Fire-breathing dragons that coil up in the sky."
 
 [node name="Medusa" type="Button" parent="basic/MarginContainer/Basic"]
-custom_minimum_size = Vector2(0, 72)
+custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -1641,9 +1675,10 @@ mouse_filter = 1
 theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 15
 theme_override_styles/hover = SubResource("StyleBoxFlat_ce3nn")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_hxnru")
 theme_override_styles/normal = SubResource("StyleBoxFlat_xqr61")
@@ -1653,13 +1688,14 @@ id = 164
 description = "Evil snakes that can turn life into stone."
 
 [node name="Slime" type="Button" parent="basic/MarginContainer/Basic"]
-custom_minimum_size = Vector2(0, 72)
+custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
 mouse_filter = 1
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 15
 theme_override_styles/hover = SubResource("StyleBoxFlat_ibm5y")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_be0xq")
 theme_override_styles/normal = SubResource("StyleBoxFlat_w2m4y")
@@ -1669,13 +1705,14 @@ id = 86
 description = "A mold-like creature that grows along surfaces. "
 
 [node name="BlackSlime" type="Button" parent="basic/MarginContainer/Basic"]
-custom_minimum_size = Vector2(0, 72)
+custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
 mouse_filter = 1
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 15
 theme_override_styles/hover = SubResource("StyleBoxFlat_yvm6g")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_g4qn7")
 theme_override_styles/normal = SubResource("StyleBoxFlat_csf0a")
@@ -1686,7 +1723,7 @@ id = 167
 description = "A faster and more intelligent species of slime."
 
 [node name="MetalSlime" type="Button" parent="basic/MarginContainer/Basic"]
-custom_minimum_size = Vector2(0, 72)
+custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -1695,9 +1732,10 @@ mouse_filter = 1
 theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 15
 theme_override_styles/hover = SubResource("StyleBoxFlat_5dmnr")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_fihf2")
 theme_override_styles/normal = SubResource("StyleBoxFlat_1hjyp")
@@ -1707,7 +1745,7 @@ id = 132
 description = "An immortal slime creature. Likes eating electricity."
 
 [node name="Nanobot" type="Button" parent="basic/MarginContainer/Basic"]
-custom_minimum_size = Vector2(0, 72)
+custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -1716,10 +1754,11 @@ mouse_filter = 1
 theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 15
 theme_override_styles/hover = SubResource("StyleBoxFlat_1mn38")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_nhtpl")
 theme_override_styles/normal = SubResource("StyleBoxFlat_fn62n")
@@ -1729,7 +1768,7 @@ id = 95
 description = "Destructive robots in both the land and skies! Shoots lasers at fantasy creatures."
 
 [node name="Mutant" type="Button" parent="basic/MarginContainer/Basic"]
-custom_minimum_size = Vector2(0, 72)
+custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -1738,9 +1777,10 @@ mouse_filter = 1
 theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 15
 theme_override_styles/hover = SubResource("StyleBoxFlat_rolib")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_aykbh")
 theme_override_styles/normal = SubResource("StyleBoxFlat_gj6g2")
@@ -1750,7 +1790,7 @@ id = 158
 description = "A dismal creature that attacks all other life."
 
 [node name="Glaggler" type="Button" parent="basic/MarginContainer/Basic"]
-custom_minimum_size = Vector2(0, 72)
+custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -1759,9 +1799,10 @@ mouse_filter = 1
 theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
 theme_override_styles/hover = SubResource("StyleBoxFlat_5rqoh")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_fkrxu")
 theme_override_styles/normal = SubResource("StyleBoxFlat_p00hi")
@@ -1771,7 +1812,7 @@ id = 175
 description = "Unpredictable, intelligent, and reclusive. Can only manifest itself for a brief moment."
 
 [node name="Spiral" type="Button" parent="basic/MarginContainer/Basic"]
-custom_minimum_size = Vector2(0, 72)
+custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -1780,9 +1821,10 @@ mouse_filter = 1
 theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 15
 theme_override_styles/hover = SubResource("StyleBoxFlat_6gyis")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_oos11")
 theme_override_styles/normal = SubResource("StyleBoxFlat_crjli")
@@ -1792,7 +1834,7 @@ id = 129
 description = "A ghostly substance."
 
 [node name="Alien" type="Button" parent="basic/MarginContainer/Basic"]
-custom_minimum_size = Vector2(0, 72)
+custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -1801,9 +1843,10 @@ mouse_filter = 1
 theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 15
 theme_override_styles/hover = SubResource("StyleBoxFlat_v2lrl")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_te32f")
 theme_override_styles/normal = SubResource("StyleBoxFlat_k8ir3")
@@ -1813,7 +1856,7 @@ id = 150
 description = "Colonizes the entire galaxy!"
 
 [node name="Virus" type="Button" parent="basic/MarginContainer/Basic"]
-custom_minimum_size = Vector2(0, 72)
+custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -1822,9 +1865,10 @@ mouse_filter = 1
 theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 15
 theme_override_styles/hover = SubResource("StyleBoxFlat_xln85")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_nxdon")
 theme_override_styles/normal = SubResource("StyleBoxFlat_eqrwf")
@@ -1834,7 +1878,7 @@ id = 101
 description = "Infects all other life, but cannot survive on its own."
 
 [node name="Primordial Soup" type="Button" parent="basic/MarginContainer/Basic"]
-custom_minimum_size = Vector2(0, 72)
+custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -1843,9 +1887,10 @@ mouse_filter = 1
 theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 15
 theme_override_styles/hover = SubResource("StyleBoxFlat_8u1o6")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_vx4qe")
 theme_override_styles/normal = SubResource("StyleBoxFlat_kspit")
@@ -1855,13 +1900,14 @@ id = 127
 description = "A mysterious fluid that spawns life randomly."
 
 [node name="Hurricane" type="Button" parent="basic/MarginContainer/Basic"]
-custom_minimum_size = Vector2(0, 72)
+custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
 mouse_filter = 1
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 15
 theme_override_styles/hover = SubResource("StyleBoxFlat_qcidr")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_geoh2")
 theme_override_styles/normal = SubResource("StyleBoxFlat_q6a40")
@@ -1871,7 +1917,7 @@ id = 41
 description = "Clouds that spawn water and lightning."
 
 [node name="Mint" type="Button" parent="basic/MarginContainer/Basic"]
-custom_minimum_size = Vector2(0, 72)
+custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -1880,9 +1926,10 @@ mouse_filter = 1
 theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
 theme_override_styles/hover = SubResource("StyleBoxFlat_efgc6")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_krofu")
 theme_override_styles/normal = SubResource("StyleBoxFlat_yrsqq")
@@ -1892,7 +1939,7 @@ id = 162
 description = "A tasty plant substance that is both hot and cold!"
 
 [node name="Blood" type="Button" parent="basic/MarginContainer/Basic"]
-custom_minimum_size = Vector2(0, 72)
+custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -1901,9 +1948,10 @@ mouse_filter = 1
 theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 15
 theme_override_styles/hover = SubResource("StyleBoxFlat_fds2m")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_5ncxp")
 theme_override_styles/normal = SubResource("StyleBoxFlat_8gs7q")
@@ -1913,7 +1961,7 @@ id = 118
 description = "Don't worry, nothing was harmed in the acquisition of this material!"
 
 [node name="Joy" type="Button" parent="basic/MarginContainer/Basic"]
-custom_minimum_size = Vector2(0, 72)
+custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -1922,9 +1970,10 @@ mouse_filter = 1
 theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
 theme_override_styles/hover = SubResource("StyleBoxFlat_64bj3")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_drcbu")
 theme_override_styles/normal = SubResource("StyleBoxFlat_x8kug")
@@ -1934,7 +1983,7 @@ id = 159
 description = "An odd chemical that can transform life into mutants."
 
 [node name="Acid" type="Button" parent="basic/MarginContainer/Basic"]
-custom_minimum_size = Vector2(0, 72)
+custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -1943,9 +1992,10 @@ mouse_filter = 1
 theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 15
 theme_override_styles/hover = SubResource("StyleBoxFlat_8kwuy")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_2omdr")
 theme_override_styles/normal = SubResource("StyleBoxFlat_e8k14")
@@ -1955,7 +2005,7 @@ id = 21
 description = "A reactive solution that dissolves many other substances."
 
 [node name="Ammonia" type="Button" parent="basic/MarginContainer/Basic"]
-custom_minimum_size = Vector2(0, 72)
+custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -1964,9 +2014,10 @@ mouse_filter = 1
 theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 15
 theme_override_styles/hover = SubResource("StyleBoxFlat_klptu")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_4cehg")
 theme_override_styles/normal = SubResource("StyleBoxFlat_dqtsi")
@@ -1976,7 +2027,7 @@ id = 136
 description = "A basic solution that neutralizes acid."
 
 [node name="Paraffin" type="Button" parent="basic/MarginContainer/Basic"]
-custom_minimum_size = Vector2(0, 72)
+custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -1985,9 +2036,10 @@ mouse_filter = 1
 theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
 theme_override_styles/hover = SubResource("StyleBoxFlat_5acmf")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_i0qp6")
 theme_override_styles/normal = SubResource("StyleBoxFlat_tr26r")
@@ -1997,7 +2049,7 @@ id = 161
 description = "A very explosive oil!"
 
 [node name="Potion" type="Button" parent="basic/MarginContainer/Basic"]
-custom_minimum_size = Vector2(0, 72)
+custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -2006,9 +2058,10 @@ mouse_filter = 1
 theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 15
 theme_override_styles/hover = SubResource("StyleBoxFlat_a6y16")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_1jxa2")
 theme_override_styles/normal = SubResource("StyleBoxFlat_37ia3")
@@ -2018,7 +2071,7 @@ id = 163
 description = "A mysterious fluid with many random properties."
 
 [node name="Sponge" type="Button" parent="basic/MarginContainer/Basic"]
-custom_minimum_size = Vector2(0, 72)
+custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -2027,9 +2080,10 @@ mouse_filter = 1
 theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 15
 theme_override_styles/hover = SubResource("StyleBoxFlat_6qw4r")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_72jwj")
 theme_override_styles/normal = SubResource("StyleBoxFlat_7jmtd")
@@ -2039,7 +2093,7 @@ id = 99
 description = "Absorbs water and releases it when heated."
 
 [node name="DryIce" type="Button" parent="basic/MarginContainer/Basic"]
-custom_minimum_size = Vector2(0, 72)
+custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -2048,9 +2102,10 @@ mouse_filter = 1
 theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
 theme_override_styles/hover = SubResource("StyleBoxFlat_kn804")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_igoo4")
 theme_override_styles/normal = SubResource("StyleBoxFlat_2i5dy")
@@ -2060,7 +2115,7 @@ id = 93
 description = "Solid carbon dioxide. Causes cold explosions when exposed to water."
 
 [node name="Salt" type="Button" parent="basic/MarginContainer/Basic"]
-custom_minimum_size = Vector2(0, 72)
+custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -2069,9 +2124,10 @@ mouse_filter = 1
 theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
 theme_override_styles/hover = SubResource("StyleBoxFlat_68bg6")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_8fyet")
 theme_override_styles/normal = SubResource("StyleBoxFlat_m050v")
@@ -2081,7 +2137,7 @@ id = 70
 description = "Table salt. Dissolves in water."
 
 [node name="Hydrogen" type="Button" parent="basic/MarginContainer/Basic"]
-custom_minimum_size = Vector2(0, 72)
+custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -2090,9 +2146,10 @@ mouse_filter = 1
 theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
 theme_override_styles/hover = SubResource("StyleBoxFlat_rxqyp")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_yhxmn")
 theme_override_styles/normal = SubResource("StyleBoxFlat_gqgwn")
@@ -2102,7 +2159,7 @@ id = 47
 description = "An explosive gas of hydrogen atoms."
 
 [node name="Potassium" type="Button" parent="basic/MarginContainer/Basic"]
-custom_minimum_size = Vector2(0, 72)
+custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -2111,9 +2168,10 @@ mouse_filter = 1
 theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 15
 theme_override_styles/hover = SubResource("StyleBoxFlat_l4ueg")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_g8gy2")
 theme_override_styles/normal = SubResource("StyleBoxFlat_5urly")
@@ -2123,7 +2181,7 @@ id = 45
 description = "Elemental potassium. Quickly oxidizes when exposed to air. Reacts violently with water. Slightly flammable."
 
 [node name="Iron" type="Button" parent="basic/MarginContainer/Basic"]
-custom_minimum_size = Vector2(0, 72)
+custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -2132,9 +2190,10 @@ mouse_filter = 1
 theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 15
 theme_override_styles/hover = SubResource("StyleBoxFlat_b04si")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_ciday")
 theme_override_styles/normal = SubResource("StyleBoxFlat_qholx")
@@ -2144,7 +2203,7 @@ id = 17
 description = "A dull but conductive element. Rusts in the presence of water."
 
 [node name="Silver" type="Button" parent="basic/MarginContainer/Basic"]
-custom_minimum_size = Vector2(0, 72)
+custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -2153,9 +2212,10 @@ mouse_filter = 1
 theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
 theme_override_styles/hover = SubResource("StyleBoxFlat_uaxqt")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_7m6xm")
 theme_override_styles/normal = SubResource("StyleBoxFlat_5yi4k")
@@ -2165,7 +2225,7 @@ id = 133
 description = "Another metallic element. Can be melted."
 
 [node name="Iodine" type="Button" parent="basic/MarginContainer/Basic"]
-custom_minimum_size = Vector2(0, 72)
+custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -2174,9 +2234,10 @@ mouse_filter = 1
 theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 15
 theme_override_styles/hover = SubResource("StyleBoxFlat_f1fpn")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_e1r6v")
 theme_override_styles/normal = SubResource("StyleBoxFlat_fg2wb")
@@ -2186,7 +2247,7 @@ id = 82
 description = "Elemental iodine in solid form. Dissolves in water and readily sublimates."
 
 [node name="Gold" type="Button" parent="basic/MarginContainer/Basic"]
-custom_minimum_size = Vector2(0, 72)
+custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -2195,9 +2256,10 @@ mouse_filter = 1
 theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 15
 theme_override_styles/hover = SubResource("StyleBoxFlat_t8xlp")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_ot0nh")
 theme_override_styles/normal = SubResource("StyleBoxFlat_0sdxy")
@@ -2207,7 +2269,7 @@ id = 51
 description = "A very conductive and shiny metal. Can be melted."
 
 [node name="Mercury" type="Button" parent="basic/MarginContainer/Basic"]
-custom_minimum_size = Vector2(0, 72)
+custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -2216,9 +2278,10 @@ mouse_filter = 1
 theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 15
 theme_override_styles/hover = SubResource("StyleBoxFlat_5dmnr")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_fihf2")
 theme_override_styles/normal = SubResource("StyleBoxFlat_1hjyp")
@@ -2228,7 +2291,7 @@ id = 44
 description = "Elemental mercury in liquid form. Very dense and dangerous to life."
 
 [node name="Uranium" type="Button" parent="basic/MarginContainer/Basic"]
-custom_minimum_size = Vector2(0, 72)
+custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -2237,9 +2300,10 @@ mouse_filter = 1
 theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 15
 theme_override_styles/hover = SubResource("StyleBoxFlat_eho5g")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_j4bb3")
 theme_override_styles/normal = SubResource("StyleBoxFlat_fgt8d")
@@ -2249,7 +2313,7 @@ id = 35
 description = "An element that can cause nuclear explosions."
 
 [node name="Thermostat" type="Button" parent="basic/MarginContainer/Basic"]
-custom_minimum_size = Vector2(0, 72)
+custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -2258,9 +2322,10 @@ mouse_filter = 1
 theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
 theme_override_styles/hover = SubResource("StyleBoxFlat_uaxqt")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_7m6xm")
 theme_override_styles/normal = SubResource("StyleBoxFlat_5yi4k")
@@ -2270,13 +2335,14 @@ id = 160
 description = "Cycles between hot and cold."
 
 [node name="Mine" type="Button" parent="basic/MarginContainer/Basic"]
-custom_minimum_size = Vector2(0, 72)
+custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
 mouse_filter = 1
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 15
 theme_override_styles/hover = SubResource("StyleBoxFlat_oal1y")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_ovw7u")
 theme_override_styles/normal = SubResource("StyleBoxFlat_f2nwx")
@@ -2286,7 +2352,7 @@ id = 148
 description = "Explodes when in contact with anything that is not solid. Very sensitive!"
 
 [node name="Rocket" type="Button" parent="basic/MarginContainer/Basic"]
-custom_minimum_size = Vector2(0, 72)
+custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -2295,9 +2361,10 @@ mouse_filter = 1
 theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 15
 theme_override_styles/hover = SubResource("StyleBoxFlat_bekb4")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_ul1km")
 theme_override_styles/normal = SubResource("StyleBoxFlat_3adqy")
@@ -2307,7 +2374,7 @@ id = 157
 description = "A burst of rockets that fly upwards."
 
 [node name="Missile" type="Button" parent="basic/MarginContainer/Basic"]
-custom_minimum_size = Vector2(0, 72)
+custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -2316,9 +2383,10 @@ mouse_filter = 1
 theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 15
 theme_override_styles/hover = SubResource("StyleBoxFlat_e0b3c")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_dnacg")
 theme_override_styles/normal = SubResource("StyleBoxFlat_bjwop")
@@ -2328,13 +2396,14 @@ id = 174
 description = "Tons of missles that soar into the skies and target all life.s"
 
 [node name="Invisirock" type="Button" parent="basic/MarginContainer/Basic"]
-custom_minimum_size = Vector2(0, 72)
+custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
 mouse_filter = 1
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 15
 theme_override_styles/hover = SubResource("StyleBoxFlat_hw58d")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_g5yfh")
 theme_override_styles/normal = SubResource("StyleBoxFlat_ucqo1")
@@ -2344,7 +2413,7 @@ id = 131
 description = "A material that is (almost) invisible."
 
 [node name="InfoSource" type="Button" parent="basic/MarginContainer/Basic"]
-custom_minimum_size = Vector2(0, 72)
+custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
 focus_mode = 0
@@ -2352,9 +2421,10 @@ mouse_filter = 1
 theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
 theme_override_styles/hover = SubResource("StyleBoxFlat_b8n1b")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_kn14a")
 theme_override_styles/normal = SubResource("StyleBoxFlat_acxdg")
@@ -2364,12 +2434,13 @@ id = 104
 description = "Circuitry component. Generates power."
 
 [node name="InfoCable" type="Button" parent="basic/MarginContainer/Basic"]
-custom_minimum_size = Vector2(0, 72)
+custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
 focus_mode = 0
 mouse_filter = 1
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 15
 theme_override_styles/hover = SubResource("StyleBoxFlat_t1ag3")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_vf74h")
 theme_override_styles/normal = SubResource("StyleBoxFlat_udn5k")
@@ -2379,12 +2450,13 @@ id = 102
 description = "Circuitry component. Acts as a \"wire\" material to transmit power from sources to other components."
 
 [node name="InfoDeleter" type="Button" parent="basic/MarginContainer/Basic"]
-custom_minimum_size = Vector2(0, 72)
+custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
 focus_mode = 0
 mouse_filter = 1
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 15
 theme_override_styles/hover = SubResource("StyleBoxFlat_j1s5q")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_61qt4")
 theme_override_styles/normal = SubResource("StyleBoxFlat_vbrf3")
@@ -2394,12 +2466,13 @@ id = 107
 description = "Circuitry component. Deletes surrounding matter when powered up."
 
 [node name="InfoAmp" type="Button" parent="basic/MarginContainer/Basic"]
-custom_minimum_size = Vector2(0, 72)
+custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
 focus_mode = 0
 mouse_filter = 1
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 15
 theme_override_styles/hover = SubResource("StyleBoxFlat_3a51b")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_mn42s")
 theme_override_styles/normal = SubResource("StyleBoxFlat_edhlb")
@@ -2409,12 +2482,13 @@ id = 112
 description = "Circuitry component. Transmits an amplified signal to the right when powered up from the left."
 
 [node name="InfoPiston" type="Button" parent="basic/MarginContainer/Basic"]
-custom_minimum_size = Vector2(0, 72)
+custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
 focus_mode = 0
 mouse_filter = 1
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 15
 theme_override_styles/hover = SubResource("StyleBoxFlat_f1v0g")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_cdxbo")
 theme_override_styles/normal = SubResource("StyleBoxFlat_cegg6")
@@ -2424,12 +2498,13 @@ id = 105
 description = "Circuitry component. Pushes matter downwards when powered up."
 
 [node name="InfoPistonUp" type="Button" parent="basic/MarginContainer/Basic"]
-custom_minimum_size = Vector2(0, 72)
+custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
 focus_mode = 0
 mouse_filter = 1
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 15
 theme_override_styles/hover = SubResource("StyleBoxFlat_0bjvx")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_dl1a2")
 theme_override_styles/normal = SubResource("StyleBoxFlat_m0vrb")
@@ -2439,7 +2514,7 @@ id = 106
 description = "Circuitry component. Pushes matter upwards when powered up."
 
 [node name="Laser" type="Button" parent="basic/MarginContainer/Basic"]
-custom_minimum_size = Vector2(0, 72)
+custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -2448,9 +2523,10 @@ mouse_filter = 1
 theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
 theme_override_styles/hover = SubResource("StyleBoxFlat_tim5j")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_4pg2j")
 theme_override_styles/normal = SubResource("StyleBoxFlat_5u0yn")
@@ -2460,7 +2536,7 @@ id = 26
 description = "A powerful beam of energy."
 
 [node name="FreezeRay" type="Button" parent="basic/MarginContainer/Basic"]
-custom_minimum_size = Vector2(0, 72)
+custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -2469,9 +2545,10 @@ mouse_filter = 1
 theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
 theme_override_styles/hover = SubResource("StyleBoxFlat_p41rl")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_bv7qp")
 theme_override_styles/normal = SubResource("StyleBoxFlat_kbrc8")
@@ -2481,7 +2558,7 @@ id = 153
 description = "Freezes anything in its path!"
 
 [node name="Neutron" type="Button" parent="basic/MarginContainer/Basic"]
-custom_minimum_size = Vector2(0, 72)
+custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -2490,9 +2567,10 @@ mouse_filter = 1
 theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
 theme_override_styles/hover = SubResource("StyleBoxFlat_qae3l")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_gxlw2")
 theme_override_styles/normal = SubResource("StyleBoxFlat_rwxnb")
@@ -2502,7 +2580,7 @@ id = 36
 description = "A galactic outburst! Causes nuclear explosions."
 
 [node name="JavelinRain" type="Button" parent="basic/MarginContainer/Basic"]
-custom_minimum_size = Vector2(0, 72)
+custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -2511,9 +2589,10 @@ mouse_filter = 1
 theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 15
 theme_override_styles/hover = SubResource("StyleBoxFlat_dp2d2")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_uyggr")
 theme_override_styles/normal = SubResource("StyleBoxFlat_b05qc")
@@ -2523,7 +2602,7 @@ id = 128
 description = "A fragmented energy beam made of gamma particles."
 
 [node name="Meteor" type="Button" parent="basic/MarginContainer/Basic"]
-custom_minimum_size = Vector2(0, 72)
+custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -2532,9 +2611,10 @@ mouse_filter = 1
 theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 15
 theme_override_styles/hover = SubResource("StyleBoxFlat_n23q0")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_0gdwx")
 theme_override_styles/normal = SubResource("StyleBoxFlat_xn320")
@@ -2544,7 +2624,7 @@ id = 75
 description = "A destructive meteor shower."
 
 [node name="Sun" type="Button" parent="basic/MarginContainer/Basic"]
-custom_minimum_size = Vector2(0, 72)
+custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -2553,10 +2633,11 @@ mouse_filter = 1
 theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
 theme_override_styles/hover = SubResource("StyleBoxFlat_cxxb0")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_qejgw")
 theme_override_styles/normal = SubResource("StyleBoxFlat_n3ufx")
@@ -2566,7 +2647,7 @@ id = 66
 description = "Energy taken from the core of our sun."
 
 [node name="Powder" type="Button" parent="basic/MarginContainer/Basic"]
-custom_minimum_size = Vector2(0, 72)
+custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -2575,9 +2656,10 @@ mouse_filter = 1
 theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 15
 theme_override_styles/hover = SubResource("StyleBoxFlat_3vgxk")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_sgko8")
 theme_override_styles/normal = SubResource("StyleBoxFlat_m0trg")
@@ -2587,7 +2669,7 @@ id = 42
 description = "An odd powder that dissolves in water to form an explosive fluid."
 
 [node name="Kuiper" type="Button" parent="basic/MarginContainer/Basic"]
-custom_minimum_size = Vector2(0, 72)
+custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -2596,9 +2678,10 @@ mouse_filter = 1
 theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
 theme_override_styles/hover = SubResource("StyleBoxFlat_8gvnx")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_eroe7")
 theme_override_styles/normal = SubResource("StyleBoxFlat_un1ev")
@@ -2608,7 +2691,7 @@ id = 65
 description = "Ice taken from the Kuiper belt of our solar system. Freezes entire bodies of water. "
 
 [node name="Neptune" type="Button" parent="basic/MarginContainer/Basic"]
-custom_minimum_size = Vector2(0, 72)
+custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -2617,9 +2700,10 @@ mouse_filter = 1
 theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 15
 theme_override_styles/hover = SubResource("StyleBoxFlat_gj0yh")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_aq34r")
 theme_override_styles/normal = SubResource("StyleBoxFlat_2bkie")
@@ -2629,7 +2713,7 @@ id = 87
 description = "An endless ice storm taken from Neptune."
 
 [node name="Black Hole" type="Button" parent="basic/MarginContainer/Basic"]
-custom_minimum_size = Vector2(0, 72)
+custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -2638,9 +2722,10 @@ mouse_filter = 1
 theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 15
 theme_override_styles/hover = SubResource("StyleBoxFlat_3h784")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_jbbp0")
 theme_override_styles/normal = SubResource("StyleBoxFlat_dn34k")
@@ -2650,7 +2735,7 @@ id = 29
 description = "Summons a black hole."
 
 [node name="Worm Hole" type="Button" parent="basic/MarginContainer/Basic"]
-custom_minimum_size = Vector2(0, 72)
+custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -2659,9 +2744,10 @@ mouse_filter = 1
 theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 15
 theme_override_styles/hover = SubResource("StyleBoxFlat_c3m8u")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_qyi51")
 theme_override_styles/normal = SubResource("StyleBoxFlat_bh3a0")
@@ -2671,7 +2757,7 @@ id = 81
 description = "Summons a worm hole, teleporting matter around the entire sandbox. "
 
 [node name="Strange" type="Button" parent="basic/MarginContainer/Basic"]
-custom_minimum_size = Vector2(0, 72)
+custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -2680,9 +2766,10 @@ mouse_filter = 1
 theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
 theme_override_styles/hover = SubResource("StyleBoxFlat_or35c")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_2hlke")
 theme_override_styles/normal = SubResource("StyleBoxFlat_btpp7")
@@ -2692,7 +2779,7 @@ id = 74
 description = "Strange matter that forms an endless chain reaction."
 
 [node name="Blue Fire" type="Button" parent="basic/MarginContainer/Basic"]
-custom_minimum_size = Vector2(0, 72)
+custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -2701,10 +2788,11 @@ mouse_filter = 1
 theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 15
 theme_override_styles/hover = SubResource("StyleBoxFlat_mq4qj")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_rurje")
 theme_override_styles/normal = SubResource("StyleBoxFlat_ml551")
@@ -2714,7 +2802,7 @@ id = 24
 description = "A much more powerful version of fire."
 
 [node name="Electron" type="Button" parent="basic/MarginContainer/Basic"]
-custom_minimum_size = Vector2(0, 72)
+custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -2723,9 +2811,10 @@ mouse_filter = 1
 theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 15
 theme_override_styles/hover = SubResource("StyleBoxFlat_j4426")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_nhb3t")
 theme_override_styles/normal = SubResource("StyleBoxFlat_hunuh")
@@ -2735,13 +2824,14 @@ id = 39
 description = "A much more powerful version of lightning."
 
 [node name="Tempest" type="Button" parent="basic/MarginContainer/Basic"]
-custom_minimum_size = Vector2(0, 72)
+custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
 mouse_filter = 1
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 15
 theme_override_styles/hover = SubResource("StyleBoxFlat_cm3fd")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_8ltob")
 theme_override_styles/normal = SubResource("StyleBoxFlat_jcxrw")
@@ -2751,13 +2841,14 @@ id = 146
 description = "A much more powerful version of air."
 
 [node name="Megido" type="Button" parent="basic/MarginContainer/Basic"]
-custom_minimum_size = Vector2(0, 72)
+custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 focus_mode = 0
 mouse_filter = 1
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 15
 theme_override_styles/hover = SubResource("StyleBoxFlat_trx8f")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_nckst")
 theme_override_styles/normal = SubResource("StyleBoxFlat_vqis5")
@@ -2767,7 +2858,7 @@ id = 149
 description = "A much more powerful version of explosive. Requires other material to expand before detonation."
 
 [node name="Beam" type="Button" parent="basic/MarginContainer/Basic"]
-custom_minimum_size = Vector2(0, 72)
+custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -2776,9 +2867,10 @@ mouse_filter = 1
 theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
 theme_override_styles/hover = SubResource("StyleBoxFlat_a6uvp")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_0j1pm")
 theme_override_styles/normal = SubResource("StyleBoxFlat_a82m7")
@@ -2788,7 +2880,7 @@ id = 94
 description = "A much more powerful version of laser."
 
 [node name="God\'sHand" type="Button" parent="basic/MarginContainer/Basic"]
-custom_minimum_size = Vector2(0, 72)
+custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -2797,9 +2889,10 @@ mouse_filter = 1
 theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
 theme_override_styles/hover = SubResource("StyleBoxFlat_gwkhl")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_q0yb6")
 theme_override_styles/normal = SubResource("StyleBoxFlat_s8jml")
@@ -2809,7 +2902,7 @@ id = 137
 description = "A much more powerful version of meteor. Can destoy walls."
 
 [node name="Glitch" type="Button" parent="basic/MarginContainer/Basic"]
-custom_minimum_size = Vector2(0, 72)
+custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -2818,9 +2911,10 @@ mouse_filter = 1
 theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 15
 theme_override_styles/hover = SubResource("StyleBoxFlat_uhlt1")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_g6tb4")
 theme_override_styles/normal = SubResource("StyleBoxFlat_vn7ol")
@@ -2856,6 +2950,4 @@ columns = 3
 unique_name_in_owner = true
 layout_mode = 2
 text = "create new"
-icon = ExtResource("6_bruhs")
-icon_alignment = 2
 script = null

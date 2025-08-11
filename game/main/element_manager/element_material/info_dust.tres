@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="GradientColor" load_steps=2 format=3 uid="uid://cgvg0on6oogc4"]
 
-[ext_resource type="Script" uid="uid://dfnahj3ie6ce8" path="res://main/element_manager/element_material/types/gradient_color.gd" id="1_jj3an"]
+[ext_resource type="Script" path="res://main/element_manager/element_material/types/gradient_color.gd" id="1_jj3an"]
 
 [resource]
 script = ExtResource("1_jj3an")

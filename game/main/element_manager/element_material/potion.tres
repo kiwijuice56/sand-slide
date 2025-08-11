@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Fluid" load_steps=2 format=3 uid="uid://b55crf63gm6rn"]
 
-[ext_resource type="Script" uid="uid://xyu7hq2ygrsk" path="res://main/element_manager/element_material/types/fluid.gd" id="1_7iuen"]
+[ext_resource type="Script" path="res://main/element_manager/element_material/types/fluid.gd" id="1_7iuen"]
 
 [resource]
 script = ExtResource("1_7iuen")

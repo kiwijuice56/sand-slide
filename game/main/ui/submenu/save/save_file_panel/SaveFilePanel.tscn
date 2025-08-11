@@ -1,9 +1,9 @@
 [gd_scene load_steps=14 format=3 uid="uid://3k2xt0kc4klb"]
 
 [ext_resource type="Theme" uid="uid://co20v1mxv2dfm" path="res://main/ui/_theme/theme.tres" id="1_1uvf0"]
-[ext_resource type="Script" uid="uid://1j7rvr2e8pa0" path="res://main/ui/submenu/save/save_file_panel/save_file_panel.gd" id="1_ftssb"]
+[ext_resource type="Script" path="res://main/ui/submenu/save/save_file_panel/save_file_panel.gd" id="1_ftssb"]
 [ext_resource type="Texture2D" uid="uid://b58s8a6c6gamx" path="res://icon.png" id="3_5l22y"]
-[ext_resource type="Shader" uid="uid://gk7yav01nd3i" path="res://main/ui/submenu/save/save_file_panel/rounded_corner.gdshader" id="3_awtac"]
+[ext_resource type="Shader" path="res://main/ui/submenu/save/save_file_panel/rounded_corner.gdshader" id="3_awtac"]
 [ext_resource type="AudioStream" uid="uid://cpeuhkn4xf3e3" path="res://main/ui/button_click_sound.mp3" id="4_kp2fo"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wwijs"]
@@ -154,9 +154,9 @@ layout_mode = 2
 focus_mode = 0
 theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 21
 text = "save"
 
@@ -167,9 +167,9 @@ layout_mode = 2
 focus_mode = 0
 theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 21
 text = "load"
 
@@ -180,9 +180,9 @@ layout_mode = 2
 focus_mode = 0
 theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 21
 theme_override_styles/hover = SubResource("StyleBoxFlat_03kmu")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_wrnao")

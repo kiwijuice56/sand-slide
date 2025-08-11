@@ -1,10 +1,21 @@
 [gd_resource type="Resource" script_class="Fluid" load_steps=2 format=3 uid="uid://cghgm8lipkv85"]
 
-[ext_resource type="Script" uid="uid://xyu7hq2ygrsk" path="res://main/element_manager/element_material/types/fluid.gd" id="1_68roj"]
+[ext_resource type="Script" path="res://main/element_manager/element_material/types/fluid.gd" id="1_68roj"]
 
 [resource]
 script = ExtResource("1_68roj")
+noise_texture = 2
 color_a = Color(0.160784, 0.0235294, 0.0862745, 1)
 color_b = Color(0.0784314, 0.0784314, 0.25098, 1)
 color_c = Color(0, 0, 0, 1)
+noise_scale = 2.0
+noise_speed = 32.0
+current_size = 24.0
+wave_cycle = 3.0
+contraction_size = 16.0
+wave_density = 2.0
+shimmer_speed = 32.0
+shimmer_density = 1.5
+shimmer_opacity = 0.4
+shimmer_cycle = 1.5
 id = 57

@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Metal" load_steps=2 format=3 uid="uid://de5t13vkorgan"]
 
-[ext_resource type="Script" uid="uid://vokd3qc801vg" path="res://main/element_manager/element_material/types/metal.gd" id="1_w4fd8"]
+[ext_resource type="Script" path="res://main/element_manager/element_material/types/metal.gd" id="1_w4fd8"]
 
 [resource]
 script = ExtResource("1_w4fd8")

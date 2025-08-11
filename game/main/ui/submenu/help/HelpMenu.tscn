@@ -1,7 +1,7 @@
 [gd_scene load_steps=16 format=3 uid="uid://bueyu0dk5xun4"]
 
 [ext_resource type="Theme" uid="uid://co20v1mxv2dfm" path="res://main/ui/_theme/theme.tres" id="1_rrple"]
-[ext_resource type="Script" uid="uid://dxa3r8vnaab0k" path="res://main/ui/submenu/submenu.gd" id="2_1h5h1"]
+[ext_resource type="Script" path="res://main/ui/submenu/submenu.gd" id="2_1h5h1"]
 [ext_resource type="FontFile" uid="uid://b8lxwo5dkwrs4" path="res://main/ui/_theme/font/Poppins-Regular.ttf" id="3_q8qyd"]
 [ext_resource type="Texture2D" uid="uid://skg5bmd8m812" path="res://main/ui/_icons/close.png" id="5_lqood"]
 
@@ -112,9 +112,9 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_01f6e"]
 _data = {
-&"RESET": SubResource("Animation_swdin"),
-&"enter": SubResource("Animation_ho8so"),
-&"exit": SubResource("Animation_obmfd")
+"RESET": SubResource("Animation_swdin"),
+"enter": SubResource("Animation_ho8so"),
+"exit": SubResource("Animation_obmfd")
 }
 
 [node name="HelpMenu" type="Control" node_paths=PackedStringArray("anim", "back_button")]
@@ -262,6 +262,6 @@ fit_content = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-&"": SubResource("AnimationLibrary_01f6e")
+"": SubResource("AnimationLibrary_01f6e")
 }
 speed_scale = 2.0
