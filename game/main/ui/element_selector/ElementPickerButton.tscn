@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://dw3yr1ktgbep0"]
 
-[ext_resource type="Script" path="res://main/ui/element_selector/element_picker_button.gd" id="1_2cs23"]
+[ext_resource type="Script" uid="uid://cdaerhe5du0fc" path="res://main/ui/element_selector/element_picker_button.gd" id="1_2cs23"]
 [ext_resource type="AudioStream" uid="uid://cpeuhkn4xf3e3" path="res://main/ui/button_click_sound.mp3" id="2_1daq5"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6qckx"]
