@@ -11,10 +11,10 @@ config_version=5
 [application]
 
 config/name="sandslide"
-config/version="4.8"
+config/version="4.6"
 run/main_scene="res://main/Main.tscn"
 config/quit_on_go_back=false
-config/features=PackedStringArray("4.5")
+config/features=PackedStringArray("4.3")
 run/max_fps=60
 boot_splash/bg_color=Color(0, 0, 0, 1)
 boot_splash/image="res://main/ui/_icons/splash.png"
@@ -97,7 +97,7 @@ renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
 textures/vram_compression/import_etc2_astc=true
 shader_compiler/shader_cache/strip_debug.release=false
-shading/overrides/force_lambert_over_burley.mobile=false
-viewport/hdr_2d=true
-environment/defaults/default_clear_color=Color(0.454902, 0.462745, 0.501961, 1)
 shading/overrides/force_vertex_shading.mobile=false
+shading/overrides/force_lambert_over_burley.mobile=false
+environment/defaults/default_clear_color=Color(0.454902, 0.462745, 0.501961, 1)
+viewport/hdr_2d=true
