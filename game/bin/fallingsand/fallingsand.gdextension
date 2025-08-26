@@ -6,6 +6,7 @@ compatibility_minimum = "4.3"
 [libraries]
 
 windows.x86_64 = "res://bin/fallingsand/libgdfallingsand.windows.template_debug.x86_64.dll"
+linux.x86_64 = "res://bin/fallingsand/libgdfallingsand.linux.template_debug.x86_64.so"
 linux.arm64 = "res://bin/fallingsand/libgdfallingsand.linux.template_debug.arm64.so"
 android.arm64 = "res://bin/fallingsand/libgdfallingsand.android.template_debug.arm64.so"
 web = "res://bin/fallingsand/libgdfallingsand.web.template_debug.wasm32.wasm"
