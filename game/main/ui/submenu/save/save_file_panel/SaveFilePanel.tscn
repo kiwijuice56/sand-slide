@@ -1,9 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://3k2xt0kc4klb"]
+[gd_scene format=3 uid="uid://3k2xt0kc4klb"]
 
 [ext_resource type="Theme" uid="uid://co20v1mxv2dfm" path="res://main/ui/_theme/theme.tres" id="1_1uvf0"]
-[ext_resource type="Script" path="res://main/ui/submenu/save/save_file_panel/save_file_panel.gd" id="1_ftssb"]
+[ext_resource type="Script" uid="uid://b78c5pyalvx77" path="res://main/ui/submenu/save/save_file_panel/save_file_panel.gd" id="1_ftssb"]
 [ext_resource type="Texture2D" uid="uid://b58s8a6c6gamx" path="res://icon.png" id="3_5l22y"]
-[ext_resource type="Shader" path="res://main/ui/submenu/save/save_file_panel/rounded_corner.gdshader" id="3_awtac"]
+[ext_resource type="Shader" uid="uid://ps3rp37ycw8j" path="res://main/ui/submenu/save/save_file_panel/rounded_corner.gdshader" id="3_awtac"]
 [ext_resource type="AudioStream" uid="uid://cpeuhkn4xf3e3" path="res://main/ui/button_click_sound.mp3" id="4_kp2fo"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wwijs"]
@@ -13,6 +13,8 @@ corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 anti_aliasing = false
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_faecs"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_slap3"]
 bg_color = Color(0.360784, 0.360784, 0.419608, 1)
@@ -24,8 +26,6 @@ corner_radius_top_left = 8
 corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_faecs"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_njwah"]
 bg_color = Color(0.264381, 0.255525, 0.326614, 1)
@@ -45,8 +45,8 @@ shader = ExtResource("3_awtac")
 shader_parameter/radius = 1.0
 shader_parameter/square_scale = 0.1
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_03kmu"]
-bg_color = Color(0.572188, 0.143981, 0.171929, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7aktq"]
+bg_color = Color(0.4, 0.088, 0.1088, 1)
 border_width_bottom = 4
 border_color = Color(0.28, 0.0476, 0.125067, 1)
 corner_radius_top_left = 4
@@ -62,8 +62,8 @@ corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7aktq"]
-bg_color = Color(0.4, 0.088, 0.1088, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_03kmu"]
+bg_color = Color(0.572188, 0.143981, 0.171929, 1)
 border_width_bottom = 4
 border_color = Color(0.28, 0.0476, 0.125067, 1)
 corner_radius_top_left = 4
@@ -71,7 +71,7 @@ corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
-[node name="SaveFilePanel" type="PanelContainer" node_paths=PackedStringArray("name_label", "date_label", "size_label", "thumbnail")]
+[node name="SaveFilePanel" type="PanelContainer" unique_id=875179056 node_paths=PackedStringArray("name_label", "date_label", "size_label", "thumbnail")]
 anchors_preset = 10
 anchor_right = 1.0
 offset_bottom = 102.0
@@ -86,16 +86,16 @@ date_label = NodePath("MarginContainer/HBoxContainer/VBoxContainer/FileDate")
 size_label = NodePath("MarginContainer/HBoxContainer/VBoxContainer/FileSize")
 thumbnail = NodePath("MarginContainer/HBoxContainer/Thumbnail")
 
-[node name="Button" type="Button" parent="."]
+[node name="Button" type="Button" parent="." unique_id=1231204458]
 layout_mode = 2
 mouse_filter = 1
-theme_override_styles/focus = SubResource("StyleBoxFlat_slap3")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_faecs")
-theme_override_styles/hover = SubResource("StyleBoxFlat_njwah")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_slap3")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_faecs")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_slap3")
+theme_override_styles/hover = SubResource("StyleBoxFlat_njwah")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_faecs")
+theme_override_styles/focus = SubResource("StyleBoxFlat_slap3")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=674201226]
 layout_mode = 2
 mouse_filter = 2
 theme_override_constants/margin_left = 8
@@ -103,36 +103,36 @@ theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=777025246]
 layout_mode = 2
 mouse_filter = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer" unique_id=1896090289]
 layout_mode = 2
 size_flags_horizontal = 3
 mouse_filter = 2
 theme_override_constants/separation = 0
 
-[node name="FileName" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="FileName" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1685153474]
 layout_mode = 2
 theme_override_font_sizes/font_size = 21
 text = "Save file 01"
 text_overrun_behavior = 3
 
-[node name="FileDate" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="FileDate" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=1760527461]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.498039, 0.505882, 0.541176, 1)
 theme_override_font_sizes/font_size = 15
 text = "YYYY/MM/DD/HH"
 
-[node name="FileSize" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="FileSize" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer" unique_id=601330181]
 visible = false
 layout_mode = 2
 theme_override_colors/font_color = Color(0.498039, 0.505882, 0.541176, 1)
 theme_override_font_sizes/font_size = 15
 text = "2 MB"
 
-[node name="Thumbnail" type="TextureRect" parent="MarginContainer/HBoxContainer"]
+[node name="Thumbnail" type="TextureRect" parent="MarginContainer/HBoxContainer" unique_id=1954581581]
 material = SubResource("ShaderMaterial_0xwty")
 custom_minimum_size = Vector2(86, 86)
 layout_mode = 2
@@ -141,54 +141,55 @@ mouse_filter = 2
 texture = ExtResource("3_5l22y")
 expand_mode = 1
 
-[node name="ButtonContainer" type="HBoxContainer" parent="MarginContainer"]
+[node name="ButtonContainer" type="HBoxContainer" parent="MarginContainer" unique_id=1940813293]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 8
 theme_override_constants/separation = 8
 
-[node name="Save" type="Button" parent="MarginContainer/ButtonContainer" groups=["keep_style"]]
+[node name="Save" type="Button" parent="MarginContainer/ButtonContainer" unique_id=579922954 groups=["keep_style"]]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(84, 0)
 layout_mode = 2
 focus_mode = 0
-theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
-theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
-theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 21
 text = "save"
 
-[node name="Load" type="Button" parent="MarginContainer/ButtonContainer" groups=["keep_style"]]
+[node name="Load" type="Button" parent="MarginContainer/ButtonContainer" unique_id=1447791551 groups=["keep_style"]]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(84, 0)
 layout_mode = 2
 focus_mode = 0
-theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
-theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
-theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 21
 text = "load"
 
-[node name="Delete" type="Button" parent="MarginContainer/ButtonContainer" groups=["keep_style"]]
+[node name="Delete" type="Button" parent="MarginContainer/ButtonContainer" unique_id=1830132955 groups=["keep_style"]]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(84, 0)
 layout_mode = 2
 focus_mode = 0
-theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
-theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
-theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 21
-theme_override_styles/hover = SubResource("StyleBoxFlat_03kmu")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_wrnao")
 theme_override_styles/normal = SubResource("StyleBoxFlat_7aktq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_wrnao")
+theme_override_styles/hover = SubResource("StyleBoxFlat_03kmu")
 text = "trash"
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1724591740]
 stream = ExtResource("4_kp2fo")
 volume_db = -9.0
+bus = &"SFX"

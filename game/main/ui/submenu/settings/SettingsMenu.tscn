@@ -391,9 +391,34 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 21
-text = "sound"
+text = "sfx"
 
 [node name="CheckButton" type="CheckButton" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/CheckContainer" unique_id=1541273530]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_5rheo")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_5rheo")
+theme_override_styles/hover = SubResource("StyleBoxFlat_5rheo")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_5rheo")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_5rheo")
+theme_override_styles/focus = SubResource("StyleBoxFlat_5rheo")
+button_pressed = true
+action_mode = 0
+
+[node name="MusicContainer" type="HBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1879355452]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/MusicContainer" unique_id=905676775]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 21
+text = "music"
+
+[node name="MusicButton" type="CheckButton" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/MusicContainer" unique_id=1623273829]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 10

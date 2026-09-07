@@ -15,6 +15,7 @@ signal pressed_long
 func _ready() -> void:
 	player = AudioStreamPlayer.new()
 	add_child(player)
+	player.bus = "SFX"
 	player.stream = preload("res://main/ui/notification_accept_sound.mp3")
 	player.volume_db = -9
 	

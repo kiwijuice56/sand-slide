@@ -22,6 +22,8 @@
 [ext_resource type="Texture2D" uid="uid://cwrw6b4hfr57h" path="res://main/ui/_icons/icon_circle2.png" id="19_nbax8"]
 [ext_resource type="Script" uid="uid://c8nnrye2q7rix" path="res://main/ui/element_selector/element_select_info.gd" id="19_ys0g5"]
 [ext_resource type="Script" uid="uid://bwykd48us4ac3" path="res://main/world_environment.gd" id="24_vnhd0"]
+[ext_resource type="AudioStream" uid="uid://cb0pmgtnt2euh" path="res://main/music/sand_slide_music.ogg" id="25_4d5ll"]
+[ext_resource type="Script" uid="uid://pd8gnq1c3knf" path="res://main/music/music_player.gd" id="26_ghehs"]
 [ext_resource type="Script" uid="uid://ei1cck4hxp4a" path="res://main/save_file/save_file_manager.gd" id="87_5tqe6"]
 [ext_resource type="Script" uid="uid://bapco25du84nr" path="res://main/ui/element_selector/element_button.gd" id="107_ic066"]
 
@@ -324,3 +326,10 @@ script = ExtResource("18_mer41")
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1488638087]
 environment = SubResource("Environment_6bfny")
 script = ExtResource("24_vnhd0")
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="." unique_id=371454756]
+stream = ExtResource("25_4d5ll")
+volume_db = -40.0
+autoplay = true
+bus = &"Music"
+script = ExtResource("26_ghehs")

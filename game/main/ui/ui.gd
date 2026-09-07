@@ -13,7 +13,7 @@ class_name UI
 @export var help_button: Button
 @export var edit_button: Button
 
-var player
+var player: AudioStreamPlayer
 
 func _ready() -> void:
 	save_button.pressed.connect(_on_save_selected)
@@ -30,9 +30,11 @@ func _ready() -> void:
 	
 	CommonReference.main.active = true
 	
-	var c = get_children()
+	var c: Array[Node] = get_children()
 	player = AudioStreamPlayer.new()
 	add_child(player)
+	player.max_polyphony = 2
+	player.bus = "SFX"
 	player.stream = preload("res://main/ui/button_click_sound.mp3")
 	player.volume_db = -9
 	while len(c) > 0:

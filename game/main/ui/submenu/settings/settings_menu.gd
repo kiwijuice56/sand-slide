@@ -16,6 +16,7 @@ func _ready() -> void:
 	%ZoomSlider.value_changed.connect(_on_zoom_changed)
 	%ClearButton.pressed.connect(CommonReference.painter.clear)
 	%CheckButton.toggled.connect(_on_mode_changed)
+	%MusicButton.toggled.connect(_on_music_mode_changed)
 	%FpsButton.toggled.connect(_on_fps_changed)
 	%BackgroundPicker.color_changed.connect(_on_bg_color_changed)
 	
@@ -23,12 +24,14 @@ func _ready() -> void:
 	%SpeedSlider.value = Settings.simulation_speed
 	%ZoomSlider.value = Settings.px_scale
 	%CheckButton.set_pressed_no_signal(Settings.sound_on)
+	%MusicButton.set_pressed_no_signal(Settings.music_on)
 	%FpsButton.set_pressed_no_signal(Settings.fps)
 	%BackgroundPicker.color = Settings.bg_color
 	
 	%BackgroundPicker.child_entered_tree.connect(_on_picker_created)
 	
-	AudioServer.set_bus_mute(AudioServer.get_bus_index("Master"), not Settings.sound_on)
+	AudioServer.set_bus_mute(AudioServer.get_bus_index("SFX"), not Settings.sound_on)
+	AudioServer.set_bus_mute(AudioServer.get_bus_index("Music"), not Settings.music_on)
 	
 	RenderingServer.viewport_set_environment_mode(%BackgroundPicker.get_popup().get_viewport().get_viewport_rid(), RenderingServer.VIEWPORT_ENVIRONMENT_DISABLED)
 
@@ -60,7 +63,12 @@ func _on_zoom_changed(new_zoom: int) -> void:
 
 func _on_mode_changed(_pressed: bool) -> void:
 	Settings.sound_on = not Settings.sound_on
-	AudioServer.set_bus_mute(AudioServer.get_bus_index("Master"), not Settings.sound_on)
+	AudioServer.set_bus_mute(AudioServer.get_bus_index("SFX"), not Settings.sound_on)
+
+func _on_music_mode_changed(_pressed: bool) -> void:
+	Settings.music_on = not Settings.music_on
+	AudioServer.set_bus_mute(AudioServer.get_bus_index("Music"), not Settings.music_on)
+
 
 func _on_fps_changed(pressed: bool) -> void:
 	Settings.fps = pressed

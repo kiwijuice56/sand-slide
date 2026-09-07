@@ -279,8 +279,10 @@ speed_scale = 2.0
 unique_name_in_owner = true
 stream = SubResource("AudioStreamRandomizer_1lfs6")
 pitch_scale = 1.2
+bus = &"SFX"
 
 [node name="DeletePlayer" type="AudioStreamPlayer" parent="." unique_id=599941581]
 unique_name_in_owner = true
 stream = SubResource("AudioStreamRandomizer_nsldi")
 pitch_scale = 1.2
+bus = &"SFX"

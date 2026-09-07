@@ -9,3 +9,4 @@ extends Resource
 @export var custom_element_ordering: Array[int]
 @export var bg_color: Color
 @export var sound_on: bool = true
+@export var music_on: bool = true
