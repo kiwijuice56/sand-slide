@@ -1,7 +1,7 @@
-[gd_scene load_steps=18 format=3 uid="uid://bi1khomdif7xb"]
+[gd_scene format=3 uid="uid://bi1khomdif7xb"]
 
 [ext_resource type="Theme" uid="uid://co20v1mxv2dfm" path="res://main/ui/_theme/theme.tres" id="1_f12ql"]
-[ext_resource type="Script" path="res://main/ui/submenu/settings/settings_menu.gd" id="2_1g5bn"]
+[ext_resource type="Script" uid="uid://c7pm7uito7570" path="res://main/ui/submenu/settings/settings_menu.gd" id="2_1g5bn"]
 [ext_resource type="FontFile" uid="uid://b8lxwo5dkwrs4" path="res://main/ui/_theme/font/Poppins-Regular.ttf" id="3_kmhkm"]
 [ext_resource type="Texture2D" uid="uid://skg5bmd8m812" path="res://main/ui/_icons/close.png" id="4_rvddf"]
 
@@ -57,17 +57,17 @@ anti_aliasing = false
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5rheo"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_os8ri"]
-bg_color = Color(0.278431, 0.0470588, 0.12549, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_odjbe"]
+bg_color = Color(0.4, 0.088, 0.1088, 1)
+border_width_bottom = 4
 border_color = Color(0.28, 0.0476, 0.125067, 1)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_odjbe"]
-bg_color = Color(0.4, 0.088, 0.1088, 1)
-border_width_bottom = 4
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_os8ri"]
+bg_color = Color(0.278431, 0.0470588, 0.12549, 1)
 border_color = Color(0.28, 0.0476, 0.125067, 1)
 corner_radius_top_left = 4
 corner_radius_top_right = 4
@@ -147,12 +147,12 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_01f6e"]
 _data = {
-"RESET": SubResource("Animation_swdin"),
-"enter": SubResource("Animation_ho8so"),
-"exit": SubResource("Animation_obmfd")
+&"RESET": SubResource("Animation_swdin"),
+&"enter": SubResource("Animation_ho8so"),
+&"exit": SubResource("Animation_obmfd")
 }
 
-[node name="SettingsMenu" type="Control" node_paths=PackedStringArray("anim", "back_button")]
+[node name="SettingsMenu" type="Control" unique_id=1334719940 node_paths=PackedStringArray("anim", "back_button")]
 visible = false
 modulate = Color(1, 1, 1, 0)
 layout_mode = 3
@@ -166,7 +166,7 @@ script = ExtResource("2_1g5bn")
 anim = NodePath("AnimationPlayer")
 back_button = NodePath("SettingsContainer/PanelContainer/VBoxContainer/HBoxContainer/Back")
 
-[node name="SettingsCover" type="ColorRect" parent="."]
+[node name="SettingsCover" type="ColorRect" parent="." unique_id=910129653]
 layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -174,7 +174,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.556863)
 
-[node name="SettingsContainer" type="MarginContainer" parent="."]
+[node name="SettingsContainer" type="MarginContainer" parent="." unique_id=566157014]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -188,25 +188,25 @@ theme_override_constants/margin_top = 48
 theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 48
 
-[node name="PanelContainer" type="PanelContainer" parent="SettingsContainer"]
+[node name="PanelContainer" type="PanelContainer" parent="SettingsContainer" unique_id=394442816]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_e160y")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="SettingsContainer/PanelContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="SettingsContainer/PanelContainer" unique_id=428577382]
 layout_mode = 2
 theme_override_constants/separation = 16
 
-[node name="HBoxContainer" type="HBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer" unique_id=1140399488]
 layout_mode = 2
 
-[node name="Title" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/HBoxContainer"]
+[node name="Title" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/HBoxContainer" unique_id=277434110]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/font_size = 32
 text = "Settings"
 horizontal_alignment = 1
 
-[node name="Back" type="Button" parent="SettingsContainer/PanelContainer/VBoxContainer/HBoxContainer"]
+[node name="Back" type="Button" parent="SettingsContainer/PanelContainer/VBoxContainer/HBoxContainer" unique_id=559150751]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 size_flags_horizontal = 8
@@ -215,23 +215,24 @@ focus_mode = 0
 icon = ExtResource("4_rvddf")
 icon_alignment = 1
 
-[node name="ScrollContainer" type="ScrollContainer" parent="SettingsContainer/PanelContainer/VBoxContainer"]
+[node name="ScrollContainer" type="ScrollContainer" parent="SettingsContainer/PanelContainer/VBoxContainer" unique_id=1307033307]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxEmpty_i7y7c")
 vertical_scroll_mode = 0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer" unique_id=790641443]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_constants/separation = 11
+size_flags_vertical = 3
+theme_override_constants/separation = 20
 
-[node name="SizeContainer" type="HBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="SizeContainer" type="HBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=387925687]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 16
 
-[node name="Title" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/SizeContainer"]
+[node name="Title" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/SizeContainer" unique_id=1867487270]
 custom_minimum_size = Vector2(90, 0)
 layout_mode = 2
 size_flags_horizontal = 0
@@ -239,12 +240,12 @@ size_flags_vertical = 1
 theme_override_font_sizes/font_size = 21
 text = "brush"
 
-[node name="VBoxContainer" type="VBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/SizeContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/SizeContainer" unique_id=1964713040]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 0
 
-[node name="SizeSlider" type="HSlider" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/SizeContainer/VBoxContainer"]
+[node name="SizeSlider" type="HSlider" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/SizeContainer/VBoxContainer" unique_id=1414344049]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
@@ -258,10 +259,10 @@ max_value = 48.0
 step = 8.0
 value = 18.0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/SizeContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/SizeContainer/VBoxContainer" unique_id=1893810966]
 layout_mode = 2
 
-[node name="Left" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/SizeContainer/VBoxContainer/HBoxContainer"]
+[node name="Left" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/SizeContainer/VBoxContainer/HBoxContainer" unique_id=1642179459]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 1
@@ -270,7 +271,7 @@ theme_override_font_sizes/font_size = 12
 text = "small"
 vertical_alignment = 1
 
-[node name="Right" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/SizeContainer/VBoxContainer/HBoxContainer"]
+[node name="Right" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/SizeContainer/VBoxContainer/HBoxContainer" unique_id=463192342]
 layout_mode = 2
 size_flags_horizontal = 10
 size_flags_vertical = 1
@@ -279,12 +280,12 @@ theme_override_font_sizes/font_size = 12
 text = "large"
 vertical_alignment = 1
 
-[node name="SpeedContainer" type="HBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="SpeedContainer" type="HBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1905232240]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 16
 
-[node name="Title" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/SpeedContainer"]
+[node name="Title" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/SpeedContainer" unique_id=19528212]
 custom_minimum_size = Vector2(90, 0)
 layout_mode = 2
 size_flags_horizontal = 0
@@ -292,12 +293,12 @@ size_flags_vertical = 1
 theme_override_font_sizes/font_size = 21
 text = "time"
 
-[node name="VBoxContainer" type="VBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/SpeedContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/SpeedContainer" unique_id=1224584048]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 0
 
-[node name="SpeedSlider" type="HSlider" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/SpeedContainer/VBoxContainer"]
+[node name="SpeedSlider" type="HSlider" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/SpeedContainer/VBoxContainer" unique_id=1706906312]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
@@ -309,10 +310,10 @@ theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_420ld")
 max_value = 8.0
 value = 3.0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/SpeedContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/SpeedContainer/VBoxContainer" unique_id=1443960382]
 layout_mode = 2
 
-[node name="Left" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/SpeedContainer/VBoxContainer/HBoxContainer"]
+[node name="Left" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/SpeedContainer/VBoxContainer/HBoxContainer" unique_id=468707209]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 1
@@ -321,7 +322,7 @@ theme_override_font_sizes/font_size = 12
 text = "slow"
 vertical_alignment = 1
 
-[node name="Right" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/SpeedContainer/VBoxContainer/HBoxContainer"]
+[node name="Right" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/SpeedContainer/VBoxContainer/HBoxContainer" unique_id=335388215]
 layout_mode = 2
 size_flags_horizontal = 10
 size_flags_vertical = 1
@@ -330,12 +331,12 @@ theme_override_font_sizes/font_size = 12
 text = "fast"
 vertical_alignment = 1
 
-[node name="ZoomContainer" type="HBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="ZoomContainer" type="HBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=251066962]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 16
 
-[node name="Title" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/ZoomContainer"]
+[node name="Title" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/ZoomContainer" unique_id=2027491538]
 custom_minimum_size = Vector2(90, 0)
 layout_mode = 2
 size_flags_horizontal = 0
@@ -343,12 +344,12 @@ size_flags_vertical = 1
 theme_override_font_sizes/font_size = 21
 text = "zoom"
 
-[node name="VBoxContainer" type="VBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/ZoomContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/ZoomContainer" unique_id=503318872]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 0
 
-[node name="ZoomSlider" type="HSlider" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/ZoomContainer/VBoxContainer"]
+[node name="ZoomSlider" type="HSlider" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/ZoomContainer/VBoxContainer" unique_id=503537236]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
@@ -361,10 +362,10 @@ min_value = 2.0
 max_value = 7.0
 value = 3.0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/ZoomContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/ZoomContainer/VBoxContainer" unique_id=1424047936]
 layout_mode = 2
 
-[node name="Left" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/ZoomContainer/VBoxContainer/HBoxContainer"]
+[node name="Left" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/ZoomContainer/VBoxContainer/HBoxContainer" unique_id=2009585360]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 1
@@ -373,7 +374,7 @@ theme_override_font_sizes/font_size = 12
 text = "out"
 vertical_alignment = 1
 
-[node name="Right" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/ZoomContainer/VBoxContainer/HBoxContainer"]
+[node name="Right" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/ZoomContainer/VBoxContainer/HBoxContainer" unique_id=1652953773]
 layout_mode = 2
 size_flags_horizontal = 10
 size_flags_vertical = 1
@@ -382,66 +383,66 @@ theme_override_font_sizes/font_size = 12
 text = "in"
 vertical_alignment = 1
 
-[node name="CheckContainer" type="HBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="CheckContainer" type="HBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1680897308]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/CheckContainer"]
+[node name="Label" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/CheckContainer" unique_id=774378673]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 21
 text = "sound"
 
-[node name="CheckButton" type="CheckButton" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/CheckContainer"]
+[node name="CheckButton" type="CheckButton" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/CheckContainer" unique_id=1541273530]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 10
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 16
-theme_override_styles/focus = SubResource("StyleBoxFlat_5rheo")
-theme_override_styles/disabled = SubResource("StyleBoxFlat_5rheo")
-theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_5rheo")
-theme_override_styles/hover = SubResource("StyleBoxFlat_5rheo")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_5rheo")
 theme_override_styles/normal = SubResource("StyleBoxFlat_5rheo")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_5rheo")
+theme_override_styles/hover = SubResource("StyleBoxFlat_5rheo")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_5rheo")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_5rheo")
+theme_override_styles/focus = SubResource("StyleBoxFlat_5rheo")
 button_pressed = true
 action_mode = 0
 
-[node name="FpsContainer" type="HBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="FpsContainer" type="HBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=415018169]
 visible = false
 layout_mode = 2
 
-[node name="Label" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/FpsContainer"]
+[node name="Label" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/FpsContainer" unique_id=1695694547]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 text = "show fps"
 
-[node name="FpsButton" type="CheckButton" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/FpsContainer"]
+[node name="FpsButton" type="CheckButton" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/FpsContainer" unique_id=832285703]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 10
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 16
-theme_override_styles/focus = SubResource("StyleBoxFlat_5rheo")
-theme_override_styles/disabled = SubResource("StyleBoxFlat_5rheo")
-theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_5rheo")
-theme_override_styles/hover = SubResource("StyleBoxFlat_5rheo")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_5rheo")
 theme_override_styles/normal = SubResource("StyleBoxFlat_5rheo")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_5rheo")
+theme_override_styles/hover = SubResource("StyleBoxFlat_5rheo")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_5rheo")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_5rheo")
+theme_override_styles/focus = SubResource("StyleBoxFlat_5rheo")
 action_mode = 0
 
-[node name="BackgroundContainer" type="HBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer"]
+[node name="BackgroundContainer" type="HBoxContainer" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=94210638]
 layout_mode = 2
 theme_override_constants/separation = 0
 
-[node name="BackgroundLabel" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/BackgroundContainer"]
+[node name="BackgroundLabel" type="Label" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/BackgroundContainer" unique_id=724727834]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 8
 theme_override_font_sizes/font_size = 21
-text = "clear color"
+text = "sky color"
 
-[node name="BackgroundPicker" type="ColorPickerButton" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/BackgroundContainer"]
+[node name="BackgroundPicker" type="ColorPickerButton" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer/BackgroundContainer" unique_id=1163015460]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
@@ -449,21 +450,19 @@ focus_mode = 0
 color = Color(0.207843, 0.360784, 0.588235, 1)
 edit_alpha = false
 
-[node name="ClearButton" type="Button" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer" groups=["keep_style"]]
+[node name="ClearButton" type="Button" parent="SettingsContainer/PanelContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=2147284409 groups=["keep_style"]]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(32, 32)
+custom_minimum_size = Vector2(32, 48)
 layout_mode = 2
-size_flags_vertical = 0
+size_flags_vertical = 10
 focus_mode = 0
 theme_override_font_sizes/font_size = 21
-theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_os8ri")
-theme_override_styles/hover = SubResource("StyleBoxFlat_odjbe")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_os8ri")
 theme_override_styles/normal = SubResource("StyleBoxFlat_odjbe")
-text = "clear screen"
+theme_override_styles/pressed = SubResource("StyleBoxFlat_os8ri")
+theme_override_styles/hover = SubResource("StyleBoxFlat_odjbe")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_os8ri")
+text = "clear canvas"
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_01f6e")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1351793621]
+libraries/ = SubResource("AnimationLibrary_01f6e")
 speed_scale = 2.0

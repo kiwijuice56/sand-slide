@@ -3,19 +3,14 @@ A falling sand game made with Godot 4's GDextension feature. The full game can b
 
 ## Project Structure
 The simulation logic is implemented in C++ as a GDextension (in `extension`) that gets compiled into a binary file (in `game\bin`).
-The user interface was created in a Godot 4.3 project (in `game`).
+The user interface was created in a Godot 4.6 project (in `game`).
 
-## Compiling for Windows
-If coding on Windows, no dependencies or installations are required to build the `.dll` binaries.
-
+## Compilation
 ```
+git submodule update --init --recursive
 cd sand-slide
-scons
+scons target=[template_release, template_debug]
 ```
-
-## Compiling For Other Platforms
-Compilation for other platforms is essentially the same as on Windows, but it will sometimes require you to install other dependencies.
-The [official Godot documentation] on building for target platforms has all of the necessary information to compile `sand-slide` on other platforms.
 
 ## Creating New Elements
 Each element is a class within `extension\elements` that inherits the `Element` class.
@@ -57,8 +52,6 @@ The game allows you to manage save files. Files are stored in `user:\\`, or `%AP
 The game also saves custom elements as Godot resources (`*.tres`) in the same folder as save files.
 
 ## Attribution
-[Plumbing](https://icons8.com/icon/67287/plumbing), [eraser](https://icons8.com/icon/78855/eraser),
-[file](https://icons8.com/icon/77782/file), [support](https://icons8.com/icon/60006/support), [help](https://icons8.com/icon/59807/help) and
-[exit](https://icons8.com/icon/71200/close) icons by [Icons8](https://icons8.com/).
+Icons by [Icons8](https://icons8.com/).
 
 GDExtension Starter Project by [paddy-exe](https://github.com/paddy-exe/GDExtensionSummator)

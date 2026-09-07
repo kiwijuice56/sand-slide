@@ -2,10 +2,11 @@
 
 entry_symbol = "fallingsand_library_init"
 compatibility_minimum = "4.3"
+reloadable = true
 
 [libraries]
 
-windows.x86_64 = "res://bin/fallingsand/libgdfallingsand.windows.template_debug.x86_64.dll"
-linux.arm64 = "res://bin/fallingsand/libgdfallingsand.linux.template_debug.arm64.so"
-android.arm64 = "res://bin/fallingsand/libgdfallingsand.android.template_debug.arm64.so"
-web = "res://bin/fallingsand/libgdfallingsand.web.template_debug.wasm32.wasm"
+windows.x86_64 = "res://bin/fallingsand/libgdfallingsand.windows.template_release.x86_64.dll"
+linux.arm64 = "res://bin/fallingsand/libgdfallingsand.linux.template_release.arm64.so"
+android.arm64 = "res://bin/fallingsand/libgdfallingsand.android.template_release.arm64.so"
+web = "res://bin/fallingsand/libgdfallingsand.web.template_release.wasm32.wasm"
