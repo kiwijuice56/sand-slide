@@ -16,13 +16,13 @@ func _ready() -> void:
 	%ColorB.child_entered_tree.connect(_on_picker_created)
 	%ColorC.child_entered_tree.connect(_on_picker_created)
 	
-	%State.get_popup().transparent_bg = true
-	%Style.get_popup().transparent_bg = true
-	%State.get_popup().transparent_bg = true
+	for node in [%Style, %State]:
+		node.get_popup().transparent_bg = true
+		RenderingServer.viewport_set_environment_mode(node.get_popup().get_viewport().get_viewport_rid(), RenderingServer.VIEWPORT_ENVIRONMENT_DISABLED)
 
 func _on_picker_created(child: Node) -> void:
 	var color_picker: ColorPicker = child.get_child(1, true)
-	var c = color_picker.get_children(true)
+	var c: Array[Node] = color_picker.get_children(true)
 	while len(c) > 0:
 		var x = c.pop_back()
 		if "virtual_keyboard_enabled" in x:

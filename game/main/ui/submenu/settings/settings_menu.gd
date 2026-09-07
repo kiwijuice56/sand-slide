@@ -29,6 +29,9 @@ func _ready() -> void:
 	%BackgroundPicker.child_entered_tree.connect(_on_picker_created)
 	
 	AudioServer.set_bus_mute(AudioServer.get_bus_index("Master"), not Settings.sound_on)
+	
+	RenderingServer.viewport_set_environment_mode(%BackgroundPicker.get_popup().get_viewport().get_viewport_rid(), RenderingServer.VIEWPORT_ENVIRONMENT_DISABLED)
+
 
 func _on_picker_created(child: Node) -> void:
 	var color_picker: ColorPicker = child.get_child(1, true)

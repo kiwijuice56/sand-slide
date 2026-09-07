@@ -1,10 +1,10 @@
-[gd_scene load_steps=32 format=3 uid="uid://ggbp6fch244c"]
+[gd_scene format=3 uid="uid://ggbp6fch244c"]
 
-[ext_resource type="Script" path="res://main/main.gd" id="1_2pidp"]
+[ext_resource type="Script" uid="uid://cq7yu4sk6aq5m" path="res://main/main.gd" id="1_2pidp"]
 [ext_resource type="Theme" uid="uid://co20v1mxv2dfm" path="res://main/ui/_theme/theme.tres" id="2_nb65v"]
-[ext_resource type="Script" path="res://main/ui/ui.gd" id="3_a1qq2"]
+[ext_resource type="Script" uid="uid://bhvj5gb6ctwbo" path="res://main/ui/ui.gd" id="3_a1qq2"]
 [ext_resource type="Texture2D" uid="uid://o2dtwnhoumtj" path="res://main/ui/_icons/split_icon.png" id="4_23e8q"]
-[ext_resource type="Script" path="res://main/ui/canvas/canvas.gd" id="5_7sl3f"]
+[ext_resource type="Script" uid="uid://y8g0nd6sn14f" path="res://main/ui/canvas/canvas.gd" id="5_7sl3f"]
 [ext_resource type="Texture2D" uid="uid://frfosxi3v3fq" path="res://main/ui/_icons/eraser.png" id="6_k1fvi"]
 [ext_resource type="Texture2D" uid="uid://5l1d3c5tr7nj" path="res://main/ui/_icons/tap.png" id="8_g0v0t"]
 [ext_resource type="Texture2D" uid="uid://cpkynolj0wx14" path="res://main/ui/_icons/edit.png" id="9_1ns3c"]
@@ -17,13 +17,13 @@
 [ext_resource type="PackedScene" uid="uid://bi1khomdif7xb" path="res://main/ui/submenu/settings/SettingsMenu.tscn" id="15_vwu6i"]
 [ext_resource type="PackedScene" uid="uid://bueyu0dk5xun4" path="res://main/ui/submenu/help/HelpMenu.tscn" id="16_qckww"]
 [ext_resource type="PackedScene" uid="uid://bqwqmevgndrm0" path="res://main/ui/submenu/element_editor/ElementEditor.tscn" id="17_tcj48"]
-[ext_resource type="Script" path="res://main/painter/painter.gd" id="18_mer41"]
-[ext_resource type="Script" path="res://main/element_manager/element_manager.gd" id="18_mpubp"]
+[ext_resource type="Script" uid="uid://c2tbp4nx2qap" path="res://main/painter/painter.gd" id="18_mer41"]
+[ext_resource type="Script" uid="uid://58beduddhdf6" path="res://main/element_manager/element_manager.gd" id="18_mpubp"]
 [ext_resource type="Texture2D" uid="uid://cwrw6b4hfr57h" path="res://main/ui/_icons/icon_circle2.png" id="19_nbax8"]
-[ext_resource type="Script" path="res://main/ui/element_selector/element_select_info.gd" id="19_ys0g5"]
-[ext_resource type="Script" path="res://main/world_environment.gd" id="24_vnhd0"]
-[ext_resource type="Script" path="res://main/save_file/save_file_manager.gd" id="87_5tqe6"]
-[ext_resource type="Script" path="res://main/ui/element_selector/element_button.gd" id="107_ic066"]
+[ext_resource type="Script" uid="uid://c8nnrye2q7rix" path="res://main/ui/element_selector/element_select_info.gd" id="19_ys0g5"]
+[ext_resource type="Script" uid="uid://bwykd48us4ac3" path="res://main/world_environment.gd" id="24_vnhd0"]
+[ext_resource type="Script" uid="uid://ei1cck4hxp4a" path="res://main/save_file/save_file_manager.gd" id="87_5tqe6"]
+[ext_resource type="Script" uid="uid://bapco25du84nr" path="res://main/ui/element_selector/element_button.gd" id="107_ic066"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rhx1h"]
 
@@ -78,9 +78,9 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_gocti"]
 _data = {
-"RESET": SubResource("Animation_sr1iu"),
-"hide": SubResource("Animation_cw08x"),
-"show": SubResource("Animation_o0jo7")
+&"RESET": SubResource("Animation_sr1iu"),
+&"hide": SubResource("Animation_cw08x"),
+&"show": SubResource("Animation_o0jo7")
 }
 
 [sub_resource type="Environment" id="Environment_6bfny"]
@@ -91,11 +91,11 @@ glow_strength = 1.1
 glow_bloom = 0.35
 glow_hdr_threshold = 0.8
 
-[node name="Main" type="Node"]
+[node name="Main" type="Node" unique_id=62708415]
 script = ExtResource("1_2pidp")
 metadata/_edit_vertical_guides_ = []
 
-[node name="Canvas" type="TextureRect" parent="."]
+[node name="Canvas" type="TextureRect" parent="." unique_id=251126358]
 unique_name_in_owner = true
 texture_filter = 1
 custom_minimum_size = Vector2(0, 64)
@@ -105,10 +105,10 @@ size_flags_stretch_ratio = 2.0
 expand_mode = 1
 script = ExtResource("5_7sl3f")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=31945993]
 layer = 5
 
-[node name="UI" type="Control" parent="CanvasLayer" node_paths=PackedStringArray("save_control", "settings_control", "help_control", "edit_control", "save_button", "settings_button", "help_button", "edit_button")]
+[node name="UI" type="Control" parent="CanvasLayer" unique_id=76776608 node_paths=PackedStringArray("save_control", "settings_control", "help_control", "edit_control", "save_button", "settings_button", "help_button", "edit_button")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -126,7 +126,7 @@ settings_button = NodePath("VSplitContainer/BottomPanel/MarginBottonPanel/VBoxCo
 help_button = NodePath("VSplitContainer/BottomPanel/MarginBottonPanel/VBoxContainer/ButtonRow/Help")
 edit_button = NodePath("VSplitContainer/BottomPanel/MarginBottonPanel/VBoxContainer/ButtonRow/Edit")
 
-[node name="VSplitContainer" type="VSplitContainer" parent="CanvasLayer/UI"]
+[node name="VSplitContainer" type="VSplitContainer" parent="CanvasLayer/UI" unique_id=667477513]
 layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -136,39 +136,40 @@ theme_override_constants/separation = 0
 theme_override_constants/minimum_grab_thickness = 30
 theme_override_constants/autohide = 0
 theme_override_icons/grabber = ExtResource("4_23e8q")
+split_offsets = PackedInt32Array(48)
 split_offset = 48
 
-[node name="DrawingPanel" type="PanelContainer" parent="CanvasLayer/UI/VSplitContainer"]
+[node name="DrawingPanel" type="PanelContainer" parent="CanvasLayer/UI/VSplitContainer" unique_id=1211722251]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxEmpty_rhx1h")
 
-[node name="SizeCopy" type="TextureRect" parent="CanvasLayer/UI/VSplitContainer/DrawingPanel"]
+[node name="SizeCopy" type="TextureRect" parent="CanvasLayer/UI/VSplitContainer/DrawingPanel" unique_id=894232025]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="BottomPanel" type="PanelContainer" parent="CanvasLayer/UI/VSplitContainer"]
+[node name="BottomPanel" type="PanelContainer" parent="CanvasLayer/UI/VSplitContainer" unique_id=1113142010]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_pfsh7")
 
-[node name="MarginBottonPanel" type="MarginContainer" parent="CanvasLayer/UI/VSplitContainer/BottomPanel"]
+[node name="MarginBottonPanel" type="MarginContainer" parent="CanvasLayer/UI/VSplitContainer/BottomPanel" unique_id=460581177]
 layout_mode = 2
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 12
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/UI/VSplitContainer/BottomPanel/MarginBottonPanel"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/UI/VSplitContainer/BottomPanel/MarginBottonPanel" unique_id=1420354674]
 layout_mode = 2
 theme_override_constants/separation = 14
 
-[node name="ButtonRow" type="HBoxContainer" parent="CanvasLayer/UI/VSplitContainer/BottomPanel/MarginBottonPanel/VBoxContainer"]
+[node name="ButtonRow" type="HBoxContainer" parent="CanvasLayer/UI/VSplitContainer/BottomPanel/MarginBottonPanel/VBoxContainer" unique_id=1396299766]
 layout_mode = 2
 size_flags_vertical = 0
 theme_override_constants/separation = 8
 
-[node name="Eraser" type="Button" parent="CanvasLayer/UI/VSplitContainer/BottomPanel/MarginBottonPanel/VBoxContainer/ButtonRow"]
+[node name="Eraser" type="Button" parent="CanvasLayer/UI/VSplitContainer/BottomPanel/MarginBottonPanel/VBoxContainer/ButtonRow" unique_id=1859444198]
 texture_filter = 6
 custom_minimum_size = Vector2(42, 42)
 layout_mode = 2
@@ -178,7 +179,7 @@ icon = ExtResource("6_k1fvi")
 icon_alignment = 1
 script = ExtResource("107_ic066")
 
-[node name="Tap" type="Button" parent="CanvasLayer/UI/VSplitContainer/BottomPanel/MarginBottonPanel/VBoxContainer/ButtonRow"]
+[node name="Tap" type="Button" parent="CanvasLayer/UI/VSplitContainer/BottomPanel/MarginBottonPanel/VBoxContainer/ButtonRow" unique_id=801736600]
 texture_filter = 6
 custom_minimum_size = Vector2(42, 42)
 layout_mode = 2
@@ -187,7 +188,7 @@ theme_override_font_sizes/font_size = 18
 icon = ExtResource("8_g0v0t")
 icon_alignment = 1
 
-[node name="Edit" type="Button" parent="CanvasLayer/UI/VSplitContainer/BottomPanel/MarginBottonPanel/VBoxContainer/ButtonRow"]
+[node name="Edit" type="Button" parent="CanvasLayer/UI/VSplitContainer/BottomPanel/MarginBottonPanel/VBoxContainer/ButtonRow" unique_id=116033711]
 unique_name_in_owner = true
 visible = false
 texture_filter = 6
@@ -199,7 +200,7 @@ theme_override_font_sizes/font_size = 18
 icon = ExtResource("9_1ns3c")
 icon_alignment = 1
 
-[node name="Help" type="Button" parent="CanvasLayer/UI/VSplitContainer/BottomPanel/MarginBottonPanel/VBoxContainer/ButtonRow"]
+[node name="Help" type="Button" parent="CanvasLayer/UI/VSplitContainer/BottomPanel/MarginBottonPanel/VBoxContainer/ButtonRow" unique_id=630202207]
 texture_filter = 6
 custom_minimum_size = Vector2(42, 42)
 layout_mode = 2
@@ -209,7 +210,7 @@ theme_override_font_sizes/font_size = 18
 icon = ExtResource("9_hcxqy")
 icon_alignment = 1
 
-[node name="Settings" type="Button" parent="CanvasLayer/UI/VSplitContainer/BottomPanel/MarginBottonPanel/VBoxContainer/ButtonRow"]
+[node name="Settings" type="Button" parent="CanvasLayer/UI/VSplitContainer/BottomPanel/MarginBottonPanel/VBoxContainer/ButtonRow" unique_id=148463284]
 texture_filter = 6
 custom_minimum_size = Vector2(42, 42)
 layout_mode = 2
@@ -218,7 +219,7 @@ theme_override_font_sizes/font_size = 18
 icon = ExtResource("10_x6g80")
 icon_alignment = 1
 
-[node name="File" type="Button" parent="CanvasLayer/UI/VSplitContainer/BottomPanel/MarginBottonPanel/VBoxContainer/ButtonRow"]
+[node name="File" type="Button" parent="CanvasLayer/UI/VSplitContainer/BottomPanel/MarginBottonPanel/VBoxContainer/ButtonRow" unique_id=1297799003]
 texture_filter = 6
 custom_minimum_size = Vector2(42, 42)
 layout_mode = 2
@@ -227,7 +228,7 @@ theme_override_font_sizes/font_size = 18
 icon = ExtResource("11_nf3sg")
 icon_alignment = 1
 
-[node name="ElementSelector" parent="CanvasLayer/UI/VSplitContainer/BottomPanel/MarginBottonPanel/VBoxContainer" node_paths=PackedStringArray("simulation", "eraser_button", "tap_button") instance=ExtResource("12_1ijq2")]
+[node name="ElementSelector" parent="CanvasLayer/UI/VSplitContainer/BottomPanel/MarginBottonPanel/VBoxContainer" unique_id=995416311 node_paths=PackedStringArray("simulation", "eraser_button", "tap_button") instance=ExtResource("12_1ijq2")]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 128)
 layout_mode = 2
@@ -236,12 +237,12 @@ simulation = NodePath("../../../../../../..")
 eraser_button = NodePath("../ButtonRow/Eraser")
 tap_button = NodePath("../ButtonRow/Tap")
 
-[node name="FpsLabel" parent="CanvasLayer/UI" instance=ExtResource("13_kyq44")]
+[node name="FpsLabel" parent="CanvasLayer/UI" unique_id=1489591435 instance=ExtResource("13_kyq44")]
 unique_name_in_owner = true
 visible = false
 layout_mode = 0
 
-[node name="SelectInfo" type="MarginContainer" parent="CanvasLayer/UI"]
+[node name="SelectInfo" type="MarginContainer" parent="CanvasLayer/UI" unique_id=1382388302]
 unique_name_in_owner = true
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
@@ -253,75 +254,73 @@ theme_override_constants/margin_right = 4
 theme_override_constants/margin_bottom = 4
 script = ExtResource("19_ys0g5")
 
-[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/UI/SelectInfo"]
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/UI/SelectInfo" unique_id=478310915]
 layout_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/UI/SelectInfo/PanelContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/UI/SelectInfo/PanelContainer" unique_id=1825800068]
 layout_mode = 2
 theme_override_constants/margin_left = 2
 theme_override_constants/margin_top = 2
 theme_override_constants/margin_right = 2
 theme_override_constants/margin_bottom = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/UI/SelectInfo/PanelContainer/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/UI/SelectInfo/PanelContainer/MarginContainer" unique_id=2112298353]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/UI/SelectInfo/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/UI/SelectInfo/PanelContainer/MarginContainer/VBoxContainer" unique_id=1771002765]
 layout_mode = 2
 
-[node name="ElementColor" type="TextureRect" parent="CanvasLayer/UI/SelectInfo/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="ElementColor" type="TextureRect" parent="CanvasLayer/UI/SelectInfo/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=386382475]
 unique_name_in_owner = true
 layout_mode = 2
 texture = ExtResource("19_nbax8")
 stretch_mode = 3
 
-[node name="ElementName" type="Label" parent="CanvasLayer/UI/SelectInfo/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="ElementName" type="Label" parent="CanvasLayer/UI/SelectInfo/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1013008131]
 unique_name_in_owner = true
 layout_mode = 2
 text = "lightning"
 
-[node name="ElementInfo" type="Label" parent="CanvasLayer/UI/SelectInfo/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="ElementInfo" type="Label" parent="CanvasLayer/UI/SelectInfo/PanelContainer/MarginContainer/VBoxContainer" unique_id=1941677023]
 unique_name_in_owner = true
 layout_mode = 2
 text = "dangerous! dfdsfdsfsdfsdf"
 autowrap_mode = 2
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/UI/SelectInfo"]
-libraries = {
-"": SubResource("AnimationLibrary_gocti")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/UI/SelectInfo" unique_id=1678733876]
+libraries/ = SubResource("AnimationLibrary_gocti")
 speed_scale = 6.0
 
-[node name="Timer" type="Timer" parent="CanvasLayer/UI/SelectInfo"]
+[node name="Timer" type="Timer" parent="CanvasLayer/UI/SelectInfo" unique_id=2061698628]
 wait_time = 5.0
 one_shot = true
 
-[node name="SaveFileMenu" parent="CanvasLayer/UI" node_paths=PackedStringArray("save_file_manager") instance=ExtResource("14_73tcr")]
+[node name="SaveFileMenu" parent="CanvasLayer/UI" unique_id=1882703580 node_paths=PackedStringArray("save_file_manager") instance=ExtResource("14_73tcr")]
 layout_mode = 1
 save_file_manager = NodePath("../../../SaveFileManager")
 
-[node name="SettingsMenu" parent="CanvasLayer/UI" instance=ExtResource("15_vwu6i")]
+[node name="SettingsMenu" parent="CanvasLayer/UI" unique_id=637535216 instance=ExtResource("15_vwu6i")]
 layout_mode = 1
 
-[node name="HelpMenu" parent="CanvasLayer/UI" instance=ExtResource("16_qckww")]
+[node name="HelpMenu" parent="CanvasLayer/UI" unique_id=1635374272 instance=ExtResource("16_qckww")]
 layout_mode = 1
 
-[node name="ElementEditorMenu" parent="CanvasLayer/UI" instance=ExtResource("17_tcj48")]
+[node name="ElementEditorMenu" parent="CanvasLayer/UI" unique_id=257621555 instance=ExtResource("17_tcj48")]
 visible = false
 layout_mode = 1
 
-[node name="SaveFileManager" type="Node" parent="."]
+[node name="SaveFileManager" type="Node" parent="." unique_id=1189841073]
 unique_name_in_owner = true
 script = ExtResource("87_5tqe6")
 
-[node name="ElementManager" type="Node" parent="."]
+[node name="ElementManager" type="Node" parent="." unique_id=932292904]
 unique_name_in_owner = true
 script = ExtResource("18_mpubp")
 
-[node name="Painter" type="Node" parent="."]
+[node name="Painter" type="Node" parent="." unique_id=2055397978]
 unique_name_in_owner = true
 script = ExtResource("18_mer41")
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1488638087]
 environment = SubResource("Environment_6bfny")
 script = ExtResource("24_vnhd0")
