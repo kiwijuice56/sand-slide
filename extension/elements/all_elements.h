@@ -181,6 +181,7 @@
 #include "elements/basic/glaggler_seed.h"
 #include "elements/basic/glaggler_eye.h"
 #include "elements/basic/glaggler_face.h"
+#include "elements/life/bubblebear.h"
 
 class AllElements {
 public:
@@ -369,7 +370,7 @@ public:
         elements->at(175) = new GlagglerSeed();
         elements->at(176) = new GlagglerEye();
         elements->at(177) = new GlagglerFace();
-
+        elements->at(178) = new Bubblebear();
 
         for (int i = 2048; i <= 4096; i++) {
             elements->at(i) = new CustomElementParticle();

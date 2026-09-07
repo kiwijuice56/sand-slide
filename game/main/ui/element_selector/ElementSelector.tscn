@@ -336,6 +336,15 @@ bg_color = Color(0.929412, 0.52549, 0.290196, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_666fg"]
 bg_color = Color(0.960784, 0.780392, 0.356863, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cyl8b"]
+bg_color = Color(0.65992, 0.73, 0.20439999, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bruhs"]
+bg_color = Color(0.5286667, 0.65, 0.12999998, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fiag7"]
+bg_color = Color(0.7112, 0.8, 0.20799999, 1)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pqqll"]
 bg_color = Color(0.203922, 0.203922, 0.290196, 1)
 
@@ -1575,6 +1584,29 @@ text = "sand duck"
 script = ExtResource("3_bfdgk")
 id = 8
 description = "Ducklings who live in sand piles."
+
+[node name="Bubblebear" type="Button" parent="basic/MarginContainer/Basic" unique_id=953972644]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 0
+mouse_filter = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxFlat_cyl8b")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_bruhs")
+theme_override_styles/hover = SubResource("StyleBoxFlat_fiag7")
+text = "bubblebear"
+script = ExtResource("3_bfdgk")
+id = 178
+description = "A lovely bear-like vermin with a sapling on its head."
 
 [node name="Penguin" type="Button" parent="basic/MarginContainer/Basic" unique_id=1343307056]
 custom_minimum_size = Vector2(0, 48)

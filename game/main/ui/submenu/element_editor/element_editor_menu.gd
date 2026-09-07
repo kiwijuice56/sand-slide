@@ -18,7 +18,10 @@ func _ready() -> void:
 	
 	for node in [%Style, %State]:
 		node.get_popup().transparent_bg = true
+	
+	for node in [%Style, %State, %ColorA, %ColorB, %ColorC]:
 		RenderingServer.viewport_set_environment_mode(node.get_popup().get_viewport().get_viewport_rid(), RenderingServer.VIEWPORT_ENVIRONMENT_DISABLED)
+
 
 func _on_picker_created(child: Node) -> void:
 	var color_picker: ColorPicker = child.get_child(1, true)
