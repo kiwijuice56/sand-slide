@@ -15,7 +15,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="sandslide"
-config/version="4.7"
+config/version="6.2"
 run/main_scene="res://main/Main.tscn"
 config/quit_on_go_back=false
 config/features=PackedStringArray("4.6")
@@ -23,6 +23,10 @@ run/max_fps=60
 boot_splash/bg_color=Color(0, 0, 0, 1)
 boot_splash/image="res://main/ui/_icons/splash.png"
 config/icon="res://icon.png"
+
+[audio]
+
+buses/default_bus_layout="uid://cyhpyea4lqwqh"
 
 [autoload]
 
